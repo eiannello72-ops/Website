@@ -491,6 +491,11 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 .tier-row > div > p{color:var(--muted-light);font-size:16px}
 .tier-row .scorer{position:static}
 @media (max-width:900px){.tier-row{grid-template-columns:1fr}}
+.email-body .step{display:grid;gap:8px;padding-bottom:16px;border-bottom:1px solid #ECE9F3}
+.email-body .step:last-child{border-bottom:0;padding-bottom:0}
+.step-k{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-lo)}
+.step-k span:last-child{color:var(--muted-dark)}
+.email-body{gap:16px}
 </style>
 </head>
 <body>
@@ -620,7 +625,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
     <div class="sec-head reveal">
       <div class="sec-num"><span class="slash"></span>02 Sales Plays</div>
       <h2>Four plays <b>I would run first</b></h2>
-      <p>Each play covers the target, the trigger, the questions that qualify it and an opening email. All four are ready to run in week one.</p>
+      <p>Each play covers the target, the trigger, the questions that qualify it and a three email sequence. All four are ready to run in week one.</p>
     </div>
 
     <div class="tier-row reveal">
@@ -664,15 +669,13 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         <div class="meta"><div class="k">Discovery</div><ul><li>How much of your Drift volume turned into pipeline last quarter?</li><li>What happens to a high intent visitor who shows up after hours?</li><li>Who needs to sign off on the new website experience, and by when?</li></ul></div>
       </div>
       <div class="email">
-        <div class="email-head"><div><b>To:</b> VP Demand Generation</div><div><b>Subject:</b> Replacing Drift</div></div>
+        <div class="email-head"><div><b>To:</b> VP Demand Generation</div><div><b>Subject A:</b> {{company}} after Drift</div><div><b>Subject B:</b> Drift replacement idea</div><div><b>Subject C:</b> Post-Drift site idea</div></div>
         <div class="email-body">
-          <p>Hi {first name},</p>
-          <p>Most teams replacing Drift are shortlisting another chat tool. The ones I'm talking to are using the switch to put a product expert on their site instead.</p>
-          <p>Salesloft chose 1mind as Drift's successor. Our Superhumans run live demos, answer technical questions and sync everything to Salesloft. HubSpot saw 78% more free trials after launch.</p>
-          <p>Open to 20 minutes? I'll bring a preview built on {company}'s own content.</p>
-          <p>Eric</p>
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, with Drift being sunset, guessing you're lining up another chat tool for the site.</p><p>Think putting a live product expert there instead could help?</p><p>{{customer_name}} saw 78% more free trials doing this. Works with your Salesloft and {{crm}} setup.</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize {{customer_name}}'s 78% lift might seem like seller cherry picking.</p><p>If we build a preview on {{company}}'s own site content so you can test it, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like replacing Drift with more than chat might not be a priority?</p><p>Basically instead of a chat widget, buyers on your site would get a live demo and real answers from a product expert.</p><p>Helped {{customer_name}} as I mentioned. But no worries if the timing is off.</p></div>
         </div>
-        <div class="email-foot"><span class="chip p">Touch 1 of 7</span><span class="chip">Salesloft co-sell intro on day 4</span><span class="chip">Custom preview on day 8</span></div>
+        <div class="email-foot"><span class="chip p">Proof: HubSpot</span><span class="chip">Three touches over one week</span></div>
       </div>
     </div>
 
@@ -684,15 +687,13 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         <div class="meta"><div class="k">Discovery</div><ul><li>What has changed on your Qualified roadmap since the acquisition?</li><li>What happens to the buyer after Piper books the meeting?</li><li>Who owns the renewal decision, and when is it due?</li></ul></div>
       </div>
       <div class="email">
-        <div class="email-head"><div><b>To:</b> Director of Marketing Operations</div><div><b>Subject:</b> Your Qualified renewal</div></div>
+        <div class="email-head"><div><b>To:</b> Director of Marketing Operations</div><div><b>Subject A:</b> {{company}} and Piper</div><div><b>Subject B:</b> Qualified renewal idea</div><div><b>Subject C:</b> Piper after Salesforce</div></div>
         <div class="email-body">
-          <p>Hi {first name},</p>
-          <p>Since the Salesforce acquisition, Piper is becoming part of Agentforce. For a team on {HubSpot}, that raises real questions before your renewal.</p>
-          <p>1mind works with any CRM and covers more than the website. The same Superhuman can join sales calls and onboard new customers.</p>
-          <p>Worth a side by side before renewal talks start?</p>
-          <p>Eric</p>
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, pretty sure your Qualified renewal is coming up now that Piper is part of Agentforce.</p><p>Think it's worth comparing options before it renews?</p><p>{{customer_name}} doubled conversion over their previous bot. Works with {{crm}}, no Salesforce required.</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize switching tools right before a renewal can feel like more work than it's worth.</p><p>If we map the switch and line it up with your renewal date, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like reviewing Qualified might not be on the list this year?</p><p>Basically the same Superhuman that works your site could also join sales calls and onboard new customers.</p><p>Helped {{customer_name}} as I mentioned. But no worries if it's not a fit.</p></div>
         </div>
-        <div class="email-foot"><span class="chip p">Timed to renewal</span><span class="chip">CRM neutral</span></div>
+        <div class="email-foot"><span class="chip p">Proof: Nutanix</span><span class="chip">Three touches over one week</span></div>
       </div>
     </div>
 
@@ -704,15 +705,13 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         <div class="meta"><div class="k">Discovery</div><ul><li>How many opportunities last quarter had no SE, or got one late?</li><li>What is your win rate with and without an SE on the call?</li><li>How long does it take to ramp a new SE?</li></ul></div>
       </div>
       <div class="email">
-        <div class="email-head"><div><b>To:</b> VP of Solutions Engineering</div><div><b>Subject:</b> SE coverage</div></div>
+        <div class="email-head"><div><b>To:</b> VP of Solutions Engineering</div><div><b>Subject A:</b> {{company}} SE coverage</div><div><b>Subject B:</b> SE capacity idea</div><div><b>Subject C:</b> Demo backlog idea</div></div>
         <div class="email-body">
-          <p>Hi {first name},</p>
-          <p>Most SE leaders I talk to are spreading their team across too many deals, and the deals without coverage stall.</p>
-          <p>1mind's Ride-Along joins Zoom, Teams or Meet as a named AI sales engineer and handles technical questions live. Experity took its win rate from 26% to 50% and nearly halved its sales cycle.</p>
-          <p>Could we look at your coverage gap together?</p>
-          <p>Eric</p>
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, pretty sure your SEs are stretched across more deals than they can cover.</p><p>Think adding an AI SE to live calls could help?</p><p>{{customer_name}} took their win rate from 26% to 50% doing this. Works on Zoom, Teams and Meet.</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize {{customer_name}}'s win rate jump might seem like seller cherry picking.</p><p>If we set it up on one segment so you can compare win rates side by side, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like SE coverage might not be a pain right now?</p><p>Basically an AI SE joins the call, answers technical questions and handles objections so your team can focus on the bigger deals.</p><p>Helped {{customer_name}} as I mentioned. But no worries if it's not your focus.</p></div>
         </div>
-        <div class="email-foot"><span class="chip p">Led by Ride-Along</span><span class="chip">Win rate business case</span></div>
+        <div class="email-foot"><span class="chip p">Proof: Experity</span><span class="chip">Three touches over one week</span></div>
       </div>
     </div>
 
@@ -723,14 +722,13 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         <div class="meta"><div class="k">Approach</div><ul><li>Map each investor and angel to the logos they can open</li><li>Co-host AI-Led Growth sessions with VC platform teams</li><li>Offer a portfolio pilot with defined success criteria</li><li>I have built VC channels before, with Florida Funders and OMERS at Falkon</li></ul></div>
       </div>
       <div class="email">
-        <div class="email-head"><div><b>To:</b> VC Platform Lead</div><div><b>Subject:</b> A session for your portfolio CROs</div></div>
+        <div class="email-head"><div><b>To:</b> VC Platform Lead</div><div><b>Subject A:</b> {{fund_name}} portfolio CROs</div><div><b>Subject B:</b> Portfolio session idea</div><div><b>Subject C:</b> GTM session for {{fund_name}}</div></div>
         <div class="email-body">
-          <p>Hi {first name},</p>
-          <p>Your portfolio CROs are being asked to grow pipeline without adding headcount. Several 1mind customers are already doing it. HubSpot's Superhuman covers the workload of dozens of SDRs and SEs.</p>
-          <p>Would a 45 minute working session for your GTM leaders be useful? No pitch. Just how these teams are structured and what the numbers look like.</p>
-          <p>Eric</p>
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, pretty sure your portfolio CROs are being asked to grow pipeline without adding headcount.</p><p>Think a working session on how AI-Led Growth teams are structured could help?</p><p>{{customer_name}}'s Superhuman covers the workload of dozens of SDRs and SEs. Happy to walk through it, no pitch.</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize another vendor session might sound like a pitch in disguise.</p><p>If we keep it to 45 minutes of real numbers and org design, think it's worth a slot?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like a portfolio session might not be timely?</p><p>Basically your GTM leaders would see how teams like {{customer_name}} cover more pipeline without adding reps.</p><p>Door's open if that changes. No worries if not.</p></div>
         </div>
-        <div class="email-foot"><span class="chip p">One to many</span><span class="chip">Warm introductions</span></div>
+        <div class="email-foot"><span class="chip p">Proof: HubSpot</span><span class="chip">Three touches over one week</span></div>
       </div>
     </div>
   </div>

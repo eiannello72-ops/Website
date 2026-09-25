@@ -477,6 +477,20 @@ sup a{color:var(--purple-hi);text-decoration:none;font-size:10px;font-weight:700
 .sources li:target a{color:#fff;text-decoration:underline}
 sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 .light sup.src,.panel sup.src{color:var(--purple-lo)}
+.read-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.read-grid{grid-template-columns:1fr}}
+.read{background:var(--ink);color:var(--text-light);border-radius:var(--radius-lg);padding:28px}
+.read h3{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:14px;color:#fff}
+.read ul{list-style:none;display:grid;gap:12px}
+.read li{font-size:15px;color:var(--muted-light);position:relative;padding-left:18px}
+.read li b{color:#fff;font-weight:600}
+.read li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:11px;background:var(--purple);transform:skewX(-20deg);border-radius:1px}
+.read sup a{color:var(--purple-hi)}
+.tier-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-bottom:60px}
+.tier-row h3{font-size:26px;font-weight:600;letter-spacing:-.03em;margin-bottom:10px}
+.tier-row > div > p{color:var(--muted-light);font-size:16px}
+.tier-row .scorer{position:static}
+@media (max-width:900px){.tier-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -488,15 +502,13 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <span class="nav-tag">Enterprise Playbook by Eric Iannello</span>
     </div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#company">Company</a></li>
-      <li><a href="#product">Product</a></li>
-      <li><a href="#icp">ICP</a></li>
-      <li><a href="#macro">Market</a></li>
+      <li><a href="#read">My Read</a></li>
       <li><a href="#micro">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#deal">Deal Plan</a></li>
       <li><a href="#eric">About Me</a></li>
+      <li><a href="#plan">90 Days</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
@@ -514,21 +526,21 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   </svg>
   <div class="wrap">
     <div class="hero-top reveal">
-      <span class="pill">Enterprise AE candidate brief</span>
-      <h1><b>Every1 Wins.</b> A plan for growing 1mind in the enterprise.</h1>
-      <p class="hero-sub">Product, ICP, sales plays, competition and the value case for Superhumans, followed by how I would run the territory.</p>
+      <span class="pill">Prepared for 1mind sales leadership</span>
+      <h1><b>Every1 Wins.</b> My day one plan for 1mind enterprise.</h1>
+      <p class="hero-sub">You know the product better than anyone. This is how I read the market, the plays I would run first and how I would work deals, so I can build pipeline from week one.</p>
       <div class="hero-ctas">
-        <a href="#company" class="btn btn-primary">Read the Playbook</a>
+        <a href="#read" class="btn btn-primary">See the Plan</a>
         <a href="#contact" class="btn btn-ghost">Contact Me</a>
       </div>
     </div>
 
     <div class="hero-card reveal">
       <div class="hero-card-copy">
-        <h2>Buyers want answers now. Most revenue teams can't staff for that.</h2>
+        <h2>The timing is on your side.</h2>
         <div>
-          <p>1mind closes the gap with Superhumans, AI teammates with a face, a voice and deep product knowledge that engage buyers from the first visit through renewal.</p>
-          <p style="margin-top:12px">The enterprise opportunity is putting that capacity in front of CROs who are being asked to grow pipeline without growing headcount.</p>
+          <p>Drift customers need a replacement, Qualified customers are rethinking after the Salesforce deal, and CROs are being told to grow pipeline without growing headcount.</p>
+          <p style="margin-top:12px">1mind is the only platform that covers the website, the sales call and the rest of the lifecycle with one Superhuman. My job is to turn that timing into enterprise pipeline.</p>
         </div>
       </div>
 
@@ -562,154 +574,63 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       </div>
     </div>
 
-    <div class="stats reveal">
-      <div class="stat"><div class="num"><span>$</span><span class="count" data-to="40" style="color:#fff">40</span>M</div><div class="lbl">Raised, including a $30M Series A led by Battery Ventures<sup><a href="#s1">1</a></sup></div></div>
-      <div class="stat"><div class="num"><span class="count" data-to="75" style="color:#fff">75</span><span>+</span></div><div class="lbl">Enterprise and mid-market customers as of June 2026<sup><a href="#s2">2</a></sup></div></div>
-      <div class="stat"><div class="num"><span class="count" data-to="62" style="color:#fff">62</span><span>%</span></div><div class="lbl">Shorter sales cycles reported by customers<sup><a href="#s3">3</a></sup></div></div>
-      <div class="stat"><div class="num"><span class="count" data-to="78" style="color:#fff">78</span><span>%</span></div><div class="lbl">Of 1mind's own pipeline sourced by its Superhuman, Mindy<sup><a href="#s4">4</a></sup></div></div>
-    </div>
-  </div>
+</div>
 </header>
 
-<!-- 01 COMPANY -->
-<section id="company">
+<!-- 01 MY READ -->
+<section id="read" class="panel">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>01 The Company</div>
-      <h2>Built by the founder <b>behind 6sense</b></h2>
-      <p>Amanda Kahlow grew 6sense into a $5B+ company and helped define account-based marketing. 1mind is her next category, AI-Led Growth, where buyers get expert help on demand and revenue capacity scales without adding reps.</p>
+      <div class="sec-num"><span class="slash"></span>01 My Read on 1mind</div>
+      <h2>What I know <b>going in</b></h2>
+      <p>A short summary so we start from the same page.</p>
     </div>
-
-    <div class="timeline reveal">
-      <div class="tl"><div class="dot"></div><div class="when">Nov 2025</div><h4>Public launch with $40M</h4><p>Series A led by Battery Ventures, with Primary, Wing and Operator Collective participating.<sup><a href="#s1">1</a></sup></p></div>
-      <div class="tl"><div class="dot"></div><div class="when">Mar 2026</div><h4>Drift's exclusive successor</h4><p>Clari and Salesloft retire Drift and refer its customers to 1mind.<sup><a href="#s5">5</a></sup></p></div>
-      <div class="tl"><div class="dot"></div><div class="when">Apr 2026</div><h4>Category validated</h4><p>Salesforce closes its $1.2B acquisition of Qualified.<sup><a href="#s6">6</a></sup></p></div>
-      <div class="tl"><div class="dot"></div><div class="when">May 2026</div><h4>Ride-Along launches</h4><p>An AI sales engineer that joins live calls as a named participant.<sup><a href="#s7">7</a></sup></p></div>
-      <div class="tl"><div class="dot"></div><div class="when">Jun 2026</div><h4>75+ customers</h4><p>Including HubSpot, LinkedIn, New Relic, Samsara, Nutanix and ZoomInfo.<sup><a href="#s2">2</a></sup></p></div>
+    <div class="read-grid">
+      <div class="read reveal">
+        <h3>Where Superhumans win</h3>
+        <ul>
+          <li><b>Website Inbound</b> replaces chat and forms. HubSpot saw 78% more free trials.<sup><a href="#s1">1</a></sup></li>
+          <li><b>Ride-Along</b> puts an SE on every call. Experity took its win rate from 26% to 50%.<sup><a href="#s2">2</a></sup></li>
+          <li><b>In-Product and Customer Success</b> carry the same brain through renewal, which is where expansion comes from.</li>
+        </ul>
+      </div>
+      <div class="read reveal">
+        <h3>Who buys</h3>
+        <ul>
+          <li>B2B tech with 500 to 10,000+ employees, real inbound or product led volume and a technical product.</li>
+          <li>The CRO and CMO sign. VP Demand Gen or VP Sales Engineering champions. CISO and CFO approve.</li>
+          <li>The strongest deals are funded from SDR and SE headcount or an expiring Drift or Qualified contract.</li>
+        </ul>
+      </div>
+      <div class="read reveal">
+        <h3>Why now</h3>
+        <ul>
+          <li>Drift is being retired, and Salesloft is referring its customers to 1mind.<sup><a href="#s3">3</a></sup></li>
+          <li>Salesforce now owns Qualified, which leaves HubSpot and Marketo shops without a neutral option.<sup><a href="#s4">4</a></sup></li>
+          <li>67% of buyers prefer to buy without a rep, yet 69% still want an expert to validate what AI tells them.<sup><a href="#s5">5</a>,<a href="#s6">6</a></sup></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 02 PRODUCT -->
-<section id="product" class="panel">
+<!-- 05 MICRO -->
+<section id="micro">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>02 The Product</div>
-      <h2>One product brain <b>across the full customer lifecycle</b></h2>
-      <p>Each Superhuman is trained on the customer's own content and deployed wherever the buyer is: the website, a live sales call, inside the product or after the sale.</p>
+      <div class="sec-num"><span class="slash"></span>02 Sales Plays</div>
+      <h2>Four plays <b>I would run first</b></h2>
+      <p>Each play covers the target, the trigger, the questions that qualify it and an opening email. All four are ready to run in week one.</p>
     </div>
 
-    <div class="journey reveal" role="tablist" aria-label="Superhuman use cases">
-      <button class="active" role="tab" aria-selected="true" data-uc="uc1"><span class="step">First touch</span><span class="t">Website Inbound</span><span class="s">Capture and qualify</span></button>
-      <button role="tab" aria-selected="false" data-uc="uc2"><span class="step">Evaluation</span><span class="t">Ride-Along</span><span class="s">AI SE on live calls</span></button>
-      <button role="tab" aria-selected="false" data-uc="uc3"><span class="step">Adoption</span><span class="t">In-Product Guide</span><span class="s">Onboard and convert</span></button>
-      <button role="tab" aria-selected="false" data-uc="uc4"><span class="step">Renewal</span><span class="t">Customer Success</span><span class="s">Retain and expand</span></button>
-    </div>
-
-    <div class="uc-panel active" id="uc1">
-      <div class="uc-main">
-        <span class="pill">Replaces chat, forms and demo request queues</span>
-        <h3 style="margin-top:16px">A sales engineer on the website for every visitor</h3>
-        <p>High intent visitors get a live conversation and a tailored demo instead of a form and a follow up email three days later.</p>
-        <ul>
-          <li>Qualifies through conversation and books or routes in the moment</li>
-          <li>Answers technical questions, handles objections and can quote pricing</li>
-          <li>Writes every conversation back to the CRM</li>
-        </ul>
+    <div class="tier-row reveal">
+      <div>
+        <h3>Tiering the territory</h3>
+        <p>Before any outreach, I would score every account with SDRs using the criteria on the right. Tier 1 accounts get executive led, multithreaded plays. Tier 2 gets persona sequences. Tier 3 gets nurture until a trigger fires.</p>
       </div>
-      <div class="uc-side">
-        <div class="mini"><div class="k">Buyer</div><p>CMO or VP Demand Gen, often with the CRO</p></div>
-        <div class="mini"><div class="k">Metrics it moves</div><p>Visitor to pipeline conversion, speed to lead, cost per opportunity</p></div>
-        <div class="proof"><div class="k">HubSpot</div><div class="big">78% more free trials</div><p>Its Superhuman, Fiona, engages 88% of visitors who reach her and lifted influenced purchases 25%.<sup><a href="#s8">8</a></sup></p></div>
-        <div class="mini"><div class="k">Also</div><p>Nutanix doubled conversion against its previous chatbot. Pipedrive more than doubled visitor to trial conversion.<sup><a href="#s15">15</a></sup></p></div>
-      </div>
-    </div>
-
-    <div class="uc-panel" id="uc2">
-      <div class="uc-main">
-        <span class="pill">Launched May 2026 on Zoom, Teams and Google Meet</span>
-        <h3 style="margin-top:16px">An AI sales engineer that joins the call</h3>
-        <p>Most call assistants coach the rep in the background. Ride-Along joins as a named participant and speaks to the buyer directly.</p>
-        <ul>
-          <li>Answers technical questions in real time</li>
-          <li>Presents slides and handles objections</li>
-          <li>Gives every deal SE coverage, not just the largest ones</li>
-        </ul>
-      </div>
-      <div class="uc-side">
-        <div class="mini"><div class="k">Buyer</div><p>CRO, with the VP of Sales Engineering as champion</p></div>
-        <div class="mini"><div class="k">Metrics it moves</div><p>Win rate, cycle length, SE coverage</p></div>
-        <div class="proof"><div class="k">Experity</div><div class="big">Win rate from 26% to 50%</div><p>Sales cycles dropped from 28 to 15 days after replacing its previous in-call AI.<sup><a href="#s7">7</a></sup></p></div>
-      </div>
-    </div>
-
-    <div class="uc-panel" id="uc3">
-      <div class="uc-main">
-        <span class="pill">For product led and freemium motions</span>
-        <h3 style="margin-top:16px">Guided onboarding that converts free users</h3>
-        <p>Activation is where most product led funnels leak. An in-product Superhuman walks users to value and raises the upgrade when the timing is right.</p>
-        <ul>
-          <li>Guides setup in context</li>
-          <li>Flags upgrade and expansion signals</li>
-          <li>Hands qualified accounts to sales with full history</li>
-        </ul>
-      </div>
-      <div class="uc-side">
-        <div class="mini"><div class="k">Buyer</div><p>CPO or VP Growth</p></div>
-        <div class="mini"><div class="k">Metrics it moves</div><p>Activation, time to value, free to paid conversion</p></div>
-        <div class="proof"><div class="k">Pipedrive</div><div class="big">Over 100% lift</div><p>In visitor to trial conversion attributed to its Superhuman.<sup><a href="#s15">15</a></sup></p></div>
-      </div>
-    </div>
-
-    <div class="uc-panel" id="uc4">
-      <div class="uc-main">
-        <span class="pill">Post-sale coverage</span>
-        <h3 style="margin-top:16px">Coverage for every account, not just the top tier</h3>
-        <p>CS teams can't reach the long tail. A Superhuman drives adoption, answers how-to questions and surfaces expansion before renewal.</p>
-        <ul>
-          <li>Proactive adoption and feature education</li>
-          <li>Answers around the clock, which eases support load</li>
-          <li>Expansion signals routed to CSMs and AEs</li>
-        </ul>
-      </div>
-      <div class="uc-side">
-        <div class="mini"><div class="k">Buyer</div><p>Chief Customer Officer or VP Customer Success</p></div>
-        <div class="mini"><div class="k">Metrics it moves</div><p>Net revenue retention, churn, accounts per CSM</p></div>
-        <div class="proof"><div class="k">Land and expand</div><div class="big">211% NDR</div><p>A third party estimate, consistent with customers adding use cases after the first deployment.<sup><a href="#s2">2</a></sup></p></div>
-      </div>
-    </div>
-
-    <div class="brain reveal">
-      <div class="card"><h3>Trained on your content</h3><p>Product docs, sales material and call knowledge, with a persona built to the customer's brand standards.</p></div>
-      <div class="card"><h3>Works with the existing stack</h3>
-        <div class="chips"><span class="chip">Salesforce</span><span class="chip">HubSpot</span><span class="chip">Marketo</span><span class="chip">Salesloft</span><span class="chip">Gong</span><span class="chip">Gainsight</span><span class="chip">Slack</span><span class="chip">Open API</span></div></div>
-      <div class="card"><h3>Built for security review</h3><p>Customer data is never used to train models.<sup><a href="#s11">11</a></sup></p>
-        <div class="chips"><span class="chip p">SOC 2 Type II</span><span class="chip p">ISO 27001</span><span class="chip p">ISO 42001</span><span class="chip p">GDPR</span><span class="chip p">CCPA</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 03 ICP -->
-<section id="icp">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>03 Ideal Customer Profile</div>
-      <h2>Where a Superhuman <b>pays back fastest</b></h2>
-      <p>Strong fits share three traits: meaningful buyer volume, a product that needs expert explanation, and not enough experts to go around.</p>
-    </div>
-
-    <div class="icp-grid">
-      <div class="icp-list reveal">
-        <div class="icp-row"><div class="k">Profile</div><p>B2B technology companies with roughly <b>500 to 10,000+ employees</b> and $50M+ in revenue. <span>Mid-market deals close faster. Enterprise deals set the reference logos and the ACV.</span></p></div>
-        <div class="icp-row"><div class="k">Motion</div><p>Significant <b>inbound or product led volume</b> and a technical product. <span>Data and infrastructure, security, fintech, IoT and vertical SaaS all fit.</span></p></div>
-        <div class="icp-row"><div class="k">Budget</div><p>Able to commit <b>six figures annually.</b> <span>The strongest business cases draw from SDR, SE or CSM headcount, or from an expiring Drift or Qualified contract.</span></p></div>
-        <div class="icp-row"><div class="k">Triggers</div><p>Drift retirement, a Qualified renewal, fewer than one SE per three AEs, a new product launch, stalled free to paid conversion, a hiring freeze, a new CRO or CMO, or a board mandate on AI.</p></div>
-        <div class="icp-row"><div class="k">Lower priority</div><p><span>Budgets under $100K, outbound only needs, low traffic sites without a product led funnel, and simple products where a form works fine.</span></p></div>
-      </div>
-
-      <aside class="scorer reveal" aria-labelledby="scorerTitle">
-        <h3 id="scorerTitle">ICP fit scorer</h3>
-        <p class="sub">Check what applies. I would use this with SDRs to tier the territory in the first 30 days.</p>
+      <aside class="scorer" aria-labelledby="scorerTitle">
+        <h3 id="scorerTitle">Account fit scorer</h3>
+        <p class="sub">Check what applies to an account.</p>
         <div id="checks">
           <label class="check"><input type="checkbox" data-w="15"><span>500+ employees, B2B tech</span></label>
           <label class="check"><input type="checkbox" data-w="15"><span>High inbound volume or a product led funnel</span></label>
@@ -726,64 +647,6 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
           <p id="scorePlay">Check a few boxes to see the tier and recommended play.</p>
         </div>
       </aside>
-    </div>
-
-    <div class="committee reveal">
-      <h3>The buying committee</h3>
-      <p>Superhumans touch marketing, sales, product and CS, so every deal is multithreaded from the start.</p>
-      <div class="persona-grid">
-        <div class="persona"><div class="role">Economic buyer</div><h4>CRO</h4><p>Owns the number and needs pipeline and win rate without adding headcount.</p><div class="line">Lead with win rate and SE coverage</div></div>
-        <div class="persona"><div class="role">Economic buyer</div><h4>CMO</h4><p>Owns the website and the brand.</p><div class="line">Lead with site conversion without brand risk</div></div>
-        <div class="persona"><div class="role">Champion</div><h4>VP Demand Gen</h4><p>Measured on pipeline and cost per opportunity.</p><div class="line">Lead with speed to lead</div></div>
-        <div class="persona"><div class="role">Champion</div><h4>VP Sales Engineering</h4><p>Too many demo requests, too few SEs.</p><div class="line">Lead with coverage for every deal</div></div>
-        <div class="persona"><div class="role">Gatekeeper</div><h4>CISO and IT</h4><p>Data handling, hallucination risk and AI governance.</p><div class="line">Lead with ISO 42001 and no training on customer data</div></div>
-        <div class="persona"><div class="role">Approver</div><h4>CFO</h4><p>Payback period and headcount avoided.</p><div class="line">Lead with cost of capacity compared to hiring</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 MACRO -->
-<section id="macro" class="panel">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>04 Market Shifts</div>
-      <h2>Four trends <b>working in 1mind's favor</b></h2>
-      <p>Each one creates urgency across hundreds of accounts at once.</p>
-    </div>
-
-    <div class="macro">
-      <article class="mcard reveal">
-        <span class="tag hot">Time sensitive</span>
-        <h3>Drift is being retired</h3>
-        <p class="sig">Clari and Salesloft are sunsetting Drift and referring customers exclusively to 1mind.<sup><a href="#s5">5</a></sup> Thousands of B2B websites need a replacement, and the budget already exists.</p>
-      </article>
-      <article class="mcard reveal">
-        <span class="tag hot">Competitive window</span>
-        <h3>Qualified now belongs to Salesforce</h3>
-        <p class="sig">Salesforce closed its $1.2B acquisition on April 1, 2026 and is folding Piper into Agentforce.<sup><a href="#s6">6</a></sup> HubSpot and Marketo customers lose a neutral option, and Salesforce customers face bundling and roadmap questions.</p>
-      </article>
-      <article class="mcard reveal">
-        <span class="tag">Buyer behavior</span>
-        <h3>Buyers want self-serve and still want experts</h3>
-        <p class="sig">67% of B2B buyers now prefer a rep free experience, up from 61%.<sup><a href="#s9">9</a></sup> Yet 69% still turn to a rep to validate what AI tells them.<sup><a href="#s10">10</a></sup> A Superhuman delivers both.</p>
-      </article>
-      <article class="mcard reveal">
-        <span class="tag">Budget</span>
-        <h3>Headcount budgets are moving to AI</h3>
-        <p class="sig">Boards want efficient growth, and SDR and SE hiring plans are being rewritten. That lets 1mind be priced against headcount instead of martech, which changes the size of the deal.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 05 MICRO -->
-<section id="micro">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>05 Sales Plays</div>
-      <h2>Four plays <b>I would run first</b></h2>
-      <p>Each play covers the target, the trigger, the questions that qualify it and an opening email.</p>
     </div>
 
     <div class="tabs reveal" role="tablist" aria-label="Sales plays">
@@ -855,7 +718,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 
     <div class="play" id="p4">
       <div class="play-meta">
-        <div class="meta"><div class="k">Target</div><p>Portfolio companies of Battery, Wing, Primary and Operator Collective, and companies tied to 1mind's angels from Databricks, Gong, Box, Monday.com and ZoomInfo.<sup><a href="#s1">1</a></sup></p></div>
+        <div class="meta"><div class="k">Target</div><p>Portfolio companies of Battery, Wing, Primary and Operator Collective, and companies tied to 1mind's angels from Databricks, Gong, Box, Monday.com and ZoomInfo.<sup><a href="#s7">7</a></sup></p></div>
         <div class="meta"><div class="k">Trigger</div><p>Portfolio CRO forums and board pressure for efficient growth.</p></div>
         <div class="meta"><div class="k">Approach</div><ul><li>Map each investor and angel to the logos they can open</li><li>Co-host AI-Led Growth sessions with VC platform teams</li><li>Offer a portfolio pilot with defined success criteria</li><li>I have built VC channels before, with Florida Funders and OMERS at Falkon</li></ul></div>
       </div>
@@ -877,7 +740,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="competition" class="panel">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>06 Competition</div>
+      <div class="sec-num"><span class="slash"></span>03 Competition</div>
       <h2>How 1mind wins <b>against each alternative</b></h2>
       <p>Where each competitor is strong, where 1mind wins, and a question to raise early in discovery.</p>
     </div>
@@ -894,7 +757,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 
       <div>
         <div class="bc active" id="c1">
-          <div class="bc-top"><div><h3>Qualified</h3><p class="how">The incumbent website agent at many Salesforce companies, with strong reviews and deep Salesforce integration. Now being folded into Agentforce.<sup><a href="#s6">6</a></sup></p></div><span class="threat h">High threat</span></div>
+          <div class="bc-top"><div><h3>Qualified</h3><p class="how">The incumbent website agent at many Salesforce companies, with strong reviews and deep Salesforce integration. Now being folded into Agentforce.<sup><a href="#s4">4</a></sup></p></div><span class="threat h">High threat</span></div>
           <div class="bc-cols">
             <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Large installed base and brand recognition</li><li>Native Salesforce workflows</li><li>Bundle pricing inside Agentforce</li></ul></div>
             <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Works with any CRM</li><li>Face, voice and live demo instead of chat</li><li>Covers calls, onboarding and CS, where Piper stops at the meeting</li></ul></div>
@@ -903,7 +766,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         </div>
 
         <div class="bc" id="c2">
-          <div class="bc-top"><div><h3>Intercom Fin</h3><p class="how">Shows up where Intercom already runs support, extending Fin into inbound qualification.<sup><a href="#s12">12</a></sup></p></div><span class="threat m">Medium threat</span></div>
+          <div class="bc-top"><div><h3>Intercom Fin</h3><p class="how">Shows up where Intercom already runs support, extending Fin into inbound qualification.<sup><a href="#s8">8</a></sup></p></div><span class="threat m">Medium threat</span></div>
           <div class="bc-cols">
             <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Already deployed, so expansion is easy</li><li>Capable text agent with flexible pricing</li></ul></div>
             <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Built to sell, not to deflect tickets</li><li>Video presence that builds trust in larger deals</li><li>Joins live sales calls</li></ul></div>
@@ -912,7 +775,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         </div>
 
         <div class="bc" id="c3">
-          <div class="bc-top"><div><h3>Docket</h3><p class="how">Positions itself as an AI sales engineer for text answers, RFP automation and website chat.<sup><a href="#s13">13</a></sup></p></div><span class="threat m">Medium threat</span></div>
+          <div class="bc-top"><div><h3>Docket</h3><p class="how">Positions itself as an AI sales engineer for text answers, RFP automation and website chat.<sup><a href="#s9">9</a></sup></p></div><span class="threat m">Medium threat</span></div>
           <div class="bc-cols">
             <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Internal knowledge and RFP use cases</li><li>Lower entry price</li></ul></div>
             <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Talks to the buyer on camera and on live calls</li><li>Far more enterprise proof</li><li>Covers the full lifecycle</li></ul></div>
@@ -955,7 +818,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="objections">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>07 Objections</div>
+      <div class="sec-num"><span class="slash"></span>04 Objections</div>
       <h2>The pushback <b>I expect in every deal</b></h2>
     </div>
     <div class="objs reveal">
@@ -963,7 +826,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <details class="obj"><summary>Can we trial it first?</summary><div class="obj-body"><div class="k">Response</div><p>A Superhuman is only as good as the content behind it, so a generic trial undersells it. A preview built on their own content is a better test.</p><div class="k">Next step</div><p>Written success criteria and a 90 day value review in the contract.</p></div></details>
       <details class="obj"><summary>An AI avatar is a brand risk</summary><div class="obj-body"><div class="k">Response</div><p>Slow follow up and chatbot loops are the bigger risk. The customer's brand team approves persona, tone and guardrails before launch.</p><div class="k">Proof</div><p>HubSpot, LinkedIn and Nutanix all put Superhumans in front of their buyers.</p></div></details>
       <details class="obj"><summary>What about hallucinations and security?</summary><div class="obj-body"><div class="k">Response</div><p>Answers come from approved content. 1mind holds SOC 2 Type II, ISO 27001 and ISO 42001, and never trains models on customer data.</p><div class="k">Next step</div><p>Send the security package in week one, not week six.</p></div></details>
-      <details class="obj"><summary>Does this replace my team?</summary><div class="obj-body"><div class="k">Response</div><p>It shifts the work. SDRs focus on qualified accounts, SEs on complex deals and AEs on the business case.</p><div class="k">Proof</div><p>1mind's own AEs sell alongside Mindy. One HubSpot deal had more than 20 stakeholders and closed in 11 days at $262K.<sup><a href="#s4">4</a></sup></p></div></details>
+      <details class="obj"><summary>Does this replace my team?</summary><div class="obj-body"><div class="k">Response</div><p>It shifts the work. SDRs focus on qualified accounts, SEs on complex deals and AEs on the business case.</p><div class="k">Proof</div><p>1mind's own AEs sell alongside Mindy. One HubSpot deal had more than 20 stakeholders and closed in 11 days at $262K.<sup><a href="#s10">10</a></sup></p></div></details>
     </div>
   </div>
 </section>
@@ -972,9 +835,9 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="value" class="panel">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>08 The Value Case</div>
+      <div class="sec-num"><span class="slash"></span>05 The Value Case</div>
       <h2>What it's worth <b>to the customer</b></h2>
-      <p>A model I would build with a prospect's finance team. The lift defaults to 2x, the low end of what customers report.<sup><a href="#s3">3</a></sup></p>
+      <p>A model I would build with a prospect's finance team. The lift defaults to 2x, the low end of what customers report.<sup><a href="#s11">11</a></sup></p>
     </div>
 
     <div class="roi reveal">
@@ -984,7 +847,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
         <div class="field"><label for="r3">Average contract value <output id="o3"></output></label><input type="range" id="r3" min="10000" max="250000" step="5000" value="50000"></div>
         <div class="field"><label for="r4">Win rate <output id="o4"></output></label><input type="range" id="r4" min="5" max="50" step="1" value="20"></div>
         <div class="field"><label for="r5">Conversion lift <output id="o5"></output></label><input type="range" id="r5" min="1.2" max="5" step="0.1" value="2"></div>
-        <div class="field"><label for="r6">Annual 1mind investment <output id="o6"></output></label><input type="range" id="r6" min="100000" max="400000" step="10000" value="150000"><small>Public estimates range from $100K to $400K per year<sup><a href="#s14">14</a></sup></small></div>
+        <div class="field"><label for="r6">Annual 1mind investment <output id="o6"></output></label><input type="range" id="r6" min="100000" max="400000" step="10000" value="150000"><small>Public estimates range from $100K to $400K per year<sup><a href="#s12">12</a></sup></small></div>
       </div>
 
       <div class="roi-out" aria-live="polite">
@@ -1010,7 +873,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="deal">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>09 Deal Plan</div>
+      <div class="sec-num"><span class="slash"></span>06 Deal Plan</div>
       <h2>Running an <b>enterprise deal</b></h2>
       <p>Enterprise AI deals stall on security, brand approval and vague success criteria. This plan handles all three early.</p>
     </div>
@@ -1038,7 +901,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 
         <div class="dogfood">
           <div><h3>Put Mindy in every deal</h3><p>Large buying committees slow deals down. Giving every stakeholder direct access to Mindy keeps questions from queuing behind the AE.</p></div>
-          <div class="big">11 days<small>HubSpot deal, $262K, 20+ stakeholders<sup><a href="#s4">4</a></sup></small></div>
+          <div class="big">11 days<small>HubSpot deal, $262K, 20+ stakeholders<sup><a href="#s10">10</a></sup></small></div>
         </div>
       </div>
     </div>
@@ -1050,7 +913,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   <div class="wrap">
     <div class="eric-hero">
       <div class="sec-head reveal" style="margin-bottom:0">
-        <div class="sec-num"><span class="slash"></span>10 About Me</div>
+        <div class="sec-num"><span class="slash"></span>07 About Me</div>
         <h2>Why I'm a fit <b>for this role</b></h2>
         <p>I have spent most of my career selling revenue technology to CROs, CMOs and RevOps leaders, including revenue intelligence at Falkon and pipeline generation at Commsor. Today I sell AI at Netradyne at roughly $300K ACV. I have also helped two startups move from founder led sales to a repeatable enterprise motion.</p>
       </div>
@@ -1088,7 +951,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="plan">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>11 First 90 Days</div>
+      <div class="sec-num"><span class="slash"></span>08 First 90 Days</div>
       <h2>Learn, test, <b>then scale</b></h2>
     </div>
     <div class="plan">
@@ -1146,21 +1009,18 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   <div class="wrap">
     <h4 class="src-title">Sources</h4>
     <ol class="sources">
-      <li id="s1"><a href="https://www.prnewswire.com/news-releases/1mind-publicly-launches-with-40-million-to-usher-in-new-era-of-ai-led-sales-with-highly-skilled-persuasive-and-emotionally-intelligent-superhumans-302609156.html" target="_blank" rel="noopener">PR Newswire, 1mind launch and funding</a></li>
-      <li id="s2"><a href="https://getlatka.com/companies/1mind" target="_blank" rel="noopener">Latka, 1mind company profile</a></li>
-      <li id="s3"><a href="https://theaiagentindex.com/agents/1mind" target="_blank" rel="noopener">AI Agent Index, 1mind review</a></li>
-      <li id="s4"><a href="https://www.carilu.com/p/ai-led-sales-is-here-1mind-superhuman" target="_blank" rel="noopener">Carilu, AI-Led Sales Is Here</a></li>
-      <li id="s5"><a href="https://www.businesswire.com/news/home/20260306534285/en/Clari-Salesloft-and-1mind-Partner-to-Advance-AI-Driven-Revenue-Orchestration" target="_blank" rel="noopener">Business Wire, Clari and Salesloft partner with 1mind</a></li>
-      <li id="s6"><a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-qualified/" target="_blank" rel="noopener">Salesforce, agreement to acquire Qualified</a></li>
-      <li id="s7"><a href="https://www.prnewswire.com/news-releases/1mind-launches-ride-along-with-the-industrys-first-ai-that-joins-live-sales-calls-as-a-visible-named-sales-engineer-speaking-directly-to-buyers-302776685.html" target="_blank" rel="noopener">PR Newswire, 1mind launches Ride-Along</a></li>
-      <li id="s8"><a href="https://www.1mind.com/case-study/hubspot" target="_blank" rel="noopener">1mind, HubSpot case study</a></li>
-      <li id="s9"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience" target="_blank" rel="noopener">Gartner, 67% of B2B buyers prefer a rep free experience</a></li>
-      <li id="s10"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-survey-finds-sixty-nine-percent-of-b-two-b-buyers-turn-to-sales-reps-to-validate-ai-generated-insights" target="_blank" rel="noopener">Gartner, 69% of buyers validate AI insights with reps</a></li>
-      <li id="s11"><a href="https://www.aicentralresources.com/tool/1mind" target="_blank" rel="noopener">AI Central, 1mind security and integrations</a></li>
-      <li id="s12"><a href="https://fin.ai/learn/fin-for-sales-vs-1mind-ai-inbound-sales-agents-compared-2026" target="_blank" rel="noopener">Fin, Fin for Sales compared with 1mind</a></li>
-      <li id="s13"><a href="https://www.docket.io/blog/docket-vs-1mind" target="_blank" rel="noopener">Docket, Docket compared with 1mind</a></li>
-      <li id="s14"><a href="https://www.knock-ai.com/blog/1mind-pricing" target="_blank" rel="noopener">Knock AI, 1mind pricing analysis</a></li>
-      <li id="s15"><a href="https://rywalker.com/research/1mind" target="_blank" rel="noopener">Ry Walker Research, 1mind</a></li>
+      <li id="s1"><a href="https://www.1mind.com/case-study/hubspot" target="_blank" rel="noopener">1mind, HubSpot case study</a></li>
+      <li id="s2"><a href="https://www.prnewswire.com/news-releases/1mind-launches-ride-along-with-the-industrys-first-ai-that-joins-live-sales-calls-as-a-visible-named-sales-engineer-speaking-directly-to-buyers-302776685.html" target="_blank" rel="noopener">PR Newswire, 1mind launches Ride-Along</a></li>
+      <li id="s3"><a href="https://www.businesswire.com/news/home/20260306534285/en/Clari-Salesloft-and-1mind-Partner-to-Advance-AI-Driven-Revenue-Orchestration" target="_blank" rel="noopener">Business Wire, Clari and Salesloft partner with 1mind</a></li>
+      <li id="s4"><a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-qualified/" target="_blank" rel="noopener">Salesforce, agreement to acquire Qualified</a></li>
+      <li id="s5"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience" target="_blank" rel="noopener">Gartner, 67% of B2B buyers prefer a rep free experience</a></li>
+      <li id="s6"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-survey-finds-sixty-nine-percent-of-b-two-b-buyers-turn-to-sales-reps-to-validate-ai-generated-insights" target="_blank" rel="noopener">Gartner, 69% of buyers validate AI insights with reps</a></li>
+      <li id="s7"><a href="https://www.prnewswire.com/news-releases/1mind-publicly-launches-with-40-million-to-usher-in-new-era-of-ai-led-sales-with-highly-skilled-persuasive-and-emotionally-intelligent-superhumans-302609156.html" target="_blank" rel="noopener">PR Newswire, 1mind launch and funding</a></li>
+      <li id="s8"><a href="https://fin.ai/learn/fin-for-sales-vs-1mind-ai-inbound-sales-agents-compared-2026" target="_blank" rel="noopener">Fin, Fin for Sales compared with 1mind</a></li>
+      <li id="s9"><a href="https://www.docket.io/blog/docket-vs-1mind" target="_blank" rel="noopener">Docket, Docket compared with 1mind</a></li>
+      <li id="s10"><a href="https://www.carilu.com/p/ai-led-sales-is-here-1mind-superhuman" target="_blank" rel="noopener">Carilu, AI-Led Sales Is Here</a></li>
+      <li id="s11"><a href="https://theaiagentindex.com/agents/1mind" target="_blank" rel="noopener">AI Agent Index, 1mind review</a></li>
+      <li id="s12"><a href="https://www.knock-ai.com/blog/1mind-pricing" target="_blank" rel="noopener">Knock AI, 1mind pricing analysis</a></li>
     </ol>
     <p class="disclaimer">Independent research prepared by Eric Iannello for the 1mind Enterprise Account Executive interview. Not affiliated with or endorsed by 1mind. Figures come from public and third party sources as of September 2026, and target accounts and emails are illustrative.</p>
   </div>

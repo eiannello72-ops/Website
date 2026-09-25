@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every1 Wins · 1mind Enterprise Playbook</title>
+<meta name="description" content="An enterprise go-to-market playbook for 1mind's Superhumans: product, ICP, macro and micro sales plays, competition, value, and a 30/60/90 plan. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101010'/%3E%3Cpath d='M9 23 L15 9 H22 L16 23 Z' fill='%23875FE6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#101010;
+  --ink-2:#181818;
+  --ink-3:#222222;
+  --line:#2c2c2c;
+  --purple:#875FE6;
+  --purple-hi:#A283F0;
+  --purple-lo:#6B45CF;
+  --purple-tint:#F1ECFD;
+  --purple-glow:rgba(135,95,230,.35);
+  --white:#FFFFFF;
+  --paper:#FFFFFF;
+  --paper-2:#F6F5F9;
+  --text-dark:#101010;
+  --muted-dark:#5C5A66;
+  --text-light:#F4F3F7;
+  --muted-light:#A8A6B3;
+  --green:#3DDC97;
+  --amber:#F5B84B;
+  --red:#F2667A;
+  --radius-xl:32px;
+  --radius-lg:22px;
+  --radius-md:14px;
+  --maxw:1200px;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--font);background:var(--ink);color:var(--text-light);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* ---------- Brand bits ---------- */
+.slash{display:inline-block;width:.62em;height:.78em;background:var(--purple);transform:skewX(-20deg);border-radius:2px;margin-right:.18em;vertical-align:-.06em}
+.wordmark{display:flex;align-items:center;gap:2px;font-weight:800;font-size:22px;letter-spacing:-.04em;color:var(--white);text-decoration:none}
+.wordmark .slash{width:14px;height:19px;margin-right:3px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-hi);border:1px solid rgba(135,95,230,.45);background:rgba(135,95,230,.08);padding:6px 12px;border-radius:999px}
+.pill.dark{color:var(--purple-lo);background:var(--purple-tint);border-color:#DCCFFA}
+.hl{color:var(--purple)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;font-weight:700;font-size:16px;padding:16px 30px;border-radius:10px;text-decoration:none;cursor:pointer;border:1.5px solid var(--purple);transition:transform .15s ease,background .2s ease,box-shadow .2s ease}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-hi);box-shadow:0 10px 30px var(--purple-glow);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--purple-hi)}
+.btn-ghost:hover{background:rgba(135,95,230,.1)}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(16,16,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.nav-tag{font-size:12px;font-weight:600;color:var(--muted-light);border-left:1px solid var(--line);padding-left:12px;margin-left:10px;white-space:nowrap}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{display:block;white-space:nowrap;font-size:14px;font-weight:500;color:var(--muted-light);text-decoration:none;padding:8px 11px;border-radius:8px;transition:color .15s,background .15s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;background:var(--ink-3)}
+.nav-cta{font-size:14px;padding:10px 18px;white-space:nowrap}
+@media (max-width:1360px){.nav-tag{display:none}}
+.progress{position:absolute;bottom:-1px;left:0;height:2px;background:var(--purple);width:0}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;cursor:pointer}
+@media (max-width:1100px){
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--ink);border-bottom:1px solid var(--line);padding:10px 16px 18px}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+}
+@media (max-width:480px){.nav-tag{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:140px 0 60px;overflow:hidden}
+.hero-lines{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.hero-top{text-align:center;position:relative}
+.hero h1{font-size:clamp(38px,6.2vw,76px);font-weight:500;letter-spacing:-.045em;line-height:1.04;margin:22px auto 22px;max-width:1000px}
+.hero h1 b{font-weight:800;color:var(--purple)}
+.hero-sub{font-size:clamp(17px,1.8vw,20px);color:var(--muted-light);max-width:760px;margin:0 auto 34px;font-weight:400}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-card{margin-top:56px;background:var(--paper);color:var(--text-dark);border-radius:var(--radius-xl);padding:14px;display:grid;grid-template-columns:1fr 1.25fr;gap:14px;position:relative;box-shadow:0 40px 120px rgba(135,95,230,.18)}
+.hero-card-copy{padding:34px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.hero-card-copy h2{font-size:clamp(30px,3.6vw,44px);font-weight:400;letter-spacing:-.045em;line-height:1.05}
+.hero-card-copy p{font-size:16px;color:var(--muted-dark)}
+.hero-card-copy .sig{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600;color:var(--text-dark)}
+.hero-card-copy .sig span{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;padding:10px 18px;border-radius:999px}
+@media (max-width:900px){.hero-card{grid-template-columns:1fr}.hero-card-copy{padding:22px 18px}}
+
+/* Superhuman call mock */
+.call{background:#141418;border-radius:22px;overflow:hidden;position:relative;min-height:440px;display:flex;flex-direction:column;color:#fff}
+.call-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;font-size:12px;color:#bbb;border-bottom:1px solid #26262c}
+.live{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#fff}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.call-stage{flex:1;display:grid;grid-template-columns:1.3fr 1fr;gap:10px;padding:12px}
+.tile{border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 10%,#3a2c66 0%,#1c1830 55%,#15141b 100%);display:flex;align-items:flex-end;min-height:200px}
+.tile.buyer{background:radial-gradient(120% 90% at 50% 10%,#2b2f38 0%,#1b1d22 60%,#15161a 100%)}
+.tile svg.avatar{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:78%;height:auto}
+.tile .name{position:relative;z-index:2;margin:10px;font-size:12px;font-weight:600;background:rgba(0,0,0,.55);padding:5px 10px;border-radius:8px;display:flex;gap:6px;align-items:center}
+.tile .name em{font-style:normal;background:var(--purple);font-size:10px;padding:2px 6px;border-radius:5px;letter-spacing:.04em}
+.tile.speaking{box-shadow:0 0 0 2px var(--purple),0 0 30px var(--purple-glow)}
+.tiles-right{display:grid;grid-template-rows:1fr 1fr;gap:10px}
+.captions{padding:14px 18px 18px;border-top:1px solid #26262c;min-height:128px}
+.cap-line{font-size:14px;line-height:1.5;opacity:0;transform:translateY(6px);transition:all .35s ease;margin-bottom:6px}
+.cap-line.show{opacity:1;transform:none}
+.cap-line b{color:var(--purple-hi);font-weight:700}
+.cap-line.buyer b{color:#9fb4d9}
+.crm-toast{position:absolute;right:16px;top:58px;background:#fff;color:var(--text-dark);border-radius:12px;padding:10px 14px;font-size:12px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.35);display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(-8px);transition:all .4s ease}
+.crm-toast.show{opacity:1;transform:none}
+.crm-toast i{width:18px;height:18px;border-radius:50%;background:var(--green);display:inline-grid;place-items:center;color:#fff;font-style:normal;font-size:11px}
+@media (max-width:560px){.call-stage{grid-template-columns:1fr}.tiles-right{grid-template-columns:1fr 1fr;grid-template-rows:none}.tile{min-height:150px}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-top:40px}
+.stat{background:var(--ink);padding:26px 24px}
+.stat .num{font-size:clamp(30px,3.4vw,42px);font-weight:700;letter-spacing:-.04em;color:#fff}
+.stat .num span{color:var(--purple)}
+.stat .lbl{font-size:14px;color:var(--muted-light);margin-top:4px}
+@media (max-width:800px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ---------- Sections ---------- */
+section{padding:110px 0;position:relative}
+@media (max-width:640px){section{padding:76px 0}}
+.sec-head{max-width:820px;margin-bottom:54px}
+.sec-num{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--purple-hi);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-num .slash{width:10px;height:14px}
+.sec-head h2{font-size:clamp(32px,4.4vw,54px);font-weight:500;letter-spacing:-.045em;line-height:1.06;margin-bottom:18px}
+.sec-head h2 b{font-weight:800;color:var(--purple)}
+.sec-head p{font-size:18px;color:var(--muted-light)}
+.light{background:var(--paper);color:var(--text-dark)}
+.light .sec-head p{color:var(--muted-dark)}
+.light .sec-num{color:var(--purple-lo)}
+.panel{background:var(--paper);color:var(--text-dark);border-radius:var(--radius-xl);margin:0 12px;padding:100px 0}
+@media (max-width:640px){.panel{margin:0 6px;padding:70px 0;border-radius:24px}}
+.panel .sec-head p{color:var(--muted-dark)}
+.panel .sec-num{color:var(--purple-lo)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(135,95,230,.55)}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.card p{color:var(--muted-light);font-size:15.5px}
+.light .card,.panel .card{background:var(--paper-2);border-color:#E7E4EF}
+.light .card p,.panel .card p{color:var(--muted-dark)}
+.panel .card:hover{border-color:var(--purple)}
+
+/* ---------- Timeline ---------- */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:10px}
+.timeline:before{content:"";position:absolute;top:13px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),rgba(135,95,230,.15))}
+.tl{padding-right:22px;position:relative}
+.tl .dot{width:28px;height:28px;border-radius:50%;background:var(--ink);border:2px solid var(--purple);display:grid;place-items:center;margin-bottom:18px}
+.tl .dot:after{content:"";width:10px;height:10px;border-radius:50%;background:var(--purple)}
+.tl .when{font-size:13px;font-weight:700;color:var(--purple-hi);letter-spacing:.04em;text-transform:uppercase}
+.tl h4{font-size:17px;font-weight:700;margin:6px 0;letter-spacing:-.01em}
+.tl p{font-size:14.5px;color:var(--muted-light)}
+@media (max-width:900px){.timeline{grid-template-columns:1fr;gap:26px}.timeline:before{top:0;bottom:0;left:13px;right:auto;width:2px;height:auto}.tl{padding-left:46px;padding-right:0}.tl .dot{position:absolute;left:0;top:0}}
+.founder{margin-top:60px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,rgba(135,95,230,.16),rgba(135,95,230,.03));border:1px solid rgba(135,95,230,.35);border-radius:var(--radius-lg);padding:30px}
+.founder .q{font-size:clamp(20px,2.3vw,26px);font-weight:500;letter-spacing:-.025em;line-height:1.3}
+.founder .who{margin-top:10px;color:var(--muted-light);font-size:14px}
+.founder .mark{font-size:84px;line-height:.6;color:var(--purple);font-weight:800}
+@media (max-width:600px){.founder{grid-template-columns:1fr}}
+
+/* ---------- Product ---------- */
+.journey{display:flex;align-items:stretch;gap:0;background:var(--paper-2);border:1px solid #E7E4EF;border-radius:var(--radius-lg);padding:8px;margin-bottom:28px;overflow-x:auto}
+.journey button{flex:1;min-width:150px;font-family:inherit;background:transparent;border:0;border-radius:14px;padding:16px 14px;text-align:left;cursor:pointer;color:var(--muted-dark);transition:background .2s,color .2s;position:relative}
+.journey button .step{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-lo)}
+.journey button .t{display:block;font-size:17px;font-weight:700;color:var(--text-dark);margin-top:4px;letter-spacing:-.01em}
+.journey button .s{display:block;font-size:13px;margin-top:2px}
+.journey button.active{background:var(--ink);color:var(--muted-light)}
+.journey button.active .t{color:#fff}
+.journey button.active .step{color:var(--purple-hi)}
+.journey button:not(:last-child):after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:#C9C3D9;font-weight:700;z-index:1}
+.journey button.active:after{color:transparent}
+.uc-panel{display:none;grid-template-columns:1.2fr 1fr;gap:20px}
+.uc-panel.active{display:grid;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.uc-main{background:var(--ink);color:var(--text-light);border-radius:var(--radius-lg);padding:34px}
+.uc-main h3{font-size:30px;font-weight:600;letter-spacing:-.035em;line-height:1.1;margin-bottom:14px}
+.uc-main p{color:var(--muted-light);margin-bottom:18px}
+.uc-main ul{list-style:none;display:grid;gap:10px}
+.uc-main li{display:flex;gap:10px;font-size:15.5px}
+.uc-main li:before{content:"";flex:0 0 8px;height:12px;background:var(--purple);transform:skewX(-20deg);margin-top:6px;border-radius:1px}
+.uc-side{display:grid;gap:14px;align-content:start}
+.mini{background:var(--paper-2);border:1px solid #E7E4EF;border-radius:var(--radius-md);padding:20px}
+.mini .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-lo);margin-bottom:6px}
+.mini p{font-size:15px;color:var(--text-dark)}
+.proof{background:var(--purple);color:#fff;border-radius:var(--radius-md);padding:20px}
+.proof .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.proof .big{font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1.1}
+.proof p{font-size:14.5px;opacity:.92;margin-top:4px}
+@media (max-width:900px){.uc-panel.active{grid-template-columns:1fr}}
+
+.brain{margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+@media (max-width:900px){.brain{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid #E2DDEE;color:var(--text-dark)}
+.chip.p{background:var(--purple-tint);border-color:#DCCFFA;color:var(--purple-lo)}
+.card .chip{background:var(--ink-3);border-color:var(--line);color:var(--text-light)}
+.panel .card .chip{background:#fff;border-color:#E2DDEE;color:var(--text-dark)}
+
+/* ---------- ICP ---------- */
+.icp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+@media (max-width:950px){.icp-grid{grid-template-columns:1fr}}
+.icp-list{display:grid;gap:14px}
+.icp-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:20px 22px;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-md)}
+.icp-row .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-hi);padding-top:3px}
+.icp-row p{font-size:15.5px;color:var(--text-light)}
+.icp-row p span{color:var(--muted-light)}
+@media (max-width:560px){.icp-row{grid-template-columns:1fr;gap:6px}}
+.scorer{background:var(--paper);color:var(--text-dark);border-radius:var(--radius-lg);padding:28px;position:sticky;top:90px;align-self:start}
+.scorer h3{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.scorer .sub{font-size:14px;color:var(--muted-dark);margin:4px 0 18px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:14.5px;transition:background .15s}
+.check:hover{background:var(--paper-2)}
+.check input{appearance:none;-webkit-appearance:none;flex:0 0 20px;height:20px;border:2px solid #CFC8E0;border-radius:6px;margin-top:1px;cursor:pointer;display:grid;place-items:center;transition:all .15s}
+.check input:checked{background:var(--purple);border-color:var(--purple)}
+.check input:checked:after{content:"✓";color:#fff;font-size:12px;font-weight:800}
+.check small{display:block;color:var(--muted-dark);font-size:12.5px}
+.score-out{margin-top:18px;background:var(--ink);color:#fff;border-radius:16px;padding:20px}
+.score-bar{height:10px;background:#2a2a2a;border-radius:99px;overflow:hidden;margin:10px 0 12px}
+.score-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple-lo),var(--purple-hi));border-radius:99px;transition:width .4s ease}
+.score-top{display:flex;justify-content:space-between;align-items:baseline}
+.score-top b{font-size:34px;letter-spacing:-.04em}
+.tier{font-size:13px;font-weight:700;padding:5px 10px;border-radius:8px;background:var(--ink-3)}
+.score-out p{font-size:14px;color:var(--muted-light)}
+
+.committee{margin-top:60px}
+.committee h3{font-size:26px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px}
+.committee > p{color:var(--muted-light);margin-bottom:22px}
+.persona-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1000px){.persona-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.persona-grid{grid-template-columns:1fr}}
+.persona{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-md);padding:20px;display:flex;flex-direction:column;gap:8px}
+.persona .role{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-hi)}
+.persona h4{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.persona p{font-size:14px;color:var(--muted-light)}
+.persona .line{margin-top:auto;font-size:14px;color:#fff;border-left:3px solid var(--purple);padding-left:10px;font-style:italic}
+
+/* ---------- Macro plays ---------- */
+.macro{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:1000px){.macro{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.macro{grid-template-columns:1fr}}
+.mcard{background:var(--paper-2);border:1px solid #E7E4EF;border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.mcard:hover{transform:translateY(-3px);border-color:var(--purple);box-shadow:0 18px 40px rgba(135,95,230,.12)}
+.mcard .tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:7px}
+.mcard .tag.hot{background:var(--purple)}
+.mcard h3{font-size:22px;font-weight:700;letter-spacing:-.025em;line-height:1.2}
+.mcard .sig{font-size:14.5px;color:var(--muted-dark)}
+.mcard .sig b{color:var(--text-dark)}
+.mcard .run{margin-top:auto;background:#fff;border:1px solid #E7E4EF;border-radius:12px;padding:14px;font-size:14px}
+.mcard .run .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-lo);margin-bottom:4px}
+
+/* ---------- Micro plays ---------- */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{font-family:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--muted-light);cursor:pointer;transition:all .15s}
+.tab:hover{color:#fff;border-color:#444}
+.tab.active{background:var(--purple);border-color:var(--purple);color:#fff}
+.play{display:none;grid-template-columns:1fr 1fr;gap:20px}
+.play.active{display:grid;animation:fade .45s ease}
+@media (max-width:900px){.play.active{grid-template-columns:1fr}}
+.play-meta{display:grid;gap:12px;align-content:start}
+.meta{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px}
+.meta .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-hi);margin-bottom:6px}
+.meta p,.meta li{font-size:15px;color:var(--text-light)}
+.meta ul{padding-left:18px;display:grid;gap:6px}
+.meta li::marker{color:var(--purple)}
+.email{background:var(--paper);color:var(--text-dark);border-radius:var(--radius-lg);overflow:hidden;align-self:start}
+.email-head{padding:16px 22px;border-bottom:1px solid #ECE9F3;font-size:13.5px;color:var(--muted-dark);display:grid;gap:4px}
+.email-head b{color:var(--text-dark);font-weight:600}
+.email-body{padding:22px;font-size:15px;display:grid;gap:12px}
+.email-foot{padding:14px 22px;background:var(--paper-2);font-size:13px;color:var(--muted-dark);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.email-foot .chip{font-size:12px}
+
+/* ---------- Competition ---------- */
+.comp-wrap{display:grid;grid-template-columns:280px 1fr;gap:22px}
+@media (max-width:900px){.comp-wrap{grid-template-columns:1fr}}
+.comp-list{display:grid;gap:8px;align-content:start}
+@media (max-width:900px){.comp-list{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+.comp-btn{font-family:inherit;text-align:left;background:var(--paper-2);border:1px solid #E7E4EF;border-radius:12px;padding:14px 16px;cursor:pointer;transition:all .15s}
+.comp-btn b{display:block;font-size:15px;color:var(--text-dark);letter-spacing:-.01em}
+.comp-btn span{font-size:12.5px;color:var(--muted-dark)}
+.comp-btn:hover{border-color:var(--purple)}
+.comp-btn.active{background:var(--ink);border-color:var(--ink)}
+.comp-btn.active b{color:#fff}
+.comp-btn.active span{color:var(--purple-hi)}
+.bc{display:none;background:var(--ink);color:var(--text-light);border-radius:var(--radius-lg);padding:32px}
+.bc.active{display:block;animation:fade .45s ease}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.bc h3{font-size:28px;font-weight:700;letter-spacing:-.035em}
+.bc .how{color:var(--muted-light);font-size:15px;max-width:640px;margin-top:6px}
+.threat{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:8px;white-space:nowrap}
+.threat.h{background:rgba(242,102,122,.15);color:#FF93A3}
+.threat.m{background:rgba(245,184,75,.15);color:#FFCB70}
+.threat.l{background:rgba(61,220,151,.13);color:#6EE7B0}
+.bc-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.bc-cols{grid-template-columns:1fr}}
+.bc-box{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:18px}
+.bc-box .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.bc-box.them .k{color:#FFCB70}
+.bc-box.us .k{color:var(--purple-hi)}
+.bc-box ul{padding-left:18px;display:grid;gap:6px;font-size:14.5px}
+.bc-box li::marker{color:var(--purple)}
+.landmine{margin-top:14px;background:linear-gradient(135deg,rgba(135,95,230,.25),rgba(135,95,230,.06));border:1px solid rgba(135,95,230,.45);border-radius:14px;padding:18px}
+.landmine .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-hi);margin-bottom:6px}
+.landmine p{font-size:16px;font-style:italic}
+
+.matrix-wrap{margin-top:50px;overflow-x:auto;border-radius:var(--radius-lg);border:1px solid #E7E4EF}
+table.matrix{width:100%;border-collapse:collapse;min-width:820px;background:#fff;font-size:14px}
+.matrix th,.matrix td{padding:14px 12px;text-align:center;border-bottom:1px solid #EFECF5}
+.matrix th{font-size:12.5px;font-weight:700;color:var(--muted-dark);background:var(--paper-2);letter-spacing:.02em}
+.matrix th.us{background:var(--purple);color:#fff}
+.matrix td:first-child,.matrix th:first-child{text-align:left;font-weight:600;color:var(--text-dark)}
+.matrix td.us{background:var(--purple-tint)}
+.matrix tr:last-child td{border-bottom:0}
+.dot-f,.dot-h,.dot-e{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--purple)}
+.dot-f{background:var(--purple)}
+.dot-h{background:linear-gradient(90deg,var(--purple) 50%,transparent 50%)}
+.dot-e{border-color:#CFC8E0}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted-dark);margin-top:12px;align-items:center}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+@media (max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+.pillar{padding:24px;border-radius:var(--radius-md);background:var(--ink);color:#fff}
+.pillar .n{font-size:40px;font-weight:800;letter-spacing:-.05em;color:var(--purple);line-height:1}
+.pillar h4{font-size:18px;font-weight:700;margin:10px 0 6px;letter-spacing:-.01em}
+.pillar p{font-size:14.5px;color:var(--muted-light)}
+
+/* Objections */
+.objs{display:grid;gap:10px}
+details.obj{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+details.obj[open]{border-color:rgba(135,95,230,.55)}
+details.obj summary{list-style:none;cursor:pointer;padding:20px 22px;font-size:17px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center;letter-spacing:-.01em}
+details.obj summary::-webkit-details-marker{display:none}
+details.obj summary:after{content:"+";font-size:24px;font-weight:400;color:var(--purple-hi);transition:transform .2s}
+details.obj[open] summary:after{transform:rotate(45deg)}
+.obj-body{padding:0 22px 22px;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:15px}
+.obj-body .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-hi);padding-top:3px}
+.obj-body p{color:var(--text-light)}
+@media (max-width:600px){.obj-body{grid-template-columns:1fr;gap:4px}.obj-body .k{padding-top:10px}}
+
+/* ---------- ROI ---------- */
+.roi{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:900px){.roi{grid-template-columns:1fr}}
+.roi-in{background:var(--paper-2);border:1px solid #E7E4EF;border-radius:var(--radius-lg);padding:28px;display:grid;gap:20px}
+.field label{display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;margin-bottom:8px;gap:10px}
+.field label output{color:var(--purple-lo);font-weight:800;white-space:nowrap}
+.field small{display:block;font-size:12.5px;color:var(--muted-dark);margin-top:4px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:#E2DDEE;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--purple);border:4px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--purple);border:4px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+.roi-out{background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px}
+.roi-big{font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1;color:#fff}
+.roi-big span{color:var(--purple)}
+.roi-rows{display:grid;gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin-top:6px}
+.roi-row{display:flex;justify-content:space-between;background:var(--ink-2);padding:14px 16px;font-size:15px;gap:12px}
+.roi-row b{font-weight:700}
+.roi-row.hi b{color:var(--purple-hi)}
+.roi-note{font-size:12.5px;color:var(--muted-light)}
+.bars{display:grid;gap:10px;margin-top:4px}
+.bar-row{font-size:13px;color:var(--muted-light)}
+.bar{height:26px;border-radius:8px;background:#2a2a2a;margin-top:4px;overflow:hidden}
+.bar i{display:flex;align-items:center;justify-content:flex-end;height:100%;border-radius:8px;color:#fff;font-style:normal;font-size:12px;font-weight:700;padding-right:8px;transition:width .5s ease;white-space:nowrap}
+.bar .b1{background:#4a4658}
+.bar .b2{background:var(--purple)}
+
+/* ---------- Deal plan ---------- */
+.map{display:grid;gap:0;position:relative}
+.map-step{display:grid;grid-template-columns:120px 32px 1fr;gap:18px;padding-bottom:26px;position:relative}
+.map-step .wk{font-size:13px;font-weight:700;color:var(--purple-hi);text-align:right;padding-top:4px;letter-spacing:.03em}
+.map-step .node{width:32px;height:32px;border-radius:50%;background:var(--ink-2);border:2px solid var(--purple);display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;position:relative;z-index:1}
+.map-step:not(:last-child) .node:after{content:"";position:absolute;top:32px;left:50%;width:2px;height:calc(100% + 60px);background:var(--line);transform:translateX(-50%);z-index:-1}
+.map-step h4{font-size:18px;font-weight:700;letter-spacing:-.015em}
+.map-step p{font-size:15px;color:var(--muted-light);margin-top:2px}
+.map-step .who{display:inline-block;margin-top:8px;font-size:12px;font-weight:600;color:var(--purple-hi);background:rgba(135,95,230,.12);padding:3px 9px;border-radius:6px}
+@media (max-width:600px){.map-step{grid-template-columns:32px 1fr}.map-step .wk{grid-column:2;text-align:left;order:-1;padding:0}.map-step .node{grid-row:1/span 2}}
+.medd{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+@media (max-width:900px){.medd{grid-template-columns:1fr 1fr}}
+@media (max-width:500px){.medd{grid-template-columns:1fr}}
+.m{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:18px}
+.m .l{font-size:30px;font-weight:800;color:var(--purple);letter-spacing:-.04em;line-height:1}
+.m h5{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:6px 0;color:#fff}
+.m p{font-size:14px;color:var(--muted-light)}
+.dogfood{margin-top:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;background:var(--purple);border-radius:var(--radius-lg);padding:30px 32px;color:#fff}
+.dogfood h3{font-size:24px;font-weight:700;letter-spacing:-.03em;line-height:1.2}
+.dogfood p{opacity:.92;margin-top:6px}
+.dogfood .big{font-size:48px;font-weight:800;letter-spacing:-.05em;line-height:1;text-align:right}
+.dogfood .big small{display:block;font-size:13px;font-weight:600;letter-spacing:0;opacity:.85}
+@media (max-width:700px){.dogfood{grid-template-columns:1fr}.dogfood .big{text-align:left}}
+
+/* ---------- Why Eric ---------- */
+.eric-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:50px}
+@media (max-width:900px){.eric-hero{grid-template-columns:1fr}}
+.proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.proofs{grid-template-columns:1fr 1fr}}
+@media (max-width:500px){.proofs{grid-template-columns:1fr}}
+.pf{background:var(--paper-2);border:1px solid #E7E4EF;border-radius:var(--radius-md);padding:22px}
+.pf .v{font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--text-dark)}
+.pf .v span{color:var(--purple)}
+.pf h4{font-size:15px;font-weight:700;margin:10px 0 4px}
+.pf p{font-size:13.5px;color:var(--muted-dark)}
+.pf.dark{background:var(--ink);border-color:var(--ink)}
+.pf.dark .v,.pf.dark h4{color:#fff}
+.pf.dark p{color:var(--muted-light)}
+.fit{margin-top:56px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid #E7E4EF}
+.fit-row{display:grid;grid-template-columns:1fr 32px 1.4fr;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid #EFECF5;background:#fff}
+.fit-row:last-child{border-bottom:0}
+.fit-row.head{background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.fit-row .req{font-weight:600;font-size:15px}
+.fit-row .arrow{width:26px;height:26px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.fit-row .ev{font-size:14.5px;color:var(--muted-dark)}
+.fit-row .ev b{color:var(--text-dark)}
+@media (max-width:700px){.fit-row{grid-template-columns:1fr}.fit-row .arrow{display:none}.fit-row.head{display:none}}
+.why-block{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:800px){.why-block{grid-template-columns:1fr}}
+.why{border-radius:var(--radius-lg);padding:30px;background:var(--ink);color:#fff}
+.why h3{font-size:24px;font-weight:700;letter-spacing:-.03em;margin-bottom:10px}
+.why p{color:var(--muted-light);font-size:15.5px}
+.why p + p{margin-top:10px}
+.why.p{background:var(--purple)}
+.why.p p{color:rgba(255,255,255,.92)}
+
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.plan{grid-template-columns:1fr}}
+.phase{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.phase:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--purple);opacity:.35}
+.phase:nth-child(2):before{opacity:.65}
+.phase:nth-child(3):before{opacity:1}
+.phase .d{font-size:54px;font-weight:800;letter-spacing:-.06em;line-height:.9}
+.phase .d span{font-size:18px;font-weight:600;letter-spacing:0;color:var(--muted-light);margin-left:6px}
+.phase h3{font-size:19px;font-weight:700;color:var(--purple-hi);letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px}
+.phase li{font-size:14.5px;color:var(--text-light);display:flex;gap:10px}
+.phase li:before{content:"";flex:0 0 7px;height:11px;background:var(--purple);transform:skewX(-20deg);margin-top:6px;border-radius:1px}
+.phase .kpi{margin-top:auto;background:var(--ink);border:1px dashed #3a3a3a;border-radius:12px;padding:14px;font-size:13.5px;color:var(--muted-light)}
+.phase .kpi b{display:block;color:#fff;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+
+/* ---------- Close ---------- */
+.close{text-align:center;padding:130px 0 120px;position:relative;overflow:hidden}
+.close h2{font-size:clamp(44px,8vw,110px);font-weight:500;letter-spacing:-.06em;line-height:.98}
+.close h2 b{font-weight:800;color:var(--purple)}
+.close p{font-size:clamp(17px,2vw,21px);color:var(--muted-light);max-width:720px;margin:26px auto 36px}
+.three{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.three div{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--ink-2);text-align:left;min-width:220px}
+.three b{display:block;color:var(--purple-hi);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.three span{font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:40px 0 60px;font-size:13px;color:var(--muted-light)}
+footer details summary{cursor:pointer;font-weight:600;color:#fff;margin-bottom:10px}
+footer ol{padding-left:20px;display:grid;gap:4px;margin-top:10px;columns:2;column-gap:40px}
+@media (max-width:700px){footer ol{columns:1}}
+footer ol li{break-inside:avoid}
+footer a{color:var(--purple-hi);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.disclaimer{margin-top:22px;max-width:820px}
+sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
+.light sup.src,.panel sup.src{color:var(--purple-lo)}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div style="display:flex;align-items:center">
+      <a href="#top" class="wordmark" aria-label="1mind Enterprise Playbook, back to top"><span class="slash"></span>1mind</a>
+      <span class="nav-tag">Enterprise Playbook · by Eric Iannello</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#product">Product</a></li>
+      <li><a href="#icp">ICP</a></li>
+      <li><a href="#macro">Macro</a></li>
+      <li><a href="#micro">Micro</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#deal">Deal Plan</a></li>
+      <li><a href="#eric">Why Eric</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <svg class="hero-lines" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#875FE6" stop-opacity=".0"/><stop offset=".6" stop-color="#875FE6" stop-opacity=".18"/><stop offset="1" stop-color="#875FE6" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="url(#lg)" stroke-width="1">
+      <line x1="40" y1="600" x2="140" y2="0"/><line x1="90" y1="600" x2="190" y2="0"/><line x1="140" y1="600" x2="240" y2="0"/>
+      <line x1="960" y1="600" x2="1060" y2="0"/><line x1="1010" y1="600" x2="1110" y2="0"/><line x1="1060" y1="600" x2="1160" y2="0"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-top reveal">
+      <span class="pill">Enterprise AE point of view · September 2026</span>
+      <h1><b>Every1 Wins.</b> Here's how I'd help 1mind win the enterprise.</h1>
+      <p class="hero-sub">A field-ready playbook for selling Superhumans: who buys them, what's pushing the market, how to beat every alternative, and the value story a CRO will sign off on. The last section covers why I'm the AE to run it.</p>
+      <div class="hero-ctas">
+        <a href="#company" class="btn btn-primary">Explore the Playbook</a>
+        <a href="#eric" class="btn btn-ghost">Skip to Why Eric</a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="hero-card-copy">
+        <h2>Give every enterprise buyer their best expert, in the moment they want it.</h2>
+        <div>
+          <p>Buyers won't wait for a rep, and revenue teams can't hire enough experts. 1mind puts a Superhuman with a face, a voice and a GTM brain in front of every buyer, from first touch to renewal. <b style="color:#101010">No handoffs. No waiting.</b></p>
+          <p style="margin-top:12px">My job as an Enterprise AE: put that experience in front of every CRO who feels the gap, and prove the revenue impact on their numbers.</p>
+        </div>
+        <div class="sig"><span>Built for the 1mind Enterprise AE role →</span></div>
+      </div>
+
+      <div class="call" aria-label="Illustration of a Superhuman joining a live sales call">
+        <div class="call-top">
+          <span class="live"><i></i>LIVE · Technical Evaluation</span>
+          <span>Zoom · Teams · Meet</span>
+        </div>
+        <div class="crm-toast" id="toast"><i>✓</i>Opportunity updated in CRM · Stage 3 → Solution fit</div>
+        <div class="call-stage">
+          <div class="tile speaking" id="tileSH">
+            <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><linearGradient id="av" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A283F0"/><stop offset="1" stop-color="#6B45CF"/></linearGradient></defs>
+              <circle cx="100" cy="78" r="38" fill="url(#av)" opacity=".95"/>
+              <path d="M28 200c4-46 36-72 72-72s68 26 72 72z" fill="url(#av)" opacity=".85"/>
+              <path d="M84 70 L96 50 H112 L100 70 Z" fill="#fff" opacity=".9"/>
+            </svg>
+            <span class="name">Superhuman <em>1MIND</em></span>
+          </div>
+          <div class="tiles-right">
+            <div class="tile buyer" id="tileB1">
+              <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="82" r="34" fill="#4b5263"/><path d="M36 200c4-42 32-66 64-66s60 24 64 66z" fill="#3b404d"/></svg>
+              <span class="name">VP Sales Engineering</span>
+            </div>
+            <div class="tile buyer" id="tileB2">
+              <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="82" r="34" fill="#565b6b"/><path d="M36 200c4-42 32-66 64-66s60 24 64 66z" fill="#434855"/></svg>
+              <span class="name">Account Executive (me)</span>
+            </div>
+          </div>
+        </div>
+        <div class="captions" id="captions" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num"><span>$</span><span class="count" data-to="40" style="color:#fff">40</span>M</div><div class="lbl">Raised, including a Battery-led $30M Series A<sup class="src">1</sup></div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="75" style="color:#fff">75</span><span>+</span></div><div class="lbl">Enterprise &amp; mid-market customers (Jun '26)<sup class="src">2</sup></div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="2" style="color:#fff">2</span>–5<span>x</span></div><div class="lbl">Conversion lift seen across deployments<sup class="src">3</sup></div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="78" style="color:#fff">78</span><span>%</span></div><div class="lbl">Of 1mind's own pipeline sourced by Mindy<sup class="src">4</sup></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 01 COMPANY ================= -->
+<section id="company">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>01 · The Company</div>
+      <h2>A category creator, <b>building the next category.</b></h2>
+      <p>Amanda Kahlow took 6sense from an idea to a $5B+ company and defined account-based marketing along the way. With 1mind she's making the next bet: <b style="color:#fff">AI-Led Growth</b>, where buyers get expert help instantly and revenue teams scale without adding headcount.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl"><div class="dot"></div><div class="when">Nov 2025</div><h4>Public launch, $40M raised</h4><p>$30M Series A led by Battery Ventures with Primary, Wing, Operator Collective and angels from Databricks, Gong, Box, Monday.com, ZoomInfo and more.<sup class="src">1</sup></p></div>
+      <div class="tl"><div class="dot"></div><div class="when">Mar 2026</div><h4>Named Drift's exclusive AI successor</h4><p>Clari + Salesloft sunsets Drift and refers its customers exclusively to 1mind.<sup class="src">5</sup></p></div>
+      <div class="tl"><div class="dot"></div><div class="when">Apr 2026</div><h4>The market gets validated</h4><p>Salesforce closes its $1.2B purchase of Qualified. AI-led buyer engagement is now a board-level category.<sup class="src">6</sup></p></div>
+      <div class="tl"><div class="dot"></div><div class="when">May 2026</div><h4>Ride-Along launches</h4><p>The first AI that joins live sales calls as a visible, named Sales Engineer and speaks directly to buyers.<sup class="src">7</sup></p></div>
+      <div class="tl"><div class="dot"></div><div class="when">Jun 2026</div><h4>75+ customers</h4><p>HubSpot, LinkedIn, New Relic, Samsara, Nutanix, Alteryx, Pipedrive, ZoomInfo, Boston Dynamics and more.<sup class="src">2</sup></p></div>
+    </div>
+
+    <div class="founder reveal">
+      <div class="mark">“</div>
+      <div>
+        <div class="q">Stop asking reps to be product experts. Let the Superhuman carry the depth, so humans can focus on relationships.</div>
+        <div class="who">Paraphrasing Amanda Kahlow's thesis, Founder &amp; CEO, 1mind<sup class="src">8</sup></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PRODUCT ================= -->
+<section id="product" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>02 · The Product</div>
+      <h2>One GTM brain. <b>Every moment of the buyer journey.</b></h2>
+      <p>Superhumans are digital teammates with a face, a voice and deep product knowledge. They qualify, demo, handle objections, quote pricing, onboard and expand, around the clock, in your brand's voice. Click through the lifecycle.</p>
+    </div>
+
+    <div class="journey reveal" role="tablist" aria-label="Superhuman use cases">
+      <button class="active" role="tab" aria-selected="true" data-uc="uc1"><span class="step">First touch</span><span class="t">Website Inbound</span><span class="s">Capture &amp; qualify</span></button>
+      <button role="tab" aria-selected="false" data-uc="uc2"><span class="step">Evaluate</span><span class="t">Ride-Along</span><span class="s">AI SE on live calls</span></button>
+      <button role="tab" aria-selected="false" data-uc="uc3"><span class="step">Adopt</span><span class="t">In-Product Guide</span><span class="s">Onboard &amp; convert</span></button>
+      <button role="tab" aria-selected="false" data-uc="uc4"><span class="step">Renew &amp; expand</span><span class="t">Customer Success</span><span class="s">Adoption &amp; NRR</span></button>
+    </div>
+
+    <div class="uc-panel active reveal" id="uc1">
+      <div class="uc-main">
+        <span class="pill">Replaces forms, chatbots &amp; "book a demo" wait times</span>
+        <h3 style="margin-top:16px">The best SE on your team, live on your website, for every visitor.</h3>
+        <p>High-intent buyers land on the site and get a live, face-to-face expert instead of a form and a three-day wait.</p>
+        <ul>
+          <li>Qualifies in conversation, not with a form, and routes or books on the spot</li>
+          <li>Runs a tailored live demo, answers deep technical questions, handles objections</li>
+          <li>Can quote pricing and close transactional deals with no human in the loop</li>
+          <li>Writes every insight back to Salesforce, HubSpot, Marketo or Salesloft</li>
+        </ul>
+      </div>
+      <div class="uc-side">
+        <div class="mini"><div class="k">Economic buyer</div><p>CMO / VP Demand Gen, with the CRO co-signing</p></div>
+        <div class="mini"><div class="k">KPIs it moves</div><p>Visitor → pipeline conversion, speed-to-lead, cost per opportunity, free-trial starts</p></div>
+        <div class="proof"><div class="k">Proof · HubSpot's "Fiona"</div><div class="big">+78% free trials</div><p>Engages 88% of visitors who reach her and drove a 25% lift in influenced purchases. Transcript analysis showed the workload of ~80+ SDRs and 19 SEs.<sup class="src" style="color:#fff">9</sup></p></div>
+        <div class="mini"><div class="k">More proof</div><p><b>Nutanix:</b> 2x conversion vs. its prior chatbot. <b>Pipedrive:</b> 100%+ lift in visitor-to-trial.<sup class="src">9</sup></p></div>
+      </div>
+    </div>
+
+    <div class="uc-panel" id="uc2">
+      <div class="uc-main">
+        <span class="pill">Launched May 19, 2026 · Zoom, Teams, Google Meet</span>
+        <h3 style="margin-top:16px">Every deal gets a Sales Engineer. Every time.</h3>
+        <p>Other in-call AI whispers suggestions to the rep. Ride-Along joins as a <b style="color:#fff">visible, named participant</b> and speaks directly to the buyer.</p>
+        <ul>
+          <li>Answers complex technical questions at conversation speed</li>
+          <li>Presents slides and walks through the product live</li>
+          <li>Handles objections so AEs can focus on the relationship and the business case</li>
+          <li>Removes the SE bottleneck that stalls mid-funnel deals</li>
+        </ul>
+      </div>
+      <div class="uc-side">
+        <div class="mini"><div class="k">Economic buyer</div><p>CRO / VP Sales, with VP Sales Engineering as champion</p></div>
+        <div class="mini"><div class="k">KPIs it moves</div><p>Win rate, sales-cycle length, SE:AE coverage ratio, deals per SE</p></div>
+        <div class="proof"><div class="k">Proof · Experity</div><div class="big">26% → 50% win rate</div><p>Sales cycles fell from 28 to 15 days, and Experity saw 3x more revenue in half the time after replacing its previous in-call AI.<sup class="src" style="color:#fff">7</sup></p></div>
+      </div>
+    </div>
+
+    <div class="uc-panel" id="uc3">
+      <div class="uc-main">
+        <span class="pill">For PLG &amp; freemium motions</span>
+        <h3 style="margin-top:16px">Turn free users into paying customers, without a human touch.</h3>
+        <p>Most PLG funnels leak at activation. A Superhuman inside the product guides setup, shows value fast and knows when to offer the upgrade.</p>
+        <ul>
+          <li>Guides onboarding in context, face to face, inside the product</li>
+          <li>Spots expansion and upgrade signals and acts on them in the moment</li>
+          <li>Hands the right accounts to sales with full context, so there's no cold handoff</li>
+          <li>1mind's PLG calculator lets prospects model the impact themselves</li>
+        </ul>
+      </div>
+      <div class="uc-side">
+        <div class="mini"><div class="k">Economic buyer</div><p>CPO / VP Growth / Head of PLG</p></div>
+        <div class="mini"><div class="k">KPIs it moves</div><p>Activation rate, time-to-value, free-to-paid conversion, PQL → opportunity</p></div>
+        <div class="proof"><div class="k">Proof · Pipedrive</div><div class="big">100%+ lift</div><p>In visitor-to-trial conversion attributed to its Superhuman.<sup class="src" style="color:#fff">9</sup></p></div>
+      </div>
+    </div>
+
+    <div class="uc-panel" id="uc4">
+      <div class="uc-main">
+        <span class="pill">Post-sale · Gainsight-ready</span>
+        <h3 style="margin-top:16px">Give every account white-glove coverage, including the long tail.</h3>
+        <p>CSMs can't cover every account. A Superhuman drives adoption, answers "how do I…" questions, and brings up expansion before renewal season.</p>
+        <ul>
+          <li>Proactive adoption coaching and feature education</li>
+          <li>Around-the-clock expert answers, with less pressure on support queues</li>
+          <li>Expansion signals pushed to CSMs and AEs with context</li>
+          <li>The same brain that sold the deal now helps renew it, so nothing is lost in handoffs</li>
+        </ul>
+      </div>
+      <div class="uc-side">
+        <div class="mini"><div class="k">Economic buyer</div><p>Chief Customer Officer / VP Customer Success</p></div>
+        <div class="mini"><div class="k">KPIs it moves</div><p>Net revenue retention, gross churn, time-to-value, accounts covered per CSM</p></div>
+        <div class="proof"><div class="k">The land-and-expand path</div><div class="big">211% NDR</div><p>Reported net dollar retention, a sign that customers who start with one use case add more.<sup class="src" style="color:#fff">10</sup></p></div>
+      </div>
+    </div>
+
+    <div class="brain reveal">
+      <div class="card"><h3>The GTM brain</h3><p>Trained on each customer's own product content, docs and sales knowledge, with a persona and avatar built for brand fidelity. The expertise goes SE-deep, well past an SDR script.</p></div>
+      <div class="card"><h3>Plugs into the revenue stack</h3><p>Works across CRMs, with no single-ecosystem lock-in.</p>
+        <div class="chips"><span class="chip">Salesforce</span><span class="chip">HubSpot</span><span class="chip">Marketo</span><span class="chip">Salesloft</span><span class="chip">Gong</span><span class="chip">Gainsight</span><span class="chip">Slack</span><span class="chip">Zoom · Teams · Meet</span><span class="chip">Open API</span></div></div>
+      <div class="card"><h3>Enterprise-grade trust</h3><p>Customer data is never used to train models. That's what gets you through a CISO review.<sup class="src">11</sup></p>
+        <div class="chips"><span class="chip p">SOC 2 Type II</span><span class="chip p">ISO 27001</span><span class="chip p">ISO 42001 (AI)</span><span class="chip p">GDPR</span><span class="chip p">CCPA</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 ICP ================= -->
+<section id="icp">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>03 · Ideal Customer Profile</div>
+      <h2>Where a Superhuman <b>pays for itself fastest.</b></h2>
+      <p>The best fits have lots of high-intent buyers, a product that needs an expert to explain it, and too few experts to go around. Score any account with the tool on the right.</p>
+    </div>
+
+    <div class="icp-grid">
+      <div class="icp-list reveal">
+        <div class="icp-row"><div class="k">Firmographics</div><p>B2B tech and tech-enabled companies, <b>~500 to 10,000+ employees</b>, $50M+ revenue. <span>Mid-market deals land fast; enterprise deals set the logo and the ACV.</span></p></div>
+        <div class="icp-row"><div class="k">Motion</div><p>Meaningful <b>inbound or PLG volume</b> plus a product complex enough to need an SE. <span>Technical SaaS, data/infra, security, fintech, IoT, vertical SaaS.</span></p></div>
+        <div class="icp-row"><div class="k">Budget</div><p>Can support a <b>six-figure annual platform</b> investment. <span>The strongest cases are funded from the headcount line (SDR/SE/CSM) or from Drift/Qualified renewal budgets.</span></p></div>
+        <div class="icp-row"><div class="k">Tech stack</div><p>Salesforce or HubSpot, Marketo, Salesloft or Outreach, Gong, Gainsight. <span>Today's front door is a Drift or Qualified bot, a chatbot, or a form plus a scheduling router.</span></p></div>
+        <div class="icp-row"><div class="k">Triggers</div><p><b>Drift sunset notice</b> · <b>Qualified renewal after the acquisition</b> · SE:AE ratio worse than 1:3 · new product launch · PLG conversion flat · SDR/SE hiring freeze · new CRO or CMO · international expansion · board AI mandate</p></div>
+        <div class="icp-row"><div class="k">Deprioritize</div><p><span>Budgets under ~$100K, outbound-only needs (pair with an AI SDR instead), low-traffic sites with no PLG funnel, and very simple products where a form works fine.</span></p></div>
+      </div>
+
+      <aside class="scorer reveal" aria-labelledby="scorerTitle">
+        <h3 id="scorerTitle">ICP fit scorer</h3>
+        <p class="sub">Check what's true of the account. I'd use this with SDRs in the first 30 days to tier the territory.</p>
+        <div id="checks">
+          <label class="check"><input type="checkbox" data-w="15"><span>500+ employees, B2B tech<small>Firmographic fit</small></span></label>
+          <label class="check"><input type="checkbox" data-w="15"><span>High inbound volume or a PLG funnel<small>Traffic for a Superhuman to convert</small></span></label>
+          <label class="check"><input type="checkbox" data-w="15"><span>Technical, demo-heavy product<small>Needs SE-level depth</small></span></label>
+          <label class="check"><input type="checkbox" data-w="15"><span>Uses Drift, or Qualified without Salesforce<small>Forced evaluation window</small></span></label>
+          <label class="check"><input type="checkbox" data-w="10"><span>SE / SDR capacity constrained<small>Hiring freeze or thin SE coverage</small></span></label>
+          <label class="check"><input type="checkbox" data-w="10"><span>New CRO/CMO or AI mandate<small>Change agent in seat</small></span></label>
+          <label class="check"><input type="checkbox" data-w="10"><span>Competitor or peer already runs 1mind<small>Social proof and competitive pressure</small></span></label>
+          <label class="check"><input type="checkbox" data-w="10"><span>Warm path (angel, investor, alumni)<small>Faster access to the economic buyer</small></span></label>
+        </div>
+        <div class="score-out">
+          <div class="score-top"><b id="scoreNum">0</b><span class="tier" id="scoreTier">Unscored</span></div>
+          <div class="score-bar"><i id="scoreBar"></i></div>
+          <p id="scorePlay">Check a few boxes to get a tier and the play to run.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="committee reveal">
+      <h3>The buying committee, and the line that lands with each</h3>
+      <p>Superhumans touch marketing, sales, product and CS, so every deal is multi-threaded from day one.</p>
+      <div class="persona-grid">
+        <div class="persona"><div class="role">Economic buyer</div><h4>CRO</h4><p>Owns the number. Wants more pipeline and win rate without adding headcount.</p><div class="line">"What if every deal had your best SE on it?"</div></div>
+        <div class="persona"><div class="role">Economic buyer</div><h4>CMO</h4><p>Owns the website and the brand. Wants conversion without hurting the brand.</p><div class="line">"Your site is a brochure. Make it your best seller."</div></div>
+        <div class="persona"><div class="role">Champion</div><h4>VP Demand Gen / Growth</h4><p>Measured on MQL → SQL and cost per opportunity.</p><div class="line">"Stop losing hot buyers between the form and the first meeting."</div></div>
+        <div class="persona"><div class="role">Champion</div><h4>VP Sales Engineering</h4><p>Drowning in demo requests. Burnout and ratio pressure.</p><div class="line">"Let your SEs work the deals only they can win."</div></div>
+        <div class="persona"><div class="role">Expansion</div><h4>Chief Customer Officer</h4><p>NRR, churn, coverage of long-tail accounts.</p><div class="line">"Give every account white-glove coverage."</div></div>
+        <div class="persona"><div class="role">Technical buyer</div><h4>RevOps / Marketing Ops</h4><p>Integration, data quality, routing, attribution.</p><div class="line">"Every conversation becomes structured CRM data."</div></div>
+        <div class="persona"><div class="role">Gatekeeper</div><h4>CISO / IT / AI Governance</h4><p>Data use, hallucination risk, compliance.</p><div class="line">"ISO 42001 certified, and your data never trains a model."</div></div>
+        <div class="persona"><div class="role">Approver</div><h4>CFO</h4><p>Payback period, headcount avoided, predictability.</p><div class="line">"Capacity that grows with revenue while headcount stays flat."</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 MACRO ================= -->
+<section id="macro" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>04 · Macro Sales Plays</div>
+      <h2>Six market forces <b>pulling buyers toward 1mind.</b></h2>
+      <p>These plays come from the market, not a single account. Each one opens a door into hundreds of accounts at the same time. For each: the signal, why it matters, and how I'd run it.</p>
+    </div>
+
+    <div class="macro">
+      <article class="mcard reveal">
+        <span class="tag hot">Time-bound · Highest priority</span>
+        <h3>The Drift sunset</h3>
+        <p class="sig"><b>Signal:</b> Clari + Salesloft is retiring Drift and refers customers exclusively to 1mind.<sup class="src">5</sup> <b>Why it matters:</b> Thousands of B2B websites must replace their front door, and the evaluation is already happening.</p>
+        <div class="run"><div class="k">How I'd run it</div>Build a Drift install-base list, co-sell with Salesloft AEs through a joint account-mapping cadence, and position the move as an upgrade from chat to a Superhuman, not a migration.</div>
+      </article>
+      <article class="mcard reveal">
+        <span class="tag hot">Competitive window</span>
+        <h3>Qualified is now Salesforce</h3>
+        <p class="sig"><b>Signal:</b> Salesforce closed its $1.2B Qualified deal on Apr 1, 2026 and is folding Piper into Agentforce.<sup class="src">6</sup> <b>Why it matters:</b> HubSpot, Marketo and multi-CRM companies no longer have a neutral option. Salesforce companies face bundling and roadmap uncertainty.</p>
+        <div class="run"><div class="k">How I'd run it</div>Target Qualified customers ahead of renewal. Lead with a CRM-agnostic, video-first platform that covers the full lifecycle, where Piper only covers inbound.</div>
+      </article>
+      <article class="mcard reveal">
+        <span class="tag">Buyer behavior</span>
+        <h3>The rep-free buyer, who still wants an expert</h3>
+        <p class="sig"><b>Signal:</b> 67% of B2B buyers now prefer a rep-free experience, up from 61%, yet 69% still turn to reps to validate what AI tells them.<sup class="src">12</sup> <b>Why it matters:</b> Buyers want self-serve speed and expert validation at the same time.</p>
+        <div class="run"><div class="k">How I'd run it</div>Open CMO conversations with the Gartner stats. A Superhuman is the only way to be rep-free and expert-led at once.</div>
+      </article>
+      <article class="mcard reveal">
+        <span class="tag">Capacity</span>
+        <h3>The expert coverage gap</h3>
+        <p class="sig"><b>Signal:</b> SEs are the scarcest resource in B2B sales. Mid-market and long-tail deals often get no SE at all. <b>Why it matters:</b> Deals stall mid-funnel and win rates drop where expertise is missing.</p>
+        <div class="run"><div class="k">How I'd run it</div>Open with VP Sales Engineering, sell up to the CRO, and anchor on Experity's win rate going from 26% to 50%.</div>
+      </article>
+      <article class="mcard reveal">
+        <span class="tag">Budget</span>
+        <h3>Headcount → AI budget reallocation</h3>
+        <p class="sig"><b>Signal:</b> Boards want efficient growth, and SDR/SE hiring plans are being rewritten as AI budgets. <b>Why it matters:</b> 1mind should be priced against the headcount line, not the martech line.</p>
+        <div class="run"><div class="k">How I'd run it</div>Build the CFO business case on capacity. HubSpot's Fiona did the work of ~80+ SDRs and 19 SEs. What would that capacity cost in salaries?</div>
+      </article>
+      <article class="mcard reveal">
+        <span class="tag">Product-led</span>
+        <h3>PLG needs a closer</h3>
+        <p class="sig"><b>Signal:</b> PLG companies have huge free-user bases and flat free-to-paid conversion. <b>Why it matters:</b> Activation is the leak, and human-assisted PLG doesn't scale.</p>
+        <div class="run"><div class="k">How I'd run it</div>Lead with the In-Product Guide and 1mind's PLG calculator. Land on conversion, then expand to inbound and CS.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 MICRO ================= -->
+<section id="micro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>05 · Micro Sales Plays</div>
+      <h2>Account-level plays, <b>ready to run on day one.</b></h2>
+      <p>Each play covers the target, the trigger, the first persona, the discovery that qualifies it, and the first message. The target accounts are illustrative examples from public information.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Micro sales plays">
+      <button class="tab active" data-play="p1">Drift Replacement Blitz</button>
+      <button class="tab" data-play="p2">Salesforce-Free Zone</button>
+      <button class="tab" data-play="p3">"Your Peer Has a Superhuman"</button>
+      <button class="tab" data-play="p4">Every Deal Gets an SE</button>
+      <button class="tab" data-play="p5">Angel Network Warm Paths</button>
+      <button class="tab" data-play="p6">Land → Lifecycle Expansion</button>
+    </div>
+
+    <div class="play active" id="p1">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Mid-market &amp; enterprise B2B companies running Drift on their website today. Priority: those also on Salesloft, where co-sell is easiest.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>Drift sunset communication, with the budget already allocated and a forced timeline.</p></div>
+        <div class="meta"><div class="k">First persona → multi-thread</div><p>VP Demand Gen → CMO → RevOps → CRO</p></div>
+        <div class="meta"><div class="k">Discovery that qualifies</div><ul><li>What percentage of Drift conversations became pipeline last quarter?</li><li>What happens to a high-intent visitor at 9pm on a Saturday?</li><li>If you replaced chat with an expert demo, which metric would you show your board first?</li><li>Who else needs to agree on your new website experience, and by when?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> VP Demand Generation</div><div><b>Subject:</b> After Drift: upgrade, don't migrate</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>With Drift being retired, most teams are about to swap one chat widget for another. The teams getting ahead are using the switch to replace chat with an <b>expert</b>.</p>
+          <p>Salesloft named 1mind as Drift's exclusive successor. Our Superhumans give every buyer on your site a face-to-face demo, answer technical questions, and write everything back to Salesloft. HubSpot saw a 78% lift in free trials. Nutanix doubled conversion over its previous bot.</p>
+          <p>Worth 20 minutes to see what {company}'s site would look like with a Superhuman on it? I'll bring a preview built on your content.</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">Touch 1 of 7</span><span class="chip">LinkedIn video · Day 2</span><span class="chip">Salesloft co-sell intro · Day 4</span><span class="chip">Personalized Superhuman preview · Day 8</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p2">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Qualified/Piper customers on HubSpot, Marketo or mixed CRMs, plus Salesforce customers wary of Agentforce bundling or roadmap changes.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>Qualified contract renewal within 6–9 months, an Agentforce upsell pitch, or a CRM consolidation project.</p></div>
+        <div class="meta"><div class="k">First persona → multi-thread</div><p>Marketing Ops / RevOps → CMO → CIO</p></div>
+        <div class="meta"><div class="k">Discovery that qualifies</div><ul><li>How has your Qualified roadmap changed since the acquisition?</li><li>Is your front door tied to one CRM vendor's strategy?</li><li>Does Piper follow the buyer after the meeting is booked?</li><li>Who owns the renewal decision, and when is the date?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> Director, Marketing Operations</div><div><b>Subject:</b> Your website agent now belongs to Salesforce</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>Since Salesforce closed on Qualified, Piper is becoming part of Agentforce. For a {HubSpot / Marketo} company like {company}, that's a real question mark ahead of your renewal.</p>
+          <p>1mind works with any CRM and goes past chat: a Superhuman demos live on your site, joins sales calls as an AI Sales Engineer, and onboards customers after the sale, all with one brain.</p>
+          <p>Open to a side-by-side before your renewal conversation starts?</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">Renewal-timed</span><span class="chip">Neutral-stack angle</span><span class="chip">Lifecycle over single-point tool</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p3">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Direct peers of flagship customers. Example clusters: <b>connected ops/IoT</b> near Samsara, <b>hybrid-cloud and infrastructure</b> near Nutanix, <b>analytics/data</b> near Alteryx, <b>CRM and SMB SaaS</b> near HubSpot and Pipedrive.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>A named customer story in their category, a competitive deal loss, or visible website/UX changes at the peer.</p></div>
+        <div class="meta"><div class="k">First persona → multi-thread</div><p>CRO → CMO → VP Sales Engineering</p></div>
+        <div class="meta"><div class="k">Discovery that qualifies</div><ul><li>When a buyer compares you side by side on the website, who gives the better first experience?</li><li>How fast does a high-intent visitor get a real answer today?</li><li>What would a 2x lift in site-to-opportunity conversion mean for this year's plan?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> Chief Revenue Officer</div><div><b>Subject:</b> Your buyers are comparing first impressions</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>Companies in your space are already giving every website visitor a live expert: a face-to-face demo, technical answers and pricing, around the clock. When buyers compare vendors, that first experience decides who makes the shortlist.</p>
+          <p>Our customers see 2–5x conversion lifts and sales cycles up to 62% shorter.</p>
+          <p>I'd like to show you what that looks like for {company}. Is 20 minutes next week unreasonable?</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">Competitive urgency</span><span class="chip">Never name a customer without approval</span><span class="chip">Proof-led</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p4">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Technical SaaS (data platforms, security, dev tools, infrastructure) with long evaluations and an SE:AE ratio worse than 1:3. I closed Snowflake at Falkon and know how these orgs buy.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>SE job postings open for 60+ days, a new product line, or earnings calls mentioning sales efficiency.</p></div>
+        <div class="meta"><div class="k">First persona → multi-thread</div><p>VP Sales Engineering → CRO → Sales Enablement → RevOps</p></div>
+        <div class="meta"><div class="k">Discovery that qualifies</div><ul><li>How many opportunities last quarter got no SE, or got one late?</li><li>What's your win rate with vs. without an SE on the call?</li><li>How long does it take to ramp a new SE?</li><li>Which deals do your SEs <i>wish</i> they had time for?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> VP, Solutions Engineering</div><div><b>Subject:</b> An SE on every call (who never needs a break)</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>Most SE leaders I talk to are rationing their team across too many deals. The deals that lose their SE usually stall.</p>
+          <p>1mind's Ride-Along joins Zoom, Teams or Meet as a named AI Sales Engineer. It answers technical questions, presents slides and handles objections live. Experity went from a 26% to a 50% win rate and cut cycles from 28 days to 15.</p>
+          <p>Could we look at your coverage gap together? I'll bring a model of your win-rate upside.</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">Ride-Along led</span><span class="chip">Win-rate business case</span><span class="chip">Expand to inbound</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p5">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Companies connected to 1mind's investor and angel network (angels from Databricks, Gong, Box, Monday.com, Braze, Verkada and ZoomInfo), plus portfolio companies of Battery, Wing, Primary and Operator Collective.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>Portfolio GTM leadership summits, board meetings and investor newsletters. Investors want their portfolio to grow efficiently.</p></div>
+        <div class="meta"><div class="k">First persona → multi-thread</div><p>Investor/angel intro → CEO or CRO → CMO</p></div>
+        <div class="meta"><div class="k">How I'd run it</div><ul><li>Map every angel and investor to the logos they can open</li><li>Offer portfolio-wide "AI-Led Growth" workshops co-hosted with the VC platform team</li><li>Package a portfolio pilot offer with clear success criteria</li><li>I've built VC partner channels before (Florida Funders, OMERS at Falkon; VC/PE advisors at Commsor)</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> VC Platform / Portfolio Ops Lead</div><div><b>Subject:</b> An AI-Led Growth session for your portfolio CROs</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>Your portfolio CROs are all being asked to grow pipeline without adding headcount. 1mind's customers are doing that now: HubSpot's Superhuman handles the load of dozens of SDRs and SEs.</p>
+          <p>Would a 45-minute working session for your portfolio GTM leaders be useful? No pitch, just how AI-Led Growth teams are structured, with live examples. Anyone who wants to go deeper can meet a Superhuman trained on their own site.</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">One-to-many</span><span class="chip">Warm intros</span><span class="chip">Category evangelism</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p6">
+      <div class="play-meta">
+        <div class="meta"><div class="k">Target</div><p>Existing single-use-case customers, and every new logo I land. Most land on Website Inbound.</p></div>
+        <div class="meta"><div class="k">Trigger</div><p>A 90-day value review with proven lift, a new product launch, a PLG initiative, or a CS reorganization.</p></div>
+        <div class="meta"><div class="k">Expansion path</div><ul><li><b>Land:</b> Website Inbound (CMO/Demand Gen)</li><li><b>Expand 1:</b> Ride-Along (CRO/SE leader)</li><li><b>Expand 2:</b> In-Product Guide (CPO/Growth)</li><li><b>Expand 3:</b> Customer Success (CCO)</li><li><b>Expand 4:</b> New regions, languages and business units</li></ul></div>
+        <div class="meta"><div class="k">Why it works</div><p>The brain is already trained on their content, so each new use case needs little extra work. That's how NDR reaches 200%+.</p></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> CRO (existing customer)</div><div><b>Subject:</b> {Superhuman name} made the website your top rep. Now the calls.</div></div>
+        <div class="email-body">
+          <p>Hi {first name},</p>
+          <p>In 90 days {Superhuman name} lifted site-to-pipeline conversion by {X}% and handled {N} conversations that would otherwise have waited for a rep.</p>
+          <p>Your team keeps telling us the same thing: buyers ask the Superhuman for help again on the second call. Ride-Along lets it join that call as a named SE, with the same brain and the same context, and no handoff.</p>
+          <p>Can we scope a pilot on your {segment} team with win-rate success criteria?</p>
+          <p>Eric</p>
+        </div>
+        <div class="email-foot"><span class="chip p">Value review → expansion</span><span class="chip">Multi-BU mapping</span><span class="chip">NRR driver</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 COMPETITION ================= -->
+<section id="competition" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>06 · Competition &amp; Differentiation</div>
+      <h2>Know the field. <b>Win on the ground only 1mind owns.</b></h2>
+      <p>Battlecards for every alternative a buyer will bring up, including "do nothing." Each card is honest about where the competitor is strong and includes a landmine question to plant during discovery.</p>
+    </div>
+
+    <div class="comp-wrap reveal">
+      <div class="comp-list" role="tablist" aria-label="Competitors">
+        <button class="comp-btn active" data-bc="c1"><b>Qualified / Piper</b><span>Now Salesforce Agentforce</span></button>
+        <button class="comp-btn" data-bc="c2"><b>Drift &amp; legacy chat</b><span>Sunsetting · forms + routers</span></button>
+        <button class="comp-btn" data-bc="c3"><b>Intercom Fin for Sales</b><span>Support-first AI agent</span></button>
+        <button class="comp-btn" data-bc="c4"><b>Docket</b><span>AI Sales Engineer (text)</span></button>
+        <button class="comp-btn" data-bc="c5"><b>Interactive demo tools</b><span>Navattic · Storylane · Walnut · Consensus</span></button>
+        <button class="comp-btn" data-bc="c6"><b>AI SDRs</b><span>11x · Artisan</span></button>
+        <button class="comp-btn" data-bc="c7"><b>DIY / build it</b><span>LLM + avatar vendors</span></button>
+        <button class="comp-btn" data-bc="c8"><b>Status quo</b><span>Hire more SDRs &amp; SEs</span></button>
+      </div>
+
+      <div>
+        <div class="bc active" id="c1">
+          <div class="bc-top"><div><h3>Qualified (Piper)</h3><p class="how">Shows up as the incumbent website agent at Salesforce companies, with a strong G2 reputation and deep Salesforce integration. Acquired by Salesforce for $1.2B (closed Apr 1, 2026).<sup class="src">6</sup></p></div><span class="threat h">High threat</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Deep Salesforce integration and a large installed base</li><li>Strong reviews and a well-known brand in inbound marketing</li><li>Now bundled into Agentforce, which appeals on price inside Salesforce</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li><b>CRM-agnostic:</b> Qualified depends on Salesforce, which is a wall for HubSpot and Marketo companies</li><li><b>Face + voice + live demo</b> vs. chat-first qualification</li><li><b>Full lifecycle:</b> Ride-Along, In-Product and CS. Piper stops at the meeting</li><li><b>A focused roadmap</b> vs. a product being absorbed into a suite</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"Since the acquisition, what has Salesforce committed to on Piper's standalone roadmap, and how does your renewal pricing change if you don't expand Agentforce?"</p></div>
+        </div>
+
+        <div class="bc" id="c2">
+          <div class="bc-top"><div><h3>Drift &amp; legacy chat / forms</h3><p class="how">Shows up as the current front door: chat widgets, forms, and scheduling routers like Chili Piper. Drift is being sunset, and Salesloft refers its customers to 1mind.<sup class="src">5</sup></p></div><span class="threat l">Replacement opportunity</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Familiar, cheap and already set up</li><li>Routing rules the team trusts</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>An <b>expert</b> answers, so buyers don't hit a decision tree</li><li>Demos and handles objections in the moment, with no "someone will reach out"</li><li>An exclusive Salesloft referral path, and a native flow into Cadences</li><li>Nutanix saw 2x conversion vs. its prior qualifying chatbot</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"How many of the visitors who start a chat today actually get their question answered, as opposed to getting routed?"</p></div>
+        </div>
+
+        <div class="bc" id="c3">
+          <div class="bc-top"><div><h3>Intercom Fin for Sales</h3><p class="how">Shows up where Intercom already runs support. It extends Fin into inbound qualification, with scheduling integrations like Calendly and Chili Piper.<sup class="src">13</sup></p></div><span class="threat m">Medium threat</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Already deployed for support, so expanding is easy</li><li>Strong text-based AI agent and good pricing flexibility</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Built for <b>selling</b>, not deflecting tickets: demos, objections, persuasion</li><li>Multimodal presence (face, voice, video) that builds trust in large deals</li><li>Joins live sales calls, where Fin stays on the website</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"Would you want your top-of-funnel enterprise buyers talking to the same bot that handles password resets?"</p></div>
+        </div>
+
+        <div class="bc" id="c4">
+          <div class="bc-top"><div><h3>Docket</h3><p class="how">Shows up with an "AI Sales Engineer": text-based answers, RFP automation and website engagement. Backed by Mayfield and Foundation Capital.<sup class="src">14</sup></p></div><span class="threat m">Medium threat</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Strong internal SE assistant use case (RFPs, knowledge Q&amp;A)</li><li>Lower entry price point</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>1mind's SE <b>talks to the buyer</b>, on camera and on live calls. It doesn't just assist the rep</li><li>Much larger enterprise proof: HubSpot, LinkedIn, Nutanix, Samsara</li><li>A lifecycle platform, not a point tool</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"Do you need a better search box for your reps, or an SE your buyers can actually meet?"</p></div>
+        </div>
+
+        <div class="bc" id="c5">
+          <div class="bc-top"><div><h3>Interactive demo platforms</h3><p class="how">Shows up when marketing wants "self-serve demos": click-through product tours and buyer-led video (Navattic, Storylane, Walnut, Consensus).<sup class="src">15</sup></p></div><span class="threat l">Low threat · often complementary</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Cheap, fast to build, easy for marketing to own</li><li>Good for top-of-funnel product education</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Tours are <b>one-way</b>, while a Superhuman listens, adapts and answers "what about my use case?"</li><li>Qualifies and books meetings, where tours only collect a form</li><li>Can use existing tours as content and upgrade the experience</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"When a buyer finishes your tour and has a question, what happens next, and how long does it take?"</p></div>
+        </div>
+
+        <div class="bc" id="c6">
+          <div class="bc-top"><div><h3>AI SDRs (11x, Artisan)</h3><p class="how">Shows up in "AI for sales" budget conversations. These tools focus on <b>outbound</b>: prospect lists, sequences, email, phone.<sup class="src">16</sup></p></div><span class="threat l">Low threat · complementary</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Outbound volume across email, LinkedIn and phone</li><li>Lower price points ($9K–$60K/yr)</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Position as <b>"better together":</b> AI SDRs create demand, and 1mind converts it</li><li>Outbound creates visits, and a Superhuman turns those visits into pipeline</li><li>Avoid a budget fight: 1mind sits against the SE and demand-conversion line</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"Your AI SDR is sending thousands of buyers to your site. Who's there to meet them when they arrive?"</p></div>
+        </div>
+
+        <div class="bc" id="c7">
+          <div class="bc-top"><div><h3>DIY: "We'll build it ourselves"</h3><p class="how">Shows up with engineering-heavy companies: an LLM plus RAG plus an avatar/voice API (for example HeyGen, Tavus or ElevenLabs), or an internal Agentforce build.</p></div><span class="threat m">Medium threat</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where they're strong</div><ul><li>Full control, and it feels cheaper at first</li><li>Engineering teams want to build AI</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>The hard part isn't the avatar. It's <b>sales judgment</b>: persuasion, objection handling, qualification and brand safety</li><li>ISO 42001, SOC 2 and GDPR already done, with no internal AI-governance project</li><li>Time to value: 1–2 months to live, vs. quarters of engineering time taken from the roadmap</li><li>A team focused on this full-time, with learnings from 75+ deployments</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"Who will own hallucination risk, brand approvals and CRM write-back once it's live, and what drops off the product roadmap while they do?"</p></div>
+        </div>
+
+        <div class="bc" id="c8">
+          <div class="bc-top"><div><h3>Status quo: hire more humans</h3><p class="how">The most common competitor. "We'll add 3 SDRs and 2 SEs next year."</p></div><span class="threat h">Most common</span></div>
+          <div class="bc-cols">
+            <div class="bc-box them"><div class="k">Where it's strong</div><ul><li>Familiar, low perceived risk, easy to budget</li><li>Humans still build relationships and close complex deals</li></ul></div>
+            <div class="bc-box us"><div class="k">Where 1mind wins</div><ul><li>Hiring takes months, ramp takes more months, and attrition resets the clock</li><li>Humans don't work at 2am, in 30 languages, or at 1,000 conversations at once</li><li>Keep the humans on the high-value work, and let the Superhuman handle coverage</li><li>HubSpot's Fiona: the workload of ~80+ SDRs and 19 SEs</li></ul></div>
+          </div>
+          <div class="landmine"><div class="k">Landmine question</div><p>"What's the fully loaded cost and ramp time of the next five SDRs and SEs, and how many of your buyers will wait while they ramp?"</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="matrix-wrap reveal">
+      <table class="matrix">
+        <thead><tr><th>Capability</th><th class="us">1mind</th><th>Qualified</th><th>Fin for Sales</th><th>Docket</th><th>Demo tools</th><th>AI SDRs</th></tr></thead>
+        <tbody>
+          <tr><td>Face + voice, video presence</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td></tr>
+          <tr><td>Live, adaptive product demo</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-h"></span></td><td><span class="dot-e"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td><span class="dot-e"></span></td></tr>
+          <tr><td>Joins live sales calls as a named SE</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td></tr>
+          <tr><td>Full lifecycle (inbound → CS)</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td></tr>
+          <tr><td>CRM-agnostic</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-e"></span></td><td><span class="dot-f"></span></td><td><span class="dot-f"></span></td><td><span class="dot-f"></span></td><td><span class="dot-f"></span></td></tr>
+          <tr><td>Deep technical, SE-grade answers</td><td class="us"><span class="dot-f"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td><span class="dot-f"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td></tr>
+          <tr><td>Outbound prospecting</td><td class="us"><span class="dot-e"></span></td><td><span class="dot-h"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-e"></span></td><td><span class="dot-f"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span><i class="dot-f"></i> Core strength</span><span><i class="dot-h"></i> Partial</span><span><i class="dot-e"></i> Not a focus</span><span>· My own assessment from public information, Sep 2026. The outbound row shows where to partner, not a gap to hide.</span></div>
+
+    <div class="pillars">
+      <div class="pillar reveal"><div class="n">01</div><h4>Presence</h4><p>A face, a voice and emotional intelligence. Buyers trust people, and Superhumans feel like one.</p></div>
+      <div class="pillar reveal"><div class="n">02</div><h4>Expertise</h4><p>SE-grade depth, not SDR-grade scripts. It answers the question that usually needs "let me bring in my engineer."</p></div>
+      <div class="pillar reveal"><div class="n">03</div><h4>Lifecycle</h4><p>One brain from first touch to renewal. No handoffs, no context lost, no buyer repeating themselves.</p></div>
+      <div class="pillar reveal"><div class="n">04</div><h4>Neutrality</h4><p>Works with Salesforce, HubSpot, Salesloft, Gong and Gainsight. The buyer's stack, the buyer's choice.</p></div>
+      <div class="pillar reveal"><div class="n">05</div><h4>Proof at scale</h4><p>HubSpot, LinkedIn, Nutanix, Samsara. Enterprise logos with numbers attached.</p></div>
+      <div class="pillar reveal"><div class="n">06</div><h4>Pedigree</h4><p>Built by the founder who created a category once already with 6sense. Buyers are betting on a team that has done it before.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Objections -->
+<section id="objections">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>06b · Objection Handling</div>
+      <h2>The hard questions, <b>answered before they're asked.</b></h2>
+      <p>Enterprise buyers will push on price, time to value, trust and brand risk. Here's how I'd handle each.</p>
+    </div>
+    <div class="objs reveal">
+      <details class="obj" open><summary>"Six figures is a lot for a website tool."</summary><div class="obj-body"><div class="k">Reframe</div><p>It isn't a website tool. It replaces capacity. Compare it to the fully loaded cost of the SDRs and SEs whose work it covers, not to a chat widget.</p><div class="k">Proof</div><p>HubSpot's Fiona did the work of ~80+ SDRs and 19 SEs. Run the value model in the next section with their numbers.</p><div class="k">Close</div><p>"If we can show payback inside two quarters on your own inputs, is price still the blocker?"</p></div></details>
+      <details class="obj"><summary>"We can't trial it first?"</summary><div class="obj-body"><div class="k">Reframe</div><p>A Superhuman is only as good as the content it's trained on, so a generic trial would undersell it. We earn the decision with a preview built on your content.</p><div class="k">Offer</div><p>A mutual action plan with written success criteria (conversion, engagement, win rate) and a 90-day value review built into the contract.</p></div></details>
+      <details class="obj"><summary>"1–2 months to go live is too long."</summary><div class="obj-body"><div class="k">Reframe</div><p>Compare it with the alternative: hiring and ramping one SE takes 6+ months. Implementation covers the persona workshop, content ingestion and avatar production, which is what makes it brand-safe.</p><div class="k">Plan</div><p>Start implementation in parallel with procurement, and have a go-live date before signature.</p></div></details>
+      <details class="obj"><summary>"An AI avatar feels risky for our brand."</summary><div class="obj-body"><div class="k">Reframe</div><p>The bigger brand risk is a buyer who waits three days for a reply, or gets stuck in a chatbot loop. Superhumans are built for brand fidelity, with the persona, tone and guardrails approved by your team.</p><div class="k">Proof</div><p>HubSpot, LinkedIn and Nutanix put Superhumans in front of their buyers. Buyers engage: Fiona reaches 88% of the visitors who meet her.</p></div></details>
+      <details class="obj"><summary>"What about hallucinations and data security?"</summary><div class="obj-body"><div class="k">Answer</div><p>SOC 2 Type II, ISO 27001, <b>ISO 42001</b> (AI management), GDPR and CCPA. Customer data is never used to train models. Answers come from your approved content.</p><div class="k">Action</div><p>Bring security in early. Send the trust package in week one, not week six.</p></div></details>
+      <details class="obj"><summary>"We already have Qualified / Drift."</summary><div class="obj-body"><div class="k">Reframe</div><p>Drift is being retired, and Qualified is becoming part of Agentforce. Either way you have a decision to make. The question is whether to replace chat with chat, or chat with an expert.</p><div class="k">Close</div><p>"Let's line the evaluation up with your renewal date so you're choosing, not reacting."</p></div></details>
+      <details class="obj"><summary>"Will this replace my team?"</summary><div class="obj-body"><div class="k">Reframe</div><p>It changes what the team works on. SDRs work the accounts the Superhuman qualifies, SEs take the deals only they can win, and AEs spend their time on the relationship and the business case.</p><div class="k">Proof</div><p>1mind's own AEs sell alongside Mindy. In one HubSpot deal, Mindy answered a 20+ person buying committee, and it closed in 11 days at $262K.<sup class="src">8</sup></p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 VALUE ================= -->
+<section id="value" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>07 · The Value Story</div>
+      <h2>What's in it for them, <b>in dollars.</b></h2>
+      <p>A simple value model I'd build live with a prospect's CFO. Move the sliders to their numbers. The default lift uses the <b>low end</b> of 1mind's reported 2–5x range, because a conservative number is easier to defend.</p>
+    </div>
+
+    <div class="roi reveal">
+      <div class="roi-in">
+        <div class="field"><label for="r1">High-intent visitors engaged / month <output id="o1"></output></label><input type="range" id="r1" min="500" max="20000" step="250" value="1000"><small>Pricing, demo, product and comparison-page visitors</small></div>
+        <div class="field"><label for="r2">Today's visitor → opportunity rate <output id="o2"></output></label><input type="range" id="r2" min="0.2" max="5" step="0.1" value="1"></div>
+        <div class="field"><label for="r3">Average contract value (ACV) <output id="o3"></output></label><input type="range" id="r3" min="10000" max="250000" step="5000" value="50000"></div>
+        <div class="field"><label for="r4">Win rate <output id="o4"></output></label><input type="range" id="r4" min="5" max="50" step="1" value="20"></div>
+        <div class="field"><label for="r5">Conversion lift with a Superhuman <output id="o5"></output></label><input type="range" id="r5" min="1.2" max="5" step="0.1" value="2"><small>1mind customers report 2–5x. HubSpot saw +78% trials, Nutanix 2x</small></div>
+        <div class="field"><label for="r6">Annual 1mind investment (assumption) <output id="o6"></output></label><input type="range" id="r6" min="100000" max="400000" step="10000" value="150000"><small>Public estimates put contracts at $100K–$400K / year</small></div>
+      </div>
+
+      <div class="roi-out" aria-live="polite">
+        <div class="pill" style="align-self:flex-start">Incremental new ARR / year</div>
+        <div class="roi-big"><span>$</span><span id="arr">0</span></div>
+        <div class="bars">
+          <div class="bar-row">Pipeline today<div class="bar"><i class="b1" id="bar1"></i></div></div>
+          <div class="bar-row">Pipeline with a Superhuman<div class="bar"><i class="b2" id="bar2"></i></div></div>
+        </div>
+        <div class="roi-rows">
+          <div class="roi-row"><span>Incremental opportunities / year</span><b id="opps">0</b></div>
+          <div class="roi-row"><span>Incremental pipeline / year</span><b id="pipe">0</b></div>
+          <div class="roi-row hi"><span>Return on investment</span><b id="roiX">0x</b></div>
+          <div class="roi-row hi"><span>Payback period</span><b id="payback">-</b></div>
+        </div>
+        <p class="roi-note">Illustrative model for discovery conversations, not a 1mind quote. Excludes cycle-time compression, SE capacity freed, and post-sale expansion, which are all upside.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 DEAL PLAN ================= -->
+<section id="deal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>08 · How I'd Run a 1mind Enterprise Deal</div>
+      <h2>A mutual action plan <b>the buyer wants to follow.</b></h2>
+      <p>Enterprise AI purchases stall on security, brand approval and fuzzy success criteria. This plan brings all three forward, with MEDDPICC as the framework.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="map reveal">
+        <div class="map-step"><div class="wk">Week 0</div><div class="node">1</div><div><h4>Discovery &amp; pain quantified</h4><p>Baseline conversion, SE coverage, speed-to-lead. Identify the champion and the metric the CRO reports to the board.</p><span class="who">AE · Champion</span></div></div>
+        <div class="map-step"><div class="wk">Week 1</div><div class="node">2</div><div><h4>Executive alignment</h4><p>CRO and CMO align on one business case, drafted with the value model and the economic buyer's KPIs.</p><span class="who">AE · CRO · CMO</span></div></div>
+        <div class="map-step"><div class="wk">Week 2</div><div class="node">3</div><div><h4>"Meet your Superhuman"</h4><p>A preview trained on their public content, shared with the whole buying committee so everyone can test it on their own time.</p><span class="who">AE · 1mind SE · Superhuman</span></div></div>
+        <div class="map-step"><div class="wk">Week 2–4</div><div class="node">4</div><div><h4>Security, legal &amp; brand, in parallel</h4><p>Trust package (SOC 2, ISO 27001/42001), AI addendum and DPA, plus persona and brand guardrail sign-off.</p><span class="who">CISO · Legal · Brand</span></div></div>
+        <div class="map-step"><div class="wk">Week 5</div><div class="node">5</div><div><h4>Success criteria &amp; signature</h4><p>Written 90-day KPIs, with the implementation kickoff date set before the contract is signed.</p><span class="who">Economic buyer · Procurement</span></div></div>
+        <div class="map-step"><div class="wk">Day 30–60</div><div class="node">6</div><div><h4>Go live</h4><p>Persona workshop, content ingestion, avatar production, CRM write-back. Launch on the highest-intent pages first.</p><span class="who">1mind CS · RevOps</span></div></div>
+        <div class="map-step"><div class="wk">Day 90</div><div class="node">7</div><div><h4>Value review → expansion</h4><p>Show results against the success criteria, then scope Ride-Along or In-Product for the next business unit.</p><span class="who">AE · CRO · CCO</span></div></div>
+      </div>
+
+      <div class="reveal">
+        <div class="medd" style="grid-template-columns:1fr 1fr;margin-top:0">
+          <div class="m"><div class="l">M</div><h5>Metrics</h5><p>Visitor → opportunity conversion, win rate, cycle days, SE hours freed, free-to-paid rate.</p></div>
+          <div class="m"><div class="l">E</div><h5>Economic buyer</h5><p>CRO for Ride-Along, CMO for Inbound, and usually both. The CFO approves.</p></div>
+          <div class="m"><div class="l">D</div><h5>Decision criteria</h5><p>Answer accuracy, brand fidelity, security posture, CRM fit, time to live.</p></div>
+          <div class="m"><div class="l">D</div><h5>Decision process</h5><p>Preview → committee test → security → brand → business case → signature.</p></div>
+          <div class="m"><div class="l">P</div><h5>Paper process</h5><p>Annual contract, DPA, AI addendum. Get the procurement calendar in week one.</p></div>
+          <div class="m"><div class="l">I</div><h5>Identify pain</h5><p>Buyers waiting, SEs rationed, the Drift/Qualified forced choice, flat PLG conversion.</p></div>
+          <div class="m"><div class="l">C</div><h5>Champion</h5><p>VP Demand Gen or VP Sales Engineering, whose metric improves most.</p></div>
+          <div class="m"><div class="l">C</div><h5>Competition</h5><p>Qualified, Fin, DIY, and the status quo. Plant landmines early.</p></div>
+        </div>
+
+        <div class="dogfood">
+          <div><h3>Sell 1mind with 1mind.</h3><p>Every committee member gets Mindy. No one waits a week for answers, and the AE multi-threads at scale.</p></div>
+          <div class="big">11 days<small>HubSpot cycle, $262K deal, 20+ stakeholders<sup class="src" style="color:#fff">8</sup></small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 WHY ERIC ================= -->
+<section id="eric" class="panel">
+  <div class="wrap">
+    <div class="eric-hero">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <div class="sec-num"><span class="slash"></span>09 · Why Eric</div>
+        <h2>The AE who already sells <b>to your buyer, at your ACV.</b></h2>
+        <p>I've spent my career selling revenue technology to CROs, CMOs and RevOps leaders: revenue intelligence at Falkon, pipeline generation at Commsor, and AI at Netradyne. I also helped two startups move from founder-led selling to an enterprise motion, which is where 1mind is headed now.</p>
+      </div>
+      <div class="reveal" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start">
+        <span class="chip p">Enterprise Seller of the Year</span><span class="chip p">MEDDPICC · Command of the Message</span><span class="chip">Founder-led → enterprise</span><span class="chip">Revenue tech &amp; AI</span><span class="chip">Boise, ID · Remote</span>
+      </div>
+    </div>
+
+    <div class="proofs">
+      <div class="pf dark reveal"><div class="v"><span>$</span>19.6M</div><h4>Self-sourced pipeline in under 12 months</h4><p>Netradyne (Series D AI) · won Enterprise Seller of the Year, $1M closed, ~$300K ACV</p></div>
+      <div class="pf reveal"><div class="v"><span>$</span>1.2M</div><h4>Largest deal in Jamf's 20-year history</h4><p>$750K sourced → $1.2M closed. Highest Deal of the Year, 2x Top Performer</p></div>
+      <div class="pf reveal"><div class="v">175<span>%</span></div><h4>Peak quota attainment at Falkon</h4><p>150% (2022), 175% (H2 2023), 125% (2024). Up to 300% in a quarter at Jamf</p></div>
+      <div class="pf reveal"><div class="v">6mo<span>→</span>85d</div><h4>Sales cycle compressed at Falkon</h4><p>By defining ICP, rules of engagement, stages, discovery and SOPs</p></div>
+      <div class="pf reveal"><div class="v">75<span>%</span></div><h4>Sourced → qualified at Commsor</h4><p>$1.6M self-sourced, 40% to closed ARR. Moved the company upmarket to 1,000+ employee accounts</p></div>
+      <div class="pf reveal"><div class="v">F500</div><h4>Enterprise logos opened</h4><p>Snowflake, Phenom, LinkSquares (Falkon) · Albertsons, AAA, Sirva (Netradyne)</p></div>
+    </div>
+
+    <div class="fit reveal">
+      <div class="fit-row head"><div>What 1mind is hiring for</div><div></div><div>Where I've already done it</div></div>
+      <div class="fit-row"><div class="req">Own the full cycle, outbound to close to expansion</div><div class="arrow">✓</div><div class="ev"><b>$19.6M self-sourced</b> at Netradyne. First multi-year deal with <b>built-in expansion triggers</b> at Falkon (Linewize).</div></div>
+      <div class="fit-row"><div class="req">Sell to GTM, product &amp; technical leadership</div><div class="arrow">✓</div><div class="ev">Sold <b>revenue intelligence and pipeline-generation platforms</b> to CROs, CMOs and RevOps, the same people who buy Superhumans.</div></div>
+      <div class="fit-row"><div class="req">Early-stage, high-growth experience</div><div class="arrow">✓</div><div class="ev">Founding Enterprise AE → <b>Head of Sales</b> at Falkon (Series A). Head of MM &amp; Enterprise at Commsor (Series B).</div></div>
+      <div class="fit-row"><div class="req">Outbound muscle to build pipeline from zero</div><div class="arrow">✓</div><div class="ev"><b>$750K pipeline in my first quarter</b> at Falkon, $1.5M by H1. Coached SDR teams on outbound at Netradyne and Jamf.</div></div>
+      <div class="fit-row"><div class="req">Six-figure enterprise deal execution</div><div class="arrow">✓</div><div class="ev">~$300K ACV at Netradyne, <b>$1.2M</b> at Jamf. Multi-threaded safety, ops, finance and channel stakeholders at F500 companies.</div></div>
+      <div class="fit-row"><div class="req">Category evangelist for AI-Led Growth</div><div class="arrow">✓</div><div class="ev">Sell AI today. Built <b>VC and partner channels</b> (OMERS, Florida Funders, agency and PE advisors), which are the one-to-many motion 1mind can scale.</div></div>
+    </div>
+
+    <div class="why-block">
+      <div class="why reveal"><h3>What 1mind gets</h3><p>An AE who has lived through the move from founder-led to enterprise twice and knows what breaks along the way. I don't just carry a number. I help build the playbook, the ICP and the process that let the next ten AEs carry theirs.</p><p>I sell with MEDDPICC and Command of the Message, which fits a product whose buyers need a board-ready business case.</p></div>
+      <div class="why p reveal"><h3>Why 1mind, for me</h3><p>I started out as an SDR and later ran SDR teams. I know what a buyer loses when they have to wait for an expert, and what it costs a company when experts don't scale.</p><p>1mind fixes that for buyers and sellers at the same time, which is what "Every1 Wins" means. I'd rather help build that category than sell against it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30/60/90 -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num"><span class="slash"></span>10 · My First 90 Days</div>
+      <h2>Learn it. Test it. <b>Own the territory.</b></h2>
+      <p>My 30/60/90 framework, rebuilt for 1mind's product, plays and buyers.</p>
+    </div>
+    <div class="plan">
+      <div class="phase reveal">
+        <div class="d">30<span>days</span></div>
+        <h3>Become a Superhuman expert</h3>
+        <ul>
+          <li>Certify on all four use cases. Study Mindy transcripts, customer calls and case studies (HubSpot, Experity, Nutanix)</li>
+          <li>Talk to Mindy myself, as a buyer would</li>
+          <li>Build battlecards for Qualified/Agentforce, Fin, Docket and DIY</li>
+          <li>Map the Drift install base with the Salesloft partner team</li>
+          <li>Tier the territory with SDRs using the ICP fit matrix</li>
+          <li>Apply MEDDPICC to any inherited pipeline, with clear entry and exit criteria</li>
+        </ul>
+        <div class="kpi"><b>Done looks like</b>Territory tiered (T1/T2/T3), first 25 target accounts mapped, first meetings booked</div>
+      </div>
+      <div class="phase reveal">
+        <div class="d">60<span>days</span></div>
+        <h3>Test the territory</h3>
+        <ul>
+          <li>Launch the Drift Replacement and Salesforce-Free plays, with 5x5 ABM on Tier 1 accounts</li>
+          <li>A/B test messaging (capacity vs. conversion vs. competitive) with SDRs</li>
+          <li>LinkedIn-first category evangelism on AI-Led Growth</li>
+          <li>Build discovery and demo talk tracks where the Superhuman runs the technical demo</li>
+          <li>Set a mutual action plan template with 90-day success criteria</li>
+          <li>Run the first investor-network workshop</li>
+        </ul>
+        <div class="kpi"><b>Done looks like</b>First opportunities in solution stage, a self-sourced pipeline trend line, and plays ranked by conversion</div>
+      </div>
+      <div class="phase reveal">
+        <div class="d">90<span>days</span></div>
+        <h3>Own the territory</h3>
+        <ul>
+          <li>5x pipeline coverage on my number, mostly self-sourced</li>
+          <li>First enterprise lands, each with an expansion map (Inbound → Ride-Along → In-Product → CS)</li>
+          <li>Forecasts grounded in MEDDPICC so the commits hold</li>
+          <li>Share field feedback with product (Ride-Along requests, integration gaps)</li>
+          <li>Document the plays that work and share them with the team</li>
+        </ul>
+        <div class="kpi"><b>Done looks like</b>A repeatable enterprise motion that the next AE can pick up</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSE ================= -->
+<section class="close" id="close">
+  <div class="wrap">
+    <h2 class="reveal"><b>Every1 Wins.</b><br>Let's make it true in enterprise.</h2>
+    <p class="reveal">Every buyer gets their best expert in the moment they need it. 1mind builds the category it was founded to create. And the team adds an AE who has built enterprise motions before.</p>
+    <div class="three reveal">
+      <div><b>Buyers win</b><span>Expert answers, instantly</span></div>
+      <div><b>Customers win</b><span>2–5x conversion, shorter cycles</span></div>
+      <div><b>1mind wins</b><span>Enterprise pipeline, from day one</span></div>
+    </div>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="mailto:eiannello72@gmail.com?subject=1mind%20Enterprise%20AE%20%E2%80%94%20Next%20steps">Talk Revenue with Me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <details>
+      <summary>Sources (public information, as of September 2026)</summary>
+      <ol>
+        <li><a href="https://www.prnewswire.com/news-releases/1mind-publicly-launches-with-40-million-to-usher-in-new-era-of-ai-led-sales-with-highly-skilled-persuasive-and-emotionally-intelligent-superhumans-302609156.html" target="_blank" rel="noopener">PR Newswire: 1mind launches with $40M</a> · <a href="https://techcrunch.com/2025/11/10/6sense-founder-amanda-kahlow-raises-30-million-for-new-human-replacement-ai-sales-startup-1mind/" target="_blank" rel="noopener">TechCrunch</a></li>
+        <li><a href="https://getlatka.com/companies/1mind" target="_blank" rel="noopener">Latka: 1mind company profile</a> (customer count, June 2026)</li>
+        <li><a href="https://theaiagentindex.com/agents/1mind" target="_blank" rel="noopener">AI Agent Index: 1mind review</a></li>
+        <li><a href="https://getlatka.com/blog/how-1mind-achieved-rapid-revenue-growth-with-ai-driven-sales-solutions" target="_blank" rel="noopener">Latka: How 1mind achieved rapid growth</a></li>
+        <li><a href="https://www.businesswire.com/news/home/20260306534285/en/Clari-Salesloft-and-1mind-Partner-to-Advance-AI-Driven-Revenue-Orchestration" target="_blank" rel="noopener">Business Wire: Clari + Salesloft and 1mind partner</a></li>
+        <li><a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-qualified/" target="_blank" rel="noopener">Salesforce: agreement to acquire Qualified</a> · <a href="https://getbreakout.ai/blog/qualified-salesforce-acquisition-alternatives" target="_blank" rel="noopener">Breakout analysis</a></li>
+        <li><a href="https://www.prnewswire.com/news-releases/1mind-launches-ride-along-with-the-industrys-first-ai-that-joins-live-sales-calls-as-a-visible-named-sales-engineer-speaking-directly-to-buyers-302776685.html" target="_blank" rel="noopener">PR Newswire: 1mind launches Ride-Along</a></li>
+        <li><a href="https://www.carilu.com/p/ai-led-sales-is-here-1mind-superhuman" target="_blank" rel="noopener">Carilu: AI-led sales is here</a> · <a href="https://zapier.com/studios/series/agents-of-scale/1mind" target="_blank" rel="noopener">Zapier Agents of Scale</a></li>
+        <li><a href="https://www.1mind.com/case-study/hubspot" target="_blank" rel="noopener">1mind: HubSpot case study</a> · <a href="https://rywalker.com/research/1mind" target="_blank" rel="noopener">Ry Walker research</a></li>
+        <li><a href="https://getlatka.com/companies/1mind" target="_blank" rel="noopener">Latka: reported NDR</a> (third-party estimate)</li>
+        <li><a href="https://www.aicentralresources.com/tool/1mind" target="_blank" rel="noopener">AI Central: security &amp; integrations</a></li>
+        <li><a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience" target="_blank" rel="noopener">Gartner: 67% prefer rep-free</a> · <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-survey-finds-sixty-nine-percent-of-b-two-b-buyers-turn-to-sales-reps-to-validate-ai-generated-insights" target="_blank" rel="noopener">Gartner: 69% validate with reps</a></li>
+        <li><a href="https://fin.ai/learn/fin-for-sales-vs-1mind-ai-inbound-sales-agents-compared-2026" target="_blank" rel="noopener">Fin: Fin for Sales vs 1mind</a></li>
+        <li><a href="https://www.docket.io/blog/docket-vs-1mind" target="_blank" rel="noopener">Docket vs 1mind</a></li>
+        <li><a href="https://www.navattic.com/blog/best-1mind-alternatives" target="_blank" rel="noopener">Navattic: 1mind alternatives</a> · <a href="https://www.storylane.io/blog/1mind-alternatives" target="_blank" rel="noopener">Storylane</a></li>
+        <li><a href="https://www.artisan.co/blog/the-best-1mind-alternatives" target="_blank" rel="noopener">Artisan: 1mind alternatives</a> · <a href="https://www.amplemarket.com/blog/best-ai-sales-agents" target="_blank" rel="noopener">Amplemarket</a></li>
+      </ol>
+    </details>
+    <p class="disclaimer">Independent research and a proposed sales approach, prepared by Eric Iannello as part of an interview for the Enterprise Account Executive role. Not affiliated with or endorsed by 1mind. Brand styling is used respectfully to reflect the company. Metrics come from public and third-party sources and may be estimates. Target accounts and messaging are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Nav: scrolled state, progress, scroll-spy, mobile menu
+  var nav=document.getElementById('nav'),prog=document.getElementById('progress');
+  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('scrolled',y>10);
+    prog.style.width=(h>0?(y/h*100):0)+'%';
+    var cur=-1;
+    secs.forEach(function(s,i){ if(s && s.getBoundingClientRect().top<140) cur=i; });
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  links.forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');mb.setAttribute('aria-expanded',false)})});
+
+  // Reveal on scroll + counters
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var to=+el.dataset.to;
+    if(reduce){el.textContent=to;return}
+    var t0=null;
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/1200,1); el.textContent=Math.round(to*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');
+        [].forEach.call(e.target.querySelectorAll('.count'),count);
+        io.unobserve(e.target);}
+    })},{threshold:.12});
+    [].forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el)});
+  } else {
+    [].forEach.call(document.querySelectorAll('.reveal'),function(el){el.classList.add('in')});
+    [].forEach.call(document.querySelectorAll('.count'),count);
+  }
+
+  // Generic tab switcher
+  function tabs(btnSel,attr,activeCls){
+    var btns=[].slice.call(document.querySelectorAll(btnSel));
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');var p=document.getElementById(x.dataset[attr]);if(p)p.classList.remove('active')});
+      b.classList.add('active');b.setAttribute('aria-selected','true');
+      var p=document.getElementById(b.dataset[attr]); if(p){p.classList.add('active');p.classList.add('in')}
+    })});
+  }
+  tabs('.journey button','uc');
+  tabs('.tabs .tab','play');
+  tabs('.comp-btn','bc');
+
+  // Hero call captions
+  var script=[
+    {w:'b1',who:'VP Sales Engineering',t:'How does this handle SSO and data residency for our EU customers?'},
+    {w:'sh',who:'Superhuman',t:'Great question. You get SAML SSO, and EU data stays in-region. Let me pull up the architecture slide…'},
+    {w:'b1',who:'VP Sales Engineering',t:'And it writes back to Salesforce automatically?'},
+    {w:'sh',who:'Superhuman',t:'Every insight from this call goes into the opportunity: pains, stakeholders, next steps.',toast:true},
+    {w:'b2',who:'Account Executive',t:"Perfect. Let's lock in the security review for Tuesday."}
+  ];
+  var cap=document.getElementById('captions'),toast=document.getElementById('toast');
+  var tiles={sh:document.getElementById('tileSH'),b1:document.getElementById('tileB1'),b2:document.getElementById('tileB2')};
+  var i=0;
+  function next(){
+    if(i>=script.length){ setTimeout(function(){cap.innerHTML='';toast.classList.remove('show');i=0;next()},2600); return; }
+    var s=script[i++];
+    Object.keys(tiles).forEach(function(k){tiles[k].classList.toggle('speaking',k===s.w)});
+    var d=document.createElement('div');d.className='cap-line'+(s.w==='sh'?'':' buyer');
+    var b=document.createElement('b');b.textContent=s.who+': ';d.appendChild(b);d.appendChild(document.createTextNode(s.t));
+    cap.appendChild(d);
+    while(cap.children.length>3)cap.removeChild(cap.firstChild);
+    requestAnimationFrame(function(){d.classList.add('show')});
+    if(s.toast)setTimeout(function(){toast.classList.add('show')},700);
+    setTimeout(next,reduce?4000:2900);
+  }
+  next();
+
+  // ICP scorer
+  var checks=[].slice.call(document.querySelectorAll('#checks input'));
+  var sn=document.getElementById('scoreNum'),st=document.getElementById('scoreTier'),sb=document.getElementById('scoreBar'),sp=document.getElementById('scorePlay');
+  function score(){
+    var s=checks.reduce(function(a,c){return a+(c.checked?+c.dataset.w:0)},0);
+    var drift=checks[3].checked,peer=checks[6].checked,warm=checks[7].checked,cap=checks[4].checked;
+    sn.textContent=s;sb.style.width=s+'%';
+    var tier,play;
+    if(s===0){tier='Unscored';play='Check a few boxes to get a tier and the play to run.';}
+    else if(s>=70){tier='Tier 1 · 5x5 ABM';play='Exec-led multi-thread now. '+(drift?'Lead with the Drift Replacement Blitz.':warm?'Open through the warm path.':peer?'Run "Your Peer Has a Superhuman."':cap?'Lead with "Every Deal Gets an SE."':'Build the capacity business case for the CRO.');}
+    else if(s>=45){tier='Tier 2 · Targeted';play='Persona-based sequence with SDRs. '+(drift?'Time it to the Drift sunset.':cap?'Lead with SE coverage.':'Lead with conversion proof.');}
+    else {tier='Tier 3 · Nurture';play='One-to-many: webinars, LinkedIn content, and a 1mind ROI calculator link. Revisit when a trigger fires.';}
+    st.textContent=tier;sp.textContent=play;
+  }
+  checks.forEach(function(c){c.addEventListener('change',score)});
+
+  // ROI model
+  function $(id){return document.getElementById(id)}
+  function money(n){ if(n>=1e6) return (n/1e6).toFixed(n>=1e7?1:2)+'M'; if(n>=1e3) return Math.round(n/1e3)+'K'; return Math.round(n).toString(); }
+  function roi(){
+    var v=+$('r1').value,c=+$('r2').value/100,acv=+$('r3').value,w=+$('r4').value/100,l=+$('r5').value,inv=+$('r6').value;
+    $('o1').textContent=v.toLocaleString();$('o2').textContent=(c*100).toFixed(1)+'%';$('o3').textContent='$'+money(acv);
+    $('o4').textContent=Math.round(w*100)+'%';$('o5').textContent=l.toFixed(1)+'x';$('o6').textContent='$'+money(inv);
+    var baseOpps=v*12*c, newOpps=baseOpps*l, inc=newOpps-baseOpps;
+    var basePipe=baseOpps*acv,newPipe=newOpps*acv,incPipe=inc*acv,incArr=inc*w*acv;
+    $('arr').textContent=money(incArr);
+    $('opps').textContent='+'+Math.round(inc).toLocaleString();
+    $('pipe').textContent='+$'+money(incPipe);
+    $('roiX').textContent=(incArr/inv).toFixed(1)+'x';
+    var months=incArr>0?inv/(incArr/12):Infinity;
+    $('payback').textContent=isFinite(months)?(months<1?'< 1 month':months.toFixed(1)+' months'):'-';
+    var max=Math.max(newPipe,1);
+    $('bar1').style.width=Math.max(basePipe/max*100,8)+'%';$('bar1').textContent='$'+money(basePipe);
+    $('bar2').style.width=(newPipe/max*100)+'%';$('bar2').textContent='$'+money(newPipe);
+  }
+  ['r1','r2','r3','r4','r5','r6'].forEach(function(id){$(id).addEventListener('input',roi)});
+  roi();
+})();
+</script>
+</body>
+</html>

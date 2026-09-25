@@ -510,7 +510,6 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <li><a href="#read">My Read</a></li>
       <li><a href="#micro">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
-      <li><a href="#value">Value</a></li>
       <li><a href="#deal">Deal Plan</a></li>
       <li><a href="#eric">About Me</a></li>
       <li><a href="#plan">90 Days</a></li>
@@ -626,32 +625,6 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <div class="sec-num"><span class="slash"></span>02 Sales Plays</div>
       <h2>Four plays <b>I would run first</b></h2>
       <p>Each play covers the target, the trigger, the questions that qualify it and a three email sequence. All four are ready to run in week one.</p>
-    </div>
-
-    <div class="tier-row reveal">
-      <div>
-        <h3>Tiering the territory</h3>
-        <p>Before any outreach, I would score every account with SDRs using the criteria on the right. Tier 1 accounts get executive led, multithreaded plays. Tier 2 gets persona sequences. Tier 3 gets nurture until a trigger fires.</p>
-      </div>
-      <aside class="scorer" aria-labelledby="scorerTitle">
-        <h3 id="scorerTitle">Account fit scorer</h3>
-        <p class="sub">Check what applies to an account.</p>
-        <div id="checks">
-          <label class="check"><input type="checkbox" data-w="15"><span>500+ employees, B2B tech</span></label>
-          <label class="check"><input type="checkbox" data-w="15"><span>High inbound volume or a product led funnel</span></label>
-          <label class="check"><input type="checkbox" data-w="15"><span>Technical, demo heavy product</span></label>
-          <label class="check"><input type="checkbox" data-w="15"><span>Handles inbound with a chatbot or form</span></label>
-          <label class="check"><input type="checkbox" data-w="10"><span>SE or SDR capacity is constrained</span></label>
-          <label class="check"><input type="checkbox" data-w="10"><span>New CRO or CMO, or an AI mandate</span></label>
-          <label class="check"><input type="checkbox" data-w="10"><span>A peer or competitor already uses 1mind</span></label>
-          <label class="check"><input type="checkbox" data-w="10"><span>Warm path through an investor or former colleague</span></label>
-        </div>
-        <div class="score-out">
-          <div class="score-top"><b id="scoreNum">0</b><span class="tier" id="scoreTier">Unscored</span></div>
-          <div class="score-bar"><i id="scoreBar"></i></div>
-          <p id="scorePlay">Check a few boxes to see the tier and recommended play.</p>
-        </div>
-      </aside>
     </div>
 
     <div class="tabs reveal" role="tablist" aria-label="Sales plays">
@@ -812,66 +785,11 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   </div>
 </section>
 
-<!-- OBJECTIONS -->
-<section id="objections">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>04 Objections</div>
-      <h2>The pushback <b>I expect in every deal</b></h2>
-    </div>
-    <div class="objs reveal">
-      <details class="obj" open><summary>Six figures is a lot for a website tool</summary><div class="obj-body"><div class="k">Response</div><p>It's priced against capacity, not chat software. The fair comparison is the loaded cost of the SDRs and SEs whose work it absorbs.</p><div class="k">Next step</div><p>Run the value model below on their numbers and agree on a payback target.</p></div></details>
-      <details class="obj"><summary>Can we trial it first?</summary><div class="obj-body"><div class="k">Response</div><p>A Superhuman is only as good as the content behind it, so a generic trial undersells it. A preview built on their own content is a better test.</p><div class="k">Next step</div><p>Written success criteria and a 90 day value review in the contract.</p></div></details>
-      <details class="obj"><summary>An AI avatar is a brand risk</summary><div class="obj-body"><div class="k">Response</div><p>Slow follow up and chatbot loops are the bigger risk. The customer's brand team approves persona, tone and guardrails before launch.</p><div class="k">Proof</div><p>HubSpot, LinkedIn and Nutanix all put Superhumans in front of their buyers.</p></div></details>
-      <details class="obj"><summary>What about hallucinations and security?</summary><div class="obj-body"><div class="k">Response</div><p>Answers come from approved content. 1mind holds SOC 2 Type II, ISO 27001 and ISO 42001, and never trains models on customer data.</p><div class="k">Next step</div><p>Send the security package in week one, not week six.</p></div></details>
-      <details class="obj"><summary>Does this replace my team?</summary><div class="obj-body"><div class="k">Response</div><p>It shifts the work. SDRs focus on qualified accounts, SEs on complex deals and AEs on the business case.</p><div class="k">Proof</div><p>1mind's own AEs sell alongside Mindy. One HubSpot deal had more than 20 stakeholders and closed in 11 days at $262K.<sup><a href="#s10">10</a></sup></p></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- VALUE -->
-<section id="value" class="panel">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>05 The Value Case</div>
-      <h2>What it's worth <b>to the customer</b></h2>
-      <p>A model I would build with a prospect's finance team. The lift defaults to 2x, the low end of what customers report.<sup><a href="#s11">11</a></sup></p>
-    </div>
-
-    <div class="roi reveal">
-      <div class="roi-in">
-        <div class="field"><label for="r1">High intent visitors per month <output id="o1"></output></label><input type="range" id="r1" min="500" max="20000" step="250" value="1000"><small>Visitors to pricing, demo, product and comparison pages</small></div>
-        <div class="field"><label for="r2">Visitor to opportunity rate today <output id="o2"></output></label><input type="range" id="r2" min="0.2" max="5" step="0.1" value="1"></div>
-        <div class="field"><label for="r3">Average contract value <output id="o3"></output></label><input type="range" id="r3" min="10000" max="250000" step="5000" value="50000"></div>
-        <div class="field"><label for="r4">Win rate <output id="o4"></output></label><input type="range" id="r4" min="5" max="50" step="1" value="20"></div>
-        <div class="field"><label for="r5">Conversion lift <output id="o5"></output></label><input type="range" id="r5" min="1.2" max="5" step="0.1" value="2"></div>
-        <div class="field"><label for="r6">Annual 1mind investment <output id="o6"></output></label><input type="range" id="r6" min="100000" max="400000" step="10000" value="150000"><small>Public estimates range from $100K to $400K per year<sup><a href="#s12">12</a></sup></small></div>
-      </div>
-
-      <div class="roi-out" aria-live="polite">
-        <div class="pill" style="align-self:flex-start">New ARR per year</div>
-        <div class="roi-big"><span>$</span><span id="arr">0</span></div>
-        <div class="bars">
-          <div class="bar-row">Pipeline today<div class="bar"><i class="b1" id="bar1"></i></div></div>
-          <div class="bar-row">Pipeline with a Superhuman<div class="bar"><i class="b2" id="bar2"></i></div></div>
-        </div>
-        <div class="roi-rows">
-          <div class="roi-row"><span>Added opportunities per year</span><b id="opps">0</b></div>
-          <div class="roi-row"><span>Added pipeline per year</span><b id="pipe">0</b></div>
-          <div class="roi-row hi"><span>Return on investment</span><b id="roiX">0x</b></div>
-          <div class="roi-row hi"><span>Payback period</span><b id="payback"></b></div>
-        </div>
-        <p class="roi-note">Illustrative only and not a 1mind quote. Excludes shorter cycles, SE time saved and expansion revenue.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- DEAL PLAN -->
 <section id="deal">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>06 Deal Plan</div>
+      <div class="sec-num"><span class="slash"></span>04 Deal Plan</div>
       <h2>Running an <b>enterprise deal</b></h2>
       <p>Enterprise AI deals stall on security, brand approval and vague success criteria. This plan handles all three early.</p>
     </div>
@@ -911,7 +829,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   <div class="wrap">
     <div class="eric-hero">
       <div class="sec-head reveal" style="margin-bottom:0">
-        <div class="sec-num"><span class="slash"></span>07 About Me</div>
+        <div class="sec-num"><span class="slash"></span>05 About Me</div>
         <h2>Why I'm a fit <b>for this role</b></h2>
         <p>I have spent most of my career selling revenue technology to CROs, CMOs and RevOps leaders, including revenue intelligence at Falkon and pipeline generation at Commsor. Today I sell AI at Netradyne at roughly $300K ACV. I have also helped two startups move from founder led sales to a repeatable enterprise motion.</p>
       </div>
@@ -938,8 +856,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <div class="fit-row"><div class="req">Six figure enterprise deals</div><div class="arrow">✓</div><div class="ev">Roughly $300K ACV at Netradyne and <b>$1.2M</b> at Jamf, multithreaded across F500 buying committees.</div></div>
     </div>
 
-    <div class="why-block">
-      <div class="why reveal"><h3>What 1mind gets</h3><p>An AE who has been through the shift from founder led to enterprise sales twice. I carry a number and help build the process, ICP and playbook that let the next AEs ramp faster.</p></div>
+    <div class="why-block" style="grid-template-columns:1fr">
       <div class="why p reveal"><h3>Why 1mind</h3><p>I started as an SDR and later ran SDR teams, so I have seen what it costs when buyers wait on experts who can't scale. 1mind solves that for both sides of the deal, and I would rather help build this category than sell against it.</p></div>
     </div>
   </div>
@@ -949,7 +866,7 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
 <section id="plan">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num"><span class="slash"></span>08 First 90 Days</div>
+      <div class="sec-num"><span class="slash"></span>06 First 90 Days</div>
       <h2>Learn, test, <b>then scale</b></h2>
     </div>
     <div class="plan">
@@ -1017,8 +934,6 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
       <li id="s8"><a href="https://fin.ai/learn/fin-for-sales-vs-1mind-ai-inbound-sales-agents-compared-2026" target="_blank" rel="noopener">Fin, Fin for Sales compared with 1mind</a></li>
       <li id="s9"><a href="https://www.docket.io/blog/docket-vs-1mind" target="_blank" rel="noopener">Docket, Docket compared with 1mind</a></li>
       <li id="s10"><a href="https://www.carilu.com/p/ai-led-sales-is-here-1mind-superhuman" target="_blank" rel="noopener">Carilu, AI-Led Sales Is Here</a></li>
-      <li id="s11"><a href="https://theaiagentindex.com/agents/1mind" target="_blank" rel="noopener">AI Agent Index, 1mind review</a></li>
-      <li id="s12"><a href="https://www.knock-ai.com/blog/1mind-pricing" target="_blank" rel="noopener">Knock AI, 1mind pricing analysis</a></li>
     </ol>
     <p class="disclaimer">Independent research prepared by Eric Iannello for the 1mind Enterprise Account Executive interview. Not affiliated with or endorsed by 1mind. Figures come from public and third party sources as of September 2026, and target accounts and emails are illustrative.</p>
   </div>
@@ -1097,41 +1012,6 @@ sup.src{font-size:10px;color:var(--purple-hi);font-weight:700;margin-left:1px}
   }
   next();
 
-  var checks=[].slice.call(document.querySelectorAll('#checks input'));
-  var sn=document.getElementById('scoreNum'),st=document.getElementById('scoreTier'),sb=document.getElementById('scoreBar'),sp=document.getElementById('scorePlay');
-  function score(){
-    var s=checks.reduce(function(a,c){return a+(c.checked?+c.dataset.w:0)},0);
-    var drift=checks[3].checked,cap=checks[4].checked,warm=checks[7].checked;
-    sn.textContent=s;sb.style.width=s+'%';
-    var tier,play;
-    if(s===0){tier='Unscored';play='Check a few boxes to see the tier and recommended play.';}
-    else if(s>=70){tier='Tier 1';play='Executive led, multithreaded outreach now. '+(drift?'Start with the Chat to Expert play.':warm?'Open through the warm introduction.':cap?'Start with the SE Coverage Gap play.':'Build a capacity business case for the CRO.');}
-    else if(s>=45){tier='Tier 2';play='Persona based sequence with SDR support. '+(drift?'Lead with conversion versus their current chat.':cap?'Lead with SE coverage.':'Lead with conversion results.');}
-    else {tier='Tier 3';play='Nurture through content and events, and revisit when a trigger fires.';}
-    st.textContent=tier;sp.textContent=play;
-  }
-  checks.forEach(function(c){c.addEventListener('change',score)});
-
-  function $(id){return document.getElementById(id)}
-  function money(n){ if(n>=1e6) return (n/1e6).toFixed(n>=1e7?1:2)+'M'; if(n>=1e3) return Math.round(n/1e3)+'K'; return Math.round(n).toString(); }
-  function roi(){
-    var v=+$('r1').value,c=+$('r2').value/100,acv=+$('r3').value,w=+$('r4').value/100,l=+$('r5').value,inv=+$('r6').value;
-    $('o1').textContent=v.toLocaleString();$('o2').textContent=(c*100).toFixed(1)+'%';$('o3').textContent='$'+money(acv);
-    $('o4').textContent=Math.round(w*100)+'%';$('o5').textContent=l.toFixed(1)+'x';$('o6').textContent='$'+money(inv);
-    var baseOpps=v*12*c,newOpps=baseOpps*l,inc=newOpps-baseOpps;
-    var basePipe=baseOpps*acv,newPipe=newOpps*acv,incArr=inc*w*acv;
-    $('arr').textContent=money(incArr);
-    $('opps').textContent=Math.round(inc).toLocaleString();
-    $('pipe').textContent='$'+money(inc*acv);
-    $('roiX').textContent=(incArr/inv).toFixed(1)+'x';
-    var months=incArr>0?inv/(incArr/12):Infinity;
-    $('payback').textContent=isFinite(months)?(months<1?'Under 1 month':months.toFixed(1)+' months'):'None';
-    var max=Math.max(newPipe,1);
-    $('bar1').style.width=Math.max(basePipe/max*100,8)+'%';$('bar1').textContent='$'+money(basePipe);
-    $('bar2').style.width=(newPipe/max*100)+'%';$('bar2').textContent='$'+money(newPipe);
-  }
-  ['r1','r2','r3','r4','r5','r6'].forEach(function(id){$(id).addEventListener('input',roi)});
-  roi();
 })();
 </script>
 </body>

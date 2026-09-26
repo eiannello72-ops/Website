@@ -77,6 +77,7 @@ mark{background:var(--butter);color:inherit;padding:0 .08em}
 main{padding-block:56px 40px;min-width:0}
 .col{max-width:760px}
 section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
 section:first-of-type{border-top:0;padding-top:0}
 .sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
 .sh h2{font-size:var(--step-3)}
@@ -259,6 +260,109 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
 .sources li:target{background:var(--butter)}
 .disc{margin-top:22px;max-width:760px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Energy pass ===== */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 20px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#F3F3F8}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.peri{background:var(--peri)}
+.panel.butter{background:var(--butter)}
+.panel.ink .sh p,.panel.ink .ttt p{color:#B9B9C6}
+.panel.ink .track li{border-color:#2C2C34}
+.panel.ink .track .who{color:#9A9AA8}
+.panel.ink .track .who b{color:var(--butter)}
+.panel.ink .track blockquote{color:#F3F3F8}
+.panel.ink .track .ev{color:#B9B9C6}
+.panel.ink .track .ev b{background:#2A2A40;color:var(--butter)}
+.panel.ink .ttt h4{color:var(--butter)}
+.panel.ink sup a{color:var(--peri)}
+.panel.peri .sh p{color:#1E1F3D}
+.panel.peri .play-nav{border-color:rgba(0,0,0,.25)}
+.panel.peri .play-nav button{color:#2A2B55}
+.panel.peri .play-nav button[aria-selected="true"]{color:var(--ink)}
+.panel.peri .insight{border-color:var(--ink)}
+.panel.peri .dl dd{color:#15162E}
+.panel.peri .label{color:#2A2B55}
+.panel.peri .mail{box-shadow:8px 8px 0 var(--ink)}
+.panel.peri sup a{color:var(--ink)}
+.panel.butter .sh p{color:#3A3A10}
+.panel.butter .phase .when{border-color:var(--ink);color:#4A4A18}
+.panel.butter .phase li:before{background:var(--ink)}
+.panel.butter .phase ul{color:#1C1C0A}
+.panel.butter .out div{background:#fff;border:1.5px solid var(--ink)}
+.panel.butter .phase:last-child .out div{background:var(--ink);color:#fff}
+.panel.butter .phase:last-child .out b{color:var(--butter)}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.hero .doc-meta span{color:#9A9AA8}
+.hero .doc-meta span b{color:#fff}
+.hero h1{color:#fff;font-size:clamp(40px,5vw,64px);max-width:none}
+.hero h1 mark{background:var(--butter);color:var(--ink);padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero .lede{color:#C9C9D6}
+.hero .lede q{color:#fff}
+.hero .facts{border-color:#fff}
+.hero .facts dt{color:#8D8DA0}
+.hero .facts dd{color:#fff}
+.hero sup a{color:var(--peri)}
+.art{width:100%;max-width:360px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:240px;order:-1;justify-self:start}}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:12px}}
+.float figure{margin-top:0}
+.float .term{box-shadow:8px 8px 0 var(--butter);border:1.5px solid #fff}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--butter);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:600;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:14px;margin-top:10px;color:#3A3A10}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Stack diagram */
+.stack-fig{margin:8px 0 56px;max-width:1040px}
+.stack-grid{display:grid;grid-template-columns:minmax(0,1.35fr) 64px minmax(0,1fr);gap:0;align-items:stretch}
+@media (max-width:900px){.stack-grid{grid-template-columns:1fr;gap:18px}}
+.side-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#9A9AA8;margin-bottom:12px;display:flex;justify-content:space-between}
+.side-lbl b{color:var(--butter);font-weight:500}
+.before,.after{background:#15151A;border:1.5px solid #34343E;border-radius:14px;padding:22px}
+.after{background:#14142A;border-color:var(--peri)}
+.app{font-family:var(--mono);font-size:13px;text-align:center;border:1.5px dashed #5A5A68;border-radius:8px;padding:8px;color:#D6D6E2}
+.pipes{position:relative;height:46px}
+.pipes svg{position:absolute;inset:0;width:100%;height:100%}
+.flow{stroke:var(--peri);stroke-width:1.6;fill:none;stroke-dasharray:5 6;animation:flow 1.2s linear infinite}
+.flow.y{stroke:var(--butter)}
+@keyframes flow{to{stroke-dashoffset:-22}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}}
+.dbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.db{border:1.5px solid #fff;border-radius:10px;padding:12px 10px 10px;background:#1E1E26;text-align:center;position:relative}
+.db:before{content:"";display:block;width:34px;height:40px;margin:0 auto 8px;border:1.5px solid #fff;border-radius:50%/12px;background:linear-gradient(#0000 0 12px,var(--c,#A1A7F0) 12px)}
+.db b{display:block;font-size:13.5px;font-weight:600;color:#fff}
+.db small{display:block;font-family:var(--mono);font-size:10.5px;color:#9A9AA8;margin-top:2px}
+.syncs{display:flex;justify-content:space-around;margin-top:12px;font-family:var(--mono);font-size:10.5px;color:#FCA5A5}
+.syncs span{border:1px solid #6B2B2B;border-radius:4px;padding:2px 6px;background:#2A1414}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--butter);color:var(--ink);display:grid;place-items:center;font-family:var(--mono);font-weight:600;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.one{border:1.5px solid #fff;border-radius:14px;background:var(--peri);color:var(--ink);padding:18px;box-shadow:6px 6px 0 var(--butter)}
+.one h4{font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
+.one h4 i{width:26px;height:30px;border:1.5px solid var(--ink);border-radius:50%/9px;background:linear-gradient(#0000 0 9px,var(--butter) 9px);display:inline-block}
+.one ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.one li{font-size:13.5px;font-weight:500;background:#fff;border:1.5px solid var(--ink);border-radius:6px;padding:6px 8px}
+.tally{display:flex;gap:18px;margin-top:14px;font-family:var(--mono);font-size:12.5px}
+.before .tally{color:#FCA5A5}
+.after .tally{color:#BFE9CF}
+.tally b{font-size:22px;font-family:var(--display);font-weight:600;margin-right:4px}
+.stack-fig figcaption{color:#9A9AA8}
+.stack-fig figcaption b{color:#fff}
 </style>
 </head>
 <body>
@@ -289,7 +393,8 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
 
   <main>
     <!-- Overview -->
-    <section id="top">
+    <section id="top" class="hero grain">
+      <div>
       <div class="doc-meta">
         <span class="status"><b>Proposal</b></span>
         <span>Enterprise Account Executive</span>
@@ -304,6 +409,31 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
         <div><dt>Territory</dt><dd>Mountain and Pacific</dd></div>
         <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
       </dl>
+      </div>
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 300 330">
+          <defs>
+            <pattern id="stripes" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)"><rect width="26" height="26" fill="#FAFBA3"/><path d="M0 4 Q13 10 26 4 L26 11 Q13 16 0 11Z" fill="#0B0B0C"/></pattern>
+            <clipPath id="body"><path d="M22 60 V244 A118 36 0 0 0 258 244 V60 Z"/></clipPath>
+          </defs>
+          <path transform="translate(14 14)" d="M22 60 V244 A118 36 0 0 0 258 244 V60 A118 36 0 0 0 22 60Z" fill="#FAFBA3"/>
+          <path d="M22 60 V244 A118 36 0 0 0 258 244 V60 Z" fill="#A1A7F0"/>
+          <rect x="0" y="60" width="300" height="70" fill="url(#stripes)" clip-path="url(#body)"/>
+          <g fill="none" stroke="#fff" stroke-width="3">
+            <path d="M22 130 A118 36 0 0 0 258 130"/>
+            <path d="M22 190 A118 36 0 0 0 258 190"/>
+            <path d="M22 60 V244 A118 36 0 0 0 258 244 V60"/>
+          </g>
+          <ellipse cx="140" cy="60" rx="118" ry="36" fill="#fff" stroke="#fff" stroke-width="3"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#0B0B0C" text-anchor="middle">
+            <text x="140" y="65" font-weight="600">tiger postgres</text>
+            <text x="140" y="190">time series</text>
+            <text x="140" y="246">vector + relational</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="float">
       <figure>
         <div class="term" role="img" aria-label="Terminal session showing one Postgres database handling a fork for an agent, a time series query, a vector search and a relational join">
           <div class="term-bar"><i><span></span></i><span>tsdb, production</span></div>
@@ -322,7 +452,13 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
         </div>
         <figcaption><b>Fig. 1</b><span>The first meeting in one screen. Agents, time series, vector search and relational data in the same Postgres. Illustrative commands.</span></figcaption>
       </figure>
-    </section>
+    </div>
+    <div class="band" role="list">
+      <div role="listitem"><b>2,000+</b><span>customers in 25+ countries<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><b>3M+</b><span>active databases<sup><a href="#s9">9</a></sup></span></div>
+      <div role="listitem"><b>100%+</b><span>annual ARR growth<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><b>23.6K</b><span>GitHub stars on TimescaleDB<sup><a href="#s8">8</a></sup></span></div>
+    </div>
 
     <!-- Know -->
     <section id="know">
@@ -350,11 +486,40 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
     </section>
 
     <!-- POV -->
-    <section id="pov">
+    <section id="pov" class="panel ink grain">
       <div class="sh">
         <h2>The conversation I would have with a CTO</h2>
         <p>Challenger meetings follow a set order. This is the talk track for Tiger Data, in my words, with the evidence I would bring to each step.</p>
       </div>
+      <figure class="stack-fig">
+        <div class="stack-grid">
+          <div class="before">
+            <div class="side-lbl"><span>A typical stack today</span></div>
+            <div class="app">your application</div>
+            <div class="pipes"><svg viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path class="flow" d="M200 0 C200 22 50 22 50 46"/><path class="flow y" d="M200 0 C200 22 150 22 150 46"/><path class="flow" d="M200 0 C200 22 250 22 250 46"/><path class="flow y" d="M200 0 C200 22 350 22 350 46"/></svg></div>
+            <div class="dbs">
+              <div class="db" style="--c:#A1A7F0"><b>Postgres</b><small>app data</small></div>
+              <div class="db" style="--c:#FAFBA3"><b>InfluxDB</b><small>time series</small></div>
+              <div class="db" style="--c:#E4E6FB"><b>Warehouse</b><small>analytics</small></div>
+              <div class="db" style="--c:#BFE9CF"><b>Vector DB</b><small>AI search</small></div>
+            </div>
+            <div class="syncs"><span>Kafka</span><span>ETL job</span><span>sync script</span></div>
+            <div class="tally"><span><b>4</b>systems</span><span><b>3</b>pipelines</span><span><b>4</b>bills</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="after">
+            <div class="side-lbl"><span>With Tiger Data</span><b>same work</b></div>
+            <div class="app">your application</div>
+            <div class="pipes"><svg viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path class="flow y" d="M200 0 V46"/></svg></div>
+            <div class="one">
+              <h4><i></i>One Postgres</h4>
+              <ul><li>Relational</li><li>Time series</li><li>Vector search</li><li>Agent forks</li></ul>
+            </div>
+            <div class="tally"><span><b>1</b>system</span><span><b>0</b>pipelines</span><span><b>1</b>bill</span></div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 2</b><span>The reframe in one picture. The cost lives in the pipelines between databases, so the fix is fewer databases.</span></figcaption>
+      </figure>
       <ol class="track">
         <li><div class="who">Step 1<b>Warmer</b></div><div><blockquote>Most teams building on sensor, event or AI data start on Postgres. As they grow, they add a time series database, a warehouse and a vector store, each with its own pipeline.</blockquote></div></li>
         <li><div class="who">Step 2<b>Reframe</b></div><div><blockquote>The expensive part of that stack is the pipelines and sync jobs between the databases. And the belief that Postgres can't handle real time scale is out of date.</blockquote></div></li>
@@ -409,7 +574,7 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
     </section>
 
     <!-- Plays -->
-    <section id="plays">
+    <section id="plays" class="panel peri grain">
       <div class="sh">
         <h2>Four plays for the first quarter</h2>
         <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence.</p>
@@ -582,7 +747,7 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
     </section>
 
     <!-- 90 days -->
-    <section id="plan">
+    <section id="plan" class="panel butter grain">
       <div class="sh">
         <h2>The first 90 days</h2>
         <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>

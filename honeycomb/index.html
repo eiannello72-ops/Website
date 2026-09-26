@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Honeycomb Enterprise West Plan</title>
+<meta name="description" content="An Enterprise West territory plan for Honeycomb, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello for Manny Alves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1B2E'/%3E%3Cpath d='M16 5 L25.5 10.5 V21.5 L16 27 L6.5 21.5 V10.5Z' fill='%23FFB400' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#F4F6FA;
+  --rule:#DDE2EA;
+  --ink:#0E1B2E;
+  --ink-2:#16263D;
+  --graphite:#566174;
+  --honey:#FFB400;
+  --honey-soft:#FFE7A3;
+  --sky:#7CC1F2;
+  --sky-soft:#E3F2FD;
+  --coral:#E8857F;
+  --lilac:#C3A8E6;
+  --link:#1D4F9F;
+  --good:#1F7A4D;
+  --warn:#8A5A00;
+  --bad:#B42318;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:17px;
+  --step-1:19.5px;
+  --step-2:24px;
+  --step-3:34px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+code{font-family:var(--mono);font-size:.86em}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--honey);color:var(--ink);padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:15px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--honey);font-weight:600}
+.side-foot{margin-top:auto;font-size:13.5px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
+section:first-of-type{border-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Hero */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:#93A0B5}
+.doc-meta span b{color:#fff;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+h1{font-size:clamp(36px,4.1vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:#fff}
+h1 mark{padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:21px;line-height:1.5;color:#C6CFDC;max-width:640px;margin-top:26px}
+.lede b{color:#fff;font-weight:600}
+.hero sup a{color:var(--honey)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid #fff;max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#8391A8}
+.facts dd{font-size:15.5px;margin-top:4px;color:#fff}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+.art{width:100%;max-width:340px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:230px;order:-1;justify-self:start}}
+
+/* Fig 1: trace */
+figure{margin-top:48px;max-width:980px}
+figcaption{font-size:14px;color:var(--graphite);margin-top:14px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:10px}}
+.float figure{margin-top:0}
+.trace{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.trace-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.trace-bar b{color:var(--ink);font-weight:500}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+@media (max-width:820px){.trace-grid{grid-template-columns:1fr}}
+.wf{padding:16px 18px 18px;border-right:1.5px solid var(--ink)}
+@media (max-width:820px){.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin:0 0 8px 150px}
+.span{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;height:30px}
+.span > span{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:calc(var(--d,0) * 12px)}
+.span .lane{position:relative;height:100%;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 25%)}
+.span .lane i{position:absolute;top:7px;bottom:7px;left:var(--s);width:var(--w);background:var(--sky);border:1.5px solid var(--ink);border-radius:3px}
+.span.hot .lane i{background:var(--honey)}
+.span.sel{background:var(--honey-soft);margin-inline:-18px;padding-inline:18px}
+.span.sel .lane i{background:var(--coral)}
+.span .lane em{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s) + var(--w) + 6px);font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+.span.far .lane em{left:auto;right:calc(100% - var(--s) + 6px)}
+@media (max-width:560px){.span{grid-template-columns:128px minmax(0,1fr)}.scale{margin-left:128px}.span > span{font-size:10.5px;padding-left:calc(var(--d,0) * 8px)}.span.far .lane em{display:none}.fields dd s{font-size:9px;padding:0 3px}}
+.fields{padding:16px 18px 18px}
+.fields h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.fields dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;font-family:var(--mono);font-size:12.5px}
+.fields dt,.fields dd{padding:5px 0;border-bottom:1px dashed var(--rule)}
+.fields dt{color:var(--graphite);padding-right:14px}
+.fields dd{color:var(--ink);display:flex;justify-content:space-between;gap:8px;min-width:0}
+.fields dd s{text-decoration:none;font-size:10px;background:var(--lilac);border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--honey);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:15px;margin-top:10px;color:#3D2A00}
+.band sup a{color:var(--ink)}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:16px;color:#26303F}
+.three p + p{margin-top:10px}
+
+/* Panels */
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 18px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#EEF2F8}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.sky{background:var(--sky)}
+.panel.honey{background:#FFD65C}
+.panel.honey:after{opacity:.28}
+
+/* Fig 2: dashboard vs Honeycomb */
+.compare{margin:8px 0 56px;max-width:1060px}
+.cmp-grid{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.25fr);align-items:stretch}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;gap:18px}}
+.pane{background:var(--ink-2);border:1.5px solid #34465F;border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.pane.hc{background:#fff;color:var(--ink);border-color:#fff;box-shadow:8px 8px 0 var(--honey)}
+.pane-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#93A0B5;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.pane.hc .pane-lbl{color:var(--graphite)}
+.pane-lbl b{font-weight:500;color:#7EE2A8}
+.pane.hc .pane-lbl b{color:var(--ink);background:var(--honey);padding:0 6px;border-radius:3px}
+.dash svg{width:100%;height:auto;display:block}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.kpis div{border:1px solid #34465F;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-family:var(--mono);font-size:10.5px;color:#93A0B5;text-transform:uppercase;letter-spacing:.05em}
+.kpis b{font-family:var(--display);font-size:22px;font-weight:700;color:#fff}
+.kpis b i{font-style:normal;font-size:12px;font-family:var(--mono);font-weight:400;color:#7EE2A8;margin-left:6px}
+.svc{list-style:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:#C6CFDC}
+.svc li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #2F4260}
+.svc span{color:#7EE2A8;display:inline-flex;align-items:center;gap:6px}
+.svc span:before{content:"";width:7px;height:7px;border-radius:50%;background:#7EE2A8}
+.heat{width:100%;height:auto;display:block}
+.heat-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:6px}
+.bu{margin-top:16px;border-top:1.5px solid var(--ink);padding-top:12px}
+.bu h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bu h4 span{display:flex;gap:12px;text-transform:none;letter-spacing:0}
+.bu h4 span i{display:inline-block;width:9px;height:9px;border:1px solid var(--ink);margin-right:4px;vertical-align:-1px}
+.bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
+.bu-row code{font-size:12px;white-space:nowrap}
+.bars{display:grid;gap:3px}
+@media (max-width:560px){.bu-row{grid-template-columns:1fr;gap:4px;padding:6px 0}.heat-ax span:nth-child(2){display:none}}
+.bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
+.bars .sel{background:var(--honey)}
+.bars .base{background:var(--sky)}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--honey);display:grid;place-items:center;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.tally{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:12.5px;color:#FCA5A5}
+.pane.hc .tally{color:var(--good)}
+.tally b{font-size:22px;font-family:var(--display);font-weight:700;margin-right:4px}
+.compare figcaption{color:#93A0B5}
+.compare figcaption b{color:#fff}
+
+/* Talk track */
+.track{list-style:none;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid #2A3A52}
+.track li:last-child{border-bottom:1px solid #2A3A52}
+.track .who{font-family:var(--mono);font-size:13px;color:#8391A8;line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--honey);font-weight:600;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.42;letter-spacing:-.01em;color:#EEF2F8}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14.5px;color:#B5C0D0}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--honey);background:#1F3350;padding:1px 6px;border-radius:3px;margin-right:6px}
+.panel.ink sup a{color:var(--sky)}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--honey)}
+.ttt p{font-size:15.5px;color:#B5C0D0}
+.panel.ink .sh p{color:#B5C0D0}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;max-width:1060px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;gap:0;width:max-content}
+.hr{display:flex;gap:5px;margin-bottom:-17px}
+.hr.off{padding-left:40.5px}
+.hr:last-child{margin-bottom:0}
+.tile{--f:#fff;position:relative;width:76px;height:88px;border:0;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.tile:before{content:"";position:absolute;inset:2px;background:var(--f);clip-path:inherit;transition:background .15s}
+.tile b,.tile small{position:relative;font-weight:inherit}
+.tile small{font-size:9.5px;color:var(--graphite);font-weight:400}
+.tile[data-r="bay"]{--f:var(--sky-soft)}
+.tile[data-r="pnw"]{--f:#EDEFF4}
+.tile[data-r="socal"]{--f:#FFF3D1}
+.tile[data-r="mtn"]{--f:#F1EAFA}
+.tile.on{--f:var(--honey)}
+.tile.on small{color:var(--ink)}
+.tile.home b{font-weight:800}
+.map-note{font-size:13.5px;color:var(--graphite);margin-top:12px;line-height:1.5}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:600;padding-left:10px;width:160px}
+.reg .st{display:block;font-family:var(--mono);font-size:11.5px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14.5px;margin-top:6px}
+.note{font-size:14px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;border-bottom:1.5px solid rgba(14,27,46,.3);margin-bottom:32px;max-width:1060px}
+.play-nav button{font-family:var(--body);font-size:16px;font-weight:600;color:#1C3654;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:10px 0 12px;margin-right:28px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1060px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;font-weight:600;line-height:1.3;letter-spacing:-.015em;padding-left:18px;border-left:4px solid var(--ink)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px;color:#1C3654}
+.dl dd{font-size:16px;color:#0B1726}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.panel.sky .sh p{color:#11263F}
+.panel.sky sup a{color:var(--ink)}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:16px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.84em;color:#6B4500;background:var(--honey-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13.5px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:600}
+.mail-f sup a{color:var(--link)}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:600;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#26303F;font-size:15px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1060px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-6px;left:0;width:12px;height:14px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:700;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:15px;color:#26303F}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--honey-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:5px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:15px;color:#26303F}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1060px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14.5px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#26303F}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-left:4px solid var(--honey);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16.5px;color:#1F2937}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1060px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:#5A4300;border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15.5px;color:#1C1606}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:8px;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:#fff;border:1.5px solid var(--ink);padding:14px 16px;border-radius:4px;font-size:15px}
+.phase:last-child .out div{background:var(--ink);color:#fff}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+.phase:last-child .out b{color:var(--honey)}
+.panel.honey .sh p{color:#4A3A10}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:14px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--honey-soft)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0E1B2E"/><path d="M16 5 L25.5 10.5 V21.5 L16 27 L6.5 21.5 V10.5Z" fill="#FFB400" stroke="#fff" stroke-width="1.5"/></svg><b>Honeycomb plan</b></a><a href="#contact">Contact</a></div>
+
+<div class="shell">
+  <aside class="side" aria-label="Contents">
+    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0E1B2E"/><path d="M16 5 L25.5 10.5 V21.5 L16 27 L6.5 21.5 V10.5Z" fill="#FFB400" stroke="#fff" stroke-width="1.5"/></svg><span><b>Enterprise West</b><small>Honeycomb plan</small></span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#know">What I know</a></li>
+      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#territory">Territory</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Running the deal</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#plan">First 90 days</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="side-foot">
+      <span>Eric Iannello</span>
+      <span>Boise, Idaho</span>
+      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Overview -->
+    <section id="top" class="hero grain">
+      <div>
+        <div class="doc-meta">
+          <span class="status"><b>Proposal</b></span>
+          <span>Enterprise Account Executive, West</span>
+          <span>For <b>Manny Alves</b>, SVP of Global Sales</span>
+          <span>September 2026</span>
+        </div>
+        <h1>Dashboards tell you something broke. Honeycomb tells you <mark>why.</mark></h1>
+        <p class="lede">Honeycomb has product market fit and Fortune 500 logos, and the next move is further into the enterprise.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+        <dl class="facts">
+          <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
+          <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
+          <div><dt>Territory</dt><dd>West</dd></div>
+          <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
+        </dl>
+      </div>
+      <div class="art" aria-hidden="true">
+        <svg viewBox="28 36 320 262">
+          <defs><path id="hx" d="M0 -44 L38.1 -22 L38.1 22 L0 44 L-38.1 22 L-38.1 -22Z"/></defs>
+          <g fill="#050D19" transform="translate(8 8)">
+            <use href="#hx" x="160" y="160"/><use href="#hx" x="243" y="160"/><use href="#hx" x="77" y="160"/>
+            <use href="#hx" x="201.5" y="88"/><use href="#hx" x="118.5" y="88"/><use href="#hx" x="201.5" y="232"/><use href="#hx" x="118.5" y="232"/>
+          </g>
+          <g stroke="#fff" stroke-width="2.5">
+            <use href="#hx" x="160" y="160" fill="#FFB400"/>
+            <use href="#hx" x="243" y="160" fill="#7CC1F2"/>
+            <use href="#hx" x="77" y="160" fill="#FFFFFF"/>
+            <use href="#hx" x="201.5" y="88" fill="#E8857F"/>
+            <use href="#hx" x="118.5" y="88" fill="#C3A8E6"/>
+            <use href="#hx" x="201.5" y="232" fill="#E3F2FD"/>
+            <use href="#hx" x="118.5" y="232" fill="#FFE7A3"/>
+          </g>
+          <use href="#hx" x="284.5" y="88" fill="none" stroke="#FFB400" stroke-width="2" stroke-dasharray="5 5"/>
+          <g fill="#0E1B2E" font-family="JetBrains Mono, monospace" font-size="11.5" text-anchor="middle">
+            <text x="160" y="157" font-weight="700">wide</text><text x="160" y="171" font-weight="700">events</text>
+            <text x="243" y="164">traces</text>
+            <text x="77" y="164">logs</text>
+            <text x="201.5" y="92">BubbleUp</text>
+            <text x="118.5" y="92">SLOs</text>
+            <text x="201.5" y="236">metrics</text>
+            <text x="118.5" y="236">MCP</text>
+            <text x="284.5" y="92" fill="#FFB400">agents</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <div class="float">
+      <figure>
+        <div class="trace" role="img" aria-label="Trace of a slow checkout request. A database query inside the payment service takes most of the 2.8 seconds, and its fields show build 4812, region us-west-2, an enterprise customer and a new feature flag.">
+          <div class="trace-bar"><span><b>trace</b> POST /checkout</span><span>2,840 ms, 7 spans</span></div>
+          <div class="trace-grid">
+            <div class="wf">
+              <div class="scale"><span>0</span><span>700</span><span>1,400</span><span>2,100</span><span>ms</span></div>
+              <div class="span" style="--s:0%;--w:100%"><span>POST /checkout</span><div class="lane"><i></i></div></div>
+              <div class="span" style="--d:1;--s:1%;--w:8%"><span>cart.load</span><div class="lane"><i></i><em>230</em></div></div>
+              <div class="span" style="--d:1;--s:9%;--w:7%"><span>inventory.reserve</span><div class="lane"><i></i><em>190</em></div></div>
+              <div class="span hot far" style="--d:1;--s:16%;--w:76%"><span>payments.authorize</span><div class="lane"><i></i><em>2,160</em></div></div>
+              <div class="span" style="--d:2;--s:17%;--w:6%"><span>fraud.score</span><div class="lane"><i></i><em>170</em></div></div>
+              <div class="span sel far" style="--d:2;--s:24%;--w:66%"><span>db.query ledger</span><div class="lane"><i></i><em>1,880</em></div></div>
+              <div class="span" style="--d:1;--s:93%;--w:4%"><span>email.enqueue</span><div class="lane"><i></i></div></div>
+            </div>
+            <div class="fields">
+              <h4>Fields on db.query ledger</h4>
+              <dl>
+                <dt>service.name</dt><dd>payments</dd>
+                <dt>app.build</dt><dd>4812 <s>high cardinality</s></dd>
+                <dt>customer.id</dt><dd>cus_91F2 <s>high cardinality</s></dd>
+                <dt>customer.tier</dt><dd>enterprise</dd>
+                <dt>cloud.region</dt><dd>us-west-2</dd>
+                <dt>flag.new_ledger</dt><dd>true</dd>
+                <dt>db.rows_scanned</dt><dd>1,284,112</dd>
+                <dt>duration_ms</dt><dd>1,880</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 1</b><span>One slow checkout with every field kept. Build, customer and feature flag all stay queryable, which is what makes the next question possible. Illustrative data.</span></figcaption>
+      </figure>
+    </div>
+    <div class="band" role="list">
+      <div role="listitem"><b>79%</b><span>faster remediation of performance issues at Intercom<sup><a href="#s2">2</a></sup></span></div>
+      <div role="listitem"><b>75%</b><span>lower observability cost for Intercom's Fin AI agent<sup><a href="#s3">3</a></sup></span></div>
+      <div role="listitem"><b>50%</b><span>of the observability budget saved at Birdie after leaving Datadog<sup><a href="#s4">4</a></sup></span></div>
+      <div role="listitem"><b>$150M</b><span>raised across six rounds<sup><a href="#s5">5</a></sup></span></div>
+    </div>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <h2>What I know about Honeycomb</h2>
+        <p>The product, the buyer, and why this year matters.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>Honeycomb stores wide, high cardinality events and traces and queries them in seconds. BubbleUp compares slow requests with normal ones and surfaces the fields that differ.</p>
+          <p>It is built on OpenTelemetry, with SLOs, metrics and logs in the same place, and an MCP server that lets engineers and their coding agents query production.<sup><a href="#s6">6</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>The VP of Engineering, the head of platform or SRE, and the CTO, usually with a staff or principal engineer as the champion.</p>
+          <p>Finance and procurement join early, because observability is one of the largest and fastest growing lines in the infrastructure budget.</p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>AI features are in production and behave differently on every run. Honeycomb launched Agent Observability to trace them.<sup><a href="#s7">7</a></sup></p>
+          <p>Palo Alto Networks now owns Chronosphere and Cisco owns Splunk, so many enterprises are reviewing their observability contracts this year.<sup><a href="#s8">8</a></sup></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <h2>The conversation I would have with a VP of Engineering</h2>
+        <p>Challenger meetings follow a set order. This is the talk track for Honeycomb, in my words, with the evidence I would bring to each step.</p>
+      </div>
+      <figure class="compare">
+        <div class="cmp-grid">
+          <div class="pane">
+            <div class="pane-lbl"><span>What the dashboard shows</span><b>all green</b></div>
+            <div class="dash">
+              <svg viewBox="0 0 320 170" role="img" aria-label="Line chart of average checkout latency holding flat near 118 milliseconds, well below a 500 millisecond alert line.">
+                <g stroke="#2A3A52" stroke-width="1"><path d="M0 30 H320 M0 75 H320 M0 120 H320 M0 165 H320"/></g>
+                <path d="M0 30 H320" stroke="#FCA5A5" stroke-width="1.5" stroke-dasharray="5 5"/>
+                <text x="316" y="24" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#FCA5A5">alert at 500 ms</text>
+                <path d="M0 132 L20 130 L40 133 L60 129 L80 131 L100 128 L120 132 L140 130 L160 131 L180 129 L200 127 L220 130 L240 128 L260 126 L280 129 L300 127 L320 128" fill="none" stroke="#7EE2A8" stroke-width="2.5" stroke-linejoin="round"/>
+                <text x="4" y="150" font-family="JetBrains Mono, monospace" font-size="10" fill="#93A0B5">avg latency, checkout</text>
+              </svg>
+            </div>
+            <div class="kpis">
+              <div><small>p50 latency</small><b>118 ms<i>ok</i></b></div>
+              <div><small>Error rate</small><b>0.4%<i>ok</i></b></div>
+            </div>
+            <ul class="svc"><li>checkout<span>healthy</span></li><li>payments<span>healthy</span></li><li>ledger-db<span>healthy</span></li></ul>
+            <div class="tally"><span><b>0</b>alerts</span><span><b>0</b>answers</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="pane hc">
+            <div class="pane-lbl"><span>What Honeycomb shows</span><b>same hour</b></div>
+            <svg class="heat" viewBox="-4 -4 492 206" role="img" aria-label="Latency heatmap. Most requests are fast, but a cluster of slow requests appears in the last third of the window."><g><rect x="0" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="0" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="0" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="0" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="0" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="11" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.54)"/><rect x="11" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="11" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="11" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="11" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="11" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="11" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="22" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="22" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="22" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="22" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="22" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="22" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="33" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="33" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="33" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="33" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="33" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="33" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="44" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="44" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="44" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="44" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="44" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="44" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.22)"/><rect x="55" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="55" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="55" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="55" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="55" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="55" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="55" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="66" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.57)"/><rect x="66" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="66" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="66" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="66" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.29)"/><rect x="66" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="77" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="77" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="77" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.99)"/><rect x="77" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="77" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.27)"/><rect x="77" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.22)"/><rect x="88" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="88" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.97)"/><rect x="88" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="88" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="88" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.27)"/><rect x="88" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="99" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="99" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="99" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="99" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="99" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="99" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="110" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="110" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="110" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="110" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="110" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="110" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="121" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="121" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="121" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="121" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="121" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="121" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="132" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.99)"/><rect x="132" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="132" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="132" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="132" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="132" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="143" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="143" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="143" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="143" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="143" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="143" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="154" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="154" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="154" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="154" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="154" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="154" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="165" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.57)"/><rect x="165" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="165" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="165" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="165" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.37)"/><rect x="165" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="176" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="176" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.97)"/><rect x="176" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="176" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="176" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="176" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="187" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="187" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="187" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="187" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="187" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="187" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="198" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="198" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="198" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="198" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="198" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.40)"/><rect x="198" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="209" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="209" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="209" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="209" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="209" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="209" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="220" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="220" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="220" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="220" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="220" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.45)"/><rect x="231" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="231" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="231" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="231" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="231" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="231" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="242" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="242" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="242" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="242" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="242" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="242" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="253" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="253" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="253" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="253" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="253" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.22)"/><rect x="264" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.59)"/><rect x="264" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="264" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.99)"/><rect x="264" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="264" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.45)"/><rect x="264" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="264" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="275" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="275" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.97)"/><rect x="275" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="275" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.54)"/><rect x="275" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="275" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="286" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="286" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="286" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="286" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.54)"/><rect x="286" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.32)"/><rect x="286" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="286" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="297" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.54)"/><rect x="297" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.97)"/><rect x="297" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="297" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="297" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.29)"/><rect x="297" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.22)"/><rect x="297" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="297" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="297" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="297" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="297" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="297" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="308" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="308" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="308" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="308" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.69)"/><rect x="308" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.40)"/><rect x="308" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="308" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="308" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="308" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="308" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="308" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="308" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="308" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="319" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="319" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="319" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="319" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="319" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.27)"/><rect x="319" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="319" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="319" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="319" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="319" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="319" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="319" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="319" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="330" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="330" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="330" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="330" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="330" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.47)"/><rect x="330" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="330" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="330" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="330" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="330" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="330" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="330" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="341" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="341" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="341" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="341" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.45)"/><rect x="341" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="341" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="341" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="341" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="341" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="341" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="341" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="341" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="341" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="341" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="352" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="352" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.99)"/><rect x="352" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.97)"/><rect x="352" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="352" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.42)"/><rect x="352" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="352" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="352" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="352" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="352" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="352" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="352" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="352" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="363" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="363" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="363" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="363" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="363" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.37)"/><rect x="363" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="363" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="363" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="363" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="363" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="363" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="363" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="363" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="374" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="374" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="374" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="374" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="374" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.37)"/><rect x="374" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="374" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="374" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="374" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="374" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="374" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="374" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="385" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.47)"/><rect x="385" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="385" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="385" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.74)"/><rect x="385" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.37)"/><rect x="385" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.24)"/><rect x="385" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="385" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="385" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="385" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="385" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="385" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="385" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="396" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="396" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="396" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="396" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.54)"/><rect x="396" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.47)"/><rect x="396" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="396" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="396" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="396" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="396" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="396" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="396" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="396" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="407" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="407" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.87)"/><rect x="407" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="407" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="407" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="407" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="407" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="407" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="407" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="407" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="407" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="407" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="407" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="418" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="418" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="418" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.94)"/><rect x="418" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="418" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="418" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="418" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="418" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="418" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="418" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="418" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="418" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="418" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="418" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="429" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="429" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="429" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.82)"/><rect x="429" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.77)"/><rect x="429" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="429" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="429" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="429" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="429" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="429" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="429" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.95)"/><rect x="429" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="429" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="440" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="440" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.99)"/><rect x="440" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.92)"/><rect x="440" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.67)"/><rect x="440" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.29)"/><rect x="440" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="440" y="121" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.14)"/><rect x="440" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="440" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="440" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="440" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="440" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="440" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="440" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="451" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="451" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.84)"/><rect x="451" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="451" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.52)"/><rect x="451" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.47)"/><rect x="451" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.20)"/><rect x="451" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="451" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="451" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="451" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="451" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="451" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="451" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="462" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.65)"/><rect x="462" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="462" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.80)"/><rect x="462" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.49)"/><rect x="462" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.34)"/><rect x="462" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.22)"/><rect x="462" y="66" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.45)"/><rect x="462" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="462" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="462" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="462" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="462" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="462" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/><rect x="473" y="187" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.62)"/><rect x="473" y="176" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.90)"/><rect x="473" y="165" width="10" height="10" rx="1.5" fill="rgba(124,193,242,1.00)"/><rect x="473" y="154" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.72)"/><rect x="473" y="143" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.27)"/><rect x="473" y="132" width="10" height="10" rx="1.5" fill="rgba(124,193,242,0.17)"/><rect x="473" y="55" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.65)"/><rect x="473" y="44" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.85)"/><rect x="473" y="33" width="10" height="10" rx="1.5" fill="rgba(255,180,0,1.00)"/><rect x="473" y="22" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="473" y="11" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.75)"/><rect x="473" y="0" width="10" height="10" rx="1.5" fill="rgba(255,180,0,0.55)"/></g><rect x="294" y="-3" width="191" height="81" fill="none" stroke="#FFB400" stroke-width="1.6" stroke-dasharray="4 3" rx="3"/></svg>
+            <div class="heat-ax"><span>60 min ago</span><span>duration_ms by time, slowest at the top</span><span>now</span></div>
+            <div class="bu">
+              <h4>BubbleUp <span><span><i style="background:var(--honey)"></i>selected</span><span><i style="background:var(--sky)"></i>baseline</span></span></h4>
+              <div class="bu-row"><code>app.build = 4812</code><div class="bars"><i class="sel" style="--v:94%"></i><i class="base" style="--v:6%"></i></div></div>
+              <div class="bu-row"><code>flag.new_ledger = true</code><div class="bars"><i class="sel" style="--v:91%"></i><i class="base" style="--v:9%"></i></div></div>
+              <div class="bu-row"><code>cloud.region = us-west-2</code><div class="bars"><i class="sel" style="--v:88%"></i><i class="base" style="--v:31%"></i></div></div>
+            </div>
+            <div class="tally"><span><b>3</b>fields that differ</span><span><b>1</b>build to roll back</span></div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 2</b><span>The reframe in one picture. The average stays green because slow requests are rare. Kept at full detail, they point to one build behind one feature flag. Illustrative data.</span></figcaption>
+      </figure>
+      <ol class="track">
+        <li><div class="who">Step 1<b>Warmer</b></div><div><blockquote>Most engineering teams your size run three or four observability tools. And the first hour of a serious incident still goes to working out where the problem is.</blockquote></div></li>
+        <li><div class="who">Step 2<b>Reframe</b></div><div><blockquote>Dashboards answer the questions someone thought to ask in advance. Metrics are averaged before they are stored, so the detail that explains an outage is gone before anyone looks.</blockquote></div></li>
+        <li><div class="who">Step 3<b>Rational drowning</b></div><div><blockquote>Here is what that hour costs. We will swap these numbers for your own in discovery.</blockquote><div class="ev"><span><b>$2M</b>per hour, median cost of a high impact outage<sup><a href="#s9">9</a></sup></span><span><b>1 hr to 5 min</b>root cause time for Intercom's Fin<sup><a href="#s3">3</a></sup></span></div></div></li>
+        <li><div class="who">Step 4<b>Emotional impact</b></div><div><blockquote>Every chart on the incident bridge is green while customers can't check out. Engineers guess, roll back and hope, and the same people get paged again next week.</blockquote></div></li>
+        <li><div class="who">Step 5<b>A new way</b></div><div><blockquote>Teams that fixed this keep every field on every request, including build, customer and region, and ask new questions in the middle of the incident. The same data answers AI agents through MCP.</blockquote></div></li>
+        <li><div class="who">Step 6<b>Our solution</b></div><div><blockquote>Honeycomb, priced on events rather than hosts or custom metrics, so adding detail doesn't add cost.</blockquote><div class="ev"><span><b>79%</b>faster remediation at Intercom<sup><a href="#s2">2</a></sup></span><span><b>7 to 1</b>tools consolidated at Birdie<sup><a href="#s4">4</a></sup></span></div></div></li>
+      </ol>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>The first call changes how they think about incidents. The demo comes after they agree averages are hiding problems.</p></div>
+        <div><h4>Tailor</h4><p>Fewer pages for engineers, reliability and speed for the VP, AI in production for the CTO, and cost per event against cost per host for finance.</p></div>
+        <div><h4>Take control</h4><p>Price the next outage, push back on "our APM already does tracing," and leave every meeting with a dated next step.</p></div>
+      </div>
+    </section>
+
+    <!-- Territory -->
+    <section id="territory">
+      <div class="sh">
+        <h2>Where I would spend my time</h2>
+        <p>The West splits into four markets with different buyers and different reasons to talk. Select a city to find its region.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles" role="group" aria-label="Western cities">
+            <div class="hr"><button class="tile" data-r="pnw"><b>SEA</b><small>PNW</small></button><button class="tile home" data-r="mtn" aria-label="Boise, home base"><b>BOI</b><small>home</small></button></div>
+            <div class="hr off"><button class="tile" data-r="pnw"><b>PDX</b><small>PNW</small></button><button class="tile" data-r="mtn"><b>SLC</b><small>Mountain</small></button><button class="tile" data-r="mtn"><b>DEN</b><small>Mountain</small></button></div>
+            <div class="hr"><button class="tile" data-r="bay"><b>SF</b><small>Bay Area</small></button><button class="tile" data-r="mtn"><b>LAS</b><small>Southwest</small></button></div>
+            <div class="hr off"><button class="tile" data-r="bay"><b>SJC</b><small>Bay Area</small></button><button class="tile" data-r="mtn"><b>PHX</b><small>Southwest</small></button></div>
+            <div class="hr"><button class="tile" data-r="socal"><b>LA</b><small>SoCal</small></button><button class="tile" data-r="socal"><b>SD</b><small>SoCal</small></button></div>
+          </div>
+          <p class="map-note">Home base in Boise. Seattle, the Bay Area, Denver and Salt Lake City are each a short flight.</p>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Region</th><th>Who buys and why</th><th>Lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="bay"><td>Bay Area<span class="st">SF, Peninsula, San Jose</span></td><td data-h="Who buys and why">SaaS, fintech and AI companies that deploy many times a day and already have AI features in production.<div class="acc">Instacart, DoorDash, Chime, Rippling, Plaid</div></td><td data-h="Lead with">Agent Observability and faster debugging for teams shipping daily</td></tr>
+              <tr data-r="pnw"><td>Pacific Northwest<span class="st">Seattle, Portland</span></td><td data-h="Who buys and why">Retail, travel and marketplace platforms on large AWS footprints, with observability bills to match.<div class="acc">Zillow, Expedia, Nordstrom, T-Mobile, Smartsheet</div></td><td data-h="Lead with">Tool consolidation, and cost per event against cost per host</td></tr>
+              <tr data-r="socal"><td>Southern California<span class="st">Los Angeles, San Diego</span></td><td data-h="Who buys and why">Consumer apps, gaming and health tech, where a slow checkout or login is lost revenue.<div class="acc">Snap, Riot Games, GoodRx, ServiceTitan, Dexcom</div></td><td data-h="Lead with">Finding the few slow requests that averages hide</td></tr>
+              <tr data-r="mtn"><td>Mountain and Southwest<span class="st">Denver, Salt Lake City, Boise, Phoenix, Las Vegas</span></td><td data-h="Who buys and why">Software, payments and e-commerce companies growing fast, many in the middle of an OpenTelemetry rollout.<div class="acc">Qualtrics, Ancestry, Western Union, GoDaddy, Carvana</div></td><td data-h="Lead with">OpenTelemetry as the standard, with the backend chosen on merit</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments and current customers with the team before any outreach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays" class="panel sky grain">
+      <div class="sh">
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Averages hide outages</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">The observability bill</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">AI in production</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">The OpenTelemetry moment</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">A dashboard can show p50 at 120 ms while one build in one region fails for your largest customers.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Customer facing platforms with microservices and frequent deploys.</dd></div>
+            <div><dt class="label">Signal</dt><dd>SRE and platform job posts that mention MTTR, incident response or on-call load.</dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of Engineering first, then the head of SRE and the CTO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Walk me through your last serious incident. How long before you knew where to look?</li><li>Which questions can't your tools answer because the data was averaged?</li><li>How many people join an incident bridge, and for how long?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>VP of Engineering</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> on-call</li><li data-v="B">Incident hour idea</li><li data-v="C">Question on averages</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring SREs to bring down MTTR, so guessing the first hour of an incident still goes to finding where the problem is.</p><p>Think seeing which build, region or customer sits behind a slowdown could help?</p><p><span class="tok">{{customer_name}}</span> now fixes performance issues 79% faster.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 79% sounds like seller cherry picking.</p><p>If we replayed one of your recent incidents with your own trace data, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like incident response might not be the priority right now?</p><p>Basically your engineers would ask production any question during an incident, not only the ones a dashboard was built for.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Intercom<sup><a href="#s2">2</a></sup></span><span><b>Value</b> engineer hours back</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">Observability bills grow with hosts, custom metrics and indexed logs, so the tools get more expensive exactly when teams add the detail they need.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises running Datadog, New Relic or Splunk next to two or three other tools.</dd></div>
+            <div><dt class="label">Signal</dt><dd>FinOps or platform job posts that put observability cost in scope.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of platform and the FinOps lead first, then procurement and the CFO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>What did observability cost last year, and what is next year's forecast?</li><li>What data do you drop or sample today to control that cost?</li><li>How many tools does an engineer open during one incident?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Platform Engineering</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> observability spend</li><li data-v="B">Seven tools to one</li><li data-v="C">Renewal idea</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> is hiring a FinOps lead with observability in scope, so guessing the monitoring bill is growing faster than traffic.</p><p>Think pricing on events instead of hosts and custom metrics could help?</p><p><span class="tok">{{customer_name}}</span> cut its observability budget in half and consolidated seven tools.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize half the budget sounds like seller cherry picking.</p><p>If we modeled your event volume against your last invoice, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current contract might be locked in for a while?</p><p>Basically your team would keep more detail on every request and pay less for it.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. And if the Chronosphere or Splunk ownership change has you reviewing options, happy to share what others are doing. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Birdie<sup><a href="#s4">4</a></sup></span><span><b>Fallback</b> Chronosphere now part of Palo Alto<sup><a href="#s8">8</a></sup></span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">AI features fail quietly. The request succeeds, the model answers, and the customer still gets a slow or wrong result.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Companies with LLM features or agents in front of customers.</dd></div>
+            <div><dt class="label">Signal</dt><dd>AI platform or LLM engineer job posts, and product pages announcing an assistant or agent.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of AI platform or VP of Engineering first, then the CTO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How do you debug an agent response that was slow or wrong?</li><li>Can you tie token cost and latency to a customer or a feature?</li><li>Who gets paged when the AI feature degrades?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of AI Platform</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> AI in production</li><li data-v="B">Agent debugging idea</li><li data-v="C">Time to first token</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> launched <span class="tok">{{ai_feature}}</span>, so guessing the team is working out how to debug it when a response is slow or wrong.</p><p>Think tracing every prompt, tool call and token alongside the rest of the request could help?</p><p><span class="tok">{{customer_name}}</span> cut time to first token by 60% and now finds root cause in about five minutes instead of an hour.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize an hour to five minutes sounds like seller cherry picking.</p><p>If we instrumented one AI workflow with OpenTelemetry and showed you where the time goes, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the AI roadmap might sit with another team?</p><p>Basically your engineers would see each agent step, with its latency and cost, in the same tool they use for the rest of production.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Intercom Fin<sup><a href="#s3">3</a></sup></span><span><b>Product</b> Agent Observability<sup><a href="#s7">7</a></sup></span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">Once telemetry runs on OpenTelemetry, the backend becomes a choice. Most teams haven't noticed they already have that leverage.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises standardizing on OpenTelemetry or moving off proprietary agents.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Job posts or engineering blog posts that mention an OpenTelemetry rollout.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Platform engineering lead or principal engineer first, then the VP of Engineering.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How much of your stack sends OpenTelemetry today?</li><li>What would it take to send a copy to a second backend?</li><li>What keeps you on proprietary agents?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Principal Platform Engineer</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> and OpenTelemetry</li><li data-v="B">Second backend idea</li><li data-v="C">OTel question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw the <span class="tok">{{company}}</span> platform team is rolling out OpenTelemetry, so guessing the backend decision is open for the first time in years.</p><p>Think sending a copy of the same data to Honeycomb for a month could help you compare?</p><p><span class="tok">{{customer_name}}</span> saw 45% fewer unplanned outages.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 45% sounds like seller cherry picking.</p><p>If we pointed one service's telemetry at Honeycomb with no code changes, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the rollout might still be early?</p><p>Basically your team would keep OpenTelemetry as the standard and pick a backend on merit, not on which agent happens to be installed.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Intercom<sup><a href="#s2">2</a></sup></span><span><b>Value</b> no rip and replace</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Honeycomb wins, and the question I would ask in discovery.</p>
+      </div>
+      <div style="max-width:1060px">
+        <table class="comp stack">
+          <thead><tr><th>Alternative</th><th>Where they are strong</th><th>Where Honeycomb wins</th><th>The question I ask</th></tr></thead>
+          <tbody>
+            <tr><td>Datadog<span class="tag t-bad">Most common</span></td><td data-h="Where they are strong">Broad platform, a huge integration library, and often the standard already.</td><td data-h="Where Honeycomb wins">Pricing on events rather than hosts, custom metrics and indexed logs, and fast queries on high cardinality data without pre-aggregation.<sup><a href="#s10">10</a></sup></td><td data-h="The question I ask" class="q">How did your last renewal compare with the one before it?</td></tr>
+            <tr><td>Dynatrace and New Relic<span class="tag t-warn">Entrenched</span></td><td data-h="Where they are strong">Automatic discovery and AI root cause for known infrastructure patterns.</td><td data-h="Where Honeycomb wins">Exploratory debugging for new failures in distributed systems that no model has seen, native to OpenTelemetry.</td><td data-h="The question I ask" class="q">When the automatic root cause is wrong, what do your engineers do next?</td></tr>
+            <tr><td>Grafana<span class="tag t-warn">Open source</span></td><td data-h="Where they are strong">Flexible dashboards, low cost to start, and a strong following on platform teams.</td><td data-h="Where Honeycomb wins">One place to query events and traces at high cardinality, without running and tuning several backends.</td><td data-h="The question I ask" class="q">How many engineers maintain your observability stack instead of using it?</td></tr>
+            <tr><td>Chronosphere and Splunk<span class="tag t-warn">New owners</span></td><td data-h="Where they are strong">Metrics and logs at very large volume, now inside Palo Alto Networks and Cisco.<sup><a href="#s8">8</a></sup></td><td data-h="Where Honeycomb wins">Independent and focused on how developers debug, not on a security suite roadmap.</td><td data-h="The question I ask" class="q">Does the new owner's roadmap match what your engineers need?</td></tr>
+            <tr><td>In-house and status quo<span class="tag t-bad">Always present</span></td><td data-h="Where they are strong">No new contract, and the team knows the tools.</td><td data-h="Where Honeycomb wins">Shorter incidents and less toil, with a business case priced in outage hours and engineer time.</td><td data-h="The question I ask" class="q">What did your last major incident cost, and what stops it happening again?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <h2>Running the deal</h2>
+        <p>Challenger earns the first meeting and shapes the problem. MEDDPICC tracks what is proven and what is still missing across a 6 to 12 month cycle at $500K to $1M+ ACV.</p>
+      </div>
+      <ol class="path">
+        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the VP of Engineering and agree that slow incidents are worth fixing this year.</p><span class="m">Teach</span></li>
+        <li><span class="when">Months 1 to 3</span><h4>Discovery and business case</h4><p>Map tools, spend and incident history with a Solutions Architect. Price outage hours, engineer time and renewal cost.</p><span class="m">Tailor</span></li>
+        <li><span class="when">Months 3 to 6</span><h4>Proof of value</h4><p>OpenTelemetry data from one critical service, a real incident replayed, and success criteria in writing.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 6 to 9</span><h4>Security and procurement</h4><p>Run in parallel, timed to the incumbent's renewal, with a cloud marketplace purchase raised early.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 9 on</span><h4>Close and expand</h4><p>A multi-year agreement with a rollout plan, a value review date and the next teams mapped.</p><span class="m">Take control</span></li>
+      </ol>
+      <h3 style="margin-bottom:18px">MEDDPICC checklist</h3>
+      <div style="max-width:1060px">
+        <table class="medd stack">
+          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
+          <tbody>
+            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">MTTR, incident count and length, engineer hours per incident, observability spend and number of tools</td><td data-h="What I ask">What did your last three major incidents cost in hours and revenue?</td><td data-h="Red flag">An incident problem nobody has priced</td></tr>
+            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CTO or VP of Engineering, with the CFO on multi-year commits</td><td data-h="What I ask">Who signs off when the observability contract renews?</td><td data-h="Red flag">Only engineers are involved by the proof of value</td></tr>
+            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Query speed at high cardinality, OpenTelemetry support, cost model, security and ease of adoption</td><td data-h="What I ask">What has to be true for Honeycomb to be the clear choice?</td><td data-h="Red flag">Criteria copied from the incumbent's feature list</td></tr>
+            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Proof of value, architecture review, security, business case and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current tool.</td><td data-h="Red flag">No one can describe what happens after the proof of value</td></tr>
+            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security review, DPA, legal redlines, marketplace or direct, and the incumbent's notice period</td><td data-h="What I ask">When does the current contract renew, and how much notice does it need?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
+            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">Long incidents, alert fatigue, rising bills, or AI features nobody can debug</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
+            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A staff SRE or platform lead with influence, who ran the proof and gains personally from the win</td><td data-h="What I ask">How would you present this to your CTO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
+            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Datadog, Dynatrace, New Relic, Grafana, Chronosphere, Splunk and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake at a revenue intelligence startup, and sell AI at Netradyne today at roughly $300K ACV. Most of my pipeline has always been self sourced.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self-sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for</th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>$500K+ multi-year deals with complex buying committees</td><td data-h="Where I have done it">A $1.2M deal with Uber at Jamf, and the first multi-year deal with built-in expansion triggers at Falkon (Linewize).</td></tr>
+            <tr><td>Executive presence with technical and non-technical leaders</td><td data-h="Where I have done it">Sold to IT, security, operations and finance leaders at F500 accounts, and explained the technology in terms of cost, risk and revenue.</td></tr>
+            <tr><td>Deep discovery and consultative selling</td><td data-h="Where I have done it">Sold to IT and security teams at Jamf and to data teams at Snowflake, starting from their environment rather than a demo.</td></tr>
+            <tr><td>Building champions through long cycles</td><td data-h="Where I have done it">Multithreaded F500 accounts across operations, finance, security and IT, and built $19.6M of self-sourced pipeline at Netradyne.</td></tr>
+            <tr><td>MEDDPICC and Command of the Message</td><td data-h="Where I have done it">Trained in both. This plan runs on Challenger from the first email to the close.</td></tr>
+            <tr><td>Channel and partner selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to cloud marketplace co-selling.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Honeycomb</h3>
+        <p>The companies I sell to ship more software every quarter, and more of it is AI. Their tools tell them something is wrong and leave engineers to guess why. Honeycomb answers the why. Taking that answer further into the enterprise, one account at a time, is the work I want to do.</p>
+        <p class="sig">Eric Iannello, Boise, Idaho</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan" class="panel honey grain">
+      <div class="sh">
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to Honeycomb | Building the foundation</h3>
+          <ul>
+            <li>Learn Honeycomb hands on: send OpenTelemetry data from a sample app, run BubbleUp, set an SLO and connect the MCP server</li>
+            <li>Work with sales leadership, Solutions Architects and top reps to learn what's winning and where enterprise deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Build battlecards for Datadog, Dynatrace, New Relic, Grafana, Chronosphere and Splunk</li>
+            <li>Audit named accounts for OpenTelemetry adoption, job posts, incumbent renewal dates and dormant opportunities</li>
+            <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
+            <li>Test my version of the talk track with an SA, and apply MEDDPICC to inherited pipeline</li>
+            <li>Launch the first self-sourced wave, each account with its own insight and proof point</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a tested talk track</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook | Testing the territory</h3>
+          <ul>
+            <li>Review results with leadership and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays in waves by vertical, starting with SaaS and fintech in the Bay Area and retail platforms in Seattle</li>
+            <li>Multithread every target account across the CTO, engineering, SRE, platform, finance and procurement</li>
+            <li>Hold insight meetings in place of first call demos, and price outage hours, engineer time and renewal cost in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities with business cases and mutual action plans</li>
+            <li>Build Tier 1 meetings around AWS re:Invent and KubeCon, and the OpenTelemetry and SRE meetups in Seattle, San Francisco and Denver</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first proofs of value scoped</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment | Owning the territory</h3>
+          <ul>
+            <li>Qualified deals moving through proof of value, security review and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process, renewal timing and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion plans for current customers in the West, with new teams and services mapped</li>
+            <li>Regular deal reviews with leadership, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities at $500K+ potential, first proofs of value running, pipeline building toward 3x coverage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>Manny, I'd like to walk the team through this plan and hear where it's wrong.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Honeycomb%20Enterprise%20AE%2C%20West">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://www.honeycomb.io/careers" target="_blank" rel="noopener">Honeycomb, Enterprise Account Executive, West job post</a></li>
+        <li id="s2"><a href="https://www.honeycomb.io/resources/case-studies/intercom-building-resilient-ecosystem-through-observability" target="_blank" rel="noopener">Honeycomb, Intercom case study</a></li>
+        <li id="s3"><a href="https://www.honeycomb.io/resources/case-studies/how-honeycomb-helped-intercom-observe-and-operate-fin-ai" target="_blank" rel="noopener">Honeycomb, How Intercom observes and operates Fin</a></li>
+        <li id="s4"><a href="https://www.honeycomb.io/resources/case-studies/birdie-evolution-fueled-by-observability" target="_blank" rel="noopener">Honeycomb, Birdie case study</a></li>
+        <li id="s5"><a href="https://tracxn.com/d/companies/honeycomb/__tJybN_GB4yMN362gyCQOawpe2YVYRJEaMFeQL901nIw" target="_blank" rel="noopener">Tracxn, Honeycomb funding profile</a></li>
+        <li id="s6"><a href="https://www.prnewswire.com/news-releases/honeycomb-advances-observability-for-ai-powered-software-development-302710954.html" target="_blank" rel="noopener">PR Newswire, Honeycomb advances observability for AI powered software development</a></li>
+        <li id="s7"><a href="https://www.honeycomb.io/blog/honeycomb-launches-agent-observability-full-visibility-agentic-workflows" target="_blank" rel="noopener">Honeycomb, Agent Observability launch</a></li>
+        <li id="s8"><a href="https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-chronosphere-acquisition--unifying-observability-and-security-for-the-ai-era" target="_blank" rel="noopener">Palo Alto Networks, Chronosphere acquisition completed</a></li>
+        <li id="s9"><a href="https://www.helpnetsecurity.com/2025/09/23/high-impact-it-outages-costs/" target="_blank" rel="noopener">Help Net Security, The cost of high impact IT outages</a></li>
+        <li id="s10"><a href="https://www.honeycomb.io/why-honeycomb/comparisons/datadog" target="_blank" rel="noopener">Honeycomb, Honeycomb and Datadog compared</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the Honeycomb Enterprise Account Executive, West role. Not affiliated with or endorsed by Honeycomb. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  // Contents highlight
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){
+    var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+
+  // Territory
+  var tiles=[].slice.call(document.querySelectorAll('.tile[data-r]'));
+  var rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){
+    tiles.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});
+    rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)});
+  }
+  tiles.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('bay');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  function openTab(t){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){openTab(t)});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+      if(n===null)return;n=(n+tabs.length)%tabs.length;tabs[n].focus();openTab(tabs[n]);
+    });
+  });
+})();
+</script>
+</body>
+</html>

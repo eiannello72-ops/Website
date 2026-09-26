@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LogicMonitor Rockies Enterprise Plan</title>
+<meta name="description" content="A Rockies territory plan for LogicMonitor Enterprise, built on the Challenger approach and MEDDICC. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308093A'/%3E%3Cpath d='M9 10h4v9h9v4H9z' fill='%23E3FF1F'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#08093A;
+  --navy-2:#0E1050;
+  --navy-3:#161A68;
+  --line:#262A78;
+  --blue:#1200FF;
+  --blue-2:#3B2BFF;
+  --lime:#E3FF1F;
+  --green:#A5EB45;
+  --cyan:#6DEAEC;
+  --white:#FFFFFF;
+  --paper:#FFFFFF;
+  --paper-2:#F3F4FB;
+  --paper-line:#E1E3F2;
+  --ink:#08093A;
+  --muted-dark:#4A4E7A;
+  --text:#F2F3FF;
+  --muted:#A9ACD6;
+  --red:#FF6B81;
+  --amber:#FFC857;
+  --radius-xl:28px;
+  --radius-lg:20px;
+  --radius-md:14px;
+  --maxw:1200px;
+  --head:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --grad:linear-gradient(90deg,var(--cyan) 0%,var(--green) 55%,var(--lime) 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);background:var(--navy);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,h4,h5{font-family:var(--head)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+sup a{color:var(--lime);text-decoration:none;font-size:10px;font-weight:700;margin-left:1px}
+.panel sup a{color:var(--blue)}
+
+/* Buttons and pills */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:17px;padding:15px 26px;border-radius:8px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,box-shadow .2s,background .2s}
+.btn-lime{background:var(--lime);color:var(--navy)}
+.btn-lime:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(227,255,31,.25)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-2)}
+.arrow{display:inline-block;width:18px;height:2px;background:currentColor;position:relative}
+.arrow:after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);border:1px solid rgba(227,255,31,.4);background:rgba(227,255,31,.06);padding:6px 12px;border-radius:999px}
+
+/* Nav */
+.bar{background:linear-gradient(90deg,#0F01B9,var(--blue));color:#fff;font-size:14px;text-align:center;padding:9px 16px}
+.bar b{color:var(--lime);font-weight:600}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--paper-line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.brand .mark{width:26px;height:26px;border-radius:6px;background:var(--navy);position:relative}
+.brand .mark:after{content:"";position:absolute;left:7px;top:7px;width:5px;height:12px;background:var(--lime);box-shadow:5px 7px 0 0 var(--lime)}
+.brand b{font-family:var(--head);font-weight:700;font-size:20px;letter-spacing:-.02em}
+.brand span{font-size:12.5px;color:var(--muted-dark);border-left:1px solid var(--paper-line);padding-left:10px;white-space:nowrap}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{display:block;padding:8px 10px;border-radius:8px;font-size:14px;font-weight:500;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:var(--paper-2);color:var(--blue)}
+.menu-btn{display:none;background:none;border:1px solid var(--paper-line);border-radius:8px;padding:8px 12px;font:inherit;color:var(--navy);cursor:pointer}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;background:var(--blue);width:0}
+@media (max-width:1240px){.brand span{display:none}}
+@media (max-width:1080px){
+  .nav-links{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:#fff;padding:10px 16px 16px;border-bottom:1px solid var(--paper-line)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:90px 0 80px}
+.dots{position:absolute;right:-120px;top:40px;width:640px;height:640px;opacity:.9;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;position:relative}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.dots{opacity:.4}}
+.hero h1{font-size:clamp(40px,5.6vw,72px);line-height:1.02;letter-spacing:-.035em;font-weight:700;margin:22px 0}
+.hero h1 .l1{display:block;color:#fff;font-size:.62em;letter-spacing:-.02em;margin-bottom:10px}
+.hero p.sub{font-size:19px;color:#C9CBF0;max-width:560px;margin-bottom:32px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+.feed{background:#0B0D3F;border:1px solid #2B2F86;border-radius:16px;box-shadow:0 30px 80px rgba(18,0,255,.25),0 0 0 1px rgba(109,234,236,.15);overflow:hidden}
+.feed-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #22266F;font-size:13px;color:var(--muted)}
+.feed-top b{color:#fff;font-family:var(--head);font-size:15px}
+.feed-top i{font-style:normal;background:rgba(227,255,31,.12);color:var(--lime);padding:3px 8px;border-radius:6px;font-size:11.5px;font-weight:600}
+.feed-body{padding:16px 18px;display:grid;gap:10px;min-height:360px;align-content:start}
+.fi{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;background:#10134F;border:1px solid #23287A;border-radius:10px;padding:12px 14px;opacity:0;transform:translateY(8px);transition:all .45s ease}
+.fi.show{opacity:1;transform:none}
+.fi .tag{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:5px;white-space:nowrap}
+.t-crit{background:rgba(255,107,129,.16);color:#FF9AAA}
+.t-ai{background:rgba(109,234,236,.14);color:var(--cyan)}
+.t-act{background:rgba(18,0,255,.35);color:#C9C4FF}
+.t-ok{background:rgba(165,235,69,.16);color:var(--green)}
+.fi p{font-size:14px;color:#E6E7FF;line-height:1.45}
+.fi p small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.fi time{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.feed-foot{font-size:11.5px;color:var(--muted);padding:0 18px 14px}
+
+/* Sections */
+section{padding:100px 0;position:relative}
+@media (max-width:640px){section{padding:70px 0}}
+.panel{background:var(--paper);color:var(--ink)}
+.panel.alt{background:var(--paper-2)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.eyebrow:before{content:"";width:22px;height:3px;background:currentColor;border-radius:2px}
+.panel .eyebrow{color:var(--blue)}
+.sec-head{max-width:820px;margin-bottom:50px}
+.sec-head h2{font-size:clamp(32px,4.2vw,52px);line-height:1.06;letter-spacing:-.03em;font-weight:700;margin-bottom:16px}
+.sec-head p{font-size:18px;color:var(--muted)}
+.panel .sec-head p{color:var(--muted-dark)}
+.hl{color:var(--blue)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* My read */
+.read-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.read-grid{grid-template-columns:1fr}}
+.read{background:var(--navy);color:var(--text);border-radius:var(--radius-lg);padding:28px;position:relative;overflow:hidden}
+.read:before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--grad)}
+.read h3{font-size:21px;font-weight:600;margin-bottom:14px;color:#fff;letter-spacing:-.01em}
+.read ul{list-style:none;display:grid;gap:12px}
+.read li{font-size:15px;color:var(--muted);position:relative;padding-left:18px}
+.read li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--lime);border-radius:2px}
+.read li b{color:#fff;font-weight:600}
+.read sup a{color:var(--lime)}
+
+/* Challenger */
+.choreo{display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:st;position:relative}
+@media (max-width:1000px){.choreo{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.choreo{grid-template-columns:1fr}}
+.st{padding:24px 20px;border:1px solid var(--line);margin:-1px 0 0 -1px;background:var(--navy-2);position:relative;cursor:pointer;transition:background .2s}
+.st:hover,.st.active{background:var(--navy-3)}
+.st.active{box-shadow:inset 0 -3px 0 var(--lime)}
+.st .n{font-family:var(--head);font-size:13px;font-weight:600;color:var(--lime);letter-spacing:.08em}
+.st h4{font-size:18px;font-weight:600;margin-top:6px;color:#fff}
+.st p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.st-detail{margin-top:18px;background:var(--navy-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;min-height:190px}
+@media (max-width:860px){.st-detail{grid-template-columns:1fr}}
+.st-detail h3{font-size:26px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.st-detail .say{font-size:17px;color:#E6E7FF;border-left:3px solid var(--lime);padding-left:14px}
+.st-detail .k{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.st-detail .facts{display:grid;gap:10px}
+.st-detail .fact{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;color:#E6E7FF}
+.st-detail .fact b{font-family:var(--head);font-size:22px;color:var(--lime);display:block;line-height:1.1}
+.ttt{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr}}
+.tc{border-radius:var(--radius-lg);padding:26px;background:#fff;color:var(--ink)}
+.tc .big{font-family:var(--head);font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.tc:nth-child(1) .big{color:var(--blue)}
+.tc:nth-child(2) .big{color:#0E8F7E}
+.tc:nth-child(3) .big{color:#6A8A00}
+.tc h4{font-size:15px;margin:10px 0 6px;font-weight:600}
+.tc p{font-size:14.5px;color:var(--muted-dark)}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:start}
+@media (max-width:980px){.terr{grid-template-columns:1fr}}
+.map-card{background:var(--navy);border-radius:var(--radius-lg);padding:22px;position:sticky;top:90px}
+@media (max-width:980px){.map-card{position:static}}
+.map-card svg{width:100%;height:auto;display:block}
+.state{fill:#161A68;stroke:#3A3F9C;stroke-width:1.5;cursor:pointer;transition:fill .2s}
+.state:hover{fill:#20258A}
+.state.on{fill:var(--blue)}
+.state-label{font-family:var(--head);font-size:13px;font-weight:600;fill:#fff;pointer-events:none}
+.pin{fill:var(--lime)}
+.pin-label{font-size:10.5px;fill:#C9CBF0;pointer-events:none}
+.home{fill:var(--cyan)}
+.map-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:10px}
+.map-legend span{display:inline-flex;align-items:center;gap:6px}
+.map-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.regions{display:grid;gap:14px}
+.region{background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius-lg);padding:24px;transition:border-color .2s,box-shadow .2s}
+.region.on{border-color:var(--blue);box-shadow:0 12px 30px rgba(18,0,255,.1)}
+.region-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.region h3{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.region .tier{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--paper-2);color:var(--blue)}
+.region p{font-size:15px;color:var(--muted-dark);margin:8px 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:999px;background:var(--paper-2);border:1px solid var(--paper-line);color:var(--ink)}
+.chip.v{background:var(--navy);color:#fff;border-color:var(--navy)}
+.region .angle{margin-top:12px;font-size:14px;color:var(--ink);background:var(--paper-2);border-radius:10px;padding:10px 12px}
+.region .angle b{color:var(--blue)}
+.terr-note{font-size:13px;color:var(--muted-dark);margin-top:14px}
+
+/* Plays */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{font-family:var(--head);font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--navy-2);color:var(--muted);cursor:pointer;transition:all .15s}
+.tab:hover{color:#fff}
+.tab.active{background:var(--lime);border-color:var(--lime);color:var(--navy)}
+.play{display:none;grid-template-columns:1fr 1.05fr;gap:20px}
+.play.active{display:grid;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.play.active{grid-template-columns:1fr}}
+.meta-col{display:grid;gap:12px;align-content:start}
+.meta{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px}
+.meta .k{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
+.meta p,.meta li{font-size:15px;color:#E6E7FF}
+.meta ul{padding-left:18px;display:grid;gap:6px}
+.meta li::marker{color:var(--lime)}
+.meta.insight{background:linear-gradient(135deg,rgba(18,0,255,.35),rgba(109,234,236,.08));border-color:#3B3FB0}
+.meta.insight .k{color:var(--lime)}
+.email{background:#fff;color:var(--ink);border-radius:var(--radius-lg);overflow:hidden;align-self:start}
+.email-head{padding:16px 22px;border-bottom:1px solid var(--paper-line);font-size:13.5px;color:var(--muted-dark);display:grid;gap:4px}
+.email-head b{color:var(--ink);font-weight:600}
+.email-body{padding:20px 22px;display:grid;gap:16px;font-size:15px}
+.step{display:grid;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--paper-line)}
+.step:last-child{border-bottom:0;padding-bottom:0}
+.step-k{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.step-k span:last-child{color:var(--muted-dark)}
+.email-foot{padding:14px 22px;background:var(--paper-2);display:flex;gap:8px;flex-wrap:wrap}
+.email-foot .chip.p{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* Competition */
+.comp{display:grid;grid-template-columns:270px 1fr;gap:22px}
+@media (max-width:900px){.comp{grid-template-columns:1fr}}
+.comp-list{display:grid;gap:8px;align-content:start}
+@media (max-width:900px){.comp-list{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+.cbtn{text-align:left;font-family:inherit;background:#fff;border:1px solid var(--paper-line);border-radius:12px;padding:13px 16px;cursor:pointer;transition:all .15s}
+.cbtn b{display:block;font-family:var(--head);font-size:16px;color:var(--ink)}
+.cbtn span{font-size:12.5px;color:var(--muted-dark)}
+.cbtn:hover{border-color:var(--blue)}
+.cbtn.active{background:var(--navy);border-color:var(--navy)}
+.cbtn.active b{color:#fff}
+.cbtn.active span{color:var(--lime)}
+.bc{display:none;background:var(--navy);color:var(--text);border-radius:var(--radius-lg);padding:30px}
+.bc.active{display:block;animation:fade .4s ease}
+.bc-top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.bc h3{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.bc .how{color:var(--muted);font-size:15px;max-width:640px;margin-top:6px}
+.threat{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:8px;white-space:nowrap;align-self:flex-start}
+.th-h{background:rgba(255,107,129,.15);color:#FF9AAA}
+.th-m{background:rgba(255,200,87,.15);color:var(--amber)}
+.th-l{background:rgba(165,235,69,.15);color:var(--green)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.box{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:18px}
+.box .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.box.them .k{color:var(--amber)}
+.box.us .k{color:var(--lime)}
+.box ul{padding-left:18px;display:grid;gap:6px;font-size:14.5px}
+.box li::marker{color:var(--cyan)}
+.reframe{margin-top:14px;border-radius:14px;padding:18px;background:linear-gradient(135deg,rgba(18,0,255,.4),rgba(109,234,236,.1));border:1px solid #3B3FB0}
+.reframe .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:6px}
+.reframe p{font-size:16px}
+
+/* Deal plan */
+.deal{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+@media (max-width:980px){.deal{grid-template-columns:1fr}}
+.map-step{display:grid;grid-template-columns:34px 1fr;gap:16px;padding-bottom:24px;position:relative}
+.map-step:not(:last-child):before{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--line)}
+.node{width:34px;height:34px;border-radius:50%;background:var(--navy-2);border:2px solid var(--lime);display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:14px;color:#fff}
+.map-step .wk{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.map-step h4{font-size:18px;font-weight:600;margin:2px 0}
+.map-step p{font-size:14.5px;color:var(--muted)}
+.map-step .ch{display:inline-block;margin-top:8px;font-size:12px;font-weight:600;color:var(--lime);background:rgba(227,255,31,.08);border:1px solid rgba(227,255,31,.3);padding:3px 9px;border-radius:6px}
+.medd{display:grid;gap:10px}
+.m{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.m summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;padding:14px 18px}
+.m summary::-webkit-details-marker{display:none}
+.m .l{font-family:var(--head);font-size:30px;font-weight:700;color:var(--lime);line-height:1}
+.m summary h5{font-size:17px;font-weight:600;color:#fff}
+.m summary h5 small{display:block;font-family:var(--body);font-size:13px;font-weight:400;color:var(--muted)}
+.m summary:after{content:"+";font-size:22px;color:var(--cyan);transition:transform .2s}
+.m[open] summary:after{transform:rotate(45deg)}
+.m[open]{border-color:#3B3FB0}
+.m-body{padding:0 18px 18px 74px;display:grid;gap:8px;font-size:14.5px}
+@media (max-width:560px){.m-body{padding-left:18px}}
+.m-body div{color:#E6E7FF}
+.m-body b{display:inline-block;min-width:84px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.m-body .rf b{color:var(--red)}
+
+/* About */
+.proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.proofs{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.proofs{grid-template-columns:1fr}}
+.pf{background:var(--paper-2);border:1px solid var(--paper-line);border-radius:var(--radius-md);padding:22px}
+.pf .v{font-family:var(--head);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.pf .v span{color:var(--blue)}
+.pf h4{font-size:15px;font-weight:600;margin:10px 0 4px}
+.pf p{font-size:13.5px;color:var(--muted-dark)}
+.pf.dark{background:var(--navy);border-color:var(--navy)}
+.pf.dark .v,.pf.dark h4{color:#fff}
+.pf.dark .v span{color:var(--lime)}
+.pf.dark p{color:var(--muted)}
+.fit{margin-top:48px;border:1px solid var(--paper-line);border-radius:var(--radius-lg);overflow:hidden}
+.fit-row{display:grid;grid-template-columns:1fr 30px 1.4fr;gap:16px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--paper-line);background:#fff}
+.fit-row:last-child{border-bottom:0}
+.fit-row.head{background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.fit-row .req{font-weight:600;font-size:15px}
+.fit-row .ok{width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:13px}
+.fit-row .ev{font-size:14.5px;color:var(--muted-dark)}
+.fit-row .ev b{color:var(--ink)}
+@media (max-width:700px){.fit-row{grid-template-columns:1fr}.fit-row .ok,.fit-row.head{display:none}}
+.why{margin-top:40px;border-radius:var(--radius-lg);padding:32px;background:var(--navy);color:#fff;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.why .pinbig{width:64px;height:64px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--head);font-weight:700;color:var(--navy)}
+.why h3{font-size:24px;font-weight:600;margin-bottom:8px}
+.why p{color:#C9CBF0;font-size:15.5px}
+@media (max-width:600px){.why{grid-template-columns:1fr}}
+
+/* 30 60 90 */
+.ph{display:none;background:var(--navy-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;position:relative;overflow:hidden}
+.ph.active{display:block;animation:fade .4s ease}
+.ph:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad)}
+.ph-head{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+.ph-head .d{font-family:var(--head);font-size:64px;font-weight:700;letter-spacing:-.05em;line-height:.9}
+.ph-head .d span{font-size:18px;font-weight:500;color:var(--muted);margin-left:6px;letter-spacing:0}
+.ph-t{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.ph-head h3{font-size:24px;font-weight:600;margin-top:4px}
+.ph-list{list-style:none;columns:2;column-gap:40px}
+@media (max-width:800px){.ph-list{columns:1}}
+.ph-list > li{break-inside:avoid;font-size:15px;color:#E6E7FF;position:relative;padding-left:18px;margin-bottom:12px}
+.ph-list > li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--lime)}
+.ph-list ul{list-style:none;margin-top:8px;display:grid;gap:6px}
+.ph-list ul li{font-size:14px;color:var(--muted);position:relative;padding-left:16px}
+.ph-list ul li:before{content:"";position:absolute;left:0;top:10px;width:7px;height:2px;background:var(--cyan)}
+.ph-out{margin-top:18px;border-radius:14px;padding:16px 18px;background:rgba(227,255,31,.07);border:1px solid rgba(227,255,31,.35);font-size:15px}
+.ph-out b{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:4px}
+
+/* Contact */
+.contact{text-align:center;padding:120px 0}
+.contact h2{font-size:clamp(46px,8vw,104px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.contact p{font-size:19px;color:#C9CBF0;max-width:640px;margin:22px auto 34px}
+.contact .ctas{justify-content:center}
+footer{border-top:1px solid var(--line);padding:40px 0 60px;font-size:13px;color:var(--muted)}
+footer h4{font-size:14px;color:#fff;margin-bottom:10px}
+.sources{padding-left:20px;columns:2;column-gap:40px}
+.sources li{margin-bottom:4px;break-inside:avoid;scroll-margin-top:90px}
+.sources a{color:var(--cyan);text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.sources li:target a{color:var(--lime);text-decoration:underline}
+@media (max-width:700px){.sources{columns:1}}
+.disclaimer{margin-top:20px;max-width:840px}
+</style>
+</head>
+<body>
+
+<div class="bar">Prepared for <b>George Bojorquez</b>, RVP Enterprise US West, by Eric Iannello</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Back to top"><span class="mark"></span><b>LogicMonitor</b><span>Rockies Enterprise Plan</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#read">My Read</a></li>
+      <li><a href="#pov">Point of View</a></li>
+      <li><a href="#territory">Territory</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Deal Plan</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#plan">90 Days</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="dots" viewBox="0 0 600 600" aria-hidden="true" id="dots"></svg>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="pill">Enterprise AE, Rockies</span>
+      <h1><span class="l1">Goodbye, blind spots.</span><span class="grad">Hello, Rockies pipeline.</span></h1>
+      <p class="sub">How I read the market, the point of view I would lead with, the accounts I would go after first and how I would run deals, so I can build pipeline from week one.</p>
+      <div class="ctas">
+        <a href="#read" class="btn btn-lime">See the plan <span class="arrow"></span></a>
+        <a href="#contact" class="btn btn-ghost">Contact me <span class="arrow"></span></a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="feed" aria-label="Illustration of Edwin AI correlating an incident">
+        <div class="feed-top"><b>Edwin AI Action Feed</b><i>Illustration</i></div>
+        <div class="feed-body" id="feed"></div>
+        <div class="feed-foot">A hybrid incident, from alert storm to resolution, the way I would demo the value to a CIO.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 01 MY READ -->
+<section id="read" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">01 My read on LogicMonitor</div>
+      <h2>What I know <span class="hl">going in</span></h2>
+      <p>A short summary so we start from the same page.</p>
+    </div>
+    <div class="read-grid">
+      <div class="read reveal">
+        <h3>Where LogicMonitor wins</h3>
+        <ul>
+          <li><b>LM Envision</b> gives one view across on-prem, cloud, network and edge, which is exactly where hybrid estates break.</li>
+          <li><b>Edwin AI</b> turns alert storms into a single insight and acts on it. Forrester found 313% ROI with payback in six months or less.<sup><a href="#s3">3</a></sup></li>
+          <li><b>Catchpoint</b> adds internet and digital experience monitoring, so teams see issues outside their own walls.<sup><a href="#s1">1</a></sup></li>
+        </ul>
+      </div>
+      <div class="read reveal">
+        <h3>Who buys</h3>
+        <ul>
+          <li>Enterprises with hybrid estates, large network footprints and customer facing digital services.</li>
+          <li>The CIO or VP of Infrastructure signs. The Director of IT Ops or NOC leader champions. Finance and security approve.</li>
+          <li>The strongest deals consolidate several tools and pay for themselves on retired licenses and reclaimed engineering time.</li>
+        </ul>
+      </div>
+      <div class="read reveal">
+        <h3>Why now</h3>
+        <ul>
+          <li>LogicMonitor passed $400M in ARR, and Edwin AI drives about a third of bookings.<sup><a href="#s2">2</a></sup></li>
+          <li>84% of organizations are pursuing or considering observability tool consolidation.<sup><a href="#s5">5</a></sup></li>
+          <li>SolarWinds and VMware price resets are forcing IT leaders to rethink their stack.<sup><a href="#s8">8</a>,<a href="#s9">9</a></sup></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 POINT OF VIEW -->
+<section id="pov">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">02 The Challenger point of view</div>
+      <h2>Lead with an insight, <span class="grad">not a demo</span></h2>
+      <p>Every first meeting follows the Challenger choreography. Click through each step to see what I would say to a CIO in the Rockies.</p>
+    </div>
+
+    <div class="choreo reveal" role="tablist" aria-label="Challenger choreography">
+      <div class="st active" data-st="0" role="tab" tabindex="0"><div class="n">01</div><h4>Warmer</h4><p>Show we know their world</p></div>
+      <div class="st" data-st="1" role="tab" tabindex="0"><div class="n">02</div><h4>Reframe</h4><p>Challenge the assumption</p></div>
+      <div class="st" data-st="2" role="tab" tabindex="0"><div class="n">03</div><h4>Rational drowning</h4><p>Make the cost concrete</p></div>
+      <div class="st" data-st="3" role="tab" tabindex="0"><div class="n">04</div><h4>Emotional impact</h4><p>Make it personal</p></div>
+      <div class="st" data-st="4" role="tab" tabindex="0"><div class="n">05</div><h4>A new way</h4><p>Describe the better model</p></div>
+      <div class="st" data-st="5" role="tab" tabindex="0"><div class="n">06</div><h4>Our solution</h4><p>Show why LogicMonitor</p></div>
+    </div>
+    <div class="st-detail reveal" id="stDetail" aria-live="polite"></div>
+
+    <div class="ttt">
+      <div class="tc reveal"><div class="big">Teach</div><h4>Open with the insight</h4><p>The first call reframes how they think about outages and tools. A demo comes later, once they agree the problem is real.</p></div>
+      <div class="tc reveal"><div class="big">Tailor</div><h4>Change the message by persona</h4><p>Resilience and cost for the CIO, toil and on call load for IT Ops, license spend and payback for finance, AI governance for security.</p></div>
+      <div class="tc reveal"><div class="big">Take Control</div><h4>Hold the line on value</h4><p>Push back on "we'll just renew," put a number on the cost of waiting, and leave every meeting with a dated next step.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TERRITORY -->
+<section id="territory" class="panel alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">03 The Rockies territory</div>
+      <h2>How I would <span class="hl">attack the Rockies</span></h2>
+      <p>I live in Boise, inside the territory. Click a state to see the verticals, example accounts and the angle I would lead with.</p>
+    </div>
+
+    <div class="terr">
+      <div class="map-card reveal">
+        <svg viewBox="0 0 520 470" role="img" aria-label="Map of the Rockies territory">
+          <path class="state" data-r="id" d="M70 20 L110 20 L112 130 L150 180 L150 290 L40 290 L40 150 L80 110 Z"/>
+          <path class="state" data-r="mt" d="M110 20 L400 20 L400 170 L205 170 L150 180 L112 130 Z"/>
+          <path class="state" data-r="wy" d="M150 180 L205 170 L400 170 L400 300 L240 300 L205 300 L205 290 L150 290 Z"/>
+          <path class="state" data-r="ut" d="M40 290 L205 290 L205 300 L240 300 L240 450 L40 450 Z"/>
+          <path class="state" data-r="co" d="M240 300 L460 300 L460 450 L240 450 Z"/>
+          <text class="state-label" x="78" y="220">ID</text>
+          <text class="state-label" x="270" y="95">MT</text>
+          <text class="state-label" x="280" y="240">WY</text>
+          <text class="state-label" x="120" y="380">UT</text>
+          <text class="state-label" x="340" y="395">CO</text>
+          <circle class="home" cx="70" cy="255" r="7"/><text class="pin-label" x="46" y="275">Boise</text>
+          <circle class="pin" cx="140" cy="325" r="6"/><text class="pin-label" x="96" y="316">Salt Lake City</text>
+          <circle class="pin" cx="330" cy="340" r="6"/><text class="pin-label" x="340" y="336">Denver</text>
+          <circle class="pin" cx="315" cy="375" r="4"/><text class="pin-label" x="250" y="372">Colo Springs</text>
+          <circle class="pin" cx="135" cy="360" r="4"/><text class="pin-label" x="146" y="364">Provo, Lehi</text>
+          <circle class="pin" cx="255" cy="110" r="4"/><text class="pin-label" x="263" y="114">Billings</text>
+        </svg>
+        <div class="map-legend"><span><i style="background:var(--cyan)"></i>Home base</span><span><i style="background:var(--lime)"></i>Enterprise hubs</span></div>
+      </div>
+
+      <div class="regions">
+        <div class="region reveal" data-r="co">
+          <div class="region-top"><h3>Colorado Front Range</h3><span class="tier">Tier 1 density</span></div>
+          <p>The largest concentration of enterprise HQs in the territory, with heavy hybrid and network estates.</p>
+          <div class="chips"><span class="chip v">Aerospace and defense</span><span class="chip v">Telecom and media</span><span class="chip v">Healthcare</span><span class="chip v">Mining and energy</span><span class="chip v">Higher ed</span></div>
+          <div class="chips" style="margin-top:8px"><span class="chip">Western Union</span><span class="chip">DaVita</span><span class="chip">Newmont</span><span class="chip">Arrow Electronics</span><span class="chip">Vail Resorts</span><span class="chip">EchoStar</span><span class="chip">UCHealth</span></div>
+          <div class="angle"><b>Lead with:</b> tool consolidation and outage cost for complex, regulated estates.</div>
+        </div>
+        <div class="region reveal" data-r="ut">
+          <div class="region-top"><h3>Utah and Silicon Slopes</h3><span class="tier">Tier 1 growth</span></div>
+          <p>Fast growing tech, fintech and health systems, plus a data center buildout set to more than triple capacity.<sup><a href="#s10">10</a></sup></p>
+          <div class="chips"><span class="chip v">SaaS and tech</span><span class="chip v">Financial services</span><span class="chip v">Healthcare</span><span class="chip v">Data centers</span></div>
+          <div class="chips" style="margin-top:8px"><span class="chip">Qualtrics</span><span class="chip">Zions Bancorporation</span><span class="chip">Intermountain Health</span><span class="chip">Extra Space Storage</span><span class="chip">Instructure</span><span class="chip">Ancestry</span></div>
+          <div class="angle"><b>Lead with:</b> Edwin AI for lean ops teams scaling fast, and Catchpoint for digital first businesses.</div>
+        </div>
+        <div class="region reveal" data-r="id">
+          <div class="region-top"><h3>Idaho</h3><span class="tier">Home base</span></div>
+          <p>Fewer logos, but large, sticky enterprises with plants, stores and hybrid infrastructure. I have sold into this market in person.</p>
+          <div class="chips"><span class="chip v">Semiconductors</span><span class="chip v">Retail and grocery</span><span class="chip v">Utilities</span><span class="chip v">Healthcare</span></div>
+          <div class="chips" style="margin-top:8px"><span class="chip">Micron</span><span class="chip">Albertsons</span><span class="chip">Idaho Power</span><span class="chip">St. Luke's</span><span class="chip">WinCo Foods</span><span class="chip">J.R. Simplot</span></div>
+          <div class="angle"><b>Lead with:</b> visibility across plants, stores and edge sites, with network depth others lack.</div>
+        </div>
+        <div class="region reveal" data-r="mt">
+          <div class="region-top"><h3>Montana and Wyoming</h3><span class="tier">Tier 2 and 3</span></div>
+          <p>Smaller enterprise count, strong in health systems, energy and public sector, often run by lean IT teams.</p>
+          <div class="chips"><span class="chip v">Health systems</span><span class="chip v">Energy</span><span class="chip v">State and higher ed</span></div>
+          <div class="chips" style="margin-top:8px"><span class="chip">Billings Clinic</span><span class="chip">Bozeman Health</span><span class="chip">Regional utilities</span><span class="chip">State universities</span></div>
+          <div class="angle"><b>Lead with:</b> partner led motions and a single platform that replaces the patchwork.</div>
+        </div>
+        <p class="terr-note">Example accounts are illustrative, from public information. I would confirm existing customers and account ownership with the team before any outreach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PLAYS -->
+<section id="plays">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">04 Sales plays</div>
+      <h2>Four plays <span class="grad">I would run first</span></h2>
+      <p>Each play opens with a commercial insight, uses light relevance to earn the reply, and comes with a three email sequence.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Sales plays">
+      <button class="tab active" data-play="p1">Tool Sprawl to One View</button>
+      <button class="tab" data-play="p2">Alert Noise to Action</button>
+      <button class="tab" data-play="p3">The Hybrid Shift</button>
+      <button class="tab" data-play="p4">Outages Customers Find First</button>
+    </div>
+
+    <div class="play active" id="p1">
+      <div class="meta-col">
+        <div class="meta insight"><div class="k">Commercial insight</div><p>Outages rarely hide in one tool's blind spot. They hide in the gaps between tools, where nobody owns the full picture.</p></div>
+        <div class="meta"><div class="k">Target and signals</div><p>Enterprises running several monitoring tools. Signals include job posts listing SolarWinds, PRTG, Datadog or Splunk, a recent outage, or a new CIO.</p></div>
+        <div class="meta"><div class="k">Personas</div><p>Director of IT Ops first, then the VP of Infrastructure and the CIO.</p></div>
+        <div class="meta"><div class="k">Discovery</div><ul><li>How many tools does it take to troubleshoot one incident today?</li><li>What did your last major outage cost, and where was it hiding?</li><li>When do your monitoring renewals come up?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> Director of IT Operations</div><div><b>Subject A:</b> {{company}} monitoring stack</div><div><b>Subject B:</b> Tool sprawl idea</div><div><b>Subject C:</b> One view idea</div></div>
+        <div class="email-body">
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, saw {{company}} is hiring someone to run {{tool_1}} and {{tool_2}}, so guessing the team is stitching a few monitoring tools together.</p><p>Most outages we see don't come from a blind spot in one tool. They hide in the gaps between them.</p><p>{{customer_name}} consolidated 10 monitoring tools into one and streamlined IT operations. Think it's worth comparing notes?</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize consolidating monitoring sounds like a big project.</p><p>If we map your current tools and renewal dates first so you can see the overlap and the cost, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like consolidation might not be a priority?</p><p>Basically your team would get one view across on-prem, cloud and network, with AI that turns alerts into a single insight.</p><p>Helped {{customer_name}} as I mentioned. And if a SolarWinds renewal is coming up, happy to be a second opinion. No worries if not.</p></div>
+        </div>
+        <div class="email-foot"><span class="chip p">Proof: Topgolf<sup><a href="#s7" style="color:#fff">7</a></sup></span><span class="chip">Fallback: SolarWinds renewal</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p2">
+      <div class="meta-col">
+        <div class="meta insight"><div class="k">Commercial insight</div><p>Adding people to watch dashboards doesn't reduce outages. Correlating alerts and acting on them does.</p></div>
+        <div class="meta"><div class="k">Target and signals</div><p>Large NOC or ITOps teams on ServiceNow with heavy alert volume. Signals include NOC or SRE hiring, on call burnout on Glassdoor, or an AI mandate from the board.</p></div>
+        <div class="meta"><div class="k">Personas</div><p>VP of IT Operations first, then the NOC leader, the ServiceNow owner and the CIO.</p></div>
+        <div class="meta"><div class="k">Discovery</div><ul><li>How many alerts a week turn into real incidents?</li><li>How long from first alert to the right engineer on the problem?</li><li>What would your team do with the hours spent triaging noise?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> VP of IT Operations</div><div><b>Subject A:</b> {{company}} alert noise</div><div><b>Subject B:</b> NOC capacity idea</div><div><b>Subject C:</b> Triage time idea</div></div>
+        <div class="email-body">
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, noticed {{company}} is hiring for the NOC again, so guessing alert volume is growing faster than the team.</p><p>More people watching dashboards rarely fixes that. Correlating the alerts does.</p><p>A Forrester study found teams using Edwin AI cut alert noise 75% in year one and saw payback in six months. Think it could help?</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize a vendor study might seem like seller cherry picking.</p><p>If we run Edwin on a week of your own alert data so you can see the noise reduction yourself, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like alert noise might not be a pain right now?</p><p>Basically Edwin groups related alerts into one insight, finds the likely root cause and can kick off the fix, right inside ServiceNow.</p><p>Happy to share the study either way. No worries if the timing is off.</p></div>
+        </div>
+        <div class="email-foot"><span class="chip p">Proof: Forrester TEI<sup><a href="#s3" style="color:#fff">3</a></sup></span><span class="chip">Value: NOC capacity</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p3">
+      <div class="meta-col">
+        <div class="meta insight"><div class="k">Commercial insight</div><p>Migrations are when blind spots cause the most damage, because nobody owns the space between the old platform and the new one.</p></div>
+        <div class="meta"><div class="k">Target and signals</div><p>Enterprises moving off VMware, expanding into cloud or standing up AI infrastructure. Signals include cloud migration roles, Hyper-V or Nutanix projects, or new data center capacity in Utah.</p></div>
+        <div class="meta"><div class="k">Personas</div><p>VP of Infrastructure or Cloud first, then the CIO and enterprise architecture.</p></div>
+        <div class="meta"><div class="k">Discovery</div><ul><li>What will you need to watch before, during and after the migration?</li><li>Which tools only see one side of the move?</li><li>What happens to your monitoring when the VMware contract ends?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> VP of Infrastructure</div><div><b>Subject A:</b> {{company}} migration visibility</div><div><b>Subject B:</b> Hybrid visibility idea</div><div><b>Subject C:</b> Migration risk idea</div></div>
+        <div class="email-body">
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, noticed {{company}} is moving workloads from VMware to {{cloud}}, so guessing visibility is split across both for a while.</p><p>That in between window is when most migration outages happen, because no single tool sees both sides.</p><p>{{customer_name}} unified on-prem and cloud monitoring in one platform and cut resolution times. Works across VMware, Hyper-V and every major cloud.</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize adding a tool in the middle of a migration can sound backwards.</p><p>If we map what you'll need to watch before, during and after the move so nothing falls through, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like migration visibility might be covered?</p><p>Basically your team would watch the old and new environments in one place, with AI flagging issues before users feel them.</p><p>Helped {{customer_name}} as I mentioned. But no worries if it's not a fit.</p></div>
+        </div>
+        <div class="email-foot"><span class="chip p">Proof: Coca-Cola Consolidated<sup><a href="#s7" style="color:#fff">7</a></sup></span><span class="chip">Value: migration risk</span></div>
+      </div>
+    </div>
+
+    <div class="play" id="p4">
+      <div class="meta-col">
+        <div class="meta insight"><div class="k">Commercial insight</div><p>Your customers don't care whose fault an outage is. Most teams still learn about internet and SaaS problems from customers first.</p></div>
+        <div class="meta"><div class="k">Target and signals</div><p>Customer facing digital businesses: banking, retail, resorts, healthcare portals and SaaS. Signals include public outages, app review complaints, or new digital products.</p></div>
+        <div class="meta"><div class="k">Personas</div><p>CIO or VP of Digital first, then SRE and the network team.</p></div>
+        <div class="meta"><div class="k">Discovery</div><ul><li>When a SaaS or ISP provider goes down, how long until you know it isn't you?</li><li>How do you measure what customers actually experience?</li><li>What does an hour of downtime cost your digital revenue?</li></ul></div>
+      </div>
+      <div class="email">
+        <div class="email-head"><div><b>To:</b> CIO</div><div><b>Subject A:</b> {{company}} digital experience</div><div><b>Subject B:</b> Early warning idea</div><div><b>Subject C:</b> Customer outage idea</div></div>
+        <div class="email-body">
+          <div class="step"><div class="step-k"><span>Email 1</span><span>Day 1</span></div><p>{{first_name}}, when {{provider}} went down last {{month}}, how long did it take your team to know it wasn't {{company}}?</p><p>Most teams find out about internet and SaaS issues from their customers first.</p><p>LogicMonitor now includes Catchpoint, which watches the internet from a global network of vantage points so teams know in minutes. Think that early warning could help?</p></div>
+          <div class="step"><div class="step-k"><span>Email 2: Bump</span><span>Day 3</span></div><p>{{first_name}}, what did you think here?</p><p>Realize "early warning" is easy to claim.</p><p>If we set up a few tests on your top customer journeys so you can see it on your own traffic, think it's worth a look?</p></div>
+          <div class="step"><div class="step-k"><span>Email 3: Breakup</span><span>Day 7</span></div><p>{{first_name}}, last note from me. Seems like digital experience might be covered?</p><p>Basically your team would see what customers see, from their browser to your data center, in one view.</p><p>No worries if it's not a priority right now.</p></div>
+        </div>
+        <div class="email-foot"><span class="chip p">Proof: Catchpoint IPM<sup><a href="#s1" style="color:#fff">1</a></sup></span><span class="chip">Value: revenue protection</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 COMPETITION -->
+<section id="competition" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">05 Competition</div>
+      <h2>How LogicMonitor wins <span class="hl">against each alternative</span></h2>
+      <p>Where each competitor is strong, where LogicMonitor wins, and the reframe I would use in discovery.</p>
+    </div>
+    <div class="comp reveal">
+      <div class="comp-list" role="tablist" aria-label="Competitors">
+        <button class="cbtn active" data-bc="c1"><b>Datadog</b><span>Cloud native and APM</span></button>
+        <button class="cbtn" data-bc="c2"><b>Dynatrace</b><span>Deep APM and root cause</span></button>
+        <button class="cbtn" data-bc="c3"><b>SolarWinds</b><span>The on-prem incumbent</span></button>
+        <button class="cbtn" data-bc="c4"><b>ServiceNow ITOM</b><span>Workflow owner</span></button>
+        <button class="cbtn" data-bc="c5"><b>AIOps overlays</b><span>BigPanda and similar</span></button>
+        <button class="cbtn" data-bc="c6"><b>Status quo</b><span>Open source and homegrown</span></button>
+      </div>
+      <div>
+        <div class="bc active" id="c1">
+          <div class="bc-top"><div><h3>Datadog</h3><p class="how">Loved by developers and cloud teams, often already in the building for APM.</p></div><span class="threat th-h">High threat</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where they're strong</div><ul><li>Cloud native and APM depth</li><li>Strong developer adoption and brand</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>On-prem, network and hybrid depth with thousands of prebuilt integrations</li><li>Predictable pricing instead of usage driven surprises</li><li>Edwin AI across the whole estate, not just cloud</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>How did last year's Datadog bill compare to the forecast, and how much of your on-prem network does it actually see?</p></div>
+        </div>
+        <div class="bc" id="c2">
+          <div class="bc-top"><div><h3>Dynatrace</h3><p class="how">A Gartner leader, strongest in application centric enterprises.<sup><a href="#s11">11</a></sup></p></div><span class="threat th-h">High threat</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where they're strong</div><ul><li>Application performance and precise root cause</li><li>Deep executive relationships in large enterprises</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>Faster deployment and broader infrastructure and network coverage</li><li>Explainable AI that ops teams trust</li><li>Simpler to operate day to day</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>How long did it take to reach full coverage, and who on your team can run it without a specialist?</p></div>
+        </div>
+        <div class="bc" id="c3">
+          <div class="bc-top"><div><h3>SolarWinds</h3><p class="how">Entrenched in network monitoring, now private and moving customers to three year subscriptions.<sup><a href="#s8">8</a></sup></p></div><span class="threat th-m">Displacement target</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where they're strong</div><ul><li>Familiar to network teams</li><li>Deep install base and muscle memory</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>SaaS, with no servers or upgrades to maintain</li><li>AI built in instead of bolted on</li><li>Renewal resets of 100% to 300% make the comparison natural</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>What does the new three year quote look like next to a SaaS platform you never have to patch?</p></div>
+        </div>
+        <div class="bc" id="c4">
+          <div class="bc-top"><div><h3>ServiceNow ITOM</h3><p class="how">Owns the incident workflow and the CMDB, and sometimes pitches its own discovery and event management.</p></div><span class="threat th-l">Often a partner</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where they're strong</div><ul><li>ITSM workflow and executive sponsorship</li><li>CMDB as the system of record</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>Position as better together: LogicMonitor feeds ServiceNow cleaner, richer incidents</li><li>Edwin cuts the noise before it becomes tickets</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>How much of what lands in ServiceNow today is noise, and what does each of those tickets cost?</p></div>
+        </div>
+        <div class="bc" id="c5">
+          <div class="bc-top"><div><h3>AIOps overlays</h3><p class="how">Correlation layers that sit on top of other monitoring tools.</p></div><span class="threat th-m">Medium threat</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where they're strong</div><ul><li>Tool agnostic correlation</li><li>Good fit for very fragmented estates</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>AI running on its own telemetry, so the data and the insight come from one place</li><li>One vendor instead of another integration to maintain</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>If the correlation engine doesn't own the data, who fixes it when the inputs change?</p></div>
+        </div>
+        <div class="bc" id="c6">
+          <div class="bc-top"><div><h3>Status quo</h3><p class="how">Zabbix, Nagios, PRTG and scripts that a few engineers keep alive.</p></div><span class="threat th-h">Most common</span></div>
+          <div class="cols">
+            <div class="box them"><div class="k">Where it's strong</div><ul><li>Low license cost</li><li>Full control and familiarity</li></ul></div>
+            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>Engineers go back to running infrastructure instead of maintaining monitoring</li><li>Coverage, AI and support that homegrown tools can't match</li></ul></div>
+          </div>
+          <div class="reframe"><div class="k">Reframe</div><p>How many engineers maintain your monitoring instead of your infrastructure, and what is that costing you?</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 DEAL PLAN -->
+<section id="deal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">06 Deal plan</div>
+      <h2>Challenger to open, <span class="grad">MEDDICC to close</span></h2>
+      <p>Challenger earns the right to a deal. MEDDICC makes sure it's real and forecastable. Open each letter to see what I validate, what I ask and the red flag I watch for.</p>
+    </div>
+    <div class="deal">
+      <div class="reveal">
+        <div class="map-step"><div class="node">1</div><div><div class="wk">Week 1</div><h4>Insight meeting with the executive</h4><p>Teach the reframe, agree the problem is real and worth solving this year.</p><span class="ch">Challenger: Teach</span></div></div>
+        <div class="map-step"><div class="node">2</div><div><div class="wk">Weeks 2 to 3</div><h4>Discovery and a quantified business case</h4><p>Outage cost, tool spend and engineer hours, built with their numbers and validated by finance.</p><span class="ch">Challenger: Tailor</span></div></div>
+        <div class="map-step"><div class="node">3</div><div><div class="wk">Weeks 3 to 6</div><h4>Proof of value on their own data</h4><p>Success criteria agreed in writing before it starts, with a clear owner on their side.</p><span class="ch">MEDDICC: Decision criteria</span></div></div>
+        <div class="map-step"><div class="node">4</div><div><div class="wk">Weeks 6 to 8</div><h4>Security, procurement and partner</h4><p>Run security review and paper process in parallel, and bring in the right partner early.</p><span class="ch">MEDDICC: Decision process</span></div></div>
+        <div class="map-step"><div class="node">5</div><div><div class="wk">Weeks 8 to 10</div><h4>Executive close and expansion plan</h4><p>Sign with a 90 day value review and the next use case already mapped.</p><span class="ch">Challenger: Take Control</span></div></div>
+      </div>
+      <div class="medd reveal">
+        <details class="m" open><summary><span class="l">M</span><h5>Metrics<small>The measurable outcome</small></h5></summary><div class="m-body"><div><b>Validate</b> MTTR, incident count, tool spend and engineer hours today.</div><div><b>Ask</b> What would a 50% cut in MTTR be worth to the business?</div><div class="rf"><b>Red flag</b> No baseline, so there's no way to prove value.</div></div></details>
+        <details class="m"><summary><span class="l">E</span><h5>Economic buyer<small>Who owns the budget</small></h5></summary><div class="m-body"><div><b>Validate</b> Usually the CIO or VP of Infrastructure. Meet them before the proof of value.</div><div><b>Ask</b> Who signs off on a platform change of this size?</div><div class="rf"><b>Red flag</b> The champion blocks access to the budget owner.</div></div></details>
+        <details class="m"><summary><span class="l">D</span><h5>Decision criteria<small>How they will choose</small></h5></summary><div class="m-body"><div><b>Validate</b> Hybrid coverage, AI outcomes, ServiceNow fit, pricing model and time to value.</div><div><b>Ask</b> What has to be true for LogicMonitor to be the clear choice?</div><div class="rf"><b>Red flag</b> The criteria were written by a competitor.</div></div></details>
+        <details class="m"><summary><span class="l">D</span><h5>Decision process<small>The steps to yes</small></h5></summary><div class="m-body"><div><b>Validate</b> Technical review, security, business case, procurement and legal, with dates.</div><div><b>Ask</b> Walk me through the last time you bought a platform like this.</div><div class="rf"><b>Red flag</b> Nobody can describe the steps after the proof of value.</div></div></details>
+        <details class="m"><summary><span class="l">I</span><h5>Identify pain<small>Why act now</small></h5></summary><div class="m-body"><div><b>Validate</b> A recent outage, a renewal, a migration or an AI mandate.</div><div><b>Ask</b> What happens if nothing changes for the next 12 months?</div><div class="rf"><b>Red flag</b> The pain is interesting but has no cost or deadline.</div></div></details>
+        <details class="m"><summary><span class="l">C</span><h5>Champion<small>Who sells when I'm not there</small></h5></summary><div class="m-body"><div><b>Validate</b> Has influence, gains personally from the change and will test my message internally.</div><div><b>Ask</b> How would you present this to your CIO?</div><div class="rf"><b>Red flag</b> A friendly coach with no power to move the deal.</div></div></details>
+        <details class="m"><summary><span class="l">C</span><h5>Competition<small>Who else, including doing nothing</small></h5></summary><div class="m-body"><div><b>Validate</b> Datadog, Dynatrace, the incumbent renewal and the status quo.</div><div><b>Ask</b> If you don't choose us, what do you do instead?</div><div class="rf"><b>Red flag</b> We only learn about the competitor at the proposal stage.</div></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ABOUT -->
+<section id="about" class="panel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">07 About me</div>
+      <h2>Why I'm a fit <span class="hl">for this role</span></h2>
+      <p>I sold device management and security software to enterprise IT at Jamf, and I sell AI at Netradyne today at roughly $300K ACV. LogicMonitor sits right where those two worlds meet.</p>
+    </div>
+    <div class="proofs">
+      <div class="pf dark reveal"><div class="v"><span>$</span>19.6M</div><h4>Self-sourced pipeline in under 12 months</h4><p>Netradyne. Enterprise Seller of the Year with $1M closed.</p></div>
+      <div class="pf reveal"><div class="v"><span>$</span>1.2M</div><h4>Largest deal in Jamf's history at the time</h4><p>Enterprise IT buyers, sourced at $750K and expanded before close.</p></div>
+      <div class="pf reveal"><div class="v">175<span>%</span></div><h4>Peak quota attainment at Falkon</h4><p>150% in 2022 and 125% in 2024. 300% in one quarter at Jamf.</p></div>
+      <div class="pf reveal"><div class="v">85 days</div><h4>Sales cycle, down from six months</h4><p>After rebuilding ICP, stages, discovery and SOPs at Falkon.</p></div>
+      <div class="pf reveal"><div class="v">F500</div><h4>Enterprise logos opened</h4><p>Albertsons, AAA and Sirva at Netradyne. Snowflake at Falkon.</p></div>
+      <div class="pf reveal"><div class="v">Boise</div><h4>Based in the territory</h4><p>Home base in Idaho, a short flight from Denver and Salt Lake City.</p></div>
+    </div>
+    <div class="fit reveal">
+      <div class="fit-row head"><div>What the role requires</div><div></div><div>Where I have done it</div></div>
+      <div class="fit-row"><div class="req">Net new and expansion</div><div class="ok">✓</div><div class="ev"><b>$19.6M self-sourced</b> at Netradyne, and a multi-year deal with expansion terms built in at Falkon.</div></div>
+      <div class="fit-row"><div class="req">$1M+ ARR performance</div><div class="ok">✓</div><div class="ev"><b>$1M closed</b> in under 12 months at Netradyne and a <b>$1.2M</b> deal at Jamf.</div></div>
+      <div class="fit-row"><div class="req">Complex, multithreaded sales into IT</div><div class="ok">✓</div><div class="ev">Sold to enterprise IT at Jamf, and multithreaded across ops, finance and security at F500 accounts.</div></div>
+      <div class="fit-row"><div class="req">MEDDPICC and Command of the Message</div><div class="ok">✓</div><div class="ev">Trained in both, and used them to rebuild sales process at Falkon and Commsor.</div></div>
+      <div class="fit-row"><div class="req">AI for account planning and pipeline</div><div class="ok">✓</div><div class="ev">I sell AI today, and I researched and built this plan with AI tools, the same way I would run territory research.</div></div>
+    </div>
+    <div class="why reveal">
+      <div class="pinbig">ID</div>
+      <div><h3>Why LogicMonitor, and why the Rockies</h3><p>IT teams are being asked to run more complex estates, support AI workloads and cut tools, all at once. LogicMonitor is the platform built for that moment. And the Rockies are home, so I can be in front of customers in Denver, Salt Lake City and Boise without the territory being a flight away.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 30 60 90 -->
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">08 First 90 days</div>
+      <h2>Learn, test, <span class="grad">then own the Rockies</span></h2>
+      <p>Built around your team's playbook, my own enterprise experience, Challenger and MEDDICC.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="30 60 90 day plan">
+      <button class="tab active" data-phase="ph30">First 30 Days</button>
+      <button class="tab" data-phase="ph60">First 60 Days</button>
+      <button class="tab" data-phase="ph90">First 90 Days</button>
+    </div>
+    <div class="reveal">
+      <div class="ph active" id="ph30">
+        <div class="ph-head"><div class="d">30<span>days</span></div><div><div class="ph-t">First 30 Days</div><h3>Intro to LogicMonitor | Building the Foundation</h3></div></div>
+        <ul class="ph-list">
+          <li>Get certified on LM Envision, Edwin AI and Catchpoint through LM Academy, demos and call recordings</li>
+          <li>Work with you and the top reps on the team to learn what's winning, where deals stall and what they would do differently, then pair it with what worked for me at Jamf and Netradyne</li>
+          <li>Build battlecards for Datadog, Dynatrace, SolarWinds and ServiceNow ITOM</li>
+          <li>Audit the territory: install base, open and dormant opportunities, customer lookalikes, vertical concentration and tool signals</li>
+          <li>Build a custom account workspace for each Tier 1 account: priorities, buying committee, pain hypothesis, proof points and openers</li>
+          <li>Meet the partners who cover the Rockies, including AHEAD and regional resellers, and align on shared accounts</li>
+          <li>Build the Rockies version of the Challenger pitch</li>
+          <li>Apply MEDDICC to any inherited pipeline</li>
+          <li>Launch the first self-sourced wave with an account hypothesis and a specific proof point for each account</li>
+        </ul>
+        <div class="ph-out"><b>Visible output</b>40 scored accounts, first meetings booked, a territory map with partner coverage, battlecards and a tailored Challenger pitch</div>
+      </div>
+      <div class="ph" id="ph60">
+        <div class="ph-head"><div class="d">60<span>days</span></div><div><div class="ph-t">First 60 Days</div><h3>Creating the Playbook | Testing the Territory</h3></div></div>
+        <ul class="ph-list">
+          <li>Review early results with you and peer reps each week, blending their guidance with patterns from my own enterprise deals</li>
+          <li>Run the four plays as ABM waves by region and vertical, starting with Colorado and Utah</li>
+          <li>Multithread every target account across the CIO, VP of Infrastructure, IT Ops, NOC, security and finance</li>
+          <li>Run insight meetings instead of first call demos, and use discovery to quantify outage cost, tool spend and engineer hours</li>
+          <li>Turn meetings into MEDDICC qualified opportunities with business cases and mutual action plans</li>
+          <li>Host a local roundtable with a partner in Denver or Salt Lake City on tool consolidation and Autonomous IT</li>
+          <li>Operating principle: one account, one hypothesis, multiple coordinated paths across SDRs, partners, SEs and me</li>
+        </ul>
+        <div class="ph-out"><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps, MEDDICC gaps identified and first proofs of value scoped</div>
+      </div>
+      <div class="ph" id="ph90">
+        <div class="ph-head"><div class="d">90<span>days</span></div><div><div class="ph-t">First 90 Days</div><h3>Playbook Deployment | Owning the Territory</h3></div></div>
+        <ul class="ph-list">
+          <li>Qualified deals advancing through proof of value, security review and business case with an executive sponsor</li>
+          <li>Every active deal multithreaded, with MEDDICC gaps closed or flagged</li>
+          <li>Forecast discipline on every deal: stage criteria, close plan, paper process and a dated next step</li>
+          <li>Pipeline built to close: no vanity meetings, no single threaded deals and no loose next steps</li>
+          <li>Install base expansion plan for existing customers, with Edwin AI and Catchpoint as the next use cases</li>
+          <li>Regular deal reviews with you on late stage strategy, and what's working shared back with the team</li>
+          <li>Steady presence at Rockies events, user groups and on LinkedIn</li>
+        </ul>
+        <div class="ph-out"><b>90 day scoreboard</b>40+ scored accounts, 20+ account plans, 15 to 20 meetings sourced or influenced, 4 to 6 qualified opportunities and pipeline building toward 3x coverage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let's <span class="grad">talk.</span></h2>
+    <p class="reveal">George, I would welcome the chance to walk through this plan with you.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-lime" href="mailto:eiannello72@gmail.com?subject=LogicMonitor%20Rockies%20Enterprise%20AE">eiannello72@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+12089684889">(208) 968-4889</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h4>Sources</h4>
+    <ol class="sources">
+      <li id="s1"><a href="https://www.businesswire.com/news/home/20251202686393/en/The-Era-of-Reactive-Observability-Is-Over-LogicMonitor-Acquires-Catchpoint" target="_blank" rel="noopener">Business Wire, LogicMonitor acquires Catchpoint</a></li>
+      <li id="s2"><a href="https://www.tipranks.com/news/private-companies/logicmonitor-leverages-edwin-ai-and-elevate-2026-to-drive-autonomous-it-and-revenue-growth" target="_blank" rel="noopener">TipRanks, Edwin AI drives Autonomous IT and revenue growth</a></li>
+      <li id="s3"><a href="https://www.logicmonitor.com/press/total-economic-impact-study-finds-logicmonitor-edwin-ai-delivered-313-roi-and-payback-in-6-months-or-less" target="_blank" rel="noopener">LogicMonitor, Forrester Total Economic Impact of Edwin AI</a></li>
+      <li id="s4"><a href="https://www.logicmonitor.com/edwin-ai" target="_blank" rel="noopener">LogicMonitor, Edwin AI customer results</a></li>
+      <li id="s5"><a href="https://www.logicmonitor.com/blog/observability-tool-consolidation" target="_blank" rel="noopener">LogicMonitor, why IT leaders are consolidating tools in 2026</a></li>
+      <li id="s6"><a href="https://www.helpnetsecurity.com/2025/09/23/high-impact-it-outages-costs/" target="_blank" rel="noopener">Help Net Security, high impact outages cost $2M per hour</a></li>
+      <li id="s7"><a href="https://www.logicmonitor.com/case-studies" target="_blank" rel="noopener">LogicMonitor, customer case studies</a></li>
+      <li id="s8"><a href="https://www.netdata.cloud/blog/solarwinds-price-increases-2026/" target="_blank" rel="noopener">Netdata, SolarWinds price increases 2026</a></li>
+      <li id="s9"><a href="https://www.networkworld.com/article/4133925/some-enterprises-are-dropping-vmware-just-not-all-at-once.html" target="_blank" rel="noopener">Network World, enterprises dropping VMware</a></li>
+      <li id="s10"><a href="https://www.deseret.com/business/2026/04/15/utah-data-centers-artificial-intelligence-ai-water-energy-electricity-use-economic-impacts-jobs-tax-incentives/" target="_blank" rel="noopener">Deseret News, Utah data center growth</a></li>
+      <li id="s11"><a href="https://betterstack.com/community/comparisons/dynatrace-vs-logicmonitor/" target="_blank" rel="noopener">Better Stack, Dynatrace compared with LogicMonitor</a></li>
+    </ol>
+    <p class="disclaimer">Independent research prepared by Eric Iannello for the LogicMonitor Enterprise Account Executive, Rockies role. Not affiliated with or endorsed by LogicMonitor. Figures come from public and third party sources as of September 2026, and example accounts and emails are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Nav
+  var prog=document.getElementById('progress');
+  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?y/h*100:0)+'%';
+    var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<140)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  links.forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open')})});
+
+  // Reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    [].forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el)});
+  } else {[].forEach.call(document.querySelectorAll('.reveal'),function(el){el.classList.add('in')})}
+
+  // Hero dot field
+  var svg=document.getElementById('dots'),ns='http://www.w3.org/2000/svg';
+  for(var ring=1;ring<=9;ring++){
+    var r=ring*32,n=ring*10;
+    for(var k=0;k<n;k++){
+      var a=k/n*Math.PI*2,c=document.createElementNS(ns,'circle');
+      c.setAttribute('cx',300+r*Math.cos(a));c.setAttribute('cy',300+r*Math.sin(a));
+      c.setAttribute('r',ring<4?2.2:3.2);
+      c.setAttribute('fill',ring>6?'#E3FF1F':ring>3?'#1200FF':'#1C2080');
+      c.setAttribute('opacity',ring>6?.55:.8);
+      svg.appendChild(c);
+    }
+  }
+
+  // Edwin feed
+  var items=[
+    ['t-crit','Alert storm','142 alerts from 38 devices in 4 minutes','DEN-DC1'],
+    ['t-ai','Edwin insight','Correlated into 1 incident. Likely root cause: BGP peer down on core switch','Confidence high'],
+    ['t-ai','Impact','Checkout API latency up in 3 regions, confirmed by Catchpoint tests','Customer facing'],
+    ['t-act','Action','ServiceNow incident created with evidence and assigned to network on call','Automated'],
+    ['t-act','Remediation','Runbook executed: traffic shifted to backup peer','Automated'],
+    ['t-ok','Resolved','Service restored in 6 minutes, before customers opened a ticket','MTTR 6m']
+  ];
+  var feed=document.getElementById('feed'),i=0;
+  function next(){
+    if(i>=items.length){setTimeout(function(){feed.innerHTML='';i=0;next()},3200);return}
+    var it=items[i++],d=document.createElement('div');d.className='fi';
+    var t=document.createElement('span');t.className='tag '+it[0];t.textContent=it[1];
+    var p=document.createElement('p');p.textContent=it[2];var s=document.createElement('small');s.textContent=it[3];p.appendChild(s);
+    var tm=document.createElement('time');tm.textContent='0'+Math.min(i,9)+':'+(i*11%60<10?'0':'')+(i*11%60);
+    d.appendChild(t);d.appendChild(p);d.appendChild(tm);feed.appendChild(d);
+    requestAnimationFrame(function(){d.classList.add('show')});
+    setTimeout(next,reduce?3000:1700);
+  }
+  next();
+
+  // Challenger choreography
+  var steps=[
+    {h:'Warmer',say:'Most IT teams I talk to in the Rockies are running a hybrid estate across on-prem, VMware, cloud and SaaS, watched by a handful of tools that each see one slice.',k:'What we establish',f:[['Hybrid','On-prem, private and public cloud, SaaS and edge'],['Tool sprawl','Several monitoring tools per incident']]},
+    {h:'Reframe',say:'The problem isn\'t a lack of monitoring. More monitoring usually means more noise. Outages don\'t hide in one tool\'s blind spot. They hide in the gaps between tools, where nobody owns the full picture.',k:'The assumption we challenge',f:[['From','We need better monitoring'],['To','We need fewer gaps and less noise']]},
+    {h:'Rational drowning',say:'Here is what those gaps cost. These numbers become their numbers in discovery.',k:'The data',f:[['$2M per hour','Median cost of a high impact outage'],['73%','Of organizations lack full stack observability'],['84%','Are pursuing or considering tool consolidation']],src:[6,6,5]},
+    {h:'Emotional impact',say:'Picture the 2am bridge call. Six teams, six dashboards, everyone proving it isn\'t their tool, while the CIO hears about the outage from the business first.',k:'Why it matters personally',f:[['On call burnout','Senior engineers leave over it'],['Credibility','IT learns about outages from customers']]},
+    {h:'A new way',say:'Leading IT teams are moving to one view across on-prem, cloud and the internet, with AI that turns alerts into a single insight and acts on it. That is Autonomous IT.',k:'What better looks like',f:[['One view','Infrastructure, network, cloud and internet'],['AI that acts','Correlate, find root cause, remediate']]},
+    {h:'Our solution',say:'LogicMonitor delivers that model with LM Envision, Edwin AI and Catchpoint, on a platform customers can deploy in weeks.',k:'The proof',f:[['313% ROI','Forrester study of Edwin AI, with payback in six months or less'],['80%','Alert noise reduction customers report'],['60%','Faster MTTR customers report']],src:[3,4,4]}
+  ];
+  var det=document.getElementById('stDetail'),sts=[].slice.call(document.querySelectorAll('.st'));
+  function show(n){
+    sts.forEach(function(s,i){s.classList.toggle('active',i===n);s.setAttribute('aria-selected',i===n)});
+    var s=steps[n];det.innerHTML='';
+    var left=document.createElement('div');
+    var h=document.createElement('h3');h.textContent=s.h;left.appendChild(h);
+    var p=document.createElement('p');p.className='say';p.textContent=s.say;left.appendChild(p);
+    var right=document.createElement('div');
+    var k=document.createElement('div');k.className='k';k.textContent=s.k;right.appendChild(k);
+    var fs=document.createElement('div');fs.className='facts';
+    s.f.forEach(function(f,j){
+      var d=document.createElement('div');d.className='fact';
+      var b=document.createElement('b');b.textContent=f[0];d.appendChild(b);d.appendChild(document.createTextNode(f[1]));
+      if(s.src){var sup=document.createElement('sup');var a=document.createElement('a');a.href='#s'+s.src[j];a.textContent=s.src[j];sup.appendChild(a);d.appendChild(sup)}
+      fs.appendChild(d);
+    });
+    right.appendChild(fs);det.appendChild(left);det.appendChild(right);
+  }
+  sts.forEach(function(s,i){s.addEventListener('click',function(){show(i)});s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i)}})});
+  show(0);
+
+  // Territory map and region cards
+  var paths=[].slice.call(document.querySelectorAll('.state')),regions=[].slice.call(document.querySelectorAll('.region'));
+  function pick(r,scroll){
+    var key=r==='wy'?'mt':r;
+    paths.forEach(function(p){p.classList.toggle('on',p.dataset.r===r||(key==='mt'&&(p.dataset.r==='mt'||p.dataset.r==='wy')))});
+    regions.forEach(function(g){var on=g.dataset.r===key;g.classList.toggle('on',on);if(on&&scroll&&window.innerWidth>980)g.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'})});
+  }
+  paths.forEach(function(p){p.addEventListener('click',function(){pick(p.dataset.r,true)})});
+  regions.forEach(function(g){g.addEventListener('mouseenter',function(){pick(g.dataset.r,false)})});
+  pick('co',false);
+
+  // Tabs
+  function tabs(sel,attr){
+    var b=[].slice.call(document.querySelectorAll(sel));
+    b.forEach(function(x){x.addEventListener('click',function(){
+      b.forEach(function(y){y.classList.remove('active');var p=document.getElementById(y.dataset[attr]);if(p)p.classList.remove('active')});
+      x.classList.add('active');var p=document.getElementById(x.dataset[attr]);if(p)p.classList.add('active');
+    })});
+  }
+  tabs('[data-play]','play');tabs('[data-bc]','bc');tabs('[data-phase]','phase');
+})();
+</script>
+</body>
+</html>

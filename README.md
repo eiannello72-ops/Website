@@ -7,6 +7,7 @@ for the Enterprise AE role.
 | Company | Folder |
 | --- | --- |
 | 1mind | [`1mind/`](1mind/index.html) |
+| LogicMonitor (Rockies) | [`logicmonitor/`](logicmonitor/index.html) |
 
 ## Deploying
 

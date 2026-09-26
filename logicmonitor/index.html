@@ -293,7 +293,8 @@ section{padding:100px 0;position:relative}
 .pf .v span{color:var(--blue)}
 .pf h4{font-size:15px;font-weight:600;margin:10px 0 4px}
 .pf p{font-size:13.5px;color:var(--muted-dark)}
-.pf.dark{background:var(--navy);border-color:var(--navy)}
+.pf.dark{background:var(--navy);border-color:var(--navy);grid-row:span 2;display:flex;flex-direction:column;justify-content:center}
+@media (max-width:520px){.pf.dark{grid-row:auto}}
 .pf.dark .v,.pf.dark h4{color:#fff}
 .pf.dark .v span{color:var(--lime)}
 .pf.dark p{color:var(--muted)}
@@ -626,8 +627,6 @@ footer h4{font-size:14px;color:#fff;margin-bottom:10px}
         <button class="cbtn active" data-bc="c1"><b>Datadog</b><span>Cloud native and APM</span></button>
         <button class="cbtn" data-bc="c2"><b>Dynatrace</b><span>Deep APM and root cause</span></button>
         <button class="cbtn" data-bc="c3"><b>SolarWinds</b><span>The on-prem incumbent</span></button>
-        <button class="cbtn" data-bc="c4"><b>ServiceNow ITOM</b><span>Workflow owner</span></button>
-        <button class="cbtn" data-bc="c5"><b>AIOps overlays</b><span>BigPanda and similar</span></button>
         <button class="cbtn" data-bc="c6"><b>Status quo</b><span>Open source and homegrown</span></button>
       </div>
       <div>
@@ -654,22 +653,6 @@ footer h4{font-size:14px;color:#fff;margin-bottom:10px}
             <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>SaaS, with no servers or upgrades to maintain</li><li>AI built in instead of bolted on</li><li>Renewal resets of 100% to 300% make the comparison natural</li></ul></div>
           </div>
           <div class="reframe"><div class="k">Reframe</div><p>What does the new three year quote look like next to a SaaS platform you never have to patch?</p></div>
-        </div>
-        <div class="bc" id="c4">
-          <div class="bc-top"><div><h3>ServiceNow ITOM</h3><p class="how">Owns the incident workflow and the CMDB, and sometimes pitches its own discovery and event management.</p></div><span class="threat th-l">Often a partner</span></div>
-          <div class="cols">
-            <div class="box them"><div class="k">Where they're strong</div><ul><li>ITSM workflow and executive sponsorship</li><li>CMDB as the system of record</li></ul></div>
-            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>Position as better together: LogicMonitor feeds ServiceNow cleaner, richer incidents</li><li>Edwin cuts the noise before it becomes tickets</li></ul></div>
-          </div>
-          <div class="reframe"><div class="k">Reframe</div><p>How much of what lands in ServiceNow today is noise, and what does each of those tickets cost?</p></div>
-        </div>
-        <div class="bc" id="c5">
-          <div class="bc-top"><div><h3>AIOps overlays</h3><p class="how">Correlation layers that sit on top of other monitoring tools.</p></div><span class="threat th-m">Medium threat</span></div>
-          <div class="cols">
-            <div class="box them"><div class="k">Where they're strong</div><ul><li>Tool agnostic correlation</li><li>Good fit for very fragmented estates</li></ul></div>
-            <div class="box us"><div class="k">Where LogicMonitor wins</div><ul><li>AI running on its own telemetry, so the data and the insight come from one place</li><li>One vendor instead of another integration to maintain</li></ul></div>
-          </div>
-          <div class="reframe"><div class="k">Reframe</div><p>If the correlation engine doesn't own the data, who fixes it when the inputs change?</p></div>
         </div>
         <div class="bc" id="c6">
           <div class="bc-top"><div><h3>Status quo</h3><p class="how">Zabbix, Nagios, PRTG and scripts that a few engineers keep alive.</p></div><span class="threat th-h">Most common</span></div>
@@ -725,7 +708,6 @@ footer h4{font-size:14px;color:#fff;margin-bottom:10px}
       <div class="pf dark reveal"><div class="v"><span>$</span>19.6M</div><h4>Self-sourced pipeline in under 12 months</h4><p>Netradyne. Enterprise Seller of the Year with $1M closed.</p></div>
       <div class="pf reveal"><div class="v"><span>$</span>1.2M</div><h4>Largest deal in Jamf's history at the time</h4><p>Enterprise IT buyers, sourced at $750K and expanded before close.</p></div>
       <div class="pf reveal"><div class="v">175<span>%</span></div><h4>Peak quota attainment at Falkon</h4><p>150% in 2022 and 125% in 2024. 300% in one quarter at Jamf.</p></div>
-      <div class="pf reveal"><div class="v">85 days</div><h4>Sales cycle, down from six months</h4><p>After rebuilding ICP, stages, discovery and SOPs at Falkon.</p></div>
       <div class="pf reveal"><div class="v">F500</div><h4>Enterprise logos opened</h4><p>Albertsons, AAA and Sirva at Netradyne. Snowflake at Falkon.</p></div>
       <div class="pf reveal"><div class="v">Boise</div><h4>Based in the territory</h4><p>Home base in Idaho, a short flight from Denver and Salt Lake City.</p></div>
     </div>
@@ -763,7 +745,7 @@ footer h4{font-size:14px;color:#fff;margin-bottom:10px}
         <ul class="ph-list">
           <li>Get certified on LM Envision, Edwin AI and Catchpoint through LM Academy, demos and call recordings</li>
           <li>Work with you and the top reps on the team to learn what's winning, where deals stall and what they would do differently, then pair it with what worked for me at Jamf and Netradyne</li>
-          <li>Build battlecards for Datadog, Dynatrace, SolarWinds and ServiceNow ITOM</li>
+          <li>Build battlecards for Datadog, Dynatrace and SolarWinds</li>
           <li>Audit the territory: install base, open and dormant opportunities, customer lookalikes, vertical concentration and tool signals</li>
           <li>Build a custom account workspace for each Tier 1 account: priorities, buying committee, pain hypothesis, proof points and openers</li>
           <li>Meet the partners who cover the Rockies, including AHEAD and regional resellers, and align on shared accounts</li>

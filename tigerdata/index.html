@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tiger Data Western Enterprise Plan</title>
+<meta name="description" content="A Mountain and Western enterprise territory plan for Tiger Data, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0B0C'/%3E%3Crect x='7' y='8' width='18' height='4' fill='%23FAFBA3'/%3E%3Crect x='7' y='14' width='12' height='4' fill='%23A1A7F0'/%3E%3Crect x='7' y='20' width='15' height='4' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#F3F3F8;
+  --fog-2:#E7E7F0;
+  --rule:#DCDCE6;
+  --ink:#0B0B0C;
+  --graphite:#5B5B69;
+  --peri:#A1A7F0;
+  --peri-soft:#E4E6FB;
+  --butter:#FAFBA3;
+  --link:#3C43C9;
+  --good:#1F7A4D;
+  --warn:#8A6A00;
+  --bad:#B42318;
+  --display:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step--1:13px;
+  --step-0:16.5px;
+  --step-1:19px;
+  --step-2:24px;
+  --step-3:34px;
+  --step-4:clamp(38px,5.2vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:500;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--butter);color:inherit;padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+
+/* Sidebar */
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:14.5px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--ink);font-weight:500}
+.side-foot{margin-top:auto;font-size:13px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+
+/* Mobile top bar */
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+.col{max-width:760px}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0;padding-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Header */
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:var(--graphite)}
+.doc-meta span b{color:var(--ink);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--good)}
+h1{font-size:var(--step-4);font-weight:500;letter-spacing:-.035em;line-height:1.02;max-width:19ch}
+.lede{font-size:21px;line-height:1.5;color:#26262E;max-width:640px;margin-top:26px}
+.lede q{font-style:italic}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid var(--ink);max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.facts dd{font-size:15px;margin-top:4px}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+
+/* Figure: terminal */
+figure{margin-top:48px;max-width:900px}
+figcaption{font-size:13.5px;color:var(--graphite);margin-top:12px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.term{background:var(--ink);color:#E9E9F2;border-radius:10px;box-shadow:8px 8px 0 var(--peri);overflow:hidden}
+.term-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid #26262D;font-family:var(--mono);font-size:12px;color:#8E8E9C}
+.term-bar i{display:inline-flex;gap:6px}
+.term-bar i:before,.term-bar i:after,.term-bar i span{content:"";width:10px;height:10px;border-radius:50%;background:#3A3A44;display:inline-block}
+.term pre{font-family:var(--mono);font-size:14px;line-height:1.75;padding:18px 20px 22px;overflow-x:auto;white-space:pre}
+.term .p{color:var(--peri)}
+.term .k{color:var(--butter)}
+.term .c{color:#8E8E9C}
+.term .ok{color:#7EE2A8}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:15.5px;color:#2B2B33}
+.three p + p{margin-top:10px}
+
+/* Talk track */
+.track{list-style:none;counter-reset:t;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid var(--rule)}
+.track li:last-child{border-bottom:1px solid var(--rule)}
+.track .who{font-family:var(--mono);font-size:13px;color:var(--graphite);line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--ink);font-weight:500;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;line-height:1.42;letter-spacing:-.01em;color:var(--ink)}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--graphite)}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--ink);background:var(--peri-soft);padding:1px 6px;border-radius:3px;margin-right:6px}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.ttt p{font-size:15px;color:#2B2B33}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;align-items:start;max-width:1040px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tile{aspect-ratio:1;max-width:100%;border:1px solid var(--rule);background:var(--paper);border-radius:4px;font-family:var(--mono);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:8px;transition:background .15s,border-color .15s}
+.tile small{font-size:10px;color:var(--graphite);font-weight:400}
+.tile[data-r="pac"]{background:var(--fog)}
+.tile[data-r="sw"]{background:#FDFDE9}
+.tile.on{border-color:var(--ink);background:var(--peri-soft)}
+.tile.home{position:relative}
+.tile.home:after{content:"";position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--ink)}
+.gap{visibility:hidden}
+.map-note{font-size:13px;color:var(--graphite);margin-top:12px;line-height:1.5}
+.map-note span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink);margin-right:6px;vertical-align:1px}
+
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+td b{font-weight:600}
+.reg tr.on td{background:linear-gradient(var(--peri-soft),var(--peri-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:500;padding-left:10px;width:150px}
+.reg .st{display:block;font-family:var(--mono);font-size:12px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14px;margin-top:6px}
+.note{font-size:13.5px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--rule);margin-bottom:32px;max-width:1040px}
+.play-nav button{font-family:var(--body);font-size:15px;font-weight:500;color:var(--graphite);background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:10px 18px 12px 0;margin-right:18px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1040px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;line-height:1.32;letter-spacing:-.015em;padding-left:18px;border-left:3px solid var(--peri)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px}
+.dl dd{font-size:15.5px;color:#2B2B33}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--butter);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h dd{color:var(--ink)}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:15.5px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.88em;color:var(--link);background:var(--peri-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:500}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:500;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}.t-good{color:var(--good)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#2B2B33;font-size:14.5px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;max-width:1040px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:600;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:14.5px;color:#2B2B33}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--peri-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:4px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:14.5px;color:#2B2B33}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1040px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:500;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#2B2B33;font-size:15px}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16px;color:#26262E}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1040px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:var(--graphite);border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15px;color:#2B2B33}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--peri)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:var(--fog);padding:14px 16px;border-radius:4px;font-size:14.5px}
+.phase:last-child .out div{background:var(--butter)}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:13.5px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--butter)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0B0B0C"/><rect x="7" y="8" width="18" height="4" fill="#FAFBA3"/><rect x="7" y="14" width="12" height="4" fill="#A1A7F0"/><rect x="7" y="20" width="15" height="4" fill="#fff"/></svg><b>Tiger Data plan</b></a><a href="#contact">Contact</a></div>
+
+<div class="shell">
+  <aside class="side" aria-label="Contents">
+    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0B0B0C"/><rect x="7" y="8" width="18" height="4" fill="#FAFBA3"/><rect x="7" y="14" width="12" height="4" fill="#A1A7F0"/><rect x="7" y="20" width="15" height="4" fill="#fff"/></svg><span><b>Western Enterprise</b><small>Tiger Data plan</small></span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#know">What I know</a></li>
+      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#territory">Territory</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Running the deal</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#plan">First 90 days</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="side-foot">
+      <span>Eric Iannello</span>
+      <span>Boise, Idaho</span>
+      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Overview -->
+    <section id="top">
+      <div class="doc-meta">
+        <span class="status"><b>Proposal</b></span>
+        <span>Enterprise Account Executive</span>
+        <span>Mountain and Western time zones</span>
+        <span>September 2026</span>
+      </div>
+      <h1>Tiger Data fits the West. Now the West needs to <mark>hear about it.</mark></h1>
+      <p class="lede">Your job post puts it plainly: <q>The issue is awareness in the market, not fit.</q><sup><a href="#s9">9</a></sup> This plan covers how I read the company, the conversation I would bring to CTOs, the accounts I would go after first, and how I would run deals with Challenger and MEDDPICC.</p>
+      <dl class="facts">
+        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
+        <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
+        <div><dt>Territory</dt><dd>Mountain and Pacific</dd></div>
+        <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
+      </dl>
+      <figure>
+        <div class="term" role="img" aria-label="Terminal session showing one Postgres database handling a fork for an agent, a time series query, a vector search and a relational join">
+          <div class="term-bar"><i><span></span></i><span>tsdb, production</span></div>
+<pre><span class="p">$</span> tiger service fork prod --name agent-sandbox
+<span class="ok">ok</span>  <span class="c">fork ready, copy on write, production untouched</span>
+
+<span class="p">tsdb=&gt;</span> <span class="k">SELECT</span> time_bucket('5 min', ts), avg(temp_c)
+       <span class="k">FROM</span> sensor_readings <span class="k">GROUP BY</span> 1;
+<span class="c">-- time series, from compressed history</span>
+
+<span class="p">tsdb=&gt;</span> <span class="k">SELECT</span> id <span class="k">FROM</span> docs <span class="k">ORDER BY</span> embedding &lt;=&gt; $1 <span class="k">LIMIT</span> 5;
+<span class="c">-- vector search, same database</span>
+
+<span class="p">tsdb=&gt;</span> <span class="k">SELECT</span> * <span class="k">FROM</span> assets <span class="k">JOIN</span> alerts <span class="k">USING</span> (asset_id);
+<span class="c">-- relational join, no pipeline in between</span></pre>
+        </div>
+        <figcaption><b>Fig. 1</b><span>The first meeting in one screen. Agents, time series, vector search and relational data in the same Postgres. Illustrative commands.</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <h2>What I know about Tiger Data</h2>
+        <p>A short summary so we start from the same page.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>TimescaleDB turns Postgres into a high ingest, real time analytics engine with hypertables, columnar compression and continuous aggregates. Tiger Cloud runs it fully managed.</p>
+          <p>Agentic Postgres adds instant forks of production data, vector search and an MCP server, so AI agents can work on real data safely.<sup><a href="#s2">2</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>CTOs, VPs of Engineering and data platform leads, usually with a hands on engineer as the champion.</p>
+          <p>The strongest verticals are energy and utilities, oilfield services, manufacturing, data centers, crypto and AI native companies.</p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>More than 2,000 customers, including Toyota, Siemens, Hugging Face and Mistral, with ARR growing over 100% a year.<sup><a href="#s1">1</a></sup></p>
+          <p>Snowflake bought Crunchy Data and Databricks bought Neon, and AWS closed Timestream to new customers. Postgres is where the data platform market is moving.<sup><a href="#s6">6</a>,<a href="#s7">7</a>,<a href="#s5">5</a></sup></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POV -->
+    <section id="pov">
+      <div class="sh">
+        <h2>The conversation I would have with a CTO</h2>
+        <p>Challenger meetings follow a set order. This is the talk track for Tiger Data, in my words, with the evidence I would bring to each step.</p>
+      </div>
+      <ol class="track">
+        <li><div class="who">Step 1<b>Warmer</b></div><div><blockquote>Most teams building on sensor, event or AI data start on Postgres. As they grow, they add a time series database, a warehouse and a vector store, each with its own pipeline.</blockquote></div></li>
+        <li><div class="who">Step 2<b>Reframe</b></div><div><blockquote>The expensive part of that stack is the pipelines and sync jobs between the databases. And the belief that Postgres can't handle real time scale is out of date.</blockquote></div></li>
+        <li><div class="who">Step 3<b>Rational drowning</b></div><div><blockquote>Here is what the sprawl costs a team like yours. We will swap these numbers for your own in discovery.</blockquote><div class="ev"><span><b>4 to 1</b>Plexigrid replaced four databases with one<sup><a href="#s3">3</a></sup></span><span><b>350x</b>faster queries after the move<sup><a href="#s3">3</a></sup></span></div></div></li>
+        <li><div class="who">Step 4<b>Emotional impact</b></div><div><blockquote>Think about the page at 2am when ingest stalls, the data engineer who spends half the week repairing pipelines, and the AI feature that slips because the data lives in four places.</blockquote></div></li>
+        <li><div class="who">Step 5<b>A new way</b></div><div><blockquote>The teams moving fastest run transactional, analytical and agentic work on one Postgres. They keep SQL and the ecosystem, scale to real time volumes, and let agents fork real data safely.</blockquote></div></li>
+        <li><div class="who">Step 6<b>Our solution</b></div><div><blockquote>Tiger Data delivers that with TimescaleDB, Tiger Cloud and Agentic Postgres.</blockquote><div class="ev"><span><b>2,000+</b>customers<sup><a href="#s1">1</a></sup></span><span><b>100%+</b>annual ARR growth<sup><a href="#s1">1</a></sup></span><span><b>23K+</b>GitHub stars on TimescaleDB<sup><a href="#s8">8</a></sup></span></div></div></li>
+      </ol>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>The first call changes how they think about their data stack. The architecture review comes after they agree the problem is real.</p></div>
+        <div><h4>Tailor</h4><p>Speed and focus for the CTO, reliability and toil for engineers, cost and risk for finance, and plain language for business owners.</p></div>
+        <div><h4>Take control</h4><p>Name the cost of waiting, push back on "we'll scale Aurora," and leave every meeting with a dated next step.</p></div>
+      </div>
+    </section>
+
+    <!-- Territory -->
+    <section id="territory">
+      <div class="sh">
+        <h2>Where I would spend my time</h2>
+        <p>The West splits into three markets with different buyers and different reasons to talk. Select a state to find its region.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles" role="group" aria-label="Western states">
+            <button class="tile" data-r="pac">WA<small>Pacific</small></button>
+            <button class="tile home" data-r="mtn" aria-label="Idaho, home base">ID<small>Mountain</small></button>
+            <button class="tile" data-r="mtn">MT<small>Mountain</small></button>
+            <button class="tile" data-r="pac">OR<small>Pacific</small></button>
+            <button class="tile" data-r="sw">NV<small>Pacific</small></button>
+            <button class="tile" data-r="mtn">WY<small>Mountain</small></button>
+            <button class="tile" data-r="pac">CA<small>Pacific</small></button>
+            <button class="tile" data-r="mtn">UT<small>Mountain</small></button>
+            <button class="tile" data-r="mtn">CO<small>Mountain</small></button>
+            <span class="tile gap" aria-hidden="true"></span>
+            <button class="tile" data-r="sw">AZ<small>Mountain</small></button>
+            <button class="tile" data-r="sw">NM<small>Mountain</small></button>
+          </div>
+          <p class="map-note"><span></span>Home base in Boise. Denver, Salt Lake City and the Bay Area are each a short flight.</p>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Region</th><th>Who buys and why</th><th>Lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="pac"><td>Pacific Coast<span class="st">CA, WA, OR</span></td><td data-h="Who buys and why">AI native companies, crypto platforms and semiconductor makers building on fast growing data.<div class="acc">Coinbase, Kraken, Lam Research, Western Digital, PG&amp;E</div></td><td data-h="Lead with">Agentic Postgres, and one database in place of several specialized ones</td></tr>
+              <tr data-r="mtn"><td>Mountain West<span class="st">CO, UT, ID, MT, WY</span></td><td data-h="Who buys and why">Denver's energy and oilfield companies, Front Range data centers, and manufacturing in Idaho and Utah.<div class="acc">Xcel Energy, Ovintiv, Liberty Energy, Vantage Data Centers, Micron</div></td><td data-h="Lead with">Full resolution sensor history in Postgres, with nothing downsampled away</td></tr>
+              <tr data-r="sw"><td>Southwest<span class="st">AZ, NV, NM</span></td><td data-h="Who buys and why">Data center campuses, utilities managing load growth, and semiconductor fabs.<div class="acc">Switch, Arizona Public Service, Salt River Project, NV Energy</div></td><td data-h="Lead with">Power, cooling and equipment telemetry joined with the business data it affects</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments and current customers with the team before any outreach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays">
+      <div class="sh">
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">One database, not four</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false">Sensor data at scale</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false">Postgres for AI agents</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false">Open source to enterprise</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">A modern data stack spends most of its money on the pipelines and sync jobs between its databases.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Teams running Postgres alongside a time series store, a warehouse or a search engine.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Data engineering job posts that list InfluxDB, Timestream, Kafka or ClickHouse.</dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of Engineering first, then the data platform lead and the CTO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many systems does one event pass through before anyone can query it?</li><li>How many engineer hours go to keeping those systems in sync?</li><li>What broke the last time a pipeline failed?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>VP of Engineering</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> data stack</li><li data-v="B">Pipeline cost idea</li><li data-v="C">One database idea</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring data engineers who know Postgres, <span class="tok">{{tsdb}}</span> and Kafka, so guessing the team keeps a few databases in sync.</p><p>Most teams find the databases aren't the expensive part. The pipelines between them are.</p><p><span class="tok">{{customer_name}}</span> went from four databases to one and got 350x faster queries. Think it's worth comparing notes?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 350x sounds like seller cherry picking.</p><p>If we benchmark a slice of your own workload so you can see the numbers yourself, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like simplifying the data stack might not be a priority?</p><p>Basically your team would keep Postgres and SQL, and drop the separate time series store and the pipelines that feed it.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. And if you're on Timestream, happy to share how others are planning the move. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Plexigrid<sup><a href="#s3">3</a></sup></span><span><b>Fallback</b> Timestream closed to new customers<sup><a href="#s5">5</a></sup></span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">Industrial teams keep less data than they collect because storing all of it costs too much, and the data they throw away holds the early warnings.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Energy, utilities, oilfield services, manufacturing and data centers.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Grid modernization, predictive maintenance or digital twin projects, and OT data hiring.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of data platform or OT and IT integration first, then the VP of Engineering and operations leadership.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How much sensor history do you keep at full resolution?</li><li>What do you downsample or delete to control cost?</li><li>What is an extra hour of warning before a failure worth?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Data Platform</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> sensor history</li><li data-v="B">Downsampling idea</li><li data-v="C">Early warning idea</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> is expanding <span class="tok">{{monitoring_project}}</span>, so guessing sensor data volume is climbing fast.</p><p>Most teams end up downsampling or deleting data to control cost, and that's usually where the early warnings live.</p><p>Industrial teams at companies like <span class="tok">{{customer_name}}</span> keep full history in Postgres with columnar compression. Think it could help?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize "keep everything" sounds expensive.</p><p>If we model your current volume with compression so you can see the storage cost side by side, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like data retention might not be a pain right now?</p><p>Basically your engineers would query years of sensor data with plain SQL, joined to asset and business data, in one database.</p><p>No worries if the timing is off.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Toyota and Siemens are customers<sup><a href="#s1">1</a></sup></span><span><b>Value</b> earlier warning on failures</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">Agents need to branch, test and roll back on real data in seconds. Most teams are still copying that data into a separate vector store.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>AI native and SaaS companies building agents or search on Postgres.</dd></div>
+            <div><dt class="label">Signal</dt><dd>pgvector in job posts, a new AI feature, or a Postgres plus vector database stack.</dd></div>
+            <div><dt class="label">Personas</dt><dd>CTO or head of AI engineering first, then the platform team.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Where do your agents read and write data today?</li><li>How do engineers test against production data safely?</li><li>How many systems hold a copy of the same data for AI?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>CTO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> agents and Postgres</li><li data-v="B">Agent sandbox idea</li><li data-v="C">Vector store idea</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is building <span class="tok">{{ai_feature}}</span>, so guessing your data is split between Postgres and a vector store.</p><p>Agents work best when they can fork real data, test, and throw the copy away in seconds, all in one database.</p><p>AI teams like <span class="tok">{{customer_name}}</span> run on Tiger Data. Think it's worth seeing how they set it up?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize "one database for AI" is a big claim.</p><p>If we fork one of your datasets and let your team try it for a week, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like your agent stack might be covered?</p><p>Basically your agents would get instant copies of production data, vector search and SQL in the Postgres you already know.</p><p>And if your Postgres provider was just bought by a warehouse vendor, happy to be a second opinion. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Hugging Face and Mistral are customers<sup><a href="#s1">1</a></sup></span><span><b>Fallback</b> Neon and Crunchy acquisitions<sup><a href="#s7">7</a></sup></span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">Self hosting looks free. The cost shows up in engineers who keep the database upgraded, backed up and tuned instead of building product.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Companies already running open source TimescaleDB, which has more than 23,000 GitHub stars.<sup><a href="#s8">8</a></sup></dd></div>
+            <div><dt class="label">Signal</dt><dd>Job posts naming TimescaleDB, community activity and docs traffic.</dd></div>
+            <div><dt class="label">Personas</dt><dd>The engineer who chose TimescaleDB as champion, then the VP of Engineering as buyer.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many hours a month go to upgrades, backups and tuning?</li><li>What happens if the one person who knows the setup leaves?</li><li>Where would those engineers spend their time instead?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>VP of Engineering</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> and TimescaleDB</li><li data-v="B">Self hosting idea</li><li data-v="C">Engineer time idea</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span>'s team runs TimescaleDB, so you already know it works.</p><p>Most teams underestimate what self hosting costs in engineer time: upgrades, high availability, backups and tuning.</p><p>Tiger Cloud runs the same TimescaleDB with all of that handled, plus tiered storage for older data. Think it's worth comparing?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize moving a database that works can feel like unnecessary risk.</p><p>If we map your current setup and the hours your team spends on it so you can see the tradeoff, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like self hosting is working fine?</p><p>Basically your engineers would keep everything they like about TimescaleDB and hand off everything they don't.</p><p>No worries if not. Happy to help either way.</p></div>
+          <div class="mail-f"><span><b>Proof</b> 23K+ GitHub stars<sup><a href="#s8">8</a></sup></span><span><b>Value</b> engineer time back</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Tiger Data wins, and the question I would ask in discovery.</p>
+      </div>
+      <div style="max-width:1040px">
+        <table class="comp stack">
+          <thead><tr><th>Alternative</th><th>Where they are strong</th><th>Where Tiger Data wins</th><th>The question I ask</th></tr></thead>
+          <tbody>
+            <tr><td>Amazon RDS and Aurora<span class="tag t-bad">Most common</span></td><td data-h="Where they are strong">Already approved and easy to buy. Fine for general transactional work.</td><td data-h="Where Tiger Data wins">Built for high ingest and real time analytics, with compression and continuous aggregates. Still Postgres.</td><td data-h="The question I ask" class="q">What happens to your Aurora bill and query times when this table is ten times bigger?</td></tr>
+            <tr><td>InfluxDB and Timestream<span class="tag t-warn">Displacement target</span></td><td data-h="Where they are strong">Purpose built for metrics and familiar to monitoring teams.</td><td data-h="Where Tiger Data wins">Full SQL and joins with business data in one place. Timestream is closed to new customers.<sup><a href="#s5">5</a></sup></td><td data-h="The question I ask" class="q">How many systems do you keep in sync so time series data can meet business data?</td></tr>
+            <tr><td>ClickHouse<span class="tag t-bad">High threat</span></td><td data-h="Where they are strong">Very fast analytical queries at large scale, with a strong developer following.</td><td data-h="Where Tiger Data wins">Transactional and analytical work together, updates and deletes, and high ingest at the batch sizes real apps use.<sup><a href="#s4">4</a></sup></td><td data-h="The question I ask" class="q">Is this an analytics problem, or an application that also needs analytics?</td></tr>
+            <tr><td>Snowflake and Databricks<span class="tag t-warn">Rising</span></td><td data-h="Where they are strong">Existing enterprise relationships and a single vendor story, now with Postgres through Crunchy and Neon.<sup><a href="#s7">7</a></sup></td><td data-h="Where Tiger Data wins">Independent and focused on operational workloads, with real time performance a warehouse add on isn't built for.</td><td data-h="The question I ask" class="q">Do you want your application database roadmap set by your warehouse vendor?</td></tr>
+            <tr><td>Self managed Postgres<span class="tag t-bad">Most common</span></td><td data-h="Where they are strong">No new vendor, full control, and it works today.</td><td data-h="Where Tiger Data wins">High availability, backups and tiered storage handled, so engineers go back to building product.</td><td data-h="The question I ask" class="q">How many engineer hours a month keep your database running, and what would they build instead?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <h2>Running the deal</h2>
+        <p>Challenger earns the first meeting and shapes the problem. MEDDPICC keeps a three to nine month cycle honest and forecastable.</p>
+      </div>
+      <ol class="path">
+        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the technical executive and agree the problem is worth solving this year.</p><span class="m">Teach</span></li>
+        <li><span class="when">Months 1 to 2</span><h4>Architecture and business case</h4><p>Map the stack with a Solutions Architect and price pipelines, infrastructure and engineer time.</p><span class="m">Tailor</span></li>
+        <li><span class="when">Months 2 to 4</span><h4>Benchmark</h4><p>Their workload, written success criteria, and an engineer on their side who owns it.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 4 to 6</span><h4>Security and procurement</h4><p>Run in parallel, and ask early whether a cloud marketplace purchase can use existing commit.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 6 on</span><h4>Close and expand</h4><p>Sign with a migration plan, a value review date and the next workloads identified.</p><span class="m">Take control</span></li>
+      </ol>
+      <h3 style="margin-bottom:18px">MEDDPICC checklist</h3>
+      <div style="max-width:1040px">
+        <table class="medd stack">
+          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
+          <tbody>
+            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Query latency, ingest rate, infrastructure cost, engineer hours and number of databases</td><td data-h="What I ask">What does it cost each month to run and sync these systems?</td><td data-h="Red flag">A performance problem nobody has priced</td></tr>
+            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">Usually the CTO or VP of Engineering, with finance on larger commits</td><td data-h="What I ask">Who signs off on a change to a core database?</td><td data-h="Red flag">Only engineers are involved by the benchmark</td></tr>
+            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Performance on their workload, Postgres compatibility, migration effort, security and price</td><td data-h="What I ask">What has to be true for Tiger Data to be the clear choice?</td><td data-h="Red flag">Criteria written around a competitor's benchmark</td></tr>
+            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Evaluation, architecture review, security, business case and procurement, with dates</td><td data-h="What I ask">Walk me through the last time you changed a core database.</td><td data-h="Red flag">No one can describe what happens after the benchmark</td></tr>
+            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security review, DPA, legal redlines and purchase path</td><td data-h="What I ask">Would buying through your cloud marketplace help you use existing commit?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
+            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">Stalled ingest, slow dashboards, rising bills, a Timestream exit or a blocked AI roadmap</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
+            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A staff engineer or data platform lead with influence, who ran the benchmark and wins if we win</td><td data-h="What I ask">How would you present this to your CTO?</td><td data-h="Red flag">A fan of the technology with no pull on the decision</td></tr>
+            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Aurora, ClickHouse, InfluxDB, the warehouse vendors and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake at a revenue intelligence startup, and sell AI at Netradyne today at roughly $300K ACV. Most of my pipeline has always been self sourced.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self-sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1040px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for</th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Enterprise deals at $200K+ ACV or Fortune 1000</td><td data-h="Where I have done it">Roughly $300K ACV at Netradyne with F500 accounts, and a $1.2M deal with Uber at Jamf.</td></tr>
+            <tr><td>Own prospecting and pipeline</td><td data-h="Where I have done it">$19.6M self-sourced at Netradyne, and $750K in my first quarter at Falkon.</td></tr>
+            <tr><td>Strategic account plans</td><td data-h="Where I have done it">Built and ran plans across F500 accounts, multithreading operations, finance, security and IT.</td></tr>
+            <tr><td>Technical buyers, many stakeholders</td><td data-h="Where I have done it">Sold to IT and security teams at Jamf and to data teams at Snowflake, and translated the technology into business outcomes.</td></tr>
+            <tr><td>Challenger and MEDDPICC</td><td data-h="Where I have done it">Trained in MEDDPICC and Command of the Message. This plan runs on Challenger from the first email to the close.</td></tr>
+            <tr><td>Channel and partner selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to cloud marketplace co-selling.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Tiger Data</h3>
+        <p>Every company I sell to is being asked to do more with its data and its AI roadmap on the same budget. Tiger Data gives them one Postgres for all of it, and much of the market hasn't heard the story yet. I like that kind of problem: the fit is already there, and the work is creating the awareness.</p>
+        <p class="sig">Eric Iannello, Boise, Idaho</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan">
+      <div class="sh">
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to Tiger Data | Building the foundation</h3>
+          <ul>
+            <li>Learn TimescaleDB, Tiger Cloud and Agentic Postgres hands on: spin up a service, load data, run the tutorials</li>
+            <li>Work with sales leadership, Solutions Architects and top reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Build battlecards for Aurora, InfluxDB, ClickHouse and the warehouse vendors</li>
+            <li>Audit named accounts for open source usage, job posts, tech stack and dormant opportunities</li>
+            <li>Write an account plan for each Tier 1 account: priorities, buying committee, pain hypothesis, proof and openers</li>
+            <li>Build and test my version of the talk track with an SA, and apply MEDDPICC to inherited pipeline</li>
+            <li>Launch the first self-sourced wave, each account with its own insight and proof point</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a tested talk track</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook | Testing the territory</h3>
+          <ul>
+            <li>Review results with leadership and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays by vertical, starting with energy and data centers in the Mountain West and AI teams on the coast</li>
+            <li>Multithread every target account across the CTO, engineering, data platform, security and finance</li>
+            <li>Hold insight meetings in place of first call demos, and price pipelines, infrastructure and engineer time in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities with business cases and mutual action plans</li>
+            <li>Plan AWS re:Invent in Las Vegas around Tier 1 meetings with the AWS partner team</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first benchmarks scoped</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment | Owning the territory</h3>
+          <ul>
+            <li>Qualified deals moving through benchmark, security review and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion plans for existing accounts, with new workloads and teams mapped</li>
+            <li>Regular deal reviews with leadership, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 meetings sourced or influenced, 4 to 6 qualified opportunities, first benchmarks running, pipeline building toward 3x coverage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>I would welcome the chance to walk through this plan with the team.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Tiger%20Data%20Enterprise%20AE">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://www.tigerdata.com/blog/timescale-becomes-tigerdata" target="_blank" rel="noopener">Tiger Data, Building Modern PostgreSQL</a></li>
+        <li id="s2"><a href="https://layerbase.com/blog/timescale-alternatives" target="_blank" rel="noopener">Layerbase, Agentic Postgres and Tiger Cloud overview</a></li>
+        <li id="s3"><a href="https://www.tigerdata.com/blog/from-4-databases-to-1-how-plexigrid-replaced-influxdb-got-350x-faster-queries-tiger-data" target="_blank" rel="noopener">Tiger Data, Plexigrid case study</a></li>
+        <li id="s4"><a href="https://www.tigerdata.com/blog/how-timescaledb-outperforms-clickhouse-mongodb-logtides-observability-platform" target="_blank" rel="noopener">Tiger Data, LogTide benchmark</a></li>
+        <li id="s5"><a href="https://docs.aws.amazon.com/timestream/latest/developerguide/timestream-availability-update.html" target="_blank" rel="noopener">AWS, Timestream for LiveAnalytics availability change</a></li>
+        <li id="s6"><a href="https://www.cnbc.com/2025/06/02/snowflake-to-buy-crunchy-data-250-million.html" target="_blank" rel="noopener">CNBC, Snowflake to buy Crunchy Data</a></li>
+        <li id="s7"><a href="https://www.theregister.com/2025/06/10/snowflake_and_databricks_bank_postgresql/" target="_blank" rel="noopener">The Register, Snowflake and Databricks bank PostgreSQL</a></li>
+        <li id="s8"><a href="https://github.com/timescale/timescaledb" target="_blank" rel="noopener">GitHub, TimescaleDB repository</a></li>
+        <li id="s9"><a href="https://www.tigerdata.com/careers" target="_blank" rel="noopener">Tiger Data, Enterprise Account Executive job post</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the Tiger Data Enterprise Account Executive role. Not affiliated with or endorsed by Tiger Data. Figures come from public and third party sources as of September 2026. Example accounts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  // Contents highlight
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){
+    var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+
+  // Territory
+  var tiles=[].slice.call(document.querySelectorAll('.tile[data-r]'));
+  var rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){
+    tiles.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});
+    rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)});
+  }
+  tiles.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('mtn');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  function openTab(t){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){openTab(t)});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+      if(n===null)return;n=(n+tabs.length)%tabs.length;tabs[n].focus();openTab(tabs[n]);
+    });
+  });
+})();
+</script>
+</body>
+</html>

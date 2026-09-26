@@ -354,9 +354,90 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
 .sources li:target{background:var(--honey-soft)}
 .disc{margin-top:22px;max-width:760px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Interactive layer ===== */
+.banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+.banner b{font-weight:700}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--honey);z-index:50;box-shadow:0 0 0 1px rgba(14,27,46,.15)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1.5px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:var(--honey);color:var(--ink);border-color:var(--honey);box-shadow:4px 4px 0 #fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--honey)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.hx{cursor:pointer;transition:transform .2s;outline:none}
+.hx:hover,.hx.on{transform:translate(-5px,-5px)}
+.hx.on use{stroke:var(--honey);stroke-width:4}
+.hx[data-i="0"].on use{stroke:#fff}
+.hx:focus-visible use{stroke:var(--sky);stroke-width:4}
+.hx-say{margin-top:14px;min-height:66px;font-size:14.5px;line-height:1.45;color:#C6CFDC;border-left:3px solid var(--honey);padding-left:12px}
+.hx-say b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:2px}
+.hx-hint{font-family:var(--mono);font-size:11px;color:#8391A8;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hx,.btn{transition:none}}
+button.span{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.span:hover{background:var(--fog);margin-inline:-18px;padding-inline:18px;width:calc(100% + 36px)}
+button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
+.trace-bar .hint{color:var(--link)}
+.fields dl{transition:opacity .15s}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1.5px solid #34465F;border-radius:14px 14px 0 0;overflow:hidden;max-width:1060px}
+.cstep{background:var(--ink-2);border:0;border-left:1px solid #2A3A52;color:#B5C0D0;text-align:left;padding:16px 14px 18px;cursor:pointer;font:inherit;position:relative;transition:background .15s}
+.cstep:first-child{border-left:0}
+.cstep i{display:block;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--honey)}
+.cstep b{display:block;font-family:var(--display);font-size:16.5px;color:#fff;font-weight:600;margin:4px 0 2px;line-height:1.2}
+.cstep small{display:block;font-size:13px;line-height:1.35}
+.cstep:hover{background:#1D3150}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3D2A00}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i{color:var(--ink)}
+.cstep:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.cstep:nth-child(4){border-left:0}.cstep:nth-child(n+4){border-top:1px solid #2A3A52}.cstep small{display:none}}
+.step-p{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;background:#fff;color:var(--ink);border:1.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;padding:30px 30px 32px;max-width:1060px;box-shadow:8px 8px 0 var(--honey)}
+.step-p[hidden]{display:none}
+@media (max-width:860px){.step-p{grid-template-columns:1fr;gap:22px;padding:24px 20px}}
+.step-p h3{font-size:24px;margin-bottom:12px}
+.step-p blockquote{font-family:var(--display);font-size:20px;font-weight:500;line-height:1.45;padding-left:16px;border-left:4px solid var(--honey)}
+.step-p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.facts2{display:grid;gap:10px}
+.facts2 div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:15px;color:#26303F}
+.facts2 b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
+.facts2 sup a{color:var(--link)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#8391A8}
+.step-nav button{font:inherit;color:#fff;background:none;border:1.5px solid #34465F;border-radius:8px;padding:7px 14px;cursor:pointer}
+.step-nav button:hover{border-color:var(--honey);color:var(--honey)}
+.panel.sky .play-nav{border:0;gap:10px}
+.panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
+.bcs{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+@media (max-width:860px){.bcs{grid-template-columns:1fr}}
+.bc-list{display:grid;gap:8px}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}}
+.cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
+.cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
+.cbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] b{color:#fff}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.bc{background:var(--ink);color:#EEF2F8;border-radius:16px;padding:28px 28px 30px;box-shadow:8px 8px 0 var(--honey)}
+.bc[hidden]{display:none}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bc h3{font-size:26px;color:#fff}
+.bc .lead{color:#B5C0D0;margin-top:6px;font-size:16px}
+.threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
+.threat.mid{background:#3A2E10;color:var(--honey)}
+.bc-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+@media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
+.bc-cols div,.bc-q{border:1.5px solid #34465F;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
+.bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.bc-cols div:last-child h4{color:var(--honey)}
+.bc-cols p{font-size:15.5px;color:#DDE3EC}
+.bc-q{margin-top:14px;background:#1D3150;border-color:var(--honey)}
+.bc-q p{font-family:var(--display);font-size:19px;font-weight:500;color:#fff}
+.bc sup a{color:var(--sky)}
 </style>
 </head>
 <body>
+<div class="prog" id="progress" aria-hidden="true"></div>
+<div class="banner">Prepared for <b>Manny Alves</b>, SVP of Global Sales, by Eric Iannello</div>
 
 <div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0E1B2E"/><path d="M16 5 L25.5 10.5 V21.5 L16 27 L6.5 21.5 V10.5Z" fill="#FFB400" stroke="#fff" stroke-width="1.5"/></svg><b>Honeycomb plan</b></a><a href="#contact">Contact</a></div>
 
@@ -394,6 +475,7 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
         </div>
         <h1>Dashboards tell you something broke. Honeycomb tells you <mark>why.</mark></h1>
         <p class="lede">Honeycomb has product market fit and Fortune 500 logos, and the next move is further into the enterprise.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+        <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
         <dl class="facts">
           <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
           <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
@@ -401,54 +483,46 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
           <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
         </dl>
       </div>
-      <div class="art" aria-hidden="true">
-        <svg viewBox="28 36 320 262">
+      <div class="art">
+        <svg viewBox="28 36 320 262" aria-label="Honeycomb product map. Select a hexagon to read about it.">
           <defs><path id="hx" d="M0 -44 L38.1 -22 L38.1 22 L0 44 L-38.1 22 L-38.1 -22Z"/></defs>
-          <g fill="#050D19" transform="translate(8 8)">
+          <g fill="#050D19" transform="translate(8 8)" aria-hidden="true">
             <use href="#hx" x="160" y="160"/><use href="#hx" x="243" y="160"/><use href="#hx" x="77" y="160"/>
             <use href="#hx" x="201.5" y="88"/><use href="#hx" x="118.5" y="88"/><use href="#hx" x="201.5" y="232"/><use href="#hx" x="118.5" y="232"/>
           </g>
-          <g stroke="#fff" stroke-width="2.5">
-            <use href="#hx" x="160" y="160" fill="#FFB400"/>
-            <use href="#hx" x="243" y="160" fill="#7CC1F2"/>
-            <use href="#hx" x="77" y="160" fill="#FFFFFF"/>
-            <use href="#hx" x="201.5" y="88" fill="#E8857F"/>
-            <use href="#hx" x="118.5" y="88" fill="#C3A8E6"/>
-            <use href="#hx" x="201.5" y="232" fill="#E3F2FD"/>
-            <use href="#hx" x="118.5" y="232" fill="#FFE7A3"/>
-          </g>
-          <use href="#hx" x="284.5" y="88" fill="none" stroke="#FFB400" stroke-width="2" stroke-dasharray="5 5"/>
           <g fill="#0E1B2E" font-family="JetBrains Mono, monospace" font-size="11.5" text-anchor="middle">
-            <text x="160" y="157" font-weight="700">wide</text><text x="160" y="171" font-weight="700">events</text>
-            <text x="243" y="164">traces</text>
-            <text x="77" y="164">logs</text>
-            <text x="201.5" y="92">BubbleUp</text>
-            <text x="118.5" y="92">SLOs</text>
-            <text x="201.5" y="236">metrics</text>
-            <text x="118.5" y="236">MCP</text>
-            <text x="284.5" y="92" fill="#FFB400">agents</text>
+            <g class="hx on" data-i="0" data-t="Wide events" data-d="Every request is stored as one event with hundreds of fields, so nothing gets averaged away." tabindex="0" role="button" aria-label="Wide events"><use href="#hx" x="160" y="160" fill="#FFB400" stroke="#fff" stroke-width="2.5"/><text x="160" y="157" font-weight="700">wide</text><text x="160" y="171" font-weight="700">events</text></g>
+            <g class="hx" data-i="1" data-t="Traces" data-d="Distributed traces across every service, built on OpenTelemetry." tabindex="0" role="button" aria-label="Traces"><use href="#hx" x="243" y="160" fill="#7CC1F2" stroke="#fff" stroke-width="2.5"/><text x="243" y="164">traces</text></g>
+            <g class="hx" data-i="2" data-t="Logs" data-d="Structured logs queried next to traces, not in a separate tool." tabindex="0" role="button" aria-label="Logs"><use href="#hx" x="77" y="160" fill="#FFFFFF" stroke="#fff" stroke-width="2.5"/><text x="77" y="164">logs</text></g>
+            <g class="hx" data-i="3" data-t="BubbleUp" data-d="Select the slow requests and Honeycomb shows which fields set them apart." tabindex="0" role="button" aria-label="BubbleUp"><use href="#hx" x="201.5" y="88" fill="#E8857F" stroke="#fff" stroke-width="2.5"/><text x="201.5" y="92">BubbleUp</text></g>
+            <g class="hx" data-i="4" data-t="SLOs" data-d="Alerts on customer impact instead of every spike, which cuts pager noise." tabindex="0" role="button" aria-label="SLOs"><use href="#hx" x="118.5" y="88" fill="#C3A8E6" stroke="#fff" stroke-width="2.5"/><text x="118.5" y="92">SLOs</text></g>
+            <g class="hx" data-i="5" data-t="Metrics" data-d="Infrastructure metrics in the same place as the events they explain." tabindex="0" role="button" aria-label="Metrics"><use href="#hx" x="201.5" y="232" fill="#E3F2FD" stroke="#fff" stroke-width="2.5"/><text x="201.5" y="236">metrics</text></g>
+            <g class="hx" data-i="6" data-t="MCP server" data-d="Engineers and their coding agents query production from the IDE." tabindex="0" role="button" aria-label="MCP server"><use href="#hx" x="118.5" y="232" fill="#FFE7A3" stroke="#fff" stroke-width="2.5"/><text x="118.5" y="236">MCP</text></g>
+            <g class="hx" data-i="7" data-t="Agent Observability" data-d="Traces each prompt, tool call and token in AI workflows, next to the rest of the request." tabindex="0" role="button" aria-label="Agent Observability"><use href="#hx" x="284.5" y="88" fill="#0E1B2E" stroke="#FFB400" stroke-width="2" stroke-dasharray="5 5"/><text x="284.5" y="92" fill="#FFB400">agents</text></g>
           </g>
         </svg>
+        <p class="hx-say" id="hxSay" aria-live="polite"><b>Wide events</b>Every request is stored as one event with hundreds of fields, so nothing gets averaged away.</p>
+        <p class="hx-hint">Select a cell to explore the product</p>
       </div>
     </section>
     <div class="float">
       <figure>
-        <div class="trace" role="img" aria-label="Trace of a slow checkout request. A database query inside the payment service takes most of the 2.8 seconds, and its fields show build 4812, region us-west-2, an enterprise customer and a new feature flag.">
-          <div class="trace-bar"><span><b>trace</b> POST /checkout</span><span>2,840 ms, 7 spans</span></div>
+        <div class="trace" role="group" aria-label="Trace of a slow checkout request. Select a span to see its fields.">
+          <div class="trace-bar"><span><b>trace</b> POST /checkout</span><span class="hint">Select a span to see its fields</span><span>2,840 ms, 7 spans</span></div>
           <div class="trace-grid">
             <div class="wf">
               <div class="scale"><span>0</span><span>700</span><span>1,400</span><span>2,100</span><span>ms</span></div>
-              <div class="span" style="--s:0%;--w:100%"><span>POST /checkout</span><div class="lane"><i></i></div></div>
-              <div class="span" style="--d:1;--s:1%;--w:8%"><span>cart.load</span><div class="lane"><i></i><em>230</em></div></div>
-              <div class="span" style="--d:1;--s:9%;--w:7%"><span>inventory.reserve</span><div class="lane"><i></i><em>190</em></div></div>
-              <div class="span hot far" style="--d:1;--s:16%;--w:76%"><span>payments.authorize</span><div class="lane"><i></i><em>2,160</em></div></div>
-              <div class="span" style="--d:2;--s:17%;--w:6%"><span>fraud.score</span><div class="lane"><i></i><em>170</em></div></div>
-              <div class="span sel far" style="--d:2;--s:24%;--w:66%"><span>db.query ledger</span><div class="lane"><i></i><em>1,880</em></div></div>
-              <div class="span" style="--d:1;--s:93%;--w:4%"><span>email.enqueue</span><div class="lane"><i></i></div></div>
+              <button class="span" style="--s:0%;--w:100%" aria-pressed="false"><span>POST /checkout</span><div class="lane"><i></i></div></button>
+              <button class="span" style="--d:1;--s:1%;--w:8%" aria-pressed="false"><span>cart.load</span><div class="lane"><i></i><em>230</em></div></button>
+              <button class="span" style="--d:1;--s:9%;--w:7%" aria-pressed="false"><span>inventory.reserve</span><div class="lane"><i></i><em>190</em></div></button>
+              <button class="span hot far" style="--d:1;--s:16%;--w:76%" aria-pressed="false"><span>payments.authorize</span><div class="lane"><i></i><em>2,160</em></div></button>
+              <button class="span" style="--d:2;--s:17%;--w:6%" aria-pressed="false"><span>fraud.score</span><div class="lane"><i></i><em>170</em></div></button>
+              <button class="span sel far" style="--d:2;--s:24%;--w:66%" aria-pressed="true"><span>db.query ledger</span><div class="lane"><i></i><em>1,880</em></div></button>
+              <button class="span" style="--d:1;--s:93%;--w:4%" aria-pressed="false"><span>email.enqueue</span><div class="lane"><i></i></div></button>
             </div>
             <div class="fields">
-              <h4>Fields on db.query ledger</h4>
-              <dl>
+              <h4 id="fTitle">Fields on db.query ledger</h4>
+              <dl id="fList">
                 <dt>service.name</dt><dd>payments</dd>
                 <dt>app.build</dt><dd>4812 <s>high cardinality</s></dd>
                 <dt>customer.id</dt><dd>cus_91F2 <s>high cardinality</s></dd>
@@ -500,7 +574,7 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
     <section id="pov" class="panel ink grain">
       <div class="sh">
         <h2>The conversation I would have with a VP of Engineering</h2>
-        <p>Challenger meetings follow a set order. This is the talk track for Honeycomb, in my words, with the evidence I would bring to each step.</p>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a VP of Engineering, with the evidence behind each step.</p>
       </div>
       <figure class="compare">
         <div class="cmp-grid">
@@ -538,14 +612,21 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
         </div>
         <figcaption><b>Fig. 2</b><span>The reframe in one picture. The average stays green because slow requests are rare. Kept at full detail, they point to one build behind one feature flag. Illustrative data.</span></figcaption>
       </figure>
-      <ol class="track">
-        <li><div class="who">Step 1<b>Warmer</b></div><div><blockquote>Most engineering teams your size run three or four observability tools. And the first hour of a serious incident still goes to working out where the problem is.</blockquote></div></li>
-        <li><div class="who">Step 2<b>Reframe</b></div><div><blockquote>Dashboards answer the questions someone thought to ask in advance. Metrics are averaged before they are stored, so the detail that explains an outage is gone before anyone looks.</blockquote></div></li>
-        <li><div class="who">Step 3<b>Rational drowning</b></div><div><blockquote>Here is what that hour costs. We will swap these numbers for your own in discovery.</blockquote><div class="ev"><span><b>$2M</b>per hour, median cost of a high impact outage<sup><a href="#s9">9</a></sup></span><span><b>1 hr to 5 min</b>root cause time for Intercom's Fin<sup><a href="#s3">3</a></sup></span></div></div></li>
-        <li><div class="who">Step 4<b>Emotional impact</b></div><div><blockquote>Every chart on the incident bridge is green while customers can't check out. Engineers guess, roll back and hope, and the same people get paged again next week.</blockquote></div></li>
-        <li><div class="who">Step 5<b>A new way</b></div><div><blockquote>Teams that fixed this keep every field on every request, including build, customer and region, and ask new questions in the middle of the incident. The same data answers AI agents through MCP.</blockquote></div></li>
-        <li><div class="who">Step 6<b>Our solution</b></div><div><blockquote>Honeycomb, priced on events rather than hosts or custom metrics, so adding detail doesn't add cost.</blockquote><div class="ev"><span><b>79%</b>faster remediation at Intercom<sup><a href="#s2">2</a></sup></span><span><b>7 to 1</b>tools consolidated at Birdie<sup><a href="#s4">4</a></sup></span></div></div></li>
-      </ol>
+      <div class="steps" role="tablist" aria-label="Challenger steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Honeycomb</small></button>
+      </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most engineering teams your size run three or four observability tools. And the first hour of a serious incident still goes to working out where the problem is.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Tool sprawl</b>Dashboards, logs and APM, each seeing one slice</div><div><b>The first hour</b>Spent finding where the problem is, not fixing it</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Dashboards answer the questions someone thought to ask in advance. Metrics are averaged before they are stored, so the detail that explains an outage is gone before anyone looks.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>We need more dashboards and alerts</div><div><b>To</b>We need to ask new questions of full detail data</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what that hour costs. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>$2M per hour</b>Median cost of a high impact outage<sup><a href="#s9">9</a></sup></div><div><b>1 hr to 5 min</b>Root cause time for Intercom's Fin<sup><a href="#s3">3</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>Every chart on the incident bridge is green while customers can't check out. Engineers guess, roll back and hope, and the same people get paged again next week.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>On-call burnout</b>The same senior engineers paged every week</div><div><b>Credibility</b>Customers find the outage before engineering does</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Teams that fixed this keep every field on every request, including build, customer and region, and ask new questions in the middle of the incident. The same data answers AI agents through MCP.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Wide events</b>Every field on every request, kept</div><div><b>BubbleUp</b>The difference between slow and normal, found for you</div><div><b>MCP</b>The same data, open to AI agents</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Honeycomb, priced on events rather than hosts or custom metrics, so adding detail doesn't add cost.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>79%</b>Faster remediation at Intercom<sup><a href="#s2">2</a></sup></div><div><b>7 tools</b>Consolidated at Birdie, with half the budget saved<sup><a href="#s4">4</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
         <div><h4>Teach</h4><p>The first call changes how they think about incidents. The demo comes after they agree averages are hiding problems.</p></div>
         <div><h4>Tailor</h4><p>Fewer pages for engineers, reliability and speed for the VP, AI in production for the CTO, and cost per event against cost per host for finance.</p></div>
@@ -679,19 +760,43 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
     <section id="competition">
       <div class="sh">
         <h2>How deals are won against each alternative</h2>
-        <p>Where each option is strong, where Honeycomb wins, and the question I would ask in discovery.</p>
+        <p>Where each option is strong, where Honeycomb wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
       </div>
-      <div style="max-width:1060px">
-        <table class="comp stack">
-          <thead><tr><th>Alternative</th><th>Where they are strong</th><th>Where Honeycomb wins</th><th>The question I ask</th></tr></thead>
-          <tbody>
-            <tr><td>Datadog<span class="tag t-bad">Most common</span></td><td data-h="Where they are strong">Broad platform, a huge integration library, and often the standard already.</td><td data-h="Where Honeycomb wins">Pricing on events rather than hosts, custom metrics and indexed logs, and fast queries on high cardinality data without pre-aggregation.<sup><a href="#s10">10</a></sup></td><td data-h="The question I ask" class="q">How did your last renewal compare with the one before it?</td></tr>
-            <tr><td>Dynatrace and New Relic<span class="tag t-warn">Entrenched</span></td><td data-h="Where they are strong">Automatic discovery and AI root cause for known infrastructure patterns.</td><td data-h="Where Honeycomb wins">Exploratory debugging for new failures in distributed systems that no model has seen, native to OpenTelemetry.</td><td data-h="The question I ask" class="q">When the automatic root cause is wrong, what do your engineers do next?</td></tr>
-            <tr><td>Grafana<span class="tag t-warn">Open source</span></td><td data-h="Where they are strong">Flexible dashboards, low cost to start, and a strong following on platform teams.</td><td data-h="Where Honeycomb wins">One place to query events and traces at high cardinality, without running and tuning several backends.</td><td data-h="The question I ask" class="q">How many engineers maintain your observability stack instead of using it?</td></tr>
-            <tr><td>Chronosphere and Splunk<span class="tag t-warn">New owners</span></td><td data-h="Where they are strong">Metrics and logs at very large volume, now inside Palo Alto Networks and Cisco.<sup><a href="#s8">8</a></sup></td><td data-h="Where Honeycomb wins">Independent and focused on how developers debug, not on a security suite roadmap.</td><td data-h="The question I ask" class="q">Does the new owner's roadmap match what your engineers need?</td></tr>
-            <tr><td>In-house and status quo<span class="tag t-bad">Always present</span></td><td data-h="Where they are strong">No new contract, and the team knows the tools.</td><td data-h="Where Honeycomb wins">Shorter incidents and less toil, with a business case priced in outage hours and engineer time.</td><td data-h="The question I ask" class="q">What did your last major incident cost, and what stops it happening again?</td></tr>
-          </tbody>
-        </table>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>Datadog</b><small>The platform most teams already run</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Dynatrace and New Relic</b><small>Automated APM</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Grafana</b><small>Open source dashboards</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Chronosphere and Splunk</b><small>Under new owners</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>In-house and status quo</b><small>Doing nothing</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>Datadog</h3><span class="threat">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Broad platform, a huge integration library, and often the standard already.</p></div><div><h4>Where Honeycomb wins</h4><p>Pricing on events rather than hosts, custom metrics and indexed logs, and fast queries on high cardinality data without pre-aggregation.<sup><a href="#s10">10</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How did your last renewal compare with the one before it?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>Dynatrace and New Relic</h3><span class="threat mid">Entrenched</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Automatic discovery and AI root cause for known infrastructure patterns.</p></div><div><h4>Where Honeycomb wins</h4><p>Exploratory debugging for new failures in distributed systems that no model has seen, native to OpenTelemetry.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When the automatic root cause is wrong, what do your engineers do next?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>Grafana</h3><span class="threat mid">Open source</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Flexible dashboards, low cost to start, and a strong following on platform teams.</p></div><div><h4>Where Honeycomb wins</h4><p>One place to query events and traces at high cardinality, without running and tuning several backends.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How many engineers maintain your observability stack instead of using it?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>Chronosphere and Splunk</h3><span class="threat mid">New owners</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Metrics and logs at very large volume, now inside Palo Alto Networks and Cisco.<sup><a href="#s8">8</a></sup></p></div><div><h4>Where Honeycomb wins</h4><p>Independent and focused on how developers debug, not on a security suite roadmap.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Does the new owner's roadmap match what your engineers need?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>In-house and status quo</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>No new contract, and the team knows the tools.</p></div><div><h4>Where Honeycomb wins</h4><p>Shorter incidents and less toil, with a business case priced in outage hours and engineer time.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>What did your last major incident cost, and what stops it happening again?</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -862,16 +967,71 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
 
   // Plays
   var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
-  function openTab(t){
-    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
-  }
-  tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){openTab(t)});
-    t.addEventListener('keydown',function(e){
-      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
-      if(n===null)return;n=(n+tabs.length)%tabs.length;tabs[n].focus();openTab(tabs[n]);
+  group(tabs,function(i){select(tabs,i)});
+
+  // Progress bar
+  var prog=document.getElementById('progress');
+  function bar(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?window.scrollY/h*100:0)+'%'}
+  window.addEventListener('scroll',bar,{passive:true});bar();
+
+  // Generic tab group with arrow keys
+  function group(btns,onPick){
+    btns.forEach(function(b,i){
+      b.addEventListener('click',function(){onPick(i)});
+      b.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight'||k==='ArrowDown')n=i+1;else if(k==='ArrowLeft'||k==='ArrowUp')n=i-1;
+        if(n===null)return;e.preventDefault();n=(n+btns.length)%btns.length;btns[n].focus();onPick(n);
+      });
     });
+  }
+  function select(btns,i){
+    btns.forEach(function(x,j){var on=j===i;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+
+  // Product hexes
+  var hx=[].slice.call(document.querySelectorAll('.hx')),say=document.getElementById('hxSay');
+  function hex(i){
+    hx.forEach(function(h,j){h.classList.toggle('on',j===i)});
+    say.innerHTML='';var b=document.createElement('b');b.textContent=hx[i].dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(hx[i].dataset.d));
+  }
+  hx.forEach(function(h,i){
+    h.addEventListener('click',function(){hex(i)});
+    h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();hex(i)}});
   });
+
+  // Trace spans
+  var HC='high cardinality';
+  var F=[
+    ['POST /checkout',[['service.name','frontend'],['http.route','/checkout'],['http.status','200'],['app.build','4812',1],['customer.id','cus_91F2',1],['customer.tier','enterprise'],['cloud.region','us-west-2'],['duration_ms','2,840']]],
+    ['cart.load',[['service.name','cart'],['cache.hit','true'],['cart.items','14'],['app.build','4812',1],['customer.id','cus_91F2',1],['duration_ms','230']]],
+    ['inventory.reserve',[['service.name','inventory'],['warehouse.id','wh_SLC2',1],['items.reserved','14'],['db.system','postgres'],['duration_ms','190']]],
+    ['payments.authorize',[['service.name','payments'],['app.build','4812',1],['flag.new_ledger','true'],['payment.retries','0'],['customer.tier','enterprise'],['duration_ms','2,160']]],
+    ['fraud.score',[['service.name','fraud'],['model.version','v37'],['risk.score','0.04'],['customer.id','cus_91F2',1],['duration_ms','170']]],
+    ['db.query ledger',[['service.name','payments'],['app.build','4812',1],['customer.id','cus_91F2',1],['customer.tier','enterprise'],['cloud.region','us-west-2'],['flag.new_ledger','true'],['db.rows_scanned','1,284,112'],['duration_ms','1,880']]],
+    ['email.enqueue',[['service.name','notify'],['queue.name','transactional'],['customer.id','cus_91F2',1],['duration_ms','110']]]
+  ];
+  var spans=[].slice.call(document.querySelectorAll('button.span')),fl=document.getElementById('fList'),ft=document.getElementById('fTitle');
+  spans.forEach(function(sp,i){sp.addEventListener('click',function(){
+    spans.forEach(function(x,j){x.classList.toggle('sel',j===i);x.setAttribute('aria-pressed',j===i)});
+    ft.textContent='Fields on '+F[i][0];fl.innerHTML='';
+    F[i][1].forEach(function(r){
+      var dt=document.createElement('dt');dt.textContent=r[0];var dd=document.createElement('dd');dd.textContent=r[1]+' ';
+      if(r[2]){var t=document.createElement('s');t.textContent=HC;dd.appendChild(t)}
+      fl.appendChild(dt);fl.appendChild(dd);
+    });
+  })});
+
+  // Challenger stepper
+  var sts=[].slice.call(document.querySelectorAll('.cstep')),cur=0,cnt=document.getElementById('stCount');
+  function step(i){cur=i;select(sts,i);cnt.textContent='Step '+(i+1)+' of '+sts.length;document.getElementById('stNext').textContent=i===sts.length-1?'Start over':'Next step'}
+  group(sts,step);
+  document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
+  document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Battlecards
+  var cbs=[].slice.call(document.querySelectorAll('.cbtn'));
+  group(cbs,function(i){select(cbs,i)});
 })();
 </script>
 </body>

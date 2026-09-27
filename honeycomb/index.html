@@ -193,7 +193,7 @@ figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-spac
 .bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
 .bu-row code{font-size:12px;white-space:nowrap}
 .bars{display:grid;gap:3px}
-@media (max-width:560px){.bu-row{grid-template-columns:1fr;gap:4px;padding:6px 0}.heat-ax span:nth-child(2){display:none}}
+@media (max-width:560px){.bu{grid-template-columns:1fr!important}.bu-row code{padding-top:6px}.heat-ax span:nth-child(2){display:none}}
 .bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
 .bars .sel{background:var(--honey)}
 .bars .base{background:var(--sky)}
@@ -355,6 +355,50 @@ footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:
 .disc{margin-top:22px;max-width:760px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* ===== Alignment pass ===== */
+:root{--gut:56px}
+@media (max-width:720px){:root{--gut:10px}}
+main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
+.float{padding-inline:var(--gut)}
+@media (max-width:720px){
+  .hero{margin-inline:-8px;padding-inline:18px!important}
+  .panel{padding-inline:18px!important}
+}
+.side{padding-top:56px}
+@media (min-width:721px) and (max-width:900px){.hero{padding-inline:56px!important}}
+.hero .facts{grid-column:1/-1;max-width:none;margin-top:8px}
+.terr{grid-template-columns:280px minmax(0,1fr)}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.path{grid-template-rows:repeat(5,auto);row-gap:0}
+.path li{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+.path .m{justify-self:start;align-self:start;margin-top:12px}
+.path p{align-self:start}
+@media (max-width:900px){.path{grid-template-rows:none;row-gap:22px}.path li{display:block;grid-row:auto}}
+.phases{grid-template-rows:repeat(4,auto);row-gap:0}
+.phase{display:grid;grid-template-rows:subgrid;grid-row:span 4}
+.phase .out{margin-top:0;padding-top:24px}
+.phase .out div{height:100%}
+@media (max-width:900px){.phases{grid-template-rows:none;row-gap:40px}.phase{display:flex;grid-row:auto}}
+.panel.sky .play-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel.sky .play-nav button{text-align:center;font-size:15px;padding:10px 8px;white-space:nowrap}
+@media (max-width:900px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel.sky .play-nav button{font-size:14px;padding:9px 8px;white-space:normal;line-height:1.25}}
+
+.reg .lead{margin-top:10px;padding:8px 12px;background:var(--fog);border-left:3px solid var(--honey);font-size:15px;border-radius:0 6px 6px 0}
+.reg tr.on .lead{background:#fff}
+.reg .lead b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.reg td:first-child{width:190px}
+@media (min-width:821px){.trace-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.fields dt{padding-right:10px}
+.fields dd{flex-wrap:wrap;align-items:center}
+.fields dd s{font-size:9.5px;padding:0 4px}
+.bu{display:grid;grid-template-columns:max-content minmax(40px,1fr);column-gap:14px;row-gap:10px;align-items:center}
+.bu h4{grid-column:1/-1;margin-bottom:0}
+.bu-row{display:contents}
+@media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.phase ul{align-content:start}
+.cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
 /* ===== Interactive layer ===== */
 .banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
 .banner b{font-weight:700}
@@ -406,10 +450,10 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
 .panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
 .panel.sky .play-nav button:hover{background:#fff}
 .panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
-.bcs{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+.bcs{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
 @media (max-width:860px){.bcs{grid-template-columns:1fr}}
 .bc-list{display:grid;gap:8px}
-@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}.cbtn:last-child:nth-child(odd){grid-column:1/-1}}
 .cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
 .cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
 .cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
@@ -424,7 +468,7 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
 .bc .lead{color:#B5C0D0;margin-top:6px;font-size:16px}
 .threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
 .threat.mid{background:#3A2E10;color:var(--honey)}
-.bc-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.bc-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 @media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
 .bc-cols div,.bc-q{border:1.5px solid #34465F;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
 .bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
@@ -476,12 +520,6 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
         <h1>Dashboards tell you something broke. Honeycomb tells you <mark>why.</mark></h1>
         <p class="lede">Honeycomb has product market fit and Fortune 500 logos, and the next move is further into the enterprise.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
-        <dl class="facts">
-          <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-          <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
-          <div><dt>Territory</dt><dd>West</dd></div>
-          <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
-        </dl>
       </div>
       <div class="art">
         <svg viewBox="28 36 320 262" aria-label="Honeycomb product map. Select a hexagon to read about it.">
@@ -504,6 +542,12 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
         <p class="hx-say" id="hxSay" aria-live="polite"><b>Wide events</b>Every request is stored as one event with hundreds of fields, so nothing gets averaged away.</p>
         <p class="hx-hint">Select a cell to explore the product</p>
       </div>
+      <dl class="facts">
+          <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
+          <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
+          <div><dt>Territory</dt><dd>West</dd></div>
+          <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
+        </dl>
     </section>
     <div class="float">
       <figure>
@@ -653,12 +697,12 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
         </div>
         <div>
           <table class="reg stack">
-            <thead><tr><th>Region</th><th>Who buys and why</th><th>Lead with</th></tr></thead>
+            <thead><tr><th>Region</th><th>Who buys, why, and what I lead with</th></tr></thead>
             <tbody>
-              <tr data-r="bay"><td>Bay Area<span class="st">SF, Peninsula, San Jose</span></td><td data-h="Who buys and why">SaaS, fintech and AI companies that deploy many times a day and already have AI features in production.<div class="acc">Instacart, DoorDash, Chime, Rippling, Plaid</div></td><td data-h="Lead with">Agent Observability and faster debugging for teams shipping daily</td></tr>
-              <tr data-r="pnw"><td>Pacific Northwest<span class="st">Seattle, Portland</span></td><td data-h="Who buys and why">Retail, travel and marketplace platforms on large AWS footprints, with observability bills to match.<div class="acc">Zillow, Expedia, Nordstrom, T-Mobile, Smartsheet</div></td><td data-h="Lead with">Tool consolidation, and cost per event against cost per host</td></tr>
-              <tr data-r="socal"><td>Southern California<span class="st">Los Angeles, San Diego</span></td><td data-h="Who buys and why">Consumer apps, gaming and health tech, where a slow checkout or login is lost revenue.<div class="acc">Snap, Riot Games, GoodRx, ServiceTitan, Dexcom</div></td><td data-h="Lead with">Finding the few slow requests that averages hide</td></tr>
-              <tr data-r="mtn"><td>Mountain and Southwest<span class="st">Denver, Salt Lake City, Boise, Phoenix, Las Vegas</span></td><td data-h="Who buys and why">Software, payments and e-commerce companies growing fast, many in the middle of an OpenTelemetry rollout.<div class="acc">Qualtrics, Ancestry, Western Union, GoDaddy, Carvana</div></td><td data-h="Lead with">OpenTelemetry as the standard, with the backend chosen on merit</td></tr>
+              <tr data-r="bay"><td>Bay Area<span class="st">SF, Peninsula, San Jose</span></td><td data-h="Who buys and why">SaaS, fintech and AI companies that deploy many times a day and already have AI features in production.<div class="acc">Instacart, DoorDash, Chime, Rippling, Plaid</div><div class="lead"><b>Lead with</b>Agent Observability and faster debugging for teams shipping daily</div></td></tr>
+              <tr data-r="pnw"><td>Pacific Northwest<span class="st">Seattle, Portland</span></td><td data-h="Who buys and why">Retail, travel and marketplace platforms on large AWS footprints, with observability bills to match.<div class="acc">Zillow, Expedia, Nordstrom, T-Mobile, Smartsheet</div><div class="lead"><b>Lead with</b>Tool consolidation, and cost per event against cost per host</div></td></tr>
+              <tr data-r="socal"><td>Southern California<span class="st">Los Angeles, San Diego</span></td><td data-h="Who buys and why">Consumer apps, gaming and health tech, where a slow checkout or login is lost revenue.<div class="acc">Snap, Riot Games, GoodRx, ServiceTitan, Dexcom</div><div class="lead"><b>Lead with</b>Finding the few slow requests that averages hide</div></td></tr>
+              <tr data-r="mtn"><td>Mountain and Southwest<span class="st">Denver, Salt Lake City, Boise, Phoenix, Las Vegas</span></td><td data-h="Who buys and why">Software, payments and e-commerce companies growing fast, many in the middle of an OpenTelemetry rollout.<div class="acc">Qualtrics, Ancestry, Western Union, GoDaddy, Carvana</div><div class="lead"><b>Lead with</b>OpenTelemetry as the standard, with the backend chosen on merit</div></td></tr>
             </tbody>
           </table>
           <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments and current customers with the team before any outreach.</p>
@@ -674,9 +718,9 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
       </div>
       <div class="play-nav" role="tablist" aria-label="Plays">
         <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Averages hide outages</button>
-        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">The observability bill</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Observability bill</button>
         <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">AI in production</button>
-        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">The OpenTelemetry moment</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">OpenTelemetry moment</button>
       </div>
 
       <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">

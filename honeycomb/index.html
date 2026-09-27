@@ -399,6 +399,11 @@ main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
 @media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
 .phase ul{align-content:start}
 .cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.band div{container-type:inline-size;display:flex;flex-direction:column;padding:24px 24px 26px}
+.band small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A3F00;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.band b{font-size:clamp(30px,25cqi,60px);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.band span{margin-top:12px;font-size:15px;line-height:1.45;color:#3D2A00;max-width:24ch}
+.band + section{border-top:0}
 /* ===== Interactive layer ===== */
 .banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
 .banner b{font-weight:700}
@@ -583,11 +588,12 @@ button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
       </figure>
     </div>
     <div class="band" role="list">
-      <div role="listitem"><b>79%</b><span>faster remediation of performance issues at Intercom<sup><a href="#s2">2</a></sup></span></div>
-      <div role="listitem"><b>75%</b><span>lower observability cost for Intercom's Fin AI agent<sup><a href="#s3">3</a></sup></span></div>
-      <div role="listitem"><b>50%</b><span>of the observability budget saved at Birdie after leaving Datadog<sup><a href="#s4">4</a></sup></span></div>
-      <div role="listitem"><b>$150M</b><span>raised across six rounds<sup><a href="#s5">5</a></sup></span></div>
+      <div role="listitem"><small>Intercom</small><b>79%</b><span>faster fixes for performance issues<sup><a href="#s2">2</a></sup></span></div>
+      <div role="listitem"><small>Intercom Fin</small><b>75%</b><span>lower observability cost for its AI agent<sup><a href="#s3">3</a></sup></span></div>
+      <div role="listitem"><small>Birdie</small><b>50%</b><span>observability budget saved after leaving Datadog<sup><a href="#s4">4</a></sup></span></div>
+      <div role="listitem"><small>Honeycomb</small><b>$150M</b><span>raised across six funding rounds<sup><a href="#s5">5</a></sup></span></div>
     </div>
+
 
     <!-- Know -->
     <section id="know">

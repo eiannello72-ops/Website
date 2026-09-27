@@ -10,6 +10,7 @@ for the Enterprise AE role.
 | LogicMonitor (Rockies) | [`logicmonitor/`](logicmonitor/index.html) |
 | Tiger Data (Mountain and Western) | [`tigerdata/`](tigerdata/index.html) |
 | Honeycomb (West) | [`honeycomb/`](honeycomb/index.html) |
+| Pentera (PNW) | [`pentera/`](pentera/index.html) |
 
 ## Deploying
 

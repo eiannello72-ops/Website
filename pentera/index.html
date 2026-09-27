@@ -603,6 +603,18 @@ h1 mark{padding:0 .12em;border-radius:4px}
 .tiles2 .col-h{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}
 @media (min-width:1041px) and (max-width:1240px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}.cstep{padding:14px 10px 16px}.cstep b{font-size:15px}}
 @media (max-width:900px){.art{max-width:260px}}
+.path{grid-template-rows:repeat(6,auto)}
+.path li{grid-row:span 6}
+.path .exit{font-size:13.5px;color:#26303F;margin-top:12px;padding:10px 12px;background:var(--fog);border-left:3px solid var(--honey);border-radius:0 6px 6px 0;align-self:stretch}
+.path .exit b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+@media (max-width:900px){.path{grid-template-rows:none}}
+.stalls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:1180px){.stalls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stalls{grid-template-columns:1fr}}
+.stalls div{border:1.5px solid var(--ink);border-radius:10px;padding:16px 18px;background:#fff;box-shadow:4px 4px 0 var(--honey)}
+.stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.stalls p{font-size:14.5px;color:#26303F}
+@media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
 </style>
 </head>
 <body>
@@ -644,7 +656,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <span>September 2026</span>
         </div>
         <h1>Scanners list what could go wrong. Pentera proves <mark>what will.</mark></h1>
-        <p class="lede">Pentera is the first company in adversarial exposure validation past $100M ARR, and most Northwest enterprises still test once a year.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+        <p class="lede">Pentera is the first company in adversarial exposure validation to pass $100M ARR, and it is moving from a testing tool to the validation layer of every security program.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
       </div>
       <div class="art">
@@ -800,7 +812,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
             <button class="sq" data-r="or">EUG<small>Eugene</small></button>
             <button class="sq" data-r="inl">BZN<small>Montana</small></button>
           </div>
-          <p class="map-note">Home base in Boise, inside the territory. Seattle and Portland are an hour away by air.</p>
+          <p class="map-note">Home base in Boise, inside the territory. Seattle, Portland and Spokane are short, direct flights.</p>
         </div>
         <div>
           <table class="reg stack">
@@ -879,10 +891,10 @@ h1 mark{padding:0 .12em;border-radius:4px}
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Head of Vulnerability Management</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vulnerability backlog</li><li data-v="B">Fix first idea</li><li data-v="C">Backlog question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring for vulnerability management with SLA ownership, so guessing the backlog grows faster than the fixes.</p><p>Think seeing which findings are actually exploitable, and fixing those first, could help?</p><p><span class="tok">{{customer_name}}</span> cut resolution time by up to 90%.</p></div>
-          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 90% sounds like seller cherry picking.</p><p>If we took last quarter's criticals and showed which ones an attacker could use, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring for vulnerability management with SLA ownership, so guessing the backlog grows faster than the fixes.</p><p>Think seeing which findings are actually exploitable, and fixing those first, could help?</p><p><span class="tok">{{customer_name}}</span> now works from a short list of proven risks instead of the full scanner backlog.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize that sounds like seller cherry picking.</p><p>If we took last quarter's criticals and showed which ones an attacker could use, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the backlog might be under control?</p><p>Basically your team would fix fewer things and close more risk.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Pentera Resolve<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a backlog the team can finish</span></div>
+          <div class="mail-f"><span><b>Product</b> Pentera Resolve<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a backlog the team can finish</span></div>
         </article>
       </div>
 
@@ -923,8 +935,8 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <div>
           <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
             <div class="bc-top"><h3>Horizon3.ai</h3><span class="threat">High threat</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Cloud delivered, quick to start and priced to win in the mid-market.</p></div><div><h4>Where Pentera wins</h4><p>Maturity at enterprise scale, safe by design in production, internal, external and cloud on one platform, and remediation through Resolve.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How does it behave across 10,000 production hosts, and who owns the fixes afterward?</p></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Fast to deploy, broad internal, external and cloud testing, and accessible pricing that wins in the mid-market.</p></div><div><h4>Where Pentera wins</h4><p>The track record at large enterprises: first in the category past $100M ARR, 1,200+ customers, and a platform built to run safely in production, with Resolve for remediation and AI red teaming through EVA.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Which of your peers runs it across tens of thousands of production hosts, and who owns the fixes afterward?</p></div>
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
             <div class="bc-top"><h3>BAS tools</h3><span class="threat mid">Entrenched</span></div>
@@ -954,16 +966,25 @@ h1 mark{padding:0 .12em;border-radius:4px}
     <section id="deal">
       <div class="sh">
         <h2>Running the deal</h2>
-        <p>Challenger earns the first meeting and shapes the problem. MEDDPICC tracks what is proven and what is still missing, from the first meeting through a proof of concept to the close.</p>
+        <p>Challenger earns the first meeting and shapes the problem. MEDDPICC tracks what is proven and what is still missing. Every stage has exit criteria, and every deal has a mutual action plan the champion helped write.</p>
       </div>
       <ol class="path">
-        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the CISO and agree that unvalidated exposure is worth fixing this year.</p><span class="m">Teach</span></li>
-        <li><span class="when">Months 1 to 2</span><h4>Discovery and business case</h4><p>Map tools, pentest spend, backlog and audit needs with a Sales Engineer and the partner.</p><span class="m">Tailor</span></li>
-        <li><span class="when">Months 2 to 3</span><h4>Proof of concept</h4><p>Run in their environment with written success criteria and a champion who owns the results.</p><span class="m">Decision criteria</span></li>
-        <li><span class="when">Months 3 to 5</span><h4>Security and procurement</h4><p>Run in parallel, timed to the pentest renewal, with the partner and paper path agreed early.</p><span class="m">Paper process</span></li>
-        <li><span class="when">Month 5 on</span><h4>Close and expand</h4><p>Start with the internal network, then add external, cloud and Resolve as the program grows.</p><span class="m">Take control</span></li>
+        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the CISO and agree that unvalidated exposure is worth fixing this year.</p><p class="exit"><b>Exit when</b>The CISO names the problem, the cost and who else needs to be involved.</p><span class="m">Teach</span></li>
+        <li><span class="when">Months 1 to 2</span><h4>Discovery and business case</h4><p>Map tools, pentest spend, backlog and audit needs with a Sales Engineer and the partner.</p><p class="exit"><b>Exit when</b>Pain is priced, the economic buyer is known and the deal is registered with the partner.</p><span class="m">Tailor</span></li>
+        <li><span class="when">Months 2 to 3</span><h4>Proof of concept</h4><p>Scope, safety settings and testing approval agreed first, then a run in their environment against written success criteria.</p><p class="exit"><b>Exit when</b>Criteria are met and the champion has walked the CISO through the results.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 3 to 5</span><h4>Security and procurement</h4><p>Security review, legal and purchasing run in parallel, timed to the pentest renewal and budget cycle.</p><p class="exit"><b>Exit when</b>Paper process is complete and a signature date is agreed in the mutual plan.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 5 on</span><h4>Close and expand</h4><p>Start where the proof was strongest, then add external, cloud and Resolve as the program grows.</p><p class="exit"><b>Exit when</b>Signed, with a rollout plan, a value review date and the next environments mapped.</p><span class="m">Take control</span></li>
       </ol>
-      <h3 style="margin-bottom:18px">MEDDPICC checklist</h3>
+      <h3 style="margin-bottom:18px">Where these deals stall, and what I do about it</h3>
+      <div class="stalls">
+        <div><h4>A proof of concept with no finish line</h4><p>Success criteria are written and agreed with the champion before the first test runs, so the readout ends in a decision.</p></div>
+        <div><h4>Testing approval takes weeks</h4><p>Running safe attacks in production needs change control and sign-off. I start that approval in week one, alongside scoping.</p></div>
+        <div><h4>Budget sits in a services line</h4><p>The business case moves pentest and consulting spend to a platform, built with the partner and the CISO's finance lead.</p></div>
+        <div><h4>Only practitioners are involved</h4><p>The CISO readout is booked at proof of concept kickoff, so the economic buyer sees the results firsthand.</p></div>
+        <div><h4>The partner arrives late</h4><p>Deals are registered with the partner at the first meeting, so pricing, paper and timing are aligned from the start.</p></div>
+        <div><h4>The incumbent renewal slips past</h4><p>The pentest and scanner renewal dates go into the mutual plan in discovery, and the close is timed to them.</p></div>
+      </div>
+      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
       <div style="max-width:1060px">
         <table class="medd stack">
           <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
@@ -997,12 +1018,12 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <table class="fit stack">
           <thead><tr><th>What the role asks for<sup><a href="#s10">10</a></sup></th><th>Where I have done it</th></tr></thead>
           <tbody>
-            <tr><td>Full cycle enterprise sales, through proof of concept</td><td data-h="Where I have done it">Ran evaluations and pilots to close at Netradyne and Jamf, including a $1.2M deal with Uber.</td></tr>
+            <tr><td>Full cycle enterprise sales, through proof of concept</td><td data-h="Where I have done it">Ran pilots and evaluations through close at Netradyne, and closed a $1.2M deal with Uber at Jamf.</td></tr>
             <tr><td>Self-sourced pipeline</td><td data-h="Where I have done it">$19.6M self-sourced at Netradyne, and $750K in my first quarter at Falkon.</td></tr>
             <tr><td>Selling security outcomes to CISOs</td><td data-h="Where I have done it">Sold Jamf's device management and security products to IT and security leaders, framed in risk, cost and audit terms.</td></tr>
-            <tr><td>AI-assisted selling and accurate forecasting</td><td data-h="Where I have done it">Use AI research and outreach tools every day, and forecast on MEDDPICC stage criteria. Trained in MEDDPICC and Command of the Message.</td></tr>
+            <tr><td>AI-assisted selling and accurate forecasting</td><td data-h="Where I have done it">Use AI tools for account research and personalized outreach, and forecast on MEDDPICC stage criteria. Trained in MEDDPICC and Command of the Message.</td></tr>
             <tr><td>Channel and partner selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to Pentera's partner-led deals.</td></tr>
-            <tr><td>Travel across the territory</td><td data-h="Where I have done it">Based in Boise, inside the territory, and already selling to Northwest enterprises such as Albertsons.</td></tr>
+            <tr><td>Travel across the territory</td><td data-h="Where I have done it">Based in Boise, inside the territory, and have already opened Northwest enterprises such as Albertsons.</td></tr>
           </tbody>
         </table>
       </div>

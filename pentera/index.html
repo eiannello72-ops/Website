@@ -615,6 +615,9 @@ h1 mark{padding:0 .12em;border-radius:4px}
 .stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
 .stalls p{font-size:14.5px;color:#26303F}
 @media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
+.mods{container-type:inline-size}
+.mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
+.mod.core{font-size:clamp(13px,6.2cqi,20px)}
 </style>
 </head>
 <body>
@@ -729,7 +732,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <div>
           <h3>The moment</h3>
           <p>Pentera passed $100M ARR with 1,200+ customers, and added AI red teaming through the EVA acquisition.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup></p>
-          <p>Gartner's CTEM framework made validation a named step in exposure management, and boards now ask for proof rather than scan counts.<sup><a href="#s6">6</a></sup></p>
+          <p>Gartner's CTEM framework made validation a named step in exposure management, and boards now ask CISOs for evidence that controls work.<sup><a href="#s6">6</a></sup></p>
         </div>
       </div>
     </section>
@@ -779,14 +782,14 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Pentera</small></button>
       </div>
       <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most security teams run a scanner, an EDR, a SIEM and an annual pentest. Each tool reports its own findings, and the backlog grows faster than the team can fix it.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Tool sprawl</b>Every tool reports risk its own way</div><div><b>The backlog</b>Grows faster than the team can close it</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>The problem isn't finding vulnerabilities. It's knowing which ones an attacker can actually use. A severity score says what could happen, not what will happen in your environment.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Fix the highest severity first</div><div><b>To</b>Fix what is proven exploitable first</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams already find more vulnerabilities than they can fix. The hard part is knowing which ones an attacker can actually use in your environment, and a severity score can't tell you that.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Fix the highest severity first</div><div><b>To</b>Fix what is proven exploitable first</div></div></div></div>
       <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is how breaches actually start. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>20%</b>Of breaches began with an exploited vulnerability, up 34% in a year<sup><a href="#s7">7</a></sup></div><div><b>22%</b>Began with stolen credentials, still the top entry point<sup><a href="#s7">7</a></sup></div></div></div></div>
       <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The board asks whether the company would survive a ransomware attack. The honest answer is probably, based on last year's pentest, and the environment has changed since.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The CISO answers the board with an assumption</div><div><b>Burnout</b>The team patches around the clock and risk barely moves</div></div></div></div>
-      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading teams test continuously, the way an attacker would, safely in production. They fix what is proven exploitable first and retest to prove the fix worked.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Continuous</b>Weekly validation, not an annual snapshot</div><div><b>Proven</b>Exploitable in your environment, not theoretical</div><div><b>Closed loop</b>Fix, then retest to prove it</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading teams test continuously, the way an attacker would, safely in production. They fix what is proven exploitable first and retest to prove the fix worked.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Continuous</b>Validation every week, as the environment changes</div><div><b>Proven</b>Exploitable in your environment, with evidence</div><div><b>Closed loop</b>Fix, then retest to prove it</div></div></div></div>
       <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Pentera validates internal, external and cloud environments, and Pentera Resolve turns what it proves into fixes.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>Millions</b>Saved by DTCC every time it runs a ransomware test<sup><a href="#s2">2</a></sup></div><div><b>600%</b>Modeled ROI, $2.4M in savings on a $400K investment<sup><a href="#s8">8</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
-        <div><h4>Teach</h4><p>The first call changes how they think about risk. The demo comes after they agree severity scores are not the same as exposure.</p></div>
+        <div><h4>Teach</h4><p>The first call changes how they think about risk. The demo comes after they agree that severity scores alone can't set priorities.</p></div>
         <div><h4>Tailor</h4><p>Proof for the CISO, a shorter backlog for vulnerability management, a tested ransomware answer for the CIO, and pentest spend redirected for finance.</p></div>
         <div><h4>Take control</h4><p>Name the cost of the next incident, push back on "our annual pentest covers it," and leave every meeting with a dated next step.</p></div>
       </div>
@@ -855,7 +858,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> pentest cadence</li><li data-v="B">Once a year idea</li><li data-v="C">Snapshot question</li></ol></dd></dl>
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring an offensive security lead, so guessing the annual pentest is carrying more weight than it should.</p><p>Think testing continuously, safely in production, could help?</p><p><span class="tok">{{customer_name}}</span> now tests 3,500 IPs in every run.</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 3,500 IPs a run sounds like seller cherry picking.</p><p>If we ran one test on a slice of your environment and compared it with your last report, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current pentest cycle might be working?</p><p>Basically your team would know every week what an attacker could reach, not once a year.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current pentest cycle might be working?</p><p>Basically your team would know every week what an attacker could reach.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
           <div class="mail-f"><span><b>Proof</b> Forvia<sup><a href="#s9">9</a></sup></span><span><b>Value</b> pentest spend redirected</span></div>
         </article>
       </div>
@@ -874,7 +877,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> ransomware readiness</li><li data-v="B">Ransomware test idea</li><li data-v="C">Board question</li></ol></dd></dl>
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> names ransomware as a top risk in its annual report, so guessing the board wants proof that defenses would hold.</p><p>Think running safe ransomware scenarios in your own environment could help?</p><p><span class="tok">{{customer_name}}</span> now saves millions every time it runs a ransomware test.</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize millions a test sounds like seller cherry picking.</p><p>If we ran one scenario and showed you how far it got, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like ransomware readiness might already be covered?</p><p>Basically your team could give the board a tested answer instead of an assumption.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like ransomware readiness might already be covered?</p><p>Basically your team could give the board a tested answer.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
           <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s2">2</a></sup></span><span><b>Value</b> a tested answer for the board</span></div>
         </article>
       </div>
@@ -891,7 +894,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Head of Vulnerability Management</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vulnerability backlog</li><li data-v="B">Fix first idea</li><li data-v="C">Backlog question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring for vulnerability management with SLA ownership, so guessing the backlog grows faster than the fixes.</p><p>Think seeing which findings are actually exploitable, and fixing those first, could help?</p><p><span class="tok">{{customer_name}}</span> now works from a short list of proven risks instead of the full scanner backlog.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring for vulnerability management with SLA ownership, so guessing the backlog grows faster than the fixes.</p><p>Think seeing which findings are actually exploitable, and fixing those first, could help?</p><p><span class="tok">{{customer_name}}</span> now works from a short list of proven risks.</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize that sounds like seller cherry picking.</p><p>If we took last quarter's criticals and showed which ones an attacker could use, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the backlog might be under control?</p><p>Basically your team would fix fewer things and close more risk.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
           <div class="mail-f"><span><b>Product</b> Pentera Resolve<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a backlog the team can finish</span></div>
@@ -900,19 +903,19 @@ h1 mark{padding:0 .12em;border-radius:4px}
 
       <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
         <div>
-          <p class="insight">Boards ask whether the company is protected. Scan counts don't answer that. Validation does.</p>
+          <p class="insight">Boards want to know whether the company would hold up to a real attack. Validation is the only way to answer with evidence.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises building a CTEM or exposure management program.</dd></div>
             <div><dt class="label">Signal</dt><dd>CISO posts or job posts that mention CTEM, exposure management or board reporting.</dd></div>
             <div><dt class="label">Personas</dt><dd>CISO first, then the chief risk officer and internal audit.</dd></div>
-            <div><dt class="label">Discovery</dt><dd><ul><li>What security metric does the board see today?</li><li>How do you show risk went down, not just that activity went up?</li><li>Where does validation sit in your exposure program?</li></ul></dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>What security metric does the board see today?</li><li>How do you show the board that risk went down?</li><li>Where does validation sit in your exposure program?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> exposure program</li><li data-v="B">Board reporting idea</li><li data-v="C">CTEM question</li></ol></dd></dl>
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw your post on building an exposure management program at <span class="tok">{{company}}</span>, so guessing validation is the step still done by hand.</p><p>Think proving which exposures are exploitable, and showing the trend to the board, could help?</p><p><span class="tok">{{customer_name}}</span> expanded testing without adding headcount.</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize no added headcount sounds like seller cherry picking.</p><p>If we mapped one board metric to validated results from your environment, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be in good shape?</p><p>Basically your team would report proven risk going down, not scan counts going up.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be in good shape?</p><p>Basically your team would report proven risk going down, quarter over quarter.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
           <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s2">2</a></sup></span><span><b>Framework</b> Gartner CTEM<sup><a href="#s6">6</a></sup></span></div>
         </article>
       </div>
@@ -940,7 +943,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
             <div class="bc-top"><h3>BAS tools</h3><span class="threat mid">Entrenched</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Checking whether security controls fire against a library of known threats, and tuning SOC detections.</p></div><div><h4>Where Pentera wins</h4><p>Proves the routes an attacker would take through the whole environment, not only whether one control fires on a sample.</p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Checking whether security controls fire against a library of known threats, and tuning SOC detections.</p></div><div><h4>Where Pentera wins</h4><p>Proves the full route an attacker would take across the environment, from first access to the systems that matter.</p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Your BAS tells you if the EDR alerts. Does it tell you whether an attacker reaches the finance systems?</p></div>
           </article>
           <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
@@ -950,7 +953,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           </article>
           <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
             <div class="bc-top"><h3>Vulnerability scanners</h3><span class="threat mid">Adjacent</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full asset inventory, broad CVE coverage and budget that is already approved.</p></div><div><h4>Where Pentera wins</h4><p>Shows which findings are exploitable and in what order to fix them. It complements the scanner rather than replacing it.</p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full asset inventory, broad CVE coverage and budget that is already approved.</p></div><div><h4>Where Pentera wins</h4><p>Shows which findings are exploitable and in what order to fix them, and works alongside the scanner the team already owns.</p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Of last quarter's criticals, how many could an attacker actually use?</p></div>
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>

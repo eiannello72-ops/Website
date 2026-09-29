@@ -11,6 +11,7 @@ for the Enterprise AE role.
 | Tiger Data (Mountain and Western) | [`tigerdata/`](tigerdata/index.html) |
 | Honeycomb (West) | [`honeycomb/`](honeycomb/index.html) |
 | Pentera (PNW) | [`pentera/`](pentera/index.html) |
+| LogicGate (PNW and Canada) | [`logicgate/`](logicgate/index.html) |
 
 ## Deploying
 

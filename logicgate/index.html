@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LogicGate PNW and Canada Plan</title>
+<meta name="description" content="A Pacific Northwest and Canada strategic territory plan for LogicGate, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello for Joe Zelinskas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230000CC'/%3E%3Cpath d='M9 9h9l5 7-5 7H9l5-7z' fill='%237CFA72'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#F4F6FA;
+  --rule:#DDE2EA;
+  --ink:#0E1B2E;
+  --ink-2:#16263D;
+  --graphite:#566174;
+  --honey:#FFB400;
+  --honey-soft:#FFE7A3;
+  --sky:#7CC1F2;
+  --sky-soft:#E3F2FD;
+  --coral:#E8857F;
+  --lilac:#C3A8E6;
+  --link:#1D4F9F;
+  --good:#1F7A4D;
+  --warn:#8A5A00;
+  --bad:#B42318;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:17px;
+  --step-1:19.5px;
+  --step-2:24px;
+  --step-3:34px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+code{font-family:var(--mono);font-size:.86em}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--honey);color:var(--ink);padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:15px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--honey);font-weight:600}
+.side-foot{margin-top:auto;font-size:13.5px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
+section:first-of-type{border-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Hero */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:#93A0B5}
+.doc-meta span b{color:#fff;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+h1{font-size:clamp(36px,4.1vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:#fff}
+h1 mark{padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:21px;line-height:1.5;color:#C6CFDC;max-width:640px;margin-top:26px}
+.lede b{color:#fff;font-weight:600}
+.hero sup a{color:var(--honey)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid #fff;max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#8391A8}
+.facts dd{font-size:15.5px;margin-top:4px;color:#fff}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+.art{width:100%;max-width:340px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:230px;order:-1;justify-self:start}}
+
+/* Fig 1: trace */
+figure{margin-top:48px;max-width:980px}
+figcaption{font-size:14px;color:var(--graphite);margin-top:14px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:10px}}
+.float figure{margin-top:0}
+.trace{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.trace-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.trace-bar b{color:var(--ink);font-weight:500}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+@media (max-width:820px){.trace-grid{grid-template-columns:1fr}}
+.wf{padding:16px 18px 18px;border-right:1.5px solid var(--ink)}
+@media (max-width:820px){.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin:0 0 8px 150px}
+.span{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;height:30px}
+.span > span{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:calc(var(--d,0) * 12px)}
+.span .lane{position:relative;height:100%;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 25%)}
+.span .lane i{position:absolute;top:7px;bottom:7px;left:var(--s);width:var(--w);background:var(--sky);border:1.5px solid var(--ink);border-radius:3px}
+.span.hot .lane i{background:var(--honey)}
+.span.sel{background:var(--honey-soft);margin-inline:-18px;padding-inline:18px}
+.span.sel .lane i{background:var(--coral)}
+.span .lane em{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s) + var(--w) + 6px);font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+.span.far .lane em{left:auto;right:calc(100% - var(--s) + 6px)}
+@media (max-width:560px){.span{grid-template-columns:128px minmax(0,1fr)}.scale{margin-left:128px}.span > span{font-size:10.5px;padding-left:calc(var(--d,0) * 8px)}.span.far .lane em{display:none}.fields dd s{font-size:9px;padding:0 3px}}
+.fields{padding:16px 18px 18px}
+.fields h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.fields dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;font-family:var(--mono);font-size:12.5px}
+.fields dt,.fields dd{padding:5px 0;border-bottom:1px dashed var(--rule)}
+.fields dt{color:var(--graphite);padding-right:14px}
+.fields dd{color:var(--ink);display:flex;justify-content:space-between;gap:8px;min-width:0}
+.fields dd s{text-decoration:none;font-size:10px;background:var(--lilac);border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--honey);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:15px;margin-top:10px;color:#3D2A00}
+.band sup a{color:var(--ink)}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:16px;color:#26303F}
+.three p + p{margin-top:10px}
+
+/* Panels */
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 18px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#EEF2F8}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.sky{background:var(--sky)}
+.panel.honey{background:#FFD65C}
+.panel.honey:after{opacity:.28}
+
+/* Fig 2: dashboard vs Honeycomb */
+.compare{margin:8px 0 56px;max-width:1060px}
+.cmp-grid{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.25fr);align-items:stretch}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;gap:18px}}
+.pane{background:var(--ink-2);border:1.5px solid #34465F;border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.pane.hc{background:#fff;color:var(--ink);border-color:#fff;box-shadow:8px 8px 0 var(--honey)}
+.pane-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#93A0B5;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.pane.hc .pane-lbl{color:var(--graphite)}
+.pane-lbl b{font-weight:500;color:#7EE2A8}
+.pane.hc .pane-lbl b{color:var(--ink);background:var(--honey);padding:0 6px;border-radius:3px}
+.dash svg{width:100%;height:auto;display:block}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.kpis div{border:1px solid #34465F;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-family:var(--mono);font-size:10.5px;color:#93A0B5;text-transform:uppercase;letter-spacing:.05em}
+.kpis b{font-family:var(--display);font-size:22px;font-weight:700;color:#fff}
+.kpis b i{font-style:normal;font-size:12px;font-family:var(--mono);font-weight:400;color:#7EE2A8;margin-left:6px}
+.svc{list-style:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:#C6CFDC}
+.svc li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #2F4260}
+.svc span{color:#7EE2A8;display:inline-flex;align-items:center;gap:6px}
+.svc span:before{content:"";width:7px;height:7px;border-radius:50%;background:#7EE2A8}
+.heat{width:100%;height:auto;display:block}
+.heat-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:6px}
+.bu{margin-top:16px;border-top:1.5px solid var(--ink);padding-top:12px}
+.bu h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bu h4 span{display:flex;gap:12px;text-transform:none;letter-spacing:0}
+.bu h4 span i{display:inline-block;width:9px;height:9px;border:1px solid var(--ink);margin-right:4px;vertical-align:-1px}
+.bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
+.bu-row code{font-size:12px;white-space:nowrap}
+.bars{display:grid;gap:3px}
+@media (max-width:560px){.bu{grid-template-columns:1fr!important}.bu-row code{padding-top:6px}.heat-ax span:nth-child(2){display:none}}
+.bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
+.bars .sel{background:var(--honey)}
+.bars .base{background:var(--sky)}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--honey);display:grid;place-items:center;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.tally{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:12.5px;color:#FCA5A5}
+.pane.hc .tally{color:var(--good)}
+.tally b{font-size:22px;font-family:var(--display);font-weight:700;margin-right:4px}
+.compare figcaption{color:#93A0B5}
+.compare figcaption b{color:#fff}
+
+/* Talk track */
+.track{list-style:none;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid #2A3A52}
+.track li:last-child{border-bottom:1px solid #2A3A52}
+.track .who{font-family:var(--mono);font-size:13px;color:#8391A8;line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--honey);font-weight:600;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.42;letter-spacing:-.01em;color:#EEF2F8}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14.5px;color:#B5C0D0}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--honey);background:#1F3350;padding:1px 6px;border-radius:3px;margin-right:6px}
+.panel.ink sup a{color:var(--sky)}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--honey)}
+.ttt p{font-size:15.5px;color:#B5C0D0}
+.panel.ink .sh p{color:#B5C0D0}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;max-width:1060px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;gap:0;width:max-content}
+.hr{display:flex;gap:5px;margin-bottom:-17px}
+.hr.off{padding-left:40.5px}
+.hr:last-child{margin-bottom:0}
+.tile{--f:#fff;position:relative;width:76px;height:88px;border:0;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.tile:before{content:"";position:absolute;inset:2px;background:var(--f);clip-path:inherit;transition:background .15s}
+.tile b,.tile small{position:relative;font-weight:inherit}
+.tile small{font-size:9.5px;color:var(--graphite);font-weight:400}
+.tile[data-r="bay"]{--f:var(--sky-soft)}
+.tile[data-r="pnw"]{--f:#EDEFF4}
+.tile[data-r="socal"]{--f:#FFF3D1}
+.tile[data-r="mtn"]{--f:#F1EAFA}
+.tile.on{--f:var(--honey)}
+.tile.on small{color:var(--ink)}
+.tile.home b{font-weight:800}
+.map-note{font-size:13.5px;color:var(--graphite);margin-top:12px;line-height:1.5}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:600;padding-left:10px;width:160px}
+.reg .st{display:block;font-family:var(--mono);font-size:11.5px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14.5px;margin-top:6px}
+.note{font-size:14px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;border-bottom:1.5px solid rgba(14,27,46,.3);margin-bottom:32px;max-width:1060px}
+.play-nav button{font-family:var(--body);font-size:16px;font-weight:600;color:#1C3654;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:10px 0 12px;margin-right:28px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1060px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;font-weight:600;line-height:1.3;letter-spacing:-.015em;padding-left:18px;border-left:4px solid var(--ink)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px;color:#1C3654}
+.dl dd{font-size:16px;color:#0B1726}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.panel.sky .sh p{color:#11263F}
+.panel.sky sup a{color:var(--ink)}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:16px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.84em;color:#6B4500;background:var(--honey-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13.5px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:600}
+.mail-f sup a{color:var(--link)}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:600;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#26303F;font-size:15px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1060px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-6px;left:0;width:12px;height:14px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:700;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:15px;color:#26303F}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--honey-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:5px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:15px;color:#26303F}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1060px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14.5px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#26303F}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-left:4px solid var(--honey);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16.5px;color:#1F2937}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1060px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:#5A4300;border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15.5px;color:#1C1606}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:8px;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:#fff;border:1.5px solid var(--ink);padding:14px 16px;border-radius:4px;font-size:15px}
+.phase:last-child .out div{background:var(--ink);color:#fff}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+.phase:last-child .out b{color:var(--honey)}
+.panel.honey .sh p{color:#4A3A10}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:14px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--honey-soft)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* ===== Alignment pass ===== */
+:root{--gut:56px}
+@media (max-width:720px){:root{--gut:10px}}
+main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
+.float{padding-inline:var(--gut)}
+@media (max-width:720px){
+  .hero{margin-inline:-8px;padding-inline:18px!important}
+  .panel{padding-inline:18px!important}
+}
+.side{padding-top:56px}
+@media (min-width:721px) and (max-width:900px){.hero{padding-inline:56px!important}}
+.hero .facts{grid-column:1/-1;max-width:none;margin-top:8px}
+.terr{grid-template-columns:280px minmax(0,1fr)}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.path{grid-template-rows:repeat(5,auto);row-gap:0}
+.path li{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+.path .m{justify-self:start;align-self:start;margin-top:12px}
+.path p{align-self:start}
+@media (max-width:900px){.path{grid-template-rows:none;row-gap:22px}.path li{display:block;grid-row:auto}}
+.phases{grid-template-rows:repeat(4,auto);row-gap:0}
+.phase{display:grid;grid-template-rows:subgrid;grid-row:span 4}
+.phase .out{margin-top:0;padding-top:24px}
+.phase .out div{height:100%}
+@media (max-width:900px){.phases{grid-template-rows:none;row-gap:40px}.phase{display:flex;grid-row:auto}}
+.panel.sky .play-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel.sky .play-nav button{text-align:center;font-size:15px;padding:10px 8px;white-space:nowrap}
+@media (max-width:900px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel.sky .play-nav button{font-size:14px;padding:9px 8px;white-space:normal;line-height:1.25}}
+
+.reg .lead{margin-top:10px;padding:8px 12px;background:var(--fog);border-left:3px solid var(--honey);font-size:15px;border-radius:0 6px 6px 0}
+.reg tr.on .lead{background:#fff}
+.reg .lead b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.reg td:first-child{width:190px}
+@media (min-width:821px){.trace-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.fields dt{padding-right:10px}
+.fields dd{flex-wrap:wrap;align-items:center}
+.fields dd s{font-size:9.5px;padding:0 4px}
+.bu{display:grid;grid-template-columns:max-content minmax(40px,1fr);column-gap:14px;row-gap:10px;align-items:center}
+.bu h4{grid-column:1/-1;margin-bottom:0}
+.bu-row{display:contents}
+@media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.phase ul{align-content:start}
+.cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.band div{container-type:inline-size;display:flex;flex-direction:column;padding:24px 24px 26px}
+.band small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A3F00;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.band b{font-size:clamp(30px,25cqi,60px);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.band span{margin-top:12px;font-size:15px;line-height:1.45;color:#3D2A00;max-width:24ch}
+.band + section{border-top:0}
+/* ===== Interactive layer ===== */
+.banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+.banner b{font-weight:700}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--honey);z-index:50;box-shadow:0 0 0 1px rgba(14,27,46,.15)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1.5px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:var(--honey);color:var(--ink);border-color:var(--honey);box-shadow:4px 4px 0 #fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--honey)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.hx{cursor:pointer;transition:transform .2s;outline:none}
+.hx:hover,.hx.on{transform:translate(-5px,-5px)}
+.hx.on use{stroke:var(--honey);stroke-width:4}
+.hx[data-i="0"].on use{stroke:#fff}
+.hx:focus-visible use{stroke:var(--sky);stroke-width:4}
+.hx-say{margin-top:14px;min-height:66px;font-size:14.5px;line-height:1.45;color:#C6CFDC;border-left:3px solid var(--honey);padding-left:12px}
+.hx-say b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:2px}
+.hx-hint{font-family:var(--mono);font-size:11px;color:#8391A8;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hx,.btn{transition:none}}
+button.span{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.span:hover{background:var(--fog);margin-inline:-18px;padding-inline:18px;width:calc(100% + 36px)}
+button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
+.trace-bar .hint{color:var(--link)}
+.fields dl{transition:opacity .15s}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1.5px solid #34465F;border-radius:14px 14px 0 0;overflow:hidden;max-width:1060px}
+.cstep{background:var(--ink-2);border:0;border-left:1px solid #2A3A52;color:#B5C0D0;text-align:left;padding:16px 14px 18px;cursor:pointer;font:inherit;position:relative;transition:background .15s}
+.cstep:first-child{border-left:0}
+.cstep i{display:block;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--honey)}
+.cstep b{display:block;font-family:var(--display);font-size:16.5px;color:#fff;font-weight:600;margin:4px 0 2px;line-height:1.2}
+.cstep small{display:block;font-size:13px;line-height:1.35}
+.cstep:hover{background:#1D3150}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3D2A00}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i{color:var(--ink)}
+.cstep:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.cstep:nth-child(4){border-left:0}.cstep:nth-child(n+4){border-top:1px solid #2A3A52}.cstep small{display:none}}
+.step-p{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;background:#fff;color:var(--ink);border:1.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;padding:30px 30px 32px;max-width:1060px;box-shadow:8px 8px 0 var(--honey)}
+.step-p[hidden]{display:none}
+@media (max-width:860px){.step-p{grid-template-columns:1fr;gap:22px;padding:24px 20px}}
+.step-p h3{font-size:24px;margin-bottom:12px}
+.step-p blockquote{font-family:var(--display);font-size:20px;font-weight:500;line-height:1.45;padding-left:16px;border-left:4px solid var(--honey)}
+.step-p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.facts2{display:grid;gap:10px}
+.facts2 div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:15px;color:#26303F}
+.facts2 b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
+.facts2 sup a{color:var(--link)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#8391A8}
+.step-nav button{font:inherit;color:#fff;background:none;border:1.5px solid #34465F;border-radius:8px;padding:7px 14px;cursor:pointer}
+.step-nav button:hover{border-color:var(--honey);color:var(--honey)}
+.panel.sky .play-nav{border:0;gap:10px}
+.panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
+.bcs{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+@media (max-width:860px){.bcs{grid-template-columns:1fr}}
+.bc-list{display:grid;gap:8px}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}.cbtn:last-child:nth-child(odd){grid-column:1/-1}}
+.cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
+.cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
+.cbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] b{color:#fff}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.bc{background:var(--ink);color:#EEF2F8;border-radius:16px;padding:28px 28px 30px;box-shadow:8px 8px 0 var(--honey)}
+.bc[hidden]{display:none}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bc h3{font-size:26px;color:#fff}
+.bc .lead{color:#B5C0D0;margin-top:6px;font-size:16px}
+.threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
+.threat.mid{background:#3A2E10;color:var(--honey)}
+.bc-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+@media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
+.bc-cols div,.bc-q{border:1.5px solid #34465F;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
+.bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.bc-cols div:last-child h4{color:var(--honey)}
+.bc-cols p{font-size:15.5px;color:#DDE3EC}
+.bc-q{margin-top:14px;background:#1D3150;border-color:var(--honey)}
+.bc-q p{font-family:var(--display);font-size:19px;font-weight:500;color:#fff}
+.bc sup a{color:var(--sky)}
+
+/* ===== Pentera theme ===== */
+:root{
+  --ink:#132735;
+  --ink-2:#1B3446;
+  --graphite:#566573;
+  --honey:#FC6313;
+  --honey-soft:#FFE3D1;
+  --sky:#9DB3C4;
+  --sky-soft:#E7EEF3;
+  --coral:#FC6313;
+  --lilac:#DCE3E9;
+  --fog:#F3F5F7;
+  --rule:#DDE3E8;
+  --link:#C2410C;
+  --display:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --poster:'Anton','Oswald','Arial Narrow',Impact,sans-serif;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(40px,4.6vw,64px);line-height:1.02;text-transform:uppercase}
+.sh h2,.contact h2{font-size:40px;line-height:1.05}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+mark,h1 mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--honey)}
+.status:before{background:var(--honey);clip-path:none;width:8px;height:8px}
+.toc a.active{border-left-color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:400;font-size:19px;letter-spacing:.02em}
+.hero sup a,.panel.ink sup a{color:var(--honey)}
+.lede b{color:#fff}
+/* Band on ink */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#2B4457!important}
+.band small{color:var(--honey);border-color:#2B4457}
+.band b{color:#fff;font-size:clamp(34px,26cqi,64px);letter-spacing:.01em}
+.band span{color:#C9D3DC}
+.band sup a{color:var(--honey)}
+/* Plays panel orange */
+.panel.sky{background:var(--honey)}
+.panel.sky .sh p,.panel.sky .dl dd{color:#1A0E05}
+.panel.sky .dl dt{color:#3A1A05}
+.panel.sky .insight{border-color:var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.6)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff}
+.tok{color:#8A2E00;background:var(--honey-soft)}
+/* Plan panel */
+.panel.honey{background:#FFD9C0}
+.panel.honey:after{opacity:.22}
+.phase .when{color:#6A2A00}
+.panel.honey .sh p{color:#4A2308}
+.phase:last-child .out b{color:var(--honey)}
+/* Square tiles in place of hexes */
+.tiles2{display:grid;grid-template-columns:repeat(3,76px);gap:6px}
+.tiles2 .col-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);padding-bottom:4px;border-bottom:1.5px solid var(--ink);margin-bottom:2px}
+.sq{height:64px;border:1.5px solid var(--ink);border-radius:4px;background:var(--fog);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px;transition:background .15s,transform .15s}
+.sq small{font-size:9.5px;color:var(--graphite)}
+.sq:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.sq.on{background:var(--honey)}
+.sq.on small{color:var(--ink)}
+.sq.home{font-weight:800}
+.sq.home:after{content:"";width:6px;height:6px;background:var(--ink);margin-top:2px}
+/* Hero module grid */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative}
+.mod{aspect-ratio:1;border:2px solid #fff;background:var(--ink-2);color:#fff;font-family:var(--mono);font-size:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;text-align:left;line-height:1.2;transition:transform .15s,background .15s,box-shadow .15s;position:relative}
+.mod:before{content:"";position:absolute;top:10px;left:10px;width:8px;height:8px;background:currentColor;opacity:.6}
+.mod:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--honey)}
+.mod.on{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--honey);transform:translate(-3px,-3px)}
+.mod.core{background:var(--honey);color:var(--ink);font-family:var(--poster);font-size:19px;letter-spacing:.03em;text-transform:uppercase;border-color:var(--honey)}
+.mod.core.on{background:#fff;border-color:#fff}
+.mod:focus-visible{outline:2px solid var(--honey);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mod,.sq{transition:none}}
+/* Fig 1 funnel */
+.fun{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.fun-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.fun-bar b{color:var(--ink);font-weight:500}
+.fun-bar .hint{color:var(--link)}
+.fun-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+@media (max-width:1180px){.fun-grid{grid-template-columns:1fr}}
+.tiers{padding:18px;display:grid;gap:8px;border-right:1.5px solid var(--ink)}
+@media (max-width:1180px){.tiers{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;width:var(--w);min-width:210px;max-width:100%;border:1.5px solid var(--ink);border-radius:6px;background:var(--fog);padding:10px 14px;font:inherit;text-align:left;cursor:pointer;transition:background .15s}
+.tier span{font-size:14px;line-height:1.3;color:var(--ink)}
+.tier b{font-family:var(--poster);font-weight:400;font-size:26px;color:var(--ink);letter-spacing:.01em}
+.tier:hover{background:#fff}
+.tier.on{background:var(--ink)}
+.tier.on span,.tier.on b{color:#fff}
+.tier.last.on b{color:var(--honey)}
+.fun-d{padding:18px 20px 20px}
+.fun-d h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fun-d p{font-size:15.5px;color:#26303F}
+.fun-d ul{list-style:none;margin-top:12px;display:grid;gap:0;font-family:var(--mono);font-size:12.5px}
+.fun-d li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--rule)}
+.fun-d li s{text-decoration:none;font-size:10px;border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center;background:var(--honey-soft)}
+/* Fig 2 scanner vs path */
+.scan li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #2F4A5E;font-size:13.5px;color:#C9D3DC}
+.scan{list-style:none}
+.scan b{font-family:var(--mono);font-size:12px;font-weight:500;color:#FCA5A5;background:#3A1A1A;border-radius:4px;padding:2px 0;text-align:center}
+.pathv{display:grid;gap:0;margin-top:4px}
+.pnode{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;background:#fff;font-size:14.5px}
+.pnode i{font-style:normal;font-family:var(--mono);font-size:12px;width:26px;height:26px;display:grid;place-items:center;background:var(--ink);color:#fff}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{text-decoration:none;font-family:var(--mono);font-size:10.5px;background:var(--honey);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:1px 6px;white-space:nowrap}
+.plink{height:18px;width:2px;background:var(--ink);margin-left:26px}
+.pane.hc .tally{color:#1F7A4D}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey)}
+.mods{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mod{font-size:11.5px;padding:8px;overflow-wrap:anywhere;min-width:0}
+@media (max-width:900px){.art{max-width:320px}}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.art{max-width:340px}
+.mod{overflow-wrap:normal;font-size:11px}
+.mod.core{font-size:20px}
+h1{font-size:clamp(40px,4.3vw,60px);line-height:1.08}
+h1 mark{padding:0 .12em;border-radius:4px}
+.tiles2{grid-template-columns:repeat(3,84px)}
+.tiles2 .col-h{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}
+@media (min-width:1041px) and (max-width:1240px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}.cstep{padding:14px 10px 16px}.cstep b{font-size:15px}}
+@media (max-width:900px){.art{max-width:260px}}
+.path{grid-template-rows:repeat(6,auto)}
+.path li{grid-row:span 6}
+.path .exit{font-size:13.5px;color:#26303F;margin-top:12px;padding:10px 12px;background:var(--fog);border-left:3px solid var(--honey);border-radius:0 6px 6px 0;align-self:stretch}
+.path .exit b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+@media (max-width:900px){.path{grid-template-rows:none}}
+.stalls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:1180px){.stalls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stalls{grid-template-columns:1fr}}
+.stalls div{border:1.5px solid var(--ink);border-radius:10px;padding:16px 18px;background:#fff;box-shadow:4px 4px 0 var(--honey)}
+.stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.stalls p{font-size:14.5px;color:#26303F}
+@media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
+.mods{container-type:inline-size}
+.mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
+.mod.core{font-size:clamp(13px,6.2cqi,20px)}
+
+/* ===== LogicGate theme ===== */
+:root{
+  --ink:#08004B;
+  --ink-2:#15107A;
+  --graphite:#55536E;
+  --honey:#7CFA72;
+  --honey-soft:#E4FDE1;
+  --blue:#0000CC;
+  --blue-soft:#E8E8FF;
+  --sky:#B8B8FF;
+  --sky-soft:#EEEEFF;
+  --fog:#F4F4FA;
+  --rule:#DEDDEA;
+  --link:#0000CC;
+  --display:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --poster:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:800;letter-spacing:-.03em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h1 mark,mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--blue);color:#fff;border-color:var(--ink)}
+.banner b{color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--honey)}
+.toc a.active{border-left-color:var(--blue)}
+.hero sup a,.panel.ink sup a,.band sup a{color:var(--honey)}
+.btn.pri{background:var(--honey);border-color:var(--honey);color:var(--ink)}
+.band b{font-size:clamp(32px,22cqi,58px)}
+.band small{color:var(--honey)}
+.track .who b,.ttt h4{color:var(--honey)}
+.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:#1D2A00}
+.step-p{box-shadow:8px 8px 0 var(--blue)}
+.step-p blockquote{border-color:var(--blue)}
+.pane.hc{box-shadow:8px 8px 0 var(--honey)}
+.arrow-mid span{background:var(--honey)}
+/* Plays panel in LogicGate blue */
+.panel.sky{background:var(--blue);color:#fff}
+.panel.sky .sh h2{color:#fff}
+.panel.sky .sh p{color:#DADAFF}
+.panel.sky .insight{color:#fff;border-color:var(--honey)}
+.panel.sky .dl dt,.panel.sky .label{color:var(--honey)}
+.panel.sky .dl dd{color:#F0F0FF}
+.panel.sky sup a{color:var(--honey)}
+.panel.sky .mail sup a{color:var(--link)}
+.panel.sky .mail{box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.panel.sky .play-nav button:hover{background:rgba(255,255,255,.24)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--honey);color:var(--ink);border-color:var(--honey)}
+.panel.sky:after{mix-blend-mode:screen;opacity:.12}
+.tok{color:#1F1FA8;background:var(--blue-soft)}
+/* Plan panel */
+.panel.honey{background:#E4E4FF}
+.panel.honey .sh p{color:#2A2870}
+.phase .when{color:#2A2870}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents that were orange */
+.fun{box-shadow:8px 8px 0 var(--honey)}
+.fun-bar .hint{color:var(--blue)}
+.reg .lead{border-left-color:var(--blue)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--blue)}
+.path .exit{border-left-color:var(--blue)}
+.path .m{background:var(--blue-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--blue)}
+.bc{box-shadow:8px 8px 0 var(--honey)}
+.bc-q{border-color:var(--honey)}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#1F2A5A}
+.letter{border-left-color:var(--blue)}
+.sources li:target{background:var(--honey-soft)}
+.mod.core{background:var(--honey);border-color:var(--honey);color:var(--ink);font-family:var(--poster);font-weight:800;text-transform:none;letter-spacing:-.02em}
+.mod:hover{box-shadow:4px 4px 0 var(--honey)}
+.mod.on{box-shadow:5px 5px 0 var(--honey)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px}
+/* Fig 1: risk heat map */
+.hm-wrap{padding:18px;border-right:1.5px solid var(--ink);display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 22px;gap:6px}
+@media (max-width:1180px){.hm-wrap{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.hm-y{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm-x{grid-column:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.cell{aspect-ratio:1.35;border:1.5px solid var(--ink);border-radius:5px;font-family:var(--mono);font-size:15px;font-weight:500;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.cell.l1{background:#F1F1FA}
+.cell.l2{background:#C9C9FF}
+.cell.l3{background:#6E6EF5;color:#fff}
+.cell.l4{background:#0000CC;color:#fff}
+.cell.empty{color:transparent}
+.cell:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cell.on{outline:3px solid var(--honey);outline-offset:1px;box-shadow:4px 4px 0 var(--ink)}
+.fun-d li s{background:var(--blue-soft)}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}}
+/* Fig 2: files vs connected record */
+.files li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed #2E2A7A;font-family:var(--mono);font-size:12.5px;color:#D6D6F5;overflow-wrap:anywhere}
+.files{list-style:none}
+.files i{width:16px;height:20px;border:1.5px solid #8C8AD8;border-radius:2px;display:block;position:relative}
+.files i:after{content:"";position:absolute;left:3px;right:3px;top:6px;height:1.5px;background:#8C8AD8;box-shadow:0 4px 0 #8C8AD8}
+.pnode i{background:var(--blue)}
+.pnode.goal{background:var(--ink)}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--honey-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:#0000CC}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey);color:var(--ink)}
+h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
+.band b,.figs b{letter-spacing:-.02em}
+.band b{font-size:clamp(24px,20cqi,58px)}
+.panel.sky .mail{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="prog" id="progress" aria-hidden="true"></div>
+<div class="banner">Prepared for <b>Joe Zelinskas</b>, VP of Sales, North America, by Eric Iannello</div>
+
+<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><b>LogicGate plan</b></a><a href="#contact">Contact</a></div>
+
+<div class="shell">
+  <aside class="side" aria-label="Contents">
+    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><span><b>PNW and Canada</b><small>LogicGate plan</small></span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#know">What I know</a></li>
+      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#territory">Territory</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Running the deal</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#plan">First 90 days</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="side-foot">
+      <span>Eric Iannello</span>
+      <span>Boise, Idaho</span>
+      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Overview -->
+    <section id="top" class="hero grain">
+      <div>
+        <div class="doc-meta">
+          <span class="status"><b>Proposal</b></span>
+          <span>Strategic Account Executive, PNW and Canada</span>
+          <span>For <b>Joe Zelinskas</b>, VP of Sales, North America</span>
+          <span>September 2026</span>
+        </div>
+        <h1>Every risk program has the data. LogicGate <mark>connects it.</mark></h1>
+        <p class="lede">LogicGate is a Leader in both Gartner's Magic Quadrant and Forrester's Wave for GRC.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+        <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
+      </div>
+      <div class="art">
+        <div class="mods" role="group" aria-label="Risk Cloud applications. Select a square to read about it.">
+          <button class="mod" data-t="Third-party risk" data-d="Vendor intake, tiering, assessments and ongoing monitoring in one workflow.">Third party</button>
+          <button class="mod" data-t="Enterprise risk" data-d="One risk register across the business, with owners, scoring and board reporting.">Enterprise risk</button>
+          <button class="mod" data-t="Controls compliance" data-d="Map controls once to many frameworks, test them and collect evidence.">Controls</button>
+          <button class="mod" data-t="Cyber risk" data-d="Cyber risks tied to the assets, controls and vendors behind them.">Cyber risk</button>
+          <button class="mod core on" data-t="Risk Cloud" data-d="One no-code platform and data model, so every program shares the same records.">Risk Cloud</button>
+          <button class="mod" data-t="AI governance" data-d="An inventory of AI use cases, with review, approval and monitoring workflows.">AI governance</button>
+          <button class="mod" data-t="Policy management" data-d="Policies, exceptions and attestations linked to the controls they govern.">Policy</button>
+          <button class="mod" data-t="Business continuity" data-d="Continuity plans and impact analysis connected to the risks and vendors they depend on.">Continuity</button>
+          <button class="mod" data-t="GRC Agents" data-d="AI agents for third-party risk, enterprise risk, AI governance and continuity, broadly available in the Summer 2026 release.">GRC Agents</button>
+        </div>
+        <p class="hx-say" id="hxSay" aria-live="polite"><b>Risk Cloud</b>One no-code platform and data model, so every program shares the same records.</p>
+        <p class="hx-hint">Select a square to explore the platform</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
+        <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
+        <div><dt>Territory</dt><dd>PNW and Canada</dd></div>
+        <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
+      </dl>
+    </section>
+    <div class="float">
+      <figure>
+        <div class="fun" role="group" aria-label="Enterprise risk heat map. Select a cell to see the risks in it.">
+          <div class="fun-bar"><span><b>risk register</b> enterprise view</span><span class="hint">Select a cell</span><span>illustrative</span></div>
+          <div class="fun-grid">
+            <div class="hm-wrap">
+              <div class="hm-y">Impact</div>
+              <div class="hm">
+                <button class="cell l2 empty" data-l="1" data-i="5" data-r="[]" aria-label="Likelihood 1, impact 5, 0 risks">0</button>
+                <button class="cell l3 empty" data-l="2" data-i="5" data-r="[]" aria-label="Likelihood 2, impact 5, 0 risks">0</button>
+                <button class="cell l3 empty" data-l="3" data-i="5" data-r="[]" aria-label="Likelihood 3, impact 5, 0 risks">0</button>
+                <button class="cell l4" data-l="4" data-i="5" data-r="[[&quot;Regulatory change missed&quot;, &quot;compliance&quot;]]" aria-label="Likelihood 4, impact 5, 1 risks">1</button>
+                <button class="cell l4 on" data-l="5" data-i="5" data-r="[[&quot;Critical vendor outage&quot;, &quot;third party&quot;], [&quot;Ransomware on core systems&quot;, &quot;cyber&quot;]]" aria-label="Likelihood 5, impact 5, 2 risks">2</button>
+                <button class="cell l1 empty" data-l="1" data-i="4" data-r="[]" aria-label="Likelihood 1, impact 4, 0 risks">0</button>
+                <button class="cell l2 empty" data-l="2" data-i="4" data-r="[]" aria-label="Likelihood 2, impact 4, 0 risks">0</button>
+                <button class="cell l3" data-l="3" data-i="4" data-r="[[&quot;Key control failure in financial close&quot;, &quot;controls&quot;], [&quot;Data residency gap in Canada&quot;, &quot;privacy&quot;]]" aria-label="Likelihood 3, impact 4, 2 risks">2</button>
+                <button class="cell l4 empty" data-l="4" data-i="4" data-r="[]" aria-label="Likelihood 4, impact 4, 0 risks">0</button>
+                <button class="cell l4" data-l="5" data-i="4" data-r="[[&quot;Unreviewed AI use cases&quot;, &quot;AI governance&quot;]]" aria-label="Likelihood 5, impact 4, 1 risks">1</button>
+                <button class="cell l1 empty" data-l="1" data-i="3" data-r="[]" aria-label="Likelihood 1, impact 3, 0 risks">0</button>
+                <button class="cell l2" data-l="2" data-i="3" data-r="[[&quot;Policy attestations overdue&quot;, &quot;policy&quot;]]" aria-label="Likelihood 2, impact 3, 1 risks">1</button>
+                <button class="cell l2 empty" data-l="3" data-i="3" data-r="[]" aria-label="Likelihood 3, impact 3, 0 risks">0</button>
+                <button class="cell l3" data-l="4" data-i="3" data-r="[[&quot;Single-source supplier&quot;, &quot;third party&quot;]]" aria-label="Likelihood 4, impact 3, 1 risks">1</button>
+                <button class="cell l3 empty" data-l="5" data-i="3" data-r="[]" aria-label="Likelihood 5, impact 3, 0 risks">0</button>
+                <button class="cell l1" data-l="1" data-i="2" data-r="[[&quot;Office lease renewal&quot;, &quot;operational&quot;]]" aria-label="Likelihood 1, impact 2, 1 risks">1</button>
+                <button class="cell l1 empty" data-l="2" data-i="2" data-r="[]" aria-label="Likelihood 2, impact 2, 0 risks">0</button>
+                <button class="cell l2" data-l="3" data-i="2" data-r="[[&quot;Continuity plan out of date&quot;, &quot;resilience&quot;]]" aria-label="Likelihood 3, impact 2, 1 risks">1</button>
+                <button class="cell l2 empty" data-l="4" data-i="2" data-r="[]" aria-label="Likelihood 4, impact 2, 0 risks">0</button>
+                <button class="cell l3 empty" data-l="5" data-i="2" data-r="[]" aria-label="Likelihood 5, impact 2, 0 risks">0</button>
+                <button class="cell l1 empty" data-l="1" data-i="1" data-r="[]" aria-label="Likelihood 1, impact 1, 0 risks">0</button>
+                <button class="cell l1 empty" data-l="2" data-i="1" data-r="[]" aria-label="Likelihood 2, impact 1, 0 risks">0</button>
+                <button class="cell l1 empty" data-l="3" data-i="1" data-r="[]" aria-label="Likelihood 3, impact 1, 0 risks">0</button>
+                <button class="cell l1 empty" data-l="4" data-i="1" data-r="[]" aria-label="Likelihood 4, impact 1, 0 risks">0</button>
+                <button class="cell l2 empty" data-l="5" data-i="1" data-r="[]" aria-label="Likelihood 5, impact 1, 0 risks">0</button>
+              </div>
+              <div class="hm-x">Likelihood</div>
+            </div>
+            <div class="fun-d">
+              <h4 id="fH">Likelihood 5, impact 5</h4>
+              <p id="fP">2 open risks. Each one links to its owner, its controls and the vendors or systems involved.</p>
+              <ul id="fL"><li>Critical vendor outage<s>third party</s></li><li>Ransomware on core systems<s>cyber</s></li></ul>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 1</b><span>One register for the whole business. Every risk links to the vendors, controls and policies behind it, so the board view stays current. Illustrative data.</span></figcaption>
+      </figure>
+    </div>
+    <div class="band" role="list">
+      <div role="listitem"><small>Gartner</small><b>Leader</b><span>Magic Quadrant for GRC Tools, Assurance Leaders<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><small>Forrester</small><b>1 of 4</b><span>Leaders in GRC platforms, Q2 2026<sup><a href="#s2">2</a></sup></span></div>
+      <div role="listitem"><small>Customers</small><b>2.6x</b><span>average return reported on Risk Cloud<sup><a href="#s3">3</a></sup></span></div>
+      <div role="listitem"><small>Time to value</small><b>31 days</b><span>on average, per the Value Realization Tool<sup><a href="#s1">1</a></sup></span></div>
+    </div>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <h2>What I know about LogicGate</h2>
+        <p>The product, the buyer, and why this year matters.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>Risk Cloud is a no-code GRC platform with one data model for risks, controls, vendors, policies and issues, and applications for third-party risk, enterprise risk, controls compliance, cyber risk, AI governance and more.</p>
+          <p>The Summer 2026 release made GRC Agents broadly available across third-party risk, enterprise risk, AI governance and business continuity.<sup><a href="#s4">4</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>The chief risk officer, CISO, chief compliance officer or chief audit executive, usually with a GRC program lead as the champion.</p>
+          <p>Advisory firms shape many decisions, and LogicGate now has a joint business relationship with PwC.<sup><a href="#s4">4</a></sup></p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
+          <p>Regulators keep raising the bar, from the SEC's cyber disclosure rules in the US to OSFI's third-party risk guideline in Canada.<sup><a href="#s5">5</a>,<a href="#s6">6</a></sup></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <h2>The conversation I would have with a chief risk officer</h2>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CRO or CISO, with the evidence behind each step.</p>
+      </div>
+      <figure class="compare">
+        <div class="cmp-grid">
+          <div class="pane">
+            <div class="pane-lbl"><span>The program today</span><b>5 files</b></div>
+            <ul class="files">
+              <li><i></i>Vendor_Risk_v14_FINAL.xlsx</li>
+              <li><i></i>Risk_Register_Q3.xlsx</li>
+              <li><i></i>Controls_Testing_2026.xlsx</li>
+              <li><i></i>Policy_Attestations.xlsx</li>
+              <li><i></i>Continuity plans on SharePoint</li>
+            </ul>
+            <div class="tally"><span><b>5</b>owners</span><span><b>0</b>links</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="pane hc">
+            <div class="pane-lbl"><span>In Risk Cloud</span><b>one record</b></div>
+            <div class="pathv">
+              <div class="pnode"><i>1</i>Vendor: payroll provider<s>third party</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>2</i>Risk: payroll service outage<s>enterprise</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>3</i>Control: backup payroll run<s>controls</s></div>
+              <div class="plink"></div>
+              <div class="pnode goal"><i>4</i>Board risk report<s>live</s></div>
+            </div>
+            <div class="tally"><span><b>1</b>connected record</span><span><b>4</b>teams served</span></div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 2</b><span>The reframe in one picture. The same facts sit in five files owned by five people. Connected, one vendor record answers the board's question. Illustrative data.</span></figcaption>
+      </figure>
+      <div class="steps" role="tablist" aria-label="Challenger steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why LogicGate</small></button>
+      </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most enterprise risk programs live in spreadsheets, SharePoint and a legacy GRC tool few people like. Each team keeps its own register, and the board report takes weeks to assemble.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Scattered registers</b>Risk, vendor, control and policy data in separate files</div><div><b>Slow answers</b>Weeks to respond to one board or regulator question</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>More assessments won't close the gap. The risk sits in the connections between vendors, controls and policies, and a spreadsheet has no way to hold those connections.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Collect more assessments</div><div><b>To</b>Connect the data the program already has</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the manual work costs. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>1,170 hours</b>Saved a year on average in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>832 hours</b>Saved a year on average in third-party risk<sup><a href="#s3">3</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The audit committee asks which vendors touch customer data and which controls cover them. The team spends two weeks reconciling spreadsheets, and the answer is out of date by the time it lands.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The CRO answers the board with a best guess</div><div><b>Burnout</b>Skilled analysts spend their weeks copying data between files</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading programs run on one connected data model. A vendor, the risks it creates, the controls that cover them and the policies behind them live in one record, and agents take on the repetitive work.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One data model</b>Every program shares the same records</div><div><b>No code</b>The GRC team changes its own workflows</div><div><b>Agents</b>Repetitive review and testing handled automatically</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>LogicGate Risk Cloud, a Leader for Gartner and Forrester, where customers report an average 2.6x return.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>7.35x</b>Average return in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>31 days</b>Average time to value<sup><a href="#s1">1</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>The first call changes how they see their program. The demo comes after they agree the connections between registers are where risk hides.</p></div>
+        <div><h4>Tailor</h4><p>Board-ready reporting for the CRO, fewer questionnaires for third-party risk, audit readiness for the CAE, and a total cost comparison for finance.</p></div>
+        <div><h4>Take control</h4><p>Name the cost of the next audit finding, push back on "our ServiceNow team will build it," and leave every meeting with a dated next step.</p></div>
+      </div>
+    </section>
+
+    <!-- Territory -->
+    <section id="territory">
+      <div class="sh">
+        <h2>Where I would spend my time</h2>
+        <p>The territory splits into four markets with different regulators and different reasons to talk. Select a city to find its region.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles2" role="group" aria-label="Territory cities">
+            <span class="col-h">Puget Sound</span><span class="col-h">Oregon</span><span class="col-h">West Canada</span><span class="col-h">East Canada</span>
+            <button class="sq" data-r="sea">SEA<small>Seattle</small></button>
+            <button class="sq" data-r="or">PDX<small>Portland</small></button>
+            <button class="sq" data-r="wc">YVR<small>Vancouver</small></button>
+            <button class="sq" data-r="ec">YYZ<small>Toronto</small></button>
+            <button class="sq" data-r="sea">BEL<small>Bellevue</small></button>
+            <button class="sq" data-r="or">BVT<small>Beaverton</small></button>
+            <button class="sq" data-r="wc">YYC<small>Calgary</small></button>
+            <button class="sq" data-r="ec">YUL<small>Montreal</small></button>
+            <button class="sq" data-r="sea">TAC<small>Tacoma</small></button>
+            <button class="sq" data-r="or">EUG<small>Eugene</small></button>
+            <button class="sq" data-r="wc">YEG<small>Edmonton</small></button>
+            <button class="sq" data-r="ec">YOW<small>Ottawa</small></button>
+          </div>
+          <p class="map-note">Based in Boise, with Seattle, Portland and Vancouver a short flight away, and Toronto for quarterly trips.</p>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Region</th><th>Who buys, why, and what I lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="sea"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond, Tacoma</span></td><td data-h="Who buys and why">Public retail, travel, aerospace and health plans, where the SEC's cyber disclosure rules put risk in front of the board.<div class="acc">Starbucks, Nordstrom, Expedia, Alaska Airlines, Premera Blue Cross</div><div class="lead"><b>Lead with</b>Third-party and cyber risk the board can see</div></td></tr>
+              <tr data-r="or"><td>Oregon<span class="st">Portland, Beaverton, Hillsboro, Eugene</span></td><td data-h="Who buys and why">Apparel, manufacturing, health systems and utilities with global suppliers and continuity exposure.<div class="acc">Nike, Columbia Sportswear, Daimler Truck North America, Legacy Health, Portland General Electric</div><div class="lead"><b>Lead with</b>Enterprise risk and continuity on one register</div></td></tr>
+              <tr data-r="wc"><td>Western Canada<span class="st">Vancouver, Calgary, Edmonton</span></td><td data-h="Who buys and why">Telecom, energy, retail and airlines managing operational resilience across large vendor networks.<div class="acc">TELUS, lululemon, Suncor Energy, WestJet</div><div class="lead"><b>Lead with</b>Operational resilience and third-party risk at scale</div></td></tr>
+              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third-party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third-party risk on one platform<sup><a href="#s6">6</a></sup></div></td></tr>
+            </tbody>
+          </table>
+          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments, the Canada split and current customers with the team before any outreach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays" class="panel sky grain">
+      <div class="sh">
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Out of spreadsheets</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Third-party risk</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Legacy GRC</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Risk for the board</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">A risk program run on spreadsheets is only as current as the last person who updated them.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises running compliance and risk in spreadsheets and SharePoint.</dd></div>
+            <div><dt class="label">Signal</dt><dd>GRC analyst job posts that list Excel and SharePoint as core tools.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of GRC or compliance first, then the CRO or CISO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many spreadsheets does one audit request touch?</li><li>How long does it take to map a control to a new framework?</li><li>Who owns the master copy?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> compliance program</li><li data-v="B">Spreadsheet idea</li><li data-v="C">Control mapping question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a GRC analyst with strong Excel and SharePoint skills, so guessing the program still runs on spreadsheets.</p><p>Think mapping controls once and testing them in one place could help?</p><p><span class="tok">{{customer_name}}</span> saved 1,170 hours a year in controls compliance.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 1,170 hours sounds like seller cherry picking.</p><p>If we modeled the hours your team spends on one framework today, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the spreadsheets might be holding up?</p><p>Basically your team would test controls once and reuse the evidence across every framework.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> controls compliance average<sup><a href="#s3">3</a></sup></span><span><b>Value</b> hours back every audit cycle</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">Most vendor programs assess every vendor the same way, so the critical few get the same attention as the office supplier.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises with hundreds or thousands of vendors, and Canadian institutions under OSFI.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Vendor risk job posts, or a financial institution working to Guideline B-10.<sup><a href="#s6">6</a></sup></dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of third-party risk first, then the CRO and procurement.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How do you decide which vendors get a full assessment?</li><li>How long does onboarding a critical vendor take?</li><li>How do vendor issues reach the enterprise risk register?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Third-Party Risk</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vendor reviews</li><li data-v="B">Vendor tiering idea</li><li data-v="C">B-10 question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a vendor risk analyst, so guessing assessments are piling up faster than the team can review them.</p><p>Think tiering vendors by risk and letting agents handle the first review could help?</p><p><span class="tok">{{customer_name}}</span> saved 832 hours a year on third-party risk.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 832 hours sounds like seller cherry picking.</p><p>If we walked your top 20 vendors through a tiered workflow, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the vendor program might be in good shape?</p><p>Basically your team would spend its time on the vendors that matter and link their risks to the enterprise register.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> third-party risk average<sup><a href="#s3">3</a></sup></span><span><b>Recognition</b> Forrester TPRM Leader<sup><a href="#s2">2</a></sup></span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">Legacy GRC tools need a developer to change one workflow, so the program bends to fit the tool.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises on Archer or a custom ServiceNow GRC build.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Job posts for Archer administrators or ServiceNow GRC developers.</dd></div>
+            <div><dt class="label">Personas</dt><dd>GRC program lead first, then the CRO or CISO and IT.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How long did your last workflow change take?</li><li>How many people keep the tool running?</li><li>When does the contract renew?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Director of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> GRC platform</li><li data-v="B">Workflow change idea</li><li data-v="C">Renewal question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring an Archer administrator, so guessing every workflow change waits on a small technical team.</p><p>Think a platform your GRC team can change on its own could help?</p><p><span class="tok">{{customer_name}}</span> saw value from Risk Cloud in 31 days.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 31 days sounds like seller cherry picking.</p><p>If we rebuilt one of your current workflows live with a solutions engineer, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current platform might be working?</p><p>Basically your GRC team would own its own workflows and change them the same day.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> 31 day average time to value<sup><a href="#s1">1</a></sup></span><span><b>Value</b> no developer queue</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">Boards and regulators now expect a current view of risk, and a quarterly slide deck built by hand can't keep up.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Public companies under the SEC's cyber disclosure rules, and enterprises building an ERM program.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s5">5</a></sup></dd></div>
+            <div><dt class="label">Personas</dt><dd>CRO or head of ERM first, then the CFO and audit committee liaison.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How long does the quarterly board risk report take to build?</li><li>How do cyber and vendor risks reach it?</li><li>What did the audit committee ask for last quarter?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Chief Risk Officer</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> board risk reporting</li><li data-v="B">Risk register idea</li><li data-v="C">Audit committee question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> expanded its risk management disclosure this year, so guessing the board wants a more current view of risk.</p><p>Think one register that pulls in cyber, vendor and operational risk could help?</p><p><span class="tok">{{customer_name}}</span> saved 570 hours a year on enterprise risk.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 570 hours sounds like seller cherry picking.</p><p>If we rebuilt last quarter's board report from one connected register, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be covered?</p><p>Basically your team would pull the board view straight from the register, current on the day it's presented.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s3">3</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s5">5</a></sup></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where LogicGate wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      </div>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>ServiceNow IRM</b><small>The IT platform already in place</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Archer</b><small>The long-time incumbent</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>AuditBoard</b><small>Audit and SOX led</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>OneTrust</b><small>Privacy and vendor questionnaires</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Spreadsheets</b><small>Excel and SharePoint</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>ServiceNow IRM</h3><span class="threat">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>An enterprise license the company already owns, and a strong relationship with IT.</p></div><div><h4>Where LogicGate wins</h4><p>A platform the GRC team configures itself, without a ServiceNow developer queue, and top Forrester scores for user experience and pricing transparency.<sup><a href="#s2">2</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How long does a workflow change take when it waits in the ServiceNow development backlog?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>Archer</h3><span class="threat mid">Legacy</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A deep installed base in regulated industries and years of custom configuration.</p></div><div><h4>Where LogicGate wins</h4><p>No-code configuration, GRC Agents and a modern interface, with average time to value of 31 days.<sup><a href="#s1">1</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How many admins or consultants does it take to keep Archer running each year?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>AuditBoard</h3><span class="threat">High threat</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Loved by internal audit and SOX teams, and often brought in by the chief audit executive.</p></div><div><h4>Where LogicGate wins</h4><p>One connected data model across enterprise risk, third-party risk, cyber, controls and AI governance, so the program reaches beyond audit.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Is this an audit tool decision, or a decision about the whole risk program?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>OneTrust</h3><span class="threat mid">Adjacent</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Strong in privacy programs and vendor questionnaires, and often already owned by legal.</p></div><div><h4>Where LogicGate wins</h4><p>Vendor risk connected to enterprise risk, controls and continuity in one record, and a Forrester Leader in third-party risk.<sup><a href="#s2">2</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Does your vendor program feed the enterprise risk register, or stop at the questionnaire?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>Spreadsheets</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Free, flexible and familiar to everyone on the team.</p></div><div><h4>Where LogicGate wins</h4><p>One source of truth with workflows and an audit trail, where customers report an average 2.6x return.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How long did the last board risk report take to build, and who checked the formulas?</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <h2>Running the deal</h2>
+        <p>Challenger earns the first meeting and shapes the problem. MEDDPICC tracks what is proven and what is still missing. Every stage has exit criteria, and every deal has a mutual action plan the champion helped write.</p>
+      </div>
+      <ol class="path">
+        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the CRO or CISO and agree that a disconnected program is worth fixing this year.</p><p class="exit"><b>Exit when</b>The executive names the problem, the cost and who else needs to be involved.</p><span class="m">Teach</span></li>
+        <li><span class="when">Months 1 to 2</span><h4>Discovery and business case</h4><p>Map programs, spreadsheets, tools, audit findings and hours spent with a Solutions Engineer.</p><p class="exit"><b>Exit when</b>Pain is priced, the economic buyer is known and the first use case is agreed.</p><span class="m">Tailor</span></li>
+        <li><span class="when">Months 2 to 4</span><h4>Use case demo</h4><p>The Solutions Engineer builds the customer's own workflow in Risk Cloud, scored against written criteria.</p><p class="exit"><b>Exit when</b>Criteria are met and the champion has taken the results to the economic buyer.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 4 to 6</span><h4>Security and procurement</h4><p>Security review, legal and purchasing run in parallel, with any advisory partner, timed to the incumbent's renewal.</p><p class="exit"><b>Exit when</b>Paper process is complete and a signature date is agreed in the mutual plan.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 6 on</span><h4>Close and expand</h4><p>Start with the first use case, then connect third-party risk, enterprise risk, controls and AI governance.</p><p class="exit"><b>Exit when</b>Signed, with a rollout plan, a value review date and the next programs mapped.</p><span class="m">Take control</span></li>
+      </ol>
+      <h3 style="margin-bottom:18px">Where these deals stall, and what I do about it</h3>
+      <div class="stalls">
+        <div><h4>Every team wants its own requirements</h4><p>I agree the first use case with the executive sponsor, then phase the rest into the rollout plan so scope doesn't stall the decision.</p></div>
+        <div><h4>"ServiceNow can build it"</h4><p>The business case prices developer time, change requests and time to value, so the comparison covers total cost.</p></div>
+        <div><h4>An advisory firm shapes the RFP</h4><p>I work with the advisor early, including PwC through LogicGate's joint business relationship, so the criteria reflect the customer's program.</p></div>
+        <div><h4>No one owns cross-functional risk</h4><p>I map the CRO, CISO, compliance and audit early and find the executive who gains most from one connected program.</p></div>
+        <div><h4>Migration looks risky</h4><p>A solutions engineer scopes the data move during the demo stage, so the plan is part of the proposal.</p></div>
+        <div><h4>The legacy renewal slips past</h4><p>The incumbent's renewal and notice dates go into the mutual plan in discovery, and the close is timed to them.</p></div>
+      </div>
+      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
+      <div style="max-width:1060px">
+        <table class="medd stack">
+          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
+          <tbody>
+            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Hours spent on assessments, testing and reporting, audit findings, tool and services cost</td><td data-h="What I ask">How many hours a year go into building the board risk report and preparing for audit?</td><td data-h="Red flag">A program problem nobody has priced</td></tr>
+            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CRO, CISO or CCO, with the CFO on larger multi-year commits</td><td data-h="What I ask">Who owns the GRC budget across risk, security and compliance?</td><td data-h="Red flag">Only the program team is involved by the demo</td></tr>
+            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Configurability without developers, time to value, reporting, integrations, AI and security</td><td data-h="What I ask">What has to be true for LogicGate to be the clear choice?</td><td data-h="Red flag">An RFP written around a competitor's module list</td></tr>
+            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Use case demo, security review, business case, legal and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current GRC tools.</td><td data-h="Red flag">No one can describe what happens after the demo</td></tr>
+            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, legal, procurement, any advisory partner, and the incumbent's renewal date</td><td data-h="What I ask">When does the current contract renew, and how much notice does it need?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
+            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">An audit finding, a regulator request, a vendor incident or a board asking for a current view</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
+            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A GRC or third-party risk lead with influence, who gains from the win and can sell it internally</td><td data-h="What I ask">How would you present this to your CRO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
+            <tr><td>C</td><td>Competition</td><td data-h="What I validate">ServiceNow IRM, Archer, AuditBoard, OneTrust, spreadsheets and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self-sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for<sup><a href="#s7">7</a></sup></th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Large enterprise B2B SaaS sales</td><td data-h="Where I have done it">Sold to Fortune 500 accounts at Jamf and Netradyne, including Uber, Albertsons and AAA.</td></tr>
+            <tr><td>New pipeline from cold prospecting, partners, social, email and phone</td><td data-h="Where I have done it">$19.6M self-sourced at Netradyne through cold outbound, and $750K in my first quarter at Falkon.</td></tr>
+            <tr><td>A strategic territory plan for a targeted account list</td><td data-h="Where I have done it">Build tiered account plans for every territory, prioritized with intent and hiring signals.</td></tr>
+            <tr><td>Full cycle with a Solutions Engineer, from discovery to close</td><td data-h="Where I have done it">Ran discovery, demos with sales engineers, proposals and negotiation through close, including a $1.2M deal with Uber at Jamf.</td></tr>
+            <tr><td>A tech savvy seller who learns the platform front and back</td><td data-h="Where I have done it">Sold device management and security software to technical IT buyers at Jamf, and data infrastructure to Snowflake.</td></tr>
+            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to LogicGate's advisory partners such as PwC.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why LogicGate</h3>
+        <p>My career has been spent helping companies replace manual work with software that pays for itself. LogicGate does that for the teams that protect the business, with the analyst recognition to open doors. Building the Northwest and Canada into a flagship territory is the work I want to do.</p>
+        <p class="sig">Eric Iannello, Boise, Idaho</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan" class="panel honey grain">
+      <div class="sh">
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to LogicGate | Building the foundation</h3>
+          <ul>
+            <li>Learn Risk Cloud hands on with a Solutions Engineer: third-party risk, enterprise risk, controls, AI governance and GRC Agents</li>
+            <li>Work with sales leadership, Solutions Engineers and top reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Meet the partner team, including PwC and the advisory firms active in Seattle, Vancouver and Toronto</li>
+            <li>Build battlecards for ServiceNow IRM, Archer, AuditBoard and OneTrust</li>
+            <li>Audit named accounts in Salesforce for GRC hiring, OSFI-regulated institutions, legacy renewals and dormant opportunities</li>
+            <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
+            <li>Launch the first self-sourced wave, each account with its own insight and proof point</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a tested talk track</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook | Testing the territory</h3>
+          <ul>
+            <li>Review results with leadership and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays in waves by vertical, starting with insurers in Eastern Canada and public companies in Puget Sound</li>
+            <li>Multithread every target account across the CRO, CISO, compliance, audit and procurement</li>
+            <li>Hold insight meetings in place of first call demos, and price assessment hours, audit prep and tool cost in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities with a use case demo scoped for each</li>
+            <li>Host risk leader roundtables with partners in Seattle, Vancouver and Toronto, and work the local ISACA and IIA chapters</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first use case demos scheduled</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment | Owning the territory</h3>
+          <ul>
+            <li>Qualified deals moving through use case demos, security review and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process, partners and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion plans for current customers, from one use case to connected programs</li>
+            <li>Regular deal reviews with leadership, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first use case demos delivered, pipeline building toward 3x coverage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>Joe, I'd like to walk the team through this plan and hear where it's wrong.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=LogicGate%20Strategic%20AE%2C%20PNW%20and%20Canada">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://www.prnewswire.com/news-releases/logicgate-named-a-leader-in-the-grc-market-by-the-gartner-magic-quadrant-for-grc-tools-assurance-leaders-302601366.html" target="_blank" rel="noopener">PR Newswire, LogicGate named a Leader in the Gartner Magic Quadrant for GRC Tools, Assurance Leaders</a></li>
+        <li id="s2"><a href="https://www.prnewswire.com/news-releases/logicgate-recognized-as-one-of-only-four-leaders-in-governance-risk-and-compliance-platforms-q2-2026-report-by-independent-research-firm-302785214.html" target="_blank" rel="noopener">PR Newswire, LogicGate one of four Leaders in GRC Platforms, Q2 2026</a></li>
+        <li id="s3"><a href="https://www.prnewswire.com/news-releases/logicgates-value-realization-tool-reveals-customers-nearly-triple-investment-through-platform-efficiencies-302659858.html" target="_blank" rel="noopener">PR Newswire, LogicGate Value Realization Tool results</a></li>
+        <li id="s4"><a href="https://www.prnewswire.com/news-releases/logicgate-advances-agentic-grc-capabilities-with-its-summer-2026-release-302866798.html" target="_blank" rel="noopener">PR Newswire, LogicGate Summer 2026 Release</a></li>
+        <li id="s5"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
+        <li id="s6"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third-Party Risk Management</a></li>
+        <li id="s7"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the LogicGate Strategic Account Executive role. Not affiliated with or endorsed by LogicGate. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+  var prog=document.getElementById('progress');
+  function bar(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?window.scrollY/h*100:0)+'%'}
+  window.addEventListener('scroll',function(){spy();bar()},{passive:true});spy();bar();
+
+  function group(btns,onPick){
+    btns.forEach(function(b,i){
+      b.addEventListener('click',function(){onPick(i)});
+      b.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight'||k==='ArrowDown')n=i+1;else if(k==='ArrowLeft'||k==='ArrowUp')n=i-1;
+        if(n===null)return;e.preventDefault();n=(n+btns.length)%btns.length;btns[n].focus();onPick(n);
+      });
+    });
+  }
+  function select(btns,i){
+    btns.forEach(function(x,j){var on=j===i;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+
+  // Platform squares
+  var mods=[].slice.call(document.querySelectorAll('.mod')),say=document.getElementById('hxSay');
+  mods.forEach(function(m,i){m.setAttribute('aria-pressed',m.classList.contains('on'));m.addEventListener('click',function(){
+    mods.forEach(function(x,j){x.classList.toggle('on',j===i);x.setAttribute('aria-pressed',j===i)});
+    say.innerHTML='';var b=document.createElement('b');b.textContent=m.dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(m.dataset.d));
+  })});
+
+  // Heat map
+  var cells=[].slice.call(document.querySelectorAll('.cell')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL');
+  cells.forEach(function(c){c.setAttribute('aria-pressed',c.classList.contains('on'));c.addEventListener('click',function(){
+    cells.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var r=JSON.parse(c.dataset.r);
+    fH.textContent='Likelihood '+c.dataset.l+', impact '+c.dataset.i;
+    fP.textContent=r.length?(r.length+' open '+(r.length===1?'risk':'risks')+'. Each one links to its owner, its controls and the vendors or systems involved.'):'No open risks in this cell.';
+    fL.innerHTML='';r.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
+  })});
+
+  // Territory
+  var sq=[].slice.call(document.querySelectorAll('.sq[data-r]')),rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
+  sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('sea');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  group(tabs,function(i){select(tabs,i)});
+
+  // Challenger stepper
+  var sts=[].slice.call(document.querySelectorAll('.cstep')),cur=0,cnt=document.getElementById('stCount');
+  function step(i){cur=i;select(sts,i);cnt.textContent='Step '+(i+1)+' of '+sts.length;document.getElementById('stNext').textContent=i===sts.length-1?'Start over':'Next step'}
+  group(sts,step);
+  document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
+  document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Battlecards
+  var cbs=[].slice.call(document.querySelectorAll('.cbtn'));
+  group(cbs,function(i){select(cbs,i)});
+})();
+</script>
+</body>
+</html>

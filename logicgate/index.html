@@ -735,6 +735,21 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
 .band b,.figs b{letter-spacing:-.02em}
 .band b{font-size:clamp(24px,20cqi,58px)}
 .panel.sky .mail{color:var(--ink)}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.inds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1060px}
+@media (max-width:860px){.inds{grid-template-columns:1fr}}
+.ind{border:1.5px solid var(--ink);border-radius:12px;padding:22px 24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.ind.reg{box-shadow:6px 6px 0 var(--blue)}
+.ind.pre{box-shadow:6px 6px 0 var(--honey)}
+.ind-tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ink);color:#fff}
+.ind.pre .ind-tag{background:var(--honey);color:var(--ink)}
+.ind h4{font-size:20px;font-weight:800}
+.ind p{font-size:15.5px;color:#26303F}
+.ind .lead{margin-top:auto;padding:10px 12px;background:var(--fog);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;font-size:14.5px}
+.ind.pre .lead{border-left-color:var(--honey)}
+.ind .lead b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+.ind .acc{font-size:14px;color:var(--graphite)}
+@media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
 </style>
 </head>
 <body>
@@ -868,13 +883,32 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         </div>
         <div>
           <h3>The buyer</h3>
-          <p>The chief risk officer, CISO, chief compliance officer or chief audit executive, usually with a GRC program lead as the champion.</p>
+          <p>The Chief Risk Officer, Chief Information Security Officer, Chief Compliance Officer or Chief Audit Executive, usually with a GRC program lead as the champion.</p>
           <p>Advisory firms shape many decisions, and LogicGate now has a joint business relationship with PwC.<sup><a href="#s4">4</a></sup></p>
         </div>
         <div>
           <h3>The moment</h3>
-          <p>Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
-          <p>Regulators are asking for more evidence, through the SEC's cyber disclosure rules in the US and OSFI's Guideline B-10 in Canada.<sup><a href="#s5">5</a>,<a href="#s6">6</a></sup></p>
+          <p>The move to <a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai</a> marks the shift to an AI GRC platform, with agents built into the core.<sup><a href="#s5">5</a></sup> Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
+          <p>Regulators are asking for more evidence, through the SEC's cyber disclosure rules in the US and OSFI's Guideline B-10 in Canada.<sup><a href="#s6">6</a>,<a href="#s7">7</a></sup></p>
+        </div>
+      </div>
+      <h3 class="ind-h">Where LogicGate wins, by industry</h3>
+      <div class="inds">
+        <div class="ind reg">
+          <span class="ind-tag">Highly regulated</span>
+          <h4>Financial services and healthcare</h4>
+          <p>This is where LogicGate is strongest. Banks, insurers and health systems answer to examiners who want evidence: the interagency third party guidance for US banks, OSFI's Guideline B-10 in Canada, and the HIPAA Security Rule in healthcare.<sup><a href="#s8">8</a>,<a href="#s7">7</a>,<a href="#s9">9</a></sup></p>
+          <p>They run hundreds of vendors, many frameworks and constant audits. One connected record for each vendor, risk and control is how a lean team keeps up.</p>
+          <div class="lead"><b>Lead with</b>Evidence examiners accept, third party risk at scale, and controls mapped once across every framework</div>
+          <div class="acc">Premera Blue Cross, Providence, BECU, Manulife, Sun Life</div>
+        </div>
+        <div class="ind pre">
+          <span class="ind-tag">Less regulated</span>
+          <h4>Retail, logistics and manufacturing</h4>
+          <p>Fewer rules today, with the same exposure: thousands of suppliers, ransomware and, for public companies, the SEC's cyber disclosure rules.<sup><a href="#s6">6</a></sup></p>
+          <p>The companies that build a program now set the standard for their industry. They answer board and customer questions in days, and they are ready when regulation arrives.</p>
+          <div class="lead"><b>Lead with</b>Supply chain resilience, cyber risk the board can see, and a program in place before anyone requires it</div>
+          <div class="acc">Nordstrom, Expeditors, Nike, Columbia Sportswear, lululemon</div>
         </div>
       </div>
     </section>
@@ -882,7 +916,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <!-- POV -->
     <section id="pov" class="panel ink grain">
       <div class="sh">
-        <h2>The conversation I would have with a chief risk officer</h2>
+        <h2>The conversation I would have with a Chief Risk Officer</h2>
         <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CRO or CISO, with the evidence behind each step.</p>
       </div>
       <figure class="compare">
@@ -966,10 +1000,10 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <table class="reg stack">
             <thead><tr><th>Region</th><th>Who buys, why, and what I lead with</th></tr></thead>
             <tbody>
-              <tr data-r="sea"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond, Tacoma</span></td><td data-h="Who buys and why">Public retail, travel, aerospace and health plans, where the SEC's cyber disclosure rules put risk in front of the board.<div class="acc">Starbucks, Nordstrom, Expedia, Alaska Airlines, Premera Blue Cross</div><div class="lead"><b>Lead with</b>Third party and cyber risk the board can see</div></td></tr>
-              <tr data-r="or"><td>Oregon<span class="st">Portland, Beaverton, Hillsboro, Eugene</span></td><td data-h="Who buys and why">Apparel, manufacturing, health systems and utilities with global suppliers and continuity exposure.<div class="acc">Nike, Columbia Sportswear, Daimler Truck North America, Legacy Health, Portland General Electric</div><div class="lead"><b>Lead with</b>Enterprise risk and continuity on one register</div></td></tr>
-              <tr data-r="wc"><td>Western Canada<span class="st">Vancouver, Calgary, Edmonton</span></td><td data-h="Who buys and why">Telecom, energy, retail and airlines managing operational resilience across large vendor networks.<div class="acc">TELUS, lululemon, Suncor Energy, WestJet</div><div class="lead"><b>Lead with</b>Operational resilience and third party risk at scale</div></td></tr>
-              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third party risk on one platform<sup><a href="#s6">6</a></sup></div></td></tr>
+              <tr data-r="sea"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond, Tacoma</span></td><td data-h="Who buys and why">Health plans, health systems and credit unions, plus public retailers and logistics firms where the SEC's cyber disclosure rules put risk in front of the board.<div class="acc">Premera Blue Cross, Providence, BECU, Nordstrom, Expeditors</div><div class="lead"><b>Lead with</b>Third party and cyber risk the board can see</div></td></tr>
+              <tr data-r="or"><td>Oregon<span class="st">Portland, Beaverton, Hillsboro, Eugene</span></td><td data-h="Who buys and why">Health systems and health plans, plus apparel, manufacturing and utilities with global suppliers and continuity exposure.<div class="acc">Legacy Health, Moda Health, Nike, Columbia Sportswear, Portland General Electric</div><div class="lead"><b>Lead with</b>Enterprise risk and continuity on one register</div></td></tr>
+              <tr data-r="wc"><td>Western Canada<span class="st">Vancouver, Calgary, Edmonton</span></td><td data-h="Who buys and why">Credit unions, plus telecom, energy, retail and airlines managing operational resilience across large vendor networks.<div class="acc">Vancity, TELUS, lululemon, Suncor Energy, WestJet</div><div class="lead"><b>Lead with</b>Operational resilience and third party risk at scale</div></td></tr>
+              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third party risk on one platform<sup><a href="#s7">7</a></sup></div></td></tr>
             </tbody>
           </table>
           <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments, the Canada split and current customers with the team before any outreach.</p>
@@ -996,7 +1030,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises running compliance and risk in spreadsheets and SharePoint.</dd></div>
             <div><dt class="label">Signal</dt><dd>GRC analyst job posts that list Excel and SharePoint as core tools.</dd></div>
-            <div><dt class="label">Personas</dt><dd>Head of GRC or compliance first, then the CRO or CISO.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of GRC or Chief Compliance Officer first, then the CRO or CISO.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How many spreadsheets does one audit request touch?</li><li>How long does it take to map a control to a new framework?</li><li>Who owns the master copy?</li></ul></dd></div>
           </dl>
         </div>
@@ -1014,8 +1048,8 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">Most vendor programs assess every vendor the same way, so the critical few get the same attention as the office supplier.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises with hundreds or thousands of vendors, and Canadian institutions under OSFI.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Vendor risk job posts, or a financial institution working to Guideline B-10.<sup><a href="#s6">6</a></sup></dd></div>
-            <div><dt class="label">Personas</dt><dd>Head of third party risk first, then the CRO and procurement.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Vendor risk job posts, or a financial institution working to Guideline B-10.<sup><a href="#s7">7</a></sup></dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of Third Party Risk first, then the CRO and procurement.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How do you decide which vendors get a full assessment?</li><li>How long does onboarding a critical vendor take?</li><li>How do vendor issues reach the enterprise risk register?</li></ul></dd></div>
           </dl>
         </div>
@@ -1034,7 +1068,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises on Archer or a custom ServiceNow GRC build.</dd></div>
             <div><dt class="label">Signal</dt><dd>Job posts for Archer administrators or ServiceNow GRC developers.</dd></div>
-            <div><dt class="label">Personas</dt><dd>GRC program lead first, then the CRO or CISO and IT.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Director of GRC first, then the CRO or CISO and IT.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How long did your last workflow change take?</li><li>How many people keep the tool running?</li><li>When does the contract renew?</li></ul></dd></div>
           </dl>
         </div>
@@ -1052,8 +1086,8 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">Boards and regulators now expect a current view of risk, and a quarterly slide deck built by hand can't keep up.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Public companies under the SEC's cyber disclosure rules, and enterprises building an ERM program.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s5">5</a></sup></dd></div>
-            <div><dt class="label">Personas</dt><dd>CRO or head of ERM first, then the CFO and audit committee liaison.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s6">6</a></sup></dd></div>
+            <div><dt class="label">Personas</dt><dd>CRO or Head of ERM first, then the CFO and the Audit Committee chair.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How long does the quarterly board risk report take to build?</li><li>How do cyber and vendor risks reach it?</li><li>What did the audit committee ask for last quarter?</li></ul></dd></div>
           </dl>
         </div>
@@ -1062,7 +1096,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> expanded its risk management disclosure this year, so guessing the board wants a more current view of risk.</p><p>Think one register that pulls in cyber, vendor and operational risk could help?</p><p><span class="tok">{{customer_name}}</span> saved 570 hours a year on enterprise risk.</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 570 hours sounds like seller cherry picking.</p><p>If we rebuilt last quarter's board report from one connected register, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be covered?</p><p>Basically your team would pull the board view straight from the register, current on the day it's presented.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s3">3</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s5">5</a></sup></span></div>
+          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s3">3</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s6">6</a></sup></span></div>
         </article>
       </div>
     </section>
@@ -1094,7 +1128,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           </article>
           <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
             <div class="bc-top"><h3>AuditBoard</h3><span class="threat">High threat</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Loved by internal audit and SOX teams, and often brought in by the chief audit executive.</p></div><div><h4>Where LogicGate wins</h4><p>One connected data model across enterprise risk, third party risk, cyber, controls and AI governance, so the program reaches beyond audit.</p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Loved by internal audit and SOX teams, and often brought in by the Chief Audit Executive.</p></div><div><h4>Where LogicGate wins</h4><p>One connected data model across enterprise risk, third party risk, cyber, controls and AI governance, so the program reaches beyond audit.</p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Is this an audit tool decision, or a decision about the whole risk program?</p></div>
           </article>
           <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
@@ -1165,7 +1199,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       </div>
       <div style="max-width:1060px">
         <table class="fit stack">
-          <thead><tr><th>What the role asks for<sup><a href="#s7">7</a></sup></th><th>Where I have done it</th></tr></thead>
+          <thead><tr><th>What the role asks for<sup><a href="#s10">10</a></sup></th><th>Where I have done it</th></tr></thead>
           <tbody>
             <tr><td>Large enterprise B2B SaaS sales</td><td data-h="Where I have done it">Opened Fortune 500 accounts including Uber, Albertsons and AAA, and sell to Fortune 500 companies at Netradyne today.</td></tr>
             <tr><td>New pipeline from cold prospecting, partners, social, email and phone</td><td data-h="Where I have done it">$19.6M self sourced at Netradyne through cold outbound, and $750K in my first quarter at Falkon.</td></tr>
@@ -1209,7 +1243,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <h3>Creating the playbook | Testing the territory</h3>
           <ul>
             <li>Review results with leadership and peer reps each week, blending their guidance with patterns from my own deals</li>
-            <li>Run the four plays in waves by vertical, starting with insurers in Eastern Canada and public companies in Puget Sound</li>
+            <li>Run the four plays in waves by vertical, starting with financial services and healthcare, then retail and logistics</li>
             <li>Multithread every target account across the CRO, CISO, compliance, audit and procurement</li>
             <li>Hold insight meetings in place of first call demos, and price assessment hours, audit prep and tool cost in discovery</li>
             <li>Turn meetings into MEDDPICC qualified opportunities with a use case demo scoped for each</li>
@@ -1251,9 +1285,12 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <li id="s2"><a href="https://www.prnewswire.com/news-releases/logicgate-recognized-as-one-of-only-four-leaders-in-governance-risk-and-compliance-platforms-q2-2026-report-by-independent-research-firm-302785214.html" target="_blank" rel="noopener">PR Newswire, LogicGate one of four Leaders in GRC Platforms, Q2 2026</a></li>
         <li id="s3"><a href="https://www.prnewswire.com/news-releases/logicgates-value-realization-tool-reveals-customers-nearly-triple-investment-through-platform-efficiencies-302659858.html" target="_blank" rel="noopener">PR Newswire, LogicGate Value Realization Tool results</a></li>
         <li id="s4"><a href="https://www.prnewswire.com/news-releases/logicgate-advances-agentic-grc-capabilities-with-its-summer-2026-release-302866798.html" target="_blank" rel="noopener">PR Newswire, LogicGate Summer 2026 Release</a></li>
-        <li id="s5"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
-        <li id="s6"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third Party Risk Management</a></li>
-        <li id="s7"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
+        <li id="s5"><a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai, AI GRC platform for the enterprise</a></li>
+        <li id="s6"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
+        <li id="s7"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third Party Risk Management</a></li>
+        <li id="s8"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20230606a.htm" target="_blank" rel="noopener">Federal Reserve, FDIC and OCC, Interagency guidance on third party relationships</a></li>
+        <li id="s9"><a href="https://www.hhs.gov/hipaa/for-professionals/security/index.html" target="_blank" rel="noopener">HHS, HIPAA Security Rule</a></li>
+        <li id="s10"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the LogicGate Strategic Account Executive role. Not affiliated with or endorsed by LogicGate. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>

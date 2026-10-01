@@ -910,6 +910,7 @@ mark{background:var(--ink);color:var(--honey)}
 .mk h3{color:#fff}
 .mk p{color:#CFCAC2}
 .mk > div{border-color:#444}
+.ind-h{margin:48px 0 18px;max-width:1060px}
 </style>
 </head>
 <body>
@@ -922,19 +923,15 @@ mark{background:var(--ink);color:var(--honey)}
   <aside class="side" aria-label="Contents">
     <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#121212"/><rect x="8" y="12" width="12" height="12" fill="#fff"/><rect x="16" y="8" width="8" height="8" fill="#FEB744"/></svg><span><b>Mountain West</b><small>Hightouch plan</small></span></a>
     <ul class="toc" id="toc">
-      <li class="grp">Hightouch</li>
       <li><a href="#top">Overview</a></li>
       <li><a href="#know">What I know</a></li>
-      <li class="grp">The market</li>
-      <li><a href="#market">Market shift</a></li>
-      <li><a href="#competition">Competition</a></li>
-      <li><a href="#territory">Territory</a></li>
-      <li class="grp">Me and my plan</li>
       <li><a href="#pov">The conversation</a></li>
+      <li><a href="#territory">Territory</a></li>
       <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
       <li><a href="#deal">Running the deal</a></li>
-      <li><a href="#plan">First 90 days</a></li>
       <li><a href="#about">About me</a></li>
+      <li><a href="#plan">First 90 days</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="side-foot">
@@ -1010,7 +1007,6 @@ mark{background:var(--ink);color:var(--honey)}
       <div role="listitem"><small>WHOOP</small><b>10%</b><span>lift in cross sell conversions within six weeks<sup><a href="#s4">4</a></sup></span></div>
     </div>
 
-    <div class="act" role="presentation"><span>Part 1</span><b>Who Hightouch is</b><em>What it sells, who buys it, and the numbers behind it.</em></div>
     <!-- Know -->
     <section id="know">
       <div class="sh">
@@ -1030,24 +1026,25 @@ mark{background:var(--ink);color:var(--honey)}
         </div>
         <div>
           <h3>The moment</h3>
-          <p>Hightouch raised $150M at a $2.75B valuation in April 2026, with The Trade Desk's venture arm in the round, and Gartner named it a Leader in the 2026 Magic Quadrant for CDPs, its first appearance.<sup><a href="#s1">1</a>,<a href="#s3">3</a></sup></p>
-          <p>Fivetran bought Census, so the closest warehouse native rival is now part of a data pipeline company.<sup><a href="#s6">6</a></sup></p>
+          <p>Hightouch raised $150M at a $2.75B valuation in April 2026, with The Trade Desk's venture arm in the round.<sup><a href="#s1">1</a></sup></p>
+          <p>It passed $100M ARR growing over 100% a year two years running, with Domino's, Spotify, Aritzia, Cars.com, Ramp and PetSmart among its customers.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
         </div>
       </div>
-    </section>
-    <div class="act" role="presentation"><span>Part 2</span><b>The market they operate in</b><em>Where the category is going, who Hightouch competes with, and where the deals are in the Mountain West.</em></div>
-    <!-- Market -->
-    <section id="market" class="panel ink grain">
-      <div class="sh">
-        <h2>The market Hightouch is reshaping</h2>
-        <p>Customer data platforms are splitting into two camps, and AI is raising the stakes for both.</p>
-      </div>
-      <div class="three mk">
-        <div><h3>Packaged to composable</h3><p>Packaged CDPs copy customer data into their own store. Composable CDPs run on the warehouse the company already owns. Gartner named Hightouch a Leader in the 2026 Magic Quadrant for CDPs on its first appearance.<sup><a href="#s3">3</a></sup></p></div>
+      <h3 class="ind-h">The market Hightouch is reshaping</h3>
+      <div class="three mk2">
+        <div><h3>Packaged to composable</h3><p>Packaged CDPs copy customer data into their own store. Composable CDPs run on the warehouse the company already owns, and Gartner named Hightouch a Leader in the 2026 Magic Quadrant for CDPs on its first appearance.<sup><a href="#s3">3</a></sup></p></div>
         <div><h3>Consolidation</h3><p>Fivetran bought Census, Salesforce bundles Data Cloud into Marketing Cloud deals, and Segment sits inside Twilio. Hightouch is the independent, warehouse native option at enterprise scale.<sup><a href="#s6">6</a></sup></p></div>
-        <div><h3>Agentic marketing</h3><p>Budgets are moving from tools marketers operate to AI that decides and acts. The Trade Desk's venture arm joined the Series D, a sign that paid media and customer data are converging.<sup><a href="#s1">1</a></sup></p></div>
+        <div><h3>Agentic marketing</h3><p>Budgets are moving from tools marketers operate to AI that decides and acts. AI Decisioning and campaign agents sit where that budget is going, and The Trade Desk's investment points to paid media and customer data converging.<sup><a href="#s1">1</a></sup></p></div>
       </div>
-      <figure class="compare" style="margin-top:48px">
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <h2>The conversation I would have with a CMO</h2>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CMO or VP of Lifecycle Marketing, with the evidence behind each step.</p>
+      </div>
+      <figure class="compare">
         <div class="cmp-grid">
           <div class="pane">
             <div class="pane-lbl"><span>The packaged CDP</span><b>2 copies</b></div>
@@ -1077,50 +1074,28 @@ mark{background:var(--ink);color:var(--honey)}
         </div>
         <figcaption><b>Fig. 2</b><span>A packaged CDP keeps a second copy of customer data and still routes changes through the data team. Hightouch reads from the warehouse the company already pays for, and marketing launches on its own. Illustrative.</span></figcaption>
       </figure>
-    </section>
-    <!-- Competition -->
-    <section id="competition">
-      <div class="sh">
-        <h2>How deals are won against each alternative</h2>
-        <p>Where each option is strong, where Hightouch wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      <div class="steps" role="tablist" aria-label="Challenger steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Hightouch</small></button>
       </div>
-      <div class="bcs">
-        <div class="bc-list" role="tablist" aria-label="Competitors">
-          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>Salesforce Data Cloud</b><small>Bundled with Marketing Cloud</small></button>
-          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Twilio Segment</b><small>Event collection first</small></button>
-          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Adobe Real-Time CDP</b><small>Inside Adobe Experience Cloud</small></button>
-          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Fivetran Activations</b><small>Formerly Census</small></button>
-          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>In house build</b><small>Scripts and custom syncs</small></button>
-        </div>
-        <div>
-          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
-            <div class="bc-top"><h3>Salesforce Data Cloud</h3><span class="threat">Most common</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Bundled into existing Salesforce contracts, with executive relationships and a single vendor story.</p></div><div><h4>Where Hightouch wins</h4><p>Runs on the warehouse the company already pays for, with no second copy of data, and works with any channel, including Braze and every ad platform.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How much customer data has to be copied into Data Cloud before it's useful, and who keeps it in sync?</p></div>
-          </article>
-          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
-            <div class="bc-top"><h3>Twilio Segment</h3><span class="threat mid">Entrenched</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Event collection, developer adoption and a large installed base.</p></div><div><h4>Where Hightouch wins</h4><p>Warehouse native from the start, with no separate profile store, and AI Decisioning on top of the same data.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>Where does the source of truth for customers live today, in Segment or in your warehouse?</p></div>
-          </article>
-          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
-            <div class="bc-top"><h3>Adobe Real-Time CDP</h3><span class="threat mid">Suite play</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep inside Adobe Experience Cloud estates, with strong content and analytics ties.</p></div><div><h4>Where Hightouch wins</h4><p>Speed to value, marketer self serve, and freedom to use any channel outside the Adobe stack.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How long did your last new audience take from idea to live?</p></div>
-          </article>
-          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
-            <div class="bc-top"><h3>Fivetran Activations</h3><span class="threat mid">In transition</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>One vendor for data pipelines in and out of the warehouse.</p></div><div><h4>Where Hightouch wins</h4><p>Built for marketers, with audiences, identity, journeys and AI Decisioning, on an independent roadmap.<sup><a href="#s6">6</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>Is this a data pipeline decision, or a decision about marketing results?</p></div>
-          </article>
-          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
-            <div class="bc-top"><h3>In house build</h3><span class="threat">Always present</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control, and engineers who know the data.</p></div><div><h4>Where Hightouch wins</h4><p>No integration upkeep for the data team, and marketers who launch without waiting on engineering.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How many engineers maintain your sync scripts, and what would they build instead?</p></div>
-          </article>
-        </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most lifecycle teams run calendar based campaigns from a marketing cloud, with segments a data team builds on request. A new audience takes a ticket and a week.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Ticket queue</b>Every new audience waits on the data team</div><div><b>Batch and blast</b>The same message goes to the whole segment</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams respond with a new journey builder or more creative. The constraint sits upstream: the best customer data lives in the warehouse where marketers can't reach it, and rules based journeys can only test a handful of ideas at once.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>More campaigns and more journeys</div><div><b>To</b>Every customer decided one to one, from the warehouse</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the gap costs, and what closing it looks like. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>A year</b>WHOOP spent on manual tests before switching, then saw a 10% cross sell lift in six weeks<sup><a href="#s4">4</a></sup></div><div><b>15 to 25%</b>Incremental sales on advertised products at PetSmart<sup><a href="#s7">7</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CMO is asked for one to one personalization and proof of incremental revenue, while the team waits a week for a segment and sends the same email to two million people.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Pressure</b>The board wants revenue proof from marketing</div><div><b>Frustration</b>Good marketers stuck behind a ticket queue</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Teams that moved first keep one copy of customer data in the warehouse, give marketers the brand context and performance history to build and ship campaigns themselves, and let agents decide the message, channel and timing for each customer, learning from every send.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Warehouse native</b>One copy of customer data</div><div><b>Marketer owned</b>Audiences live the same day</div><div><b>Agent decided</b>Every customer gets their own next step</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Hightouch, a Leader in the 2026 Gartner Magic Quadrant for CDPs, trusted by Domino's, Spotify, Aritzia, Cars.com, Ramp and PetSmart.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>70M+</b>PetSmart loyalty members personalized<sup><a href="#s7">7</a></sup></div><div><b>$100M+</b>ARR, growing over 100% a year<sup><a href="#s1">1</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>First meetings open with what I've learned about their stack and their lifecycle program. The demo waits until they agree the warehouse is the bottleneck worth fixing.</p></div>
+        <div><h4>Tailor</h4><p>Revenue lift for the CMO, speed for lifecycle teams, fewer tickets and one copy of the data for the Head of Data, and total cost for finance.</p></div>
+        <div><h4>Take control</h4><p>Agree a holdout test before any pilot, push back on "Data Cloud comes with our contract," and leave every meeting with a dated next step.</p></div>
       </div>
     </section>
+
     <!-- Territory -->
     <section id="territory">
       <div class="sh">
@@ -1160,34 +1135,7 @@ mark{background:var(--ink);color:var(--honey)}
         </div>
       </div>
     </section>
-    <div class="act" role="presentation"><span>Part 3</span><b>Me and my plan of impact</b><em>How I would open and run deals, what the first 90 days deliver, and why I fit.</em></div>
-    <!-- POV -->
-    <section id="pov" class="panel ink grain">
-      <div class="sh">
-        <h2>How I would open the conversation with a CMO</h2>
-        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CMO or VP of Lifecycle Marketing, with the evidence behind each step.</p>
-      </div>
-      <div class="steps" role="tablist" aria-label="Challenger steps">
-        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
-        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
-        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
-        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
-        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
-        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Hightouch</small></button>
-      </div>
-      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most lifecycle teams run calendar based campaigns from a marketing cloud, with segments a data team builds on request. A new audience takes a ticket and a week.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Ticket queue</b>Every new audience waits on the data team</div><div><b>Batch and blast</b>The same message goes to the whole segment</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams respond with a new journey builder or more creative. The constraint sits upstream: the best customer data lives in the warehouse where marketers can't reach it, and rules based journeys can only test a handful of ideas at once.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>More campaigns and more journeys</div><div><b>To</b>Every customer decided one to one, from the warehouse</div></div></div></div>
-      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the gap costs, and what closing it looks like. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>A year</b>WHOOP spent on manual tests before switching, then saw a 10% cross sell lift in six weeks<sup><a href="#s4">4</a></sup></div><div><b>15 to 25%</b>Incremental sales on advertised products at PetSmart<sup><a href="#s7">7</a></sup></div></div></div></div>
-      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CMO is asked for one to one personalization and proof of incremental revenue, while the team waits a week for a segment and sends the same email to two million people.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Pressure</b>The board wants revenue proof from marketing</div><div><b>Frustration</b>Good marketers stuck behind a ticket queue</div></div></div></div>
-      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Teams that moved first keep one copy of customer data in the warehouse, give marketers the brand context and performance history to build and ship campaigns themselves, and let agents decide the message, channel and timing for each customer, learning from every send.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Warehouse native</b>One copy of customer data</div><div><b>Marketer owned</b>Audiences live the same day</div><div><b>Agent decided</b>Every customer gets their own next step</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Hightouch, a Leader in the 2026 Gartner Magic Quadrant for CDPs, trusted by Domino's, Spotify, Aritzia, Cars.com, Ramp and PetSmart.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>70M+</b>PetSmart loyalty members personalized<sup><a href="#s7">7</a></sup></div><div><b>$100M+</b>ARR, growing over 100% a year<sup><a href="#s1">1</a></sup></div></div></div></div>
-      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
-      <div class="ttt">
-        <div><h4>Teach</h4><p>First meetings open with what I've learned about their stack and their lifecycle program. The demo waits until they agree the warehouse is the bottleneck worth fixing.</p></div>
-        <div><h4>Tailor</h4><p>Revenue lift for the CMO, speed for lifecycle teams, fewer tickets and one copy of the data for the Head of Data, and total cost for finance.</p></div>
-        <div><h4>Take control</h4><p>Agree a holdout test before any pilot, push back on "Data Cloud comes with our contract," and leave every meeting with a dated next step.</p></div>
-      </div>
-    </section>
+
     <!-- Plays -->
     <section id="plays" class="panel sky grain">
       <div class="sh">
@@ -1277,6 +1225,51 @@ mark{background:var(--ink);color:var(--honey)}
         </article>
       </div>
     </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Hightouch wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      </div>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>Salesforce Data Cloud</b><small>Bundled with Marketing Cloud</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Twilio Segment</b><small>Event collection first</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Adobe Real-Time CDP</b><small>Inside Adobe Experience Cloud</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Fivetran Activations</b><small>Formerly Census</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>In house build</b><small>Scripts and custom syncs</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>Salesforce Data Cloud</h3><span class="threat">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Bundled into existing Salesforce contracts, with executive relationships and a single vendor story.</p></div><div><h4>Where Hightouch wins</h4><p>Runs on the warehouse the company already pays for, with no second copy of data, and works with any channel, including Braze and every ad platform.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How much customer data has to be copied into Data Cloud before it's useful, and who keeps it in sync?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>Twilio Segment</h3><span class="threat mid">Entrenched</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Event collection, developer adoption and a large installed base.</p></div><div><h4>Where Hightouch wins</h4><p>Warehouse native from the start, with no separate profile store, and AI Decisioning on top of the same data.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Where does the source of truth for customers live today, in Segment or in your warehouse?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>Adobe Real-Time CDP</h3><span class="threat mid">Suite play</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep inside Adobe Experience Cloud estates, with strong content and analytics ties.</p></div><div><h4>Where Hightouch wins</h4><p>Speed to value, marketer self serve, and freedom to use any channel outside the Adobe stack.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How long did your last new audience take from idea to live?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>Fivetran Activations</h3><span class="threat mid">In transition</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>One vendor for data pipelines in and out of the warehouse.</p></div><div><h4>Where Hightouch wins</h4><p>Built for marketers, with audiences, identity, journeys and AI Decisioning, on an independent roadmap.<sup><a href="#s6">6</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Is this a data pipeline decision, or a decision about marketing results?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>In house build</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control, and engineers who know the data.</p></div><div><h4>Where Hightouch wins</h4><p>No integration upkeep for the data team, and marketers who launch without waiting on engineering.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How many engineers maintain your sync scripts, and what would they build instead?</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Deal -->
     <section id="deal">
       <div class="sh">
@@ -1316,6 +1309,41 @@ mark{background:var(--ink);color:var(--honey)}
         </table>
       </div>
     </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for<sup><a href="#s2">2</a></sup></th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Building and managing a pipeline of high value enterprise accounts</td><td data-h="Where I have done it">$19.6M self sourced pipeline across Fortune 500 accounts at Netradyne in under 12 months.</td></tr>
+            <tr><td>Outbound prospecting and land and expand</td><td data-h="Where I have done it">Most of my pipeline has come from cold outbound. Landed a $1.2M deal with Uber at Jamf, and the first multiyear deal with built in expansion triggers at Falkon (Linewize).</td></tr>
+            <tr><td>Discovery that leads to measurable business outcomes</td><td data-h="Where I have done it">Sell AI at Netradyne at roughly $300K ACV, where every deal rests on a measured business case.</td></tr>
+            <tr><td>Working with Sales, Marketing and Product</td><td data-h="Where I have done it">Ran enterprise deals with sales engineers, marketing and leadership at Jamf and Netradyne, and share what works back with the team.</td></tr>
+            <tr><td>Meeting or exceeding targets</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and Enterprise Seller of the Year at Netradyne.</td></tr>
+            <tr><td>Urgency in a fast changing environment</td><td data-h="Where I have done it">Joined Falkon at Series A and booked $750K in my first quarter.</td></tr>
+            <tr><td>Bonus: the martech and data ecosystem</td><td data-h="Where I have done it">Closed Snowflake and Seismic at a Series A revenue intelligence startup, selling into revenue, marketing and data teams.</td></tr>
+            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to selling alongside Snowflake and Databricks.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Hightouch</h3>
+        <p>Hightouch has what I look for as a seller: a product with lift customers can measure in weeks, Leader status with Gartner, and growth that shows the market is choosing it. The team values velocity and humility, which is how I like to work. The Mountain West is full of consumer brands that keep customer data in Snowflake and Databricks and still market in batches. I live here, and this is a territory I want to build.</p>
+        <p class="sig">Eric Iannello, Boise, Idaho</p>
+      </div>
+    </section>
+
     <!-- 90 days -->
     <section id="plan" class="panel honey grain">
       <div class="sh">
@@ -1365,39 +1393,7 @@ mark{background:var(--ink);color:var(--honey)}
         </div>
       </div>
     </section>
-    <!-- About -->
-    <section id="about">
-      <div class="sh">
-        <h2>Why I'm a fit for this role</h2>
-        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
-      </div>
-      <div class="figs">
-        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
-        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
-        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
-        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
-      </div>
-      <div style="max-width:1060px">
-        <table class="fit stack">
-          <thead><tr><th>What the role asks for<sup><a href="#s2">2</a></sup></th><th>Where I have done it</th></tr></thead>
-          <tbody>
-            <tr><td>Building and managing a pipeline of high value enterprise accounts</td><td data-h="Where I have done it">$19.6M self sourced pipeline across Fortune 500 accounts at Netradyne in under 12 months.</td></tr>
-            <tr><td>Outbound prospecting and land and expand</td><td data-h="Where I have done it">Most of my pipeline has come from cold outbound. Landed a $1.2M deal with Uber at Jamf, and the first multiyear deal with built in expansion triggers at Falkon (Linewize).</td></tr>
-            <tr><td>Discovery that leads to measurable business outcomes</td><td data-h="Where I have done it">Sell AI at Netradyne at roughly $300K ACV, where every deal rests on a measured business case.</td></tr>
-            <tr><td>Working with Sales, Marketing and Product</td><td data-h="Where I have done it">Ran enterprise deals with sales engineers, marketing and leadership at Jamf and Netradyne, and share what works back with the team.</td></tr>
-            <tr><td>Meeting or exceeding targets</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and Enterprise Seller of the Year at Netradyne.</td></tr>
-            <tr><td>Urgency in a fast changing environment</td><td data-h="Where I have done it">Joined Falkon at Series A and booked $750K in my first quarter.</td></tr>
-            <tr><td>Bonus: the martech and data ecosystem</td><td data-h="Where I have done it">Closed Snowflake and Seismic at a Series A revenue intelligence startup, selling into revenue, marketing and data teams.</td></tr>
-            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to selling alongside Snowflake and Databricks.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="letter">
-        <h3>Why Hightouch</h3>
-        <p>Hightouch has what I look for as a seller: a product with lift customers can measure in weeks, Leader status with Gartner, and growth that shows the market is choosing it. The team values velocity and humility, which is how I like to work. The Mountain West is full of consumer brands that keep customer data in Snowflake and Databricks and still market in batches. I live here, and this is a territory I want to build.</p>
-        <p class="sig">Eric Iannello, Boise, Idaho</p>
-      </div>
-    </section>
+
     <!-- Contact -->
     <section id="contact" class="contact">
       <h2>Next step</h2>

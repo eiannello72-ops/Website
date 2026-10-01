@@ -911,6 +911,25 @@ mark{background:var(--ink);color:var(--honey)}
 .mk p{color:#CFCAC2}
 .mk > div{border-color:#444}
 .ind-h{margin:48px 0 18px;max-width:1060px}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#26303F}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
 <body>
@@ -1292,22 +1311,67 @@ mark{background:var(--ink);color:var(--honey)}
         <div><h4>An agency owns the channels</h4><p>I bring the agency in early as an ally. Better audiences make their work perform better too.</p></div>
         <div><h4>Budget is split across teams</h4><p>The business case shows value for marketing and for data, and the close is timed to the CDP renewal and the fiscal year.</p></div>
       </div>
-      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
-      <div style="max-width:1060px">
-        <table class="medd stack">
-          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
-          <tbody>
-            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Incremental revenue, conversion and retention lift, time to launch an audience, CDP and engineering cost</td><td data-h="What I ask">What would a 5% lift in repeat purchase be worth this year?</td><td data-h="Red flag">A personalization goal nobody has priced</td></tr>
-            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CMO, with the Head of Data or CDO when budget spans both teams</td><td data-h="What I ask">Whose budget pays for the CDP today, and whose would pay for this?</td><td data-h="Red flag">Only marketing ops is involved by the pilot</td></tr>
-            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Warehouse native, marketer self serve, measured lift, security and integrations</td><td data-h="What I ask">What has to be true for Hightouch to be the clear choice?</td><td data-h="Red flag">Criteria copied from a packaged CDP's feature list</td></tr>
-            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Technical validation, pilot with holdout, security review, business case and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current CDP.</td><td data-h="Red flag">No one can describe what happens after the pilot</td></tr>
-            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, DPA, legal, procurement, marketplace purchase and the CDP renewal date</td><td data-h="What I ask">Would buying through your cloud marketplace help you use existing commit?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
-            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">Slow audiences, batch sends, a costly CDP renewal or paid media waste</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
-            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A marketing ops or analytics engineering lead with influence, who gains from the win</td><td data-h="What I ask">How would you present the pilot results to your CMO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
-            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Salesforce Data Cloud, Segment, Adobe, Fivetran Activations, an in house build and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
-          </tbody>
-        </table>
+      <h3 style="margin:48px 0 8px">MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Each line needs written proof before the deal counts in my forecast.</p>
+      <div class="mx">
+        <div class="mx-row">
+          <div class="mx-el"><b>M</b><h4>Metrics</h4><span>The number the deal is sold on</span></div>
+          <div class="mx-c"><small>What I validate</small><p>The metric the CMO is measured on, like repeat purchase, revenue per customer or CAC, with today's baseline and the lift that pays for Hightouch in year one.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What would a 1% lift in repeat purchase be worth this year?</li><li>Who in finance would sign off on that math?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Baseline and target in their numbers, checked by finance and written into the success plan.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>"Personalization" with no number attached.</em> I bring a value model built from their public figures and ask them to correct it.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>E</b><h4>Economic buyer</h4><span>The person who can say yes alone</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Who owns the budget, usually the CMO, with the CDO or CFO when spend crosses marketing and data. Their top priorities and how they made their last big decision.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>If this works, whose number gets better?</li><li>When did they last approve something this size, and how?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A meeting with the economic buyer before the pilot, and their success criteria in their own words.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>"I'll take it to her."</em> I write the champion a one page brief and ask for 20 minutes together to pressure test it.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision criteria</h4><span>How they will judge us</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Technical criteria (warehouse native, identity, governance, security) and business criteria (time to launch, measured lift, total cost), ranked by the people who score them.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What would make Hightouch the obvious choice, and what would rule us out?</li><li>How will you weigh speed to launch against features?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Written criteria the champion and I drafted together, with a holdout test, before the pilot starts.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Criteria copied from a packaged CDP's spec sheet.</em> I reshape them early around warehouse native data and lift measured against a holdout.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision process</h4><span>Every step to a signature</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Each step from technical validation to signature: who is involved, in what order, by when, and how they bought their current CDP.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Walk me through how you chose your current CDP.</li><li>Who could stop this, even if everyone else says yes?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A mutual action plan dated back from their go live, edited by both sides.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Nobody can say what happens after the pilot.</em> I map the post pilot steps with the champion before the pilot begins.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>P</b><h4>Paper process</h4><span>How the contract actually gets signed</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Security review, DPA, legal redlines, approval thresholds, who signs, fiscal year end, and whether Snowflake or AWS Marketplace commit can fund it.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What did legal and security need from your last data vendor, and how long did it take?</li><li>Would drawing down marketplace commit help?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Security questionnaire started in discovery, paper steps and owners in the plan, a signature date agreed.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Procurement first hears about us at quarter end.</em> I meet procurement as soon as the business case is agreed, and send our security package in week one.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>I</b><h4>Identify pain</h4><span>Why they act this year</span></div>
+          <div class="mx-c"><small>What I validate</small><p>The pain behind the pain: a data ticket queue, batch sends, a costly CDP renewal or wasted paid media, and what each costs in revenue and hours.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What happens if nothing changes for the next 12 months?</li><li>Who feels this most, and what has it cost them?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Pain tied to a dollar figure and a date, confirmed by people in two different teams.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Pain with no cost and no deadline.</em> I go back to the reframe with a peer customer's numbers until it has both.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Champion</h4><span>Who sells when I am not in the room</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Someone with influence who wins personally if this succeeds. I test it by asking them to act: share internal context, coach me on politics, open a door.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>How would you present this to your CMO?</li><li>Could you get us 30 minutes with your Head of Data this week?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>They shared something internal, coached me on the room, and got me a meeting I could not get alone.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A fan of the product with no pull on the decision.</em> I keep them close and multithread to someone who can move the deal.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Competition</h4><span>Every option they could pick</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Salesforce Data Cloud, Segment, Adobe, Fivetran Activations, an in house build and doing nothing, plus who inside the account favors each.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>If you don't choose us, what do you do instead?</li><li>Who on the team would push for that option?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Each alternative named with its internal sponsor, and our strengths built into the decision criteria.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>We hear about a competitor at the proposal.</em> I ask the battlecard questions in discovery, so the criteria reflect where Hightouch wins.</p></div>
+        </div>
       </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the economic buyer has confirmed the metrics, the paper process is dated in the mutual plan, and the champion has been tested.</span></div>
     </section>
 
     <!-- About -->

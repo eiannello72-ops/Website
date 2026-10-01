@@ -886,102 +886,221 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
 .pane .tally{color:var(--sky)}
 .pane.hc .tally{color:var(--blue)}
 
+/* ===== Jellyfish product UI layer ===== */
+:root{--line:#E6E1F0;--soft:0 1px 2px rgba(12,6,32,.06),0 8px 24px -12px rgba(46,16,120,.18)}
+body{background:#FBFAFE}
+.shell{display:block;max-width:1240px;padding-inline:40px}
+@media (max-width:1040px){.shell{padding-inline:20px}}
+.side,.topbar{display:none!important}
+main{padding-top:20px}
+/* Announcement bar */
+.banner{background:#C6F00E;color:var(--ink);border:0;font-size:14px;padding:9px 16px}
+.banner a{margin-left:10px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+/* Pill nav */
+.jnav-wrap{position:sticky;top:0;z-index:30;padding:12px 20px;background:linear-gradient(#FBFAFE 70%,rgba(251,250,254,0))}
+.jnav{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:20px;background:#DA9FFF;border-radius:999px;padding:10px 12px 10px 20px}
+.jlogo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;flex:none}
+.jlogo svg{width:28px;height:28px}
+.jlogo span{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.jlogo em{font-style:normal;font-weight:500;color:#3A1A6E}
+.jnav .toc{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.jnav .toc::-webkit-scrollbar{display:none}
+.jnav .toc a{display:block;padding:7px 11px;border-radius:999px;border:0;color:var(--ink);font-size:14px;font-weight:500;white-space:nowrap;text-decoration:none;margin:0}
+.jnav .toc a:hover{background:rgba(255,255,255,.45)}
+.jnav .toc a.active{background:var(--ink);color:#fff;border:0}
+@media (max-width:1100px){.jlogo em{display:none}}
+@media (max-width:720px){.jnav-wrap{padding:8px 10px}.jnav{padding:8px 10px 8px 14px;gap:10px}.jlogo span{display:none}}
+/* Hero */
+.jhero{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)!important;align-items:start!important;padding:64px 56px 150px!important;border-radius:24px;gap:40px!important}
+.jhero:after{display:none}
+.jeyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#E2D4FF;margin-bottom:16px}
+.jhero h1{font-weight:600;letter-spacing:-.025em;font-size:clamp(40px,4.6vw,64px);line-height:1.04}
+.jhero .lede{font-size:18px;margin-top:20px}
+.jhero .btn{border-color:#fff;color:#fff}
+.jhero .btn.pri{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:none}
+.jhero .btn:hover,.jhero .btn.pri:hover{box-shadow:0 6px 18px rgba(12,6,32,.35)}
+@media (max-width:900px){.jhero{grid-template-columns:1fr!important;padding:40px 22px 120px!important}}
+/* Assistant widget */
+.asst{background:#fff;color:var(--ink);border-radius:18px;padding:16px;box-shadow:0 20px 40px -16px rgba(12,6,32,.5);display:grid;gap:12px;align-self:center}
+.asst-h{display:grid;grid-template-columns:34px 1fr;column-gap:10px;align-items:center}
+.asst-av{grid-row:span 2;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#fff 0 22%,transparent 23%),linear-gradient(160deg,#8A3FFF,#5E00EE)}
+.asst-h b{font-size:15px}
+.asst-h small{font-size:12px;color:var(--graphite)}
+.asst-msg{font-size:14.5px;line-height:1.45;background:#F4F1FA;border-radius:12px 12px 12px 4px;padding:10px 12px}
+.asst-q{display:grid;gap:6px}
+.aq{font:500 13.5px var(--body);background:var(--ink);color:#fff;border:0;border-radius:999px;padding:9px 14px;cursor:pointer;text-align:center;transition:background .15s}
+.aq:hover{background:#2A1D58}
+.aq.on{background:#5E00EE}
+.aq:focus-visible{outline:2px solid var(--honey);outline-offset:2px}
+.asst-a{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.45}
+.asst-a a{display:inline-block;margin-top:6px;font-weight:600;color:var(--blue)}
+/* Product mock */
+.jfloat{margin-top:-110px}
+.app{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 40px 80px -30px rgba(46,16,120,.45);overflow:hidden}
+.app-top{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid #EEE9F6}
+.app-logo svg{width:26px;height:26px;display:block}
+.app-tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.app-tabs::-webkit-scrollbar{display:none}
+.dtab{font:500 14px var(--body);padding:7px 12px;border-radius:8px;background:none;border:0;color:#45405A;cursor:pointer;white-space:nowrap}
+.dtab:hover{background:#F6F3FB}
+.dtab[aria-selected="true"]{background:#EFEAF8;color:var(--ink);font-weight:600}
+.dtab:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.app-acct{font-family:var(--mono);font-size:11px;color:var(--graphite);white-space:nowrap}
+.app-body{display:grid;grid-template-columns:180px minmax(0,1fr)}
+.app-side{border-right:1px solid #EEE9F6;padding:14px 10px;display:grid;gap:2px;align-content:start;font-size:13px}
+.app-side span{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;color:#45405A}
+.app-side span.on{background:#EFEAF8;color:var(--ink);font-weight:600}
+.app-side .app-sep{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-top:10px}
+.ic{width:12px;height:12px;border-radius:3px;border:1.5px solid currentColor;display:inline-block}
+.ic.q{border-radius:50%}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--sky);display:inline-block}
+.app-main{padding:18px 20px 22px;background:#FBFAFD;min-width:0}
+.dview h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.anl{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;margin:12px 0 14px}
+.anl b{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px}
+.anl b:before{content:"";width:10px;height:10px;background:var(--blue);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.anl ul{list-style:none;margin-top:4px}
+.anl li{font-size:13px;padding:3px 0 3px 14px;position:relative;color:#2C2740}
+.anl li:before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-right:1.5px solid var(--graphite);border-bottom:1.5px solid var(--graphite);transform:rotate(-45deg)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;min-width:0}
+.card h5{font-size:12.5px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 8px}
+.chips span{font-family:var(--mono);font-size:10px;background:#F1EEF7;border-radius:4px;padding:2px 6px;color:#3A3550}
+.card .num{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.card small{font-size:11.5px;color:var(--graphite)}
+.bars{display:flex;align-items:flex-end;gap:6px;height:72px;margin-top:auto;padding-top:12px;border-bottom:1px solid #EEE9F6}
+.bars i{flex:1;height:var(--h);min-height:2px;border-radius:3px 3px 0 0;background:var(--blue)}
+.bars.t i{background:var(--teal)}
+.bars.p i:nth-child(odd){background:var(--blue)}
+.bars.p i:nth-child(even){background:var(--teal)}
+.bars.v i:nth-child(even){background:#8A3FFF}
+@media (max-width:900px){.app-body{grid-template-columns:1fr}.app-side{display:none}.app-acct{display:none}}
+@media (max-width:720px){.cards{grid-template-columns:1fr}.bars{height:48px}}
+/* KPI cards in place of the band */
+.jkpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:56px var(--gut) 0}
+.jkpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--soft)}
+.jkpi h5{font-size:13px;font-weight:600}
+.jkpi b{display:block;font-family:var(--display);font-size:clamp(30px,3vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.jkpi p{font-size:14px;color:var(--graphite);margin-top:6px}
+@media (max-width:1000px){.jkpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.jkpis{grid-template-columns:1fr}}
+/* Research cards */
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;box-shadow:var(--soft)}
+.r b{font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.r p{font-size:14.5px;color:#2C2740;margin:6px 0 12px}
+.r small{margin-top:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+.evt{max-width:1060px;margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15px;color:#2C2740;background:#F1FBC9;border-radius:12px;padding:12px 16px}
+.evt b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:560px){.evt{grid-template-columns:1fr;gap:4px}}
+/* Know cards */
+#know .three{max-width:1060px;gap:14px}
+#know .three > div{background:#fff;border:1px solid var(--line);border-top:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--soft)}
+/* Soften every component to the product's look */
+.step-p,.pane.hc,.panel.sky .mail,.mail,.bc,.stalls div,.cbtn[aria-selected="true"],.mx-rule,.fun{box-shadow:var(--soft)!important}
+.stalls div,.cbtn,.mail,.facts2 div,.pnode,.sq,.tiles2 .col-h,.out div{border-width:1px!important}
+.stalls div,.cbtn,.facts2 div,.sq{border-color:var(--line)!important}
+.stalls div,.cbtn,.sq{border-radius:12px}
+.cbtn[aria-selected="true"]{border-color:var(--ink)!important}
+.step-p{border-radius:0 0 16px 16px}
+.bc{border-radius:16px}
+.panel{border-radius:24px}
+.mx{border-top-width:1px}
+.mx-el b{border-radius:50%}
+.btn{border-width:1.5px}
+.sq.on{border-color:var(--ink)!important}
+.jfloat figure{max-width:none}
+:root{--display:'Inter','Helvetica Neue',Arial,sans-serif;--poster:'Inter','Helvetica Neue',Arial,sans-serif}
+h1,.sh h2,.contact h2,.bc h3,.jhero h1{font-weight:600;letter-spacing:-.03em}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4,.mx-el h4,.stalls h4{font-weight:600;letter-spacing:-.01em}
+.insight{font-weight:600;letter-spacing:-.015em}
+
 .steps{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:860px){.steps{grid-template-columns:repeat(5,minmax(0,1fr))}.cstep:nth-child(n+4){border-top:0}.cstep:nth-child(4){border-left:1px solid #2E2650}.cstep{padding:12px 8px 14px}.cstep b{font-size:13.5px;overflow-wrap:anywhere}}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for <b>Chris Lansing</b>, Head of Strategic Accounts, by Eric Iannello</div>
+<div class="banner">Prepared for <b>Chris Lansing</b>, Head of Strategic Accounts, by Eric Iannello <a href="#plan">See the 90 day plan</a></div>
 
-<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5E00EE"/><path d="M8 17a8 8 0 0 1 16 0z" fill="#fff"/><path d="M11 19v6M16 19v7M21 19v6" stroke="#C6F00E" stroke-width="2.4" stroke-linecap="round"/></svg><b>Jellyfish plan</b></a><a href="#contact">Contact</a></div>
-
-<div class="shell">
-  <aside class="side" aria-label="Contents">
-    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5E00EE"/><path d="M8 17a8 8 0 0 1 16 0z" fill="#fff"/><path d="M11 19v6M16 19v7M21 19v6" stroke="#C6F00E" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>West Coast</b><small>Jellyfish plan</small></span></a>
+<header class="jnav-wrap">
+  <nav class="jnav" aria-label="Contents">
+    <a class="jlogo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5E00EE"/><path d="M8 17a8 8 0 0 1 16 0z" fill="#fff"/><path d="M11 19v6M16 19v7M21 19v6" stroke="#C6F00E" stroke-width="2.4" stroke-linecap="round"/></svg><span>Eric Iannello <em>for Jellyfish</em></span></a>
     <ul class="toc" id="toc">
       <li><a href="#top">Overview</a></li>
-      <li><a href="#know">What I know</a></li>
-      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
       <li><a href="#territory">Territory</a></li>
       <li><a href="#plays">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
-      <li><a href="#deal">Running the deal</a></li>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#plan">First 90 days</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plan">90 days</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="side-foot">
-      <span>Eric Iannello</span>
-      <span>Boise, Idaho</span>
-      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
-    </div>
-  </aside>
+  </nav>
+</header>
 
+<div class="shell">
   <main>
     <!-- Overview -->
-    <section id="top" class="hero grain">
-      <div>
-        <div class="doc-meta">
-          <span class="status"><b>Proposal</b></span>
-          <span>Strategic Account Executive, West Coast</span>
-          <span>October 2026</span>
-        </div>
-        <h1>Every board asks what AI bought engineering. Jellyfish has the <mark>answer.</mark></h1>
-        <p class="lede">Jellyfish is the intelligence platform for AI integrated engineering, used by more than 1,000 companies and built on 100 million pull requests from over 275,000 engineers.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging SPICED and MEDDPICC.</p>
+    <section id="top" class="hero jhero">
+      <div class="jhero-copy">
+        <p class="jeyebrow">Strategic Account Executive, West Coast</p>
+        <h1>The intelligence plan for Jellyfish's <mark>West Coast.</mark></h1>
+        <p class="lede">Jellyfish turns developer tool data into the answers R&amp;D leaders need in the AI era. My job is to put those answers in front of the largest engineering orgs on the West Coast, with pipeline I source myself and deals run on SPICED and MEDDPICC.<sup><a href="#s1">1</a></sup></p>
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
       </div>
-      <div class="art">
-        <div class="mods" role="group" aria-label="Jellyfish platform. Select a square to read about it.">
-          <button class="mod" data-t="AI Impact" data-d="Connects AI adoption, usage and spend across every coding tool and agent with workflow and delivery outcomes.">AI Impact</button>
-          <button class="mod" data-t="Delivery" data-d="Cycle time, throughput and project progress, so leaders see what will ship and what is at risk.">Delivery</button>
-          <button class="mod" data-t="DevFinOps" data-d="Turns engineering activity into audit ready software capitalization and R&amp;D tax reporting, with no timesheets.">DevFinOps</button>
-          <button class="mod" data-t="Allocations" data-d="Categorizes engineering work by initiative, work type and business priority automatically.">Allocations</button>
-          <button class="mod core on" data-t="Jellyfish" data-d="One system of record for engineering, combining data from Git, Jira and AI tools with business context.">Jellyfish</button>
-          <button class="mod" data-t="Benchmarks" data-d="Compares each team with the industry's largest production engineering dataset.">Benchmarks</button>
-          <button class="mod" data-t="DevEx" data-d="Developer experience surveys paired with system data, so sentiment and output are read together.">DevEx</button>
-          <button class="mod" data-t="Planning" data-d="Capacity planning built on actual team throughput, so roadmap commitments match what teams can deliver.">Planning</button>
-          <button class="mod" data-t="Data hub" data-d="Dashboards, a query builder and a metrics explorer for every question the business asks engineering.">Data hub</button>
+      <aside class="asst" aria-label="Plan assistant">
+        <div class="asst-h"><span class="asst-av" aria-hidden="true"></span><b>Plan assistant</b><small>Answers from this page</small></div>
+        <p class="asst-msg">Hi Chris! I can walk you through Eric's plan. What do you want to know first?</p>
+        <div class="asst-q" role="group" aria-label="Questions">
+          <button type="button" class="aq on" aria-pressed="true" data-a="$19.6M in self sourced pipeline at Netradyne, Enterprise Seller of the Year, and a $1.2M Uber deal at Jamf. Most of his pipeline has come from cold outbound." data-h="#about">Why Eric for this role?</button>
+          <button type="button" class="aq" aria-pressed="false" data-a="Four West Coast markets: San Francisco, Silicon Valley, Southern California and the Pacific Northwest, each with its own reason to measure AI." data-h="#territory">Where will he focus?</button>
+          <button type="button" class="aq" aria-pressed="false" data-a="SPICED for discovery, a POC with written success criteria and an executive read out, and a MEDDPICC checklist with proof on every line." data-h="#deal">How does he run deals?</button>
+          <button type="button" class="aq" aria-pressed="false" data-a="30 account plans, 15 to 20 executive meetings, 4 to 6 qualified opportunities and first POCs running, building toward 3x coverage." data-h="#plan">What happens in 90 days?</button>
         </div>
-        <p class="hx-say" id="hxSay" aria-live="polite"><b>Jellyfish</b>One system of record for engineering, combining data from Git, Jira and AI tools with business context.</p>
-        <p class="hx-hint">Select a square to explore the platform</p>
-      </div>
-      <dl class="facts">
-        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-        <div><dt>Prepared for</dt><dd>Chris Lansing</dd></div>
-        <div><dt>Territory</dt><dd>West Coast</dd></div>
-        <div><dt>Methods</dt><dd>SPICED, MEDDPICC</dd></div>
-      </dl>
+        <div class="asst-a" id="asA" aria-live="polite"><p id="asT">$19.6M in self sourced pipeline at Netradyne, Enterprise Seller of the Year, and a $1.2M Uber deal at Jamf. Most of his pipeline has come from cold outbound.</p><a id="asL" href="#about">Read more</a></div>
+      </aside>
     </section>
-    <div class="float">
+    <div class="float jfloat">
       <figure>
-        <div class="fun" role="group" aria-label="AI Impact demo. Select a team to see what its AI spend is producing.">
-          <div class="fun-bar"><span><b>AI Impact</b> by team</span><span class="hint">Select a team</span><span>illustrative</span></div>
-          <div class="fun-grid">
-            <div class="custs">
-              <button class="cust on" data-d="{&quot;h&quot;: &quot;Payments&quot;, &quot;p&quot;: &quot;High adoption, and delivery has moved with it.&quot;, &quot;c&quot;: &quot;82%&quot;, &quot;t&quot;: &quot;1.9x baseline&quot;, &quot;o&quot;: &quot;$64 a week&quot;, &quot;w&quot;: [[&quot;Cycle time down a third since rollout&quot;, &quot;delivery&quot;], [&quot;Agents open a quarter of PRs&quot;, &quot;AI usage&quot;], [&quot;Ahead of peer benchmark on throughput&quot;, &quot;benchmark&quot;]]}" aria-pressed="true"><i>PAY</i><span>Payments<small>82 engineers</small></span><em class="lead">Leading</em></button>
-              <button class="cust" data-d="{&quot;h&quot;: &quot;Mobile&quot;, &quot;p&quot;: &quot;Licenses assigned, but most engineers rarely use them.&quot;, &quot;c&quot;: &quot;31%&quot;, &quot;t&quot;: &quot;1.1x baseline&quot;, &quot;o&quot;: &quot;$18 a week&quot;, &quot;w&quot;: [[&quot;Two thirds of seats inactive last month&quot;, &quot;AI usage&quot;], [&quot;Review wait time is the bottleneck&quot;, &quot;delivery&quot;], [&quot;Enablement session would pay back fastest&quot;, &quot;next step&quot;]]}" aria-pressed="false"><i>MOB</i><span>Mobile<small>46 engineers</small></span><em class="lag">Lagging</em></button>
-              <button class="cust" data-d="{&quot;h&quot;: &quot;Platform&quot;, &quot;p&quot;: &quot;Heavy token use with little extra output.&quot;, &quot;c&quot;: &quot;94%&quot;, &quot;t&quot;: &quot;1.2x baseline&quot;, &quot;o&quot;: &quot;$240 a week&quot;, &quot;w&quot;: [[&quot;Spend per merged PR well above peers&quot;, &quot;cost&quot;], [&quot;Long agent sessions on one service&quot;, &quot;AI usage&quot;], [&quot;Model routing could cut spend&quot;, &quot;next step&quot;]]}" aria-pressed="false"><i>PLT</i><span>Platform<small>58 engineers</small></span><em class="cost">Overspend</em></button>
-              <button class="cust" data-d="{&quot;h&quot;: &quot;Data&quot;, &quot;p&quot;: &quot;Steady gains at a modest cost.&quot;, &quot;c&quot;: &quot;76%&quot;, &quot;t&quot;: &quot;1.6x baseline&quot;, &quot;o&quot;: &quot;$41 a week&quot;, &quot;w&quot;: [[&quot;More epics closed per month&quot;, &quot;delivery&quot;], [&quot;Spend in line with output&quot;, &quot;cost&quot;], [&quot;Practices worth sharing with Mobile&quot;, &quot;next step&quot;]]}" aria-pressed="false"><i>DAT</i><span>Data<small>34 engineers</small></span><em class="lead">Leading</em></button>
-              <button class="cust" data-d="{&quot;h&quot;: &quot;Web&quot;, &quot;p&quot;: &quot;Usage is up, delivery is flat.&quot;, &quot;c&quot;: &quot;68%&quot;, &quot;t&quot;: &quot;1.0x baseline&quot;, &quot;o&quot;: &quot;$52 a week&quot;, &quot;w&quot;: [[&quot;Most time goes to unplanned work&quot;, &quot;allocation&quot;], [&quot;Bugs and support crowd out roadmap&quot;, &quot;allocation&quot;], [&quot;Fix allocation before buying more seats&quot;, &quot;next step&quot;]]}" aria-pressed="false"><i>WEB</i><span>Web<small>61 engineers</small></span><em class="cost">Flat</em></button>
+        <div class="app" role="group" aria-label="Jellyfish product mock. Select a tab to change the view.">
+          <div class="app-top">
+            <span class="app-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#5E00EE"/><path d="M8 17a8 8 0 0 1 16 0z" fill="#fff"/><path d="M11 19v6M16 19v7M21 19v6" stroke="#C6F00E" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+            <div class="app-tabs" role="tablist" aria-label="Jellyfish views">
+              <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true">AI Impact</button>
+              <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1">Delivery</button>
+              <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1">Allocations</button>
+              <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1">DevFinOps</button>
+              <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1">DevEx</button>
+              <button class="dtab" role="tab" id="dt5" aria-controls="dp5" aria-selected="false" tabindex="-1">Benchmarks</button>
             </div>
-            <div class="fun-d">
-              <h4 id="fH">Payments</h4>
-              <p id="fP">High adoption, and delivery has moved with it.</p>
-              <div class="dec"><div><small>AI adoption</small><b id="dC">82%</b></div><div><small>PR throughput</small><b id="dT">1.9x baseline</b></div><div><small>Spend per dev</small><b id="dO">$64 a week</b></div></div>
-              <p class="why">What Jellyfish shows</p>
-              <ul id="fL"><li>Cycle time down a third since rollout<s>delivery</s></li><li>Agents open a quarter of PRs<s>AI usage</s></li><li>Ahead of peer benchmark on throughput<s>benchmark</s></li></ul>
+            <span class="app-acct">Example account, 600 engineers</span>
+          </div>
+          <div class="app-body">
+            <div class="app-side" aria-hidden="true"><span class="on"><i class="ic g"></i>Dashboards</span><span><i class="ic q"></i>Query Builder</span><span><i class="ic m"></i>Metrics Explorer</span><span class="app-sep">Teams</span><span><i class="dot"></i>Payments</span><span><i class="dot"></i>Mobile</span><span><i class="dot"></i>Platform</span><span><i class="dot"></i>Data</span><span><i class="dot"></i>Web</span></div>
+            <div class="app-main">
+              <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><h3>AI Productivity Overview</h3><div class="anl"><b>Analysis</b><ul><li>AI assisted PRs are up 38% since July, led by Payments and Data.</li><li>Platform spends three times the peer median per merged PR.</li></ul></div><div class="cards"><div class="card"><h5>AI Spend by Team</h5><div class="chips"><span>Breakdown by Team</span><span>Last 6 Months</span></div><b class="num">$11,820</b><small>per team, per month</small><div class="bars v" aria-hidden="true"><i style="--h:34%"></i><i style="--h:42%"></i><i style="--h:48%"></i><i style="--h:55%"></i><i style="--h:61%"></i><i style="--h:72%"></i></div></div><div class="card"><h5>PRs Assisted by AI</h5><div class="chips"><span>Percent of merged PRs</span></div><b class="num">44%</b><small>of merged PRs this month</small><div class="bars t" aria-hidden="true"><i style="--h:18%"></i><i style="--h:24%"></i><i style="--h:29%"></i><i style="--h:33%"></i><i style="--h:39%"></i><i style="--h:44%"></i></div></div><div class="card"><h5>Cost per Merged PR</h5><div class="chips"><span>Benchmark</span></div><b class="num">$6.40</b><small>peer median $2.10</small><div class="bars p" aria-hidden="true"><i style="--h:22%"></i><i style="--h:30%"></i><i style="--h:41%"></i><i style="--h:52%"></i><i style="--h:60%"></i><i style="--h:66%"></i></div></div></div></div>
+              <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><h3>Delivery Overview</h3><div class="anl"><b>Analysis</b><ul><li>Issue cycle time is down 21% since Q2.</li><li>Review wait on Mobile is the largest bottleneck.</li></ul></div><div class="cards"><div class="card"><h5>Issue Cycle Time</h5><div class="chips"><span>Days</span><span>Last 6 Months</span></div><b class="num">3.8 days</b><small>down from 4.8</small><div class="bars v" aria-hidden="true"><i style="--h:70%"></i><i style="--h:66%"></i><i style="--h:61%"></i><i style="--h:55%"></i><i style="--h:50%"></i><i style="--h:48%"></i></div></div><div class="card"><h5>PR Throughput</h5><div class="chips"><span>Per engineer, per week</span></div><b class="num">1.4</b><small>up from 1.1</small><div class="bars t" aria-hidden="true"><i style="--h:40%"></i><i style="--h:44%"></i><i style="--h:47%"></i><i style="--h:52%"></i><i style="--h:58%"></i><i style="--h:62%"></i></div></div><div class="card"><h5>Deliverables on Track</h5><div class="chips"><span>This quarter</span></div><b class="num">7 of 9</b><small>two at risk on Mobile</small><div class="bars p" aria-hidden="true"><i style="--h:78%"></i><i style="--h:78%"></i><i style="--h:67%"></i><i style="--h:78%"></i><i style="--h:78%"></i><i style="--h:78%"></i></div></div></div></div>
+              <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><h3>Investment Allocation</h3><div class="anl"><b>Analysis</b><ul><li>Roadmap work is 52% of capacity, below the 60% target.</li><li>Unplanned support work doubled on Web this quarter.</li></ul></div><div class="cards"><div class="card"><h5>Roadmap</h5><div class="chips"><span>Percent of effort</span></div><b class="num">52%</b><small>target 60%</small><div class="bars v" aria-hidden="true"><i style="--h:58%"></i><i style="--h:57%"></i><i style="--h:55%"></i><i style="--h:54%"></i><i style="--h:53%"></i><i style="--h:52%"></i></div></div><div class="card"><h5>Keep the Lights On</h5><div class="chips"><span>Percent of effort</span></div><b class="num">31%</b><small>up from 24%</small><div class="bars t" aria-hidden="true"><i style="--h:24%"></i><i style="--h:25%"></i><i style="--h:27%"></i><i style="--h:28%"></i><i style="--h:30%"></i><i style="--h:31%"></i></div></div><div class="card"><h5>Tech Debt</h5><div class="chips"><span>Percent of effort</span></div><b class="num">17%</b><small>steady</small><div class="bars p" aria-hidden="true"><i style="--h:18%"></i><i style="--h:18%"></i><i style="--h:18%"></i><i style="--h:18%"></i><i style="--h:17%"></i><i style="--h:17%"></i></div></div></div></div>
+              <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><h3>Software Capitalization</h3><div class="anl"><b>Analysis</b><ul><li>Q3 capitalizable cost calculated from engineering activity.</li><li>No engineer timesheets were collected this quarter.</li></ul></div><div class="cards"><div class="card"><h5>Capitalizable Cost</h5><div class="chips"><span>Q3</span><span>By initiative</span></div><b class="num">$4.2M</b><small>across 14 initiatives</small><div class="bars v" aria-hidden="true"><i style="--h:50%"></i><i style="--h:62%"></i><i style="--h:58%"></i><i style="--h:66%"></i><i style="--h:71%"></i><i style="--h:74%"></i></div></div><div class="card"><h5>Timesheets Collected</h5><div class="chips"><span>Engineers</span></div><b class="num">0</b><small>down from 600</small><div class="bars t" aria-hidden="true"><i style="--h:90%"></i><i style="--h:90%"></i><i style="--h:90%"></i><i style="--h:40%"></i><i style="--h:0%"></i><i style="--h:0%"></i></div></div><div class="card"><h5>Finance Hours Saved</h5><div class="chips"><span>Per year</span></div><b class="num">700</b><small>Jellyfish DevFinOps estimate</small><div class="bars p" aria-hidden="true"><i style="--h:20%"></i><i style="--h:35%"></i><i style="--h:48%"></i><i style="--h:60%"></i><i style="--h:70%"></i><i style="--h:78%"></i></div></div></div></div>
+              <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><h3>Developer Experience</h3><div class="anl"><b>Analysis</b><ul><li>Survey participation reached 81%.</li><li>Code review wait is the top friction point for the second survey running.</li></ul></div><div class="cards"><div class="card"><h5>Participation</h5><div class="chips"><span>Latest survey</span></div><b class="num">81%</b><small>of engineers responded</small><div class="bars v" aria-hidden="true"><i style="--h:62%"></i><i style="--h:68%"></i><i style="--h:71%"></i><i style="--h:75%"></i><i style="--h:79%"></i><i style="--h:81%"></i></div></div><div class="card"><h5>Satisfaction</h5><div class="chips"><span>Out of 5</span></div><b class="num">4.1</b><small>up from 3.8</small><div class="bars t" aria-hidden="true"><i style="--h:64%"></i><i style="--h:66%"></i><i style="--h:70%"></i><i style="--h:72%"></i><i style="--h:76%"></i><i style="--h:82%"></i></div></div><div class="card"><h5>Top Friction</h5><div class="chips"><span>Ranked by engineers</span></div><b class="num">Review wait</b><small>then flaky tests</small><div class="bars p" aria-hidden="true"><i style="--h:80%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:35%"></i><i style="--h:24%"></i><i style="--h:18%"></i></div></div></div></div>
+              <div class="dview" id="dp5" role="tabpanel" aria-labelledby="dt5" hidden><h3>Industry Benchmarks</h3><div class="anl"><b>Analysis</b><ul><li>Throughput is in the top quartile of the peer group.</li><li>AI adoption trails top quartile peers by 19 points.</li></ul></div><div class="cards"><div class="card"><h5>PR Throughput</h5><div class="chips"><span>Percentile</span></div><b class="num">78th</b><small>among peer companies</small><div class="bars v" aria-hidden="true"><i style="--h:55%"></i><i style="--h:60%"></i><i style="--h:64%"></i><i style="--h:70%"></i><i style="--h:74%"></i><i style="--h:78%"></i></div></div><div class="card"><h5>AI Adoption</h5><div class="chips"><span>Versus top quartile</span></div><b class="num">61%</b><small>top quartile 80%</small><div class="bars t" aria-hidden="true"><i style="--h:40%"></i><i style="--h:46%"></i><i style="--h:51%"></i><i style="--h:55%"></i><i style="--h:58%"></i><i style="--h:61%"></i></div></div><div class="card"><h5>Cycle Time</h5><div class="chips"><span>Percentile</span></div><b class="num">64th</b><small>room to improve</small><div class="bars p" aria-hidden="true"><i style="--h:48%"></i><i style="--h:52%"></i><i style="--h:55%"></i><i style="--h:58%"></i><i style="--h:62%"></i><i style="--h:64%"></i></div></div></div></div>
             </div>
           </div>
         </div>
-        <figcaption><b>Fig. 1</b><span>AI Impact, team by team. Adoption, delivery and spend in one view, so leaders can see where AI is paying off. Illustrative data.</span></figcaption>
+        <figcaption><b>Fig. 1</b><span>The Jellyfish views I would build each first meeting around, for an example 600 engineer West Coast company. Illustrative data, modeled on the Jellyfish platform.</span></figcaption>
       </figure>
     </div>
-    <div class="band" role="list">
-      <div role="listitem"><small>Customers</small><b>1,000+</b><span>companies, including DraftKings, Keller Williams and Blue Yonder<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>Dataset</small><b>100M</b><span>pull requests analyzed from more than 275,000 engineers<sup><a href="#s2">2</a></sup></span></div>
-      <div role="listitem"><small>AI leaders</small><b>2x</b><span>PR throughput for top quartile AI adopters versus low adopters<sup><a href="#s3">3</a></sup></span></div>
-      <div role="listitem"><small>Token cost</small><b>$89</b><span>per merged PR at the highest token tier, versus $0.28 at the lowest<sup><a href="#s4">4</a></sup></span></div>
+    <div class="jkpis" role="list">
+      <div class="jkpi" role="listitem"><h5>Customers</h5><div class="chips"><span>Jellyfish</span></div><b>1,000+</b><p>companies, including DraftKings, Keller Williams and Blue Yonder<sup><a href="#s1">1</a></sup></p></div>
+      <div class="jkpi" role="listitem"><h5>Pull requests analyzed</h5><div class="chips"><span>275,000 engineers</span></div><b>100M</b><p>plus 90 million prompts and 150 trillion tokens<sup><a href="#s2">2</a></sup></p></div>
+      <div class="jkpi" role="listitem"><h5>PR throughput</h5><div class="chips"><span>Top quartile AI adopters</span></div><b>2x</b><p>the throughput of low adopters, with 24% faster cycle times<sup><a href="#s3">3</a></sup></p></div>
+      <div class="jkpi" role="listitem"><h5>Cost per merged PR</h5><div class="chips"><span>Highest token tier</span></div><b>$89.32</b><p>versus $0.28 at the lowest tier<sup><a href="#s4">4</a></sup></p></div>
     </div>
 
     <!-- Know -->
@@ -1013,6 +1132,14 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
         <div><h3>The category is consolidating</h3><p>Atlassian agreed to buy DX for about $1 billion in 2025, its largest acquisition.<sup><a href="#s10">10</a></sup> Jellyfish stays independent, with data across Jira, Git providers and every major AI coding tool.</p></div>
         <div><h3>Finance has a seat</h3><p>Where software capitalization and R&amp;D tax reporting run on timesheets, DevFinOps replaces them with engineering activity data and saves finance leaders about 700 hours a year.<sup><a href="#s5">5</a></sup></p></div>
       </div>
+      <h3 class="ind-h">Jellyfish research I would lead with</h3>
+      <div class="rsch">
+        <div class="r"><div class="chips"><span>AI Engineering Trends</span></div><b>Nearly half</b><p>of pull requests at top AI adopters are now opened by agents.<sup><a href="#s3">3</a></sup></p><small>Opens with the CTO</small></div>
+        <div class="r"><div class="chips"><span>AI Engineering Trends</span></div><b>$200 a week</b><p>in AI spend for the top 10% of developers.<sup><a href="#s8">8</a></sup></p><small>Opens with the CFO</small></div>
+        <div class="r"><div class="chips"><span>AI Engineering Trends</span></div><b>64%</b><p>of companies now generate a majority of their code with AI assistance.<sup><a href="#s3">3</a></sup></p><small>Opens with the VP of Engineering</small></div>
+        <div class="r"><div class="chips"><span>Research team</span></div><b>Under 2%</b><p>of companies use open models for coding, even after usage doubled in six weeks.<sup><a href="#s11">11</a></sup></p><small>Opens with platform engineering</small></div>
+      </div>
+      <p class="evt"><b>Events</b>AI Impact Week this October, with a fireside chat between Nathen Harvey of DORA and Laura Tacho, and the GLOW Summit episodes give every follow up a reason to send.<sup><a href="#s12">12</a></sup></p>
     </section>
 
     <!-- POV -->
@@ -1129,7 +1256,7 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
           <p class="insight">Large engineering orgs often run several AI coding tools, and each vendor reports on its own. The CTO needs one number across all of them.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Engineering orgs of 500 or more running two or more AI coding tools.</dd></div>
-            <div><dt class="label">Signal</dt><dd>An engineering blog post, conference talk or earnings call mentioning Copilot, Cursor, Claude Code or Amazon Q Developer.</dd></div>
+            <div><dt class="label">Signal</dt><dd>An engineering blog post, conference talk or earnings call mentioning Copilot, Cursor, Claude Code or Amazon Q Developer, or a leader who joined AI Impact Week.</dd></div>
             <div><dt class="label">Personas</dt><dd>CTO or SVP of Engineering first, then the head of developer productivity and the CFO.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How do you report AI impact to the board today?</li><li>Which tools are in use, and who owns the spend?</li><li>What would you cut if you had to justify every seat?</li></ul></dd></div>
           </dl>
@@ -1377,7 +1504,7 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
           <ul>
             <li>Learn the platform hands on: connect a sample Git and Jira instance, then walk AI Impact, Allocations and DevFinOps with a Sales Engineer</li>
             <li>Work with Chris, Sales Engineering and top strategic reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
-            <li>Learn the AI Engineering Trends research well enough to teach it in a first meeting</li>
+            <li>Learn the AI Engineering Trends research well enough to teach it in a first meeting, and follow up with AI Impact Week attendees in the territory</li>
             <li>Build battlecards for DX, LinearB, Swarmia, AI vendor dashboards and in house builds</li>
             <li>Audit named accounts for AI tools in use, engineering headcount, capitalization and dormant opportunities</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
@@ -1438,6 +1565,8 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
         <li id="s8"><a href="https://jellyfish.co/ai-engineering-trends/" target="_blank" rel="noopener">Jellyfish, AI Engineering Trends</a></li>
         <li id="s9"><a href="https://jellyfish.co/blog/g2-software-development-analytics-tools-grid-summer-2026/" target="_blank" rel="noopener">Jellyfish, 16 quarters at the top of G2's software development analytics grid</a></li>
         <li id="s10"><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037225000050/ex991pressreleasedatedsept.htm" target="_blank" rel="noopener">Atlassian, press release on the agreement to acquire DX (SEC Form 8&#8209;K)</a></li>
+        <li id="s11"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7498776783949922304/" target="_blank" rel="noopener">Nicholas Arcolano, Head of AI and Research at Jellyfish, on open model usage</a></li>
+        <li id="s12"><a href="https://jellyfish.co/events-and-webinars/ai-impact-week-october-2026/" target="_blank" rel="noopener">Jellyfish, AI Impact Week, October 2026</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the Jellyfish Strategic Account Executive, West Coast role. Not affiliated with or endorsed by Jellyfish. Figures come from public and third party sources as of October 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>
@@ -1499,6 +1628,17 @@ h1,.sh h2,.contact h2,.bc h3{font-weight:700;letter-spacing:-.015em}
   group(sts,step);
   document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
   document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Product mock tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+
+  // Plan assistant
+  var aqs=[].slice.call(document.querySelectorAll('.aq')),asT=document.getElementById('asT'),asL=document.getElementById('asL');
+  aqs.forEach(function(q){q.addEventListener('click',function(){
+    aqs.forEach(function(x){x.classList.toggle('on',x===q);x.setAttribute('aria-pressed',x===q)});
+    asT.textContent=q.dataset.a;asL.setAttribute('href',q.dataset.h);
+  })});
 
   // Battlecards
   var cbs=[].slice.call(document.querySelectorAll('.cbtn'));

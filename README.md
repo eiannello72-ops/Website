@@ -12,6 +12,7 @@ for the Enterprise AE role.
 | Honeycomb (West) | [`honeycomb/`](honeycomb/index.html) |
 | Pentera (PNW) | [`pentera/`](pentera/index.html) |
 | LogicGate (PNW and Canada) | [`logicgate/`](logicgate/index.html) |
+| Hightouch (Mountain West) | [`hightouch/`](hightouch/index.html) |
 
 ## Deploying
 

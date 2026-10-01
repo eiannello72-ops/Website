@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LogicGate PNW and Canada Plan</title>
-<meta name="description" content="A Pacific Northwest and Canada strategic territory plan for LogicGate, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello for Joe Zelinskas.">
+<title>Hightouch Mountain West Plan</title>
+<meta name="description" content="A Mountain West enterprise territory plan for Hightouch, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230000CC'/%3E%3Cpath d='M9 9h9l5 7-5 7H9l5-7z' fill='%237CFA72'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121212'/%3E%3Crect x='8' y='12' width='12' height='12' fill='%23fff'/%3E%3Crect x='16' y='8' width='8' height='8' fill='%23FEB744'/%3E%3C/svg%3E">
 <style>
 :root{
   color-scheme:light;
@@ -752,17 +752,163 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
 .ind .acc{font-size:14px;color:var(--graphite)}
 @media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
 .panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+
+/* ===== Hightouch theme ===== */
+:root{
+  --ink:#121212;
+  --ink-2:#202020;
+  --graphite:#5A5650;
+  --honey:#FEB744;
+  --honey-soft:#FFF1D9;
+  --blue:#1F5C46;
+  --blue-soft:#DFF3E6;
+  --sage:#BFD3C2;
+  --sky:#BFD3C2;
+  --sky-soft:#EEF5EF;
+  --fog:#F6F4F0;
+  --rule:#E3DED5;
+  --link:#1F5C46;
+  --display:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --poster:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body{background:#FCFBF8}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:600;letter-spacing:-.025em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04;font-weight:500;letter-spacing:-.035em}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-weight:700}
+mark{background:var(--ink);color:var(--honey)}
+.banner{background:#DCF5E5;color:var(--blue);border-color:var(--ink)}
+.banner b{color:var(--ink)}
+.mark b{font-family:var(--poster);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--blue)}
+.toc a.active{border-left-color:var(--ink)}
+/* Light gradient hero */
+.hero{background:linear-gradient(125deg,#FEB744 0%,#FBC17B 42%,#D9CFA4 70%,#BFD3C2 100%);color:var(--ink)}
+.hero:after{mix-blend-mode:multiply;opacity:.35}
+.hero h1{color:var(--ink)}
+.hero h1 mark{background:var(--ink);color:#FFE3A8;border-radius:6px;padding:0 .12em}
+.hero .lede{color:#2B2620}
+.hero .lede b{color:var(--ink)}
+.hero .doc-meta span{color:#4A4036}
+.hero .doc-meta span b{color:var(--ink)}
+.hero .facts{border-color:var(--ink)}
+.hero .facts dt{color:#5A4D3D}
+.hero .facts dd{color:var(--ink)}
+.hero sup a{color:var(--ink)}
+.btn{border-color:var(--ink);color:var(--ink)}
+.btn.pri{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:4px 4px 0 #fff}
+.btn:hover{box-shadow:6px 6px 0 var(--ink)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.mod{background:rgba(255,255,255,.45);border-color:var(--ink);color:var(--ink)}
+.mod:hover{box-shadow:4px 4px 0 var(--ink)}
+.mod.on{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.mod.core{background:var(--ink);border-color:var(--ink);color:#fff;font-family:var(--poster);font-weight:700;text-transform:none;letter-spacing:-.02em}
+.mod.core.on{background:var(--ink);color:#FFE3A8}
+.hx-say{color:#2B2620;border-color:var(--ink)}
+.hx-say b{color:var(--ink)}
+.hx-hint{color:#5A4D3D}
+/* Band and dark panels */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#333!important}
+.band small{color:var(--honey);border-color:#333}
+.band b{color:#fff;font-size:clamp(26px,22cqi,58px)}
+.band span{color:#CFCAC2}
+.band sup a,.panel.ink sup a{color:var(--honey)}
+.panel.ink{background:#141414}
+.track .who b,.ttt h4,.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3A2600}
+.step-p{box-shadow:8px 8px 0 var(--honey)}
+.step-p blockquote{border-color:var(--honey)}
+.pane{background:#1E1E1E;border-color:#333}
+.pane.hc{box-shadow:8px 8px 0 var(--honey)}
+.arrow-mid span{background:var(--honey)}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey);color:var(--ink)}
+.pnode i{background:var(--ink)}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--blue-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:var(--blue)}
+/* Plays panel in sage */
+.panel.sky{background:#CFE2D3;color:var(--ink)}
+.panel.sky:after{opacity:.3}
+.panel.sky .sh p,.panel.sky .dl dd{color:#16241C}
+.panel.sky .dl dt,.panel.sky .label{color:var(--blue)}
+.panel.sky .insight{border-color:var(--ink);color:var(--ink)}
+.panel.sky .mail{color:var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.55);color:var(--ink);border-color:var(--ink)}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff}
+.panel.sky sup a{color:var(--blue)}
+.tok{color:#1F5C46;background:var(--blue-soft)}
+/* Plan panel warm */
+.panel.honey{background:#FFEBC7}
+.panel.honey:after{opacity:.22}
+.panel.honey .sh p{color:#4A3510}
+.phase .when{color:#6A4A10}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents */
+.reg .lead{border-left-color:var(--ink)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--ink)}
+.path .exit{border-left-color:var(--honey)}
+.path .m{background:var(--honey-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--honey)}
+.bc{background:#141414;box-shadow:8px 8px 0 var(--honey)}
+.bc-cols div,.bc-q{background:#1E1E1E;border-color:#333}
+.bc-q{border-color:var(--honey)}
+.bc-cols h4{color:var(--sage)}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#2E2510}
+.letter{border-left-color:var(--honey)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px}
+.sq.home:after{background:var(--ink)}
+.fun{box-shadow:8px 8px 0 var(--ink)}
+.fun-bar .hint{color:var(--blue)}
+/* Fig 1: AI Decisioning */
+.custs{padding:14px;display:grid;gap:8px;border-right:1.5px solid var(--ink);align-content:start}
+@media (max-width:1180px){.custs{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.cust{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;font:inherit;background:var(--fog);border:1.5px solid var(--ink);border-radius:8px;padding:9px 12px;cursor:pointer;transition:background .15s,transform .15s}
+.cust i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--sage);font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink)}
+.cust span{font-size:14px;line-height:1.3;color:var(--ink)}
+.cust span small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite)}
+.cust em{font-style:normal;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--ink);background:#fff;white-space:nowrap}
+.cust:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cust.on{background:var(--ink)}
+.cust.on span,.cust.on span small{color:#fff}
+.cust.on i{background:var(--honey)}
+.cust.on em{background:var(--honey);border-color:var(--honey)}
+.dec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 4px}
+.dec div{border:1.5px solid var(--ink);border-radius:8px;padding:8px 10px;background:#fff}
+.dec small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.dec b{display:block;font-size:14.5px;font-weight:700;line-height:1.25;margin-top:2px}
+.fun-d .why{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-top:12px}
+.fun-d li s{background:var(--honey-soft)}
+@media (max-width:560px){.dec{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cust{transition:none}}
+.mod.core{font-size:clamp(12px,5.2cqi,18px)}
+.mod.core{font-size:clamp(11px,4.3cqi,15px);line-height:1.15}
+.panel.sky .sh h2{color:var(--ink)}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for <b>Joe Zelinskas</b>, VP of Sales, North America, by Eric Iannello</div>
+<div class="banner">Prepared for the <b>Hightouch</b> enterprise sales team, by Eric Iannello</div>
 
-<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><b>LogicGate plan</b></a><a href="#contact">Contact</a></div>
+<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#121212"/><rect x="8" y="12" width="12" height="12" fill="#fff"/><rect x="16" y="8" width="8" height="8" fill="#FEB744"/></svg><b>Hightouch plan</b></a><a href="#contact">Contact</a></div>
 
 <div class="shell">
   <aside class="side" aria-label="Contents">
-    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><span><b>PNW and Canada</b><small>LogicGate plan</small></span></a>
+    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#121212"/><rect x="8" y="12" width="12" height="12" fill="#fff"/><rect x="16" y="8" width="8" height="8" fill="#FEB744"/></svg><span><b>Mountain West</b><small>Hightouch plan</small></span></a>
     <ul class="toc" id="toc">
       <li><a href="#top">Overview</a></li>
       <li><a href="#know">What I know</a></li>
@@ -788,129 +934,87 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       <div>
         <div class="doc-meta">
           <span class="status"><b>Proposal</b></span>
-          <span>Strategic Account Executive, PNW and Canada</span>
-          <span>For <b>Joe Zelinskas</b>, VP of Sales, North America</span>
-          <span>September 2026</span>
+          <span>Enterprise Account Executive, Mountain West</span>
+          <span>October 2026</span>
         </div>
-        <h1>Every risk program has the data. LogicGate <mark>connects it.</mark></h1>
-        <p class="lede">LogicGate is a Leader in both Gartner's Magic Quadrant and Forrester's Wave for GRC.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+        <h1>The warehouse has the customer data. Hightouch hands it to <mark>marketing.</mark></h1>
+        <p class="lede">Hightouch passed $100M ARR growing over 100% a year, and its next wave is enterprise brands that already keep customer data in Snowflake or Databricks.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
       </div>
       <div class="art">
-        <div class="mods" role="group" aria-label="Risk Cloud applications. Select a square to read about it.">
-          <button class="mod" data-t="Third party risk" data-d="Vendor intake, tiering, assessments and ongoing monitoring in one workflow.">Third party</button>
-          <button class="mod" data-t="Enterprise risk" data-d="One risk register across the business, with owners, scoring and board reporting.">Enterprise risk</button>
-          <button class="mod" data-t="Controls compliance" data-d="Map controls once to many frameworks, test them and collect evidence.">Controls</button>
-          <button class="mod" data-t="Cyber risk" data-d="Cyber risks tied to the assets, controls and vendors behind them.">Cyber risk</button>
-          <button class="mod core on" data-t="Risk Cloud" data-d="One no code platform and data model, so every program shares the same records.">Risk Cloud</button>
-          <button class="mod" data-t="AI governance" data-d="An inventory of AI use cases, with review, approval and monitoring workflows.">AI governance</button>
-          <button class="mod" data-t="Policy management" data-d="Policies, exceptions and attestations linked to the controls they govern.">Policy</button>
-          <button class="mod" data-t="Business continuity" data-d="Continuity plans and impact analysis connected to the risks and vendors they depend on.">Continuity</button>
-          <button class="mod" data-t="GRC Agents" data-d="AI agents for third party risk, enterprise risk, AI governance and continuity, broadly available in the Summer 2026 release.">GRC Agents</button>
+        <div class="mods" role="group" aria-label="Hightouch platform. Select a square to read about it.">
+          <button class="mod" data-t="Reverse ETL" data-d="Syncs warehouse data into the marketing, sales and ad tools a team already uses.">Reverse ETL</button>
+          <button class="mod" data-t="Customer Studio" data-d="Marketers build and size audiences visually, with no SQL and no data ticket.">Customer Studio</button>
+          <button class="mod" data-t="Journeys" data-d="Multi step journeys orchestrated across channels, straight from warehouse data.">Journeys</button>
+          <button class="mod" data-t="Identity resolution" data-d="Stitches customer records into unified profiles inside the warehouse.">Identity</button>
+          <button class="mod core on" data-t="Composable CDP" data-d="Runs on the customer's own warehouse, so there is one copy of customer data and every tool reads from it.">Composable CDP</button>
+          <button class="mod" data-t="Event collection" data-d="Collects web and app events directly into the warehouse.">Events</button>
+          <button class="mod" data-t="AI Decisioning" data-d="Agents choose the message, channel and timing for each customer, and learn from every result.">AI Decisioning</button>
+          <button class="mod" data-t="Match Booster" data-d="Raises match rates when first party audiences sync to ad platforms.">Match Booster</button>
+          <button class="mod" data-t="Personalization API" data-d="Serves warehouse profiles to websites and apps in real time.">Profiles API</button>
         </div>
-        <p class="hx-say" id="hxSay" aria-live="polite"><b>Risk Cloud</b>One no code platform and data model, so every program shares the same records.</p>
+        <p class="hx-say" id="hxSay" aria-live="polite"><b>Composable CDP</b>Runs on the customer's own warehouse, so there is one copy of customer data and every tool reads from it.</p>
         <p class="hx-hint">Select a square to explore the platform</p>
       </div>
       <dl class="facts">
         <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-        <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
-        <div><dt>Territory</dt><dd>PNW and Canada</dd></div>
+        <div><dt>Based in</dt><dd>Boise, inside the territory</dd></div>
+        <div><dt>Territory</dt><dd>Mountain West</dd></div>
         <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
       </dl>
     </section>
     <div class="float">
       <figure>
-        <div class="fun" role="group" aria-label="Enterprise risk heat map. Select a cell to see the risks in it.">
-          <div class="fun-bar"><span><b>risk register</b> enterprise view</span><span class="hint">Select a cell</span><span>illustrative</span></div>
+        <div class="fun" role="group" aria-label="AI Decisioning demo. Select a customer to see the decision the agent made.">
+          <div class="fun-bar"><span><b>AI Decisioning</b> today's decisions</span><span class="hint">Select a customer</span><span>illustrative</span></div>
           <div class="fun-grid">
-            <div class="hm-wrap">
-              <div class="hm-y">Impact</div>
-              <div class="hm">
-                <button class="cell l2 empty" data-l="1" data-i="5" data-r="[]" aria-label="Likelihood 1, impact 5, 0 risks">0</button>
-                <button class="cell l3 empty" data-l="2" data-i="5" data-r="[]" aria-label="Likelihood 2, impact 5, 0 risks">0</button>
-                <button class="cell l3 empty" data-l="3" data-i="5" data-r="[]" aria-label="Likelihood 3, impact 5, 0 risks">0</button>
-                <button class="cell l4" data-l="4" data-i="5" data-r="[[&quot;Regulatory change missed&quot;, &quot;compliance&quot;]]" aria-label="Likelihood 4, impact 5, 1 risks">1</button>
-                <button class="cell l4 on" data-l="5" data-i="5" data-r="[[&quot;Critical vendor outage&quot;, &quot;third party&quot;], [&quot;Ransomware on core systems&quot;, &quot;cyber&quot;]]" aria-label="Likelihood 5, impact 5, 2 risks">2</button>
-                <button class="cell l1 empty" data-l="1" data-i="4" data-r="[]" aria-label="Likelihood 1, impact 4, 0 risks">0</button>
-                <button class="cell l2 empty" data-l="2" data-i="4" data-r="[]" aria-label="Likelihood 2, impact 4, 0 risks">0</button>
-                <button class="cell l3" data-l="3" data-i="4" data-r="[[&quot;Key control failure in financial close&quot;, &quot;controls&quot;], [&quot;Data residency gap in Canada&quot;, &quot;privacy&quot;]]" aria-label="Likelihood 3, impact 4, 2 risks">2</button>
-                <button class="cell l4 empty" data-l="4" data-i="4" data-r="[]" aria-label="Likelihood 4, impact 4, 0 risks">0</button>
-                <button class="cell l4" data-l="5" data-i="4" data-r="[[&quot;Unreviewed AI use cases&quot;, &quot;AI governance&quot;]]" aria-label="Likelihood 5, impact 4, 1 risks">1</button>
-                <button class="cell l1 empty" data-l="1" data-i="3" data-r="[]" aria-label="Likelihood 1, impact 3, 0 risks">0</button>
-                <button class="cell l2" data-l="2" data-i="3" data-r="[[&quot;Policy attestations overdue&quot;, &quot;policy&quot;]]" aria-label="Likelihood 2, impact 3, 1 risks">1</button>
-                <button class="cell l2 empty" data-l="3" data-i="3" data-r="[]" aria-label="Likelihood 3, impact 3, 0 risks">0</button>
-                <button class="cell l3" data-l="4" data-i="3" data-r="[[&quot;Single source supplier&quot;, &quot;third party&quot;]]" aria-label="Likelihood 4, impact 3, 1 risks">1</button>
-                <button class="cell l3 empty" data-l="5" data-i="3" data-r="[]" aria-label="Likelihood 5, impact 3, 0 risks">0</button>
-                <button class="cell l1" data-l="1" data-i="2" data-r="[[&quot;Office lease renewal&quot;, &quot;operational&quot;]]" aria-label="Likelihood 1, impact 2, 1 risks">1</button>
-                <button class="cell l1 empty" data-l="2" data-i="2" data-r="[]" aria-label="Likelihood 2, impact 2, 0 risks">0</button>
-                <button class="cell l2" data-l="3" data-i="2" data-r="[[&quot;Continuity plan out of date&quot;, &quot;resilience&quot;]]" aria-label="Likelihood 3, impact 2, 1 risks">1</button>
-                <button class="cell l2 empty" data-l="4" data-i="2" data-r="[]" aria-label="Likelihood 4, impact 2, 0 risks">0</button>
-                <button class="cell l3 empty" data-l="5" data-i="2" data-r="[]" aria-label="Likelihood 5, impact 2, 0 risks">0</button>
-                <button class="cell l1 empty" data-l="1" data-i="1" data-r="[]" aria-label="Likelihood 1, impact 1, 0 risks">0</button>
-                <button class="cell l1 empty" data-l="2" data-i="1" data-r="[]" aria-label="Likelihood 2, impact 1, 0 risks">0</button>
-                <button class="cell l1 empty" data-l="3" data-i="1" data-r="[]" aria-label="Likelihood 3, impact 1, 0 risks">0</button>
-                <button class="cell l1 empty" data-l="4" data-i="1" data-r="[]" aria-label="Likelihood 4, impact 1, 0 risks">0</button>
-                <button class="cell l2 empty" data-l="5" data-i="1" data-r="[]" aria-label="Likelihood 5, impact 1, 0 risks">0</button>
-              </div>
-              <div class="hm-x">Likelihood</div>
+            <div class="custs">
+              <button class="cust on" data-d="{&quot;h&quot;: &quot;Decision for Maya&quot;, &quot;p&quot;: &quot;Win her back with free delivery.&quot;, &quot;c&quot;: &quot;Push&quot;, &quot;t&quot;: &quot;Thu 6:10 pm&quot;, &quot;o&quot;: &quot;Free delivery&quot;, &quot;w&quot;: [[&quot;Opens push on weekday evenings&quot;, &quot;behavior&quot;], [&quot;Last two orders used delivery&quot;, &quot;history&quot;], [&quot;Discounts did not change her response in past tests&quot;, &quot;experiment&quot;]]}" aria-pressed="true"><i>M</i><span>Maya<small>lapsed 41 days</small></span><em>Push</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Decision for Jordan&quot;, &quot;p&quot;: &quot;Nudge toward a second purchase.&quot;, &quot;c&quot;: &quot;Email&quot;, &quot;t&quot;: &quot;Sat 9:30 am&quot;, &quot;o&quot;: &quot;Starter bundle&quot;, &quot;w&quot;: [[&quot;No second session since signing up&quot;, &quot;behavior&quot;], [&quot;Opened the welcome email twice&quot;, &quot;engagement&quot;], [&quot;New members convert best on weekends&quot;, &quot;experiment&quot;]]}" aria-pressed="false"><i>J</i><span>Jordan<small>member for 9 days</small></span><em>Email</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Decision for Priya&quot;, &quot;p&quot;: &quot;Give early access, with no discount.&quot;, &quot;c&quot;: &quot;SMS&quot;, &quot;t&quot;: &quot;Fri 12:00 pm&quot;, &quot;o&quot;: &quot;Early access&quot;, &quot;w&quot;: [[&quot;Buys at full price&quot;, &quot;history&quot;], [&quot;Clicks on new arrivals&quot;, &quot;behavior&quot;], [&quot;Replies to SMS fastest&quot;, &quot;channel&quot;]]}" aria-pressed="false"><i>P</i><span>Priya<small>14 orders this year</small></span><em>SMS</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Decision for Chris&quot;, &quot;p&quot;: &quot;Remind him with reviews, not a coupon.&quot;, &quot;c&quot;: &quot;Email&quot;, &quot;t&quot;: &quot;Tue 7:00 pm&quot;, &quot;o&quot;: &quot;Product reviews&quot;, &quot;w&quot;: [[&quot;A discount holdout showed no extra lift&quot;, &quot;experiment&quot;], [&quot;Read reviews before leaving&quot;, &quot;behavior&quot;], [&quot;Email beats push for this category&quot;, &quot;channel&quot;]]}" aria-pressed="false"><i>C</i><span>Chris<small>cart left yesterday</small></span><em>Email</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Decision for Alex&quot;, &quot;p&quot;: &quot;Send nothing today.&quot;, &quot;c&quot;: &quot;None&quot;, &quot;t&quot;: &quot;Check in 4 days&quot;, &quot;o&quot;: &quot;Rest&quot;, &quot;w&quot;: [[&quot;Fatigue score is high&quot;, &quot;signal&quot;], [&quot;Rest days lifted later response&quot;, &quot;experiment&quot;], [&quot;Next decision in four days&quot;, &quot;schedule&quot;]]}" aria-pressed="false"><i>A</i><span>Alex<small>3 unopened sends</small></span><em>Hold</em></button>
             </div>
             <div class="fun-d">
-              <h4 id="fH">Likelihood 5, impact 5</h4>
-              <p id="fP">2 open risks. Each one links to its owner, its controls and the vendors or systems involved.</p>
-              <ul id="fL"><li>Critical vendor outage<s>third party</s></li><li>Ransomware on core systems<s>cyber</s></li></ul>
+              <h4 id="fH">Decision for Maya</h4>
+              <p id="fP">Win her back with free delivery.</p>
+              <div class="dec"><div><small>Channel</small><b id="dC">Push</b></div><div><small>When</small><b id="dT">Thu 6:10 pm</b></div><div><small>Offer</small><b id="dO">Free delivery</b></div></div>
+              <p class="why">Why the agent chose this</p>
+              <ul id="fL"><li>Opens push on weekday evenings<s>behavior</s></li><li>Last two orders used delivery<s>history</s></li><li>Discounts did not change her response in past tests<s>experiment</s></li></ul>
             </div>
           </div>
         </div>
-        <figcaption><b>Fig. 1</b><span>An enterprise register in Risk Cloud. Each risk carries its owner, its controls and the vendors behind it, so the board view is current the day it's pulled. Illustrative data.</span></figcaption>
+        <figcaption><b>Fig. 1</b><span>AI Decisioning, one customer at a time. Agents choose the message, channel and timing for each person, then learn from every result. Illustrative data.</span></figcaption>
       </figure>
     </div>
     <div class="band" role="list">
-      <div role="listitem"><small>Gartner</small><b>Leader</b><span>Magic Quadrant for GRC Tools, Assurance Leaders<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>Forrester</small><b>1 of 4</b><span>Leaders in GRC platforms, Q2 2026<sup><a href="#s2">2</a></sup></span></div>
-      <div role="listitem"><small>Customers</small><b>2.6x</b><span>average return reported on Risk Cloud<sup><a href="#s3">3</a></sup></span></div>
-      <div role="listitem"><small>Time to value</small><b>31 days</b><span>on average, per the Value Realization Tool<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><small>Hightouch</small><b>$100M+</b><span>ARR, growing over 100% a year two years running<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><small>Series D</small><b>$2.75B</b><span>valuation after a $150M round in April 2026<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><small>Gartner</small><b>Leader</b><span>in its first Magic Quadrant for Customer Data Platforms<sup><a href="#s2">2</a></sup></span></div>
+      <div role="listitem"><small>WHOOP</small><b>10%</b><span>lift in cross sell conversions within six weeks<sup><a href="#s3">3</a></sup></span></div>
     </div>
 
     <!-- Know -->
     <section id="know">
       <div class="sh">
-        <h2>What I know about LogicGate</h2>
+        <h2>What I know about Hightouch</h2>
         <p>The product, the buyer, and why this year matters.</p>
       </div>
       <div class="three">
         <div>
           <h3>The product</h3>
-          <p>Risk Cloud is a no code GRC platform with one data model for risks, controls, vendors, policies and issues, and applications for third party risk, enterprise risk, controls compliance, cyber risk, AI governance and more.</p>
-          <p>The Summer 2026 release made GRC Agents broadly available across third party risk, enterprise risk, AI governance and business continuity.<sup><a href="#s4">4</a></sup></p>
+          <p>Hightouch started as reverse ETL and grew into the composable CDP. It runs on the customer's own warehouse and syncs audiences and traits into every marketing and ad tool.</p>
+          <p>AI Decisioning adds agents that choose the message, channel and timing for each customer, and it is now the center of the company's roadmap.<sup><a href="#s4">4</a></sup></p>
         </div>
         <div>
           <h3>The buyer</h3>
-          <p>The Chief Risk Officer, Chief Information Security Officer, Chief Compliance Officer or Chief Audit Executive, usually with a GRC program lead as the champion.</p>
-          <p>Advisory firms shape many decisions, and LogicGate now has a joint business relationship with PwC.<sup><a href="#s4">4</a></sup></p>
+          <p>The CMO or VP of Lifecycle Marketing signs, with the Head of Data as a second economic voice and a marketing ops or analytics engineering lead as champion.</p>
+          <p>Snowflake and Databricks account teams are natural allies, because Hightouch makes the warehouse more valuable.</p>
         </div>
         <div>
           <h3>The moment</h3>
-          <p>The move to <a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai</a> marks the shift to an AI GRC platform, with agents built into the core.<sup><a href="#s5">5</a></sup> Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
-          <p>Regulators are asking for more evidence, through the SEC's cyber disclosure rules in the US and OSFI's Guideline B-10 in Canada.<sup><a href="#s6">6</a>,<a href="#s7">7</a></sup></p>
-        </div>
-      </div>
-      <h3 class="ind-h">Where LogicGate wins, by industry</h3>
-      <div class="inds">
-        <div class="ind reg">
-          <span class="ind-tag">Highly regulated</span>
-          <h4>Financial services and healthcare</h4>
-          <p>This is where LogicGate is strongest. Banks, insurers and health systems answer to examiners who want evidence: the interagency third party guidance for US banks, OSFI's Guideline B-10 in Canada, and the HIPAA Security Rule in healthcare.<sup><a href="#s8">8</a>,<a href="#s7">7</a>,<a href="#s9">9</a></sup></p>
-          <p>They run hundreds of vendors, many frameworks and constant audits. One connected record for each vendor, risk and control is how a lean team keeps up.</p>
-          <div class="lead"><b>Lead with</b>Evidence examiners accept, third party risk at scale, and controls mapped once across every framework</div>
-          <div class="acc">Premera Blue Cross, Providence, BECU, Manulife, Sun Life</div>
-        </div>
-        <div class="ind pre">
-          <span class="ind-tag">Less regulated</span>
-          <h4>Retail, logistics and manufacturing</h4>
-          <p>Fewer rules today, with the same exposure: thousands of suppliers, ransomware and, for public companies, the SEC's cyber disclosure rules.<sup><a href="#s6">6</a></sup></p>
-          <p>The companies that build a program now set the standard for their industry. They answer board and customer questions in days, and they are ready when regulation arrives.</p>
-          <div class="lead"><b>Lead with</b>Supply chain resilience, cyber risk the board can see, and a program in place before anyone requires it</div>
-          <div class="acc">Nordstrom, Expeditors, Nike, Columbia Sportswear, lululemon</div>
+          <p>Hightouch raised $150M at a $2.75B valuation in April 2026, with The Trade Desk's venture arm in the round, and Gartner named it a Leader in its first CDP Magic Quadrant appearance.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
+          <p>Fivetran bought Census, so the closest warehouse native rival is now part of a data pipeline company.<sup><a href="#s5">5</a></sup></p>
         </div>
       </div>
     </section>
@@ -918,38 +1022,38 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <!-- POV -->
     <section id="pov" class="panel ink grain">
       <div class="sh">
-        <h2>The conversation I would have with a Chief Risk Officer</h2>
-        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CRO or CISO, with the evidence behind each step.</p>
+        <h2>The conversation I would have with a CMO</h2>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CMO or VP of Lifecycle Marketing, with the evidence behind each step.</p>
       </div>
       <figure class="compare">
         <div class="cmp-grid">
           <div class="pane">
-            <div class="pane-lbl"><span>The program today</span><b>5 files</b></div>
+            <div class="pane-lbl"><span>The packaged CDP</span><b>2 copies</b></div>
             <ul class="files">
-              <li><i></i>Vendor_Risk_v14_FINAL.xlsx</li>
-              <li><i></i>Risk_Register_Q3.xlsx</li>
-              <li><i></i>Controls_Testing_2026.xlsx</li>
-              <li><i></i>Policy_Attestations.xlsx</li>
-              <li><i></i>Continuity plans on SharePoint</li>
+              <li><i></i>Customer data copied into a second database</li>
+              <li><i></i>A data ticket for every new audience</li>
+              <li><i></i>Weeks to add one new field</li>
+              <li><i></i>The same segment rebuilt in each tool</li>
+              <li><i></i>Calendar based sends to the whole list</li>
             </ul>
-            <div class="tally"><span><b>5</b>owners</span><span><b>0</b>links</span></div>
+            <div class="tally"><span><b>2</b>sources of truth</span><span><b>1</b>week per audience</span></div>
           </div>
           <div class="arrow-mid"><span></span></div>
           <div class="pane hc">
-            <div class="pane-lbl"><span>In Risk Cloud</span><b>one record</b></div>
+            <div class="pane-lbl"><span>Hightouch on the warehouse</span><b>same data</b></div>
             <div class="pathv">
-              <div class="pnode"><i>1</i>Vendor: payroll provider<s>third party</s></div>
+              <div class="pnode"><i>1</i>Snowflake or Databricks<s>source of truth</s></div>
               <div class="plink"></div>
-              <div class="pnode"><i>2</i>Risk: payroll service outage<s>enterprise</s></div>
+              <div class="pnode"><i>2</i>Audience built by marketing<s>no SQL</s></div>
               <div class="plink"></div>
-              <div class="pnode"><i>3</i>Control: backup payroll run<s>controls</s></div>
+              <div class="pnode"><i>3</i>AI Decisioning picks the next best message<s>agents</s></div>
               <div class="plink"></div>
-              <div class="pnode goal"><i>4</i>Board risk report<s>live</s></div>
+              <div class="pnode goal"><i>4</i>Braze, Meta, Google, SFMC<s>synced</s></div>
             </div>
-            <div class="tally"><span><b>1</b>connected record</span><span><b>4</b>teams served</span></div>
+            <div class="tally"><span><b>1</b>copy of the data</span><span><b>0</b>tickets to launch</span></div>
           </div>
         </div>
-        <figcaption><b>Fig. 2</b><span>Five files, five owners and no links between them. In Risk Cloud the vendor record carries its risk, its control and the board report with it. Illustrative data.</span></figcaption>
+        <figcaption><b>Fig. 2</b><span>A packaged CDP keeps a second copy of customer data and still routes changes through the data team. Hightouch reads from the warehouse the company already pays for, and marketing launches on its own. Illustrative.</span></figcaption>
       </figure>
       <div class="steps" role="tablist" aria-label="Challenger steps">
         <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
@@ -957,19 +1061,19 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
         <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
         <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
-        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why LogicGate</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Hightouch</small></button>
       </div>
-      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most enterprise risk programs live in spreadsheets, SharePoint and a legacy GRC tool few people like. Each team keeps its own register, and the board report takes weeks to assemble.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Scattered registers</b>Risk, vendor, control and policy data in separate files</div><div><b>Slow answers</b>Weeks to respond to one board or regulator question</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams respond by sending more assessments. The exposure usually sits between the registers: a critical vendor with no linked control, or a policy exception nobody tied back to a risk.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Collect more assessments</div><div><b>To</b>Connect the data the program already has</div></div></div></div>
-      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the manual work costs. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>1,170 hours</b>Saved a year on average in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>832 hours</b>Saved a year on average in third party risk<sup><a href="#s3">3</a></sup></div></div></div></div>
-      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The audit committee asks which vendors touch customer data and which controls cover them. The team spends two weeks reconciling spreadsheets, and the answer is out of date by the time it lands.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The CRO answers the board with a best guess</div><div><b>Burnout</b>Skilled analysts spend their weeks copying data between files</div></div></div></div>
-      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Mature programs run on one data model. A vendor, the risks it creates, the controls that cover them and the policies behind them live in one record, and agents take on the repetitive work.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One data model</b>Every program shares the same records</div><div><b>No code</b>The GRC team changes its own workflows</div><div><b>Agents</b>Repetitive review and testing handled automatically</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>LogicGate Risk Cloud, a Leader for Gartner and Forrester, where customers report an average 2.6x return.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>7.35x</b>Average return in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>31 days</b>Average time to value<sup><a href="#s1">1</a></sup></div></div></div></div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most lifecycle teams run calendar based campaigns from a marketing cloud, with segments a data team builds on request. A new audience takes a ticket and a week.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Ticket queue</b>Every new audience waits on the data team</div><div><b>Batch and blast</b>The same message goes to the whole segment</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams respond with a new journey builder or more creative. The constraint sits upstream: the best customer data lives in the warehouse where marketers can't reach it, and rules based journeys can only test a handful of ideas at once.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>More campaigns and more journeys</div><div><b>To</b>Every customer decided one to one, from the warehouse</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the gap costs, and what closing it looks like. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>A year</b>WHOOP spent on manual tests before switching, then saw a 10% cross sell lift in six weeks<sup><a href="#s3">3</a></sup></div><div><b>15 to 25%</b>Incremental sales on advertised products at PetSmart<sup><a href="#s6">6</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CMO is asked for one to one personalization and proof of incremental revenue, while the team waits a week for a segment and sends the same email to two million people.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Pressure</b>The board wants revenue proof from marketing</div><div><b>Frustration</b>Good marketers stuck behind a ticket queue</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Teams that moved first keep one copy of customer data in the warehouse, let marketers build audiences without SQL, and let agents decide the message, channel and timing for each customer, learning from every send.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Warehouse native</b>One copy of customer data</div><div><b>Marketer owned</b>Audiences live the same day</div><div><b>Agent decided</b>Every customer gets their own next step</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Hightouch, a Leader in Gartner's CDP Magic Quadrant, trusted by brands like Domino's, PetSmart and DraftKings.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>70M+</b>PetSmart loyalty members personalized<sup><a href="#s6">6</a></sup></div><div><b>$100M+</b>ARR, growing over 100% a year<sup><a href="#s1">1</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
-        <div><h4>Teach</h4><p>First meetings open with what I've learned about their program. The demo waits until they agree the gaps between registers are costing them.</p></div>
-        <div><h4>Tailor</h4><p>Board ready reporting for the CRO, fewer questionnaires for third party risk, audit readiness for the CAE, and a total cost comparison for finance.</p></div>
-        <div><h4>Take control</h4><p>Name the cost of the next audit finding, push back on "our ServiceNow team will build it," and leave every meeting with a dated next step.</p></div>
+        <div><h4>Teach</h4><p>First meetings open with what I've learned about their stack and their lifecycle program. The demo waits until they agree the warehouse is the bottleneck worth fixing.</p></div>
+        <div><h4>Tailor</h4><p>Revenue lift for the CMO, speed for lifecycle teams, fewer tickets and one copy of the data for the Head of Data, and total cost for finance.</p></div>
+        <div><h4>Take control</h4><p>Agree a holdout test before any pilot, push back on "Data Cloud comes with our contract," and leave every meeting with a dated next step.</p></div>
       </div>
     </section>
 
@@ -977,38 +1081,38 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <section id="territory">
       <div class="sh">
         <h2>Where I would spend my time</h2>
-        <p>The territory splits into four markets, each with its own regulators and buying triggers. Select a city to find its region.</p>
+        <p>I live in this territory. The Mountain West splits into four markets, each with its own mix of consumer brands. Select a city to find its region.</p>
       </div>
       <div class="terr">
         <div>
-          <div class="tiles2" role="group" aria-label="Territory cities">
-            <span class="col-h">Puget Sound</span><span class="col-h">Oregon</span><span class="col-h">West Canada</span><span class="col-h">East Canada</span>
-            <button class="sq" data-r="sea">SEA<small>Seattle</small></button>
-            <button class="sq" data-r="or">PDX<small>Portland</small></button>
-            <button class="sq" data-r="wc">YVR<small>Vancouver</small></button>
-            <button class="sq" data-r="ec">YYZ<small>Toronto</small></button>
-            <button class="sq" data-r="sea">BEL<small>Bellevue</small></button>
-            <button class="sq" data-r="or">BVT<small>Beaverton</small></button>
-            <button class="sq" data-r="wc">YYC<small>Calgary</small></button>
-            <button class="sq" data-r="ec">YUL<small>Montreal</small></button>
-            <button class="sq" data-r="sea">TAC<small>Tacoma</small></button>
-            <button class="sq" data-r="or">EUG<small>Eugene</small></button>
-            <button class="sq" data-r="wc">YEG<small>Edmonton</small></button>
-            <button class="sq" data-r="ec">YOW<small>Ottawa</small></button>
+          <div class="tiles2" role="group" aria-label="Mountain West cities">
+            <span class="col-h">Front Range</span><span class="col-h">Wasatch</span><span class="col-h">Southwest</span><span class="col-h">North</span>
+            <button class="sq" data-r="fr">DEN<small>Denver</small></button>
+            <button class="sq" data-r="wa">SLC<small>Salt Lake</small></button>
+            <button class="sq" data-r="sw">PHX<small>Phoenix</small></button>
+            <button class="sq home" data-r="no" aria-label="Boise, home base">BOI<small>home</small></button>
+            <button class="sq" data-r="fr">BDU<small>Boulder</small></button>
+            <button class="sq" data-r="wa">PVU<small>Provo</small></button>
+            <button class="sq" data-r="sw">LAS<small>Las Vegas</small></button>
+            <button class="sq" data-r="no">BZN<small>Bozeman</small></button>
+            <button class="sq" data-r="fr">COS<small>Colo Spgs</small></button>
+            <button class="sq" data-r="wa">PCU<small>Park City</small></button>
+            <button class="sq" data-r="sw">ABQ<small>Albuquerque</small></button>
+            <button class="sq" data-r="no">JAC<small>Jackson</small></button>
           </div>
-          <p class="map-note">Based in Boise, with Seattle, Portland and Vancouver a short flight away, and Toronto for quarterly trips.</p>
+          <p class="map-note">Home base in Boise. Denver, Salt Lake City, Phoenix and Las Vegas are each a short flight.</p>
         </div>
         <div>
           <table class="reg stack">
             <thead><tr><th>Region</th><th>Who buys, why, and what I lead with</th></tr></thead>
             <tbody>
-              <tr data-r="sea"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond, Tacoma</span></td><td data-h="Who buys and why">Health plans, health systems and credit unions, plus public retailers and logistics firms where the SEC's cyber disclosure rules put risk in front of the board.<div class="acc">Premera Blue Cross, Providence, BECU, Nordstrom, Expeditors</div><div class="lead"><b>Lead with</b>Third party and cyber risk the board can see</div></td></tr>
-              <tr data-r="or"><td>Oregon<span class="st">Portland, Beaverton, Hillsboro, Eugene</span></td><td data-h="Who buys and why">Health systems and health plans, plus apparel, manufacturing and utilities with global suppliers and continuity exposure.<div class="acc">Legacy Health, Moda Health, Nike, Columbia Sportswear, Portland General Electric</div><div class="lead"><b>Lead with</b>Enterprise risk and continuity on one register</div></td></tr>
-              <tr data-r="wc"><td>Western Canada<span class="st">Vancouver, Calgary, Edmonton</span></td><td data-h="Who buys and why">Credit unions, plus telecom, energy, retail and airlines managing operational resilience across large vendor networks.<div class="acc">Vancity, TELUS, lululemon, Suncor Energy, WestJet</div><div class="lead"><b>Lead with</b>Operational resilience and third party risk at scale</div></td></tr>
-              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third party risk on one platform<sup><a href="#s7">7</a></sup></div></td></tr>
+              <tr data-r="fr"><td>Front Range<span class="st">Denver, Boulder, Colorado Springs</span></td><td data-h="Who buys and why">Travel, leisure, restaurants and consumer brands with large loyalty programs and seasonal demand.<div class="acc">Vail Resorts, Crocs, Western Union, Frontier Airlines, Red Robin</div><div class="lead"><b>Lead with</b>AI Decisioning on loyalty and seasonal campaigns</div></td></tr>
+              <tr data-r="wa"><td>Wasatch Front<span class="st">Salt Lake City, Lehi, Provo, Park City</span></td><td data-h="Who buys and why">Subscription, direct to consumer and home services brands built on digital acquisition.<div class="acc">Ancestry, Vivint, Purple, Nu Skin, Skullcandy</div><div class="lead"><b>Lead with</b>First party audiences for paid media and retention</div></td></tr>
+              <tr data-r="sw"><td>Desert Southwest<span class="st">Phoenix, Las Vegas, Albuquerque</span></td><td data-h="Who buys and why">Retail, gaming, hospitality and auto commerce, home to PetSmart, a flagship Hightouch customer.<sup><a href="#s6">6</a></sup><div class="acc">Carvana, MGM Resorts, Caesars Entertainment, U-Haul, Leslie's</div><div class="lead"><b>Lead with</b>Loyalty personalization at PetSmart scale</div></td></tr>
+              <tr data-r="no"><td>Northern Rockies<span class="st">Boise, Montana, Wyoming</span></td><td data-h="Who buys and why">Grocery, outdoor retail and regional financial brands with large customer files and lean marketing teams.<div class="acc">Albertsons, WinCo Foods, Idaho Central Credit Union, Backcountry</div><div class="lead"><b>Lead with</b>Self serve audiences so a lean team can launch without tickets</div></td></tr>
             </tbody>
           </table>
-          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments, the Canada split and current customers with the team before any outreach.</p>
+          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments and current customers with the team before any outreach.</p>
         </div>
       </div>
     </section>
@@ -1020,85 +1124,85 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence.</p>
       </div>
       <div class="play-nav" role="tablist" aria-label="Plays">
-        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Out of spreadsheets</button>
-        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Third party risk</button>
-        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Legacy GRC</button>
-        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Risk for the board</button>
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Off the ticket queue</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">One to one marketing</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">CDP renewal</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">First party paid media</button>
       </div>
 
       <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
         <div>
-          <p class="insight">A risk program run on spreadsheets is only as current as the last update to each file.</p>
+          <p class="insight">Marketing has more customer data than ever and less access to it. Every new audience waits on a data ticket.</p>
           <dl class="dl">
-            <div><dt class="label">Who</dt><dd>Enterprises running compliance and risk in spreadsheets and SharePoint.</dd></div>
-            <div><dt class="label">Signal</dt><dd>GRC analyst job posts that list Excel and SharePoint as core tools.</dd></div>
-            <div><dt class="label">Personas</dt><dd>Head of GRC or Chief Compliance Officer first, then the CRO or CISO.</dd></div>
-            <div><dt class="label">Discovery</dt><dd><ul><li>How many spreadsheets does one audit request touch?</li><li>How long does it take to map a control to a new framework?</li><li>Who owns the master copy?</li></ul></dd></div>
+            <div><dt class="label">Who</dt><dd>Consumer brands with Snowflake or Databricks and a lifecycle team that depends on analysts.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Analytics engineer job posts on Snowflake or Databricks alongside lifecycle marketing hires.</dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of Lifecycle Marketing first, then the Head of Data and the CMO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How long does a new audience take from idea to live?</li><li>How many requests sit in the data team's queue today?</li><li>Which customer data never reaches your marketing tools?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
-          <dl class="mail-h"><dt>To</dt><dd>Head of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> compliance program</li><li data-v="B">Spreadsheet idea</li><li data-v="C">Control mapping question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a GRC analyst with strong Excel and SharePoint skills, so guessing the program still runs on spreadsheets.</p><p>Think mapping controls once and testing them in one place could help?</p><p><span class="tok">{{customer_name}}</span> saved 1,170 hours a year in controls compliance.</p></div>
-          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 1,170 hours sounds like seller cherry picking.</p><p>If we modeled the hours your team spends on one framework today, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the spreadsheets might be holding up?</p><p>Basically your team would test controls once and reuse the evidence across every framework.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> controls compliance average<sup><a href="#s3">3</a></sup></span><span><b>Value</b> hours back every audit cycle</span></div>
+          <dl class="mail-h"><dt>To</dt><dd>VP of Lifecycle Marketing</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> audience requests</li><li data-v="B">Ticket queue idea</li><li data-v="C">Warehouse question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring analytics engineers on Snowflake, so guessing lifecycle waits on the data team for every new audience.</p><p>Think letting marketers build audiences straight from the warehouse could help?</p><p><span class="tok">{{customer_name}}</span> personalizes for more than 70 million loyalty members this way.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 70 million members sounds like seller cherry picking.</p><p>If we built one of your backlog audiences live on your own warehouse, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the data team might have the queue under control?</p><p>Basically your marketers would launch audiences the same day, from data the company already owns.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> PetSmart<sup><a href="#s6">6</a></sup></span><span><b>Value</b> days back on every campaign</span></div>
         </article>
       </div>
 
       <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
         <div>
-          <p class="insight">Most vendor programs assess every vendor the same way, so the critical few get the same attention as the office supplier.</p>
+          <p class="insight">Rules based journeys test a few ideas a quarter. Agents can test thousands and learn which one works for each customer.</p>
           <dl class="dl">
-            <div><dt class="label">Who</dt><dd>Enterprises with hundreds or thousands of vendors, and Canadian institutions under OSFI.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Vendor risk job posts, or a financial institution working to Guideline B-10.<sup><a href="#s7">7</a></sup></dd></div>
-            <div><dt class="label">Personas</dt><dd>Head of Third Party Risk first, then the CRO and procurement.</dd></div>
-            <div><dt class="label">Discovery</dt><dd><ul><li>How do you decide which vendors get a full assessment?</li><li>How long does onboarding a critical vendor take?</li><li>How do vendor issues reach the enterprise risk register?</li></ul></dd></div>
+            <div><dt class="label">Who</dt><dd>Subscription, retail and travel brands with large customer files and batch email programs.</dd></div>
+            <div><dt class="label">Signal</dt><dd>CRM or lifecycle job posts that mention A/B testing, personalization or lifetime value.</dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of Lifecycle or CRM first, then the CMO and the Head of Data.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many tests did the team run last quarter?</li><li>How much of the calendar is the same send to the whole list?</li><li>How do you prove a campaign was incremental?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
-          <dl class="mail-h"><dt>To</dt><dd>Head of Third Party Risk</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vendor reviews</li><li data-v="B">Vendor tiering idea</li><li data-v="C">B-10 question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a vendor risk analyst, so guessing assessments are piling up faster than the team can review them.</p><p>Think tiering vendors by risk and letting agents handle the first review could help?</p><p><span class="tok">{{customer_name}}</span> saved 832 hours a year on third party risk.</p></div>
-          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 832 hours sounds like seller cherry picking.</p><p>If we walked your top 20 vendors through a tiered workflow, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the vendor program might be in good shape?</p><p>Basically your team would spend its time on the vendors that matter and link their risks to the enterprise register.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> third party risk average<sup><a href="#s3">3</a></sup></span><span><b>Recognition</b> Forrester TPRM Leader<sup><a href="#s2">2</a></sup></span></div>
+          <dl class="mail-h"><dt>To</dt><dd>VP of CRM</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> lifecycle testing</li><li data-v="B">One to one idea</li><li data-v="C">Cross sell question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a lifecycle lead focused on A/B testing, so guessing the team wants more tests than it has hands to run.</p><p>Think agents that pick the message, channel and timing for each customer could help?</p><p><span class="tok">{{customer_name}}</span> saw a 10% lift in cross sell conversions within six weeks.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 10% in six weeks sounds like seller cherry picking.</p><p>If we ran it against a holdout group on one of your programs, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the testing roadmap might be full?</p><p>Basically every customer would get the message most likely to work for them, and the team would see the lift against a holdout.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> WHOOP<sup><a href="#s3">3</a></sup></span><span><b>Value</b> lift you can measure</span></div>
         </article>
       </div>
 
       <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
         <div>
-          <p class="insight">Legacy GRC tools need a developer for every workflow change, so simple updates wait weeks in a queue.</p>
+          <p class="insight">A packaged CDP keeps a second copy of customer data, so the company pays twice and still argues about which number is right.</p>
           <dl class="dl">
-            <div><dt class="label">Who</dt><dd>Enterprises on Archer or a custom ServiceNow GRC build.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Job posts for Archer administrators or ServiceNow GRC developers.</dd></div>
-            <div><dt class="label">Personas</dt><dd>Director of GRC first, then the CRO or CISO and IT.</dd></div>
-            <div><dt class="label">Discovery</dt><dd><ul><li>How long did your last workflow change take?</li><li>How many people keep the tool running?</li><li>When does the contract renew?</li></ul></dd></div>
+            <div><dt class="label">Who</dt><dd>Enterprises on Segment, Salesforce Data Cloud or Adobe with a cloud warehouse already in place.</dd></div>
+            <div><dt class="label">Signal</dt><dd>A packaged CDP in job posts or the tech stack, plus a warehouse migration in progress.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of Data first, then the CMO and procurement.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Where does the source of truth for customers live today?</li><li>What does the CDP cost, including the data team's time?</li><li>When does the contract renew?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
-          <dl class="mail-h"><dt>To</dt><dd>Director of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> GRC platform</li><li data-v="B">Workflow change idea</li><li data-v="C">Renewal question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring an Archer administrator, so guessing every workflow change waits on a small technical team.</p><p>Think a platform your GRC team can change on its own could help?</p><p><span class="tok">{{customer_name}}</span> saw value from Risk Cloud in 31 days.</p></div>
-          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 31 days sounds like seller cherry picking.</p><p>If we rebuilt one of your current workflows live with a solutions engineer, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current platform might be working?</p><p>Basically your GRC team would own its own workflows and change them the same day.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> 31 day average time to value<sup><a href="#s1">1</a></sup></span><span><b>Value</b> no developer queue</span></div>
+          <dl class="mail-h"><dt>To</dt><dd>Head of Data</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> CDP and warehouse</li><li data-v="B">One copy idea</li><li data-v="C">Renewal question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is moving customer data into Snowflake while still running a packaged CDP, so guessing the team keeps two copies in sync.</p><p>Think activating straight from the warehouse could help?</p><p><span class="tok">{{customer_name}}</span> cut data platform costs 20% after building on its warehouse.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 20% sounds like seller cherry picking.</p><p>If we mapped your current CDP spend against the warehouse you already pay for, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current CDP might be locked in for now?</p><p>Basically your team would keep one copy of customer data and every tool would read from it.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Ramp<sup><a href="#s7">7</a></sup></span><span><b>Fallback</b> Census now part of Fivetran<sup><a href="#s5">5</a></sup></span></div>
         </article>
       </div>
 
       <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
         <div>
-          <p class="insight">Boards and regulators now expect a current view of risk, and a quarterly slide deck built by hand can't keep up.</p>
+          <p class="insight">Third party signals keep shrinking. The brands winning on paid media send their own customer data to every ad platform.</p>
           <dl class="dl">
-            <div><dt class="label">Who</dt><dd>Public companies under the SEC's cyber disclosure rules, and enterprises building an ERM program.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s6">6</a></sup></dd></div>
-            <div><dt class="label">Personas</dt><dd>CRO or Head of ERM first, then the CFO and the Audit Committee chair.</dd></div>
-            <div><dt class="label">Discovery</dt><dd><ul><li>How long does the quarterly board risk report take to build?</li><li>How do cyber and vendor risks reach it?</li><li>What did the audit committee ask for last quarter?</li></ul></dd></div>
+            <div><dt class="label">Who</dt><dd>Retail, travel and gaming brands with large paid media budgets.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Paid media or retail media job posts that mention first party data or match rates.</dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of Performance Marketing first, then the CMO and the Head of Data.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How do customer audiences reach Meta, Google and The Trade Desk today?</li><li>What match rate do you see?</li><li>Do you suppress current customers from acquisition spend?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
-          <dl class="mail-h"><dt>To</dt><dd>Chief Risk Officer</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> board risk reporting</li><li data-v="B">Risk register idea</li><li data-v="C">Audit committee question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> expanded its risk management disclosure this year, so guessing the board wants a more current view of risk.</p><p>Think one register that pulls in cyber, vendor and operational risk could help?</p><p><span class="tok">{{customer_name}}</span> saved 570 hours a year on enterprise risk.</p></div>
-          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 570 hours sounds like seller cherry picking.</p><p>If we rebuilt last quarter's board report from one connected register, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be covered?</p><p>Basically your team would pull the board view straight from the register, current on the day it's presented.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s3">3</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s6">6</a></sup></span></div>
+          <dl class="mail-h"><dt>To</dt><dd>VP of Performance Marketing</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> first party audiences</li><li data-v="B">Match rate idea</li><li data-v="C">Paid media question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a paid media manager with first party data in the brief, so guessing audience quality is a priority this year.</p><p>Think syncing warehouse audiences straight to every ad platform could help?</p><p><span class="tok">{{customer_name}}</span> drove 15 to 25% incremental sales on advertised products.</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 15 to 25% sounds like seller cherry picking.</p><p>If we built one suppression and one lookalike audience from your warehouse, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like paid media might be in good shape?</p><p>Basically every ad platform would get your best customer data, current every day.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> PetSmart<sup><a href="#s6">6</a></sup></span><span><b>Value</b> less wasted spend</span></div>
         </article>
       </div>
     </section>
@@ -1107,41 +1211,41 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <section id="competition">
       <div class="sh">
         <h2>How deals are won against each alternative</h2>
-        <p>Where each option is strong, where LogicGate wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+        <p>Where each option is strong, where Hightouch wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
       </div>
       <div class="bcs">
         <div class="bc-list" role="tablist" aria-label="Competitors">
-          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>ServiceNow IRM</b><small>The IT platform already in place</small></button>
-          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Archer</b><small>The longtime incumbent</small></button>
-          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>AuditBoard</b><small>Audit and SOX led</small></button>
-          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>OneTrust</b><small>Privacy and vendor questionnaires</small></button>
-          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Spreadsheets</b><small>Excel and SharePoint</small></button>
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>Salesforce Data Cloud</b><small>Bundled with Marketing Cloud</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Twilio Segment</b><small>Event collection first</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Adobe Real-Time CDP</b><small>Inside Adobe Experience Cloud</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Fivetran Activations</b><small>Formerly Census</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>In house build</b><small>Scripts and custom syncs</small></button>
         </div>
         <div>
           <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
-            <div class="bc-top"><h3>ServiceNow IRM</h3><span class="threat">Most common</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>An enterprise license the company already owns, and a strong relationship with IT.</p></div><div><h4>Where LogicGate wins</h4><p>A platform the GRC team configures itself, without a ServiceNow developer queue, and top Forrester scores for user experience and pricing transparency.<sup><a href="#s2">2</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How long does a workflow change take when it waits in the ServiceNow development backlog?</p></div>
+            <div class="bc-top"><h3>Salesforce Data Cloud</h3><span class="threat">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Bundled into existing Salesforce contracts, with executive relationships and a single vendor story.</p></div><div><h4>Where Hightouch wins</h4><p>Runs on the warehouse the company already pays for, with no second copy of data, and works with any channel, including Braze and every ad platform.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How much customer data has to be copied into Data Cloud before it's useful, and who keeps it in sync?</p></div>
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
-            <div class="bc-top"><h3>Archer</h3><span class="threat mid">Legacy</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A deep installed base in regulated industries and years of custom configuration.</p></div><div><h4>Where LogicGate wins</h4><p>No code configuration, GRC Agents and a modern interface, with average time to value of 31 days.<sup><a href="#s1">1</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How many admins or consultants does it take to keep Archer running each year?</p></div>
+            <div class="bc-top"><h3>Twilio Segment</h3><span class="threat mid">Entrenched</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Event collection, developer adoption and a large installed base.</p></div><div><h4>Where Hightouch wins</h4><p>Warehouse native from the start, with no separate profile store, and AI Decisioning on top of the same data.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Where does the source of truth for customers live today, in Segment or in your warehouse?</p></div>
           </article>
           <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
-            <div class="bc-top"><h3>AuditBoard</h3><span class="threat">High threat</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Loved by internal audit and SOX teams, and often brought in by the Chief Audit Executive.</p></div><div><h4>Where LogicGate wins</h4><p>One connected data model across enterprise risk, third party risk, cyber, controls and AI governance, so the program reaches beyond audit.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>Is this an audit tool decision, or a decision about the whole risk program?</p></div>
+            <div class="bc-top"><h3>Adobe Real-Time CDP</h3><span class="threat mid">Suite play</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep inside Adobe Experience Cloud estates, with strong content and analytics ties.</p></div><div><h4>Where Hightouch wins</h4><p>Speed to value, marketer self serve, and freedom to use any channel outside the Adobe stack.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How long did your last new audience take from idea to live?</p></div>
           </article>
           <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
-            <div class="bc-top"><h3>OneTrust</h3><span class="threat mid">Adjacent</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Strong in privacy programs and vendor questionnaires, and often already owned by legal.</p></div><div><h4>Where LogicGate wins</h4><p>Vendor risk connected to enterprise risk, controls and continuity in one record, and a Forrester Leader in third party risk.<sup><a href="#s2">2</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>Does your vendor program feed the enterprise risk register, or stop at the questionnaire?</p></div>
+            <div class="bc-top"><h3>Fivetran Activations</h3><span class="threat mid">In transition</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>One vendor for data pipelines in and out of the warehouse.</p></div><div><h4>Where Hightouch wins</h4><p>Built for marketers, with audiences, identity, journeys and AI Decisioning, on an independent roadmap.<sup><a href="#s5">5</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Is this a data pipeline decision, or a decision about marketing results?</p></div>
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
-            <div class="bc-top"><h3>Spreadsheets</h3><span class="threat">Always present</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Free, flexible and familiar to everyone on the team.</p></div><div><h4>Where LogicGate wins</h4><p>One source of truth with workflows and an audit trail, where customers report an average 2.6x return.<sup><a href="#s3">3</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How long did the last board risk report take to build, and who checked the formulas?</p></div>
+            <div class="bc-top"><h3>In house build</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control, and engineers who know the data.</p></div><div><h4>Where Hightouch wins</h4><p>No integration upkeep for the data team, and marketers who launch without waiting on engineering.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How many engineers maintain your sync scripts, and what would they build instead?</p></div>
           </article>
         </div>
       </div>
@@ -1154,34 +1258,34 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <p>Challenger earns the first meeting and shapes the problem. MEDDPICC tracks what is proven and what is still missing. Every stage has exit criteria, and every deal has a mutual action plan the champion helped write.</p>
       </div>
       <ol class="path">
-        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the CRO or CISO and agree that a disconnected program is worth fixing this year.</p><p class="exit"><b>Exit when</b>The executive names the problem, the cost and who else needs to be involved.</p><span class="m">Teach</span></li>
-        <li><span class="when">Months 1 to 2</span><h4>Discovery and business case</h4><p>Map programs, spreadsheets, tools, audit findings and hours spent with a Solutions Engineer.</p><p class="exit"><b>Exit when</b>Pain is priced, the economic buyer is known and the first use case is agreed.</p><span class="m">Tailor</span></li>
-        <li><span class="when">Months 2 to 4</span><h4>Use case demo</h4><p>The Solutions Engineer builds the customer's own workflow in Risk Cloud, scored against written criteria.</p><p class="exit"><b>Exit when</b>Criteria are met and the champion has taken the results to the economic buyer.</p><span class="m">Decision criteria</span></li>
-        <li><span class="when">Months 4 to 6</span><h4>Security and procurement</h4><p>Security review, legal and purchasing run in parallel, with any advisory partner, timed to the incumbent's renewal.</p><p class="exit"><b>Exit when</b>Paper process is complete and a signature date is agreed in the mutual plan.</p><span class="m">Paper process</span></li>
-        <li><span class="when">Month 6 on</span><h4>Close and expand</h4><p>Start with the first use case, then connect third party risk, enterprise risk, controls and AI governance.</p><p class="exit"><b>Exit when</b>Signed, with a rollout plan, a value review date and the next programs mapped.</p><span class="m">Take control</span></li>
+        <li><span class="when">Month 1</span><h4>Insight meeting</h4><p>Teach the reframe to the CMO or VP of Lifecycle, with the Head of Data in the room or close behind.</p><p class="exit"><b>Exit when</b>The executive names the problem, the cost and who else needs to be involved.</p><span class="m">Teach</span></li>
+        <li><span class="when">Months 1 to 2</span><h4>Discovery and business case</h4><p>Map the warehouse, channels, CDP contract and team with a Solutions Engineer, and price lift, speed and cost.</p><p class="exit"><b>Exit when</b>Pain is priced, the economic buyer is known and the data team is aligned.</p><span class="m">Tailor</span></li>
+        <li><span class="when">Months 2 to 3</span><h4>Technical validation and pilot</h4><p>Connect the warehouse, build the first audiences, and run AI Decisioning against a holdout group.</p><p class="exit"><b>Exit when</b>Written criteria are met and the measured lift has reached the economic buyer.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 3 to 5</span><h4>Security and procurement</h4><p>Security review, DPA, legal and purchasing in parallel, with a marketplace purchase raised early.</p><p class="exit"><b>Exit when</b>Paper process is complete and a signature date is agreed in the mutual plan.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 5 on</span><h4>Close and expand</h4><p>Start with the first use case, then add AI Decisioning, paid media audiences and more brands or regions.</p><p class="exit"><b>Exit when</b>Signed, with a rollout plan, a value review date and the next use cases mapped.</p><span class="m">Take control</span></li>
       </ol>
       <h3 style="margin-bottom:18px">Where these deals stall, and what I do about it</h3>
       <div class="stalls">
-        <div><h4>Every team wants its own requirements</h4><p>I agree the first use case with the executive sponsor, then phase the rest into the rollout plan so scope doesn't stall the decision.</p></div>
-        <div><h4>"ServiceNow can build it"</h4><p>The business case prices developer time, change requests and time to value, so the comparison covers total cost.</p></div>
-        <div><h4>An advisory firm shapes the RFP</h4><p>I work with the advisor early, including PwC through LogicGate's joint business relationship, so the criteria reflect the customer's program.</p></div>
-        <div><h4>No one owns cross functional risk</h4><p>I map the CRO, CISO, compliance and audit early and find the executive who gains most from one connected program.</p></div>
-        <div><h4>Migration looks risky</h4><p>A solutions engineer scopes the data move during the demo stage, so the plan is part of the proposal.</p></div>
-        <div><h4>The legacy renewal slips past</h4><p>The incumbent's renewal and notice dates go into the mutual plan in discovery, and the close is timed to them.</p></div>
+        <div><h4>Marketing and data disagree on ownership</h4><p>I write success criteria with both teams in the room and make the Head of Data a joint owner of the outcome.</p></div>
+        <div><h4>"We already pay for Data Cloud"</h4><p>The business case counts the second copy of data, the engineering time and the renewal date, so the comparison covers total cost.</p></div>
+        <div><h4>A pilot with no holdout</h4><p>Every AI Decisioning pilot starts with a holdout group, so the lift is measured and nobody argues about it later.</p></div>
+        <div><h4>Security worries about customer data</h4><p>The data stays in their warehouse. I bring security in during discovery, and the review moves faster for it.</p></div>
+        <div><h4>An agency owns the channels</h4><p>I bring the agency in early as an ally. Better audiences make their work perform better too.</p></div>
+        <div><h4>Budget is split across teams</h4><p>The business case shows value for marketing and for data, and the close is timed to the CDP renewal and the fiscal year.</p></div>
       </div>
       <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
       <div style="max-width:1060px">
         <table class="medd stack">
           <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
           <tbody>
-            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Hours spent on assessments, testing and reporting, audit findings, tool and services cost</td><td data-h="What I ask">How many hours a year go into building the board risk report and preparing for audit?</td><td data-h="Red flag">A program problem nobody has priced</td></tr>
-            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CRO, CISO or CCO, with the CFO on larger multiyear commits</td><td data-h="What I ask">Who owns the GRC budget across risk, security and compliance?</td><td data-h="Red flag">Only the program team is involved by the demo</td></tr>
-            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Configurability without developers, time to value, reporting, integrations, AI and security</td><td data-h="What I ask">What has to be true for LogicGate to be the clear choice?</td><td data-h="Red flag">An RFP written around a competitor's module list</td></tr>
-            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Use case demo, security review, business case, legal and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current GRC tools.</td><td data-h="Red flag">No one can describe what happens after the demo</td></tr>
-            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, legal, procurement, any advisory partner, and the incumbent's renewal date</td><td data-h="What I ask">When does the current contract renew, and how much notice does it need?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
-            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">An audit finding, a regulator request, a vendor incident or a board asking for a current view</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
-            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A GRC or third party risk lead with influence, who gains from the win and can sell it internally</td><td data-h="What I ask">How would you present this to your CRO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
-            <tr><td>C</td><td>Competition</td><td data-h="What I validate">ServiceNow IRM, Archer, AuditBoard, OneTrust, spreadsheets and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
+            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Incremental revenue, conversion and retention lift, time to launch an audience, CDP and engineering cost</td><td data-h="What I ask">What would a 5% lift in repeat purchase be worth this year?</td><td data-h="Red flag">A personalization goal nobody has priced</td></tr>
+            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CMO, with the Head of Data or CDO when budget spans both teams</td><td data-h="What I ask">Whose budget pays for the CDP today, and whose would pay for this?</td><td data-h="Red flag">Only marketing ops is involved by the pilot</td></tr>
+            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Warehouse native, marketer self serve, measured lift, security and integrations</td><td data-h="What I ask">What has to be true for Hightouch to be the clear choice?</td><td data-h="Red flag">Criteria copied from a packaged CDP's feature list</td></tr>
+            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Technical validation, pilot with holdout, security review, business case and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current CDP.</td><td data-h="Red flag">No one can describe what happens after the pilot</td></tr>
+            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, DPA, legal, procurement, marketplace purchase and the CDP renewal date</td><td data-h="What I ask">Would buying through your cloud marketplace help you use existing commit?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
+            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">Slow audiences, batch sends, a costly CDP renewal or paid media waste</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
+            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A marketing ops or analytics engineering lead with influence, who gains from the win</td><td data-h="What I ask">How would you present the pilot results to your CMO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
+            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Salesforce Data Cloud, Segment, Adobe, Fivetran Activations, an in house build and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
           </tbody>
         </table>
       </div>
@@ -1201,20 +1305,20 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       </div>
       <div style="max-width:1060px">
         <table class="fit stack">
-          <thead><tr><th>What the role asks for<sup><a href="#s10">10</a></sup></th><th>Where I have done it</th></tr></thead>
+          <thead><tr><th>What the role asks for<sup><a href="#s8">8</a></sup></th><th>Where I have done it</th></tr></thead>
           <tbody>
-            <tr><td>Large enterprise B2B SaaS sales</td><td data-h="Where I have done it">Opened Fortune 500 accounts including Uber, Albertsons and AAA, and sell to Fortune 500 companies at Netradyne today.</td></tr>
-            <tr><td>New pipeline from cold prospecting, partners, social, email and phone</td><td data-h="Where I have done it">$19.6M self sourced at Netradyne through cold outbound, and $750K in my first quarter at Falkon.</td></tr>
-            <tr><td>A strategic territory plan for a targeted account list</td><td data-h="Where I have done it">Build tiered account plans for every territory, prioritized with intent and hiring signals.</td></tr>
-            <tr><td>Full cycle with a Solutions Engineer, from discovery to close</td><td data-h="Where I have done it">Ran discovery, demos with sales engineers, proposals and negotiation through close, including a $1.2M deal with Uber at Jamf.</td></tr>
-            <tr><td>A tech savvy seller who learns the platform front and back</td><td data-h="Where I have done it">Sold device management and security software to technical IT buyers at Jamf, and closed Snowflake and Seismic at a Series A startup.</td></tr>
-            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to LogicGate's advisory partners such as PwC.</td></tr>
+            <tr><td>Building pipeline in high value enterprise accounts</td><td data-h="Where I have done it">$19.6M self sourced at Netradyne through cold outbound, and $750K in my first quarter at Falkon.</td></tr>
+            <tr><td>Outbound prospecting and land and expand</td><td data-h="Where I have done it">A $1.2M deal with Uber at Jamf, and the first multiyear deal with built in expansion triggers at Falkon (Linewize).</td></tr>
+            <tr><td>Discovery that ties to measurable outcomes</td><td data-h="Where I have done it">Sell AI at Netradyne at roughly $300K ACV, where every deal rests on a measured business case.</td></tr>
+            <tr><td>Selling to marketing and data leaders</td><td data-h="Where I have done it">Closed Snowflake and Seismic at a Series A startup, selling to revenue, marketing and data teams.</td></tr>
+            <tr><td>Meeting and exceeding targets</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and Enterprise Seller of the Year at Netradyne.</td></tr>
+            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to selling alongside Snowflake and Databricks.</td></tr>
           </tbody>
         </table>
       </div>
       <div class="letter">
-        <h3>Why LogicGate</h3>
-        <p>LogicGate has what I look for as a seller: a product customers can put an ROI number on, Leader status with Gartner and Forrester to get meetings, and a territory where regulators are pushing buyers to act. I build my own pipeline and run tight deals, and this is a territory I want to build.</p>
+        <h3>Why Hightouch</h3>
+        <p>Hightouch has what I look for as a seller: a product with lift customers can measure in weeks, Leader status with Gartner, and growth that shows the market is choosing it. The Mountain West is full of consumer brands that keep customer data in Snowflake and Databricks and still market in batches. I live here, and this is a territory I want to build.</p>
         <p class="sig">Eric Iannello, Boise, Idaho</p>
       </div>
     </section>
@@ -1228,13 +1332,13 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       <div class="phases">
         <div class="phase">
           <span class="when">Days 1 to 30</span>
-          <h3>Intro to LogicGate | Building the foundation</h3>
+          <h3>Intro to Hightouch | Building the foundation</h3>
           <ul>
-            <li>Learn Risk Cloud hands on with a Solutions Engineer: third party risk, enterprise risk, controls, AI governance and GRC Agents</li>
+            <li>Learn the platform hands on: connect a sample warehouse, build an audience in Customer Studio, sync it and walk through AI Decisioning</li>
             <li>Work with sales leadership, Solutions Engineers and top reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
-            <li>Meet the partner team, including PwC and the advisory firms active in Seattle, Vancouver and Toronto</li>
-            <li>Build battlecards for ServiceNow IRM, Archer, AuditBoard and OneTrust</li>
-            <li>Audit named accounts in Salesforce for GRC hiring, OSFI regulated institutions, legacy renewals and dormant opportunities</li>
+            <li>Meet the Snowflake and Databricks account teams covering Denver, Salt Lake City and Phoenix</li>
+            <li>Build battlecards for Salesforce Data Cloud, Segment, Adobe and Fivetran Activations</li>
+            <li>Audit named accounts for warehouse, current CDP, contract timing, lifecycle hiring and dormant opportunities</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
             <li>Launch the first self sourced wave, each account with its own insight and proof point</li>
           </ul>
@@ -1245,26 +1349,26 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <h3>Creating the playbook | Testing the territory</h3>
           <ul>
             <li>Review results with leadership and peer reps each week, blending their guidance with patterns from my own deals</li>
-            <li>Run the four plays in waves by vertical, starting with financial services and healthcare, then retail and logistics</li>
-            <li>Multithread every target account across the CRO, CISO, compliance, audit and procurement</li>
-            <li>Hold insight meetings in place of first call demos, and price assessment hours, audit prep and tool cost in discovery</li>
-            <li>Turn meetings into MEDDPICC qualified opportunities with a use case demo scoped for each</li>
-            <li>Host risk leader roundtables with partners in Seattle, Vancouver and Toronto, and work the local ISACA and IIA chapters</li>
+            <li>Run the four plays in waves by vertical, starting with retail and gaming in the Southwest and subscription brands on the Wasatch Front</li>
+            <li>Multithread every target account across the CMO, lifecycle, performance marketing, data and finance</li>
+            <li>Hold insight meetings in place of first call demos, and price lift, audience speed and CDP cost in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities, each pilot scoped with a holdout</li>
+            <li>Host marketing and data leader dinners with Snowflake and Databricks in Denver, Salt Lake City and Phoenix</li>
           </ul>
-          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first use case demos scheduled</div></div>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first pilots scoped</div></div>
         </div>
         <div class="phase">
           <span class="when">Days 61 to 90</span>
           <h3>Playbook deployment | Owning the territory</h3>
           <ul>
-            <li>Qualified deals moving through use case demos, security review and business case with an executive sponsor</li>
+            <li>Qualified deals moving through technical validation, pilots and business case with an executive sponsor</li>
             <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
-            <li>A forecast built on stage criteria, close plans, paper process, partners and dated next steps</li>
+            <li>A forecast built on stage criteria, close plans, paper process and dated next steps</li>
             <li>No vanity meetings, no single threaded deals and no loose next steps</li>
-            <li>Expansion plans for current customers, from one use case to connected programs</li>
+            <li>Expansion plans for current customers, from one use case to AI Decisioning, paid media and more brands</li>
             <li>Regular deal reviews with leadership, and what works shared back with the team</li>
           </ul>
-          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first use case demos delivered, pipeline building toward 3x coverage</div></div>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first pilots running with holdouts, pipeline building toward 3x coverage</div></div>
         </div>
       </div>
     </section>
@@ -1272,9 +1376,9 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <!-- Contact -->
     <section id="contact" class="contact">
       <h2>Next step</h2>
-      <p>Joe, I'd like to walk the team through this plan and hear where it's wrong.</p>
+      <p>I'd like to walk the team through this plan and hear where it's wrong.</p>
       <dl class="card-sig">
-        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=LogicGate%20Strategic%20AE%2C%20PNW%20and%20Canada">eiannello72@gmail.com</a></dd>
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Hightouch%20Enterprise%20AE%2C%20Mountain%20West">eiannello72@gmail.com</a></dd>
         <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
         <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
       </dl>
@@ -1283,18 +1387,16 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     <footer>
       <h4>Sources</h4>
       <ol class="sources">
-        <li id="s1"><a href="https://www.prnewswire.com/news-releases/logicgate-named-a-leader-in-the-grc-market-by-the-gartner-magic-quadrant-for-grc-tools-assurance-leaders-302601366.html" target="_blank" rel="noopener">PR Newswire, LogicGate named a Leader in the Gartner Magic Quadrant for GRC Tools, Assurance Leaders</a></li>
-        <li id="s2"><a href="https://www.prnewswire.com/news-releases/logicgate-recognized-as-one-of-only-four-leaders-in-governance-risk-and-compliance-platforms-q2-2026-report-by-independent-research-firm-302785214.html" target="_blank" rel="noopener">PR Newswire, LogicGate one of four Leaders in GRC Platforms, Q2 2026</a></li>
-        <li id="s3"><a href="https://www.prnewswire.com/news-releases/logicgates-value-realization-tool-reveals-customers-nearly-triple-investment-through-platform-efficiencies-302659858.html" target="_blank" rel="noopener">PR Newswire, LogicGate Value Realization Tool results</a></li>
-        <li id="s4"><a href="https://www.prnewswire.com/news-releases/logicgate-advances-agentic-grc-capabilities-with-its-summer-2026-release-302866798.html" target="_blank" rel="noopener">PR Newswire, LogicGate Summer 2026 Release</a></li>
-        <li id="s5"><a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai, AI GRC platform for the enterprise</a></li>
-        <li id="s6"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
-        <li id="s7"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third Party Risk Management</a></li>
-        <li id="s8"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20230606a.htm" target="_blank" rel="noopener">Federal Reserve, FDIC and OCC, Interagency guidance on third party relationships</a></li>
-        <li id="s9"><a href="https://www.hhs.gov/hipaa/for-professionals/security/index.html" target="_blank" rel="noopener">HHS, HIPAA Security Rule</a></li>
-        <li id="s10"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
+        <li id="s1"><a href="https://www.businesswire.com/news/home/20260427054567/en/Hightouch-Raises-$150-Million-to-Reinvent-How-Marketing-Works-Using-AI" target="_blank" rel="noopener">Business Wire, Hightouch raises $150 million to reinvent how marketing works using AI</a></li>
+        <li id="s2"><a href="https://finance.yahoo.com/news/hightouch-named-leader-2025-gartner-160000063.html" target="_blank" rel="noopener">Business Wire, Hightouch named a Leader in the Gartner Magic Quadrant for Customer Data Platforms</a></li>
+        <li id="s3"><a href="https://hightouch.com/customers/whoop-ai-decisioning" target="_blank" rel="noopener">Hightouch, WHOOP drives 10% lift in cross sell conversions with AI Decisioning</a></li>
+        <li id="s4"><a href="https://hightouch.com/blog/hightouch-funding-series-d" target="_blank" rel="noopener">Hightouch, Raising $150M to build the AI platform for marketers</a></li>
+        <li id="s5"><a href="https://www.hpcwire.com/bigdatawire/this-just-in/fivetran-signs-agreement-to-acquire-census/" target="_blank" rel="noopener">BigDATAwire, Fivetran signs agreement to acquire Census</a></li>
+        <li id="s6"><a href="https://hightouch.com/customers/petsmart" target="_blank" rel="noopener">Hightouch, PetSmart customer story</a></li>
+        <li id="s7"><a href="https://www.snowflake.com/en/customers/all-customers/case-study/ramp/" target="_blank" rel="noopener">Snowflake, Ramp case study with dbt and Hightouch</a></li>
+        <li id="s8"><a href="https://job-boards.greenhouse.io/hightouch/jobs/5726252004" target="_blank" rel="noopener">Hightouch, Enterprise Account Executive, Mountain West job post</a></li>
       </ol>
-      <p class="disc">Independent research prepared by Eric Iannello for the LogicGate Strategic Account Executive role. Not affiliated with or endorsed by LogicGate. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
+      <p class="disc">Independent research prepared by Eric Iannello for the Hightouch Enterprise Account Executive, Mountain West role. Not affiliated with or endorsed by Hightouch. Figures come from public and third party sources as of October 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>
   </main>
 </div>
@@ -1329,14 +1431,12 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
     say.innerHTML='';var b=document.createElement('b');b.textContent=m.dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(m.dataset.d));
   })});
 
-  // Heat map
-  var cells=[].slice.call(document.querySelectorAll('.cell')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL');
-  cells.forEach(function(c){c.setAttribute('aria-pressed',c.classList.contains('on'));c.addEventListener('click',function(){
-    cells.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
-    var r=JSON.parse(c.dataset.r);
-    fH.textContent='Likelihood '+c.dataset.l+', impact '+c.dataset.i;
-    fP.textContent=r.length?(r.length+' open '+(r.length===1?'risk':'risks')+'. Each one links to its owner, its controls and the vendors or systems involved.'):'No open risks in this cell.';
-    fL.innerHTML='';r.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
+  // AI Decisioning
+  var custs=[].slice.call(document.querySelectorAll('.cust')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL'),dC=document.getElementById('dC'),dT=document.getElementById('dT'),dO=document.getElementById('dO');
+  custs.forEach(function(c){c.addEventListener('click',function(){
+    custs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var d=JSON.parse(c.dataset.d);fH.textContent=d.h;fP.textContent=d.p;dC.textContent=d.c;dT.textContent=d.t;dO.textContent=d.o;
+    fL.innerHTML='';d.w.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
   })});
 
   // Territory
@@ -1344,7 +1444,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
   function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
   sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
   rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
-  pick('sea');
+  pick('no');
 
   // Plays
   var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));

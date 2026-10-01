@@ -14,6 +14,7 @@ for the Enterprise AE role.
 | LogicGate (PNW and Canada) | [`logicgate/`](logicgate/index.html) |
 | Hightouch (Mountain West) | [`hightouch/`](hightouch/index.html) |
 | Gambit Security (PST) | [`gambit/`](gambit/index.html) |
+| Jellyfish (West Coast) | [`jellyfish/`](jellyfish/index.html) |
 
 ## Deploying
 

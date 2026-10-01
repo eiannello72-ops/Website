@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gambit Pacific Plan</title>
+<meta name="description" content="A Pacific time zone enterprise territory plan for Gambit Security, built on Command of the Message and MEDDPICC. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A0712'/%3E%3Crect x='7' y='19' width='18' height='5' rx='1' fill='%23fff'/%3E%3Crect x='9' y='13' width='14' height='5' rx='1' fill='%23DE2C45'/%3E%3Crect x='11' y='7' width='10' height='5' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#FAF4F5;
+  --rule:#EADCE0;
+  --ink:#0E1B2E;
+  --ink-2:#16263D;
+  --graphite:#6A5560;
+  --honey:#FFB400;
+  --honey-soft:#FFE7A3;
+  --sky:#7CC1F2;
+  --sky-soft:#E3F2FD;
+  --coral:#E8857F;
+  --lilac:#C3A8E6;
+  --link:#1D4F9F;
+  --good:#1F7A4D;
+  --warn:#8A5A00;
+  --bad:#B42318;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:17px;
+  --step-1:19.5px;
+  --step-2:24px;
+  --step-3:34px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+code{font-family:var(--mono);font-size:.86em}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--honey);color:var(--ink);padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:15px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--honey);font-weight:600}
+.side-foot{margin-top:auto;font-size:13.5px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
+section:first-of-type{border-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Hero */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:#B89AA6}
+.doc-meta span b{color:#fff;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+h1{font-size:clamp(36px,4.1vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:#fff}
+h1 mark{padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:21px;line-height:1.5;color:#E2CDD5;max-width:640px;margin-top:26px}
+.lede b{color:#fff;font-weight:600}
+.hero sup a{color:var(--honey)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid #fff;max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#A88896}
+.facts dd{font-size:15.5px;margin-top:4px;color:#fff}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+.art{width:100%;max-width:340px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:230px;order:-1;justify-self:start}}
+
+/* Fig 1: trace */
+figure{margin-top:48px;max-width:980px}
+figcaption{font-size:14px;color:var(--graphite);margin-top:14px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:10px}}
+.float figure{margin-top:0}
+.trace{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.trace-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.trace-bar b{color:var(--ink);font-weight:500}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+@media (max-width:820px){.trace-grid{grid-template-columns:1fr}}
+.wf{padding:16px 18px 18px;border-right:1.5px solid var(--ink)}
+@media (max-width:820px){.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin:0 0 8px 150px}
+.span{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;height:30px}
+.span > span{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:calc(var(--d,0) * 12px)}
+.span .lane{position:relative;height:100%;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 25%)}
+.span .lane i{position:absolute;top:7px;bottom:7px;left:var(--s);width:var(--w);background:var(--sky);border:1.5px solid var(--ink);border-radius:3px}
+.span.hot .lane i{background:var(--honey)}
+.span.sel{background:var(--honey-soft);margin-inline:-18px;padding-inline:18px}
+.span.sel .lane i{background:var(--coral)}
+.span .lane em{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s) + var(--w) + 6px);font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+.span.far .lane em{left:auto;right:calc(100% - var(--s) + 6px)}
+@media (max-width:560px){.span{grid-template-columns:128px minmax(0,1fr)}.scale{margin-left:128px}.span > span{font-size:10.5px;padding-left:calc(var(--d,0) * 8px)}.span.far .lane em{display:none}.fields dd s{font-size:9px;padding:0 3px}}
+.fields{padding:16px 18px 18px}
+.fields h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.fields dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;font-family:var(--mono);font-size:12.5px}
+.fields dt,.fields dd{padding:5px 0;border-bottom:1px dashed var(--rule)}
+.fields dt{color:var(--graphite);padding-right:14px}
+.fields dd{color:var(--ink);display:flex;justify-content:space-between;gap:8px;min-width:0}
+.fields dd s{text-decoration:none;font-size:10px;background:var(--lilac);border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--honey);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:15px;margin-top:10px;color:#3D2A00}
+.band sup a{color:var(--ink)}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:16px;color:#3A2530}
+.three p + p{margin-top:10px}
+
+/* Panels */
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 18px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#F7EEF1}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.sky{background:var(--sky)}
+.panel.honey{background:#FFD65C}
+.panel.honey:after{opacity:.28}
+
+/* Fig 2: dashboard vs Honeycomb */
+.compare{margin:8px 0 56px;max-width:1060px}
+.cmp-grid{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.25fr);align-items:stretch}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;gap:18px}}
+.pane{background:var(--ink-2);border:1.5px solid #4A2A3A;border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.pane.hc{background:#fff;color:var(--ink);border-color:#fff;box-shadow:8px 8px 0 var(--honey)}
+.pane-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#B89AA6;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.pane.hc .pane-lbl{color:var(--graphite)}
+.pane-lbl b{font-weight:500;color:#7EE2A8}
+.pane.hc .pane-lbl b{color:var(--ink);background:var(--honey);padding:0 6px;border-radius:3px}
+.dash svg{width:100%;height:auto;display:block}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.kpis div{border:1px solid #4A2A3A;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-family:var(--mono);font-size:10.5px;color:#B89AA6;text-transform:uppercase;letter-spacing:.05em}
+.kpis b{font-family:var(--display);font-size:22px;font-weight:700;color:#fff}
+.kpis b i{font-style:normal;font-size:12px;font-family:var(--mono);font-weight:400;color:#7EE2A8;margin-left:6px}
+.svc{list-style:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:#E2CDD5}
+.svc li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #4A2535}
+.svc span{color:#7EE2A8;display:inline-flex;align-items:center;gap:6px}
+.svc span:before{content:"";width:7px;height:7px;border-radius:50%;background:#7EE2A8}
+.heat{width:100%;height:auto;display:block}
+.heat-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:6px}
+.bu{margin-top:16px;border-top:1.5px solid var(--ink);padding-top:12px}
+.bu h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bu h4 span{display:flex;gap:12px;text-transform:none;letter-spacing:0}
+.bu h4 span i{display:inline-block;width:9px;height:9px;border:1px solid var(--ink);margin-right:4px;vertical-align:-1px}
+.bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
+.bu-row code{font-size:12px;white-space:nowrap}
+.bars{display:grid;gap:3px}
+@media (max-width:560px){.bu{grid-template-columns:1fr!important}.bu-row code{padding-top:6px}.heat-ax span:nth-child(2){display:none}}
+.bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
+.bars .sel{background:var(--honey)}
+.bars .base{background:var(--sky)}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--honey);display:grid;place-items:center;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.tally{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:12.5px;color:#FCA5A5}
+.pane.hc .tally{color:var(--good)}
+.tally b{font-size:22px;font-family:var(--display);font-weight:700;margin-right:4px}
+.compare figcaption{color:#B89AA6}
+.compare figcaption b{color:#fff}
+
+/* Talk track */
+.track{list-style:none;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid #3A1A2A}
+.track li:last-child{border-bottom:1px solid #3A1A2A}
+.track .who{font-family:var(--mono);font-size:13px;color:#A88896;line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--honey);font-weight:600;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.42;letter-spacing:-.01em;color:#F7EEF1}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14.5px;color:#D9C3CC}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--honey);background:#2C0F1E;padding:1px 6px;border-radius:3px;margin-right:6px}
+.panel.ink sup a{color:var(--sky)}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--honey)}
+.ttt p{font-size:15.5px;color:#D9C3CC}
+.panel.ink .sh p{color:#D9C3CC}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;max-width:1060px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;gap:0;width:max-content}
+.hr{display:flex;gap:5px;margin-bottom:-17px}
+.hr.off{padding-left:40.5px}
+.hr:last-child{margin-bottom:0}
+.tile{--f:#fff;position:relative;width:76px;height:88px;border:0;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.tile:before{content:"";position:absolute;inset:2px;background:var(--f);clip-path:inherit;transition:background .15s}
+.tile b,.tile small{position:relative;font-weight:inherit}
+.tile small{font-size:9.5px;color:var(--graphite);font-weight:400}
+.tile[data-r="bay"]{--f:var(--sky-soft)}
+.tile[data-r="pnw"]{--f:#F4ECEF}
+.tile[data-r="socal"]{--f:#FFF3D1}
+.tile[data-r="mtn"]{--f:#F1EAFA}
+.tile.on{--f:var(--honey)}
+.tile.on small{color:var(--ink)}
+.tile.home b{font-weight:800}
+.map-note{font-size:13.5px;color:var(--graphite);margin-top:12px;line-height:1.5}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:600;padding-left:10px;width:160px}
+.reg .st{display:block;font-family:var(--mono);font-size:11.5px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14.5px;margin-top:6px}
+.note{font-size:14px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;border-bottom:1.5px solid rgba(14,27,46,.3);margin-bottom:32px;max-width:1060px}
+.play-nav button{font-family:var(--body);font-size:16px;font-weight:600;color:#3A1424;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:10px 0 12px;margin-right:28px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1060px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;font-weight:600;line-height:1.3;letter-spacing:-.015em;padding-left:18px;border-left:4px solid var(--ink)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px;color:#3A1424}
+.dl dd{font-size:16px;color:#0B1726}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.panel.sky .sh p{color:#11263F}
+.panel.sky sup a{color:var(--ink)}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:16px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.84em;color:#6B4500;background:var(--honey-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13.5px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:600}
+.mail-f sup a{color:var(--link)}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:600;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#3A2530;font-size:15px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1060px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-6px;left:0;width:12px;height:14px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:700;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:15px;color:#3A2530}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--honey-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:5px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:15px;color:#3A2530}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1060px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14.5px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#3A2530}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-left:4px solid var(--honey);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16.5px;color:#2A1520}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1060px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:#5A4300;border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15.5px;color:#1C1606}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:8px;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:#fff;border:1.5px solid var(--ink);padding:14px 16px;border-radius:4px;font-size:15px}
+.phase:last-child .out div{background:var(--ink);color:#fff}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+.phase:last-child .out b{color:var(--honey)}
+.panel.honey .sh p{color:#4A3A10}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:14px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--honey-soft)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* ===== Alignment pass ===== */
+:root{--gut:56px}
+@media (max-width:720px){:root{--gut:10px}}
+main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
+.float{padding-inline:var(--gut)}
+@media (max-width:720px){
+  .hero{margin-inline:-8px;padding-inline:18px!important}
+  .panel{padding-inline:18px!important}
+}
+.side{padding-top:56px}
+@media (min-width:721px) and (max-width:900px){.hero{padding-inline:56px!important}}
+.hero .facts{grid-column:1/-1;max-width:none;margin-top:8px}
+.terr{grid-template-columns:280px minmax(0,1fr)}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.path{grid-template-rows:repeat(5,auto);row-gap:0}
+.path li{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+.path .m{justify-self:start;align-self:start;margin-top:12px}
+.path p{align-self:start}
+@media (max-width:900px){.path{grid-template-rows:none;row-gap:22px}.path li{display:block;grid-row:auto}}
+.phases{grid-template-rows:repeat(4,auto);row-gap:0}
+.phase{display:grid;grid-template-rows:subgrid;grid-row:span 4}
+.phase .out{margin-top:0;padding-top:24px}
+.phase .out div{height:100%}
+@media (max-width:900px){.phases{grid-template-rows:none;row-gap:40px}.phase{display:flex;grid-row:auto}}
+.panel.sky .play-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel.sky .play-nav button{text-align:center;font-size:15px;padding:10px 8px;white-space:nowrap}
+@media (max-width:900px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel.sky .play-nav button{font-size:14px;padding:9px 8px;white-space:normal;line-height:1.25}}
+
+.reg .lead{margin-top:10px;padding:8px 12px;background:var(--fog);border-left:3px solid var(--honey);font-size:15px;border-radius:0 6px 6px 0}
+.reg tr.on .lead{background:#fff}
+.reg .lead b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.reg td:first-child{width:190px}
+@media (min-width:821px){.trace-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.fields dt{padding-right:10px}
+.fields dd{flex-wrap:wrap;align-items:center}
+.fields dd s{font-size:9.5px;padding:0 4px}
+.bu{display:grid;grid-template-columns:max-content minmax(40px,1fr);column-gap:14px;row-gap:10px;align-items:center}
+.bu h4{grid-column:1/-1;margin-bottom:0}
+.bu-row{display:contents}
+@media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.phase ul{align-content:start}
+.cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.band div{container-type:inline-size;display:flex;flex-direction:column;padding:24px 24px 26px}
+.band small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A3F00;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.band b{font-size:clamp(30px,25cqi,60px);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.band span{margin-top:12px;font-size:15px;line-height:1.45;color:#3D2A00;max-width:24ch}
+.band + section{border-top:0}
+/* ===== Interactive layer ===== */
+.banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+.banner b{font-weight:700}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--honey);z-index:50;box-shadow:0 0 0 1px rgba(14,27,46,.15)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1.5px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:var(--honey);color:var(--ink);border-color:var(--honey);box-shadow:4px 4px 0 #fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--honey)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.hx{cursor:pointer;transition:transform .2s;outline:none}
+.hx:hover,.hx.on{transform:translate(-5px,-5px)}
+.hx.on use{stroke:var(--honey);stroke-width:4}
+.hx[data-i="0"].on use{stroke:#fff}
+.hx:focus-visible use{stroke:var(--sky);stroke-width:4}
+.hx-say{margin-top:14px;min-height:66px;font-size:14.5px;line-height:1.45;color:#E2CDD5;border-left:3px solid var(--honey);padding-left:12px}
+.hx-say b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:2px}
+.hx-hint{font-family:var(--mono);font-size:11px;color:#A88896;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hx,.btn{transition:none}}
+button.span{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.span:hover{background:var(--fog);margin-inline:-18px;padding-inline:18px;width:calc(100% + 36px)}
+button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
+.trace-bar .hint{color:var(--link)}
+.fields dl{transition:opacity .15s}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1.5px solid #4A2A3A;border-radius:14px 14px 0 0;overflow:hidden;max-width:1060px}
+.cstep{background:var(--ink-2);border:0;border-left:1px solid #3A1A2A;color:#D9C3CC;text-align:left;padding:16px 14px 18px;cursor:pointer;font:inherit;position:relative;transition:background .15s}
+.cstep:first-child{border-left:0}
+.cstep i{display:block;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--honey)}
+.cstep b{display:block;font-family:var(--display);font-size:16.5px;color:#fff;font-weight:600;margin:4px 0 2px;line-height:1.2}
+.cstep small{display:block;font-size:13px;line-height:1.35}
+.cstep:hover{background:#3A1424}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3D2A00}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i{color:var(--ink)}
+.cstep:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.cstep:nth-child(4){border-left:0}.cstep:nth-child(n+4){border-top:1px solid #3A1A2A}.cstep small{display:none}}
+.step-p{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;background:#fff;color:var(--ink);border:1.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;padding:30px 30px 32px;max-width:1060px;box-shadow:8px 8px 0 var(--honey)}
+.step-p[hidden]{display:none}
+@media (max-width:860px){.step-p{grid-template-columns:1fr;gap:22px;padding:24px 20px}}
+.step-p h3{font-size:24px;margin-bottom:12px}
+.step-p blockquote{font-family:var(--display);font-size:20px;font-weight:500;line-height:1.45;padding-left:16px;border-left:4px solid var(--honey)}
+.step-p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.facts2{display:grid;gap:10px}
+.facts2 div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:15px;color:#3A2530}
+.facts2 b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
+.facts2 sup a{color:var(--link)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#A88896}
+.step-nav button{font:inherit;color:#fff;background:none;border:1.5px solid #4A2A3A;border-radius:8px;padding:7px 14px;cursor:pointer}
+.step-nav button:hover{border-color:var(--honey);color:var(--honey)}
+.panel.sky .play-nav{border:0;gap:10px}
+.panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
+.bcs{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+@media (max-width:860px){.bcs{grid-template-columns:1fr}}
+.bc-list{display:grid;gap:8px}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}.cbtn:last-child:nth-child(odd){grid-column:1/-1}}
+.cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
+.cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
+.cbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] b{color:#fff}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.bc{background:var(--ink);color:#F7EEF1;border-radius:16px;padding:28px 28px 30px;box-shadow:8px 8px 0 var(--honey)}
+.bc[hidden]{display:none}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bc h3{font-size:26px;color:#fff}
+.bc .lead{color:#D9C3CC;margin-top:6px;font-size:16px}
+.threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
+.threat.mid{background:#3A2E10;color:var(--honey)}
+.bc-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+@media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
+.bc-cols div,.bc-q{border:1.5px solid #4A2A3A;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
+.bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.bc-cols div:last-child h4{color:var(--honey)}
+.bc-cols p{font-size:15.5px;color:#EADCE0}
+.bc-q{margin-top:14px;background:#3A1424;border-color:var(--honey)}
+.bc-q p{font-family:var(--display);font-size:19px;font-weight:500;color:#fff}
+.bc sup a{color:var(--sky)}
+
+/* ===== Pentera theme ===== */
+:root{
+  --ink:#132735;
+  --ink-2:#1B3446;
+  --graphite:#566573;
+  --honey:#FC6313;
+  --honey-soft:#FFE3D1;
+  --sky:#9DB3C4;
+  --sky-soft:#E7EEF3;
+  --coral:#FC6313;
+  --lilac:#DCE3E9;
+  --fog:#F3F5F7;
+  --rule:#DDE3E8;
+  --link:#C2410C;
+  --display:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --poster:'Anton','Oswald','Arial Narrow',Impact,sans-serif;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(40px,4.6vw,64px);line-height:1.02;text-transform:uppercase}
+.sh h2,.contact h2{font-size:40px;line-height:1.05}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+mark,h1 mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--honey)}
+.status:before{background:var(--honey);clip-path:none;width:8px;height:8px}
+.toc a.active{border-left-color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:400;font-size:19px;letter-spacing:.02em}
+.hero sup a,.panel.ink sup a{color:var(--honey)}
+.lede b{color:#fff}
+/* Band on ink */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#2B4457!important}
+.band small{color:var(--honey);border-color:#2B4457}
+.band b{color:#fff;font-size:clamp(34px,26cqi,64px);letter-spacing:.01em}
+.band span{color:#C9D3DC}
+.band sup a{color:var(--honey)}
+/* Plays panel orange */
+.panel.sky{background:var(--honey)}
+.panel.sky .sh p,.panel.sky .dl dd{color:#1A0E05}
+.panel.sky .dl dt{color:#3A1A05}
+.panel.sky .insight{border-color:var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.6)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff}
+.tok{color:#8A2E00;background:var(--honey-soft)}
+/* Plan panel */
+.panel.honey{background:#FFD9C0}
+.panel.honey:after{opacity:.22}
+.phase .when{color:#6A2A00}
+.panel.honey .sh p{color:#4A2308}
+.phase:last-child .out b{color:var(--honey)}
+/* Square tiles in place of hexes */
+.tiles2{display:grid;grid-template-columns:repeat(3,76px);gap:6px}
+.tiles2 .col-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);padding-bottom:4px;border-bottom:1.5px solid var(--ink);margin-bottom:2px}
+.sq{height:64px;border:1.5px solid var(--ink);border-radius:4px;background:var(--fog);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px;transition:background .15s,transform .15s}
+.sq small{font-size:9.5px;color:var(--graphite)}
+.sq:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.sq.on{background:var(--honey)}
+.sq.on small{color:var(--ink)}
+.sq.home{font-weight:800}
+.sq.home:after{content:"";width:6px;height:6px;background:var(--ink);margin-top:2px}
+/* Hero module grid */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative}
+.mod{aspect-ratio:1;border:2px solid #fff;background:var(--ink-2);color:#fff;font-family:var(--mono);font-size:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;text-align:left;line-height:1.2;transition:transform .15s,background .15s,box-shadow .15s;position:relative}
+.mod:before{content:"";position:absolute;top:10px;left:10px;width:8px;height:8px;background:currentColor;opacity:.6}
+.mod:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--honey)}
+.mod.on{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--honey);transform:translate(-3px,-3px)}
+.mod.core{background:var(--honey);color:var(--ink);font-family:var(--poster);font-size:19px;letter-spacing:.03em;text-transform:uppercase;border-color:var(--honey)}
+.mod.core.on{background:#fff;border-color:#fff}
+.mod:focus-visible{outline:2px solid var(--honey);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mod,.sq{transition:none}}
+/* Fig 1 funnel */
+.fun{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.fun-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.fun-bar b{color:var(--ink);font-weight:500}
+.fun-bar .hint{color:var(--link)}
+.fun-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+@media (max-width:1180px){.fun-grid{grid-template-columns:1fr}}
+.tiers{padding:18px;display:grid;gap:8px;border-right:1.5px solid var(--ink)}
+@media (max-width:1180px){.tiers{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;width:var(--w);min-width:210px;max-width:100%;border:1.5px solid var(--ink);border-radius:6px;background:var(--fog);padding:10px 14px;font:inherit;text-align:left;cursor:pointer;transition:background .15s}
+.tier span{font-size:14px;line-height:1.3;color:var(--ink)}
+.tier b{font-family:var(--poster);font-weight:400;font-size:26px;color:var(--ink);letter-spacing:.01em}
+.tier:hover{background:#fff}
+.tier.on{background:var(--ink)}
+.tier.on span,.tier.on b{color:#fff}
+.tier.last.on b{color:var(--honey)}
+.fun-d{padding:18px 20px 20px}
+.fun-d h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fun-d p{font-size:15.5px;color:#3A2530}
+.fun-d ul{list-style:none;margin-top:12px;display:grid;gap:0;font-family:var(--mono);font-size:12.5px}
+.fun-d li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--rule)}
+.fun-d li s{text-decoration:none;font-size:10px;border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center;background:var(--honey-soft)}
+/* Fig 2 scanner vs path */
+.scan li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #2F4A5E;font-size:13.5px;color:#C9D3DC}
+.scan{list-style:none}
+.scan b{font-family:var(--mono);font-size:12px;font-weight:500;color:#FCA5A5;background:#3A1A1A;border-radius:4px;padding:2px 0;text-align:center}
+.pathv{display:grid;gap:0;margin-top:4px}
+.pnode{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;background:#fff;font-size:14.5px}
+.pnode i{font-style:normal;font-family:var(--mono);font-size:12px;width:26px;height:26px;display:grid;place-items:center;background:var(--ink);color:#fff}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{text-decoration:none;font-family:var(--mono);font-size:10.5px;background:var(--honey);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:1px 6px;white-space:nowrap}
+.plink{height:18px;width:2px;background:var(--ink);margin-left:26px}
+.pane.hc .tally{color:#1F7A4D}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey)}
+.mods{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mod{font-size:11.5px;padding:8px;overflow-wrap:anywhere;min-width:0}
+@media (max-width:900px){.art{max-width:320px}}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.art{max-width:340px}
+.mod{overflow-wrap:normal;font-size:11px}
+.mod.core{font-size:20px}
+h1{font-size:clamp(40px,4.3vw,60px);line-height:1.08}
+h1 mark{padding:0 .12em;border-radius:4px}
+.tiles2{grid-template-columns:repeat(3,84px)}
+.tiles2 .col-h{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}
+@media (min-width:1041px) and (max-width:1240px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}.cstep{padding:14px 10px 16px}.cstep b{font-size:15px}}
+@media (max-width:900px){.art{max-width:260px}}
+.path{grid-template-rows:repeat(6,auto)}
+.path li{grid-row:span 6}
+.path .exit{font-size:13.5px;color:#3A2530;margin-top:12px;padding:10px 12px;background:var(--fog);border-left:3px solid var(--honey);border-radius:0 6px 6px 0;align-self:stretch}
+.path .exit b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+@media (max-width:900px){.path{grid-template-rows:none}}
+.stalls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:1180px){.stalls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stalls{grid-template-columns:1fr}}
+.stalls div{border:1.5px solid var(--ink);border-radius:10px;padding:16px 18px;background:#fff;box-shadow:4px 4px 0 var(--honey)}
+.stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.stalls p{font-size:14.5px;color:#3A2530}
+@media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
+.mods{container-type:inline-size}
+.mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
+.mod.core{font-size:clamp(13px,6.2cqi,20px)}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+
+/* ===== LogicGate theme ===== */
+:root{
+  --ink:#08004B;
+  --ink-2:#15107A;
+  --graphite:#55536E;
+  --honey:#7CFA72;
+  --honey-soft:#E4FDE1;
+  --blue:#0000CC;
+  --blue-soft:#E8E8FF;
+  --sky:#B8B8FF;
+  --sky-soft:#EEEEFF;
+  --fog:#F4F4FA;
+  --rule:#DEDDEA;
+  --link:#0000CC;
+  --display:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --poster:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:800;letter-spacing:-.03em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h1 mark,mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--blue);color:#fff;border-color:var(--ink)}
+.banner b{color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--honey)}
+.toc a.active{border-left-color:var(--blue)}
+.hero sup a,.panel.ink sup a,.band sup a{color:var(--honey)}
+.btn.pri{background:var(--honey);border-color:var(--honey);color:var(--ink)}
+.band b{font-size:clamp(32px,22cqi,58px)}
+.band small{color:var(--honey)}
+.track .who b,.ttt h4{color:var(--honey)}
+.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:#1D2A00}
+.step-p{box-shadow:8px 8px 0 var(--blue)}
+.step-p blockquote{border-color:var(--blue)}
+.pane.hc{box-shadow:8px 8px 0 var(--honey)}
+.arrow-mid span{background:var(--honey)}
+/* Plays panel in LogicGate blue */
+.panel.sky{background:var(--blue);color:#fff}
+.panel.sky .sh h2{color:#fff}
+.panel.sky .sh p{color:#DADAFF}
+.panel.sky .insight{color:#fff;border-color:var(--honey)}
+.panel.sky .dl dt,.panel.sky .label{color:var(--honey)}
+.panel.sky .dl dd{color:#F0F0FF}
+.panel.sky sup a{color:var(--honey)}
+.panel.sky .mail sup a{color:var(--link)}
+.panel.sky .mail{box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.panel.sky .play-nav button:hover{background:rgba(255,255,255,.24)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--honey);color:var(--ink);border-color:var(--honey)}
+.panel.sky:after{mix-blend-mode:screen;opacity:.12}
+.tok{color:#1F1FA8;background:var(--blue-soft)}
+/* Plan panel */
+.panel.honey{background:#E4E4FF}
+.panel.honey .sh p{color:#2A2870}
+.phase .when{color:#2A2870}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents that were orange */
+.fun{box-shadow:8px 8px 0 var(--honey)}
+.fun-bar .hint{color:var(--blue)}
+.reg .lead{border-left-color:var(--blue)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--blue)}
+.path .exit{border-left-color:var(--blue)}
+.path .m{background:var(--blue-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--blue)}
+.bc{box-shadow:8px 8px 0 var(--honey)}
+.bc-q{border-color:var(--honey)}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#1F2A5A}
+.letter{border-left-color:var(--blue)}
+.sources li:target{background:var(--honey-soft)}
+.mod.core{background:var(--honey);border-color:var(--honey);color:var(--ink);font-family:var(--poster);font-weight:800;text-transform:none;letter-spacing:-.02em}
+.mod:hover{box-shadow:4px 4px 0 var(--honey)}
+.mod.on{box-shadow:5px 5px 0 var(--honey)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px}
+/* Fig 1: risk heat map */
+.hm-wrap{padding:18px;border-right:1.5px solid var(--ink);display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 22px;gap:6px}
+@media (max-width:1180px){.hm-wrap{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.hm-y{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm-x{grid-column:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.cell{aspect-ratio:1.35;border:1.5px solid var(--ink);border-radius:5px;font-family:var(--mono);font-size:15px;font-weight:500;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.cell.l1{background:#F1F1FA}
+.cell.l2{background:#C9C9FF}
+.cell.l3{background:#6E6EF5;color:#fff}
+.cell.l4{background:#0000CC;color:#fff}
+.cell.empty{color:transparent}
+.cell:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cell.on{outline:3px solid var(--honey);outline-offset:1px;box-shadow:4px 4px 0 var(--ink)}
+.fun-d li s{background:var(--blue-soft)}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}}
+/* Fig 2: files vs connected record */
+.files li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed #2E2A7A;font-family:var(--mono);font-size:12.5px;color:#D6D6F5;overflow-wrap:anywhere}
+.files{list-style:none}
+.files i{width:16px;height:20px;border:1.5px solid #8C8AD8;border-radius:2px;display:block;position:relative}
+.files i:after{content:"";position:absolute;left:3px;right:3px;top:6px;height:1.5px;background:#8C8AD8;box-shadow:0 4px 0 #8C8AD8}
+.pnode i{background:var(--blue)}
+.pnode.goal{background:var(--ink)}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--honey-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:#0000CC}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey);color:var(--ink)}
+h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
+.band b,.figs b{letter-spacing:-.02em}
+.band b{font-size:clamp(24px,20cqi,58px)}
+.panel.sky .mail{color:var(--ink)}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.inds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1060px}
+@media (max-width:860px){.inds{grid-template-columns:1fr}}
+.ind{border:1.5px solid var(--ink);border-radius:12px;padding:22px 24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.ind.reg{box-shadow:6px 6px 0 var(--blue)}
+.ind.pre{box-shadow:6px 6px 0 var(--honey)}
+.ind-tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ink);color:#fff}
+.ind.pre .ind-tag{background:var(--honey);color:var(--ink)}
+.ind h4{font-size:20px;font-weight:800}
+.ind p{font-size:15.5px;color:#3A2530}
+.ind .lead{margin-top:auto;padding:10px 12px;background:var(--fog);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;font-size:14.5px}
+.ind.pre .lead{border-left-color:var(--honey)}
+.ind .lead b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+.ind .acc{font-size:14px;color:var(--graphite)}
+@media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+
+/* ===== Gambit theme ===== */
+:root{
+  --ink:#1A0712;
+  --ink-2:#2C0F1E;
+  --graphite:#6A5560;
+  --honey:#FF6B84;
+  --honey-soft:#FDE4E8;
+  --blue:#DE2C45;
+  --blue-soft:#FDE4E8;
+  --sky:#F4B8C2;
+  --sky-soft:#FDF1F3;
+  --fog:#FAF4F5;
+  --rule:#EADCE0;
+  --link:#B3182F;
+  --display:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --body:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --poster:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body{background:#FFFBFB}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:700;letter-spacing:-.03em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-weight:700;letter-spacing:-.01em}
+mark{background:var(--blue);color:#fff}
+.banner{background:var(--blue);color:#fff;border-color:var(--ink)}
+.banner b{color:#fff}
+.mark b{font-family:var(--poster);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--honey)}
+.toc a.active{border-left-color:var(--blue)}
+/* Hero, plum with a crimson glow */
+.hero{background:radial-gradient(120% 90% at 85% 110%,#7A0F2A 0%,rgba(122,15,42,0) 55%),linear-gradient(165deg,#160511 0%,#1E0614 60%,#300716 100%)}
+.hero h1 mark{background:var(--blue);color:#fff;border-radius:6px;padding:0 .12em}
+.hero sup a,.panel.ink sup a,.band sup a{color:var(--honey)}
+.lede b{color:#fff}
+.btn.pri{background:var(--blue);border-color:var(--blue);color:#fff;border-radius:999px}
+.btn{border-radius:999px}
+.mod{background:#2A0C1B;border-color:#5A2A3F;border-radius:8px}
+.mod.core{background:var(--blue);border-color:var(--blue);color:#fff;font-family:var(--poster);font-weight:700;text-transform:none;letter-spacing:-.02em}
+.mod.core.on{background:#fff;color:var(--ink);border-color:#fff}
+.mod:hover{box-shadow:4px 4px 0 var(--honey)}
+.mod.on{box-shadow:5px 5px 0 var(--honey)}
+/* Band */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#3A1A2A!important}
+.band small{color:var(--honey);border-color:#3A1A2A}
+.band b{color:#fff;font-size:clamp(24px,20cqi,58px);letter-spacing:-.02em}
+.band span{color:#E2CDD5}
+.panel.ink{background:#1A0712}
+.track .who b,.ttt h4,.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:var(--ink)}
+.cstep[aria-selected="true"] i{color:var(--ink)}
+.step-p{box-shadow:8px 8px 0 var(--blue)}
+.step-p blockquote{border-color:var(--blue)}
+.pane{background:#24101B;border-color:#43202F}
+.pane.hc{box-shadow:8px 8px 0 var(--blue)}
+.arrow-mid span{background:var(--honey)}
+.pane-lbl b{color:#FFB3C0}
+.pane.hc .pane-lbl b{background:var(--blue);color:#fff}
+.pnode i{background:var(--ink)}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--honey-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:var(--link)}
+/* Plays panel in crimson */
+.panel.sky{background:var(--blue);color:#fff}
+.panel.sky .sh h2{color:#fff}
+.panel.sky .sh p{color:#FFE6EA}
+.panel.sky .insight{color:#fff;border-color:#fff}
+.panel.sky .dl dt,.panel.sky .label{color:#FFE0E6}
+.panel.sky .dl dd{color:#fff}
+.panel.sky sup a{color:#fff}
+.panel.sky .mail{color:var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .mail sup a{color:var(--link)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.panel.sky .play-nav button:hover{background:rgba(255,255,255,.24)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel.sky:after{mix-blend-mode:screen;opacity:.12}
+.tok{color:#9E1429;background:var(--honey-soft)}
+/* Plan panel */
+.panel.honey{background:#FBE6EA}
+.panel.honey:after{opacity:.2}
+.panel.honey .sh p{color:#4A1A28}
+.phase .when{color:#8A1427}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents */
+.fun{box-shadow:8px 8px 0 var(--blue)}
+.fun-bar .hint{color:var(--link)}
+.reg .lead{border-left-color:var(--blue)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--blue)}
+.path .exit{border-left-color:var(--blue)}
+.path .m{background:var(--honey-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--blue)}
+.bc{background:#1A0712;box-shadow:8px 8px 0 var(--blue)}
+.bc-cols div,.bc-q{background:#24101B;border-color:#43202F}
+.bc-q{border-color:var(--honey)}
+.bc-cols h4{color:#F4B8C2}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--blue)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#3A1222}
+.letter{border-left-color:var(--blue)}
+.sources li:target{background:var(--honey-soft)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px;border-radius:6px}
+/* Fig 1: recovery map */
+.custs{padding:14px;display:grid;gap:8px;border-right:1.5px solid var(--ink);align-content:start}
+@media (max-width:1180px){.custs{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.cust{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;font:inherit;background:var(--fog);border:1.5px solid var(--ink);border-radius:8px;padding:9px 12px;cursor:pointer;transition:background .15s,transform .15s}
+.cust i{font-style:normal;width:34px;height:34px;border-radius:6px;display:grid;place-items:center;background:var(--sky);font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink)}
+.cust span{font-size:14px;line-height:1.3;color:var(--ink)}
+.cust span small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite)}
+.cust em{font-style:normal;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--ink);background:#fff;white-space:nowrap}
+.cust em.gap{background:#FFE1E6}
+.cust em.ok{background:#E3F4E8}
+.cust em.drift{background:#FFF0D6}
+.cust:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cust.on{background:var(--ink)}
+.cust.on span,.cust.on span small{color:#fff}
+.cust.on i{background:var(--honey)}
+.dec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 4px}
+.dec div{border:1.5px solid var(--ink);border-radius:8px;padding:8px 10px;background:#fff}
+.dec small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.dec b{display:block;font-size:14.5px;font-weight:700;line-height:1.25;margin-top:2px}
+.fun-d .why{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-top:12px}
+.fun-d li s{background:var(--honey-soft)}
+@media (max-width:560px){.dec{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cust{transition:none}}
+/* Fig 2 list */
+.files li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed #4A2535;font-family:var(--mono);font-size:12.5px;color:#EAD6DD;overflow-wrap:anywhere}
+.files{list-style:none}
+.files i{width:16px;height:16px;border:1.5px solid #B07A8C;border-radius:50%;display:block;position:relative}
+.files i:after{content:"";position:absolute;left:6px;top:2px;width:1.5px;height:6px;background:#B07A8C}
+.mod.core{font-size:clamp(12px,5.6cqi,19px);line-height:1.15}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.plays-note{margin-top:14px;font-size:14px;color:#FFE6EA;max-width:760px}
+</style>
+</head>
+<body>
+<div class="prog" id="progress" aria-hidden="true"></div>
+<div class="banner">Prepared for <b>Josh Bey</b> and the Gambit go to market team, by Eric Iannello</div>
+
+<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1A0712"/><rect x="7" y="19" width="18" height="5" rx="1" fill="#fff"/><rect x="9" y="13" width="14" height="5" rx="1" fill="#DE2C45"/><rect x="11" y="7" width="10" height="5" rx="1" fill="#fff"/></svg><b>Gambit plan</b></a><a href="#contact">Contact</a></div>
+
+<div class="shell">
+  <aside class="side" aria-label="Contents">
+    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1A0712"/><rect x="7" y="19" width="18" height="5" rx="1" fill="#fff"/><rect x="9" y="13" width="14" height="5" rx="1" fill="#DE2C45"/><rect x="11" y="7" width="10" height="5" rx="1" fill="#fff"/></svg><span><b>Pacific region</b><small>Gambit plan</small></span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#know">What I know</a></li>
+      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#territory">Territory</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Running the deal</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#plan">First 90 days</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="side-foot">
+      <span>Eric Iannello</span>
+      <span>Boise, Idaho</span>
+      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Overview -->
+    <section id="top" class="hero grain">
+      <div>
+        <div class="doc-meta">
+          <span class="status"><b>Proposal</b></span>
+          <span>Enterprise Account Executive, PST</span>
+          <span>October 2026</span>
+        </div>
+        <h1>Backups report success. Gambit proves what will <mark>recover.</mark></h1>
+        <p class="lede">Gambit came out of stealth in February 2026 with $61M from Spark Capital, Kleiner Perkins and Cyberstarts. Its Balens platform maps each business application to the cloud, backup, IaC and security tools it depends on, and checks continuously that it can come back.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Command of the Message and MEDDPICC.</p>
+        <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
+      </div>
+      <div class="art">
+        <div class="mods" role="group" aria-label="Balens platform. Select a square to read about it.">
+          <button class="mod" data-t="Application map" data-d="Maps business applications to the infrastructure, data and services they depend on, with no manual tagging project.">App map</button>
+          <button class="mod" data-t="Backup coverage" data-d="Checks coverage across every backup vendor and flags gaps, immutability violations and retention misconfigurations.">Backups</button>
+          <button class="mod" data-t="Drift detection" data-d="Compares the state defined in infrastructure as code with what is actually running.">IaC drift</button>
+          <button class="mod" data-t="Recovery paths" data-d="Validates continuously whether each critical application can be recovered, across disruption scenarios.">Recovery paths</button>
+          <button class="mod core on" data-t="Balens" data-d="Cyber resilience posture management. One view of whether the business can keep running through ransomware, outages and drift.">Balens</button>
+          <button class="mod" data-t="Resilience score" data-d="Scores resilience posture for each application, so leaders can track it like any other risk metric.">Score</button>
+          <button class="mod" data-t="Compliance evidence" data-d="Produces audit ready evidence for regulators, auditors and SLA commitments.">Evidence</button>
+          <button class="mod" data-t="Wiz integration" data-d="Wiz issues and data sensitivity attach to recovery gaps, so fixes are ranked by business impact.">Wiz</button>
+          <button class="mod" data-t="Cost optimization" data-d="Surfaces backup and recovery spend that protects nothing the business needs.">Cost</button>
+        </div>
+        <p class="hx-say" id="hxSay" aria-live="polite"><b>Balens</b>Cyber resilience posture management. One view of whether the business can keep running through ransomware, outages and drift.</p>
+        <p class="hx-hint">Select a square to explore the platform</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
+        <div><dt>Prepared for</dt><dd>Josh Bey</dd></div>
+        <div><dt>Territory</dt><dd>Pacific time zone</dd></div>
+        <div><dt>Methods</dt><dd>Command of the Message, MEDDPICC</dd></div>
+      </dl>
+    </section>
+    <div class="float">
+      <figure>
+        <div class="fun" role="group" aria-label="Recovery map. Select a business service to see whether it can recover in time.">
+          <div class="fun-bar"><span><b>Minimum viable business</b> recovery map</span><span class="hint">Select a service</span><span>illustrative</span></div>
+          <div class="fun-grid">
+            <div class="custs">
+              <button class="cust on" data-d="{&quot;h&quot;: &quot;Checkout and payments&quot;, &quot;p&quot;: &quot;Backups exist, but the recovery path breaks on a dependency nobody mapped.&quot;, &quot;c&quot;: &quot;2 hours&quot;, &quot;t&quot;: &quot;14 hours&quot;, &quot;o&quot;: &quot;Gap&quot;, &quot;w&quot;: [[&quot;Payment database copies are immutable and current&quot;, &quot;backup&quot;], [&quot;Identity service it relies on has no tested restore&quot;, &quot;dependency&quot;], [&quot;Network settings changed outside Terraform last week&quot;, &quot;IaC drift&quot;]]}" aria-pressed="true"><i>T1</i><span>Checkout and payments<small>tier 1, RTO 2 hours</small></span><em class="gap">Gap</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Order management&quot;, &quot;p&quot;: &quot;Recovery path validated end to end this week.&quot;, &quot;c&quot;: &quot;4 hours&quot;, &quot;t&quot;: &quot;3 hours&quot;, &quot;o&quot;: &quot;Holds&quot;, &quot;w&quot;: [[&quot;Every dependency mapped and backed up&quot;, &quot;coverage&quot;], [&quot;Restore order matches what is running&quot;, &quot;IaC&quot;], [&quot;Open Wiz issues are low impact here&quot;, &quot;Wiz context&quot;]]}" aria-pressed="false"><i>T1</i><span>Order management<small>tier 1, RTO 4 hours</small></span><em class="ok">Holds</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Customer login&quot;, &quot;p&quot;: &quot;The code that rebuilds it no longer matches production.&quot;, &quot;c&quot;: &quot;1 hour&quot;, &quot;t&quot;: &quot;Unknown&quot;, &quot;o&quot;: &quot;Drift&quot;, &quot;w&quot;: [[&quot;Cluster rebuilt from code would differ from production&quot;, &quot;IaC drift&quot;], [&quot;Backup retention is shorter than policy&quot;, &quot;backup&quot;], [&quot;Wiz flags a risky admin role on the same system&quot;, &quot;Wiz context&quot;]]}" aria-pressed="false"><i>T1</i><span>Customer login<small>tier 1, RTO 1 hour</small></span><em class="drift">Drift</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Store inventory feed&quot;, &quot;p&quot;: &quot;A data store added in March has no backup at all.&quot;, &quot;c&quot;: &quot;8 hours&quot;, &quot;t&quot;: &quot;2 days&quot;, &quot;o&quot;: &quot;Gap&quot;, &quot;w&quot;: [[&quot;New data store missing from backup policy&quot;, &quot;coverage&quot;], [&quot;Holds sensitive supplier data&quot;, &quot;data sensitivity&quot;], [&quot;Owner team identified for the fix&quot;, &quot;owner&quot;]]}" aria-pressed="false"><i>T2</i><span>Store inventory feed<small>tier 2, RTO 8 hours</small></span><em class="gap">Gap</em></button>
+              <button class="cust" data-d="{&quot;h&quot;: &quot;Internal reporting&quot;, &quot;p&quot;: &quot;Recovers well within its target.&quot;, &quot;c&quot;: &quot;72 hours&quot;, &quot;t&quot;: &quot;20 hours&quot;, &quot;o&quot;: &quot;Holds&quot;, &quot;w&quot;: [[&quot;Backups current and immutable&quot;, &quot;backup&quot;], [&quot;Recovery path validated last month&quot;, &quot;validation&quot;], [&quot;Extra copies could be retired to save cost&quot;, &quot;cost&quot;]]}" aria-pressed="false"><i>T3</i><span>Internal reporting<small>tier 3, RTO 72 hours</small></span><em class="ok">Holds</em></button>
+            </div>
+            <div class="fun-d">
+              <h4 id="fH">Checkout and payments</h4>
+              <p id="fP">Backups exist, but the recovery path breaks on a dependency nobody mapped.</p>
+              <div class="dec"><div><small>RTO target</small><b id="dC">2 hours</b></div><div><small>Proven recovery</small><b id="dT">14 hours</b></div><div><small>Status</small><b id="dO">Gap</b></div></div>
+              <p class="why">What Balens found</p>
+              <ul id="fL"><li>Payment database copies are immutable and current<s>backup</s></li><li>Identity service it relies on has no tested restore<s>dependency</s></li><li>Network settings changed outside Terraform last week<s>IaC drift</s></li></ul>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 1</b><span>The minimum viable business, service by service. Each service is mapped to what it needs to come back and checked against its recovery target. Illustrative data for a retailer.</span></figcaption>
+      </figure>
+    </div>
+    <div class="band" role="list">
+      <div role="listitem"><small>Funding</small><b>$61M</b><span>seed and Series A, raised in under 12 months<sup><a href="#s1">1</a></sup></span></div>
+      <div role="listitem"><small>Recovery gap</small><b>1 in 3</b><span>ransomware victims recovered, while 90% expected they could<sup><a href="#s3">3</a></sup></span></div>
+      <div role="listitem"><small>AI attacks</small><b>$25</b><span>average cost per target in an AI agent campaign Gambit tracked<sup><a href="#s4">4</a></sup></span></div>
+      <div role="listitem"><small>LA Metro</small><b>Weeks</b><span>to recover from a breach Gambit attributed to Iran<sup><a href="#s5">5</a></sup></span></div>
+    </div>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <h2>What I know about Gambit</h2>
+        <p>The product, the buyer, and why this year matters.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>Balens is an AI native cyber resilience posture management platform. It maps applications and their dependencies across cloud, backups, IaC and security tools, scores resilience, validates recovery paths and produces audit ready evidence.<sup><a href="#s2">2</a></sup></p>
+          <p>It is vendor agnostic, integrates with Wiz and is sold on AWS Marketplace.<sup><a href="#s2">2</a>,<a href="#s6">6</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>The CISO signs, with the CIO as co owner because recovery runs through infrastructure. Champions sit in cloud platform, DevOps, SecDevOps and backup teams, the people who know where recovery would break.<sup><a href="#s7">7</a></sup></p>
+          <p>Wiz and AWS account teams are natural allies, since Gambit adds recovery context to tools the customer already runs.</p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>Founders Alon Gromakov, Sa'ar Elias and May Kogan are Unit 8200 veterans and early Sentra employees. They raised $61M in under 12 months.<sup><a href="#s1">1</a>,<a href="#s8">8</a></sup></p>
+          <p>Gambit's research team published the findings on the AI assisted breach of nine Mexican government agencies and the LA Metro attack, which gives a new brand a reason for a CISO to take the meeting.<sup><a href="#s5">5</a>,<a href="#s9">9</a></sup></p>
+        </div>
+      </div>
+      <h3 class="ind-h">The market Gambit is creating</h3>
+      <div class="three">
+        <div><h3>AI made attacks cheap</h3><p>One operator using two AI platforms breached nine Mexican government agencies, and agents compromised online retailers for about $25 each. Attacks will get through, so the board question becomes how fast the business comes back.<sup><a href="#s4">4</a>,<a href="#s9">9</a></sup></p></div>
+        <div><h3>Regulators want proof</h3><p>NYDFS Part 500 requires covered companies to test restoring critical systems from backups at least once a year. Gromakov's argument is that resilience should be validated continuously, since the estate changes daily.<sup><a href="#s8">8</a>,<a href="#s10">10</a></sup></p></div>
+        <div><h3>Backups are one layer</h3><p>Each backup vendor reports on the data it protects. An application also needs identity, networking, IaC and other vendors' copies to come back, and that full map goes stale the day it ships. Balens keeps it current, vendor agnostic.<sup><a href="#s11">11</a></sup></p></div>
+      </div>
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <h2>The conversation I would have with a CISO</h2>
+        <p>Command of the Message builds the value case in a set order, from the before scenario to proof. Step through the talk track I would bring to a CISO or CIO, with the evidence behind each step.</p>
+      </div>
+      <figure class="compare">
+        <div class="cmp-grid">
+          <div class="pane">
+            <div class="pane-lbl"><span>Recovery on paper</span><b>point in time</b></div>
+            <ul class="files">
+              <li><i></i>DR plan updated after the annual test</li>
+              <li><i></i>Backup jobs green, dependencies unknown</li>
+              <li><i></i>RTO targets kept in a spreadsheet</li>
+              <li><i></i>Infrastructure changed since the last test</li>
+              <li><i></i>Each backup tool reports on itself</li>
+            </ul>
+            <div class="tally"><span><b>1</b>test a year</span><span><b>?</b>proven RTO</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="pane hc">
+            <div class="pane-lbl"><span>Gambit Balens</span><b>continuous</b></div>
+            <div class="pathv">
+              <div class="pnode"><i>1</i>Application mapped to its dependencies<s>automatic</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>2</i>Backups, IaC and security tools checked<s>every vendor</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>3</i>Recovery path validated against the RTO<s>continuous</s></div>
+              <div class="plink"></div>
+              <div class="pnode goal"><i>4</i>Evidence for the board and auditors<s>audit ready</s></div>
+            </div>
+            <div class="tally"><span><b>1</b>map, every vendor</span><span><b>Live</b>status</span></div>
+          </div>
+        </div>
+        <figcaption><b>Fig. 2</b><span>Most resilience programs prove recovery at a point in time with backups, tests and tabletops. Balens checks it continuously, application by application, across every vendor. Illustrative.<sup><a href="#s8">8</a></sup></span></figcaption>
+      </figure>
+      <div class="steps" role="tablist" aria-label="Command of the Message steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Before scenario</b><small>How recovery works today</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Consequences</b><small>What it costs when it fails</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Positive outcomes</b><small>What the after looks like</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Required capabilities</b><small>What it takes to get there</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>Metrics</b><small>How we measure success</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>How we do it</b><small>Why Gambit</small></button>
+      </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Before scenario</h3><blockquote>Resilience is usually measured at a point in time, with backups, recovery tests and tabletop exercises. The estate changes every day in between, and each backup tool reports only on itself.<sup><a href="#s8">8</a></sup></blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Annual proof</b>Recovery tested on one day, assumed on the rest</div><div><b>Green jobs</b>Backups succeed while applications still fail to come back</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Consequences</h3><blockquote>Confidence runs ahead of results. Most organizations expect to recover from a cyber incident, and most ransomware victims don't. LA Metro needed weeks to recover from its March breach.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>90% vs 1 in 3</b>Expected to recover, versus ransomware victims who did<sup><a href="#s3">3</a></sup></div><div><b>Weeks</b>For LA Metro to recover<sup><a href="#s5">5</a></sup></div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Positive outcomes</h3><blockquote>The CISO and CIO know every day which business services can come back within their RTO, which can't and why. The board gets a resilience number it can track, and auditors get evidence on request.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Known</b>Recovery time for every tier 1 service</div><div><b>Ready</b>Evidence on any day of the year</div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Required capabilities</h3><blockquote>Map applications to dependencies automatically, check every backup vendor for coverage, immutability and retention, compare IaC intent with what is running, validate recovery paths continuously, and rank gaps by business impact and data sensitivity.</blockquote></div><div><div class="k">Capabilities we agree on</div><div class="facts2"><div><b>Vendor agnostic</b>Across clouds, backups, IaC and security tools</div><div><b>Continuous</b>Checked as the estate changes</div><div><b>Prioritized</b>Gaps ranked with Wiz context<sup><a href="#s6">6</a></sup></div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>Metrics</h3><blockquote>We agree the numbers up front and baseline them in the evaluation, so the business case is written in the customer's terms.</blockquote></div><div><div class="k">Metrics we track</div><div class="facts2"><div><b>Proven RTO</b>Against target for each critical service</div><div><b>Coverage</b>Share of tier 1 services with a validated recovery path</div><div><b>Hours</b>Spent assembling audit evidence</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>How we do it</h3><blockquote>Balens, built by Unit 8200 veterans and backed by Spark Capital, Kleiner Perkins and Cyberstarts, with a Wiz integration, AWS Marketplace purchasing and a research team tracking AI driven attacks in the wild.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>$61M</b>Seed and Series A in under 12 months<sup><a href="#s1">1</a></sup></div><div><b>9 agencies</b>The AI assisted breach Gambit researched and reported<sup><a href="#s9">9</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
+      <div class="ttt">
+        <div><h4>Why do anything</h4><p>The before scenario and its cost come from their own services. A CISO who can't name a proven recovery time for the top five applications has the reason in hand.</p></div>
+        <div><h4>Why now</h4><p>AI has cut the cost and time of an attack, the board asks about resilience, and the next audit, insurance renewal or DR test sets the date.</p></div>
+        <div><h4>Why Gambit</h4><p>Vendor agnostic recovery proof at the application level, continuous, with Wiz context and a research team tracking AI driven attacks in the wild.</p></div>
+      </div>
+    </section>
+
+    <!-- Territory -->
+    <section id="territory">
+      <div class="sh">
+        <h2>Where I would spend my time</h2>
+        <p>The Pacific time zone splits into four markets, each with its own reason to care about recovery. Select a city to find its region.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles2" role="group" aria-label="Pacific region cities">
+            <span class="col-h">Puget Sound</span><span class="col-h">Bay Area</span><span class="col-h">SoCal</span><span class="col-h">OR and NV</span>
+            <button class="sq" data-r="ps">SEA<small>Seattle</small></button>
+            <button class="sq" data-r="ba">SFO<small>San Fran</small></button>
+            <button class="sq" data-r="sc">LAX<small>Los Angeles</small></button>
+            <button class="sq" data-r="on">PDX<small>Portland</small></button>
+            <button class="sq" data-r="ps">BEL<small>Bellevue</small></button>
+            <button class="sq" data-r="ba">SJC<small>San Jose</small></button>
+            <button class="sq" data-r="sc">SAN<small>San Diego</small></button>
+            <button class="sq" data-r="on">LAS<small>Las Vegas</small></button>
+            <button class="sq" data-r="ps">RDM<small>Redmond</small></button>
+            <button class="sq" data-r="ba">OAK<small>Oakland</small></button>
+            <button class="sq" data-r="sc">IRV<small>Irvine</small></button>
+            <button class="sq" data-r="on">RNO<small>Reno</small></button>
+          </div>
+          <p class="map-note">Based in Boise, with direct flights to Seattle, Portland, the Bay Area, Los Angeles, San Diego and Las Vegas.</p>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Region</th><th>Who buys, why, and what I lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="ps"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond</span></td><td data-h="Who buys and why">Cloud native retail, travel, telecom and health systems where downtime stops revenue or care.<div class="acc">Starbucks, Nordstrom, Alaska Airlines, T&#8209;Mobile, Expedia, Providence</div><div class="lead"><b>Lead with</b>A proven recovery time for every tier 1 service</div></td></tr>
+              <tr data-r="ba"><td>Bay Area<span class="st">San Francisco, San Jose, Oakland</span></td><td data-h="Who buys and why">Fintech, payments, SaaS and utilities running large estates on AWS and Terraform, many under financial or critical infrastructure rules.<div class="acc">Visa, Wells Fargo, Intuit, Gap Inc., PG&amp;E</div><div class="lead"><b>Lead with</b>IaC drift tied to recovery, and audit evidence</div></td></tr>
+              <tr data-r="sc"><td>Southern California<span class="st">Los Angeles, San Diego, Irvine</span></td><td data-h="Who buys and why">Media, aerospace, insurance and public agencies, in the region where Gambit's LA Metro research made news.<sup><a href="#s5">5</a></sup><div class="acc">Disney, Edison International, Qualcomm, Snap, Pacific Life</div><div class="lead"><b>Lead with</b>Recovery from an attacker who targets the backups first</div></td></tr>
+              <tr data-r="on"><td>Oregon and Nevada<span class="st">Portland, Las Vegas, Reno</span></td><td data-h="Who buys and why">Apparel brands, manufacturers, and gaming and hospitality operators that run around the clock.<div class="acc">Nike, Columbia Sportswear, Daimler Truck North America, MGM Resorts, Caesars Entertainment</div><div class="lead"><b>Lead with</b>The minimum viable business, mapped and tested</div></td></tr>
+            </tbody>
+          </table>
+          <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments and current customers with the team before any outreach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays" class="panel sky grain">
+      <div class="sh">
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play opens with an insight, earns the reply with a light signal from the account, and runs as a three email sequence. Gambit hasn't published named customer results yet, so these lean on Gambit's research. I'd swap in reference customers with the team's approval.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Prove the RTO</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">AI made attacks cheap</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Evidence on demand</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Wiz plus recovery</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">The recovery time on the board slide is only as good as the last test, and the environment has changed since.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises where most revenue runs through digital channels, on AWS, Azure or GCP.</dd></div>
+            <div><dt class="label">Signal</dt><dd>The 10&#8209;K names ransomware or outages as a material risk, and the company has had a public outage or status page incident in the last year.</dd></div>
+            <div><dt class="label">Personas</dt><dd>CIO or VP of Infrastructure first, then the CISO and the head of cloud platform.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Which five services make up your minimum viable business?</li><li>When was each one last recovered end to end?</li><li>What has changed in those environments since?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>CIO</dd><dt>Subject</dt><dd><ol><li data-v="A">Checkout recovery time</li><li data-v="B">Proven RTO idea</li><li data-v="C">Board question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, if <span class="tok">{{company}}</span>'s checkout went down tomorrow, how sure is the team of the recovery time it reports to the board?</p><p>In Veeam's 2026 research, 90% of organizations said they could recover from a cyber incident, and fewer than 1 in 3 ransomware victims actually did.</p><p>Open to a quick conversation on whether your team could prove that number every day?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 1 in 3 sounds like seller cherry picking.</p><p>If we mapped one of your tier 1 services to its real recovery path, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like recovery times are proven and current?</p><p>Basically your team would see, every day, which services can come back within their RTO and which can't.</p><p>Happy to share what similar teams are finding. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Veeam research<sup><a href="#s3">3</a></sup></span><span><b>Value</b> a recovery time you can defend</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">AI agents cut the cost of an attack to dollars. Prevention can't be the whole plan, so recovery becomes the control the board will ask about.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Online retailers, marketplaces and consumer brands with large ecommerce operations.</dd></div>
+            <div><dt class="label">Signal</dt><dd>The CISO has spoken or posted publicly about AI driven threats, or the company runs its own storefront at scale.</dd></div>
+            <div><dt class="label">Personas</dt><dd>CISO first, then the CIO and the head of ecommerce engineering.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How has AI changed your threat model this year?</li><li>If prevention misses one, what keeps the store open?</li><li>What does the board ask you about recovery?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A">A $25 attack</li><li data-v="B">AI agents and retailers</li><li data-v="C">Recovery question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, what changes in <span class="tok">{{company}}</span>'s plan when an attack costs the attacker about $25?</p><p>Gambit's research team tracked an AI agent campaign against hundreds of online retailers this year, at an average of $25 per target.</p><p>Would you be opposed to chatting through what recovery looks like for <span class="tok">{{company}}</span> if prevention misses one, in Q4?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize a $25 attack sounds like seller cherry picking.</p><p>If we showed which of your store's services could come back within a day, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the recovery plan is already tested against this?</p><p>Basically the plan for the day prevention misses would be checked every day, with proof the store stays open.</p><p>Happy to share the full research. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Gambit research<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a store that stays open</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">Regulators now ask for tested recovery. An annual test proves it for one day, and the evidence goes stale with the next change.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Banks, insurers, credit unions, payments companies and health systems.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Licensed by NYDFS, or regulated under HIPAA, with an annual BCDR test or exam on the calendar.</dd></div>
+            <div><dt class="label">Personas</dt><dd>CISO first, then the CIO, the head of IT risk and internal audit.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How long does the restore test evidence take to assemble?</li><li>Which systems were left out of the last test?</li><li>What did auditors ask for that you couldn't show?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A">Your annual restore test</li><li data-v="B">Evidence idea</li><li data-v="C">Part 500 question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, when <span class="tok">{{company}}</span> runs its annual restore test for NYDFS, how many weeks does the evidence take to pull together?</p><p>Gambit maps each critical system to its backups and dependencies and keeps recovery evidence current all year, so the test proves what the team already knows.</p><p>Open to a quick conversation on whether your team could walk into the next exam with that?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize evidence all year sounds like seller cherry picking.</p><p>If we produced it for one critical system in your environment, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the annual test runs smoothly?</p><p>Basically the evidence auditors ask for would be ready on any day of the year.</p><p>Happy to share what similar teams are finding. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Rule</b> NYDFS 500.16<sup><a href="#s10">10</a></sup></span><span><b>Value</b> audit hours back</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">Wiz shows what an attacker can reach. It can't show whether the business comes back. Together they rank fixes by business impact.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Cloud first enterprises with Wiz deployed and a large backlog of issues.</dd></div>
+            <div><dt class="label">Signal</dt><dd>A public Wiz case study, logo or conference talk from the company's cloud security team.</dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of Cloud Security or SecDevOps first, then the CISO and the head of platform engineering.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How do you decide which Wiz issues get fixed first?</li><li>Which of those systems hold sensitive data?</li><li>Do you know which of them could be recovered quickly?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Cloud Security</dd><dt>Subject</dt><dd><ol><li data-v="A">Your Wiz backlog</li><li data-v="B">Ranking idea</li><li data-v="C">Recovery question</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, of the Wiz issues <span class="tok">{{company}}</span> triages each week, how many sit on systems the business couldn't recover quickly?</p><p>Gambit syncs Wiz issues and data sensitivity daily and attaches them to recovery gaps, so the fix list starts with what would hurt the business most.</p><p>Open to a quick look at what that list would show for <span class="tok">{{company}}</span>?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize ranking by business impact sounds like seller cherry picking.</p><p>If we ran your top Wiz findings against one service's recovery path, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the Wiz backlog is under control?</p><p>Basically your team would fix first what would keep the business down longest.</p><p>Happy to share how the integration works. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Wiz integration<sup><a href="#s6">6</a></sup></span><span><b>Value</b> fixes ranked by impact</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Gambit wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      </div>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>Backup platforms</b><small>Rubrik, Cohesity, Commvault, Veeam</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Cloud native DR</b><small>AWS, Azure and Google tools</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Drift and IaC tools</b><small>Firefly and similar</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>CNAPP and posture</b><small>Wiz and peers</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Status quo</b><small>Annual DR tests, tabletops, consultants</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>Backup platforms</h3><span class="threat">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>They hold the data copies, offer immutability and recovery tooling, and own the budget and the relationship with infrastructure teams.</p></div><div><h4>Where Gambit wins</h4><p>Vendor agnostic across every backup tool in the estate, and it checks the whole application, including identity, networking and IaC, which sit outside any one backup vendor's view.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When one application depends on two backup vendors and Terraform, who tells you it will come back?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>Cloud native DR</h3><span class="threat mid">Entrenched</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Already in the account, priced low and easy for platform teams to switch on.</p></div><div><h4>Where Gambit wins</h4><p>Built for an adversary as well as an outage. Ransomware operators can sit in an environment for weeks and target recovery first, and Balens covers every cloud and vendor in one view.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>If the attacker has been in the account for weeks, how do you know the DR copy comes back clean?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>Drift and IaC tools</h3><span class="threat mid">Adjacent</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Cloud asset inventory, codifying unmanaged resources and catching drift from Terraform.</p></div><div><h4>Where Gambit wins</h4><p>Ties drift to the business application and its recovery target, alongside backups and security context.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When drift is found, how do you know which business service it puts at risk?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>CNAPP and posture</h3><span class="threat">Partner first</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep visibility into exposure, identities and data across the cloud, with strong executive relationships.</p></div><div><h4>Where Gambit wins</h4><p>Gambit answers a different question, whether the business can recover, and it already attaches Wiz issues to recovery gaps.<sup><a href="#s6">6</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Your CNAPP shows what is exposed. What shows you what comes back?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>Status quo</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Familiar, already budgeted, and enough to pass last year's audit.</p></div><div><h4>Where Gambit wins</h4><p>Continuous evidence across every application, with gaps found before an incident.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>What has changed in your environment since the last test?</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <h2>Running the deal</h2>
+        <p>Command of the Message frames the value in the customer's words. MEDDPICC tracks what is proven and what is still missing. Every stage has exit criteria, and every deal has a mutual action plan the champion helped write.</p>
+      </div>
+      <ol class="path">
+        <li><span class="when">Month 1</span><h4>Discovery meeting</h4><p>Walk the CISO or CIO through the before scenario and its consequences, using their own critical services.</p><p class="exit"><b>Exit when</b>The executive names the services that matter most, the cost of downtime and who owns recovery.</p><span class="m">Before scenario</span></li>
+        <li><span class="when">Months 1 to 2</span><h4>Business case</h4><p>Map three to five tier 1 services with a Sales Engineer, agree RTO targets, and price downtime and audit effort.</p><p class="exit"><b>Exit when</b>Required capabilities and metrics are agreed in writing, and the economic buyer is known.</p><span class="m">Capabilities</span></li>
+        <li><span class="when">Months 2 to 4</span><h4>Technical evaluation</h4><p>Connect cloud, backups, IaC and Wiz, then show the resilience score and recovery gaps on real services.</p><p class="exit"><b>Exit when</b>Infrastructure owners confirm the gaps, and written success criteria are met.</p><span class="m">Decision criteria</span></li>
+        <li><span class="when">Months 4 to 5</span><h4>Security and procurement</h4><p>Security review, DPA, legal and purchasing in parallel, with an AWS Marketplace private offer raised early.</p><p class="exit"><b>Exit when</b>Paper process is complete and a signature date is agreed in the mutual plan.</p><span class="m">Paper process</span></li>
+        <li><span class="when">Month 5 on</span><h4>Close and expand</h4><p>Start with tier 1 services, then extend to the full estate, more clouds and more business units.</p><p class="exit"><b>Exit when</b>Signed, with a value review date and the next scope mapped.</p><span class="m">Positive outcomes</span></li>
+      </ol>
+      <h3 style="margin-bottom:18px">Where these deals stall, and what I do about it</h3>
+      <div class="stalls">
+        <div><h4>Security and infrastructure split ownership</h4><p>I bring the CISO and CIO into one success plan early, with recovery time as a shared metric.</p></div>
+        <div><h4>"Our backup vendor already does this"</h4><p>I map one application end to end, showing the identity, network, IaC and second vendor its recovery depends on.</p></div>
+        <div><h4>"We passed our DR test"</h4><p>I ask what has changed since the test, then show the drift on a single service.</p></div>
+        <div><h4>Access to production takes time</h4><p>I bring cloud security and architecture in during discovery and scope the evaluation to a few services first.</p></div>
+        <div><h4>No budget line for resilience</h4><p>The business case prices downtime, audit hours and insurance terms, and AWS Marketplace lets them use existing commit.</p></div>
+        <div><h4>A new category with few references</h4><p>I lead with Gambit's research, give executives access to the founders, and write the evaluation criteria together.</p></div>
+      </div>
+      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
+      <div style="max-width:1060px">
+        <table class="medd stack">
+          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
+          <tbody>
+            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Proven RTO and RPO against target, share of tier 1 services with a validated recovery path, audit hours, cost of downtime</td><td data-h="What I ask">What does an hour of downtime on your top service cost?</td><td data-h="Red flag">Recovery targets nobody has priced</td></tr>
+            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CISO, with the CIO when the budget spans security and infrastructure</td><td data-h="What I ask">Who answers to the board if recovery takes a week?</td><td data-h="Red flag">Only a backup admin is involved by the evaluation</td></tr>
+            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Vendor agnostic coverage, application level mapping, continuous validation, Wiz and cloud integrations, evidence quality</td><td data-h="What I ask">What would you need to see to trust a recovery time?</td><td data-h="Red flag">Criteria copied from a backup vendor's feature list</td></tr>
+            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Business case, technical evaluation on real services, security review and procurement, with dates</td><td data-h="What I ask">Walk me through how you bought your last security platform.</td><td data-h="Red flag">No one can describe what happens after the evaluation</td></tr>
+            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, DPA, legal, procurement and an AWS Marketplace private offer</td><td data-h="What I ask">Would buying through AWS Marketplace help you use existing commit?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
+            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">An outage or incident, a failed restore, an audit finding or a board question about resilience</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
+            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A cloud platform, DevOps or resilience leader with influence, who gains from the win</td><td data-h="What I ask">How would you present the evaluation results to your CISO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
+            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Backup platforms, cloud native DR, drift tools, consultants and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the alternative at the proposal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for<sup><a href="#s7">7</a></sup></th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Personal pipeline generation</td><td data-h="Where I have done it">$19.6M self sourced pipeline across Fortune 500 accounts at Netradyne in under 12 months, most of it from cold outbound.</td></tr>
+            <tr><td>Complex, multi stakeholder Fortune 500 deals</td><td data-h="Where I have done it">Closed Uber for $1.2M at Jamf, the largest deal in the company's history at the time, and opened Albertsons, AAA and Sirva.</td></tr>
+            <tr><td>Selling technical products to the CIO and CISO suite</td><td data-h="Where I have done it">Sold device management and security software to technical IT buyers at Jamf, with sales engineers running the technical evaluation.</td></tr>
+            <tr><td>Series A and B, creating momentum without a known brand</td><td data-h="Where I have done it">Joined Falkon at Series A, booked $750K in my first quarter, closed Snowflake and Seismic, and signed the first multiyear deal with built in expansion triggers at Falkon (Linewize).</td></tr>
+            <tr><td>Exceeding quota and predictable revenue</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and Enterprise Seller of the Year at Netradyne.</td></tr>
+            <tr><td>Command of the Message</td><td data-h="Where I have done it">The conversation and deal sections of this plan are built on its value framework, and I qualify every deal with MEDDPICC.</td></tr>
+            <tr><td>Working with SEs, SDRs and Marketing</td><td data-h="Where I have done it">Ran enterprise deals with sales engineers, marketing and leadership at Jamf and Netradyne, and share what works back with the team.</td></tr>
+            <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to selling alongside Wiz, AWS and resellers.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Gambit</h3>
+        <p>AI has made attacks cheap and fast, and the question every board will ask next is how quickly the business comes back. Gambit answers it with proof, from founders who ran cyber operations, backing from Spark Capital, Kleiner Perkins and Cyberstarts, and a research team that breaks news on new attacks. I've joined a Series A company before and built pipeline where nobody knew the name. Josh, you've said your favorite wins are customers who got promoted. A CISO who walks into the boardroom with a proven recovery time is that customer, and the West Coast is full of them.</p>
+        <p class="sig">Eric Iannello, Boise, Idaho</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan" class="panel honey grain">
+      <div class="sh">
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Command of the Message and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to Gambit | Building the foundation</h3>
+          <ul>
+            <li>Learn Balens hands on: connect a sample cloud account, backup tool and Terraform repo, then walk a recovery path with a Sales Engineer</li>
+            <li>Work with Josh, the founding GTM team, SEs and SDRs to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Learn the research team's findings well enough to teach them in a first meeting</li>
+            <li>Meet the Wiz and AWS partner teams covering Seattle, the Bay Area and Los Angeles</li>
+            <li>Build battlecards for backup platforms, cloud native DR, drift tools and the status quo</li>
+            <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, the likely minimum viable business and openers</li>
+            <li>Launch the first self sourced wave, each account with its own insight</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a tested value framework</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook | Testing the territory</h3>
+          <ul>
+            <li>Review results with Josh and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays in waves, starting with retail in Puget Sound and financial services in the Bay Area</li>
+            <li>Multithread every target account across the CISO, CIO, cloud platform, DevOps and risk</li>
+            <li>Run discovery on the before scenario and negative consequences, and price downtime on their own services</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities, each evaluation scoped to a few tier 1 services</li>
+            <li>Host CISO and CIO dinners with Wiz and AWS in Seattle, San Francisco and Los Angeles</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and first evaluations scoped</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment | Owning the territory</h3>
+          <ul>
+            <li>Qualified deals moving through technical evaluation and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion paths mapped for first customers, from tier 1 services to the full estate and more business units</li>
+            <li>Regular deal reviews with Josh, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first evaluations running on real services, pipeline building toward 3x coverage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>Josh, I'd like to walk the team through this plan and hear where it's wrong.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Gambit%20Enterprise%20AE%2C%20PST">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://www.newswire.com/news/gambit-security-raises-61m-to-set-the-standard-for-enterprise-22732979" target="_blank" rel="noopener">Newswire, Gambit Security raises $61M to set the standard for enterprise resilience</a></li>
+        <li id="s2"><a href="https://aws.amazon.com/marketplace/pp/prodview-murmk4osmgnca" target="_blank" rel="noopener">AWS Marketplace, Balens by Gambit</a></li>
+        <li id="s3"><a href="https://gambit.security/blog-posts/cloud-dr-vs-ransomware-cyber-resilience-gap" target="_blank" rel="noopener">Gambit, Cloud DR vs. Ransomware: The Cyber Resilience Gap, citing Veeam's 2026 Data Trust and Resilience Report</a></li>
+        <li id="s4"><a href="https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company" target="_blank" rel="noopener">Gambit, AI agents are hacking online retailers for $25 a company</a></li>
+        <li id="s5"><a href="https://techcrunch.com/2026/05/26/iranian-hackers-blamed-for-breach-of-los-angeles-transit-system-that-took-weeks-to-recover/" target="_blank" rel="noopener">TechCrunch, Iranian hackers blamed for breach of Los Angeles transit system that took weeks to recover</a></li>
+        <li id="s6"><a href="https://gambit.security/announcement/gambit-integrates-with-wiz" target="_blank" rel="noopener">Gambit, Gambit integrates with Wiz to connect cloud exposure with business recovery</a></li>
+        <li id="s7"><a href="https://www.linkedin.com/jobs/view/4472378480/" target="_blank" rel="noopener">Gambit Security, Enterprise Account Executive, PST job post</a></li>
+        <li id="s8"><a href="https://www.bankinfosecurity.com/gambit-security-lands-61m-to-bolster-enterprise-resilience-a-30881" target="_blank" rel="noopener">BankInfoSecurity, Gambit Security lands $61M to bolster enterprise resilience</a></li>
+        <li id="s9"><a href="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" target="_blank" rel="noopener">Gambit, A single operator, two AI platforms, nine government agencies</a></li>
+        <li id="s10"><a href="https://www.dfs.ny.gov/cybersecurity/23-NYCRR-Part-500" target="_blank" rel="noopener">New York DFS, Cybersecurity Regulation 23 NYCRR Part 500</a></li>
+        <li id="s11"><a href="https://gambit.security/blog-posts/why-your-cloud-map-is-already-wrong" target="_blank" rel="noopener">Gambit, Why your cloud map is already wrong</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the Gambit Security Enterprise Account Executive, PST role. Not affiliated with or endorsed by Gambit Security. Figures come from public and third party sources as of October 2026. Example accounts, charts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+  var prog=document.getElementById('progress');
+  function bar(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?window.scrollY/h*100:0)+'%'}
+  window.addEventListener('scroll',function(){spy();bar()},{passive:true});spy();bar();
+
+  function group(btns,onPick){
+    btns.forEach(function(b,i){
+      b.addEventListener('click',function(){onPick(i)});
+      b.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight'||k==='ArrowDown')n=i+1;else if(k==='ArrowLeft'||k==='ArrowUp')n=i-1;
+        if(n===null)return;e.preventDefault();n=(n+btns.length)%btns.length;btns[n].focus();onPick(n);
+      });
+    });
+  }
+  function select(btns,i){
+    btns.forEach(function(x,j){var on=j===i;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+
+  // Platform squares
+  var mods=[].slice.call(document.querySelectorAll('.mod')),say=document.getElementById('hxSay');
+  mods.forEach(function(m,i){m.setAttribute('aria-pressed',m.classList.contains('on'));m.addEventListener('click',function(){
+    mods.forEach(function(x,j){x.classList.toggle('on',j===i);x.setAttribute('aria-pressed',j===i)});
+    say.innerHTML='';var b=document.createElement('b');b.textContent=m.dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(m.dataset.d));
+  })});
+
+  // AI Decisioning
+  var custs=[].slice.call(document.querySelectorAll('.cust')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL'),dC=document.getElementById('dC'),dT=document.getElementById('dT'),dO=document.getElementById('dO');
+  custs.forEach(function(c){c.addEventListener('click',function(){
+    custs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var d=JSON.parse(c.dataset.d);fH.textContent=d.h;fP.textContent=d.p;dC.textContent=d.c;dT.textContent=d.t;dO.textContent=d.o;
+    fL.innerHTML='';d.w.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
+  })});
+
+  // Territory
+  var sq=[].slice.call(document.querySelectorAll('.sq[data-r]')),rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
+  sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('ps');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  group(tabs,function(i){select(tabs,i)});
+
+  // Challenger stepper
+  var sts=[].slice.call(document.querySelectorAll('.cstep')),cur=0,cnt=document.getElementById('stCount');
+  function step(i){cur=i;select(sts,i);cnt.textContent='Step '+(i+1)+' of '+sts.length;document.getElementById('stNext').textContent=i===sts.length-1?'Start over':'Next step'}
+  group(sts,step);
+  document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
+  document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Battlecards
+  var cbs=[].slice.call(document.querySelectorAll('.cbtn'));
+  group(cbs,function(i){select(cbs,i)});
+})();
+</script>
+</body>
+</html>

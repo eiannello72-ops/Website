@@ -13,6 +13,7 @@ for the Enterprise AE role.
 | Pentera (PNW) | [`pentera/`](pentera/index.html) |
 | LogicGate (PNW and Canada) | [`logicgate/`](logicgate/index.html) |
 | Hightouch (Mountain West) | [`hightouch/`](hightouch/index.html) |
+| Gambit Security (PST) | [`gambit/`](gambit/index.html) |
 
 ## Deploying
 

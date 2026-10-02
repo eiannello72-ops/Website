@@ -15,6 +15,7 @@ for the Enterprise AE role.
 | Hightouch (Mountain West) | [`hightouch/`](hightouch/index.html) |
 | Gambit Security (PST) | [`gambit/`](gambit/index.html) |
 | Jellyfish (West Coast) | [`jellyfish/`](jellyfish/index.html) |
+| Tines (PacNW) | [`tines/`](tines/index.html) |
 
 ## Deploying
 

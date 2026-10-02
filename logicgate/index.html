@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LogicGate PNW and Canada Plan</title>
-<meta name="description" content="A Pacific Northwest and Canada strategic territory plan for LogicGate, built on the Challenger approach and MEDDPICC. Prepared by Eric Iannello for Erick Alvarez.">
+<meta name="description" content="A Pacific Northwest and Canada strategic territory plan for LogicGate, built on Challenger and MEDDPICC. Prepared by Eric Iannello for Erick Alvarez.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -752,80 +752,275 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
 .ind .acc{font-size:14px;color:var(--graphite)}
 @media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
 .panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#26303F}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
+
+/* ===== LogicGate.ai UI layer ===== */
+:root{--line:#D9D8EA;--soft:0 1px 2px rgba(8,0,75,.06),0 10px 28px -14px rgba(8,0,75,.22);--display:'Inter','Helvetica Neue',Arial,sans-serif;--poster:'Inter','Helvetica Neue',Arial,sans-serif}
+body{background:#fff}
+.shell{display:block;max-width:1240px;padding-inline:40px}
+@media (max-width:1040px){.shell{padding-inline:20px}}
+.side,.topbar{display:none!important}
+main{padding-top:8px}
+h1,.sh h2,.contact h2,.bc h3{font-weight:600;letter-spacing:-.025em}
+.sh h2,.contact h2{color:var(--blue)}
+.panel.ink .sh h2,.panel.sky .sh h2{color:#fff}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4,.mx-el h4,.stalls h4,.ind h4{font-weight:600;letter-spacing:-.01em}
+.insight{font-weight:600;letter-spacing:-.015em}
+/* Announcement bar */
+.banner{background:var(--honey);color:var(--ink);border:0;font-size:14px;padding:9px 16px}
+.banner b{color:var(--ink)}
+.banner a{margin-left:10px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+/* White header, as on logicgate.ai */
+.lnav-wrap{position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 2px 6px rgba(8,0,75,.12)}
+.lnav{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:24px;padding:14px 40px}
+.llogo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;flex:none}
+.llogo svg{width:30px;height:30px}
+.llogo span{font-weight:700;font-size:16px;letter-spacing:.01em;text-transform:uppercase}
+.llogo em{font-style:normal;font-weight:500;color:var(--blue)}
+.lnav .toc{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.lnav .toc::-webkit-scrollbar{display:none}
+.lnav .toc a{display:block;padding:8px 10px;border:0;border-bottom:2px solid transparent;color:var(--ink);font-size:14.5px;font-weight:500;white-space:nowrap;text-decoration:none;margin:0}
+.lnav .toc a:hover{color:var(--blue)}
+.lnav .toc a.active{border-bottom-color:var(--blue);color:var(--blue)}
+.lcta{flex:none;background:var(--blue);color:#fff;font-weight:600;font-size:14.5px;padding:10px 16px;border-radius:2px;text-decoration:none}
+.lcta:hover{background:#0000A3}
+@media (max-width:1180px){.llogo em{display:none}}
+@media (max-width:900px){.lcta{display:none}.lnav{padding:10px 16px;gap:12px}.llogo span{display:none}}
+/* Hero, white with blue headline */
+.lhero{background:#fff!important;color:var(--ink)!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;padding:56px var(--gut) 64px!important;border-radius:0!important;gap:56px!important;align-items:center!important}
+.lhero:after{display:none}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:14px;color:var(--ink);margin-bottom:20px}
+.crumbs span+span:before{content:"";display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--ink);border-top:1.5px solid var(--ink);transform:rotate(45deg);margin:0 10px 2px 2px}
+.lhero h1{color:var(--blue);font-size:clamp(38px,4.2vw,58px);line-height:1.08;font-weight:600;letter-spacing:-.025em}
+.lhero .lede{color:var(--ink);font-size:18px;margin-top:20px}
+.lhero .lede b{color:var(--ink)}
+.lhero sup a{color:var(--blue)}
+.lhero .btn{border-radius:2px;border:1.5px solid var(--blue);color:var(--blue);box-shadow:none}
+.lhero .btn.pri{background:var(--honey);border-color:var(--honey);color:var(--ink)}
+.lhero .btn:hover{box-shadow:none;background:#F2F2FF}
+.lhero .btn.pri:hover{background:#6AE860}
+@media (max-width:900px){.lhero{grid-template-columns:1fr!important;padding:36px 10px 40px!important}}
+/* Offset block, the logicgate.ai image motif */
+.loff{position:relative;padding:0 26px 26px 0}
+.loff:before{content:"";position:absolute;left:56px;top:56px;right:0;bottom:0;background:linear-gradient(90deg,#0000CC,#08004B);border-radius:4px}
+.agent{position:relative;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:var(--soft);padding:18px;display:grid;gap:12px}
+.agent-h{display:grid;grid-template-columns:28px 1fr;column-gap:10px;align-items:center}
+.spark{width:20px;height:20px;display:inline-block;background:linear-gradient(135deg,#0000CC,#7CFA72);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.agent-h .spark{grid-row:span 2;width:26px;height:26px}
+.agent-h b{font-size:16px}
+.agent-h small{font-family:var(--mono);font-size:11px;color:var(--blue)}
+.agent-in{font-size:14px;background:#F5F5FB;border-radius:4px;padding:10px 12px}
+.agent-in span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+.agent-steps{list-style:none;display:grid;gap:6px;counter-reset:s}
+.agent-steps li{counter-increment:s;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:center;font-size:14px;color:#55536E;padding:6px 0;border-bottom:1px dashed var(--line)}
+.agent-steps li:before{content:counter(s);width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--graphite)}
+.agent-steps li s{text-decoration:none;font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:3px;background:#F0F0FA;color:#3A3870}
+.agent-steps li.doing{color:var(--ink)}
+.agent-steps li.doing:before{border-color:var(--blue);color:var(--blue);background:#E8E8FF}
+.agent-steps li.done{color:var(--ink)}
+.agent-steps li.done:before{content:"";background:var(--honey) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' stroke='%2308004B' stroke-width='2' fill='none'/%3E%3C/svg%3E");border-color:var(--honey)}
+.agent-out{background:#E4FDE1;border-left:3px solid #2E9E27;border-radius:0 4px 4px 0;padding:10px 12px;font-size:14px}
+.agent-out b{display:block;font-size:13px}
+.agent-btns{display:flex;gap:8px}
+.abtn{font:600 14px var(--body);background:var(--blue);color:#fff;border:1.5px solid var(--blue);border-radius:2px;padding:9px 14px;cursor:pointer}
+.abtn.sec{background:#fff;color:var(--blue)}
+.abtn:disabled{opacity:.5;cursor:default}
+.abtn:focus-visible{outline:2px solid var(--honey);outline-offset:2px}
+.agent-note{font-size:12.5px;color:var(--graphite)}
+.agent-note sup a{color:var(--blue)}
+@media (prefers-reduced-motion:reduce){.agent-steps li{transition:none}}
+/* Risk Cloud mock */
+.lapp-wrap{padding:56px var(--gut) 64px!important;margin-inline:0;border-radius:6px;background:linear-gradient(180deg,#F2F2FD,#fff);border-top:0!important}
+.lapp-wrap figure{max-width:none;margin:0}
+.app{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 40px 80px -36px rgba(8,0,75,.45);overflow:hidden}
+.app-top{display:flex;align-items:center;gap:12px;padding:10px 16px;background:#08004B;color:#fff}
+.app-logo svg{width:24px;height:24px;display:block}
+.app-name{font-size:15px}
+.app-search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:6px 10px;font-size:13px;color:#D6D6F5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:420px;margin-left:12px}
+.app-search .spark{width:14px;height:14px;flex:none}
+.app-acct{margin-left:auto;font-family:var(--mono);font-size:11px;color:#C9C8F0;white-space:nowrap}
+.app-body{display:grid;grid-template-columns:210px minmax(0,1fr)}
+.app-side{border-right:1px solid #ECEBF6;padding:14px 10px;background:#FAFAFE}
+.app-sep{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding:0 8px 8px}
+.app-tabs{display:grid;gap:2px}
+.dtab{display:flex;align-items:center;gap:8px;font:500 14px var(--body);text-align:left;padding:8px 10px;border-radius:4px;background:none;border:0;border-left:3px solid transparent;color:#2C2A50;cursor:pointer;white-space:nowrap}
+.dtab .ic{width:10px;height:10px;border-radius:2px;background:#C9C8F0;flex:none}
+.dtab:hover{background:#F0F0FA}
+.dtab[aria-selected="true"]{background:#E8E8FF;border-left-color:var(--blue);color:var(--blue);font-weight:600}
+.dtab[aria-selected="true"] .ic{background:var(--blue)}
+.dtab:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.app-main{padding:18px 22px 24px;min-width:0}
+.dview h3{font-size:21px;font-weight:600;color:var(--ink)}
+.anl{border:1px solid var(--line);border-radius:6px;background:#F7F7FD;padding:10px 14px;margin:12px 0 16px}
+.anl b{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--blue)}
+.anl b:before{content:"";width:12px;height:12px;background:linear-gradient(135deg,#0000CC,#7CFA72);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.anl ul{list-style:none;margin-top:4px}
+.anl li{font-size:13.5px;padding:3px 0 3px 14px;position:relative;color:#2C2A50}
+.anl li:before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+.anl-src{font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:4px}
+.anl-src sup a{color:var(--blue)}
+.ervw{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;align-items:start}
+.ervw .hm-wrap{border:0;padding:0}
+.ervw .fun-d{padding:4px 0 0}
+@media (max-width:1100px){.ervw{grid-template-columns:1fr}}
+.vt{width:100%;border-collapse:collapse;font-size:13.5px}
+.vt th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line)}
+.vt td{padding:10px;border-bottom:1px solid #F0EFF8;color:#2C2A50}
+.vt td:first-child{font-weight:600;color:var(--ink)}
+.st{font-style:normal;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.st.g{background:#E4FDE1;color:#14600F}.st.b{background:#E8E8FF;color:#0000A3}.st.n{background:#F0F0F4;color:#45445A}.st.r{background:#FFE4E4;color:#A11414}
+.cc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px}
+.ctl{border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:8px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 10px}
+.ctl b{font-size:14px}
+.ctl .chips{grid-column:1;margin:0}
+.ctl .st{grid-column:2;grid-row:1/span 2}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chips span{font-family:var(--mono);font-size:10px;background:#F0F0FA;border-radius:3px;padding:2px 6px;color:#3A3870}
+.cc-r h5{font-size:13px;margin-bottom:8px}
+.cov{display:grid;grid-template-columns:80px minmax(0,1fr) 40px;gap:8px;align-items:center;font-size:13px;padding:6px 0}
+.cov i{height:8px;border-radius:4px;background:linear-gradient(90deg,var(--blue) var(--w),#ECEBF6 var(--w))}
+.cov b{font-family:var(--mono);font-size:12px;font-weight:500;text-align:right}
+.q{display:grid;gap:8px}
+.qrow{display:grid;grid-template-columns:200px minmax(0,1fr) 60px;gap:12px;align-items:center;font-size:13.5px}
+.qrow i{height:22px;border-radius:2px;background:linear-gradient(90deg,#0000CC,#4B4BE8) no-repeat;background-size:var(--w) 100%;background-color:#F2F2FD}
+.qrow b{font-family:var(--mono);font-size:13px;font-weight:500}
+.q-cap{font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+@media (max-width:900px){.app-body{grid-template-columns:1fr}.app-side{border-right:0;border-bottom:1px solid #ECEBF6;padding:8px}.app-sep{display:none}.app-tabs{display:flex;overflow-x:auto;scrollbar-width:none}.dtab{border-left:0;border-bottom:3px solid transparent}.dtab[aria-selected="true"]{border-bottom-color:var(--blue)}.app-acct,.app-search{display:none}.cc{grid-template-columns:1fr}.qrow{grid-template-columns:1fr 50px}.qrow i{grid-column:1/-1;grid-row:2}}
+@media (max-width:620px){.vt thead{display:none}.vt tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid #F0EFF8}.vt td{border:0;padding:2px 6px}.vt td:nth-child(n+3){grid-column:1/-1}}
+/* KPI cards */
+.lkpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:8px var(--gut) 0}
+.lkpi{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:4px;padding:16px 18px;box-shadow:var(--soft)}
+.lkpi small{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.lkpi b{display:block;font-size:clamp(30px,3vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--blue);margin-top:4px}
+.lkpi p{font-size:14px;color:#3A3870;margin-top:6px}
+.lkpi sup a{color:var(--blue)}
+@media (max-width:1000px){.lkpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.lkpis{grid-template-columns:1fr}}
+/* Research cards */
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:#fff;border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;box-shadow:var(--soft)}
+.r .chips{margin-bottom:8px}
+.r b{font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.15;color:var(--blue)}
+.r p{font-size:14.5px;color:#2C2A50;margin:6px 0 12px}
+.r small{margin-top:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+.evt{max-width:1060px;margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15px;color:#2C2A50;background:#E4FDE1;border-radius:4px;padding:12px 16px}
+.evt b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:560px){.evt{grid-template-columns:1fr;gap:4px}}
+#know .three{max-width:1060px;gap:14px}
+#know .three > div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:4px;padding:18px 20px;box-shadow:var(--soft)}
+/* Soften components to logicgate.ai */
+.step-p,.pane.hc,.panel.sky .mail,.mail,.bc,.stalls div,.cbtn[aria-selected="true"],.mx-rule,.ind{box-shadow:var(--soft)!important}
+.stalls div,.cbtn,.mail,.facts2 div,.pnode,.sq,.out div,.ind{border-width:1px!important}
+.stalls div,.cbtn,.facts2 div,.sq,.ind{border-color:var(--line)!important}
+.stalls div,.cbtn,.sq,.ind,.bc,.mail{border-radius:4px}
+.stalls div{border-top:4px solid var(--blue)!important}
+.cbtn[aria-selected="true"]{border-color:var(--ink)!important}
+.panel{border-radius:6px}
+.step-p{border-radius:0 0 6px 6px}
+.steps{border-radius:6px 6px 0 0}
+.btn{border-radius:2px}
+.mx{border-top-width:1px}
+.mx-el b{border-radius:2px;background:var(--blue);color:#fff}
+.mx-c li{border-left-color:var(--blue)}
+.mx-f{background:#F2F2FD}
+.sq.on{border-color:var(--ink)!important}
+.ervw .cell{aspect-ratio:1.8}
+.lhero h1{font-size:clamp(36px,3.8vw,52px)}
+.app-side,.app-tabs,.ervw > *,.cc > *{min-width:0}
+@media (max-width:620px){.lapp-wrap{padding:32px 0 40px!important}.app-main{padding:14px 12px 18px}.ervw .cell{aspect-ratio:1.2;font-size:13px}}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for <b>Erick Alvarez</b>, VP of Sales, Strategic Accounts and EMEA, by Eric Iannello</div>
+<div class="banner">Prepared for <b>Erick Alvarez</b>, VP of Sales, Strategic Accounts and EMEA, by Eric Iannello <a href="#plan">See the 90 day plan</a></div>
 
-<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><b>LogicGate plan</b></a><a href="#contact">Contact</a></div>
-
-<div class="shell">
-  <aside class="side" aria-label="Contents">
-    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><span><b>PNW and Canada</b><small>LogicGate plan</small></span></a>
+<header class="lnav-wrap">
+  <nav class="lnav" aria-label="Contents">
+    <a class="llogo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg><span>Eric Iannello <em>for LogicGate</em></span></a>
     <ul class="toc" id="toc">
       <li><a href="#top">Overview</a></li>
-      <li><a href="#know">What I know</a></li>
-      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
       <li><a href="#territory">Territory</a></li>
       <li><a href="#plays">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
-      <li><a href="#deal">Running the deal</a></li>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#plan">First 90 days</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plan">90 days</a></li>
     </ul>
-    <div class="side-foot">
-      <span>Eric Iannello</span>
-      <span>Boise, Idaho</span>
-      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
-    </div>
-  </aside>
+    <a class="lcta" href="#contact">Talk with Eric</a>
+  </nav>
+</header>
 
+<div class="shell">
   <main>
     <!-- Overview -->
-    <section id="top" class="hero grain">
-      <div>
-        <div class="doc-meta">
-          <span class="status"><b>Proposal</b></span>
-          <span>Strategic Account Executive, PNW and Canada</span>
-          <span>For <b>Erick Alvarez</b>, VP of Sales, Strategic Accounts and EMEA</span>
-          <span>September 2026</span>
-        </div>
-        <h1>Every risk program has the data. LogicGate <mark>connects it.</mark></h1>
-        <p class="lede">LogicGate is a Leader in both Gartner's Magic Quadrant and Forrester's Wave for GRC.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
+    <section id="top" class="hero lhero">
+      <div class="lhero-copy">
+        <p class="crumbs"><span>Proposal</span><span>PNW and Canada</span><span>Strategic Account Executive</span></p>
+        <h1>The AI GRC plan for the Pacific Northwest and Canada.</h1>
+        <p class="lede">LogicGate Risk Cloud is a Leader for both Gartner and Forrester, and its agents now run inside every customer's workflows.<sup><a href="#s1">1</a>,<a href="#s2">2</a>,<a href="#s3">3</a></sup> This is how I would take it to the banks, insurers, health systems and enterprises of the Northwest and Canada, with pipeline I source myself and deals run on Challenger and MEDDPICC.</p>
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
       </div>
-      <div class="art">
-        <div class="mods" role="group" aria-label="Risk Cloud applications. Select a square to read about it.">
-          <button class="mod" data-t="Third party risk" data-d="Vendor intake, tiering, assessments and ongoing monitoring in one workflow.">Third party</button>
-          <button class="mod" data-t="Enterprise risk" data-d="One risk register across the business, with owners, scoring and board reporting.">Enterprise risk</button>
-          <button class="mod" data-t="Controls compliance" data-d="Map controls once to many frameworks, test them and collect evidence.">Controls</button>
-          <button class="mod" data-t="Cyber risk" data-d="Cyber risks tied to the assets, controls and vendors behind them.">Cyber risk</button>
-          <button class="mod core on" data-t="Risk Cloud" data-d="One no code platform and data model, so every program shares the same records.">Risk Cloud</button>
-          <button class="mod" data-t="AI governance" data-d="An inventory of AI use cases, with review, approval and monitoring workflows.">AI governance</button>
-          <button class="mod" data-t="Policy management" data-d="Policies, exceptions and attestations linked to the controls they govern.">Policy</button>
-          <button class="mod" data-t="Business continuity" data-d="Continuity plans and impact analysis connected to the risks and vendors they depend on.">Continuity</button>
-          <button class="mod" data-t="GRC Agents" data-d="AI agents for third party risk, enterprise risk, AI governance and continuity, broadly available in the Summer 2026 release.">GRC Agents</button>
+      <div class="loff">
+        <div class="agent" role="group" aria-label="GRC agent demo. Run the agent, then approve its work.">
+          <div class="agent-h"><span class="spark" aria-hidden="true"></span><b>Enterprise Risk Agent</b><small id="agState">Ready</small></div>
+          <p class="agent-in"><span>New risk submitted</span>Payroll provider moving data processing to a new subcontractor</p>
+          <ol class="agent-steps" id="agSteps">
+            <li>Triage the incoming risk and find related records<s>triage</s></li>
+            <li>Reconcile the supporting documentation<s>evidence</s></li>
+            <li>Assign an inherent risk score<s>scoring</s></li>
+            <li>Evaluate it against your risk framework<s>assessment</s></li>
+            <li>Identify control gaps and draft mitigations<s>controls</s></li>
+          </ol>
+          <div class="agent-out" id="agOut" hidden><b>Ready for your review</b>Inherent risk high. 2 control gaps found, 2 linked mitigation records drafted.</div>
+          <div class="agent-btns"><button type="button" class="abtn" id="agRun">Run the agent</button><button type="button" class="abtn sec" id="agOk" disabled>Approve</button></div>
+          <p class="agent-note">Agents do the work. Practitioners make the call, with every step in the audit trail.<sup><a href="#s3">3</a>,<a href="#s4">4</a></sup></p>
         </div>
-        <p class="hx-say" id="hxSay" aria-live="polite"><b>Risk Cloud</b>One no code platform and data model, so every program shares the same records.</p>
-        <p class="hx-hint">Select a square to explore the platform</p>
       </div>
-      <dl class="facts">
-        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-        <div><dt>Based in</dt><dd>Boise, Idaho</dd></div>
-        <div><dt>Territory</dt><dd>PNW and Canada</dd></div>
-        <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
-      </dl>
     </section>
-    <div class="float">
+
+    <section class="lapp-wrap" aria-label="Risk Cloud product mock">
       <figure>
-        <div class="fun" role="group" aria-label="Enterprise risk heat map. Select a cell to see the risks in it.">
-          <div class="fun-bar"><span><b>risk register</b> enterprise view</span><span class="hint">Select a cell</span><span>illustrative</span></div>
-          <div class="fun-grid">
-            <div class="hm-wrap">
-              <div class="hm-y">Impact</div>
-              <div class="hm">
+        <div class="app" role="group" aria-label="Risk Cloud product mock. Select an application to change the view.">
+          <div class="app-top">
+            <span class="app-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#0000CC"/><path d="M9 9h9l5 7-5 7H9l5-7z" fill="#7CFA72"/></svg></span><b class="app-name">Risk Cloud</b>
+            <span class="app-search"><span class="spark" aria-hidden="true"></span>Ask Spark AI about your program</span>
+            <span class="app-acct">Example account, Seattle health system</span>
+          </div>
+          <div class="app-body">
+            <div class="app-side">
+              <span class="app-sep">Applications</span>
+              <div class="app-tabs" role="tablist" aria-label="Risk Cloud applications" aria-orientation="vertical">
+                <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true"><i class="ic"></i>Enterprise Risk</button>
+                <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1"><i class="ic"></i>Third Party Risk</button>
+                <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1"><i class="ic"></i>Controls Compliance</button>
+                <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1"><i class="ic"></i>Cyber Risk Quantify</button>
+                <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1"><i class="ic"></i>AI Governance</button>
+              </div>
+            </div>
+            <div class="app-main">
+              <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><h3>Enterprise Risk Register</h3><div class="anl"><b>Spark AI</b><ul><li>Two risks moved into the highest band this quarter, and both trace to third party vendors.</li><li>The board view refreshed from live records this morning.</li></ul></div><div class="ervw"><div class="hm-wrap"><div class="hm-y">Impact</div><div class="hm">
                 <button class="cell l2 empty" data-l="1" data-i="5" data-r="[]" aria-label="Likelihood 1, impact 5, 0 risks">0</button>
                 <button class="cell l3 empty" data-l="2" data-i="5" data-r="[]" aria-label="Likelihood 2, impact 5, 0 risks">0</button>
                 <button class="cell l3 empty" data-l="3" data-i="5" data-r="[]" aria-label="Likelihood 3, impact 5, 0 risks">0</button>
@@ -851,24 +1046,23 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
                 <button class="cell l1 empty" data-l="3" data-i="1" data-r="[]" aria-label="Likelihood 3, impact 1, 0 risks">0</button>
                 <button class="cell l1 empty" data-l="4" data-i="1" data-r="[]" aria-label="Likelihood 4, impact 1, 0 risks">0</button>
                 <button class="cell l2 empty" data-l="5" data-i="1" data-r="[]" aria-label="Likelihood 5, impact 1, 0 risks">0</button>
-              </div>
-              <div class="hm-x">Likelihood</div>
-            </div>
-            <div class="fun-d">
-              <h4 id="fH">Likelihood 5, impact 5</h4>
-              <p id="fP">2 open risks. Each one links to its owner, its controls and the vendors or systems involved.</p>
-              <ul id="fL"><li>Critical vendor outage<s>third party</s></li><li>Ransomware on core systems<s>cyber</s></li></ul>
+</div><div class="hm-x">Likelihood</div></div><div class="fun-d"><h4 id="fH">Likelihood 5, impact 5</h4><p id="fP">2 open risks. Each one links to its owner, its controls and the vendors or systems involved.</p><ul id="fL"><li>Critical vendor outage<s>third party</s></li><li>Ransomware on core systems<s>cyber</s></li></ul></div></div></div>
+              <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><h3>Third Party Risk</h3><div class="anl"><b>Spark AI</b><ul><li>Risk based tiering cut this quarter's full assessments from 410 vendors to 96.</li><li>The payroll provider's new subcontractor is linked to two enterprise risks.</li></ul></div><table class="vt"><thead><tr><th>Vendor</th><th>Tier</th><th>Inherent risk</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Payroll provider</td><td>Tier 1</td><td>High</td><td><em class="st b">Agent triaged</em></td><td>Review due in 3 days</td></tr><tr><td>Cloud hosting</td><td>Tier 1</td><td>High</td><td><em class="st g">Complete</em></td><td>Next review in March</td></tr><tr><td>Claims processor</td><td>Tier 1</td><td>Medium</td><td><em class="st b">In assessment</em></td><td>Evidence 80% collected</td></tr><tr><td>Marketing agency</td><td>Tier 3</td><td>Low</td><td><em class="st n">Light review</em></td><td>Annual check only</td></tr><tr><td>Office supplies</td><td>Tier 4</td><td>Low</td><td><em class="st n">Not required</em></td><td>No customer data</td></tr></tbody></table></div>
+              <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><h3>Controls Compliance</h3><div class="anl"><b>Spark AI</b><ul><li>Evidence collected once was reused across four frameworks this quarter.</li><li>Automated evidence testing flagged one failing control the day its evidence arrived.</li></ul></div><div class="cc"><div class="cc-l"><div class="ctl"><b>MFA on administrator accounts</b><div class="chips"><span>SOC 2</span><span>NIST CSF</span><span>ISO 27001</span><span>HIPAA</span></div><em class="st g">Passing</em></div><div class="ctl"><b>Quarterly access reviews</b><div class="chips"><span>SOC 2</span><span>ISO 27001</span><span>HIPAA</span></div><em class="st r">Failing</em></div><div class="ctl"><b>Encrypted backups</b><div class="chips"><span>NIST CSF</span><span>ISO 27001</span><span>HIPAA</span></div><em class="st g">Passing</em></div></div><div class="cc-r"><h5>Framework coverage</h5><div class="cov"><span>SOC 2</span><i style="--w:96%"></i><b>96%</b></div><div class="cov"><span>NIST CSF</span><i style="--w:88%"></i><b>88%</b></div><div class="cov"><span>ISO 27001</span><i style="--w:91%"></i><b>91%</b></div><div class="cov"><span>HIPAA</span><i style="--w:84%"></i><b>84%</b></div></div></div></div>
+              <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><h3>Cyber Risk Quantify</h3><div class="anl"><b>Spark AI</b><ul><li>Ransomware carries the largest annualized loss exposure, at $4.8M.</li><li>Funding the backup restore project lowers that exposure more than any other request.</li></ul><p class="anl-src">Monte Carlo simulation on the Open FAIR model<sup><a href="#s5">5</a></sup></p></div><div class="q"><div class="qrow"><span>Ransomware on core systems</span><i style="--w:100%"></i><b>$4.8M</b></div><div class="qrow"><span>Critical vendor breach</span><i style="--w:44%"></i><b>$2.1M</b></div><div class="qrow"><span>Cloud misconfiguration</span><i style="--w:27%"></i><b>$1.3M</b></div><div class="qrow"><span>Insider data loss</span><i style="--w:15%"></i><b>$0.7M</b></div><p class="q-cap">Annualized loss exposure, by scenario</p></div></div>
+              <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><h3>AI Governance</h3><div class="anl"><b>Spark AI</b><ul><li>Four AI use cases surfaced from procurement records with no review on file.</li><li>One high risk model needs bias testing before it goes live.</li></ul></div><table class="vt"><thead><tr><th>AI use case</th><th>Business unit</th><th>Status</th><th>Note</th></tr></thead><tbody><tr><td>Clinical note summarization</td><td>Clinical</td><td><em class="st g">Approved</em></td><td>Reviewed by privacy and security</td></tr><tr><td>Patient service chatbot</td><td>Operations</td><td><em class="st b">In review</em></td><td>Vendor assessment open</td></tr><tr><td>Coding assistant</td><td>IT</td><td><em class="st n">Approved with conditions</em></td><td>No patient data allowed</td></tr><tr><td>Claims triage model</td><td>Finance</td><td><em class="st r">High risk</em></td><td>Bias testing due</td></tr></tbody></table></div>
             </div>
           </div>
         </div>
-        <figcaption><b>Fig. 1</b><span>An enterprise register in Risk Cloud. Each risk carries its owner, its controls and the vendors behind it, so the board view is current the day it's pulled. Illustrative data.</span></figcaption>
+        <figcaption><b>Fig. 1</b><span>Risk Cloud as I would show it in a first meeting, one connected record across five applications. Illustrative data for an example Seattle health system, modeled on the LogicGate platform.</span></figcaption>
       </figure>
-    </div>
-    <div class="band" role="list">
-      <div role="listitem"><small>Gartner</small><b>Leader</b><span>Magic Quadrant for GRC Tools, Assurance Leaders<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>Forrester</small><b>1 of 4</b><span>Leaders in GRC platforms, Q2 2026<sup><a href="#s2">2</a></sup></span></div>
-      <div role="listitem"><small>Customers</small><b>2.6x</b><span>average return reported on Risk Cloud<sup><a href="#s3">3</a></sup></span></div>
-      <div role="listitem"><small>Time to value</small><b>31 days</b><span>on average, per the Value Realization Tool<sup><a href="#s1">1</a></sup></span></div>
+    </section>
+
+    <div class="lkpis" role="list">
+      <div class="lkpi" role="listitem"><small>Gartner</small><b>Leader</b><p>Magic Quadrant for GRC Tools, Assurance Leaders<sup><a href="#s1">1</a></sup></p></div>
+      <div class="lkpi" role="listitem"><small>Forrester</small><b>1 of 4</b><p>Leaders in GRC platforms, Q2 2026<sup><a href="#s2">2</a></sup></p></div>
+      <div class="lkpi" role="listitem"><small>Customers</small><b>2.6x</b><p>average return reported on Risk Cloud<sup><a href="#s6">6</a></sup></p></div>
+      <div class="lkpi" role="listitem"><small>Time to value</small><b>31 days</b><p>on average, per the Value Realization Tool<sup><a href="#s1">1</a></sup></p></div>
     </div>
 
     <!-- Know -->
@@ -881,25 +1075,33 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <div>
           <h3>The product</h3>
           <p>Risk Cloud is a no code GRC platform with one data model for risks, controls, vendors, policies and issues, and applications for third party risk, enterprise risk, controls compliance, cyber risk, AI governance and more.</p>
-          <p>The Summer 2026 release made GRC Agents broadly available across third party risk, enterprise risk, AI governance and business continuity.<sup><a href="#s4">4</a></sup></p>
+          <p>The Summer 2026 release made GRC Agents broadly available across third party risk, enterprise risk, AI governance and business continuity.<sup><a href="#s3">3</a></sup></p>
         </div>
         <div>
           <h3>The buyer</h3>
           <p>The Chief Risk Officer, Chief Information Security Officer, Chief Compliance Officer or Chief Audit Executive, usually with a GRC program lead as the champion.</p>
-          <p>Advisory firms shape many decisions, and LogicGate now has a joint business relationship with PwC.<sup><a href="#s4">4</a></sup></p>
+          <p>Advisory firms shape many decisions, and LogicGate now has a joint business relationship with PwC.<sup><a href="#s3">3</a></sup></p>
         </div>
         <div>
           <h3>The moment</h3>
-          <p>The move to <a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai</a> marks the shift to an AI GRC platform, with agents built into the core.<sup><a href="#s5">5</a></sup> Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
-          <p>Regulators are asking for more evidence, through the SEC's cyber disclosure rules in the US and OSFI's Guideline B-10 in Canada.<sup><a href="#s6">6</a>,<a href="#s7">7</a></sup></p>
+          <p>The move to <a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai</a> marks the shift to an AI GRC platform, with agents built into the core.<sup><a href="#s7">7</a></sup> Gartner's first GRC Magic Quadrant since 2013 named LogicGate a Leader, and Forrester named it one of four Leaders in GRC platforms.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
+          <p>Diego Panama became CEO this year, with co-founder Matt Kunkel as Executive Chairman, and regulators keep asking for more evidence, through the SEC's cyber disclosure rules and OSFI's Guideline B-10.<sup><a href="#s8">8</a>,<a href="#s9">9</a>,<a href="#s10">10</a></sup></p>
         </div>
       </div>
+      <h3 class="ind-h">What LogicGate is shipping, and how I would use it</h3>
+      <div class="rsch">
+        <div class="r"><div class="chips"><span>Summer 2026 release</span></div><b>Agentic GRC</b><p>GRC Agents rolled out to every customer, with Risk Cloud as the orchestration layer.<sup><a href="#s3">3</a></sup></p><small>Opens with the CRO</small></div>
+        <div class="r"><div class="chips"><span>Spring 2026 release</span></div><b>Nearly 90%</b><p>of customers onboarded this year already use Spark AI, with actions up 50% since January.<sup><a href="#s11">11</a></sup></p><small>Opens with the head of GRC</small></div>
+        <div class="r"><div class="chips"><span>Config Newton</span></div><b>50 to 75%</b><p>faster application deployment with the first agentic GRC engineer.<sup><a href="#s12">12</a></sup></p><small>Opens with Archer and ServiceNow shops</small></div>
+        <div class="r"><div class="chips"><span>Forrester Wave, TPRM</span></div><b>1 of 3</b><p>Leaders in third party risk platforms, Q1 2026, with top scores in 11 criteria.<sup><a href="#s13">13</a></sup></p><small>Opens with third party risk</small></div>
+      </div>
+      <p class="evt"><b>Events</b><span>Agility, LogicGate's customer conference in Chicago, and live sessions like Enterprise Risk Agents in Action give every follow up a reason to send.<sup><a href="#s4">4</a>,<a href="#s14">14</a></sup></span></p>
       <h3 class="ind-h">Where LogicGate wins, by industry</h3>
       <div class="inds">
         <div class="ind reg">
           <span class="ind-tag">Highly regulated</span>
           <h4>Financial services and healthcare</h4>
-          <p>This is where LogicGate is strongest. Banks, insurers and health systems answer to examiners who want evidence: the interagency third party guidance for US banks, OSFI's Guideline B-10 in Canada, and the HIPAA Security Rule in healthcare.<sup><a href="#s8">8</a>,<a href="#s7">7</a>,<a href="#s9">9</a></sup></p>
+          <p>This is where LogicGate is strongest. Banks, insurers and health systems answer to examiners who want evidence: the interagency third party guidance for US banks, OSFI's Guideline B-10 in Canada, and the HIPAA Security Rule in healthcare.<sup><a href="#s15">15</a>,<a href="#s10">10</a>,<a href="#s16">16</a></sup></p>
           <p>They run hundreds of vendors, many frameworks and constant audits. One connected record for each vendor, risk and control is how a lean team keeps up.</p>
           <div class="lead"><b>Lead with</b>Evidence examiners accept, third party risk at scale, and controls mapped once across every framework</div>
           <div class="acc">Premera Blue Cross, Providence, BECU, Manulife, Sun Life</div>
@@ -907,7 +1109,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <div class="ind pre">
           <span class="ind-tag">Less regulated</span>
           <h4>Retail, logistics and manufacturing</h4>
-          <p>Fewer rules today, with the same exposure: thousands of suppliers, ransomware and, for public companies, the SEC's cyber disclosure rules.<sup><a href="#s6">6</a></sup></p>
+          <p>Fewer rules today, with the same exposure: thousands of suppliers, ransomware and, for public companies, the SEC's cyber disclosure rules.<sup><a href="#s9">9</a></sup></p>
           <p>The companies that build a program now set the standard for their industry. They answer board and customer questions in days, and they are ready when regulation arrives.</p>
           <div class="lead"><b>Lead with</b>Supply chain resilience, cyber risk the board can see, and a program in place before anyone requires it</div>
           <div class="acc">Nordstrom, Expeditors, Nike, Columbia Sportswear, lululemon</div>
@@ -959,12 +1161,12 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
         <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why LogicGate</small></button>
       </div>
-      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most enterprise risk programs live in spreadsheets, SharePoint and a legacy GRC tool few people like. Each team keeps its own register, and the board report takes weeks to assemble.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Scattered registers</b>Risk, vendor, control and policy data in separate files</div><div><b>Slow answers</b>Weeks to respond to one board or regulator question</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams respond by sending more assessments. The exposure usually sits between the registers: a critical vendor with no linked control, or a policy exception nobody tied back to a risk.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Collect more assessments</div><div><b>To</b>Connect the data the program already has</div></div></div></div>
-      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the manual work costs. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>1,170 hours</b>Saved a year on average in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>832 hours</b>Saved a year on average in third party risk<sup><a href="#s3">3</a></sup></div></div></div></div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>The programs I would target often live in spreadsheets, SharePoint and a legacy GRC tool few people like. Each team keeps its own register, and the board report takes weeks to assemble.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Scattered registers</b>Risk, vendor, control and policy data in separate files</div><div><b>Slow answers</b>Weeks to respond to one board or regulator question</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>The usual response is to send more assessments. The exposure usually sits between the registers: a critical vendor with no linked control, or a policy exception nobody tied back to a risk.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Collect more assessments</div><div><b>To</b>Connect the data the program already has</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the manual work costs. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>1,170 hours</b>Saved a year on average in controls compliance<sup><a href="#s6">6</a></sup></div><div><b>832 hours</b>Saved a year on average in third party risk<sup><a href="#s6">6</a></sup></div></div></div></div>
       <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The audit committee asks which vendors touch customer data and which controls cover them. The team spends two weeks reconciling spreadsheets, and the answer is out of date by the time it lands.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The CRO answers the board with a best guess</div><div><b>Burnout</b>Skilled analysts spend their weeks copying data between files</div></div></div></div>
       <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Mature programs run on one data model. A vendor, the risks it creates, the controls that cover them and the policies behind them live in one record, and agents take on the repetitive work.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One data model</b>Every program shares the same records</div><div><b>No code</b>The GRC team changes its own workflows</div><div><b>Agents</b>Repetitive review and testing handled automatically</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>LogicGate Risk Cloud, a Leader for Gartner and Forrester, where customers report an average 2.6x return.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>7.35x</b>Average return in controls compliance<sup><a href="#s3">3</a></sup></div><div><b>31 days</b>Average time to value<sup><a href="#s1">1</a></sup></div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>LogicGate Risk Cloud, a Leader for Gartner and Forrester, where customers report an average 2.6x return.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>7.35x</b>Average return in controls compliance<sup><a href="#s6">6</a></sup></div><div><b>31 days</b>Average time to value<sup><a href="#s1">1</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
         <div><h4>Teach</h4><p>First meetings open with what I've learned about their program. The demo waits until they agree the gaps between registers are costing them.</p></div>
@@ -1005,7 +1207,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
               <tr data-r="sea"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond, Tacoma</span></td><td data-h="Who buys and why">Health plans, health systems and credit unions, plus public retailers and logistics firms where the SEC's cyber disclosure rules put risk in front of the board.<div class="acc">Premera Blue Cross, Providence, BECU, Nordstrom, Expeditors</div><div class="lead"><b>Lead with</b>Third party and cyber risk the board can see</div></td></tr>
               <tr data-r="or"><td>Oregon<span class="st">Portland, Beaverton, Hillsboro, Eugene</span></td><td data-h="Who buys and why">Health systems and health plans, plus apparel, manufacturing and utilities with global suppliers and continuity exposure.<div class="acc">Legacy Health, Moda Health, Nike, Columbia Sportswear, Portland General Electric</div><div class="lead"><b>Lead with</b>Enterprise risk and continuity on one register</div></td></tr>
               <tr data-r="wc"><td>Western Canada<span class="st">Vancouver, Calgary, Edmonton</span></td><td data-h="Who buys and why">Credit unions, plus telecom, energy, retail and airlines managing operational resilience across large vendor networks.<div class="acc">Vancity, TELUS, lululemon, Suncor Energy, WestJet</div><div class="lead"><b>Lead with</b>Operational resilience and third party risk at scale</div></td></tr>
-              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third party risk on one platform<sup><a href="#s7">7</a></sup></div></td></tr>
+              <tr data-r="ec"><td>Eastern Canada<span class="st">Toronto, Montreal, Ottawa</span></td><td data-h="Who buys and why">Insurers and other federally regulated institutions working to OSFI's third party risk guideline.<div class="acc">Manulife, Sun Life, Intact Financial, Canada Life</div><div class="lead"><b>Lead with</b>Guideline B-10 third party risk on one platform<sup><a href="#s10">10</a></sup></div></td></tr>
             </tbody>
           </table>
           <p class="note">Accounts are illustrative, drawn from public information. I would confirm named account assignments, the Canada split and current customers with the team before any outreach.</p>
@@ -1031,17 +1233,17 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">A risk program run on spreadsheets is only as current as the last update to each file.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises running compliance and risk in spreadsheets and SharePoint.</dd></div>
-            <div><dt class="label">Signal</dt><dd>GRC analyst job posts that list Excel and SharePoint as core tools.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Several frameworks listed on the company's trust center, like SOC 2, ISO 27001 and HIPAA, with no GRC platform in its public case studies or partner pages.</dd></div>
             <div><dt class="label">Personas</dt><dd>Head of GRC or Chief Compliance Officer first, then the CRO or CISO.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How many spreadsheets does one audit request touch?</li><li>How long does it take to map a control to a new framework?</li><li>Who owns the master copy?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Head of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> compliance program</li><li data-v="B">Spreadsheet idea</li><li data-v="C">Control mapping question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a GRC analyst with strong Excel and SharePoint skills, so guessing the program still runs on spreadsheets.</p><p>Think mapping controls once and testing them in one place could help?</p><p><span class="tok">{{customer_name}}</span> saved 1,170 hours a year in controls compliance.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, when an auditor asks for evidence on one control, how many spreadsheets does <span class="tok">{{company}}</span>'s team open to answer it?</p><p>Risk Cloud customers save an average of 1,170 hours a year in controls compliance by mapping each control once and reusing the evidence across every framework.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 1,170 hours sounds like seller cherry picking.</p><p>If we modeled the hours your team spends on one framework today, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the spreadsheets might be holding up?</p><p>Basically your team would test controls once and reuse the evidence across every framework.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> controls compliance average<sup><a href="#s3">3</a></sup></span><span><b>Value</b> hours back every audit cycle</span></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the spreadsheets might be holding up?</p><p>Basically your team would test controls once and reuse the evidence across every framework.</p><p>Happy to share how similar teams set it up. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> controls compliance average<sup><a href="#s6">6</a></sup></span><span><b>Value</b> hours back every audit cycle</span></div>
         </article>
       </div>
 
@@ -1050,17 +1252,17 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">Most vendor programs assess every vendor the same way, so the critical few get the same attention as the office supplier.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises with hundreds or thousands of vendors, and Canadian institutions under OSFI.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Vendor risk job posts, or a financial institution working to Guideline B-10.<sup><a href="#s7">7</a></sup></dd></div>
+            <div><dt class="label">Signal</dt><dd>A financial institution working to Guideline B-10, or a public vendor or supplier incident in the last year.<sup><a href="#s10">10</a></sup></dd></div>
             <div><dt class="label">Personas</dt><dd>Head of Third Party Risk first, then the CRO and procurement.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How do you decide which vendors get a full assessment?</li><li>How long does onboarding a critical vendor take?</li><li>How do vendor issues reach the enterprise risk register?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Head of Third Party Risk</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vendor reviews</li><li data-v="B">Vendor tiering idea</li><li data-v="C">B-10 question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring a vendor risk analyst, so guessing assessments are piling up faster than the team can review them.</p><p>Think tiering vendors by risk and letting agents handle the first review could help?</p><p><span class="tok">{{customer_name}}</span> saved 832 hours a year on third party risk.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, does <span class="tok">{{company}}</span> send the office supply vendor the same questionnaire as the vendors that touch customer data?</p><p>Risk Cloud customers save an average of 832 hours a year on third party risk, and Forrester named LogicGate one of three Leaders in third party risk platforms.</p><p>Would you be opposed to chatting through how your top 20 vendors would tier, in Q4?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 832 hours sounds like seller cherry picking.</p><p>If we walked your top 20 vendors through a tiered workflow, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the vendor program might be in good shape?</p><p>Basically your team would spend its time on the vendors that matter and link their risks to the enterprise register.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> third party risk average<sup><a href="#s3">3</a></sup></span><span><b>Recognition</b> Forrester TPRM Leader<sup><a href="#s2">2</a></sup></span></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the vendor program might be in good shape?</p><p>Basically your team would spend its time on the vendors that matter and link their risks to the enterprise register.</p><p>Happy to share how similar teams set it up. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> third party risk average<sup><a href="#s6">6</a></sup></span><span><b>Recognition</b> Forrester TPRM Leader<sup><a href="#s2">2</a></sup></span></div>
         </article>
       </div>
 
@@ -1069,16 +1271,16 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">Legacy GRC tools need a developer for every workflow change, so simple updates wait weeks in a queue.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises on Archer or a custom ServiceNow GRC build.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Job posts for Archer administrators or ServiceNow GRC developers.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Archer or ServiceNow GRC named in a conference talk, case study or partner page, with a renewal in the next year.</dd></div>
             <div><dt class="label">Personas</dt><dd>Director of GRC first, then the CRO or CISO and IT.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How long did your last workflow change take?</li><li>How many people keep the tool running?</li><li>When does the contract renew?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Director of GRC</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> GRC platform</li><li data-v="B">Workflow change idea</li><li data-v="C">Renewal question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring an Archer administrator, so guessing every workflow change waits on a small technical team.</p><p>Think a platform your GRC team can change on its own could help?</p><p><span class="tok">{{customer_name}}</span> saw value from Risk Cloud in 31 days.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, when your GRC team needs a workflow changed, how long does it wait on an admin or a developer?</p><p>Risk Cloud customers see value in 31 days on average, and the GRC team changes its own workflows without code.</p><p>Open to a quick conversation on whether your team could own its own workflows?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 31 days sounds like seller cherry picking.</p><p>If we rebuilt one of your current workflows live with a solutions engineer, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current platform might be working?</p><p>Basically your GRC team would own its own workflows and change them the same day.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current platform might be working?</p><p>Basically your GRC team would own its own workflows and change them the same day.</p><p>Happy to share how similar teams set it up. No worries if not.</p></div>
           <div class="mail-f"><span><b>Proof</b> 31 day average time to value<sup><a href="#s1">1</a></sup></span><span><b>Value</b> no developer queue</span></div>
         </article>
       </div>
@@ -1088,17 +1290,17 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           <p class="insight">Boards and regulators now expect a current view of risk, and a quarterly slide deck built by hand can't keep up.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Public companies under the SEC's cyber disclosure rules, and enterprises building an ERM program.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s6">6</a></sup></dd></div>
+            <div><dt class="label">Signal</dt><dd>Risk management language in the annual report, or a new CRO or ERM lead.<sup><a href="#s9">9</a></sup></dd></div>
             <div><dt class="label">Personas</dt><dd>CRO or Head of ERM first, then the CFO and the Audit Committee chair.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How long does the quarterly board risk report take to build?</li><li>How do cyber and vendor risks reach it?</li><li>What did the audit committee ask for last quarter?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Chief Risk Officer</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> board risk reporting</li><li data-v="B">Risk register idea</li><li data-v="C">Audit committee question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> expanded its risk management disclosure this year, so guessing the board wants a more current view of risk.</p><p>Think one register that pulls in cyber, vendor and operational risk could help?</p><p><span class="tok">{{customer_name}}</span> saved 570 hours a year on enterprise risk.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, how long does it take <span class="tok">{{company}}</span>'s team to build the quarterly risk report for the board?</p><p>Risk Cloud customers save an average of 570 hours a year on enterprise risk, with the board view pulled straight from one connected register.</p><p>Would you be opposed to chatting through what that could look like before your next audit committee meeting?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 570 hours sounds like seller cherry picking.</p><p>If we rebuilt last quarter's board report from one connected register, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be covered?</p><p>Basically your team would pull the board view straight from the register, current on the day it's presented.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s3">3</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s6">6</a></sup></span></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be covered?</p><p>Basically your team would pull the board view straight from the register, current on the day it's presented.</p><p>Happy to share how similar teams set it up. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> enterprise risk average<sup><a href="#s6">6</a></sup></span><span><b>Driver</b> SEC cyber rules<sup><a href="#s9">9</a></sup></span></div>
         </article>
       </div>
     </section>
@@ -1140,7 +1342,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
             <div class="bc-top"><h3>Spreadsheets</h3><span class="threat">Always present</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Free, flexible and familiar to everyone on the team.</p></div><div><h4>Where LogicGate wins</h4><p>One source of truth with workflows and an audit trail, where customers report an average 2.6x return.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Free, flexible and familiar to everyone on the team.</p></div><div><h4>Where LogicGate wins</h4><p>One source of truth with workflows and an audit trail, where customers report an average 2.6x return.<sup><a href="#s6">6</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>How long did the last board risk report take to build, and who checked the formulas?</p></div>
           </article>
         </div>
@@ -1169,22 +1371,67 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
         <div><h4>Migration looks risky</h4><p>A solutions engineer scopes the data move during the demo stage, so the plan is part of the proposal.</p></div>
         <div><h4>The legacy renewal slips past</h4><p>The incumbent's renewal and notice dates go into the mutual plan in discovery, and the close is timed to them.</p></div>
       </div>
-      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
-      <div style="max-width:1060px">
-        <table class="medd stack">
-          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
-          <tbody>
-            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Hours spent on assessments, testing and reporting, audit findings, tool and services cost</td><td data-h="What I ask">How many hours a year go into building the board risk report and preparing for audit?</td><td data-h="Red flag">A program problem nobody has priced</td></tr>
-            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CRO, CISO or CCO, with the CFO on larger multiyear commits</td><td data-h="What I ask">Who owns the GRC budget across risk, security and compliance?</td><td data-h="Red flag">Only the program team is involved by the demo</td></tr>
-            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Configurability without developers, time to value, reporting, integrations, AI and security</td><td data-h="What I ask">What has to be true for LogicGate to be the clear choice?</td><td data-h="Red flag">An RFP written around a competitor's module list</td></tr>
-            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Use case demo, security review, business case, legal and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current GRC tools.</td><td data-h="Red flag">No one can describe what happens after the demo</td></tr>
-            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, legal, procurement, any advisory partner, and the incumbent's renewal date</td><td data-h="What I ask">When does the current contract renew, and how much notice does it need?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
-            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">An audit finding, a regulator request, a vendor incident or a board asking for a current view</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
-            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A GRC or third party risk lead with influence, who gains from the win and can sell it internally</td><td data-h="What I ask">How would you present this to your CRO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
-            <tr><td>C</td><td>Competition</td><td data-h="What I validate">ServiceNow IRM, Archer, AuditBoard, OneTrust, spreadsheets and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
-          </tbody>
-        </table>
+      <h3 style="margin:48px 0 8px">MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Each line needs written proof before the deal counts in my forecast.</p>
+      <div class="mx">
+        <div class="mx-row">
+          <div class="mx-el"><b>M</b><h4>Metrics</h4><span>The number the deal is sold on</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Hours spent on assessments, control testing and board reporting, audit findings, and the cost of tools, consultants and admins today.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>How many hours a year go into the board risk report and audit prep?</li><li>What does Archer or ServiceNow cost you each year, including the people who run it?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Baseline hours and cost in their own numbers, checked by finance and written into the business case.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A program problem nobody has priced.</em> I bring the Value Realization Tool averages and ask them to correct the numbers for their team.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>E</b><h4>Economic buyer</h4><span>The person who can say yes alone</span></div>
+          <div class="mx-c"><small>What I validate</small><p>The CRO, CISO or CCO who owns the GRC budget, with the CFO on larger multiyear commits, and how they made their last platform decision.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Who owns the GRC budget across risk, security and compliance?</li><li>If this works, whose board conversation gets easier?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A meeting with the economic buyer before the use case demo, and their success criteria in their own words.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>"I'll take it to the CRO."</em> I write the champion a one page brief and ask for 20 minutes together to pressure test it.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision criteria</h4><span>How they will judge us</span></div>
+          <div class="mx-c"><small>What I validate</small><p>No code configuration, time to value, reporting, integrations, agents and AI governance, security and Canadian data residency, ranked by the people who score them.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What has to be true for LogicGate to be the clear choice?</li><li>What would rule us out?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Written criteria the champion and I drafted together, before the use case demo.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>An RFP written around a competitor's module list.</em> I reshape the criteria early around one data model, agents and time to value, with the advisory partner in the room.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision process</h4><span>Every step to a signature</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Use case demo, security review, business case, legal and procurement, with dates, and how they chose their current GRC tools.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Walk me through how you chose your current GRC platform.</li><li>Who could stop this, even if everyone else says yes?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A mutual action plan dated back from the incumbent's renewal, edited by both sides.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>No one can describe what happens after the demo.</em> I map the post demo steps with the champion before the demo is scheduled.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>P</b><h4>Paper process</h4><span>How the contract actually gets signed</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Security questionnaire, legal redlines, procurement thresholds, any advisory partner's role, and the incumbent's renewal and notice dates.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>When does the current contract renew, and how much notice does it need?</li><li>What did security need from your last GRC vendor?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Security package sent in week one, notice date in the plan, and a signature date agreed.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Procurement first hears about us at quarter end.</em> I meet procurement as soon as the business case is agreed, and put the notice date in the plan on day one.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>I</b><h4>Identify pain</h4><span>Why they act this year</span></div>
+          <div class="mx-c"><small>What I validate</small><p>An audit finding, a regulator request under OSFI or the SEC, a vendor incident, or a board asking for a current view of risk.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What happens if nothing changes for the next 12 months?</li><li>What did the last audit or exam find?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Pain tied to a dollar figure and a date, confirmed by risk and compliance leaders.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Pain with no cost and no deadline.</em> I go back to the rational drowning step with their own hours until it has both.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Champion</h4><span>Who sells when I am not in the room</span></div>
+          <div class="mx-c"><small>What I validate</small><p>A GRC or third party risk lead with influence who wins personally if this succeeds. I test it by asking them to act.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>How would you present this to your CRO?</li><li>Could you get us 30 minutes with internal audit this week?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>They shared internal context, coached me on the room, and got me a meeting I could not get alone.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A fan of the product with no pull on the decision.</em> I keep them close and multithread to someone who can move the deal.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Competition</h4><span>Every option they could pick</span></div>
+          <div class="mx-c"><small>What I validate</small><p>ServiceNow IRM, Archer, AuditBoard, OneTrust, spreadsheets and doing nothing, plus who inside the account favors each.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>If you don't choose us, what do you do instead?</li><li>Who on the team would push for that option?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Each alternative named with its internal sponsor, and our strengths built into the decision criteria.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>We learn about the competitor at the proposal.</em> I ask the battlecard questions in discovery, so the criteria reflect where LogicGate wins.</p></div>
+        </div>
       </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the economic buyer has confirmed the metrics, the use case demo has met written criteria, the paper process and renewal notice date are in the mutual plan, and the champion has been tested.</span></div>
     </section>
 
     <!-- About -->
@@ -1201,11 +1448,11 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       </div>
       <div style="max-width:1060px">
         <table class="fit stack">
-          <thead><tr><th>What the role asks for<sup><a href="#s10">10</a></sup></th><th>Where I have done it</th></tr></thead>
+          <thead><tr><th>What the role asks for<sup><a href="#s17">17</a></sup></th><th>Where I have done it</th></tr></thead>
           <tbody>
             <tr><td>Large enterprise B2B SaaS sales</td><td data-h="Where I have done it">Opened Fortune 500 accounts including Uber, Albertsons and AAA, and sell to Fortune 500 companies at Netradyne today.</td></tr>
             <tr><td>New pipeline from cold prospecting, partners, social, email and phone</td><td data-h="Where I have done it">$19.6M self sourced at Netradyne through cold outbound, and $750K in my first quarter at Falkon.</td></tr>
-            <tr><td>A strategic territory plan for a targeted account list</td><td data-h="Where I have done it">Build tiered account plans for every territory, prioritized with intent and hiring signals.</td></tr>
+            <tr><td>A strategic territory plan for a targeted account list</td><td data-h="Where I have done it">Build tiered account plans for every territory, prioritized by regulation, renewal dates and intent signals.</td></tr>
             <tr><td>Full cycle with a Solutions Engineer, from discovery to close</td><td data-h="Where I have done it">Ran discovery, demos with sales engineers, proposals and negotiation through close, including a $1.2M deal with Uber at Jamf.</td></tr>
             <tr><td>A tech savvy seller who learns the platform front and back</td><td data-h="Where I have done it">Sold device management and security software to technical IT buyers at Jamf, and closed Snowflake and Seismic at a Series A startup.</td></tr>
             <tr><td>Partner collaboration</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to LogicGate's advisory partners such as PwC.</td></tr>
@@ -1214,7 +1461,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       </div>
       <div class="letter">
         <h3>Why LogicGate</h3>
-        <p>LogicGate has what I look for as a seller: a product customers can put an ROI number on, Leader status with Gartner and Forrester to get meetings, and a territory where regulators are pushing buyers to act. I build my own pipeline and run tight deals, and this is a territory I want to build.</p>
+        <p>LogicGate has what I look for as a seller: a product customers can put an ROI number on, Leader status with Gartner and Forrester to get meetings, agents that change what a GRC team can do, and a territory where regulators are pushing buyers to act. Erick, your Strategic AE team cleared 200% of its Q1 goal and is working toward a seventh straight quarter over the new business goal.<sup><a href="#s18">18</a></sup> I build my own pipeline and run tight deals, and I want to add to that run in the Northwest and Canada.</p>
         <p class="sig">Eric Iannello, Boise, Idaho</p>
       </div>
     </section>
@@ -1234,7 +1481,7 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
             <li>Work with sales leadership, Solutions Engineers and top reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
             <li>Meet the partner team, including PwC and the advisory firms active in Seattle, Vancouver and Toronto</li>
             <li>Build battlecards for ServiceNow IRM, Archer, AuditBoard and OneTrust</li>
-            <li>Audit named accounts in Salesforce for GRC hiring, OSFI regulated institutions, legacy renewals and dormant opportunities</li>
+            <li>Audit named accounts in Salesforce for OSFI regulated institutions, legacy GRC renewals, recent audit findings and dormant opportunities</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
             <li>Launch the first self sourced wave, each account with its own insight and proof point</li>
           </ul>
@@ -1285,14 +1532,22 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
       <ol class="sources">
         <li id="s1"><a href="https://www.prnewswire.com/news-releases/logicgate-named-a-leader-in-the-grc-market-by-the-gartner-magic-quadrant-for-grc-tools-assurance-leaders-302601366.html" target="_blank" rel="noopener">PR Newswire, LogicGate named a Leader in the Gartner Magic Quadrant for GRC Tools, Assurance Leaders</a></li>
         <li id="s2"><a href="https://www.prnewswire.com/news-releases/logicgate-recognized-as-one-of-only-four-leaders-in-governance-risk-and-compliance-platforms-q2-2026-report-by-independent-research-firm-302785214.html" target="_blank" rel="noopener">PR Newswire, LogicGate one of four Leaders in GRC Platforms, Q2 2026</a></li>
-        <li id="s3"><a href="https://www.prnewswire.com/news-releases/logicgates-value-realization-tool-reveals-customers-nearly-triple-investment-through-platform-efficiencies-302659858.html" target="_blank" rel="noopener">PR Newswire, LogicGate Value Realization Tool results</a></li>
-        <li id="s4"><a href="https://www.prnewswire.com/news-releases/logicgate-advances-agentic-grc-capabilities-with-its-summer-2026-release-302866798.html" target="_blank" rel="noopener">PR Newswire, LogicGate Summer 2026 Release</a></li>
-        <li id="s5"><a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai, AI GRC platform for the enterprise</a></li>
-        <li id="s6"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
-        <li id="s7"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third Party Risk Management</a></li>
-        <li id="s8"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20230606a.htm" target="_blank" rel="noopener">Federal Reserve, FDIC and OCC, Interagency guidance on third party relationships</a></li>
-        <li id="s9"><a href="https://www.hhs.gov/hipaa/for-professionals/security/index.html" target="_blank" rel="noopener">HHS, HIPAA Security Rule</a></li>
-        <li id="s10"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
+        <li id="s3"><a href="https://www.prnewswire.com/news-releases/logicgate-advances-agentic-grc-capabilities-with-its-summer-2026-release-302866798.html" target="_blank" rel="noopener">PR Newswire, LogicGate Summer 2026 Release</a></li>
+        <li id="s4"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7493327767208386560/" target="_blank" rel="noopener">Erick Alvarez, Enterprise Risk Agents in Action</a></li>
+        <li id="s5"><a href="https://www.logicgate.ai/platform/features/" target="_blank" rel="noopener">LogicGate.ai, Risk Cloud features</a></li>
+        <li id="s6"><a href="https://www.prnewswire.com/news-releases/logicgates-value-realization-tool-reveals-customers-nearly-triple-investment-through-platform-efficiencies-302659858.html" target="_blank" rel="noopener">PR Newswire, LogicGate Value Realization Tool results</a></li>
+        <li id="s7"><a href="https://www.logicgate.ai/" target="_blank" rel="noopener">LogicGate.ai, AI GRC platform for the enterprise</a></li>
+        <li id="s8"><a href="https://www.logicgate.com/news/logicgate-appoints-diego-panama-as-chief-executive-officer/" target="_blank" rel="noopener">LogicGate, LogicGate appoints Diego Panama as Chief Executive Officer</a></li>
+        <li id="s9"><a href="https://www.sec.gov/newsroom/press-releases/2023-139" target="_blank" rel="noopener">SEC, Rules on cybersecurity risk management, strategy, governance and incident disclosure</a></li>
+        <li id="s10"><a href="https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline" target="_blank" rel="noopener">OSFI, Guideline B-10, Third Party Risk Management</a></li>
+        <li id="s11"><a href="https://www.prnewswire.com/news-releases/logicgate-solidifies-position-as-the-enterprise-ai-grc-leader-with-its-spring-2026-release-302814438.html" target="_blank" rel="noopener">PR Newswire, LogicGate Spring 2026 release</a></li>
+        <li id="s12"><a href="https://www.logicgate.com/news/logicgate-unveils-config-newton-the-worlds-first-agentic-grc-engineer/" target="_blank" rel="noopener">LogicGate, LogicGate unveils Config Newton, the world's first agentic GRC engineer</a></li>
+        <li id="s13"><a href="https://www.logicgate.com/resources/reports/forrester-wave-third-party-risk-management-platforms-q1-2026/" target="_blank" rel="noopener">LogicGate, The Forrester Wave, Third Party Risk Management Platforms, Q1 2026</a></li>
+        <li id="s14"><a href="https://agility.logicgate.com/2026" target="_blank" rel="noopener">LogicGate, Agility 2026</a></li>
+        <li id="s15"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20230606a.htm" target="_blank" rel="noopener">Federal Reserve, FDIC and OCC, Interagency guidance on third party relationships</a></li>
+        <li id="s16"><a href="https://www.hhs.gov/hipaa/for-professionals/security/index.html" target="_blank" rel="noopener">HHS, HIPAA Security Rule</a></li>
+        <li id="s17"><a href="https://www.linkedin.com/jobs/view/4466901758/" target="_blank" rel="noopener">LogicGate, Strategic Account Executive, PNW and Canada job post</a></li>
+        <li id="s18"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7463280422047666178/" target="_blank" rel="noopener">Erick Alvarez, on the Strategic AE team's Q1 results</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the LogicGate Strategic Account Executive role. Not affiliated with or endorsed by LogicGate. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>
@@ -1356,6 +1611,25 @@ h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
   group(sts,step);
   document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
   document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Risk Cloud tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+
+  // GRC agent demo
+  var run=document.getElementById('agRun'),okb=document.getElementById('agOk'),st=document.getElementById('agState'),out=document.getElementById('agOut');
+  var steps=[].slice.call(document.querySelectorAll('#agSteps li'));
+  var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function reset(){steps.forEach(function(li){li.className=''});out.hidden=true;okb.disabled=true;okb.textContent='Approve';}
+  run.addEventListener('click',function(){
+    reset();run.disabled=true;st.textContent='Running';var i=0;
+    (function next(){
+      if(i>0)steps[i-1].className='done';
+      if(i<steps.length){steps[i].className='doing';i++;setTimeout(next,fast?0:420);}
+      else{st.textContent='Waiting for review';out.hidden=false;okb.disabled=false;run.disabled=false;run.textContent='Run again';}
+    })();
+  });
+  okb.addEventListener('click',function(){okb.disabled=true;okb.textContent='Approved';st.textContent='Approved by risk owner, logged to audit trail';});
 
   // Battlecards
   var cbs=[].slice.call(document.querySelectorAll('.cbtn'));

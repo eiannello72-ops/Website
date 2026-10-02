@@ -619,99 +619,273 @@ h1 mark{padding:0 .12em;border-radius:4px}
 .mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
 .mod.core{font-size:clamp(13px,6.2cqi,20px)}
 .panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#26303F}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
+
+/* ===== pentera.io UI layer ===== */
+:root{--line:#DDE3E8;--soft:0 1px 2px rgba(19,39,53,.08),0 12px 28px -16px rgba(19,39,53,.35);--orange:#FC6313}
+body{background:#fff}
+.shell{display:block;max-width:none;padding:0}
+.side,.topbar{display:none!important}
+main{padding:0}
+main > section:not(.phero):not(.ptrust):not(.papp-wrap),main > footer{max-width:1240px;margin-inline:auto}
+main > section.panel{margin-inline:max(20px,calc((100% - 1200px)/2))}
+/* Black tag with a trailing dot, as on pentera.io */
+.ptag{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin:0}
+.ptag{position:relative;padding:0}
+.ptag{--b:#000}
+.ptag{background:linear-gradient(var(--b),var(--b)) no-repeat 0 0/calc(100% - 12px) 100%;padding:3px 18px 3px 7px}
+.ptag:after{content:"";position:absolute;right:0;bottom:6px;width:6px;height:6px;border-radius:50%;background:var(--b)}
+.ptag.light{--b:#fff;color:var(--ink)}
+.ptag.sm{font-size:11px;padding:2px 15px 2px 6px;align-self:flex-start;margin-bottom:10px}
+.ptag.sm:after{width:5px;height:5px;bottom:5px}
+/* Announcement bar */
+.banner{background:var(--ink);color:#fff;border:0;font-size:14px;padding:9px 16px}
+.banner b{color:#fff}
+.banner a{margin-left:10px;font-weight:700;color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+/* Orange nav */
+.pnav-wrap{position:sticky;top:0;z-index:30;background:var(--orange)}
+.pnav{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:24px;padding:14px 40px}
+.plogo{display:flex;align-items:flex-end;gap:4px;text-decoration:none;flex:none;color:var(--ink)}
+.plogo b{background:#000;color:#fff;font-weight:800;font-size:17px;letter-spacing:.02em;padding:3px 8px}
+.plogo i{width:6px;height:6px;border-radius:50%;background:#000;margin-bottom:3px}
+.plogo span{font-size:13px;font-weight:700;margin-left:8px;margin-bottom:2px}
+.pnav .toc{display:flex;gap:4px;list-style:none;margin:0 auto;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.pnav .toc::-webkit-scrollbar{display:none}
+.pnav .toc a{display:block;padding:6px 9px;border:0;color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;margin:0;border-radius:3px}
+.pnav .toc a:hover{background:rgba(255,255,255,.25)}
+.pnav .toc a.active{background:var(--ink);color:#fff;border:0}
+.pcta{flex:none;display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);font-family:var(--poster);font-size:18px;letter-spacing:.01em;padding:5px 12px;border-radius:4px;text-decoration:none}
+.pcta:after{content:"";width:7px;height:7px;border-right:2px solid var(--ink);border-top:2px solid var(--ink);transform:rotate(45deg)}
+@media (max-width:1100px){.plogo span{display:none}}
+@media (max-width:820px){.pcta{display:none}.pnav{padding:10px 14px;gap:12px}}
+/* Hero, orange with the warped VALIDATE */
+.phero{display:block!important;background:var(--orange)!important;color:var(--ink)!important;border-radius:0!important;text-align:center;padding:40px 20px 72px!important;margin:0}
+.phero:after{display:none}
+.pword{font-family:var(--poster);color:var(--ink);font-weight:400;font-size:clamp(84px,19vw,280px);line-height:.82;letter-spacing:-.01em;text-transform:uppercase;margin:22px 0 6px;transform:skewY(-4deg)}
+.pword span{display:inline-flex;align-items:flex-end}
+.pword i{font-style:normal;display:inline-block;transform-origin:50% 100%}
+.pword i:nth-child(1){transform:scaleY(.74)}.pword i:nth-child(2){transform:scaleY(.8)}.pword i:nth-child(3){transform:scaleY(.86)}.pword i:nth-child(4){transform:scaleY(.91)}.pword i:nth-child(5){transform:scaleY(.96)}.pword i:nth-child(6){transform:scaleY(1)}.pword i:nth-child(7){transform:scaleY(1.04)}.pword i:nth-child(8){transform:scaleY(1.08)}
+.psub{font-family:var(--poster);font-size:clamp(28px,3.6vw,46px);line-height:1.05;margin-top:4px}
+.phero .lede{max-width:760px;margin:14px auto 0;font-size:16.5px;color:var(--ink)}
+.phero .lede b{color:var(--ink)}
+.phero sup a{color:var(--ink)}
+.pstd{font-weight:700;font-size:20px;margin-top:22px}
+.pform{display:inline-flex;margin-top:18px;border:1px solid var(--ink);border-radius:4px;overflow:hidden;max-width:100%}
+.pform span{background:#F7F7F7;padding:12px 14px;font-size:15px;color:#4A5560;min-width:260px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pform a{background:var(--ink);color:#fff;font-family:var(--poster);font-size:18px;letter-spacing:.01em;padding:11px 18px;text-decoration:none;white-space:nowrap}
+.pform a:hover{background:#000}
+@media (max-width:560px){.pform{flex-direction:column}.pform span{min-width:0}}
+/* Navy trust band */
+.ptrust{background:var(--ink);color:#fff;text-align:center;padding:48px 20px 56px!important;margin:0;border:0!important}
+.pstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;max-width:1160px;margin:28px auto 0;text-align:left}
+.pstats div{padding:6px 24px;border-left:1px solid #2B4457}
+.pstats div:first-child{border-left:0}
+.pstats b{display:block;font-family:var(--poster);font-weight:400;font-size:clamp(38px,4.4vw,60px);color:var(--orange);line-height:1}
+.pstats span{display:block;font-size:14.5px;color:#C9D3DC;margin-top:8px}
+.pstats sup a{color:var(--orange)}
+@media (max-width:900px){.pstats{grid-template-columns:1fr 1fr;row-gap:24px}.pstats div:nth-child(3){border-left:0}}
+@media (max-width:480px){.pstats{grid-template-columns:1fr}.pstats div{border-left:0;padding:0}}
+/* Console */
+.papp-wrap{background:#F3F5F7;padding:48px 20px 56px!important;margin:0;border:0!important;text-align:center}
+.papp-wrap figure{max-width:1160px;margin:22px auto 0;text-align:left}
+.app{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 40px 80px -36px rgba(19,39,53,.5);overflow:hidden}
+.app-top{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--ink);color:#fff}
+.app-name{display:flex;align-items:flex-end;gap:3px;font-weight:800;font-size:15px;background:#000;padding:2px 7px;letter-spacing:.02em}
+.app-name i{width:5px;height:5px;border-radius:50%;background:var(--orange);margin-bottom:2px}
+.app-env{font-family:var(--mono);font-size:11.5px;color:#C9D3DC}
+.prun{margin-left:auto;font-family:var(--poster);font-size:17px;letter-spacing:.01em;background:var(--orange);color:var(--ink);border:0;border-radius:4px;padding:6px 14px;cursor:pointer}
+.prun:disabled{opacity:.6;cursor:default}
+.prun:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.pstages{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid var(--line);counter-reset:s}
+.pstages li{counter-increment:s;padding:10px 12px;font-size:12.5px;font-weight:600;color:#7A8792;border-left:1px solid var(--line);display:flex;align-items:center;gap:8px;position:relative}
+.pstages li:first-child{border-left:0}
+.pstages li:before{content:counter(s);flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:10.5px}
+.pstages li.doing{color:var(--ink);background:#FFF1E8}
+.pstages li.doing:before{border-color:var(--orange);color:var(--orange)}
+.pstages li.done{color:var(--ink)}
+.pstages li.done:before{content:"";background:var(--orange) no-repeat center/11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' stroke='%23132735' stroke-width='2' fill='none'/%3E%3C/svg%3E");border-color:var(--orange)}
+.pstatus{font-family:var(--mono);font-size:12px;color:var(--ink);padding:8px 16px;background:#FAFBFC;border-bottom:1px solid var(--line)}
+.app-body{display:grid;grid-template-columns:210px minmax(0,1fr)}
+.app-side{border-right:1px solid var(--line);padding:12px 10px;background:#FAFBFC;min-width:0}
+.app-tabs{display:grid;gap:2px;min-width:0}
+.dtab{font:600 14px var(--body);text-align:left;padding:9px 12px;border-radius:4px;background:none;border:0;border-left:3px solid transparent;color:#2B3A47;cursor:pointer;white-space:nowrap}
+.dtab:hover{background:#EEF2F5}
+.dtab[aria-selected="true"]{background:#FFF1E8;border-left-color:var(--orange);color:var(--ink)}
+.dtab:focus-visible{outline:2px solid var(--orange);outline-offset:1px}
+.app-main{padding:18px 22px 24px;min-width:0}
+.dview h3{font-family:var(--display);font-size:21px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.anl{border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:4px;background:#FAFBFC;padding:10px 14px;margin:12px 0 16px}
+.anl b{font-size:12.5px;font-weight:800;display:flex;align-items:center;gap:6px;color:var(--ink)}
+.anl b:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.anl ul{list-style:none;margin-top:4px}
+.anl li{font-size:13.5px;padding:3px 0;color:#2B3A47}
+.vo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;align-items:start}
+.vo .tiers{border:0;padding:0}
+.vo .fun-d{padding:4px 0 0}
+.vt{width:100%;border-collapse:collapse;font-size:13.5px}
+.vt th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line)}
+.vt td{padding:10px;border-bottom:1px solid #EEF2F5;color:#2B3A47}
+.vt td:first-child{font-weight:700;color:var(--ink)}
+.st{font-style:normal;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.st.g{background:#E3F6EA;color:#14602F}.st.b{background:#E7EEF3;color:#132735}.st.n{background:#F0F2F4;color:#45505A}.st.r{background:#FFE3D1;color:#9A3412}
+.rr{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:center}
+.gauge{width:160px;height:160px;border-radius:50%;background:conic-gradient(var(--orange) calc(var(--v)*1%),#EEF2F5 0);display:grid;place-items:center;align-content:center;position:relative}
+.gauge:before{content:"";position:absolute;inset:16px;border-radius:50%;background:#fff}
+.gauge b,.gauge span{position:relative}
+.gauge b{font-family:var(--poster);font-weight:400;font-size:48px;line-height:1;color:var(--ink)}
+.gauge span{font-size:12px;color:var(--graphite)}
+.rrl{list-style:none}
+.rrl li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #EEF2F5;font-size:14px}
+.ex{display:grid;gap:8px}
+.exs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:6px}
+.exs div{border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+.exs b{display:block;font-family:var(--poster);font-weight:400;font-size:30px;color:var(--ink);line-height:1}
+.exs span{font-size:12px;color:var(--graphite)}
+.exs div:last-child b{color:var(--orange)}
+.exr{display:grid;grid-template-columns:170px minmax(0,1fr) 44px 100px;gap:10px;align-items:center;font-size:13.5px}
+.exr i{height:10px;border-radius:5px;background:linear-gradient(90deg,var(--ink) var(--w),#EEF2F5 var(--w))}
+.exr b{font-family:var(--mono);font-size:12px;font-weight:500;text-align:right}
+.peer-cap{font-size:13.5px;color:var(--graphite);margin:4px 0 12px}
+.chat{display:grid;gap:8px;max-width:640px}
+.chat p{font-size:14px;line-height:1.45;padding:10px 14px;border-radius:12px;max-width:85%}
+.chat .q{justify-self:end;background:var(--ink);color:#fff;border-bottom-right-radius:4px}
+.chat .a{justify-self:start;background:#FFF1E8;color:var(--ink);border-bottom-left-radius:4px}
+@media (max-width:1000px){.vo{grid-template-columns:1fr}}
+@media (max-width:900px){.app-body{grid-template-columns:1fr}.app-side{border-right:0;border-bottom:1px solid var(--line);padding:8px}.app-tabs{display:flex;overflow-x:auto;scrollbar-width:none}.dtab{border-left:0;border-bottom:3px solid transparent}.dtab[aria-selected="true"]{border-bottom-color:var(--orange)}.app-env{display:none}.pstages{grid-template-columns:repeat(5,minmax(0,1fr))}.pstages li{font-size:0;justify-content:center;padding:8px 4px}.pstages li:before{font-size:10.5px}.rr{grid-template-columns:1fr;justify-items:center}.rrl{width:100%}.exr{grid-template-columns:1fr 44px;row-gap:4px}.exr i{grid-column:1/-1;grid-row:2}.exr em{grid-column:1/-1}}
+@media (max-width:620px){.vt thead{display:none}.vt tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid #EEF2F5}.vt td{border:0;padding:2px 6px}.vt td:nth-child(n+3){grid-column:1/-1}.app-main{padding:14px 12px 18px}.papp-wrap{padding:36px 10px 44px!important}}
+/* Research cards */
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:#fff;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;box-shadow:var(--soft)}
+.r b{font-family:var(--poster);font-weight:400;font-size:28px;line-height:1.05;color:var(--ink);text-transform:uppercase}
+.r p:not(.ptag){font-size:14.5px;color:#2B3A47;margin:6px 0 12px}
+.r small{margin-top:auto;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#C2410C}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+#know .three{max-width:1060px;gap:14px}
+#know .three > div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:var(--soft)}
+/* Soften components */
+.step-p,.pane.hc,.panel.sky .mail,.mail,.bc,.stalls div,.cbtn[aria-selected="true"],.mx-rule{box-shadow:var(--soft)!important}
+.stalls div,.cbtn,.facts2 div,.sq{border-width:1px!important;border-color:var(--line)!important}
+.stalls div{border-top:4px solid var(--orange)!important;border-radius:4px}
+.cbtn[aria-selected="true"]{border-color:var(--ink)!important}
+.mx{border-top-width:1px}
+.mx-el b{border-radius:2px;background:var(--ink);color:var(--orange)}
+.mx-c li{border-left-color:var(--orange)}
+.mx-f{background:#FFF1E8}
+.sq.on{border-color:var(--ink)!important}
+.btn{border-radius:4px}
+.pword{margin-bottom:.16em}
+.pword{margin-bottom:calc(.12em + 16px)}
+@media (max-width:720px){main > section.panel{margin-inline:0}}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+@media (max-width:720px){main > section.panel{margin-inline:0;padding-inline:10px!important;border-radius:0}}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for <b>Scott Merkle</b>, VP Americas, by Eric Iannello</div>
+<div class="banner">Prepared for <b>Scott Merkle</b>, VP Americas, by Eric Iannello <a href="#plan">See the 90 day plan</a></div>
 
-<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#132735"/><rect x="7" y="7" width="18" height="18" fill="#FC6313"/><rect x="21" y="21" width="5" height="5" fill="#fff"/></svg><b>PENTERA PLAN</b></a><a href="#contact">Contact</a></div>
-
-<div class="shell">
-  <aside class="side" aria-label="Contents">
-    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#132735"/><rect x="7" y="7" width="18" height="18" fill="#FC6313"/><rect x="21" y="21" width="5" height="5" fill="#fff"/></svg><span><b>PNW ENTERPRISE</b><small>Pentera plan</small></span></a>
+<header class="pnav-wrap">
+  <nav class="pnav" aria-label="Contents">
+    <a class="plogo" href="#top"><b>ERIC IANNELLO</b><i aria-hidden="true"></i><span>for Pentera</span></a>
     <ul class="toc" id="toc">
       <li><a href="#top">Overview</a></li>
-      <li><a href="#know">What I know</a></li>
-      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
       <li><a href="#territory">Territory</a></li>
       <li><a href="#plays">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
-      <li><a href="#deal">Running the deal</a></li>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#plan">First 90 days</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plan">90 days</a></li>
     </ul>
-    <div class="side-foot">
-      <span>Eric Iannello</span>
-      <span>Boise, Idaho</span>
-      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
-    </div>
-  </aside>
+    <a class="pcta" href="#contact">Talk to Eric</a>
+  </nav>
+</header>
 
+<div class="shell">
   <main>
     <!-- Overview -->
-    <section id="top" class="hero grain">
-      <div>
-        <div class="doc-meta">
-          <span class="status"><b>Proposal</b></span>
-          <span>Enterprise Account Executive, PNW</span>
-          <span>For <b>Scott Merkle</b>, VP Americas</span>
-          <span>September 2026</span>
-        </div>
-        <h1>Scanners list what could go wrong. Pentera proves <mark>what will.</mark></h1>
-        <p class="lede">Pentera is the first company in adversarial exposure validation to pass $100M ARR, and it is moving from a testing tool to the validation layer of every security program.<sup><a href="#s1">1</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Challenger and MEDDPICC processes.</p>
-        <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
-      </div>
-      <div class="art">
-        <div class="mods" role="group" aria-label="Pentera platform. Select a square to read about it.">
-          <button class="mod" data-t="Pentera Core" data-d="Tests the internal network the way an attacker would move through it, safely and in production.">Internal</button>
-          <button class="mod" data-t="Pentera Surface" data-d="Finds and tests internet facing assets from the outside in.">External</button>
-          <button class="mod" data-t="Pentera Cloud" data-d="Validates cloud workloads and identities across the major cloud providers.">Cloud</button>
-          <button class="mod" data-t="Credentials" data-d="Finds weak and reused passwords before an attacker does.">Credentials</button>
-          <button class="mod core on" data-t="Validate" data-d="Proves which exposures are exploitable, then retests to prove the fix worked.">Validate</button>
-          <button class="mod" data-t="Ransomware readiness" data-d="Runs safe ransomware scenarios to show whether defenses would hold.">Ransomware</button>
-          <button class="mod" data-t="Pentera Resolve" data-d="Turns validated findings into prioritized fixes, tickets and retests.">Resolve</button>
-          <button class="mod" data-t="AI red teaming" data-d="Tests AI applications and integrations, through the EVA Information Security team.">AI red team</button>
-          <button class="mod" data-t="Reporting" data-d="Executive ready reports that show boards and auditors risk going down.">Reporting</button>
-        </div>
-        <p class="hx-say" id="hxSay" aria-live="polite"><b>Validate</b>Proves which exposures are exploitable, then retests to prove the fix worked.</p>
-        <p class="hx-hint">Select a square to explore the platform</p>
-      </div>
-      <dl class="facts">
-        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-        <div><dt>Based in</dt><dd>Boise, inside the territory</dd></div>
-        <div><dt>Territory</dt><dd>Pacific Northwest</dd></div>
-        <div><dt>Methods</dt><dd>Challenger, MEDDPICC</dd></div>
-      </dl>
+    <section id="top" class="hero phero">
+      <p class="ptag">Prepared for Scott Merkle</p>
+      <h1 class="pword" aria-label="Validate my plan for the Pacific Northwest"><span aria-hidden="true"><i>V</i><i>A</i><i>L</i><i>I</i><i>D</i><i>A</i><i>T</i><i>E</i></span></h1>
+      <p class="psub">my plan for the Pacific Northwest</p>
+      <p class="lede">Safely test it against your team's playbook, prioritize what's proven, and tell me what to fix. Pentera's approach, applied to a territory: proven risk over long lists, and pipeline I build myself.<sup><a href="#s1">1</a></sup></p>
+      <p class="pstd">Setting the standard for selling exposure validation</p>
+      <div class="pform"><span>Enterprise Account Executive, PNW</span><a href="#plan">See the 90 day plan</a></div>
     </section>
-    <div class="float">
+
+    <section class="ptrust" aria-label="Pentera by the numbers">
+      <p class="ptag light">Trusted by 1,200+ enterprises</p>
+      <div class="pstats" role="list">
+        <div role="listitem"><b>$100M+</b><span>ARR, first in adversarial exposure validation to get there<sup><a href="#s1">1</a></sup></span></div>
+        <div role="listitem"><b>60+</b><span>countries where enterprises validate with Pentera<sup><a href="#s1">1</a></sup></span></div>
+        <div role="listitem"><b>4.8/5</b><span>Gartner Peer Insights Customers' Choice, with 94% willing to recommend<sup><a href="#s2">2</a></sup></span></div>
+        <div role="listitem"><b>Millions</b><span>saved by DTCC every time it runs a ransomware test<sup><a href="#s3">3</a></sup></span></div>
+      </div>
+    </section>
+
+    <section class="papp-wrap" aria-label="Pentera console mock">
+      <p class="ptag">See it the way a CISO would</p>
       <figure>
-        <div class="fun" role="group" aria-label="Validation summary. Select a tier to see what it contains.">
-          <div class="fun-bar"><span><b>validation run</b> weekly, production</span><span class="hint">Select a tier</span><span>illustrative</span></div>
-          <div class="fun-grid">
-            <div class="tiers">
+        <div class="app" role="group" aria-label="Pentera console mock. Run a validation, then select a view.">
+          <div class="app-top">
+            <b class="app-name">PENTERA<i aria-hidden="true"></i></b><span class="app-env">Production, all sites</span>
+            <button type="button" class="prun" id="pvRun">Run validation</button>
+          </div>
+          <ol class="pstages" id="pvStages" aria-label="Validation progress">
+            <li>Discover assets</li><li>Test safely</li><li>Prove what's exploitable</li><li>Prioritize by impact</li><li>Retest the fix</li>
+          </ol>
+          <p class="pstatus" id="pvStatus" aria-live="polite">Last run 2 days ago. 3 fixes close all 11 attack paths to critical assets.</p>
+          <div class="app-body">
+            <div class="app-side">
+              <div class="app-tabs" role="tablist" aria-label="Pentera views" aria-orientation="vertical">
+                <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true">Validation Overview</button>
+                <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1">Pentera Resolve</button>
+                <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1">Ransomware Readiness</button>
+                <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1">External Surface</button>
+                <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1">Pentera Peer</button>
+              </div>
+            </div>
+            <div class="app-main">
+              <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><h3>Validation Overview</h3><div class="anl"><b>Pentera Peer</b><ul><li>12,480 scanner findings narrowed to 214 that are exploitable here, and 11 that reach a critical asset.</li><li>Select a tier to see what sits inside it.</li></ul></div><div class="vo"><div class="tiers">
               <button class="tier" style="--w:100%" data-h="Everything the scanners report" data-p="Every known vulnerability, scored by severity. Most of it can never be reached by an attacker in your environment." data-l="Critical|1,912;High|4,206;Medium and low|6,362"><span>Findings from your scanners</span><b>12,480</b></button>
               <button class="tier" style="--w:82%" data-h="Proven exploitable" data-p="Pentera tests each exposure safely in production and keeps only what an attacker could actually use." data-l="Weak or reused credentials|96;Misconfigurations|71;Missing patches|47"><span>Exploitable in your environment</span><b>214</b></button>
               <button class="tier" style="--w:64%" data-h="Leads somewhere that matters" data-p="Exposures that chain into a route to a critical asset, such as identity systems, finance systems or backups." data-l="Paths to identity systems|4;Paths to finance systems|5;Paths to backups|2"><span>On a path to a critical asset</span><b>11</b></button>
               <button class="tier last on" style="--w:46%" data-h="Fix these first" data-p="Three fixes close all eleven paths. Pentera Resolve opens the tickets, and a retest proves each fix worked." data-l="Rotate a shared admin password|closes 6;Remove a stale admin account|closes 3;Patch one internet facing server|closes 2"><span>Fix these first</span><b>3</b></button>
             </div>
-            <div class="fun-d">
+<div class="fun-d">
               <h4 id="fH">Fix these first</h4>
               <p id="fP">Three fixes close all eleven paths. Pentera Resolve opens the tickets, and a retest proves each fix worked.</p>
-              <ul id="fL"><li>Rotate a shared admin password<s>closes 6</s></li><li>Remove a stale admin account<s>closes 3</s></li><li>Patch one internet facing server<s>closes 2</s></li></ul>
+              <ul id="fL"><li>Rotate a shared admin password<s>closes 6</s></li><li>Remove a stale admin account<s>closes 3</s></li><li>Patch one internet facing server<s>closes 2</s></li></ul></div></div></div>
+              <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><h3>Pentera Resolve</h3><div class="anl"><b>Pentera Peer</b><ul><li>Three fixes close all eleven attack paths to critical assets.</li><li>Each ticket closes only after a retest proves the fix worked.</li></ul></div><table class="vt"><thead><tr><th>Fix</th><th>Closes</th><th>Owner</th><th>Ticket</th><th>Retest</th></tr></thead><tbody><tr><td>Rotate a shared admin password</td><td>6 paths</td><td>IT operations</td><td><em class="st b">Ticket opened</em></td><td><em class="st g">Retest passed</em></td></tr><tr><td>Remove a stale admin account</td><td>3 paths</td><td>Identity team</td><td><em class="st b">In progress</em></td><td><em class="st n">Retest scheduled</em></td></tr><tr><td>Patch one internet facing server</td><td>2 paths</td><td>Infrastructure</td><td><em class="st b">Ticket opened</em></td><td><em class="st n">Waiting on fix</em></td></tr></tbody></table></div>
+              <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><h3>Ransomware Readiness</h3><div class="anl"><b>Pentera Peer</b><ul><li>Readiness rose from 54 to 72 this quarter after two fixes.</li><li>One exposed file share is the largest remaining gap.</li></ul></div><div class="rr"><div class="gauge" style="--v:72"><b>72</b><span>of 100</span></div><ul class="rrl"><li><span>Backups protected from encryption</span><em class="st g">Held</em></li><li><span>Spread between network segments</span><em class="st n">Contained in 2 of 3</em></li><li><span>Security team alerted</span><em class="st g">Alerted in 4 minutes</em></li><li><span>Critical file shares</span><em class="st r">1 share exposed</em></li></ul></div></div>
+              <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><h3>External Surface</h3><div class="anl"><b>Pentera Peer</b><ul><li>1,284 internet facing assets found and tested this week, 37 of them new.</li><li>9 are exposed and exploitable, and 4 of those are web applications.</li></ul></div><div class="ex"><div class="exs"><div><b>1,284</b><span>assets found</span></div><div><b>37</b><span>new this week</span></div><div><b>9</b><span>exploitable</span></div></div><div class="exr"><span>Web applications</span><i style="--w:56%"></i><b>412</b><em class="st r">4 exploitable</em></div><div class="exr"><span>Remote access</span><i style="--w:5%"></i><b>38</b><em class="st r">2 exploitable</em></div><div class="exr"><span>Cloud storage</span><i style="--w:13%"></i><b>96</b><em class="st r">2 exploitable</em></div><div class="exr"><span>Forgotten subdomains</span><i style="--w:100%"></i><b>738</b><em class="st n">1 exploitable</em></div></div></div>
+              <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><h3>Pentera Peer</h3><p class="peer-cap">Ask about your results in plain language.</p><div class="chat"><p class="q">What should we fix first this week?</p><p class="a">Three fixes close all 11 attack paths to critical assets. Start with the shared admin password, which closes 6 of them.</p><p class="q">How did we trend this quarter?</p><p class="a">Proven exploitable exposures fell from 214 to 61, and ransomware readiness rose from 54 to 72.</p><p class="q">What do I tell the board?</p><p class="a">Risk you can prove went down 71% this quarter, and every fix was retested.</p></div></div>
             </div>
           </div>
         </div>
-        <figcaption><b>Fig. 1</b><span>From 12,480 findings to three fixes. Validation turns a backlog into a short list the team can finish this week. Illustrative data.</span></figcaption>
+        <figcaption><b>Fig. 1</b><span>The Pentera views I would build a first meeting around, from a scanner backlog to three proven fixes. Illustrative data for an example Northwest enterprise, modeled on the Pentera platform.</span></figcaption>
       </figure>
-    </div>
-    <div class="band" role="list">
-      <div role="listitem"><small>Pentera</small><b>$100M+</b><span>ARR, first in its category to get there<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>Customers</small><b>1,200+</b><span>enterprises in more than 60 countries<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>DTCC</small><b>Millions</b><span>saved every time it runs a ransomware test<sup><a href="#s2">2</a></sup></span></div>
-      <div role="listitem"><small>Series D</small><b>$1B+</b><span>valuation after a $60M round in 2025<sup><a href="#s3">3</a></sup></span></div>
-    </div>
+    </section>
 
     <!-- Know -->
     <section id="know">
@@ -732,9 +906,16 @@ h1 mark{padding:0 .12em;border-radius:4px}
         </div>
         <div>
           <h3>The moment</h3>
-          <p>Pentera passed $100M ARR with 1,200+ customers, and added AI red teaming through the EVA acquisition.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup></p>
-          <p>Gartner's CTEM framework made validation a named step in exposure management, and boards now ask CISOs for evidence that controls work.<sup><a href="#s6">6</a></sup></p>
+          <p>Pentera passed $100M ARR with 1,200+ customers, after a $60M Series D at a valuation above $1B, and added AI red teaming through the EVA acquisition.<sup><a href="#s1">1</a>,<a href="#s5">5</a>,<a href="#s6">6</a></sup></p>
+          <p>Gartner's CTEM framework made validation a named step in exposure management, and boards now ask CISOs for evidence that controls work.<sup><a href="#s7">7</a></sup></p>
         </div>
+      </div>
+      <h3 class="ind-h">What Pentera is shipping, and how I would use it</h3>
+      <div class="rsch">
+        <div class="r"><p class="ptag sm">Pentera 8</p><b>Pentera Peer</b><p>An agentic AI interface that answers questions about test results and guides testing in plain language.<sup><a href="#s8">8</a></sup></p><small>Opens with the CISO</small></div>
+        <div class="r"><p class="ptag sm">Partnership</p><b>Threat led</b><p>Recorded Future customers can now check whether emerging threats are exploitable in their own environment.<sup><a href="#s9">9</a></sup></p><small>Opens with threat intel teams</small></div>
+        <div class="r"><p class="ptag sm">Gartner Peer Insights</p><b>Customers' Choice</b><p>For adversarial exposure validation in 2026, rated 4.8 out of 5.<sup><a href="#s2">2</a></sup></p><small>Opens with every buyer</small></div>
+        <div class="r"><p class="ptag sm">AI governance</p><b>ISO/IEC 42001</b><p>The first adversarial exposure validation vendor certified to the standard for AI management systems.<sup><a href="#s1">1</a></sup></p><small>Opens with risk and procurement</small></div>
       </div>
     </section>
 
@@ -782,12 +963,12 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
         <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Pentera</small></button>
       </div>
-      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>Most security teams run a scanner, an EDR, a SIEM and an annual pentest. Each tool reports its own findings, and the backlog grows faster than the team can fix it.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Tool sprawl</b>Every tool reports risk its own way</div><div><b>The backlog</b>Grows faster than the team can close it</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Most teams already find more vulnerabilities than they can fix. The hard part is knowing which ones an attacker can actually use in your environment, and a severity score can't tell you that.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Fix the highest severity first</div><div><b>To</b>Fix what is proven exploitable first</div></div></div></div>
-      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is how breaches actually start. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>20%</b>Of breaches began with an exploited vulnerability, up 34% in a year<sup><a href="#s7">7</a></sup></div><div><b>22%</b>Began with stolen credentials, still the top entry point<sup><a href="#s7">7</a></sup></div></div></div></div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>The security teams I would target run a scanner, an EDR, a SIEM and an annual pentest. Each tool reports its own findings, and the backlog grows faster than the team can fix it.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Tool sprawl</b>Every tool reports risk its own way</div><div><b>The backlog</b>Grows faster than the team can close it</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Teams already find more vulnerabilities than they can fix. The hard part is knowing which ones an attacker can actually use in your environment, and a severity score can't tell you that.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>Fix the highest severity first</div><div><b>To</b>Fix what is proven exploitable first</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is how breaches actually start. We will swap these numbers for your own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>20%</b>Of breaches began with an exploited vulnerability, up 34% in a year<sup><a href="#s10">10</a></sup></div><div><b>22%</b>Began with stolen credentials, still the top entry point<sup><a href="#s10">10</a></sup></div></div></div></div>
       <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The board asks whether the company would survive a ransomware attack. The honest answer is probably, based on last year's pentest, and the environment has changed since.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The CISO answers the board with an assumption</div><div><b>Burnout</b>The team patches around the clock and risk barely moves</div></div></div></div>
       <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading teams test continuously, the way an attacker would, safely in production. They fix what is proven exploitable first and retest to prove the fix worked.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Continuous</b>Validation every week, as the environment changes</div><div><b>Proven</b>Exploitable in your environment, with evidence</div><div><b>Closed loop</b>Fix, then retest to prove it</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Pentera validates internal, external and cloud environments, and Pentera Resolve turns what it proves into fixes.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>Millions</b>Saved by DTCC every time it runs a ransomware test<sup><a href="#s2">2</a></sup></div><div><b>600%</b>Modeled ROI, $2.4M in savings on a $400K investment<sup><a href="#s8">8</a></sup></div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Pentera validates internal, external and cloud environments, and Pentera Resolve turns what it proves into fixes.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>Millions</b>Saved by DTCC every time it runs a ransomware test<sup><a href="#s3">3</a></sup></div><div><b>600%</b>Modeled ROI, $2.4M in savings on a $400K investment<sup><a href="#s11">11</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
         <div><h4>Teach</h4><p>The first call changes how they think about risk. The demo comes after they agree that severity scores alone can't set priorities.</p></div>
@@ -850,17 +1031,17 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <p class="insight">An annual pentest is a snapshot of an environment that changes every week.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises that buy a yearly third party pentest to satisfy compliance.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Job posts for offensive security or pentest roles, and programs such as PCI DSS or SOC 2 that require testing.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Compliance programs such as PCI DSS or SOC 2 that require regular testing, met today with one third party pentest a year.</dd></div>
             <div><dt class="label">Personas</dt><dd>CISO first, then the head of vulnerability management or offensive security.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>What changed in your environment since the last pentest?</li><li>How much of the estate did that test actually cover?</li><li>What does the pentest budget buy each year?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> pentest cadence</li><li data-v="B">Once a year idea</li><li data-v="C">Snapshot question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring an offensive security lead, so guessing the annual pentest is carrying more weight than it should.</p><p>Think testing continuously, safely in production, could help?</p><p><span class="tok">{{customer_name}}</span> now tests 3,500 IPs in every run.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, how much of <span class="tok">{{company}}</span>'s environment has changed since the last annual pentest?</p><p><span class="tok">{{customer_name}}</span> moved to continuous validation and now tests 3,500 IPs in every run.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 3,500 IPs a run sounds like seller cherry picking.</p><p>If we ran one test on a slice of your environment and compared it with your last report, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the current pentest cycle might be working?</p><p>Basically your team would know every week what an attacker could reach.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Forvia<sup><a href="#s9">9</a></sup></span><span><b>Value</b> pentest spend redirected</span></div>
+          <div class="mail-f"><span><b>Proof</b> Forvia<sup><a href="#s12">12</a></sup></span><span><b>Value</b> pentest spend redirected</span></div>
         </article>
       </div>
 
@@ -869,17 +1050,17 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <p class="insight">Most companies find out whether their ransomware defenses work during the attack.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Manufacturing, healthcare, retail and utilities, where downtime is expensive.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Ransomware named as a top risk in the annual report, or security job posts that mention incident response and backup resilience.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Ransomware named as a top risk in the annual report, or a public ransomware incident at a peer in the same industry.</dd></div>
             <div><dt class="label">Personas</dt><dd>CISO first, then the CIO and head of infrastructure.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>When did you last test ransomware defenses end to end?</li><li>What would a week of downtime cost?</li><li>What do you tell the board today?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> ransomware readiness</li><li data-v="B">Ransomware test idea</li><li data-v="C">Board question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{company}}</span> names ransomware as a top risk in its annual report, so guessing the board wants proof that defenses would hold.</p><p>Think running safe ransomware scenarios in your own environment could help?</p><p><span class="tok">{{customer_name}}</span> now saves millions every time it runs a ransomware test.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, if ransomware hit <span class="tok">{{company}}</span> tomorrow, would the board hear a tested answer or a best guess?</p><p><span class="tok">{{customer_name}}</span> runs safe ransomware scenarios in its own environment and saves millions every time it does.</p><p>Would you be opposed to chatting through one scenario for <span class="tok">{{company}}</span>, in Q4?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize millions a test sounds like seller cherry picking.</p><p>If we ran one scenario and showed you how far it got, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like ransomware readiness might already be covered?</p><p>Basically your team could give the board a tested answer.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s2">2</a></sup></span><span><b>Value</b> a tested answer for the board</span></div>
+          <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s3">3</a></sup></span><span><b>Value</b> a tested answer for the board</span></div>
         </article>
       </div>
 
@@ -888,16 +1069,16 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <p class="insight">No team can fix 10,000 findings. Every team can fix the few that lead somewhere.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises with large vulnerability backlogs and scanner fatigue.</dd></div>
-            <div><dt class="label">Signal</dt><dd>Vulnerability management job posts that mention backlog, SLAs or prioritization.</dd></div>
+            <div><dt class="label">Signal</dt><dd>Security leaders who have spoken publicly about scanner fatigue, remediation SLAs or a growing vulnerability backlog.</dd></div>
             <div><dt class="label">Personas</dt><dd>Head of vulnerability management first, then the CISO and IT operations.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How many criticals are open today?</li><li>How do you decide what gets fixed first?</li><li>How do you prove a fix worked?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>Head of Vulnerability Management</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> vulnerability backlog</li><li data-v="B">Fix first idea</li><li data-v="C">Backlog question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{company}}</span> is hiring for vulnerability management with SLA ownership, so guessing the backlog grows faster than the fixes.</p><p>Think seeing which findings are actually exploitable, and fixing those first, could help?</p><p><span class="tok">{{customer_name}}</span> now works from a short list of proven risks.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, of the criticals open at <span class="tok">{{company}}</span> today, how many could an attacker actually use?</p><p>Pentera proves which findings are exploitable, and Pentera Resolve turns them into prioritized fixes and retests each one.</p><p>Open to a quick conversation on whether your team could work from a short list?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize that sounds like seller cherry picking.</p><p>If we took last quarter's criticals and showed which ones an attacker could use, think it's worth a look?</p></div>
-          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the backlog might be under control?</p><p>Basically your team would fix fewer things and close more risk.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the backlog might be under control?</p><p>Basically your team would fix fewer things and close more risk.</p><p>Happy to share how similar teams set it up. No worries if not.</p></div>
           <div class="mail-f"><span><b>Product</b> Pentera Resolve<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a backlog the team can finish</span></div>
         </article>
       </div>
@@ -907,17 +1088,17 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <p class="insight">Boards want to know whether the company would hold up to a real attack. Validation is the only way to answer with evidence.</p>
           <dl class="dl">
             <div><dt class="label">Who</dt><dd>Enterprises building a CTEM or exposure management program.</dd></div>
-            <div><dt class="label">Signal</dt><dd>CISO posts or job posts that mention CTEM, exposure management or board reporting.</dd></div>
+            <div><dt class="label">Signal</dt><dd>CISO talks or posts on CTEM, exposure management or board reporting.</dd></div>
             <div><dt class="label">Personas</dt><dd>CISO first, then the chief risk officer and internal audit.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>What security metric does the board see today?</li><li>How do you show the board that risk went down?</li><li>Where does validation sit in your exposure program?</li></ul></dd></div>
           </dl>
         </div>
         <article class="mail" aria-label="Email sequence">
           <dl class="mail-h"><dt>To</dt><dd>CISO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> exposure program</li><li data-v="B">Board reporting idea</li><li data-v="C">CTEM question</li></ol></dd></dl>
-          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw your post on building an exposure management program at <span class="tok">{{company}}</span>, so guessing validation is the step still done by hand.</p><p>Think proving which exposures are exploitable, and showing the trend to the board, could help?</p><p><span class="tok">{{customer_name}}</span> expanded testing without adding headcount.</p></div>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, what security metric does <span class="tok">{{company}}</span>'s board see today, and does it prove your controls work?</p><p><span class="tok">{{customer_name}}</span> expanded testing without adding headcount.</p><p>Would you be opposed to chatting through what that board view could look like, in Q4?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize no added headcount sounds like seller cherry picking.</p><p>If we mapped one board metric to validated results from your environment, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like board reporting might be in good shape?</p><p>Basically your team would report proven risk going down, quarter over quarter.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s2">2</a></sup></span><span><b>Framework</b> Gartner CTEM<sup><a href="#s6">6</a></sup></span></div>
+          <div class="mail-f"><span><b>Proof</b> DTCC<sup><a href="#s3">3</a></sup></span><span><b>Framework</b> Gartner CTEM<sup><a href="#s7">7</a></sup></span></div>
         </article>
       </div>
     </section>
@@ -934,12 +1115,12 @@ h1 mark{padding:0 .12em;border-radius:4px}
           <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>BAS tools</b><small>Picus, Cymulate, AttackIQ</small></button>
           <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Pentest firms</b><small>Annual third party testing</small></button>
           <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Vulnerability scanners</b><small>Tenable, Qualys, Rapid7</small></button>
-          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Status quo</b><small>In-house red team</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Status quo</b><small>In house red team</small></button>
         </div>
         <div>
           <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
             <div class="bc-top"><h3>Horizon3.ai</h3><span class="threat">High threat</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Fast to deploy, broad internal, external and cloud testing, and accessible pricing that wins in the mid-market.</p></div><div><h4>Where Pentera wins</h4><p>The track record at large enterprises: first in the category past $100M ARR, 1,200+ customers, and a platform built to run safely in production, with Resolve for remediation and AI red teaming through EVA.<sup><a href="#s1">1</a>,<a href="#s5">5</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Fast to deploy, broad internal, external and cloud testing, and accessible pricing that wins in the mid-market.</p></div><div><h4>Where Pentera wins</h4><p>The track record at large enterprises: first in the category past $100M ARR, 1,200+ customers, and a platform built to run safely in production, with Resolve for remediation and AI red teaming through EVA.<sup><a href="#s1">1</a>,<a href="#s6">6</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Which of your peers runs it across tens of thousands of production hosts, and who owns the fixes afterward?</p></div>
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
@@ -959,7 +1140,7 @@ h1 mark{padding:0 .12em;border-radius:4px}
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
             <div class="bc-top"><h3>Status quo</h3><span class="threat">Always present</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A skilled team that knows the environment, at no new cost.</p></div><div><h4>Where Pentera wins</h4><p>Multiplies a small team. DTCC expanded testing without adding headcount.<sup><a href="#s2">2</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A skilled team that knows the environment, at no new cost.</p></div><div><h4>Where Pentera wins</h4><p>Multiplies a small team. DTCC expanded testing without adding headcount.<sup><a href="#s3">3</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>How much of your red team's year goes to repeat tests?</p></div>
           </article>
         </div>
@@ -982,28 +1163,73 @@ h1 mark{padding:0 .12em;border-radius:4px}
       <h3 style="margin-bottom:18px">Where these deals stall, and what I do about it</h3>
       <div class="stalls">
         <div><h4>A proof of concept with no finish line</h4><p>Success criteria are written and agreed with the champion before the first test runs, so the readout ends in a decision.</p></div>
-        <div><h4>Testing approval takes weeks</h4><p>Running safe attacks in production needs change control and sign-off. I start that approval in week one, alongside scoping.</p></div>
+        <div><h4>Testing approval takes weeks</h4><p>Running safe attacks in production needs change control and approval. I start that approval in week one, alongside scoping.</p></div>
         <div><h4>Budget sits in a services line</h4><p>The business case moves pentest and consulting spend to a platform, built with the partner and the CISO's finance lead.</p></div>
         <div><h4>Only practitioners are involved</h4><p>The CISO readout is booked at proof of concept kickoff, so the economic buyer sees the results firsthand.</p></div>
         <div><h4>The partner arrives late</h4><p>Deals are registered with the partner at the first meeting, so pricing, paper and timing are aligned from the start.</p></div>
         <div><h4>The incumbent renewal slips past</h4><p>The pentest and scanner renewal dates go into the mutual plan in discovery, and the close is timed to them.</p></div>
       </div>
-      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
-      <div style="max-width:1060px">
-        <table class="medd stack">
-          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
-          <tbody>
-            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Pentest spend, open criticals, time to fix, test coverage and audit findings</td><td data-h="What I ask">What does testing cost each year, and how much of the estate does it cover?</td><td data-h="Red flag">A risk problem nobody has priced</td></tr>
-            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CISO, with the CIO or CFO on larger multi-year commits</td><td data-h="What I ask">Who signs when security budget moves from services to a platform?</td><td data-h="Red flag">Only practitioners involved by the proof of concept</td></tr>
-            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Safety in production, coverage, accuracy of findings, remediation workflow and reporting</td><td data-h="What I ask">What has to be true for Pentera to be the clear choice?</td><td data-h="Red flag">Criteria written from a competitor's demo</td></tr>
-            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Proof of concept, security review, business case and procurement, with dates</td><td data-h="What I ask">Walk me through how you chose your current testing approach.</td><td data-h="Red flag">No one can describe what happens after the proof of concept</td></tr>
-            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Partner, security questionnaire, legal redlines and the pentest contract's renewal date</td><td data-h="What I ask">Which partner do you buy security through, and when does the pentest contract renew?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
-            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">A failed audit, a ransomware scare, a growing backlog or a board asking for proof</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
-            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A security operations or offensive security lead with influence, who ran the proof and gains from the win</td><td data-h="What I ask">How would you present these results to your CISO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
-            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Horizon3.ai, BAS tools, pentest firms, vulnerability scanners and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the competitor at the proposal</td></tr>
-          </tbody>
-        </table>
+      <h3 style="margin:48px 0 8px">MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Each line needs written proof before the deal counts in my forecast.</p>
+      <div class="mx">
+        <div class="mx-row">
+          <div class="mx-el"><b>M</b><h4>Metrics</h4><span>The number the deal is sold on</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Proven exploitable exposures over time, time to fix, pentest and consulting spend, analyst hours on triage, and what a ransomware outage would cost.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What did last year's pentests cost, and how much of the estate did they cover?</li><li>How many hours does the team spend triaging findings that never get fixed?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Baseline numbers from their own environment, checked by the CISO and finance, written into the business case.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A program problem nobody has priced.</em> I bring the ROI analysis and DTCC's ransomware result and ask them to correct the numbers for their team.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>E</b><h4>Economic buyer</h4><span>The person who can say yes alone</span></div>
+          <div class="mx-c"><small>What I validate</small><p>The CISO, with the CIO or CFO when the spend replaces pentest or consulting budget, and how they made their last security platform decision.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Who owns the pentest and red team budget today?</li><li>If this works, whose board conversation gets easier?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A meeting with the CISO before the proof of value, and their success criteria in their own words.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>"I'll take it to the CISO."</em> I write the champion a one page brief and ask for 20 minutes together to pressure test it.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision criteria</h4><span>How they will judge us</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Safety in production, coverage across internal, external and cloud, proof of exploitability, remediation and retest, reporting for the board, and AI governance.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What has to be true for Pentera to be the clear choice?</li><li>What would make your team uncomfortable running tests in production?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Written proof of value criteria the champion and I drafted together, before the first test runs.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Criteria copied from a scanner or BAS feature list.</em> I reshape the criteria early around proven exploitability and retest, with the Solutions Engineer in the room.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision process</h4><span>Every step to a signature</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Proof of value, change control approval for testing, security and legal review, business case and procurement, with dates.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Walk me through how you chose your last security platform.</li><li>Who approves a test in production, and how long does that take?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A mutual action plan dated back from the pentest renewal or budget deadline, edited by both sides.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>No one can say what happens after the proof of value.</em> I start change control approval in week one and map the post proof steps with the champion.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>P</b><h4>Paper process</h4><span>How the contract actually gets signed</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Security questionnaire, legal redlines, procurement thresholds, the channel partner's role, and the dates of the current pentest contract.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>When does the current pentest contract renew?</li><li>Which partner do you prefer to buy security through?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Security package sent in week one, partner and paper steps in the plan, and a signature date agreed.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Procurement first hears about us at quarter end.</em> I bring the partner in early and meet procurement as soon as the business case is agreed.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>I</b><h4>Identify pain</h4><span>Why they act this year</span></div>
+          <div class="mx-c"><small>What I validate</small><p>A failed audit, a pentest finding that repeated, a peer hit by ransomware, a growing backlog, or a board asking whether controls work.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What happens if nothing changes for the next 12 months?</li><li>What did the last pentest find that the one before also found?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Pain tied to a dollar figure and a date, confirmed by the CISO and one other leader.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Pain with no cost and no deadline.</em> I go back to the rational drowning step with their own numbers until it has both.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Champion</h4><span>Who sells when I am not in the room</span></div>
+          <div class="mx-c"><small>What I validate</small><p>A head of security operations, vulnerability management or offensive security with influence, who wins personally if this succeeds. I test it by asking them to act.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>How would you present the proof of value results to your CISO?</li><li>Could you get us 30 minutes with IT operations this week?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>They shared internal context, coached me on the room, and got me a meeting I could not get alone.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A fan of the product with no pull on the decision.</em> I keep them close and multithread to someone who can move the deal.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Competition</h4><span>Every option they could pick</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Horizon3.ai, BAS tools, pentest firms, scanners, an in house red team and doing nothing, plus who inside the account favors each.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>If you don't choose us, what do you do instead?</li><li>Who on the team would push for that option?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Each alternative named with its internal sponsor, and our strengths built into the proof of value criteria.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>We learn about the competitor at the proposal.</em> I ask the battlecard questions in discovery, so the criteria reflect where Pentera wins.</p></div>
+        </div>
       </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the CISO has confirmed the metrics, the proof of value has met written criteria, change control and paper steps are dated in the mutual plan, and the champion has been tested.</span></div>
     </section>
 
     <!-- About -->
@@ -1013,27 +1239,28 @@ h1 mark{padding:0 .12em;border-radius:4px}
         <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
       </div>
       <div class="figs">
-        <div><b>$19.6M</b><span>Self-sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
         <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
         <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
         <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
       </div>
       <div style="max-width:1060px">
         <table class="fit stack">
-          <thead><tr><th>What the role asks for<sup><a href="#s10">10</a></sup></th><th>Where I have done it</th></tr></thead>
+          <thead><tr><th>What the role asks for<sup><a href="#s13">13</a></sup></th><th>Where I have done it</th></tr></thead>
           <tbody>
             <tr><td>Full cycle enterprise sales, through proof of concept</td><td data-h="Where I have done it">Ran pilots and evaluations through close at Netradyne, and closed a $1.2M deal with Uber at Jamf.</td></tr>
-            <tr><td>Self-sourced pipeline</td><td data-h="Where I have done it">$19.6M self-sourced at Netradyne, and $750K in my first quarter at Falkon.</td></tr>
+            <tr><td>Self sourced pipeline</td><td data-h="Where I have done it">$19.6M self sourced at Netradyne, and $750K in my first quarter at Falkon.</td></tr>
             <tr><td>Selling security outcomes to CISOs</td><td data-h="Where I have done it">Sold Jamf's device management and security products to IT and security leaders, framed in risk, cost and audit terms.</td></tr>
-            <tr><td>AI-assisted selling and accurate forecasting</td><td data-h="Where I have done it">Use AI tools for account research and personalized outreach, and forecast on MEDDPICC stage criteria. Trained in MEDDPICC and Command of the Message.</td></tr>
-            <tr><td>Channel and partner selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to Pentera's partner-led deals.</td></tr>
-            <tr><td>Travel across the territory</td><td data-h="Where I have done it">Based in Boise, inside the territory, and have already opened Northwest enterprises such as Albertsons.</td></tr>
+            <tr><td>AI assisted selling and accurate forecasting</td><td data-h="Where I have done it">Use AI tools for account research and personalized outreach, and forecast on MEDDPICC stage criteria. Certified in Command of the Message at Jamf.</td></tr>
+            <tr><td>Fluency in offensive security</td><td data-h="Where I have done it">Sold security software to IT and security leaders at Jamf. In my first 30 days I complete Pentera's product training, shadow Solutions Engineer demos and study Pentera Labs research until I can teach the first meeting myself.</td></tr>
+            <tr><td>Channel and partner selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to Pentera's partner led deals.</td></tr>
+            <tr><td>Travel across the territory</td><td data-h="Where I have done it">Based in Boise, and have already opened Northwest enterprises such as Albertsons.</td></tr>
           </tbody>
         </table>
       </div>
       <div class="letter">
         <h3>Why Pentera</h3>
-        <p>I have sold to security teams whose tools all said they were covered. Pentera is the product that proves it either way. I live in this territory, and building the category account by account across the Northwest is the work I want to do.</p>
+        <p>I have sold to security teams whose tools all said they were covered. Pentera is the product that proves it either way. I'm not a pentester, and the CISO doesn't need me to be one. My job is to bring the business case, the proof and the right Solutions Engineer into the room, then run a tight deal to close. Pentera passed $100M ARR as the first in its category, and building that category account by account across the Northwest is the work I want to do.<sup><a href="#s1">1</a></sup></p>
         <p class="sig">Eric Iannello, Boise, Idaho</p>
       </div>
     </section>
@@ -1053,9 +1280,9 @@ h1 mark{padding:0 .12em;border-radius:4px}
             <li>Work with sales leadership, Sales Engineers and top reps to learn what's winning and where deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
             <li>Meet the channel team and the partners who cover the Northwest</li>
             <li>Build battlecards for Horizon3.ai, BAS tools, pentest firms and scanners</li>
-            <li>Audit named accounts for security hiring, compliance programs, pentest renewals and dormant opportunities</li>
+            <li>Audit named accounts for compliance programs, pentest renewal dates, recent incidents at peers and dormant opportunities</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
-            <li>Launch the first self-sourced wave, each account with its own insight and proof point</li>
+            <li>Launch the first self sourced wave, each account with its own insight and proof point</li>
           </ul>
           <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a tested talk track</div></div>
         </div>
@@ -1103,15 +1330,18 @@ h1 mark{padding:0 .12em;border-radius:4px}
       <h4>Sources</h4>
       <ol class="sources">
         <li id="s1"><a href="https://www.prnewswire.com/news-releases/pentera-closes-record-setting-year-becomes-first-in-adversarial-exposure-validation-to-surpass-100m-arr-302653736.html" target="_blank" rel="noopener">PR Newswire, Pentera becomes first in adversarial exposure validation to surpass $100M ARR</a></li>
-        <li id="s2"><a href="https://pentera.io/resources/case-studies/dtcc-customer-testimonial/" target="_blank" rel="noopener">Pentera, DTCC case study</a></li>
-        <li id="s3"><a href="https://techcrunch.com/2025/03/12/pentera-nabs-60m-at-a-1b-valuation-to-build-simulated-network-attacks-to-train-security-teams/" target="_blank" rel="noopener">TechCrunch, Pentera raises $60M at a $1B+ valuation</a></li>
+        <li id="s2"><a href="https://www.prnewswire.com/news-releases/pentera-named-a-customers-choice-in-the-2026-gartner-peer-insights-voice-of-the-customer-for-adversarial-exposure-validation-302867788.html" target="_blank" rel="noopener">PR Newswire, Pentera named a Customers' Choice in the 2026 Gartner Peer Insights Voice of the Customer for Adversarial Exposure Validation</a></li>
+        <li id="s3"><a href="https://pentera.io/resources/case-studies/dtcc-customer-testimonial/" target="_blank" rel="noopener">Pentera, DTCC case study</a></li>
         <li id="s4"><a href="https://www.prnewswire.com/news-releases/pentera-acquires-ai-remediation-platform-devocean-to-automate-cyber-risk-reduction-302579457.html" target="_blank" rel="noopener">PR Newswire, Pentera acquires DevOcean</a></li>
-        <li id="s5"><a href="https://www.prnewswire.com/news-releases/pentera-acquires-ai-red-teaming-leader-eva-information-security-302605484.html" target="_blank" rel="noopener">PR Newswire, Pentera acquires EVA Information Security</a></li>
-        <li id="s6"><a href="https://cloudsecurityalliance.org/blog/2024/05/24/the-transformative-power-of-continuous-threat-exposure-management-myth-or-reality" target="_blank" rel="noopener">Cloud Security Alliance, Continuous threat exposure management</a></li>
-        <li id="s7"><a href="https://www.verizon.com/business/resources/reports/2025-dbir-executive-summary.pdf" target="_blank" rel="noopener">Verizon, 2025 Data Breach Investigations Report</a></li>
-        <li id="s8"><a href="https://pentera.io/resources/whitepapers/pentera-return-on-investment-analysis/" target="_blank" rel="noopener">Pentera, ROI analysis</a></li>
-        <li id="s9"><a href="https://pentera.io/resources/case-studies/forvia-customer-testimonial/" target="_blank" rel="noopener">Pentera, Forvia case study</a></li>
-        <li id="s10"><a href="https://pentera.io/careers/co/america/5E.276/enterprise-account-executive-pnw/all/" target="_blank" rel="noopener">Pentera, Enterprise Account Executive, PNW job post</a></li>
+        <li id="s5"><a href="https://techcrunch.com/2025/03/12/pentera-nabs-60m-at-a-1b-valuation-to-build-simulated-network-attacks-to-train-security-teams/" target="_blank" rel="noopener">TechCrunch, Pentera raises $60M at a $1B+ valuation</a></li>
+        <li id="s6"><a href="https://www.prnewswire.com/news-releases/pentera-acquires-ai-red-teaming-leader-eva-information-security-302605484.html" target="_blank" rel="noopener">PR Newswire, Pentera acquires EVA Information Security</a></li>
+        <li id="s7"><a href="https://cloudsecurityalliance.org/blog/2024/05/24/the-transformative-power-of-continuous-threat-exposure-management-myth-or-reality" target="_blank" rel="noopener">Cloud Security Alliance, Continuous threat exposure management</a></li>
+        <li id="s8"><a href="https://www.prnewswire.com/news-releases/pentera-introduces-adversarial-ai-agent-to-guide-offensive-security-practitioners-302718061.html" target="_blank" rel="noopener">PR Newswire, Pentera introduces adversarial AI agent to guide offensive security practitioners</a></li>
+        <li id="s9"><a href="https://pentera.io/press-release/pentera-recorded-future-threat-led-exposure-validation/" target="_blank" rel="noopener">Pentera, Pentera and Recorded Future partner to deliver threat led exposure validation</a></li>
+        <li id="s10"><a href="https://www.verizon.com/business/resources/reports/2025-dbir-executive-summary.pdf" target="_blank" rel="noopener">Verizon, 2025 Data Breach Investigations Report</a></li>
+        <li id="s11"><a href="https://pentera.io/resources/whitepapers/pentera-return-on-investment-analysis/" target="_blank" rel="noopener">Pentera, ROI analysis</a></li>
+        <li id="s12"><a href="https://pentera.io/resources/case-studies/forvia-customer-testimonial/" target="_blank" rel="noopener">Pentera, Forvia case study</a></li>
+        <li id="s13"><a href="https://pentera.io/careers/co/america/5E.276/enterprise-account-executive-pnw/all/" target="_blank" rel="noopener">Pentera, Enterprise Account Executive, PNW job post</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the Pentera Enterprise Account Executive, PNW role. Not affiliated with or endorsed by Pentera. Figures come from public and third party sources as of September 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>
@@ -1173,6 +1403,22 @@ h1 mark{padding:0 .12em;border-radius:4px}
   group(sts,step);
   document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
   document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Console tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+
+  // Run validation
+  var run=document.getElementById('pvRun'),stg=[].slice.call(document.querySelectorAll('#pvStages li')),stat=document.getElementById('pvStatus');
+  var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  run.addEventListener('click',function(){
+    run.disabled=true;stg.forEach(function(li){li.className=''});stat.textContent='Validation running, safely in production.';var i=0;
+    (function next(){
+      if(i>0)stg[i-1].className='done';
+      if(i<stg.length){stg[i].className='doing';i++;setTimeout(next,fast?0:450);}
+      else{stat.textContent='Validation complete. 214 exploitable, 11 paths to critical assets, 3 fixes close them all.';run.disabled=false;run.textContent='Run again';select(dts,0);}
+    })();
+  });
 
   // Battlecards
   var cbs=[].slice.call(document.querySelectorAll('.cbtn'));

@@ -894,100 +894,342 @@ mark{background:var(--blue);color:#fff}
 .panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
 .ind-h{margin:48px 0 18px;max-width:1060px}
 .plays-note{margin-top:14px;font-size:14px;color:#FFE6EA;max-width:760px}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#3A2530}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
+
+/* ===== gambit.security UI layer: dark plum throughout ===== */
+:root{--plum:#160511;--plum2:#1E0716;--surf:#24091B;--surf2:#2E0F23;--line:#3E1A2E;--txt:#F3E8EC;--mut:#C9B2BC;--crim:#DE2C45;--pink:#FC637D;--soft:0 20px 40px -24px rgba(0,0,0,.7)}
+body{background:var(--plum);color:var(--txt)}
+.shell{display:block;max-width:none;padding:0}
+.side,.topbar{display:none!important}
+main{padding:0}
+main > section:not(.ghero):not(.gapp-wrap),main > footer,main > .gkpis{max-width:1240px;margin-inline:auto}
+main > section.panel{margin-inline:max(20px,calc((100% - 1200px)/2))}
+@media (max-width:720px){main > section.panel{margin-inline:0;padding-inline:10px!important;border-radius:0}}
+main > section:not(.panel){border-top-color:var(--line)!important}
+h1,.sh h2,.contact h2,.bc h3{font-weight:600;letter-spacing:-.025em}
+.sh h2,.contact h2,.three h3,.ind-h,h3,.phase h3,.path h4,.stalls h4,.mx-el h4,.letter h3{color:#fff}
+.sh p,.three p,.note,.map-note,.acc,.reg td,.path p,.stalls p,.mx-c p,.mx-c li,.mx-sub,.mx-el span,.fit td,.figs span,.letter p,.contact p,.disc,.sources li,.r p{color:var(--mut)!important}
+.fit td:first-child,.reg td:first-child{color:#fff!important}
+a{color:var(--pink)}
+.sources a{color:var(--mut)}
+sup a{color:var(--pink)!important}
+.mail sup a{color:var(--link)!important}
+/* Announcement bar and nav */
+.banner{background:#0E030A;color:#fff;border:0;border-bottom:1px solid var(--line);font-size:14px;padding:9px 16px}
+.banner b{color:#fff}.banner a{color:var(--pink);text-decoration:underline;text-underline-offset:3px}
+.gnav-wrap{position:sticky;top:0;z-index:30;background:rgba(22,5,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid #5A2A3F}
+.gnav{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:22px;padding:14px 40px}
+.glogo{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;flex:none}
+.gmark{width:22px;height:22px;border-radius:50%;border:3px solid #fff;position:relative}
+.gmark:after{content:"";position:absolute;right:-7px;top:-7px;width:7px;height:7px;background:var(--pink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.glogo span:last-child{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.gnav .toc{display:flex;gap:2px;list-style:none;margin:0 auto 0 12px;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.gnav .toc::-webkit-scrollbar{display:none}
+.gnav .toc a{display:block;padding:7px 10px;border:0;border-radius:999px;color:#C9B2BC;font-size:15px;font-weight:500;white-space:nowrap;text-decoration:none;margin:0}
+.gnav .toc a:hover{color:#fff}
+.gnav .toc a.active{color:#fff;background:#2E0F23;border:0}
+.gcta{flex:none;background:var(--crim);color:#fff;font-weight:500;font-size:15px;padding:10px 18px;border-radius:999px;text-decoration:none}
+.gcta:hover{background:#C41E37}
+@media (max-width:1100px){.glogo span:last-child{display:none}}
+@media (max-width:820px){.gcta{display:none}.gnav{padding:10px 12px;gap:10px}}
+/* Hero */
+.ghero{display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;gap:40px!important;align-items:center!important;border-radius:0!important;margin:0;padding:80px max(40px,calc((100% - 1160px)/2)) 90px!important;background:radial-gradient(70% 60% at 85% 100%,rgba(222,44,69,.28),transparent 70%),linear-gradient(180deg,#160511,#1C0614)!important;color:#fff!important}
+.ghero:after{display:none}
+.geyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);font-weight:600;margin-bottom:14px}
+.ghero h1{font-size:clamp(44px,5.4vw,74px);line-height:1.02;color:#fff;font-weight:600;letter-spacing:-.03em}
+.gsub{font-size:clamp(20px,2vw,26px);font-weight:500;color:#fff;margin-top:12px}
+.gline{border:0;border-top:1px solid #8A5A70;max-width:420px;margin:28px 0 26px}
+.ghero .ctas{margin-top:0}
+.ghero .btn{border-radius:999px;border:1px solid #8A5A70;color:#fff;box-shadow:none;font-weight:500}
+.ghero .btn.pri{background:var(--crim);border-color:var(--crim);color:#fff}
+.ghero .btn:hover{box-shadow:none;background:rgba(255,255,255,.06)}
+.ghero .btn.pri:hover{background:#C41E37}
+.ghero .lede{color:#C9B2BC;font-size:17px;margin-top:24px;max-width:520px}
+.ghero .lede b{color:#fff}
+@media (max-width:900px){.ghero{grid-template-columns:1fr!important;padding:48px 20px 56px!important}}
+/* Tower */
+.tower-wrap{display:grid;justify-items:center;gap:14px}
+.tower{display:grid;gap:6px;justify-items:center;transform:rotate(-6deg);padding:10px 0}
+.blk{font:600 14px var(--body);letter-spacing:.02em;color:#F3E8EC;height:52px;width:min(320px,70vw);border:0;border-radius:4px;cursor:pointer;background:linear-gradient(180deg,#5A1A32,#3A0C20);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 20px -10px rgba(0,0,0,.8);transition:transform .25s,background .2s}
+.blk:nth-child(odd){transform:translateX(-14px)}
+.blk:nth-child(even){transform:translateX(14px)}
+.blk:hover{background:linear-gradient(180deg,#6E2440,#4A1028)}
+.blk.on{background:linear-gradient(180deg,#FF6B84,#DE2C45);color:#fff;box-shadow:0 0 40px rgba(252,99,125,.55);transform:translateX(70px)}
+.blk:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.tower-say{max-width:420px;font-size:15px;color:#E9D7DE;border-left:2px solid var(--pink);padding-left:12px;min-height:66px}
+.tower-say b{display:block;color:#fff;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.tower-hint{font-size:12.5px;color:#9C8090}
+@media (prefers-reduced-motion:reduce){.blk{transition:none}}
+@media (max-width:520px){.blk.on{transform:translateX(30px)}}
+/* Trust row */
+.gtrust{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;padding:22px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:19px;font-weight:600;color:#E9D7DE;margin:0}
+.gt-l{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
+/* Balens mock */
+.gapp-wrap{padding:56px 20px 24px!important;margin:0;border:0!important}
+.gapp-wrap figure{max-width:1160px;margin:0 auto}
+.gapp-wrap figcaption,.gapp-wrap figcaption span{color:var(--mut)}
+.app{background:#1A0712;border:1px solid #5A2A3F;border-radius:14px;box-shadow:0 40px 80px -30px rgba(222,44,69,.35);overflow:hidden;color:var(--txt)}
+.app-top{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);background:#12040D}
+.app-name{font-size:16px;font-weight:700;color:#fff}
+.app-env{font-family:var(--mono);font-size:11.5px;color:#9C8090}
+.grun{margin-left:auto;font:500 14px var(--body);background:var(--crim);color:#fff;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+.grun:disabled{opacity:.6;cursor:default}
+.grun:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.gstages{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid var(--line);counter-reset:s}
+.gstages li{counter-increment:s;padding:10px 12px;font-size:12.5px;font-weight:500;color:#9C8090;border-left:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.gstages li:first-child{border-left:0}
+.gstages li:before{content:counter(s);flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid #5A2A3F;display:grid;place-items:center;font-family:var(--mono);font-size:10.5px}
+.gstages li.doing{color:#fff;background:#2E0F23}
+.gstages li.doing:before{border-color:var(--pink);color:var(--pink)}
+.gstages li.done{color:#fff}
+.gstages li.done:before{content:"";background:var(--crim) no-repeat center/11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E");border-color:var(--crim)}
+.gstatus{font-family:var(--mono);font-size:12px;color:#E9D7DE;padding:8px 16px;border-bottom:1px solid var(--line)}
+.app-body{display:grid;grid-template-columns:200px minmax(0,1fr)}
+.app-side{border-right:1px solid var(--line);padding:12px 10px;min-width:0}
+.app-tabs{display:grid;gap:2px;min-width:0}
+.dtab{font:500 14px var(--body);text-align:left;padding:9px 12px;border-radius:8px;background:none;border:0;color:#C9B2BC;cursor:pointer;white-space:nowrap}
+.dtab:hover{background:#24091B;color:#fff}
+.dtab[aria-selected="true"]{background:#2E0F23;color:#fff;box-shadow:inset 3px 0 0 var(--crim)}
+.dtab:focus-visible{outline:2px solid var(--pink);outline-offset:1px}
+.app-main{padding:18px 22px 24px;min-width:0}
+.dview h3{font-size:21px;font-weight:600;color:#fff}
+.anl{border:1px solid var(--line);border-radius:10px;background:#12040D;padding:10px 14px;margin:12px 0 16px}
+.anl b{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--pink)}
+.anl b:before{content:"";width:10px;height:10px;background:var(--pink);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.anl ul{list-style:none;margin-top:4px}
+.anl li{font-size:13.5px;padding:3px 0;color:#E9D7DE}
+.rmap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.rmap .custs{border:0;padding:0}
+.rmap .cust{background:#24091B;border-color:#5A2A3F}
+.rmap .cust span,.rmap .cust span small{color:#F3E8EC}
+.rmap .cust span small{color:#9C8090}
+.rmap .cust.on{background:#3A1222;border-color:var(--pink)}
+.rmap .cust em{color:#1A0712}
+.rmap .fun-d{padding:0}
+.rmap .fun-d h4{color:#9C8090}
+.rmap .fun-d p{color:#F3E8EC}
+.rmap .dec div{background:#24091B;border-color:#5A2A3F}
+.rmap .dec small{color:#9C8090}.rmap .dec b{color:#fff}
+.rmap .fun-d li{color:#E9D7DE;border-bottom-color:#3E1A2E}
+.rmap .fun-d li s{background:#3A1222;color:#FFD3DB;border-color:#5A2A3F}
+.rmap .why{color:#9C8090}
+.vt{width:100%;border-collapse:collapse;font-size:13.5px}
+.vt th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#9C8090;font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line)}
+.vt td{padding:10px;border-bottom:1px solid #2A0E1F;color:#E9D7DE}
+.vt td:first-child{font-weight:600;color:#fff}
+.st{font-style:normal;font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.st.g{background:#12351F;color:#9BE7B4}.st.n{background:#2E1A26;color:#D9C3CC}.st.r{background:#4A0F1C;color:#FFB3C0}.st.b{background:#2A1A3E;color:#D2C2FF}
+.vfoot{font-size:12.5px;color:#9C8090;margin-top:12px}
+.rr{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:center}
+.gauge{width:160px;height:160px;border-radius:50%;background:conic-gradient(var(--crim) calc(var(--v)*1%),#2E0F23 0);display:grid;place-items:center;align-content:center;position:relative}
+.gauge:before{content:"";position:absolute;inset:16px;border-radius:50%;background:#1A0712}
+.gauge b,.gauge span{position:relative}
+.gauge b{font-size:46px;font-weight:600;line-height:1;color:#fff}
+.gauge span{font-size:12px;color:#9C8090}
+.scr{display:grid;grid-template-columns:170px minmax(0,1fr) 36px;gap:10px;align-items:center;font-size:13.5px;color:#E9D7DE;padding:6px 0}
+.scr i{height:8px;border-radius:4px;background:linear-gradient(90deg,var(--pink) var(--w),#2E0F23 var(--w))}
+.scr b{font-family:var(--mono);font-size:12px;font-weight:500;text-align:right;color:#fff}
+@media (max-width:1000px){.rmap{grid-template-columns:1fr}}
+@media (max-width:900px){.app-body{grid-template-columns:1fr}.app-side{border-right:0;border-bottom:1px solid var(--line);padding:8px}.app-tabs{display:flex;overflow-x:auto;scrollbar-width:none}.dtab[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--crim)}.app-env{display:none}.gstages li{font-size:0;justify-content:center;padding:8px 4px}.gstages li:before{font-size:10.5px}.rr{grid-template-columns:1fr;justify-items:center}.scl{width:100%}.scr{grid-template-columns:1fr 36px;row-gap:4px}.scr i{grid-column:1/-1;grid-row:2}}
+@media (max-width:620px){.vt thead{display:none}.vt tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid #2A0E1F}.vt td{border:0;padding:2px 6px}.vt td:nth-child(n+3){grid-column:1/-1}.app-main{padding:14px 12px 18px}.gapp-wrap{padding:40px 8px 20px!important}}
+/* KPI and research cards */
+.gkpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:24px var(--gut) 0}
+.gkpi{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.gkpi small{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
+.gkpi b{display:block;font-size:clamp(32px,3.4vw,46px);font-weight:600;letter-spacing:-.02em;line-height:1.05;color:#fff;margin-top:6px}
+.gkpi p{font-size:14px;color:var(--mut);margin-top:6px}
+@media (max-width:1000px){.gkpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.gkpis{grid-template-columns:1fr}}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column}
+.r .chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.chips span{font-size:10.5px;font-weight:600;background:#3A1222;border-radius:999px;padding:2px 9px;color:#FFD3DB}
+.r b{font-size:24px;font-weight:600;color:#fff;line-height:1.15}
+.r p{font-size:14.5px;margin:6px 0 12px}
+.r small{margin-top:auto;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--pink)}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+.evt{max-width:1060px;margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15px;color:var(--mut);background:#2E0F23;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.evt b{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
+@media (max-width:560px){.evt{grid-template-columns:1fr;gap:4px}}
+#know .three{max-width:1060px;gap:14px}
+#know .three > div{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+/* Dark versions of the shared components */
+.reg th,.fit th,.medd th{color:#9C8090!important;border-color:#5A2A3F!important}
+.reg td,.fit td{border-color:var(--line)!important}
+.reg tr.on td{background:#24091B!important}
+.reg .lead,.ind .lead{background:#24091B!important;color:#E9D7DE}
+.reg .lead b{color:var(--pink)!important}
+.reg .st{color:#9C8090!important}
+.tiles2 .col-h{color:#9C8090;border-color:#5A2A3F!important}
+.sq{background:#24091B!important;color:#fff!important;border-color:#5A2A3F!important}
+.sq small{color:#C9B2BC!important}
+.sq.on{background:var(--crim)!important;border-color:var(--crim)!important}
+.sq.on small{color:#fff!important}
+.sq.home:after{background:#fff}
+.path li:after{background:var(--crim)}
+.path .when{color:#9C8090}
+.path .exit{background:#24091B!important;color:#E9D7DE!important;border-left-color:var(--crim)!important}
+.path .exit b{color:#9C8090}
+.path .m{background:#3A1222!important;color:#FFD3DB!important}
+.path li{border-color:var(--line)!important}
+.stalls div{background:var(--surf)!important;border:1px solid var(--line)!important;border-top:3px solid var(--crim)!important;box-shadow:none!important;border-radius:12px}
+.cbtn{background:var(--surf)!important;border:1px solid var(--line)!important;color:#fff!important}
+.cbtn small{color:#9C8090!important}
+.cbtn[aria-selected="true"]{background:#3A1222!important;border-color:var(--crim)!important}
+.cbtn[aria-selected="true"] small{color:#FFD3DB!important}
+.bc{background:#12040D!important;border:1px solid var(--line)!important;box-shadow:none!important}
+.mx{border-top:1px solid #5A2A3F}
+.mx-row{border-bottom-color:var(--line)!important}
+.mx-el b{background:var(--crim);color:#fff;border-radius:50%}
+.mx-c small{color:#9C8090}
+.mx-c li{border-left-color:var(--crim)}
+.mx-f{background:#24091B!important}
+.mx-f em{color:#FFB3C0!important}
+.mx-rule{background:#2E0F23!important;box-shadow:none!important;border:1px solid var(--line)}
+.mx-rule span{color:#E9D7DE}
+.figs{border-color:#5A2A3F!important}
+.figs div{border-color:var(--line)!important}
+.figs b{color:#fff}
+.letter{background:var(--surf)!important;border-left-color:var(--crim)!important}
+.letter .sig{color:#9C8090}
+.card-sig dt{color:#9C8090}.card-sig dd a{color:#fff}
+.contact{border-color:var(--line)!important}
+footer h4{color:#fff}
+.panel.honey{background:#2A0C1E!important}
+.panel.honey .sh h2{color:#fff}
+.phase{background:var(--surf)!important;border-color:var(--line)!important}
+.phase li{color:#E9D7DE!important}
+.phase .when{color:var(--pink)!important}
+.out div{background:#12040D!important;color:#E9D7DE!important;border-color:var(--line)!important}
+.out b{color:var(--pink)!important}
+.panel.ink{background:#0E030A!important;border:1px solid var(--line)}
+.btn{border-radius:999px}
+figcaption b{color:#fff!important}
+.step-p h3,.step-p .facts2 b{color:var(--ink)!important}
+.step-p sup a,.facts2 sup a{color:#B3182F!important}
+.panel.sky .sh p{color:#FFE6EA!important}
+.cbtn b{color:#fff!important}
+.panel.ink{border:0!important}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for <b>Josh Bey</b> and the Gambit go to market team, by Eric Iannello</div>
+<div class="banner">Prepared for <b>Josh Bey</b>, Cyber Resilience GTM Leader, by Eric Iannello. <a href="#plan">See the 90 day plan</a></div>
 
-<div class="topbar"><a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1A0712"/><rect x="7" y="19" width="18" height="5" rx="1" fill="#fff"/><rect x="9" y="13" width="14" height="5" rx="1" fill="#DE2C45"/><rect x="11" y="7" width="10" height="5" rx="1" fill="#fff"/></svg><b>Gambit plan</b></a><a href="#contact">Contact</a></div>
-
-<div class="shell">
-  <aside class="side" aria-label="Contents">
-    <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1A0712"/><rect x="7" y="19" width="18" height="5" rx="1" fill="#fff"/><rect x="9" y="13" width="14" height="5" rx="1" fill="#DE2C45"/><rect x="11" y="7" width="10" height="5" rx="1" fill="#fff"/></svg><span><b>Pacific region</b><small>Gambit plan</small></span></a>
+<header class="gnav-wrap">
+  <nav class="gnav" aria-label="Contents">
+    <a class="glogo" href="#top"><span class="gmark" aria-hidden="true"></span><span>eric iannello</span></a>
     <ul class="toc" id="toc">
       <li><a href="#top">Overview</a></li>
-      <li><a href="#know">What I know</a></li>
-      <li><a href="#pov">The conversation</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
       <li><a href="#territory">Territory</a></li>
       <li><a href="#plays">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
-      <li><a href="#deal">Running the deal</a></li>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#plan">First 90 days</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plan">90 days</a></li>
     </ul>
-    <div class="side-foot">
-      <span>Eric Iannello</span>
-      <span>Boise, Idaho</span>
-      <a href="mailto:eiannello72@gmail.com">eiannello72@gmail.com</a>
-    </div>
-  </aside>
+    <a class="gcta" href="#contact">Request a meeting</a>
+  </nav>
+</header>
 
+<div class="shell">
   <main>
     <!-- Overview -->
-    <section id="top" class="hero grain">
-      <div>
-        <div class="doc-meta">
-          <span class="status"><b>Proposal</b></span>
-          <span>Enterprise Account Executive, PST</span>
-          <span>October 2026</span>
-        </div>
-        <h1>Backups report success. Gambit proves what will <mark>recover.</mark></h1>
-        <p class="lede">Gambit came out of stealth in February 2026 with $61M from Spark Capital, Kleiner Perkins and Cyberstarts. Its Balens platform maps each business application to the cloud, backup, IaC and security tools it depends on, and checks continuously that it can come back.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup> How I read the company, the plan to approach the territory, making immediate impact, and continual delivery leveraging Command of the Message and MEDDPICC.</p>
+    <section id="top" class="hero ghero">
+      <div class="ghero-copy">
+        <p class="geyebrow">Enterprise Account Executive, PST</p>
+        <h1>Outsmart disruption, account by account</h1>
+        <p class="gsub">Command resilience across the Pacific time zone</p>
+        <hr class="gline">
         <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#contact">Contact me</a></div>
+        <p class="lede">Everything drifts. Threats evolve. Every CISO and CIO in the West should know what will hold, and I want to be the one who shows them with Balens.<sup><a href="#s1">1</a></sup></p>
       </div>
-      <div class="art">
-        <div class="mods" role="group" aria-label="Balens platform. Select a square to read about it.">
-          <button class="mod" data-t="Application map" data-d="Maps business applications to the infrastructure, data and services they depend on, with no manual tagging project.">App map</button>
-          <button class="mod" data-t="Backup coverage" data-d="Checks coverage across every backup vendor and flags gaps, immutability violations and retention misconfigurations.">Backups</button>
-          <button class="mod" data-t="Drift detection" data-d="Compares the state defined in infrastructure as code with what is actually running.">IaC drift</button>
-          <button class="mod" data-t="Recovery paths" data-d="Validates continuously whether each critical application can be recovered, across disruption scenarios.">Recovery paths</button>
-          <button class="mod core on" data-t="Balens" data-d="Cyber resilience posture management. One view of whether the business can keep running through ransomware, outages and drift.">Balens</button>
-          <button class="mod" data-t="Resilience score" data-d="Scores resilience posture for each application, so leaders can track it like any other risk metric.">Score</button>
-          <button class="mod" data-t="Compliance evidence" data-d="Produces audit ready evidence for regulators, auditors and SLA commitments.">Evidence</button>
-          <button class="mod" data-t="Wiz integration" data-d="Wiz issues and data sensitivity attach to recovery gaps, so fixes are ranked by business impact.">Wiz</button>
-          <button class="mod" data-t="Cost optimization" data-d="Surfaces backup and recovery spend that protects nothing the business needs.">Cost</button>
+      <div class="tower-wrap">
+        <div class="tower" role="group" aria-label="Pull a block to see what stops being recoverable.">
+          <button class="blk b1" data-t="Identity provider" data-d="Checkout, customer login and internal reporting all depend on it. Without a tested restore, none of them come back on time.">Identity</button>
+          <button class="blk b2" data-t="Backups" data-d="Copies exist, but two data stores added this year have no backup policy, so store inventory cannot be rebuilt.">Backups</button>
+          <button class="blk b3 on" data-t="Infrastructure as code" data-d="The code that rebuilds customer login no longer matches production, so a clean rebuild would come back different.">IaC</button>
+          <button class="blk b4" data-t="Network" data-d="Settings changed outside Terraform last week, and the payments recovery path now breaks at the network layer.">Network</button>
+          <button class="blk b5" data-t="Data" data-d="Order data recovers within its target, and the copies are immutable. This block holds.">Data</button>
+          <button class="blk b6" data-t="Security exposure" data-d="Wiz flags an exposed admin role on the same system that holds the backups, which raises the priority of the recovery gap.">Exposure</button>
         </div>
-        <p class="hx-say" id="hxSay" aria-live="polite"><b>Balens</b>Cyber resilience posture management. One view of whether the business can keep running through ransomware, outages and drift.</p>
-        <p class="hx-hint">Select a square to explore the platform</p>
+        <p class="tower-say" id="twSay" aria-live="polite"><b>Infrastructure as code</b>The code that rebuilds customer login no longer matches production, so a clean rebuild would come back different.</p>
+        <p class="tower-hint">Pull a block to see what falls. Illustrative.</p>
       </div>
-      <dl class="facts">
-        <div><dt>Prepared by</dt><dd>Eric Iannello</dd></div>
-        <div><dt>Prepared for</dt><dd>Josh Bey</dd></div>
-        <div><dt>Territory</dt><dd>Pacific time zone</dd></div>
-        <div><dt>Methods</dt><dd>Command of the Message, MEDDPICC</dd></div>
-      </dl>
     </section>
-    <div class="float">
+
+    <div class="gtrust" aria-label="Investors and partners">
+      <span class="gt-l">Backed by</span><span>Spark Capital</span><span>Kleiner Perkins</span><span>Cyberstarts</span>
+      <span class="gt-l">Works with</span><span>Wiz</span><span>AWS Marketplace</span>
+    </div>
+
+    <section class="gapp-wrap" aria-label="Balens product mock">
       <figure>
-        <div class="fun" role="group" aria-label="Recovery map. Select a business service to see whether it can recover in time.">
-          <div class="fun-bar"><span><b>Minimum viable business</b> recovery map</span><span class="hint">Select a service</span><span>illustrative</span></div>
-          <div class="fun-grid">
-            <div class="custs">
+        <div class="app" role="group" aria-label="Balens product mock. Validate recovery, then select a view.">
+          <div class="app-top">
+            <b class="app-name">Balens</b><span class="app-env">Example retailer, 600 engineers</span>
+            <button type="button" class="grun" id="gvRun">Validate recovery</button>
+          </div>
+          <ol class="gstages" id="gvStages" aria-label="Validation progress">
+            <li>Map dependencies</li><li>Check every backup</li><li>Compare IaC to production</li><li>Validate recovery paths</li><li>Prove the RTO</li>
+          </ol>
+          <p class="gstatus" id="gvStatus" aria-live="polite">Last validated 6 hours ago. 2 of 5 critical services cannot meet their RTO.</p>
+          <div class="app-body">
+            <div class="app-side">
+              <div class="app-tabs" role="tablist" aria-label="Balens views" aria-orientation="vertical">
+                <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true">Recovery Map</button>
+                <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1">Resilience Score</button>
+                <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1">Backup Coverage</button>
+                <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1">IaC Drift</button>
+                <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1">Wiz Context</button>
+              </div>
+            </div>
+            <div class="app-main">
+              <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><h3>Recovery Map</h3><div class="anl"><b>Balens analysis</b><ul><li>Two of five critical services cannot meet their recovery target today.</li><li>Select a service to see what Balens found.</li></ul></div><div class="rmap"><div class="custs">
               <button class="cust on" data-d="{&quot;h&quot;: &quot;Checkout and payments&quot;, &quot;p&quot;: &quot;Backups exist, but the recovery path breaks on a dependency nobody mapped.&quot;, &quot;c&quot;: &quot;2 hours&quot;, &quot;t&quot;: &quot;14 hours&quot;, &quot;o&quot;: &quot;Gap&quot;, &quot;w&quot;: [[&quot;Payment database copies are immutable and current&quot;, &quot;backup&quot;], [&quot;Identity service it relies on has no tested restore&quot;, &quot;dependency&quot;], [&quot;Network settings changed outside Terraform last week&quot;, &quot;IaC drift&quot;]]}" aria-pressed="true"><i>T1</i><span>Checkout and payments<small>tier 1, RTO 2 hours</small></span><em class="gap">Gap</em></button>
               <button class="cust" data-d="{&quot;h&quot;: &quot;Order management&quot;, &quot;p&quot;: &quot;Recovery path validated end to end this week.&quot;, &quot;c&quot;: &quot;4 hours&quot;, &quot;t&quot;: &quot;3 hours&quot;, &quot;o&quot;: &quot;Holds&quot;, &quot;w&quot;: [[&quot;Every dependency mapped and backed up&quot;, &quot;coverage&quot;], [&quot;Restore order matches what is running&quot;, &quot;IaC&quot;], [&quot;Open Wiz issues are low impact here&quot;, &quot;Wiz context&quot;]]}" aria-pressed="false"><i>T1</i><span>Order management<small>tier 1, RTO 4 hours</small></span><em class="ok">Holds</em></button>
               <button class="cust" data-d="{&quot;h&quot;: &quot;Customer login&quot;, &quot;p&quot;: &quot;The code that rebuilds it no longer matches production.&quot;, &quot;c&quot;: &quot;1 hour&quot;, &quot;t&quot;: &quot;Unknown&quot;, &quot;o&quot;: &quot;Drift&quot;, &quot;w&quot;: [[&quot;Cluster rebuilt from code would differ from production&quot;, &quot;IaC drift&quot;], [&quot;Backup retention is shorter than policy&quot;, &quot;backup&quot;], [&quot;Wiz flags a risky admin role on the same system&quot;, &quot;Wiz context&quot;]]}" aria-pressed="false"><i>T1</i><span>Customer login<small>tier 1, RTO 1 hour</small></span><em class="drift">Drift</em></button>
               <button class="cust" data-d="{&quot;h&quot;: &quot;Store inventory feed&quot;, &quot;p&quot;: &quot;A data store added in March has no backup at all.&quot;, &quot;c&quot;: &quot;8 hours&quot;, &quot;t&quot;: &quot;2 days&quot;, &quot;o&quot;: &quot;Gap&quot;, &quot;w&quot;: [[&quot;New data store missing from backup policy&quot;, &quot;coverage&quot;], [&quot;Holds sensitive supplier data&quot;, &quot;data sensitivity&quot;], [&quot;Owner team identified for the fix&quot;, &quot;owner&quot;]]}" aria-pressed="false"><i>T2</i><span>Store inventory feed<small>tier 2, RTO 8 hours</small></span><em class="gap">Gap</em></button>
               <button class="cust" data-d="{&quot;h&quot;: &quot;Internal reporting&quot;, &quot;p&quot;: &quot;Recovers well within its target.&quot;, &quot;c&quot;: &quot;72 hours&quot;, &quot;t&quot;: &quot;20 hours&quot;, &quot;o&quot;: &quot;Holds&quot;, &quot;w&quot;: [[&quot;Backups current and immutable&quot;, &quot;backup&quot;], [&quot;Recovery path validated last month&quot;, &quot;validation&quot;], [&quot;Extra copies could be retired to save cost&quot;, &quot;cost&quot;]]}" aria-pressed="false"><i>T3</i><span>Internal reporting<small>tier 3, RTO 72 hours</small></span><em class="ok">Holds</em></button>
-            </div>
-            <div class="fun-d">
-              <h4 id="fH">Checkout and payments</h4>
-              <p id="fP">Backups exist, but the recovery path breaks on a dependency nobody mapped.</p>
-              <div class="dec"><div><small>RTO target</small><b id="dC">2 hours</b></div><div><small>Proven recovery</small><b id="dT">14 hours</b></div><div><small>Status</small><b id="dO">Gap</b></div></div>
-              <p class="why">What Balens found</p>
-              <ul id="fL"><li>Payment database copies are immutable and current<s>backup</s></li><li>Identity service it relies on has no tested restore<s>dependency</s></li><li>Network settings changed outside Terraform last week<s>IaC drift</s></li></ul>
+</div><div class="fun-d"><h4 id="fH">Checkout and payments</h4><p id="fP">Backups exist, but the recovery path breaks on a dependency nobody mapped.</p><div class="dec"><div><small>RTO target</small><b id="dC">2 hours</b></div><div><small>Proven recovery</small><b id="dT">14 hours</b></div><div><small>Status</small><b id="dO">Gap</b></div></div><p class="why">What Balens found</p><ul id="fL"><li>Payment database copies are immutable and current<s>backup</s></li><li>Identity service it relies on has no tested restore<s>dependency</s></li><li>Network settings changed outside Terraform last week<s>IaC drift</s></li></ul></div></div></div>
+              <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><h3>Resilience Score</h3><div class="anl"><b>Balens analysis</b><ul><li>Overall resilience rose from 58 to 66 this quarter after two fixes.</li><li>Store inventory feed is the lowest scoring service.</li></ul></div><div class="rr"><div class="gauge" style="--v:66"><b>66</b><span>of 100</span></div><div class="scl"><div class="scr"><span>Checkout and payments</span><i style="--w:48%"></i><b>48</b></div><div class="scr"><span>Order management</span><i style="--w:91%"></i><b>91</b></div><div class="scr"><span>Customer login</span><i style="--w:57%"></i><b>57</b></div><div class="scr"><span>Store inventory feed</span><i style="--w:39%"></i><b>39</b></div><div class="scr"><span>Internal reporting</span><i style="--w:88%"></i><b>88</b></div></div></div></div>
+              <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><h3>Backup Coverage</h3><div class="anl"><b>Balens analysis</b><ul><li>Two systems tier 1 services depend on have no backup at all.</li><li>Coverage is checked across both backup vendors in one view.</li></ul></div><table class="vt"><thead><tr><th>System</th><th>Backup vendor</th><th>Immutability</th><th>Policy</th></tr></thead><tbody><tr><td>Payments database</td><td>Vendor A</td><td><em class="st g">Immutable</em></td><td><em class="st g">Retention OK</em></td></tr><tr><td>Identity provider</td><td>None</td><td><em class="st r">No backup</em></td><td><em class="st r">Not tested</em></td></tr><tr><td>Order data</td><td>Vendor B</td><td><em class="st g">Immutable</em></td><td><em class="st g">Retention OK</em></td></tr><tr><td>Inventory data store</td><td>None</td><td><em class="st r">No policy</em></td><td><em class="st n">Added in March</em></td></tr><tr><td>Login cluster</td><td>Vendor A</td><td><em class="st n">Mutable</em></td><td><em class="st r">Retention short</em></td></tr></tbody></table></div>
+              <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><h3>IaC Drift</h3><div class="anl"><b>Balens analysis</b><ul><li>Two resources no longer match the infrastructure code that would rebuild them.</li><li>Both sit on the recovery path of a tier 1 service.</li></ul></div><table class="vt"><thead><tr><th>Resource</th><th>Finding</th><th>Status</th></tr></thead><tbody><tr><td>Customer login cluster</td><td>Rebuild from code differs from production</td><td><em class="st r">Drift</em></td></tr><tr><td>Payments network settings</td><td>Changed outside Terraform last week</td><td><em class="st r">Drift</em></td></tr><tr><td>Order service</td><td>Matches the code</td><td><em class="st g">In sync</em></td></tr><tr><td>Reporting warehouse</td><td>Matches the code</td><td><em class="st g">In sync</em></td></tr></tbody></table></div>
+              <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><h3>Wiz Context</h3><div class="anl"><b>Balens analysis</b><ul><li>Wiz issues sync daily and attach to recovery gaps on the same resource.</li><li>Fixes are ranked by business impact, with data sensitivity from Wiz DSPM.</li></ul></div><table class="vt"><thead><tr><th>Wiz issue</th><th>Resource</th><th>Recovery context</th><th>Priority</th></tr></thead><tbody><tr><td>Exposed admin role</td><td>Login cluster</td><td>Recovery gap: drift</td><td><em class="st r">Fix first</em></td></tr><tr><td>Public storage bucket</td><td>Marketing site</td><td>No tier 1 dependency</td><td><em class="st n">Lower priority</em></td></tr><tr><td>Unpatched host</td><td>Payments network</td><td>Recovery gap: network</td><td><em class="st r">Fix first</em></td></tr></tbody></table><p class="vfoot">Based on the published Gambit and Wiz integration.<sup><a href="#s2">2</a></sup></p></div>
             </div>
           </div>
         </div>
-        <figcaption><b>Fig. 1</b><span>The minimum viable business, service by service. Each service is mapped to what it needs to come back and checked against its recovery target. Illustrative data for a retailer.</span></figcaption>
+        <figcaption><b>Fig. 1</b><span>Balens as I would show it in a first meeting, built around the customer's minimum viable business. Illustrative data for an example retailer, modeled on the Gambit platform.</span></figcaption>
       </figure>
-    </div>
-    <div class="band" role="list">
-      <div role="listitem"><small>Funding</small><b>$61M</b><span>seed and Series A, raised in under 12 months<sup><a href="#s1">1</a></sup></span></div>
-      <div role="listitem"><small>Recovery gap</small><b>1 in 3</b><span>ransomware victims recovered, while 90% expected they could<sup><a href="#s3">3</a></sup></span></div>
-      <div role="listitem"><small>AI attacks</small><b>$25</b><span>average cost per target in an AI agent campaign Gambit tracked<sup><a href="#s4">4</a></sup></span></div>
-      <div role="listitem"><small>LA Metro</small><b>Weeks</b><span>to recover from a breach Gambit attributed to Iran<sup><a href="#s5">5</a></sup></span></div>
+    </section>
+
+    <div class="gkpis" role="list">
+      <div class="gkpi" role="listitem"><small>Funding</small><b>$61M</b><p>seed and Series A, raised in under 12 months<sup><a href="#s3">3</a></sup></p></div>
+      <div class="gkpi" role="listitem"><small>Recovery gap</small><b>1 in 3</b><p>ransomware victims recovered, while 90% expected they could<sup><a href="#s4">4</a></sup></p></div>
+      <div class="gkpi" role="listitem"><small>AI attacks</small><b>$25</b><p>average cost per target in an AI agent campaign Gambit tracked<sup><a href="#s5">5</a></sup></p></div>
+      <div class="gkpi" role="listitem"><small>LA Metro</small><b>Weeks</b><p>to recover from a breach Gambit attributed to Iran<sup><a href="#s6">6</a></sup></p></div>
     </div>
 
     <!-- Know -->
@@ -999,8 +1241,8 @@ mark{background:var(--blue);color:#fff}
       <div class="three">
         <div>
           <h3>The product</h3>
-          <p>Balens is an AI native cyber resilience posture management platform. It maps applications and their dependencies across cloud, backups, IaC and security tools, scores resilience, validates recovery paths and produces audit ready evidence.<sup><a href="#s2">2</a></sup></p>
-          <p>It is vendor agnostic, integrates with Wiz and is sold on AWS Marketplace.<sup><a href="#s2">2</a>,<a href="#s6">6</a></sup></p>
+          <p>Balens is an AI native cyber resilience posture management platform. It maps applications and their dependencies across cloud, backups, IaC and security tools, scores resilience, validates recovery paths and produces audit ready evidence.<sup><a href="#s1">1</a></sup></p>
+          <p>It is vendor agnostic, integrates with Wiz and is sold on AWS Marketplace.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
         </div>
         <div>
           <h3>The buyer</h3>
@@ -1009,15 +1251,23 @@ mark{background:var(--blue);color:#fff}
         </div>
         <div>
           <h3>The moment</h3>
-          <p>Founders Alon Gromakov, Sa'ar Elias and May Kogan are Unit 8200 veterans and early Sentra employees. They raised $61M in under 12 months.<sup><a href="#s1">1</a>,<a href="#s8">8</a></sup></p>
-          <p>Gambit's research team published the findings on the AI assisted breach of nine Mexican government agencies and the LA Metro attack, which gives a new brand a reason for a CISO to take the meeting.<sup><a href="#s5">5</a>,<a href="#s9">9</a></sup></p>
+          <p>Founders Alon Gromakov, Sa'ar Elias and May Kogan are Unit 8200 veterans and early Sentra employees. They raised $61M in under 12 months.<sup><a href="#s3">3</a>,<a href="#s8">8</a></sup></p>
+          <p>Gambit's research team published the findings on the AI assisted breach of nine Mexican government agencies and the LA Metro attack, which gives a new brand a reason for a CISO to take the meeting.<sup><a href="#s6">6</a>,<a href="#s9">9</a></sup></p>
         </div>
       </div>
+      <h3 class="ind-h">What Gambit is publishing, and how I would use it</h3>
+      <div class="rsch">
+        <div class="r"><div class="chips"><span>September 22</span></div><b>$25 a target</b><p>AI agents compromised online retailers at almost no cost, and one agent's cleanup destroyed a victim's data.<sup><a href="#s5">5</a></sup></p><small>Opens with retail CISOs</small></div>
+        <div class="r"><div class="chips"><span>Full technical report</span></div><b>9 agencies</b><p>One operator with two AI platforms breached nine Mexican government agencies.<sup><a href="#s9">9</a></sup></p><small>Opens with public sector</small></div>
+        <div class="r"><div class="chips"><span>Reuters coverage</span></div><b>LA Metro</b><p>Gambit tied the breach to Iran, and the transit system needed weeks to recover.<sup><a href="#s6">6</a></sup></p><small>Opens in Southern California</small></div>
+        <div class="r"><div class="chips"><span>October 1</span></div><b>Resilience wins</b><p>Prevention has lost its edge. Resilience is the winning play.<sup><a href="#s10">10</a></sup></p><small>Opens with the board</small></div>
+      </div>
+      <p class="evt"><b>Research</b><span>Each new report from Gambit's research team gives every follow up a reason to send, and puts a new brand in front of CISOs who already read the coverage.<sup><a href="#s5">5</a></sup></span></p>
       <h3 class="ind-h">The market Gambit is creating</h3>
       <div class="three">
-        <div><h3>AI made attacks cheap</h3><p>One operator using two AI platforms breached nine Mexican government agencies, and agents compromised online retailers for about $25 each. Attacks will get through, so the board question becomes how fast the business comes back.<sup><a href="#s4">4</a>,<a href="#s9">9</a></sup></p></div>
-        <div><h3>Regulators want proof</h3><p>NYDFS Part 500 requires covered companies to test restoring critical systems from backups at least once a year. Gromakov's argument is that resilience should be validated continuously, since the estate changes daily.<sup><a href="#s8">8</a>,<a href="#s10">10</a></sup></p></div>
-        <div><h3>Backups are one layer</h3><p>Each backup vendor reports on the data it protects. An application also needs identity, networking, IaC and other vendors' copies to come back, and that full map goes stale the day it ships. Balens keeps it current, vendor agnostic.<sup><a href="#s11">11</a></sup></p></div>
+        <div><h3>AI made attacks cheap</h3><p>One operator using two AI platforms breached nine Mexican government agencies, and agents compromised online retailers for about $25 each. Attacks will get through, so the board question becomes how fast the business comes back.<sup><a href="#s5">5</a>,<a href="#s9">9</a></sup></p></div>
+        <div><h3>Regulators want proof</h3><p>NYDFS Part 500 requires covered companies to test restoring critical systems from backups at least once a year. Gromakov's argument is that resilience should be validated continuously, since the estate changes daily.<sup><a href="#s8">8</a>,<a href="#s11">11</a></sup></p></div>
+        <div><h3>Backups are one layer</h3><p>Each backup vendor reports on the data it protects. An application also needs identity, networking, IaC and other vendors' copies to come back, and that full map goes stale the day it ships. Balens keeps it current, vendor agnostic.<sup><a href="#s12">12</a></sup></p></div>
       </div>
     </section>
 
@@ -1066,11 +1316,11 @@ mark{background:var(--blue);color:#fff}
         <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>How we do it</b><small>Why Gambit</small></button>
       </div>
       <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Before scenario</h3><blockquote>Resilience is usually measured at a point in time, with backups, recovery tests and tabletop exercises. The estate changes every day in between, and each backup tool reports only on itself.<sup><a href="#s8">8</a></sup></blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Annual proof</b>Recovery tested on one day, assumed on the rest</div><div><b>Green jobs</b>Backups succeed while applications still fail to come back</div></div></div></div>
-      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Consequences</h3><blockquote>Confidence runs ahead of results. Most organizations expect to recover from a cyber incident, and most ransomware victims don't. LA Metro needed weeks to recover from its March breach.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>90% vs 1 in 3</b>Expected to recover, versus ransomware victims who did<sup><a href="#s3">3</a></sup></div><div><b>Weeks</b>For LA Metro to recover<sup><a href="#s5">5</a></sup></div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Consequences</h3><blockquote>Confidence runs ahead of results. Most organizations expect to recover from a cyber incident, and most ransomware victims don't. LA Metro needed weeks to recover from its March breach.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>90% vs 1 in 3</b>Expected to recover, versus ransomware victims who did<sup><a href="#s4">4</a></sup></div><div><b>Weeks</b>For LA Metro to recover<sup><a href="#s6">6</a></sup></div></div></div></div>
       <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Positive outcomes</h3><blockquote>The CISO and CIO know every day which business services can come back within their RTO, which can't and why. The board gets a resilience number it can track, and auditors get evidence on request.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>Known</b>Recovery time for every tier 1 service</div><div><b>Ready</b>Evidence on any day of the year</div></div></div></div>
-      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Required capabilities</h3><blockquote>Map applications to dependencies automatically, check every backup vendor for coverage, immutability and retention, compare IaC intent with what is running, validate recovery paths continuously, and rank gaps by business impact and data sensitivity.</blockquote></div><div><div class="k">Capabilities we agree on</div><div class="facts2"><div><b>Vendor agnostic</b>Across clouds, backups, IaC and security tools</div><div><b>Continuous</b>Checked as the estate changes</div><div><b>Prioritized</b>Gaps ranked with Wiz context<sup><a href="#s6">6</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Required capabilities</h3><blockquote>Map applications to dependencies automatically, check every backup vendor for coverage, immutability and retention, compare IaC intent with what is running, validate recovery paths continuously, and rank gaps by business impact and data sensitivity.</blockquote></div><div><div class="k">Capabilities we agree on</div><div class="facts2"><div><b>Vendor agnostic</b>Across clouds, backups, IaC and security tools</div><div><b>Continuous</b>Checked as the estate changes</div><div><b>Prioritized</b>Gaps ranked with Wiz context<sup><a href="#s2">2</a></sup></div></div></div></div>
       <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>Metrics</h3><blockquote>We agree the numbers up front and baseline them in the evaluation, so the business case is written in the customer's terms.</blockquote></div><div><div class="k">Metrics we track</div><div class="facts2"><div><b>Proven RTO</b>Against target for each critical service</div><div><b>Coverage</b>Share of tier 1 services with a validated recovery path</div><div><b>Hours</b>Spent assembling audit evidence</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>How we do it</h3><blockquote>Balens, built by Unit 8200 veterans and backed by Spark Capital, Kleiner Perkins and Cyberstarts, with a Wiz integration, AWS Marketplace purchasing and a research team tracking AI driven attacks in the wild.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>$61M</b>Seed and Series A in under 12 months<sup><a href="#s1">1</a></sup></div><div><b>9 agencies</b>The AI assisted breach Gambit researched and reported<sup><a href="#s9">9</a></sup></div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>How we do it</h3><blockquote>Balens, built by Unit 8200 veterans and backed by Spark Capital, Kleiner Perkins and Cyberstarts, with a Wiz integration, AWS Marketplace purchasing and a research team tracking AI driven attacks in the wild.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>$61M</b>Seed and Series A in under 12 months<sup><a href="#s3">3</a></sup></div><div><b>9 agencies</b>The AI assisted breach Gambit researched and reported<sup><a href="#s9">9</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
         <div><h4>Why do anything</h4><p>The before scenario and its cost come from their own services. A CISO who can't name a proven recovery time for the top five applications has the reason in hand.</p></div>
@@ -1110,7 +1360,7 @@ mark{background:var(--blue);color:#fff}
             <tbody>
               <tr data-r="ps"><td>Puget Sound<span class="st">Seattle, Bellevue, Redmond</span></td><td data-h="Who buys and why">Cloud native retail, travel, telecom and health systems where downtime stops revenue or care.<div class="acc">Starbucks, Nordstrom, Alaska Airlines, T&#8209;Mobile, Expedia, Providence</div><div class="lead"><b>Lead with</b>A proven recovery time for every tier 1 service</div></td></tr>
               <tr data-r="ba"><td>Bay Area<span class="st">San Francisco, San Jose, Oakland</span></td><td data-h="Who buys and why">Fintech, payments, SaaS and utilities running large estates on AWS and Terraform, many under financial or critical infrastructure rules.<div class="acc">Visa, Wells Fargo, Intuit, Gap Inc., PG&amp;E</div><div class="lead"><b>Lead with</b>IaC drift tied to recovery, and audit evidence</div></td></tr>
-              <tr data-r="sc"><td>Southern California<span class="st">Los Angeles, San Diego, Irvine</span></td><td data-h="Who buys and why">Media, aerospace, insurance and public agencies, in the region where Gambit's LA Metro research made news.<sup><a href="#s5">5</a></sup><div class="acc">Disney, Edison International, Qualcomm, Snap, Pacific Life</div><div class="lead"><b>Lead with</b>Recovery from an attacker who targets the backups first</div></td></tr>
+              <tr data-r="sc"><td>Southern California<span class="st">Los Angeles, San Diego, Irvine</span></td><td data-h="Who buys and why">Media, aerospace, insurance and public agencies, in the region where Gambit's LA Metro research made news.<sup><a href="#s6">6</a></sup><div class="acc">Disney, Edison International, Qualcomm, Snap, Pacific Life</div><div class="lead"><b>Lead with</b>Recovery from an attacker who targets the backups first</div></td></tr>
               <tr data-r="on"><td>Oregon and Nevada<span class="st">Portland, Las Vegas, Reno</span></td><td data-h="Who buys and why">Apparel brands, manufacturers, and gaming and hospitality operators that run around the clock.<div class="acc">Nike, Columbia Sportswear, Daimler Truck North America, MGM Resorts, Caesars Entertainment</div><div class="lead"><b>Lead with</b>The minimum viable business, mapped and tested</div></td></tr>
             </tbody>
           </table>
@@ -1147,7 +1397,7 @@ mark{background:var(--blue);color:#fff}
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, if <span class="tok">{{company}}</span>'s checkout went down tomorrow, how sure is the team of the recovery time it reports to the board?</p><p>In Veeam's 2026 research, 90% of organizations said they could recover from a cyber incident, and fewer than 1 in 3 ransomware victims actually did.</p><p>Open to a quick conversation on whether your team could prove that number every day?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 1 in 3 sounds like seller cherry picking.</p><p>If we mapped one of your tier 1 services to its real recovery path, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like recovery times are proven and current?</p><p>Basically your team would see, every day, which services can come back within their RTO and which can't.</p><p>Happy to share what similar teams are finding. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Veeam research<sup><a href="#s3">3</a></sup></span><span><b>Value</b> a recovery time you can defend</span></div>
+          <div class="mail-f"><span><b>Proof</b> Veeam research<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a recovery time you can defend</span></div>
         </article>
       </div>
 
@@ -1166,7 +1416,7 @@ mark{background:var(--blue);color:#fff}
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, what changes in <span class="tok">{{company}}</span>'s plan when an attack costs the attacker about $25?</p><p>Gambit's research team tracked an AI agent campaign against hundreds of online retailers this year, at an average of $25 per target.</p><p>Would you be opposed to chatting through what recovery looks like for <span class="tok">{{company}}</span> if prevention misses one, in Q4?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize a $25 attack sounds like seller cherry picking.</p><p>If we showed which of your store's services could come back within a day, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the recovery plan is already tested against this?</p><p>Basically the plan for the day prevention misses would be checked every day, with proof the store stays open.</p><p>Happy to share the full research. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Gambit research<sup><a href="#s4">4</a></sup></span><span><b>Value</b> a store that stays open</span></div>
+          <div class="mail-f"><span><b>Proof</b> Gambit research<sup><a href="#s5">5</a></sup></span><span><b>Value</b> a store that stays open</span></div>
         </article>
       </div>
 
@@ -1185,7 +1435,7 @@ mark{background:var(--blue);color:#fff}
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, when <span class="tok">{{company}}</span> runs its annual restore test for NYDFS, how many weeks does the evidence take to pull together?</p><p>Gambit maps each critical system to its backups and dependencies and keeps recovery evidence current all year, so the test proves what the team already knows.</p><p>Open to a quick conversation on whether your team could walk into the next exam with that?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize evidence all year sounds like seller cherry picking.</p><p>If we produced it for one critical system in your environment, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the annual test runs smoothly?</p><p>Basically the evidence auditors ask for would be ready on any day of the year.</p><p>Happy to share what similar teams are finding. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Rule</b> NYDFS 500.16<sup><a href="#s10">10</a></sup></span><span><b>Value</b> audit hours back</span></div>
+          <div class="mail-f"><span><b>Rule</b> NYDFS 500.16<sup><a href="#s11">11</a></sup></span><span><b>Value</b> audit hours back</span></div>
         </article>
       </div>
 
@@ -1204,7 +1454,7 @@ mark{background:var(--blue);color:#fff}
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, of the Wiz issues <span class="tok">{{company}}</span> triages each week, how many sit on systems the business couldn't recover quickly?</p><p>Gambit syncs Wiz issues and data sensitivity daily and attaches them to recovery gaps, so the fix list starts with what would hurt the business most.</p><p>Open to a quick look at what that list would show for <span class="tok">{{company}}</span>?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize ranking by business impact sounds like seller cherry picking.</p><p>If we ran your top Wiz findings against one service's recovery path, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the Wiz backlog is under control?</p><p>Basically your team would fix first what would keep the business down longest.</p><p>Happy to share how the integration works. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Wiz integration<sup><a href="#s6">6</a></sup></span><span><b>Value</b> fixes ranked by impact</span></div>
+          <div class="mail-f"><span><b>Proof</b> Wiz integration<sup><a href="#s2">2</a></sup></span><span><b>Value</b> fixes ranked by impact</span></div>
         </article>
       </div>
     </section>
@@ -1231,7 +1481,7 @@ mark{background:var(--blue);color:#fff}
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
             <div class="bc-top"><h3>Cloud native DR</h3><span class="threat mid">Entrenched</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Already in the account, priced low and easy for platform teams to switch on.</p></div><div><h4>Where Gambit wins</h4><p>Built for an adversary as well as an outage. Ransomware operators can sit in an environment for weeks and target recovery first, and Balens covers every cloud and vendor in one view.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Already in the account, priced low and easy for platform teams to switch on.</p></div><div><h4>Where Gambit wins</h4><p>Built for an adversary as well as an outage. Ransomware operators can sit in an environment for weeks and target recovery first, and Balens covers every cloud and vendor in one view.<sup><a href="#s4">4</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>If the attacker has been in the account for weeks, how do you know the DR copy comes back clean?</p></div>
           </article>
           <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
@@ -1241,7 +1491,7 @@ mark{background:var(--blue);color:#fff}
           </article>
           <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
             <div class="bc-top"><h3>CNAPP and posture</h3><span class="threat">Partner first</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep visibility into exposure, identities and data across the cloud, with strong executive relationships.</p></div><div><h4>Where Gambit wins</h4><p>Gambit answers a different question, whether the business can recover, and it already attaches Wiz issues to recovery gaps.<sup><a href="#s6">6</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep visibility into exposure, identities and data across the cloud, with strong executive relationships.</p></div><div><h4>Where Gambit wins</h4><p>Gambit answers a different question, whether the business can recover, and it already attaches Wiz issues to recovery gaps.<sup><a href="#s2">2</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Your CNAPP shows what is exposed. What shows you what comes back?</p></div>
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
@@ -1275,22 +1525,67 @@ mark{background:var(--blue);color:#fff}
         <div><h4>No budget line for resilience</h4><p>The business case prices downtime, audit hours and insurance terms, and AWS Marketplace lets them use existing commit.</p></div>
         <div><h4>A new category with few references</h4><p>I lead with Gambit's research, give executives access to the founders, and write the evaluation criteria together.</p></div>
       </div>
-      <h3 style="margin:48px 0 18px">MEDDPICC checklist</h3>
-      <div style="max-width:1060px">
-        <table class="medd stack">
-          <thead><tr><th></th><th>Element</th><th>What I validate</th><th>What I ask</th><th>Red flag</th></tr></thead>
-          <tbody>
-            <tr><td>M</td><td>Metrics</td><td data-h="What I validate">Proven RTO and RPO against target, share of tier 1 services with a validated recovery path, audit hours, cost of downtime</td><td data-h="What I ask">What does an hour of downtime on your top service cost?</td><td data-h="Red flag">Recovery targets nobody has priced</td></tr>
-            <tr><td>E</td><td>Economic buyer</td><td data-h="What I validate">The CISO, with the CIO when the budget spans security and infrastructure</td><td data-h="What I ask">Who answers to the board if recovery takes a week?</td><td data-h="Red flag">Only a backup admin is involved by the evaluation</td></tr>
-            <tr><td>D</td><td>Decision criteria</td><td data-h="What I validate">Vendor agnostic coverage, application level mapping, continuous validation, Wiz and cloud integrations, evidence quality</td><td data-h="What I ask">What would you need to see to trust a recovery time?</td><td data-h="Red flag">Criteria copied from a backup vendor's feature list</td></tr>
-            <tr><td>D</td><td>Decision process</td><td data-h="What I validate">Business case, technical evaluation on real services, security review and procurement, with dates</td><td data-h="What I ask">Walk me through how you bought your last security platform.</td><td data-h="Red flag">No one can describe what happens after the evaluation</td></tr>
-            <tr><td>P</td><td>Paper process</td><td data-h="What I validate">Security questionnaire, DPA, legal, procurement and an AWS Marketplace private offer</td><td data-h="What I ask">Would buying through AWS Marketplace help you use existing commit?</td><td data-h="Red flag">Procurement hears about the deal at quarter end</td></tr>
-            <tr><td>I</td><td>Identify pain</td><td data-h="What I validate">An outage or incident, a failed restore, an audit finding or a board question about resilience</td><td data-h="What I ask">What happens if nothing changes for the next 12 months?</td><td data-h="Red flag">Pain with no cost and no deadline</td></tr>
-            <tr><td>C</td><td>Champion</td><td data-h="What I validate">A cloud platform, DevOps or resilience leader with influence, who gains from the win</td><td data-h="What I ask">How would you present the evaluation results to your CISO?</td><td data-h="Red flag">A fan of the product with no pull on the decision</td></tr>
-            <tr><td>C</td><td>Competition</td><td data-h="What I validate">Backup platforms, cloud native DR, drift tools, consultants and doing nothing</td><td data-h="What I ask">If you don't choose us, what do you do instead?</td><td data-h="Red flag">We learn about the alternative at the proposal</td></tr>
-          </tbody>
-        </table>
+      <h3 style="margin:48px 0 8px">MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Each line needs written proof before the deal counts in my forecast.</p>
+      <div class="mx">
+        <div class="mx-row">
+          <div class="mx-el"><b>M</b><h4>Metrics</h4><span>The number the deal is sold on</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Proven recovery time against target for each critical service, share of tier 1 services with a validated path, cost of an hour of downtime, and hours spent assembling audit evidence.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What does an hour of downtime on your top service cost?</li><li>When was each tier 1 service last recovered end to end?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Baseline numbers from their own services, checked by the CISO and finance, written into the business case.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Recovery targets nobody has priced.</em> I bring the Veeam recovery data and Gambit's research, and ask them to correct the numbers for their business.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>E</b><h4>Economic buyer</h4><span>The person who can say yes alone</span></div>
+          <div class="mx-c"><small>What I validate</small><p>The CISO, with the CIO when the budget spans security and infrastructure, and how they made their last platform decision.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Who answers to the board if recovery takes a week?</li><li>Whose budget pays for backup and DR today?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A meeting with the economic buyer before the technical evaluation, and their success criteria in their own words.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Only a backup admin is involved by the evaluation.</em> I write the champion a one page brief and ask for 20 minutes together to pressure test it.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision criteria</h4><span>How they will judge us</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Vendor agnostic coverage, application level mapping, continuous validation, Wiz and cloud integrations, and the quality of audit evidence.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What would you need to see to trust a recovery time?</li><li>What would rule Gambit out?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Written evaluation criteria the champion and I drafted together, before any connector is set up.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Criteria copied from a backup vendor's feature list.</em> I reshape the criteria early around the full recovery path, across vendors, IaC and identity.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>D</b><h4>Decision process</h4><span>Every step to a signature</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Business case, technical evaluation on real services, security review and procurement, with dates, and how they bought their last security platform.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Walk me through how you bought your last security platform.</li><li>Who could stop this, even if everyone else says yes?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>A mutual action plan dated back from the audit, insurance renewal or DR test, edited by both sides.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>No one can describe what happens after the evaluation.</em> I map the post evaluation steps with the champion before the first connector goes live.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>P</b><h4>Paper process</h4><span>How the contract actually gets signed</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Security questionnaire, DPA, legal redlines, procurement thresholds and an AWS Marketplace private offer to draw down existing commit.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>Would buying through AWS Marketplace help you use existing commit?</li><li>What did security need from your last cloud security vendor?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Security package sent in week one, the private offer in the plan, and a signature date agreed.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Procurement first hears about us at quarter end.</em> I raise the marketplace offer early and meet procurement once the business case is agreed.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>I</b><h4>Identify pain</h4><span>Why they act this year</span></div>
+          <div class="mx-c"><small>What I validate</small><p>An outage or incident, a failed restore, an audit finding, a peer hit by ransomware, or a board question about resilience.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>What happens if nothing changes for the next 12 months?</li><li>What did your last DR test miss?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Pain tied to a dollar figure and a date, confirmed by the CISO and the CIO.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>Pain with no cost and no deadline.</em> I go back to the negative consequences with their own services until it has both.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Champion</h4><span>Who sells when I am not in the room</span></div>
+          <div class="mx-c"><small>What I validate</small><p>A cloud platform, DevOps or resilience leader with influence who wins personally if this succeeds. I test it by asking them to act.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>How would you present the evaluation results to your CISO?</li><li>Could you get us 30 minutes with the infrastructure team this week?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>They shared internal context, coached me on the room, and got me a meeting I could not get alone.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>A fan of the product with no pull on the decision.</em> I keep them close and multithread to someone who can move the deal.</p></div>
+        </div>
+        <div class="mx-row">
+          <div class="mx-el"><b>C</b><h4>Competition</h4><span>Every option they could pick</span></div>
+          <div class="mx-c"><small>What I validate</small><p>Backup platforms, cloud native DR, drift and IaC tools, consultants and doing nothing, plus who inside the account favors each.</p></div>
+          <div class="mx-c"><small>What I ask</small><ul><li>If you don't choose us, what do you do instead?</li><li>Who on the team would push for that option?</li></ul></div>
+          <div class="mx-c"><small>Proof I collect</small><p>Each alternative named with its internal sponsor, and our strengths built into the evaluation criteria.</p></div>
+          <div class="mx-c mx-f"><small>Red flag, and my move</small><p><em>We learn about the alternative at the proposal.</em> I ask the battlecard questions in discovery, so the criteria reflect where Gambit wins.</p></div>
+        </div>
       </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the economic buyer has confirmed the metrics, the technical evaluation has met written criteria on real services, the paper process is dated in the mutual plan, and the champion has been tested.</span></div>
     </section>
 
     <!-- About -->
@@ -1391,17 +1686,18 @@ mark{background:var(--blue);color:#fff}
     <footer>
       <h4>Sources</h4>
       <ol class="sources">
-        <li id="s1"><a href="https://www.newswire.com/news/gambit-security-raises-61m-to-set-the-standard-for-enterprise-22732979" target="_blank" rel="noopener">Newswire, Gambit Security raises $61M to set the standard for enterprise resilience</a></li>
-        <li id="s2"><a href="https://aws.amazon.com/marketplace/pp/prodview-murmk4osmgnca" target="_blank" rel="noopener">AWS Marketplace, Balens by Gambit</a></li>
-        <li id="s3"><a href="https://gambit.security/blog-posts/cloud-dr-vs-ransomware-cyber-resilience-gap" target="_blank" rel="noopener">Gambit, Cloud DR vs. Ransomware: The Cyber Resilience Gap, citing Veeam's 2026 Data Trust and Resilience Report</a></li>
-        <li id="s4"><a href="https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company" target="_blank" rel="noopener">Gambit, AI agents are hacking online retailers for $25 a company</a></li>
-        <li id="s5"><a href="https://techcrunch.com/2026/05/26/iranian-hackers-blamed-for-breach-of-los-angeles-transit-system-that-took-weeks-to-recover/" target="_blank" rel="noopener">TechCrunch, Iranian hackers blamed for breach of Los Angeles transit system that took weeks to recover</a></li>
-        <li id="s6"><a href="https://gambit.security/announcement/gambit-integrates-with-wiz" target="_blank" rel="noopener">Gambit, Gambit integrates with Wiz to connect cloud exposure with business recovery</a></li>
+        <li id="s1"><a href="https://aws.amazon.com/marketplace/pp/prodview-murmk4osmgnca" target="_blank" rel="noopener">AWS Marketplace, Balens by Gambit</a></li>
+        <li id="s2"><a href="https://gambit.security/announcement/gambit-integrates-with-wiz" target="_blank" rel="noopener">Gambit, Gambit integrates with Wiz to connect cloud exposure with business recovery</a></li>
+        <li id="s3"><a href="https://www.newswire.com/news/gambit-security-raises-61m-to-set-the-standard-for-enterprise-22732979" target="_blank" rel="noopener">Newswire, Gambit Security raises $61M to set the standard for enterprise resilience</a></li>
+        <li id="s4"><a href="https://gambit.security/blog-posts/cloud-dr-vs-ransomware-cyber-resilience-gap" target="_blank" rel="noopener">Gambit, Cloud DR vs. Ransomware: The Cyber Resilience Gap, citing Veeam's 2026 Data Trust and Resilience Report</a></li>
+        <li id="s5"><a href="https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company" target="_blank" rel="noopener">Gambit, AI agents are hacking online retailers for $25 a company</a></li>
+        <li id="s6"><a href="https://techcrunch.com/2026/05/26/iranian-hackers-blamed-for-breach-of-los-angeles-transit-system-that-took-weeks-to-recover/" target="_blank" rel="noopener">TechCrunch, Iranian hackers blamed for breach of Los Angeles transit system that took weeks to recover</a></li>
         <li id="s7"><a href="https://www.linkedin.com/jobs/view/4472378480/" target="_blank" rel="noopener">Gambit Security, Enterprise Account Executive, PST job post</a></li>
         <li id="s8"><a href="https://www.bankinfosecurity.com/gambit-security-lands-61m-to-bolster-enterprise-resilience-a-30881" target="_blank" rel="noopener">BankInfoSecurity, Gambit Security lands $61M to bolster enterprise resilience</a></li>
         <li id="s9"><a href="https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report" target="_blank" rel="noopener">Gambit, A single operator, two AI platforms, nine government agencies</a></li>
-        <li id="s10"><a href="https://www.dfs.ny.gov/cybersecurity/23-NYCRR-Part-500" target="_blank" rel="noopener">New York DFS, Cybersecurity Regulation 23 NYCRR Part 500</a></li>
-        <li id="s11"><a href="https://gambit.security/blog-posts/why-your-cloud-map-is-already-wrong" target="_blank" rel="noopener">Gambit, Why your cloud map is already wrong</a></li>
+        <li id="s10"><a href="https://gambit.security/blog-posts/prevention-has-lost-its-edge-resilience-is-the-winning-play" target="_blank" rel="noopener">Gambit, Prevention has lost its edge. Resilience is the winning play</a></li>
+        <li id="s11"><a href="https://www.dfs.ny.gov/cybersecurity/23-NYCRR-Part-500" target="_blank" rel="noopener">New York DFS, Cybersecurity Regulation 23 NYCRR Part 500</a></li>
+        <li id="s12"><a href="https://gambit.security/blog-posts/why-your-cloud-map-is-already-wrong" target="_blank" rel="noopener">Gambit, Why your cloud map is already wrong</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the Gambit Security Enterprise Account Executive, PST role. Not affiliated with or endorsed by Gambit Security. Figures come from public and third party sources as of October 2026. Example accounts, charts and emails are illustrative.</p>
     </footer>
@@ -1463,6 +1759,29 @@ mark{background:var(--blue);color:#fff}
   group(sts,step);
   document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
   document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Tower
+  var blks=[].slice.call(document.querySelectorAll('.blk')),tw=document.getElementById('twSay');
+  blks.forEach(function(b){b.setAttribute('aria-pressed',b.classList.contains('on'));b.addEventListener('click',function(){
+    blks.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+    tw.innerHTML='';var t=document.createElement('b');t.textContent=b.dataset.t;tw.appendChild(t);tw.appendChild(document.createTextNode(b.dataset.d));
+  })});
+
+  // Balens tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+
+  // Validate recovery
+  var run=document.getElementById('gvRun'),stg=[].slice.call(document.querySelectorAll('#gvStages li')),stat=document.getElementById('gvStatus');
+  var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  run.addEventListener('click',function(){
+    run.disabled=true;stg.forEach(function(li){li.className=''});stat.textContent='Validating recovery across cloud, backups, IaC and security tools.';var i=0;
+    (function next(){
+      if(i>0)stg[i-1].className='done';
+      if(i<stg.length){stg[i].className='doing';i++;setTimeout(next,fast?0:450);}
+      else{stat.textContent='Validation complete. 3 of 5 critical services meet their RTO. 2 gaps, both on the checkout path.';run.disabled=false;run.textContent='Validate again';select(dts,0);}
+    })();
+  });
 
   // Battlecards
   var cbs=[].slice.call(document.querySelectorAll('.cbtn'));

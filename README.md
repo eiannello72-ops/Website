@@ -16,6 +16,7 @@ for the Enterprise AE role.
 | Gambit Security (PST) | [`gambit/`](gambit/index.html) |
 | Jellyfish (West Coast) | [`jellyfish/`](jellyfish/index.html) |
 | Tines (PacNW) | [`tines/`](tines/index.html) |
+| Cortex (US Enterprise) | [`cortex/`](cortex/index.html) |
 
 ## Deploying
 

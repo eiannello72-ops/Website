@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Obsidian Enterprise Plan</title>
-<meta name="description" content="A Central territory plan for Obsidian Security, built on Challenger and MEDDPICC. Prepared by Eric Iannello.">
+<meta name="description" content="An enterprise plan for Obsidian Security, built on Challenger and MEDDPICC. Prepared by Eric Iannello.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1155,11 +1155,18 @@ footer h4{color:var(--ink)}
 .bc sup a{color:var(--blue)!important}
 .bc-q h4{color:#0F5E94!important}
 .fc-bh b{color:var(--blue)}
+/* Segments */
+.tiles2{grid-template-columns:repeat(4,minmax(0,78px))}
+.icp{margin-top:20px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--fog);max-width:360px}
+.icp b{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0F5E94}
+.icp ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:14px;color:#2A3350}
+@media (max-width:560px){.tiles2{grid-template-columns:repeat(4,minmax(0,1fr))}.icp{max-width:none}}
+.tiles2 .col-h{font-size:10.5px;letter-spacing:.04em}
 </style>
 </head>
 <body>
 <div class="prog" id="progress" aria-hidden="true"></div>
-<div class="banner">Prepared for Obsidian Security's Central enterprise team by Eric Iannello. <a href="#plan">See the 90 day plan</a></div>
+<div class="banner">Prepared for Obsidian Security's enterprise sales team by Eric Iannello. <a href="#plan">See the 90 day plan</a></div>
 
 <header class="cnav-wrap">
   <nav class="cnav" aria-label="Contents">
@@ -1168,7 +1175,7 @@ footer h4{color:var(--ink)}
       <li><a href="#top">Overview</a></li>
       <li><a href="#know">Research</a></li>
       <li><a href="#pov">Talk track</a></li>
-      <li><a href="#territory">Territory</a></li>
+      <li><a href="#territory">Segments</a></li>
       <li><a href="#plays">Plays</a></li>
       <li><a href="#competition">Competition</a></li>
       <li><a href="#deal">Deal</a></li>
@@ -1186,8 +1193,8 @@ footer h4{color:var(--ink)}
     <section id="top" class="hero ohero">
       <div class="oh-grid">
         <div class="oh-copy">
-          <h1><span>AI Security. SaaS Security.</span> One plan for the Central territory.</h1>
-          <p class="lede">Obsidian secures the SaaS and machine identity layer enterprises run on, from Salesforce and Snowflake to the AI agents working inside them. This is my plan to win new logos across the Fortune 1000 in twelve Central states.<sup><a href="#s1">1</a></sup></p>
+          <h1><span>AI Security. SaaS Security.</span> One plan to win new logos.</h1>
+          <p class="lede">Obsidian secures the SaaS and machine identity layer enterprises run on, from Salesforce and Snowflake to the AI agents working inside them. This is my plan to win new logos across the Fortune 1000.<sup><a href="#s1">1</a></sup></p>
           <div class="ctas"><a class="btn pri" href="#plan">See the plan</a><a class="btn" href="#contact">Contact me</a></div>
         </div>
         <div class="orbit" aria-hidden="true">
@@ -1269,7 +1276,7 @@ footer h4{color:var(--ink)}
     <section id="pov" class="panel ink grain">
       <div class="sh">
         <h2>The conversation I would have with a CISO</h2>
-        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a Central region CISO, with the evidence behind each step.</p>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a Fortune 1000 CISO, with the evidence behind each step.</p>
       </div>
       <figure class="compare">
         <div class="cmp-grid">
@@ -1325,41 +1332,48 @@ footer h4{color:var(--ink)}
     <!-- Territory -->
     <section id="territory">
       <div class="sh">
-        <h2>Where I would spend my time</h2>
-        <p>Twelve states, three sub regions, and a Fortune 1000 base heavy in insurance, banking, healthcare and manufacturing. Select a state to see who buys and why.</p>
+        <h2>Who I would sell to</h2>
+        <p>Fortune 1000 companies with four or more core SaaS apps, an internal SOC and an AI rollout underway. Select a segment to see who buys, why, and the play I would lead with.</p>
       </div>
       <div class="terr">
         <div>
-          <div class="tiles2 ctiles" role="group" aria-label="Central states">
-            <span class="col-h">Great Lakes</span>
-            <button class="sq" data-r="gl">IL<small>Illinois</small></button>
-            <button class="sq" data-r="gl">IN<small>Indiana</small></button>
-            <button class="sq" data-r="gl">MI<small>Michigan</small></button>
-            <button class="sq" data-r="gl">OH<small>Ohio</small></button>
-            <button class="sq" data-r="gl">WI<small>Wisconsin</small></button>
-            <span class="col-h">Upper Midwest</span>
-            <button class="sq" data-r="um">MN<small>Minnesota</small></button>
-            <button class="sq" data-r="um">IA<small>Iowa</small></button>
-            <button class="sq" data-r="um">ND<small>N. Dakota</small></button>
-            <button class="sq" data-r="um">SD<small>S. Dakota</small></button>
-            <span class="sq-x"></span>
-            <span class="col-h">Plains</span>
-            <button class="sq" data-r="pl">KS<small>Kansas</small></button>
-            <button class="sq" data-r="pl">MO<small>Missouri</small></button>
-            <button class="sq" data-r="pl">NE<small>Nebraska</small></button>
-            <span class="sq-x"></span><span class="sq-x"></span>
+          <div class="tiles2" role="group" aria-label="Segments">
+            <span class="col-h">Finance</span><span class="col-h">Health</span><span class="col-h">Industry</span><span class="col-h">Consumer</span>
+            <button class="sq" data-r="fs">BNK<small>Banks</small></button>
+            <button class="sq" data-r="hc">PAY<small>Payers</small></button>
+            <button class="sq" data-r="in">MFG<small>Makers</small></button>
+            <button class="sq" data-r="cs">RTL<small>Retail</small></button>
+            <button class="sq" data-r="fs">INS<small>Insurance</small></button>
+            <button class="sq" data-r="hc">HSP<small>Providers</small></button>
+            <button class="sq" data-r="in">AUT<small>Auto</small></button>
+            <button class="sq" data-r="cs">CPG<small>Brands</small></button>
+            <button class="sq" data-r="fs">WLT<small>Wealth</small></button>
+            <button class="sq" data-r="hc">PHM<small>Pharma</small></button>
+            <button class="sq" data-r="in">NRG<small>Energy</small></button>
+            <button class="sq" data-r="cs">TEL<small>Telecom</small></button>
+          </div>
+          <div class="icp">
+            <b>Fit signals</b>
+            <ul>
+              <li>Salesforce, Workday, Microsoft 365 or Snowflake as a core app</li>
+              <li>Hundreds of connected third party apps</li>
+              <li>Copilot or a custom agent program in rollout</li>
+              <li>A CISO with a SaaS security, IAM or detection team</li>
+              <li>Exam, audit or board pressure on third party risk</li>
+            </ul>
           </div>
         </div>
         <div>
           <table class="reg stack">
-            <thead><tr><th>Sub region</th><th>Who buys, why, and what I lead with</th></tr></thead>
+            <thead><tr><th>Segment</th><th>Who buys, why, and what I lead with</th></tr></thead>
             <tbody>
-              <tr data-r="gl"><td>Great Lakes<span class="st">IL, IN, MI, OH, WI</span></td><td data-h="Who buys and why">Insurers, banks, health systems, manufacturers and retailers running large Salesforce, Workday and Microsoft 365 estates.<div class="acc">Headquarters include Allstate, State Farm, Abbott, Walgreens, Progressive, Nationwide, Cardinal Health, Kroger, Eli Lilly, Elevance Health, GM, Ford and Northwestern Mutual</div><div class="lead"><b>Lead with</b>The trusted integration audit for insurers and banks, then agents in the SaaS estate for healthcare and manufacturing</div></td></tr>
-              <tr data-r="um"><td>Upper Midwest<span class="st">MN, IA, ND, SD</span></td><td data-h="Who buys and why">Healthcare, retail, banking and insurance, with large SOCs and fast AI rollouts.<div class="acc">Headquarters include UnitedHealth Group, Target, Best Buy, 3M, U.S. Bancorp, General Mills and Ameriprise in Minnesota, and Principal Financial in Iowa</div><div class="lead"><b>Lead with</b>Phishing to SaaS in minutes for the SOC, and exam ready SaaS for banks and insurers</div></td></tr>
-              <tr data-r="pl"><td>Plains<span class="st">KS, MO, NE</span></td><td data-h="Who buys and why">Financial services, healthcare and transportation, with heavy third party and examiner scrutiny.<div class="acc">Headquarters include Centene, Emerson, Edward Jones and Ameren in Missouri, and Berkshire Hathaway, Union Pacific and Mutual of Omaha in Nebraska</div><div class="lead"><b>Lead with</b>Exam ready SaaS for financial services, and the trusted integration audit for every Salesforce heavy org</div></td></tr>
+              <tr data-r="fs"><td>Financial services<span class="st">Banks, insurers, wealth</span></td><td data-h="Who buys and why">Examiners ask who can read customer data, and that data lives in Salesforce, Workday and Microsoft 365.<div class="acc">Buyer: the CISO with GRC at the table. Champion: SaaS security or IAM.</div><div class="lead"><b>Lead with</b>Exam ready SaaS, then the trusted integration audit</div></td></tr>
+              <tr data-r="hc"><td>Healthcare<span class="st">Payers, providers, pharma</span></td><td data-h="Who buys and why">Member and patient data spread across core SaaS apps, with HIPAA exposure on every connected integration.<div class="acc">Buyer: the CISO. Champion: IAM or the third party risk lead.</div><div class="lead"><b>Lead with</b>The trusted integration audit, then agents in the SaaS estate as Copilot reaches member data</div></td></tr>
+              <tr data-r="in"><td>Industrial<span class="st">Manufacturers, auto, energy</span></td><td data-h="Who buys and why">Large Microsoft 365 and Workday estates, growing engineering teams, and AI pilots moving into production.<div class="acc">Buyer: the CISO with the CIO when agents are in scope. Champion: security architecture.</div><div class="lead"><b>Lead with</b>Agents in the SaaS estate, then phishing to SaaS in minutes</div></td></tr>
+              <tr data-r="cs"><td>Consumer<span class="st">Retail, brands, telecom</span></td><td data-h="Who buys and why">Big SOCs, seasonal peaks, and customer data in Salesforce and Snowflake.<div class="acc">Buyer: the CISO. Champion: the head of detection and response.</div><div class="lead"><b>Lead with</b>Phishing to SaaS in minutes, then the trusted integration audit</div></td></tr>
             </tbody>
           </table>
-          <p class="note">Companies are examples of enterprises headquartered in each state. I would confirm named accounts, current customers and partner coverage with the team before any outreach.</p>
+          <p class="note">Segments describe who I would sell to, wherever coverage lands. I would set named accounts, current customers and partner coverage with the team before any outreach.</p>
         </div>
       </div>
     </section>
@@ -1438,7 +1452,7 @@ footer h4{color:var(--ink)}
         <div>
           <p class="insight">Insurers and banks answer to examiners on who can read customer data. In SaaS, that answer changes every time someone connects an app.</p>
           <dl class="dl">
-            <div><dt class="label">Who</dt><dd>Insurers, banks and wealth managers, the heart of the Central Fortune 1000.</dd></div>
+            <div><dt class="label">Who</dt><dd>Insurers, banks and wealth managers in the Fortune 1000.</dd></div>
             <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{risk_line}}</span>, the third party or cloud risk language from their 10&#8209;K</li><li><span class="tok">{{regulator}}</span>, their primary examiner or state insurance department</li><li><span class="tok">{{core_app}}</span> from tech stack data</li></ul></dd></div>
             <div><dt class="label">Personas</dt><dd>CISO and the GRC lead first, then the CIO.</dd></div>
             <div><dt class="label">Discovery</dt><dd><ul><li>How do you show an examiner who can read customer data in SaaS?</li><li>How many hours went into your last SaaS audit?</li><li>Which findings came back last cycle?</li></ul></dd></div>
@@ -1596,7 +1610,7 @@ footer h4{color:var(--ink)}
       </div>
       <div class="letter">
         <h3>Why Obsidian</h3>
-        <p>Every enterprise I've sold to runs on SaaS, and more of that work now happens through integrations and agents nobody logs in as. The Salesloft Drift and Klue attacks showed what happens when a trusted integration turns hostile, and Obsidian is built for that layer, from the first OAuth token to the newest agent. With the Series D funding agentic AI security, CISOs across the Central region will pick a platform for it in the next year or two. I want to be the rep who helps them pick Obsidian.</p>
+        <p>Every enterprise I've sold to runs on SaaS, and more of that work now happens through integrations and agents nobody logs in as. The Salesloft Drift and Klue attacks showed what happens when a trusted integration turns hostile, and Obsidian is built for that layer, from the first OAuth token to the newest agent. With the Series D funding agentic AI security, enterprise CISOs will pick a platform for it in the next year or two. I want to be the rep who helps them pick Obsidian.</p>
         <p class="sig">Eric Iannello</p>
       </div>
     </section>
@@ -1613,10 +1627,10 @@ footer h4{color:var(--ink)}
           <h3>Intro to Obsidian <span class="ns">| Building the foundation</span></h3>
           <ul>
             <li>Learn the platform hands on with a Sales Engineer: connect a sandbox, review integration risk, investigate a mock account takeover and govern an agent</li>
-            <li>Work with the regional leader, Sales Engineering and top reps to learn what's winning and where POVs stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Work with my manager, Sales Engineering and top reps to learn what's winning and where POVs stall, and pair it with what worked for me at Jamf and Netradyne</li>
             <li>Learn the Klue, Drift and Vercel teardowns well enough to teach them in a first meeting</li>
             <li>Build battlecards for AppOmni, Valence, CrowdStrike Adaptive Shield, native controls and agent point tools</li>
-            <li>Audit Central named accounts for core SaaS apps, AI rollouts, breach exposure and dormant opportunities</li>
+            <li>Audit named accounts for core SaaS apps, AI rollouts, breach exposure and dormant opportunities</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
             <li>Launch the first self sourced wave, starting with insurers and banks</li>
           </ul>
@@ -1626,12 +1640,12 @@ footer h4{color:var(--ink)}
           <span class="when">Days 31 to 60</span>
           <h3>Creating the playbook <span class="ns">| Testing the territory</span></h3>
           <ul>
-            <li>Review results with the regional leader and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Review results with my manager and peer reps each week, blending their guidance with patterns from my own deals</li>
             <li>Run the four plays in waves, starting with the trusted integration audit</li>
             <li>Multithread every target account across the CISO, SaaS security, IAM, the SOC, GRC and the app owners</li>
             <li>Hold insight meetings in place of first call demos, and price exposure, investigation time and audit hours in discovery</li>
             <li>Turn meetings into MEDDPICC qualified opportunities, each POV scoped to three apps and written criteria</li>
-            <li>Host CISO dinners in Chicago and Minneapolis with SentinelOne, Databricks or Google Cloud teams</li>
+            <li>Host CISO dinners with SentinelOne, Databricks or Google Cloud teams</li>
           </ul>
           <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and the first POVs scoped</div></div>
         </div>
@@ -1644,7 +1658,7 @@ footer h4{color:var(--ink)}
             <li>A forecast built on stage criteria, close plans, paper process and dated next steps</li>
             <li>No vanity meetings, no single threaded deals and no loose next steps</li>
             <li>Expansion paths mapped with Customer Success, from the first apps to agents and the browser extension</li>
-            <li>Regular deal reviews with the regional leader, and what works shared back with the team</li>
+            <li>Regular deal reviews with my manager, and what works shared back with the team</li>
           </ul>
           <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first POVs running on customer apps, pipeline building toward 3x coverage</div></div>
         </div>
@@ -1656,7 +1670,7 @@ footer h4{color:var(--ink)}
       <h2>Next step</h2>
       <p>I'd like to walk your team through this plan and hear where it's wrong.</p>
       <dl class="card-sig">
-        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Obsidian%20Enterprise%20AE%2C%20Central">eiannello72@gmail.com</a></dd>
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Obsidian%20Enterprise%20AE">eiannello72@gmail.com</a></dd>
         <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
         <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
       </dl>
@@ -1665,7 +1679,7 @@ footer h4{color:var(--ink)}
     <footer>
       <h4>Sources</h4>
       <ol class="sources">
-        <li id="s1"><a href="https://builtin.com/company/obsidian-security/jobs" target="_blank" rel="noopener">Obsidian Security, Enterprise Account Executive, Central job post</a></li>
+        <li id="s1"><a href="https://builtin.com/company/obsidian-security/jobs" target="_blank" rel="noopener">Obsidian Security, Enterprise Account Executive job post</a></li>
         <li id="s2"><a href="https://www.businesswire.com/news/home/20260804617491/en/" target="_blank" rel="noopener">Business Wire, Obsidian Security Series D announcement, August 2026</a></li>
         <li id="s3"><a href="https://pulse2.com/obsidian-security-raises-85-million-series-d-at-1-1-billion-valuation/" target="_blank" rel="noopener">Pulse 2.0, Obsidian Security raises $85 million Series D at $1.1 billion valuation</a></li>
         <li id="s4"><a href="https://www.obsidiansecurity.com/customer-stories/algolia" target="_blank" rel="noopener">Obsidian Security, How Obsidian helped Algolia secure SaaS at scale</a></li>
@@ -1685,7 +1699,7 @@ footer h4{color:var(--ink)}
         <li id="s18"><a href="https://www.crowdstrike.com/en-us/blog/crowdstrike-acquires-adaptive-shield-and-integrates-saas-protection" target="_blank" rel="noopener">CrowdStrike, CrowdStrike to acquire Adaptive Shield</a></li>
         <li id="s19"><a href="https://www.obsidiansecurity.com/news/obsidian-security-ranked-among-the-fastest-growing-companies-in-north-america-on-the-2025-deloitte-technology-fast-500-tm" target="_blank" rel="noopener">Obsidian Security, Ranked on the 2025 Deloitte Technology Fast 500</a></li>
       </ol>
-      <p class="disc">Independent research prepared by Eric Iannello for the Obsidian Security Enterprise Account Executive, Central role. Not affiliated with or endorsed by Obsidian Security. Figures come from public and third party sources as of October 2026, and vendor reported figures are labeled as such in their sources. The product console, example accounts and emails are illustrative.</p>
+      <p class="disc">Independent research prepared by Eric Iannello for the Obsidian Security Enterprise Account Executive role. Not affiliated with or endorsed by Obsidian Security. Figures come from public and third party sources as of October 2026, and vendor reported figures are labeled as such in their sources. The product console, example accounts and emails are illustrative.</p>
     </footer>
   </main>
 </div>
@@ -1733,7 +1747,7 @@ footer h4{color:var(--ink)}
   function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
   sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
   rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
-  pick('gl');
+  pick('fs');
 
   // Plays
   var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));

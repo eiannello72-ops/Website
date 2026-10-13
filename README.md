@@ -17,7 +17,7 @@ for the Enterprise AE role.
 | Jellyfish (West Coast) | [`jellyfish/`](jellyfish/index.html) |
 | Tines (PacNW) | [`tines/`](tines/index.html) |
 | Cortex (US Enterprise) | [`cortex/`](cortex/index.html) |
-| Obsidian Security (Central) | [`obsidian/`](obsidian/index.html) |
+| Obsidian Security | [`obsidian/`](obsidian/index.html) |
 
 ## Deploying
 

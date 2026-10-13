@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.remove("nojs")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Obsidian Enterprise Plan</title>
 <meta name="description" content="An enterprise plan for Obsidian Security, built on Challenger and MEDDPICC. Prepared by Eric Iannello.">
@@ -1162,6 +1163,16 @@ footer h4{color:var(--ink)}
 .icp ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:14px;color:#2A3350}
 @media (max-width:560px){.tiles2{grid-template-columns:repeat(4,minmax(0,1fr))}.icp{max-width:none}}
 .tiles2 .col-h{font-size:10.5px;letter-spacing:.04em}
+/* Without JavaScript, show every panel so nothing is hidden */
+.nojs [role="tabpanel"][hidden]{display:block!important}
+.nojs .step-p[hidden]{display:grid!important}
+.nojs .play[hidden]{display:grid!important}
+.nojs [role="tablist"],.nojs .step-nav,.nojs .mxf-all,.nojs button.run,.nojs .fc-hint{display:none!important}
+.nojs .step-p,.nojs .play,.nojs .bc,.nojs .dview{margin-bottom:18px}
+.nojs .fc{cursor:default}
+.nojs .fc-in{display:block!important;transform:none!important}
+.nojs .fc-f,.nojs .fc-b{transform:none!important;backface-visibility:visible!important;-webkit-backface-visibility:visible!important}
+.nojs .fc-b{display:grid!important;margin-top:8px}
 </style>
 </head>
 <body>

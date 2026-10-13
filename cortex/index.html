@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.remove("nojs")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cortex Enterprise Plan</title>
 <meta name="description" content="An enterprise territory plan for Cortex, built on Challenger and MEDDPICC. Prepared by Eric Iannello for Mike Connell.">
@@ -1142,6 +1143,16 @@ figcaption b{color:#fff!important}
  .fc-l{font-size:60px}
 }
 .mxf,.mxf-head,.mx-rule{max-width:1060px}
+/* Without JavaScript, show every panel so nothing is hidden */
+.nojs [role="tabpanel"][hidden]{display:block!important}
+.nojs .step-p[hidden]{display:grid!important}
+.nojs .play[hidden]{display:grid!important}
+.nojs [role="tablist"],.nojs .step-nav,.nojs .mxf-all,.nojs button.run,.nojs .fc-hint{display:none!important}
+.nojs .step-p,.nojs .play,.nojs .bc,.nojs .dview{margin-bottom:18px}
+.nojs .fc{cursor:default}
+.nojs .fc-in{display:block!important;transform:none!important}
+.nojs .fc-f,.nojs .fc-b{transform:none!important;backface-visibility:visible!important;-webkit-backface-visibility:visible!important}
+.nojs .fc-b{display:grid!important;margin-top:8px}
 </style>
 </head>
 <body>

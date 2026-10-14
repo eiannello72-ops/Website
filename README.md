@@ -18,6 +18,7 @@ for the Enterprise AE role.
 | Tines (PacNW) | [`tines/`](tines/index.html) |
 | Cortex (US Enterprise) | [`cortex/`](cortex/index.html) |
 | Obsidian Security | [`obsidian/`](obsidian/index.html) |
+| Ketch | [`ketch/`](ketch/index.html) |
 
 ## Deploying
 

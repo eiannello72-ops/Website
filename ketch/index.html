@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove("nojs")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ketch Enterprise Plan</title>
+<meta name="description" content="An Enterprise Account Executive plan for Ketch, built on Challenger and MEDDPICC. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%237000FF'/%3E%3Cpath d='M18 6l-8 11h6l-2 9 8-11h-6z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#F4F6FA;
+  --rule:#DDE2EA;
+  --ink:#0E1B2E;
+  --ink-2:#16263D;
+  --graphite:#566174;
+  --honey:#FFB400;
+  --honey-soft:#FFE7A3;
+  --sky:#7CC1F2;
+  --sky-soft:#E3F2FD;
+  --coral:#E8857F;
+  --lilac:#C3A8E6;
+  --link:#1D4F9F;
+  --good:#1F7A4D;
+  --warn:#8A5A00;
+  --bad:#B42318;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:17px;
+  --step-1:19.5px;
+  --step-2:24px;
+  --step-3:34px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+code{font-family:var(--mono);font-size:.86em}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--honey);color:var(--ink);padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:15px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--honey);font-weight:600}
+.side-foot{margin-top:auto;font-size:13.5px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
+section:first-of-type{border-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Hero */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:#93A0B5}
+.doc-meta span b{color:#fff;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+h1{font-size:clamp(36px,4.1vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:#fff}
+h1 mark{padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:21px;line-height:1.5;color:#C6CFDC;max-width:640px;margin-top:26px}
+.lede b{color:#fff;font-weight:600}
+.hero sup a{color:var(--honey)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid #fff;max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#8391A8}
+.facts dd{font-size:15.5px;margin-top:4px;color:#fff}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+.art{width:100%;max-width:340px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:230px;order:-1;justify-self:start}}
+
+/* Fig 1: trace */
+figure{margin-top:48px;max-width:980px}
+figcaption{font-size:14px;color:var(--graphite);margin-top:14px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:10px}}
+.float figure{margin-top:0}
+.trace{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.trace-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.trace-bar b{color:var(--ink);font-weight:500}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+@media (max-width:820px){.trace-grid{grid-template-columns:1fr}}
+.wf{padding:16px 18px 18px;border-right:1.5px solid var(--ink)}
+@media (max-width:820px){.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin:0 0 8px 150px}
+.span{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;height:30px}
+.span > span{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:calc(var(--d,0) * 12px)}
+.span .lane{position:relative;height:100%;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 25%)}
+.span .lane i{position:absolute;top:7px;bottom:7px;left:var(--s);width:var(--w);background:var(--sky);border:1.5px solid var(--ink);border-radius:3px}
+.span.hot .lane i{background:var(--honey)}
+.span.sel{background:var(--honey-soft);margin-inline:-18px;padding-inline:18px}
+.span.sel .lane i{background:var(--coral)}
+.span .lane em{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s) + var(--w) + 6px);font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+.span.far .lane em{left:auto;right:calc(100% - var(--s) + 6px)}
+@media (max-width:560px){.span{grid-template-columns:128px minmax(0,1fr)}.scale{margin-left:128px}.span > span{font-size:10.5px;padding-left:calc(var(--d,0) * 8px)}.span.far .lane em{display:none}.fields dd s{font-size:9px;padding:0 3px}}
+.fields{padding:16px 18px 18px}
+.fields h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.fields dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;font-family:var(--mono);font-size:12.5px}
+.fields dt,.fields dd{padding:5px 0;border-bottom:1px dashed var(--rule)}
+.fields dt{color:var(--graphite);padding-right:14px}
+.fields dd{color:var(--ink);display:flex;justify-content:space-between;gap:8px;min-width:0}
+.fields dd s{text-decoration:none;font-size:10px;background:var(--lilac);border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--honey);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:15px;margin-top:10px;color:#3D2A00}
+.band sup a{color:var(--ink)}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:16px;color:#26303F}
+.three p + p{margin-top:10px}
+
+/* Panels */
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 18px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#EEF2F8}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.sky{background:var(--sky)}
+.panel.honey{background:#FFD65C}
+.panel.honey:after{opacity:.28}
+
+/* Fig 2: dashboard vs Honeycomb */
+.compare{margin:8px 0 56px;max-width:1060px}
+.cmp-grid{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.25fr);align-items:stretch}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;gap:18px}}
+.pane{background:var(--ink-2);border:1.5px solid #34465F;border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.pane.hc{background:#fff;color:var(--ink);border-color:#fff;box-shadow:8px 8px 0 var(--honey)}
+.pane-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#93A0B5;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.pane.hc .pane-lbl{color:var(--graphite)}
+.pane-lbl b{font-weight:500;color:#7EE2A8}
+.pane.hc .pane-lbl b{color:var(--ink);background:var(--honey);padding:0 6px;border-radius:3px}
+.dash svg{width:100%;height:auto;display:block}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.kpis div{border:1px solid #34465F;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-family:var(--mono);font-size:10.5px;color:#93A0B5;text-transform:uppercase;letter-spacing:.05em}
+.kpis b{font-family:var(--display);font-size:22px;font-weight:700;color:#fff}
+.kpis b i{font-style:normal;font-size:12px;font-family:var(--mono);font-weight:400;color:#7EE2A8;margin-left:6px}
+.svc{list-style:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:#C6CFDC}
+.svc li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #2F4260}
+.svc span{color:#7EE2A8;display:inline-flex;align-items:center;gap:6px}
+.svc span:before{content:"";width:7px;height:7px;border-radius:50%;background:#7EE2A8}
+.heat{width:100%;height:auto;display:block}
+.heat-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:6px}
+.bu{margin-top:16px;border-top:1.5px solid var(--ink);padding-top:12px}
+.bu h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bu h4 span{display:flex;gap:12px;text-transform:none;letter-spacing:0}
+.bu h4 span i{display:inline-block;width:9px;height:9px;border:1px solid var(--ink);margin-right:4px;vertical-align:-1px}
+.bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
+.bu-row code{font-size:12px;white-space:nowrap}
+.bars{display:grid;gap:3px}
+@media (max-width:560px){.bu{grid-template-columns:1fr!important}.bu-row code{padding-top:6px}.heat-ax span:nth-child(2){display:none}}
+.bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
+.bars .sel{background:var(--honey)}
+.bars .base{background:var(--sky)}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--honey);display:grid;place-items:center;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.tally{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:12.5px;color:#FCA5A5}
+.pane.hc .tally{color:var(--good)}
+.tally b{font-size:22px;font-family:var(--display);font-weight:700;margin-right:4px}
+.compare figcaption{color:#93A0B5}
+.compare figcaption b{color:#fff}
+
+/* Talk track */
+.track{list-style:none;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid #2A3A52}
+.track li:last-child{border-bottom:1px solid #2A3A52}
+.track .who{font-family:var(--mono);font-size:13px;color:#8391A8;line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--honey);font-weight:600;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.42;letter-spacing:-.01em;color:#EEF2F8}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14.5px;color:#B5C0D0}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--honey);background:#1F3350;padding:1px 6px;border-radius:3px;margin-right:6px}
+.panel.ink sup a{color:var(--sky)}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--honey)}
+.ttt p{font-size:15.5px;color:#B5C0D0}
+.panel.ink .sh p{color:#B5C0D0}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;max-width:1060px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;gap:0;width:max-content}
+.hr{display:flex;gap:5px;margin-bottom:-17px}
+.hr.off{padding-left:40.5px}
+.hr:last-child{margin-bottom:0}
+.tile{--f:#fff;position:relative;width:76px;height:88px;border:0;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.tile:before{content:"";position:absolute;inset:2px;background:var(--f);clip-path:inherit;transition:background .15s}
+.tile b,.tile small{position:relative;font-weight:inherit}
+.tile small{font-size:9.5px;color:var(--graphite);font-weight:400}
+.tile[data-r="bay"]{--f:var(--sky-soft)}
+.tile[data-r="pnw"]{--f:#EDEFF4}
+.tile[data-r="socal"]{--f:#FFF3D1}
+.tile[data-r="mtn"]{--f:#F1EAFA}
+.tile.on{--f:var(--honey)}
+.tile.on small{color:var(--ink)}
+.tile.home b{font-weight:800}
+.map-note{font-size:13.5px;color:var(--graphite);margin-top:12px;line-height:1.5}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:600;padding-left:10px;width:160px}
+.reg .st{display:block;font-family:var(--mono);font-size:11.5px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14.5px;margin-top:6px}
+.note{font-size:14px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;border-bottom:1.5px solid rgba(14,27,46,.3);margin-bottom:32px;max-width:1060px}
+.play-nav button{font-family:var(--body);font-size:16px;font-weight:600;color:#1C3654;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:10px 0 12px;margin-right:28px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1060px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;font-weight:600;line-height:1.3;letter-spacing:-.015em;padding-left:18px;border-left:4px solid var(--ink)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px;color:#1C3654}
+.dl dd{font-size:16px;color:#0B1726}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.panel.sky .sh p{color:#11263F}
+.panel.sky sup a{color:var(--ink)}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:16px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.84em;color:#6B4500;background:var(--honey-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13.5px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:600}
+.mail-f sup a{color:var(--link)}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:600;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#26303F;font-size:15px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1060px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-6px;left:0;width:12px;height:14px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:700;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:15px;color:#26303F}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--honey-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:5px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:15px;color:#26303F}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1060px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14.5px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#26303F}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-left:4px solid var(--honey);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16.5px;color:#1F2937}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1060px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:#5A4300;border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15.5px;color:#1C1606}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:8px;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:#fff;border:1.5px solid var(--ink);padding:14px 16px;border-radius:4px;font-size:15px}
+.phase:last-child .out div{background:var(--ink);color:#fff}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+.phase:last-child .out b{color:var(--honey)}
+.panel.honey .sh p{color:#4A3A10}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:14px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--honey-soft)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* ===== Alignment pass ===== */
+:root{--gut:56px}
+@media (max-width:720px){:root{--gut:10px}}
+main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
+.float{padding-inline:var(--gut)}
+@media (max-width:720px){
+  .hero{margin-inline:-8px;padding-inline:18px!important}
+  .panel{padding-inline:18px!important}
+}
+.side{padding-top:56px}
+@media (min-width:721px) and (max-width:900px){.hero{padding-inline:56px!important}}
+.hero .facts{grid-column:1/-1;max-width:none;margin-top:8px}
+.terr{grid-template-columns:280px minmax(0,1fr)}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.path{grid-template-rows:repeat(5,auto);row-gap:0}
+.path li{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+.path .m{justify-self:start;align-self:start;margin-top:12px}
+.path p{align-self:start}
+@media (max-width:900px){.path{grid-template-rows:none;row-gap:22px}.path li{display:block;grid-row:auto}}
+.phases{grid-template-rows:repeat(4,auto);row-gap:0}
+.phase{display:grid;grid-template-rows:subgrid;grid-row:span 4}
+.phase .out{margin-top:0;padding-top:24px}
+.phase .out div{height:100%}
+@media (max-width:900px){.phases{grid-template-rows:none;row-gap:40px}.phase{display:flex;grid-row:auto}}
+.panel.sky .play-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel.sky .play-nav button{text-align:center;font-size:15px;padding:10px 8px;white-space:nowrap}
+@media (max-width:900px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel.sky .play-nav button{font-size:14px;padding:9px 8px;white-space:normal;line-height:1.25}}
+
+.reg .lead{margin-top:10px;padding:8px 12px;background:var(--fog);border-left:3px solid var(--honey);font-size:15px;border-radius:0 6px 6px 0}
+.reg tr.on .lead{background:#fff}
+.reg .lead b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.reg td:first-child{width:190px}
+@media (min-width:821px){.trace-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.fields dt{padding-right:10px}
+.fields dd{flex-wrap:wrap;align-items:center}
+.fields dd s{font-size:9.5px;padding:0 4px}
+.bu{display:grid;grid-template-columns:max-content minmax(40px,1fr);column-gap:14px;row-gap:10px;align-items:center}
+.bu h4{grid-column:1/-1;margin-bottom:0}
+.bu-row{display:contents}
+@media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.phase ul{align-content:start}
+.cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.band div{container-type:inline-size;display:flex;flex-direction:column;padding:24px 24px 26px}
+.band small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A3F00;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.band b{font-size:clamp(30px,25cqi,60px);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.band span{margin-top:12px;font-size:15px;line-height:1.45;color:#3D2A00;max-width:24ch}
+.band + section{border-top:0}
+/* ===== Interactive layer ===== */
+.banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+.banner b{font-weight:700}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--honey);z-index:50;box-shadow:0 0 0 1px rgba(14,27,46,.15)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1.5px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:var(--honey);color:var(--ink);border-color:var(--honey);box-shadow:4px 4px 0 #fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--honey)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.hx{cursor:pointer;transition:transform .2s;outline:none}
+.hx:hover,.hx.on{transform:translate(-5px,-5px)}
+.hx.on use{stroke:var(--honey);stroke-width:4}
+.hx[data-i="0"].on use{stroke:#fff}
+.hx:focus-visible use{stroke:var(--sky);stroke-width:4}
+.hx-say{margin-top:14px;min-height:66px;font-size:14.5px;line-height:1.45;color:#C6CFDC;border-left:3px solid var(--honey);padding-left:12px}
+.hx-say b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:2px}
+.hx-hint{font-family:var(--mono);font-size:11px;color:#8391A8;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hx,.btn{transition:none}}
+button.span{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.span:hover{background:var(--fog);margin-inline:-18px;padding-inline:18px;width:calc(100% + 36px)}
+button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
+.trace-bar .hint{color:var(--link)}
+.fields dl{transition:opacity .15s}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1.5px solid #34465F;border-radius:14px 14px 0 0;overflow:hidden;max-width:1060px}
+.cstep{background:var(--ink-2);border:0;border-left:1px solid #2A3A52;color:#B5C0D0;text-align:left;padding:16px 14px 18px;cursor:pointer;font:inherit;position:relative;transition:background .15s}
+.cstep:first-child{border-left:0}
+.cstep i{display:block;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--honey)}
+.cstep b{display:block;font-family:var(--display);font-size:16.5px;color:#fff;font-weight:600;margin:4px 0 2px;line-height:1.2}
+.cstep small{display:block;font-size:13px;line-height:1.35}
+.cstep:hover{background:#1D3150}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3D2A00}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i{color:var(--ink)}
+.cstep:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.cstep:nth-child(4){border-left:0}.cstep:nth-child(n+4){border-top:1px solid #2A3A52}.cstep small{display:none}}
+.step-p{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;background:#fff;color:var(--ink);border:1.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;padding:30px 30px 32px;max-width:1060px;box-shadow:8px 8px 0 var(--honey)}
+.step-p[hidden]{display:none}
+@media (max-width:860px){.step-p{grid-template-columns:1fr;gap:22px;padding:24px 20px}}
+.step-p h3{font-size:24px;margin-bottom:12px}
+.step-p blockquote{font-family:var(--display);font-size:20px;font-weight:500;line-height:1.45;padding-left:16px;border-left:4px solid var(--honey)}
+.step-p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.facts2{display:grid;gap:10px}
+.facts2 div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:15px;color:#26303F}
+.facts2 b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
+.facts2 sup a{color:var(--link)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#8391A8}
+.step-nav button{font:inherit;color:#fff;background:none;border:1.5px solid #34465F;border-radius:8px;padding:7px 14px;cursor:pointer}
+.step-nav button:hover{border-color:var(--honey);color:var(--honey)}
+.panel.sky .play-nav{border:0;gap:10px}
+.panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
+.bcs{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+@media (max-width:860px){.bcs{grid-template-columns:1fr}}
+.bc-list{display:grid;gap:8px}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}.cbtn:last-child:nth-child(odd){grid-column:1/-1}}
+.cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
+.cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
+.cbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] b{color:#fff}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.bc{background:var(--ink);color:#EEF2F8;border-radius:16px;padding:28px 28px 30px;box-shadow:8px 8px 0 var(--honey)}
+.bc[hidden]{display:none}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bc h3{font-size:26px;color:#fff}
+.bc .lead{color:#B5C0D0;margin-top:6px;font-size:16px}
+.threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
+.threat.mid{background:#3A2E10;color:var(--honey)}
+.bc-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+@media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
+.bc-cols div,.bc-q{border:1.5px solid #34465F;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
+.bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.bc-cols div:last-child h4{color:var(--honey)}
+.bc-cols p{font-size:15.5px;color:#DDE3EC}
+.bc-q{margin-top:14px;background:#1D3150;border-color:var(--honey)}
+.bc-q p{font-family:var(--display);font-size:19px;font-weight:500;color:#fff}
+.bc sup a{color:var(--sky)}
+
+/* ===== Pentera theme ===== */
+:root{
+  --ink:#132735;
+  --ink-2:#1B3446;
+  --graphite:#566573;
+  --honey:#FC6313;
+  --honey-soft:#FFE3D1;
+  --sky:#9DB3C4;
+  --sky-soft:#E7EEF3;
+  --coral:#FC6313;
+  --lilac:#DCE3E9;
+  --fog:#F3F5F7;
+  --rule:#DDE3E8;
+  --link:#C2410C;
+  --display:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --poster:'Anton','Oswald','Arial Narrow',Impact,sans-serif;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(40px,4.6vw,64px);line-height:1.02;text-transform:uppercase}
+.sh h2,.contact h2{font-size:40px;line-height:1.05}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+mark,h1 mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--honey)}
+.status:before{background:var(--honey);clip-path:none;width:8px;height:8px}
+.toc a.active{border-left-color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:400;font-size:19px;letter-spacing:.02em}
+.hero sup a,.panel.ink sup a{color:var(--honey)}
+.lede b{color:#fff}
+/* Band on ink */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#2B4457!important}
+.band small{color:var(--honey);border-color:#2B4457}
+.band b{color:#fff;font-size:clamp(34px,26cqi,64px);letter-spacing:.01em}
+.band span{color:#C9D3DC}
+.band sup a{color:var(--honey)}
+/* Plays panel orange */
+.panel.sky{background:var(--honey)}
+.panel.sky .sh p,.panel.sky .dl dd{color:#1A0E05}
+.panel.sky .dl dt{color:#3A1A05}
+.panel.sky .insight{border-color:var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.6)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff}
+.tok{color:#8A2E00;background:var(--honey-soft)}
+/* Plan panel */
+.panel.honey{background:#FFD9C0}
+.panel.honey:after{opacity:.22}
+.phase .when{color:#6A2A00}
+.panel.honey .sh p{color:#4A2308}
+.phase:last-child .out b{color:var(--honey)}
+/* Square tiles in place of hexes */
+.tiles2{display:grid;grid-template-columns:repeat(3,76px);gap:6px}
+.tiles2 .col-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);padding-bottom:4px;border-bottom:1.5px solid var(--ink);margin-bottom:2px}
+.sq{height:64px;border:1.5px solid var(--ink);border-radius:4px;background:var(--fog);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px;transition:background .15s,transform .15s}
+.sq small{font-size:9.5px;color:var(--graphite)}
+.sq:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.sq.on{background:var(--honey)}
+.sq.on small{color:var(--ink)}
+.sq.home{font-weight:800}
+.sq.home:after{content:"";width:6px;height:6px;background:var(--ink);margin-top:2px}
+/* Hero module grid */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative}
+.mod{aspect-ratio:1;border:2px solid #fff;background:var(--ink-2);color:#fff;font-family:var(--mono);font-size:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;text-align:left;line-height:1.2;transition:transform .15s,background .15s,box-shadow .15s;position:relative}
+.mod:before{content:"";position:absolute;top:10px;left:10px;width:8px;height:8px;background:currentColor;opacity:.6}
+.mod:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--honey)}
+.mod.on{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--honey);transform:translate(-3px,-3px)}
+.mod.core{background:var(--honey);color:var(--ink);font-family:var(--poster);font-size:19px;letter-spacing:.03em;text-transform:uppercase;border-color:var(--honey)}
+.mod.core.on{background:#fff;border-color:#fff}
+.mod:focus-visible{outline:2px solid var(--honey);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mod,.sq{transition:none}}
+/* Fig 1 funnel */
+.fun{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.fun-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.fun-bar b{color:var(--ink);font-weight:500}
+.fun-bar .hint{color:var(--link)}
+.fun-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+@media (max-width:1180px){.fun-grid{grid-template-columns:1fr}}
+.tiers{padding:18px;display:grid;gap:8px;border-right:1.5px solid var(--ink)}
+@media (max-width:1180px){.tiers{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;width:var(--w);min-width:210px;max-width:100%;border:1.5px solid var(--ink);border-radius:6px;background:var(--fog);padding:10px 14px;font:inherit;text-align:left;cursor:pointer;transition:background .15s}
+.tier span{font-size:14px;line-height:1.3;color:var(--ink)}
+.tier b{font-family:var(--poster);font-weight:400;font-size:26px;color:var(--ink);letter-spacing:.01em}
+.tier:hover{background:#fff}
+.tier.on{background:var(--ink)}
+.tier.on span,.tier.on b{color:#fff}
+.tier.last.on b{color:var(--honey)}
+.fun-d{padding:18px 20px 20px}
+.fun-d h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fun-d p{font-size:15.5px;color:#26303F}
+.fun-d ul{list-style:none;margin-top:12px;display:grid;gap:0;font-family:var(--mono);font-size:12.5px}
+.fun-d li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--rule)}
+.fun-d li s{text-decoration:none;font-size:10px;border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center;background:var(--honey-soft)}
+/* Fig 2 scanner vs path */
+.scan li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #2F4A5E;font-size:13.5px;color:#C9D3DC}
+.scan{list-style:none}
+.scan b{font-family:var(--mono);font-size:12px;font-weight:500;color:#FCA5A5;background:#3A1A1A;border-radius:4px;padding:2px 0;text-align:center}
+.pathv{display:grid;gap:0;margin-top:4px}
+.pnode{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;background:#fff;font-size:14.5px}
+.pnode i{font-style:normal;font-family:var(--mono);font-size:12px;width:26px;height:26px;display:grid;place-items:center;background:var(--ink);color:#fff}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{text-decoration:none;font-family:var(--mono);font-size:10.5px;background:var(--honey);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:1px 6px;white-space:nowrap}
+.plink{height:18px;width:2px;background:var(--ink);margin-left:26px}
+.pane.hc .tally{color:#1F7A4D}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey)}
+.mods{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mod{font-size:11.5px;padding:8px;overflow-wrap:anywhere;min-width:0}
+@media (max-width:900px){.art{max-width:320px}}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.art{max-width:340px}
+.mod{overflow-wrap:normal;font-size:11px}
+.mod.core{font-size:20px}
+h1{font-size:clamp(40px,4.3vw,60px);line-height:1.08}
+h1 mark{padding:0 .12em;border-radius:4px}
+.tiles2{grid-template-columns:repeat(3,84px)}
+.tiles2 .col-h{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}
+@media (min-width:1041px) and (max-width:1240px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}.cstep{padding:14px 10px 16px}.cstep b{font-size:15px}}
+@media (max-width:900px){.art{max-width:260px}}
+.path{grid-template-rows:repeat(6,auto)}
+.path li{grid-row:span 6}
+.path .exit{font-size:13.5px;color:#26303F;margin-top:12px;padding:10px 12px;background:var(--fog);border-left:3px solid var(--honey);border-radius:0 6px 6px 0;align-self:stretch}
+.path .exit b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+@media (max-width:900px){.path{grid-template-rows:none}}
+.stalls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:1180px){.stalls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stalls{grid-template-columns:1fr}}
+.stalls div{border:1.5px solid var(--ink);border-radius:10px;padding:16px 18px;background:#fff;box-shadow:4px 4px 0 var(--honey)}
+.stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.stalls p{font-size:14.5px;color:#26303F}
+@media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
+.mods{container-type:inline-size}
+.mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
+.mod.core{font-size:clamp(13px,6.2cqi,20px)}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+
+/* ===== LogicGate theme ===== */
+:root{
+  --ink:#08004B;
+  --ink-2:#15107A;
+  --graphite:#55536E;
+  --honey:#7CFA72;
+  --honey-soft:#E4FDE1;
+  --blue:#0000CC;
+  --blue-soft:#E8E8FF;
+  --sky:#B8B8FF;
+  --sky-soft:#EEEEFF;
+  --fog:#F4F4FA;
+  --rule:#DEDDEA;
+  --link:#0000CC;
+  --display:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --poster:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:800;letter-spacing:-.03em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h1 mark,mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--blue);color:#fff;border-color:var(--ink)}
+.banner b{color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--honey)}
+.toc a.active{border-left-color:var(--blue)}
+.hero sup a,.panel.ink sup a,.band sup a{color:var(--honey)}
+.btn.pri{background:var(--honey);border-color:var(--honey);color:var(--ink)}
+.band b{font-size:clamp(32px,22cqi,58px)}
+.band small{color:var(--honey)}
+.track .who b,.ttt h4{color:var(--honey)}
+.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:#1D2A00}
+.step-p{box-shadow:8px 8px 0 var(--blue)}
+.step-p blockquote{border-color:var(--blue)}
+.pane.hc{box-shadow:8px 8px 0 var(--honey)}
+.arrow-mid span{background:var(--honey)}
+/* Plays panel in LogicGate blue */
+.panel.sky{background:var(--blue);color:#fff}
+.panel.sky .sh h2{color:#fff}
+.panel.sky .sh p{color:#DADAFF}
+.panel.sky .insight{color:#fff;border-color:var(--honey)}
+.panel.sky .dl dt,.panel.sky .label{color:var(--honey)}
+.panel.sky .dl dd{color:#F0F0FF}
+.panel.sky sup a{color:var(--honey)}
+.panel.sky .mail sup a{color:var(--link)}
+.panel.sky .mail{box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.panel.sky .play-nav button:hover{background:rgba(255,255,255,.24)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--honey);color:var(--ink);border-color:var(--honey)}
+.panel.sky:after{mix-blend-mode:screen;opacity:.12}
+.tok{color:#1F1FA8;background:var(--blue-soft)}
+/* Plan panel */
+.panel.honey{background:#E4E4FF}
+.panel.honey .sh p{color:#2A2870}
+.phase .when{color:#2A2870}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents that were orange */
+.fun{box-shadow:8px 8px 0 var(--honey)}
+.fun-bar .hint{color:var(--blue)}
+.reg .lead{border-left-color:var(--blue)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--blue)}
+.path .exit{border-left-color:var(--blue)}
+.path .m{background:var(--blue-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--blue)}
+.bc{box-shadow:8px 8px 0 var(--honey)}
+.bc-q{border-color:var(--honey)}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#1F2A5A}
+.letter{border-left-color:var(--blue)}
+.sources li:target{background:var(--honey-soft)}
+.mod.core{background:var(--honey);border-color:var(--honey);color:var(--ink);font-family:var(--poster);font-weight:800;text-transform:none;letter-spacing:-.02em}
+.mod:hover{box-shadow:4px 4px 0 var(--honey)}
+.mod.on{box-shadow:5px 5px 0 var(--honey)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px}
+/* Fig 1: risk heat map */
+.hm-wrap{padding:18px;border-right:1.5px solid var(--ink);display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 22px;gap:6px}
+@media (max-width:1180px){.hm-wrap{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.hm-y{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm-x{grid-column:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.cell{aspect-ratio:1.35;border:1.5px solid var(--ink);border-radius:5px;font-family:var(--mono);font-size:15px;font-weight:500;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.cell.l1{background:#F1F1FA}
+.cell.l2{background:#C9C9FF}
+.cell.l3{background:#6E6EF5;color:#fff}
+.cell.l4{background:#0000CC;color:#fff}
+.cell.empty{color:transparent}
+.cell:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cell.on{outline:3px solid var(--honey);outline-offset:1px;box-shadow:4px 4px 0 var(--ink)}
+.fun-d li s{background:var(--blue-soft)}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}}
+/* Fig 2: files vs connected record */
+.files li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed #2E2A7A;font-family:var(--mono);font-size:12.5px;color:#D6D6F5;overflow-wrap:anywhere}
+.files{list-style:none}
+.files i{width:16px;height:20px;border:1.5px solid #8C8AD8;border-radius:2px;display:block;position:relative}
+.files i:after{content:"";position:absolute;left:3px;right:3px;top:6px;height:1.5px;background:#8C8AD8;box-shadow:0 4px 0 #8C8AD8}
+.pnode i{background:var(--blue)}
+.pnode.goal{background:var(--ink)}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--honey-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:#0000CC}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey);color:var(--ink)}
+h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
+.band b,.figs b{letter-spacing:-.02em}
+.band b{font-size:clamp(24px,20cqi,58px)}
+.panel.sky .mail{color:var(--ink)}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.inds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1060px}
+@media (max-width:860px){.inds{grid-template-columns:1fr}}
+.ind{border:1.5px solid var(--ink);border-radius:12px;padding:22px 24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.ind.reg{box-shadow:6px 6px 0 var(--blue)}
+.ind.pre{box-shadow:6px 6px 0 var(--honey)}
+.ind-tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ink);color:#fff}
+.ind.pre .ind-tag{background:var(--honey);color:var(--ink)}
+.ind h4{font-size:20px;font-weight:800}
+.ind p{font-size:15.5px;color:#26303F}
+.ind .lead{margin-top:auto;padding:10px 12px;background:var(--fog);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;font-size:14.5px}
+.ind.pre .lead{border-left-color:var(--honey)}
+.ind .lead b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+.ind .acc{font-size:14px;color:var(--graphite)}
+@media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#26303F}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
+
+/* ===== ketch.com UI layer: black, electric purple, neon green ===== */
+:root{--ink:#000000;--ink-2:#141414;--graphite:#555555;--honey:#82FF4E;--honey-soft:#F1E8FF;--blue:#6200E0;--blue-soft:#F1E8FF;--sky:#82FF4E;--sky-soft:#EEF8FE;--fog:#F5F8FC;--rule:#E2E8F0;--link:#6200E0;--navy:#000000;--cyan:#7000FF;--line:#E2E8F0;--mut:#555555;--txt:#000000;--soft:0 18px 40px -24px rgba(11,17,45,.35);--display:'Archivo','Helvetica Neue',Arial,sans-serif;--body:'Archivo','Helvetica Neue',Arial,sans-serif;--poster:'Archivo','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{background:#fff;color:var(--ink);font-family:var(--body)}
+.shell{display:block;max-width:none;padding:0}
+.side,.topbar{display:none!important}
+main{padding:0}
+main > section:not(.ohero):not(.capp-wrap),main > footer,main > .ckpis{max-width:1240px;margin-inline:auto}
+main > section.panel{margin-inline:max(20px,calc((100% - 1200px)/2))}
+@media (max-width:720px){main > section.panel{margin-inline:0;padding-inline:10px!important;border-radius:0}}
+h1,.sh h2,.contact h2,.bc h3,.figs b{font-family:var(--display);font-weight:500;letter-spacing:-.025em}
+.sh h2,.contact h2{font-size:44px;line-height:1.08;color:var(--ink)}
+h3,h4,.cstep b,.cbtn b,.three h3,.phase h3,.stalls h4,.letter h3{font-weight:700;letter-spacing:-.01em}
+.sh p,.three p,.note,.acc,.reg td,.stalls p,.mx-sub,.fit td,.figs span,.letter p,.contact p,.disc,.sources li,.r p{color:var(--mut)}
+.fit td:first-child,.reg td:first-child{color:var(--ink)}
+.label{font-family:var(--mono)}
+sup a{color:var(--blue)}
+.insight{font-weight:500;letter-spacing:-.015em}
+/* Announcement bar and nav */
+.banner{background:#82FF4E;color:var(--navy);border:0;font-size:14.5px;font-weight:700;padding:9px 16px;text-align:center}
+.banner a{color:var(--navy);text-decoration:none;margin-left:6px;white-space:nowrap}
+.banner a:after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:2px}
+.banner a:hover{text-decoration:underline}
+.cnav-wrap{position:sticky;top:0;z-index:30;background:var(--navy)}
+.cnav{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 28px}
+.clogo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;flex:none}
+.cmark{width:30px;height:30px;border-radius:50%;background:#fff;position:relative;display:block}
+.cmark:before{content:"";position:absolute;inset:6px;border-radius:50%;background:conic-gradient(from 30deg,var(--navy) 0 16%,#fff 0 33%,var(--navy) 0 50%,#fff 0 66%,var(--navy) 0 83%,#fff 0)}
+.cmark:after{content:"";position:absolute;inset:11px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--navy)}
+.clogo span:last-child{font-size:19px;font-weight:600;letter-spacing:.12em}
+.cnav .toc{display:flex;gap:2px;list-style:none;margin:0 auto;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.cnav .toc::-webkit-scrollbar{display:none}
+.cnav .toc a{display:block;padding:7px 10px;border:0;border-radius:6px;color:#fff;font-size:15px;font-weight:500;white-space:nowrap;text-decoration:none;margin:0}
+.cnav .toc a:hover{color:#82FF4E}
+.cnav .toc a.active{color:var(--navy);background:#82FF4E;border:0}
+.ccta{flex:none;display:inline-flex;align-items:center;background:#fff;color:var(--navy);font-size:13.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px 18px;border-radius:4px;text-decoration:none;border:2px solid #fff}
+.ccta:hover{background:#82FF4E;border-color:#82FF4E}
+.ccta.ghostc{background:transparent;color:#fff}
+.ccta.ghostc:hover{background:rgba(255,255,255,.12);color:#fff}
+@media (max-width:1240px){.ccta.ghostc{display:none}}
+@media (max-width:1100px){.clogo span:last-child{display:none}}
+@media (max-width:820px){.ccta{display:none}.cnav{padding:10px 12px;gap:10px}}
+/* Hero: the sky gradient with an orbit */
+.ohero{display:block!important;border-radius:0!important;margin:0;color:#fff!important;padding:72px max(24px,calc((100% - 1180px)/2)) 34px!important;background:linear-gradient(105deg,#1389BB 0%,#1E9CCB 30%,#3FA5DE 55%,#6DBCF2 78%,#8ED1FC 100%)!important;overflow:hidden;position:relative}
+.ohero:after{display:none}
+.oh-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px;align-items:center}
+.ohero h1{font-size:clamp(40px,4.6vw,64px);line-height:1.08;font-weight:500;letter-spacing:-.03em;color:var(--navy);max-width:720px}
+.ohero h1 span{display:block;color:#fff}
+.ohero .lede{color:#fff;font-size:19px;line-height:1.5;max-width:600px;margin-top:22px}
+.ohero .lede sup a{color:#fff}
+.ohero .ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.ohero .btn{font-family:var(--body);font-size:14.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:13px 22px;border:0;background:#fff;color:var(--navy);box-shadow:none;text-decoration:none}
+.ohero .btn.pri{background:var(--navy);color:#fff}
+.ohero .btn:hover{box-shadow:none;background:#F1E8FF}
+.ohero .btn.pri:hover{background:#222222}
+.orbit{position:relative;width:min(420px,100%);aspect-ratio:1;justify-self:center}
+.ring{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+.ring.r1{inset:18%;animation:spin 60s linear infinite}
+.ring.r2{inset:2%;animation:spin 90s linear infinite reverse;border-color:rgba(255,255,255,.35)}
+.oc{position:absolute;width:44px;height:44px;margin:-22px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font:700 11px/1 var(--body);box-shadow:0 8px 20px -8px rgba(11,17,45,.45),0 0 0 6px rgba(255,255,255,.28)}
+.r1 .c1{left:50%;top:0}.r1 .c2{left:93%;top:75%}.r1 .c3{left:7%;top:75%;background:#7000FF;color:#fff}
+.r2 .c4{left:50%;top:0}.r2 .c5{left:100%;top:50%}.r2 .c6{left:50%;top:100%}.r2 .c7{left:0;top:50%}
+.ring.r1 .oc{animation:spin 60s linear infinite reverse}.ring.r2 .oc{animation:spin 90s linear infinite}
+.core{position:absolute;inset:33%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C9EDFF,#7000FF 55%,#2B3FB8);box-shadow:0 0 60px 10px rgba(255,255,255,.35),inset 0 0 30px rgba(255,255,255,.4);display:grid;place-items:center}
+.core i{width:44%;aspect-ratio:1;border-radius:50%;background:#fff;position:relative}
+.core i:before{content:"";position:absolute;inset:18%;border-radius:50%;background:conic-gradient(from 30deg,#2B3FB8 0 16%,#fff 0 33%,#2B3FB8 0 50%,#fff 0 66%,#2B3FB8 0 83%,#fff 0)}
+.core i:after{content:"";position:absolute;inset:36%;border-radius:50%;background:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring,.ring .oc{animation:none!important}}
+.trusted{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+.trusted > span{font-size:20px;color:#fff}
+.trusted ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 34px}
+.trusted li{font-size:22px;font-weight:700;letter-spacing:-.01em;color:#fff;opacity:.95}
+@media (max-width:900px){.oh-grid{grid-template-columns:1fr}.orbit{width:min(300px,80%)}.ohero{padding-top:48px!important}}
+/* App mock */
+.capp-wrap{background:var(--fog);padding:64px max(20px,calc((100% - 1180px)/2)) 56px!important;margin:0;border:0!important}
+.app-intro{max-width:760px;margin-bottom:24px}
+.app-intro h2{font-size:clamp(30px,3.4vw,42px);font-weight:500;letter-spacing:-.025em;line-height:1.1}
+.app-intro p{color:var(--mut);margin-top:10px;font-size:18px}
+.app{display:grid;grid-template-columns:64px minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink);box-shadow:0 30px 70px -40px rgba(11,17,45,.45)}
+.app-rail{background:var(--navy);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.rail-logo{width:32px;height:32px;border-radius:50%;background:#fff;position:relative}
+.rail-logo:before{content:"";position:absolute;inset:7px;border-radius:50%;background:conic-gradient(from 30deg,var(--navy) 0 16%,#fff 0 33%,var(--navy) 0 50%,#fff 0 66%,var(--navy) 0 83%,#fff 0)}
+.rail-logo:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#fff}
+.app-tabs{display:grid;gap:6px}
+.dtab{width:42px;height:42px;border-radius:8px;border:0;background:none;color:#A3A3A3;cursor:pointer;display:grid;place-items:center;position:relative}
+.dtab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.dtab:hover{background:#222222;color:#fff}
+.dtab[aria-selected="true"]{background:#82FF4E;color:var(--navy)}
+.dtab:focus-visible{outline:2px solid #82FF4E;outline-offset:2px}
+.ti{width:17px;height:17px;display:block;border:1.8px solid currentColor;border-radius:50%;position:relative}
+.ti.t0:after{content:"";position:absolute;inset:4px;border-radius:50%;background:currentColor}
+.ti.t1{border-radius:5px}
+.ti.t1:after{content:"";position:absolute;left:3px;right:3px;top:5px;height:2px;background:currentColor;box-shadow:0 4px 0 currentColor}
+.ti.t2{transform:rotate(45deg);border-radius:3px;width:14px;height:14px}
+.ti.t3{border-radius:3px 3px 8px 8px}
+.ti.t4{border-radius:2px;border-width:0 0 2px 0;width:18px}
+.ti.t4:before{content:"";position:absolute;left:2px;bottom:2px;width:4px;height:6px;background:currentColor;box-shadow:5px -4px 0 currentColor,10px -8px 0 currentColor}
+.app-main{min-width:0}
+.dview{padding:18px 22px 22px;min-width:0}
+.vhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vhead h3{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.vact{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ghost,.prim{font:600 12.5px var(--body);border-radius:6px;padding:6px 11px}
+.ghost{color:var(--ink);border:1px solid var(--line);background:#fff}
+.prim{color:#fff;background:var(--navy);border:1px solid var(--navy)}
+button.prim{cursor:pointer}
+button.prim:hover{background:#222222}
+button.prim:disabled{opacity:.6;cursor:default}
+.vcap{font-size:14px;color:var(--mut);margin:4px 0 14px}
+.vcap code{font-size:12.5px}
+.alert{font-size:11px;font-weight:700;color:#fff;background:#B42318;border-radius:4px;padding:2px 7px;margin-right:6px}
+.st{font-style:normal;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.st.x{background:#FDE8E8;color:#B42318}.st.o{background:#FFEFDF;color:#9A4A00}.st.y{background:#FEF5D6;color:#7A5A00}.st.g{background:#E3F6EC;color:#1F7A4D}.st.n{background:#EEF1F6;color:#555555}
+.igrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px;align-items:stretch}
+.ilist{display:grid;gap:6px;align-content:start}
+.irow2{display:grid;grid-template-columns:28px minmax(0,1fr) auto auto;gap:10px;align-items:center;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 10px;font:inherit;color:var(--ink);cursor:pointer}
+.irow2:hover{border-color:#B9C6DA}
+.irow2.on{border-color:var(--blue);background:#F8F3FF;box-shadow:inset 3px 0 0 var(--blue)}
+.irow2:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.iav{width:28px;height:28px;border-radius:50%;background:#F1E8FF;position:relative}
+.iav:after{content:"";position:absolute;inset:8px;border-radius:50%;border:2px solid var(--blue)}
+.iav.ai{background:#E8ECFE}.iav.ai:after{border-color:#7000FF;border-radius:3px}
+.iav.human{background:#F1F3F8}.iav.human:after{border-color:#555555;inset:7px 8px 9px}
+.iav.mcp{background:#FFEFDF}.iav.mcp:after{border-color:#9A4A00;transform:rotate(45deg);border-radius:2px}
+.iav.service{background:#E3F6EC}.iav.service:after{border-color:#1F7A4D}
+.inm{font-size:13.5px;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inm small{display:block;font-size:11.5px;font-weight:500;color:var(--mut)}
+.iapps{font-size:12px;color:var(--mut);white-space:nowrap}
+.iview{border:1px solid var(--line);border-radius:10px;background:radial-gradient(circle at 50% 48%,#EEF8FE,#fff 70%);display:grid;place-items:center;padding:6px}
+.graph{width:100%;height:auto;max-height:280px}
+.graph .ge{stroke:#D5DDEA;stroke-width:1.5;stroke-dasharray:3 4}
+.graph .ge.on{stroke:#7000FF;stroke-width:2.4;stroke-dasharray:none}
+.graph .gn circle{fill:#fff;stroke:#D5DDEA;stroke-width:1.5}
+.graph .gn.on circle{fill:var(--navy);stroke:#7000FF;stroke-width:3}
+.graph .gi{font:700 10px var(--body);text-anchor:middle;fill:#8C8C8C}
+.graph .gn.on .gi{fill:#fff}
+.graph .gl{font:600 9.5px var(--body);text-anchor:middle;fill:#8C8C8C}
+.graph .gn.on .gl{fill:var(--ink)}
+.graph .gc circle{fill:#7000FF;stroke:#fff;stroke-width:4}
+.graph .gc text{font:700 9px var(--body);text-anchor:middle;fill:#fff}
+.graph .gc .gcr{font-size:8.5px;font-weight:600}
+.idet{margin-top:14px;display:grid;grid-template-columns:minmax(0,1.3fr) 220px minmax(0,1fr);gap:16px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--fog);align-items:start}
+.idet small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.idet h4{font-size:16px;font-weight:700;margin-top:2px;font-family:var(--mono)}
+.idet p{font-size:13.5px;color:#2B2B2B;margin-top:4px}
+.idn{display:grid;gap:8px}
+.idn b{display:block;font-size:14.5px;font-weight:700;color:var(--ink)}
+.idet ul{list-style:none;display:grid;gap:6px}
+.idet li{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#2B2B2B;border-bottom:1px solid var(--line);padding-bottom:5px}
+.idet li s{text-decoration:none;font-size:10.5px;font-weight:700;color:var(--blue);background:#F1E8FF;border-radius:4px;padding:1px 6px;align-self:start;white-space:nowrap}
+.vt{width:100%;border-collapse:collapse;font-size:13.5px}
+.vt th{text-align:left;font-size:11.5px;font-weight:700;color:var(--mut);padding:8px 10px;border-bottom:1px solid var(--line);background:var(--fog)}
+.vt td{padding:10px;border-bottom:1px solid #EEF1F6;color:#2B2B2B}
+.vt td b{color:var(--ink)}
+.vt code{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.vt .numc{font-variant-numeric:tabular-nums}
+.vt tr.gone td{color:#A3A3A3}
+.vt tr.gone code{text-decoration:line-through;color:#A3A3A3}
+.rvk{font:700 11.5px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#B42318;background:#fff;border:1.5px solid #F2B8B5;border-radius:5px;padding:5px 10px;cursor:pointer}
+.rvk:hover{background:#FDE8E8}
+.rvk:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+tr.gone .rvk{color:var(--ink);border-color:var(--line)}
+.keep{font-size:12px;color:var(--mut)}
+.vfoot{font-size:13px;color:var(--mut);margin-top:10px}
+.pos{display:grid;gap:8px}
+.prow{display:grid;grid-template-columns:130px minmax(0,1fr) 36px 80px;gap:14px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.prow b{font-size:14px}
+.prow i{height:8px;border-radius:4px;background:linear-gradient(90deg,#7000FF var(--w),#EEF1F6 var(--w))}
+.prow i.lo{background:linear-gradient(90deg,#E08A3C var(--w),#EEF1F6 var(--w))}
+.prow span{font-weight:700;font-size:14px;text-align:right}
+.prow em{font-style:normal;font-size:12px;color:var(--mut);text-align:right}
+.oxs{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;counter-reset:s;margin-bottom:12px}
+.oxs li{counter-increment:s;font-size:12.5px;color:var(--mut);border:1px solid var(--line);border-radius:8px;padding:9px;display:flex;gap:7px;align-items:center;background:#fff}
+.oxs li:before{content:counter(s);flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid #C8D2E3;display:grid;place-items:center;font-size:10.5px;font-weight:700}
+.oxs li.doing{color:var(--ink);border-color:#7000FF;background:#F8F3FF}
+.oxs li.doing:before{border-color:#7000FF;color:#7000FF}
+.oxs li.done{color:var(--ink)}
+.oxs li.done:before{content:"";background:var(--navy) no-repeat center/11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' stroke='%2398DDFF' stroke-width='2' fill='none'/%3E%3C/svg%3E");border-color:var(--navy)}
+.oxr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.oxr > div{border:1px solid #D9C2FF;background:#F8F3FF;border-radius:8px;padding:12px 14px}
+.oxr small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.oxr p{font-size:13.5px;color:var(--ink);margin-top:4px}
+.oxr code{font-family:var(--mono);font-size:12px}
+@media (max-width:1000px){.oxr{grid-template-columns:1fr}.oxs{grid-template-columns:1fr 1fr}.idet{grid-template-columns:1fr}.igrid{grid-template-columns:1fr}}
+@media (max-width:820px){.app{grid-template-columns:1fr}.app-rail{flex-direction:row;padding:8px 10px}.app-tabs{display:flex}.capp-wrap{padding:44px 10px 40px!important}}
+@media (max-width:620px){.vt thead{display:none}.vt tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid #EEF1F6}.vt td{border:0;padding:3px 6px}.vt td:nth-child(n+3){grid-column:1/-1}.vint td:nth-child(4),.vint td:nth-child(5){grid-column:auto}.dview{padding:14px 12px}.oxs{grid-template-columns:1fr}.prow{grid-template-columns:96px minmax(0,1fr) 30px;gap:10px}.prow em{grid-column:1/-1;text-align:left;margin-top:-4px}.irow2{grid-template-columns:28px minmax(0,1fr) auto}.iapps{display:none}}
+/* KPI and research cards */
+.ckpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:44px var(--gut) 0}
+.ckpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;border-top:4px solid #7000FF}
+.ckpi small{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.ckpi b{display:block;font-size:clamp(34px,3.4vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-top:6px}
+.ckpi p{font-size:14.5px;color:var(--mut);margin-top:6px}
+@media (max-width:1000px){.ckpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ckpis{grid-template-columns:1fr}}
+#know .three{max-width:1060px;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+#know .three > div{background:var(--fog);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+@media (max-width:820px){#know .three{grid-template-columns:1fr}}
+.ind-h{margin:48px 0 18px;max-width:1060px;font-size:22px}
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.r:hover{border-color:#B9C6DA;box-shadow:var(--soft)}
+.r .chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.chips span{font-size:11px;font-weight:700;background:#F1E8FF;border-radius:999px;padding:3px 10px;color:#5200C2}
+.r b{font-size:21px;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.01em}
+.r p{font-size:14.5px;margin:6px 0 14px}
+.r small{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+.evt{max-width:1060px;margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15px;color:var(--ink);background:#F1E8FF;border-radius:10px;padding:12px 16px}
+.evt b{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5200C2}
+@media (max-width:560px){.evt{grid-template-columns:1fr;gap:4px}}
+/* Navy panel: talk track */
+.panel.ink{background:var(--navy)!important;color:#fff;border:0!important}
+.panel.ink:after{opacity:.08}
+.panel.ink .sh h2{color:#fff}
+.panel.ink .sh p{color:#CFCFCF}
+.panel.ink sup a{color:#82FF4E}
+.pane{background:#141414!important;border:1px solid #333333!important;border-radius:12px}
+.pane-lbl{color:#A3A3A3!important}
+.pane-lbl b{color:#82FF4E!important}
+.files li{color:#E6E6E6;border-bottom-color:#333333}
+.files i,.files i:after{border-color:#777777}.files i:after{background:#777777}
+.pane .tally{color:#82FF4E}
+.pane .tally span{color:#CFCFCF}
+.pane.hc{background:#fff!important;color:var(--ink)!important;border:0!important;box-shadow:0 0 0 1px rgba(152,221,255,.5),0 30px 60px -30px rgba(31,167,214,.7)!important}
+.pane.hc .pane-lbl{color:var(--mut)!important}
+.pane.hc .pane-lbl b{background:#F1E8FF!important;color:#5200C2!important}
+.pane.hc .tally{color:var(--blue)!important}
+.pane.hc .tally span{color:var(--mut)}
+.pnode{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;text-align:left}
+.pnode i{background:var(--navy)!important;color:#fff!important}
+.pnode s{background:#F1E8FF!important;color:#5200C2!important;border-color:#D9C2FF!important}
+.pnode.goal{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+.pnode.goal i{background:#82FF4E!important;color:var(--navy)!important}
+.pnode.goal s{background:#82FF4E!important;color:var(--navy)!important;border-color:#82FF4E!important}
+.plink{border-color:#D9C2FF!important}
+.arrow-mid span{background:#7000FF!important}
+.steps{border-color:#333333!important}
+.cstep{background:#141414!important;color:#CFCFCF;border-left-color:#333333!important}
+.cstep b{color:#fff}.cstep i{color:#82FF4E!important}
+.cstep small{color:#BDBDBD}
+.cstep:hover{background:#222222!important}
+.cstep[aria-selected="true"],.cstep[aria-selected="true"]:hover{background:#82FF4E!important;color:var(--navy)}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i,.cstep[aria-selected="true"] small{color:var(--navy)!important}
+.step-p{background:#fff!important;color:var(--ink)!important;box-shadow:none!important;border:0!important}
+.step-p h3,.step-p .facts2 b{color:var(--ink)!important}
+.step-p blockquote{border-color:#7000FF!important;color:var(--ink)}
+.step-p .k{color:var(--mut)!important}
+.facts2 div{border:1px solid var(--line)!important;background:var(--fog);color:#2B2B2B!important}
+.step-p sup a,.facts2 sup a{color:var(--blue)!important}
+.step-nav button{color:#fff;border-color:#555555;background:transparent}
+.step-nav button:hover{background:#222222}
+.step-nav span{color:#CFCFCF}
+.ttt h4{color:#82FF4E!important}
+.ttt p{color:#CFCFCF}
+/* Territory */
+.ctiles{grid-template-columns:repeat(3,92px)!important;grid-template-rows:auto repeat(5,58px);grid-auto-flow:column;gap:8px!important}
+.tiles2 .col-h{color:var(--mut);border-color:var(--line)!important;font-size:11px;white-space:nowrap}
+.sq{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;height:58px;font-size:16px;font-weight:700;border-radius:8px}
+.sq small{color:var(--mut)!important;font-weight:500}
+.sq:hover{border-color:#7000FF!important}
+.sq.on{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+.sq.on small{color:#82FF4E!important}
+.sq-x{display:block}
+.reg th,.fit th{color:var(--mut)!important;border-color:var(--line)!important}
+.reg td,.fit td{border-color:var(--line)!important}
+.reg tr.on td{background:#F8F3FF!important}
+.reg .lead{background:#F1E8FF!important;color:var(--ink)}
+.reg .lead b{color:#5200C2!important}
+.reg .st{color:var(--mut)!important}
+@media (max-width:560px){.ctiles{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+/* Plays panel: light sky */
+.panel.sky{background:linear-gradient(160deg,#F1E8FF 0%,#F5FAFF 60%,#fff 100%)!important;color:var(--ink);border:1px solid #E6D6FF}
+.panel.sky:after{opacity:0}
+.panel.sky .sh h2{color:var(--ink)}
+.panel.sky .sh p{color:var(--mut)}
+.panel.sky .insight{color:var(--ink);border-color:#7000FF}
+.panel.sky .dl dt,.panel.sky .label{color:#5200C2}
+.panel.sky .dl dd{color:#2B2B2B}
+.panel.sky sup a{color:var(--blue)}
+.panel.sky .play-nav button{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;font-weight:700;font-size:14px;letter-spacing:.02em}
+.panel.sky .play-nav button:hover{border-color:#7000FF;background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.mail,.panel.sky .mail{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px;box-shadow:0 30px 60px -36px rgba(11,17,45,.4)!important}
+.mail-h,.mail-f{background:var(--fog)!important;border-color:var(--line)!important}
+.mail-h dt,.mail-h ol li:before,.touch h4{color:var(--mut)!important}
+.touch{border-color:#EEF1F6!important}
+.tok{background:#F1E8FF!important;color:#5200C2!important}
+.mail sup a{color:var(--blue)!important}
+.pull li{margin-bottom:4px}
+/* Battlecards and stalls */
+.cbtn{background:#fff!important;border:1px solid var(--line)!important;box-shadow:none!important;transform:none!important;border-radius:8px}
+.cbtn b{color:var(--ink)!important}.cbtn small{color:var(--mut)!important}
+.cbtn:hover{border-color:#7000FF!important}
+.cbtn[aria-selected="true"]{background:#F8F3FF!important;border-color:var(--blue)!important;box-shadow:inset 3px 0 0 var(--blue)!important}
+.bc{background:#fff!important;border:1px solid var(--line)!important;box-shadow:var(--soft)!important;border-radius:12px}
+.bc h3{color:var(--ink)}
+.bc-cols div,.bc-q{background:var(--fog)!important;border:1px solid var(--line)!important}
+.bc-cols h4{color:var(--mut)!important}
+.bc-cols div:last-child h4{color:#5200C2!important}
+.bc-q{background:#F1E8FF!important;border-color:#D9C2FF!important}
+.bc p{color:#2B2B2B}
+.threat{color:var(--mut);background:#EEF1F6}
+.threat.mid{color:#5200C2!important;background:#F1E8FF!important}
+.stalls div{background:#fff!important;border:1px solid var(--line)!important;border-top:3px solid #7000FF!important;box-shadow:none!important;border-radius:10px}
+.stalls h4{color:var(--ink)}
+/* MEDDPICC flip cards */
+.mxf-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:56px 0 18px}
+.mxf-head h3{margin:0 0 8px;font-size:24px}.mxf-head .mx-sub{margin:0;max-width:640px}
+.mxf-all{font:700 12.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#fff;border:1.5px solid var(--navy);border-radius:4px;padding:11px 16px;cursor:pointer;white-space:nowrap}
+.mxf-all:hover{background:#F1E8FF}.mxf-all[aria-pressed="true"]{background:var(--navy);color:#fff}
+.mxf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fc{all:unset;box-sizing:border-box;display:block;perspective:1600px;cursor:pointer;border-radius:12px;text-align:left}
+.fc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.fc-in{display:grid;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;height:100%}
+.fc[aria-pressed="true"] .fc-in{transform:rotateY(180deg)}
+.fc-f,.fc-b{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;box-sizing:border-box;min-height:100%}
+.fc-f{display:grid;grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto auto 1fr auto;column-gap:18px;row-gap:6px;padding:22px 24px;background:linear-gradient(105deg,#1389BB,#3FA5DE 60%,#8ED1FC);color:#fff}
+.fc:hover .fc-f{box-shadow:0 20px 40px -24px rgba(11,17,45,.6)}
+.fc-l{grid-row:1/5;font:600 88px/.9 var(--display);letter-spacing:-.04em;color:var(--navy);align-self:start}
+.fc-n{font-size:20px;font-weight:700;color:#fff;margin-top:2px}
+.fc-w{font-size:14.5px;color:#fff}
+.fc-flag{grid-column:2;margin-top:10px;font-size:14.5px;font-weight:600;color:var(--navy);border-top:1px solid rgba(255,255,255,.5);padding-top:12px}
+.fc-flag small{display:block;font:700 10.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:4px}
+.fc-hint{grid-column:2;margin-top:4px;font:700 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.fc-hint:after{content:"";display:inline-block;width:10px;height:10px;margin-left:6px;border:2px solid currentColor;border-left:0;border-bottom:0;border-radius:0 6px 0 0;vertical-align:-1px}
+.fc-b{background:#fff;border:1px solid var(--line);transform:rotateY(180deg);color:#2B2B2B;font-size:13.5px;line-height:1.45;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px;row-gap:12px;align-content:start;padding:20px 24px;box-shadow:var(--soft)}
+.fc-bh{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;font-weight:700;color:var(--ink);font-size:16px}
+.fc-bh b{font-size:26px;color:#7000FF}
+.fc-s small{display:block;font:700 10.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#5200C2;margin-bottom:4px}
+.fc-s .q{display:block;padding-left:10px;border-left:2px solid #7000FF;margin-top:4px;color:var(--ink)}
+.fc-m{color:var(--ink);font-weight:600}
+@media (max-width:860px){.mxf{grid-template-columns:1fr}}
+@media (max-width:600px){
+ .mxf-head{flex-direction:column;align-items:flex-start}
+ .fc-in{display:block;transform:none!important;transition:none}
+ .fc-f,.fc-b{transform:none;backface-visibility:visible;-webkit-backface-visibility:visible}
+ .fc-b{display:none;grid-template-columns:1fr}
+ .fc[aria-pressed="true"] .fc-f{display:none}
+ .fc[aria-pressed="true"] .fc-b{display:grid}
+ .fc-f{grid-template-columns:60px minmax(0,1fr);padding:18px}
+ .fc-l{font-size:58px}
+}
+@media (prefers-reduced-motion:reduce){.fc-in{transition:none}}
+.mx-rule{background:var(--navy)!important;box-shadow:none!important;border:0;border-radius:10px}
+.mx-rule b{color:#82FF4E!important}
+.mx-rule span{color:#E6E6E6}
+/* About, plan, contact */
+.figs{border-color:var(--line)!important}
+.figs div{border-color:var(--line)!important}
+.figs b{color:var(--ink)}
+.letter{background:var(--fog)!important;border-left:4px solid #7000FF!important;border-radius:0 12px 12px 0}
+.letter .sig{color:var(--mut)}
+.panel.honey{background:var(--fog)!important;border:1px solid var(--line)}
+.panel.honey:after{opacity:0}
+.panel.honey .sh h2{color:var(--ink)}
+.panel.honey .sh p{color:var(--mut)}
+.phase{background:#fff!important;border:1px solid var(--line)!important;border-radius:12px}
+.phase .when{color:#5200C2!important;font-weight:700}
+.phase li{color:#2B2B2B}
+.out div{background:var(--navy)!important;color:#E6E6E6!important;border:0!important;border-radius:8px}
+.out b{color:#82FF4E!important}
+.ns{white-space:nowrap}
+.card-sig dt{color:var(--mut)}.card-sig dd a{color:var(--ink)}
+footer h4{color:var(--ink)}
+.sources a{color:var(--mut)}
+/* fixes */
+.mxf,.mxf-head,.mx-rule{max-width:1060px}
+.fc-f{background:radial-gradient(110% 120% at 0% 0%,rgba(31,167,214,.55),transparent 60%),var(--navy)}
+.fc-l{color:#82FF4E}
+.fc-w{color:#CFCFCF}
+.fc-flag{color:#fff;border-top-color:#333333}
+.fc-flag small,.fc-hint{color:#82FF4E}
+.irow2 .st{align-self:center;display:inline-block;line-height:1.5}
+.ohero{padding-inline:max(24px,calc((100% - 1128px)/2))!important}
+.capp-wrap{padding-inline:max(20px,calc((100% - 1128px)/2))!important}
+@media (max-width:1400px){.ccta.ghostc{display:none}}
+.ohero{padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+.capp-wrap{padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+@media (max-width:720px){.capp-wrap .app{margin-inline:0}}
+.bc sup a{color:var(--blue)!important}
+.bc-q h4{color:#5200C2!important}
+.fc-bh b{color:var(--blue)}
+/* Segments */
+.tiles2{grid-template-columns:repeat(4,minmax(0,78px))}
+.icp{margin-top:20px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--fog);max-width:360px}
+.icp b{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5200C2}
+.icp ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:14px;color:#2B2B2B}
+@media (max-width:560px){.tiles2{grid-template-columns:repeat(4,minmax(0,1fr))}.icp{max-width:none}}
+.tiles2 .col-h{font-size:10.5px;letter-spacing:.04em}
+/* ===== Ketch specific layer ===== */
+:root{--pu:#7000FF;--pu2:#6200E0;--gr:#82FF4E;--line:#E3E3E3;--mut:#4D4D4D}
+.wx{font-variation-settings:"wdth" 125}
+h1,.sh h2,.contact h2,.app-intro h2{font-family:var(--display);font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:-.01em;line-height:.98}
+.sh h2,.contact h2{font-size:clamp(30px,3.6vw,46px)}
+.banner{background:var(--gr);color:#000;font-weight:500;font-size:15px}
+.banner b{font-weight:800}
+.banner a{color:#000;font-weight:500}
+.cnav-wrap{background:#fff;border-bottom:1px solid #C1C1C1}
+.cnav{padding:14px 28px}
+.cmark{width:40px;height:40px;border-radius:2px;background:var(--pu)}
+.cmark:before{inset:8px 11px;border-radius:0;background:#fff;clip-path:polygon(60% 0,20% 55%,48% 55%,40% 100%,80% 42%,52% 42%)}
+.cmark:after{display:none}
+.clogo{color:#000}
+.clogo span:last-child{font-size:26px;font-weight:800;letter-spacing:-.03em;text-transform:none}
+.cnav .toc a{color:#000;font-weight:600;font-size:15.5px;border-radius:999px}
+.cnav .toc a:hover{color:var(--pu)}
+.cnav .toc a.active{background:#F1E8FF;color:var(--pu)}
+.ccta{border-radius:999px;text-transform:none;letter-spacing:0;font-size:15.5px;font-weight:600;padding:9px 16px;background:var(--pu);border:2px solid var(--pu);color:#fff}
+.ccta:hover{background:#5A00CC;border-color:#5A00CC;color:#fff}
+.ccta.ghostc{background:#fff;border-color:#000;color:#000}
+.ccta.ghostc:hover{background:#000;color:#fff}
+/* Hero, centered like ketch.com */
+.khero{display:block!important;text-align:center;border-radius:0!important;margin:0;padding:72px max(var(--gut),calc((100% - 1128px)/2)) 40px!important;background:#fff!important;color:#000!important}
+.khero:after{display:none}
+main > section.khero,main > section.capp-wrap{max-width:none!important;margin-inline:0!important}
+.ctag{font:500 clamp(18px,2.2vw,30px)/1.1 var(--body);text-transform:uppercase;letter-spacing:.02em;color:#000}
+.khero h1{font-size:clamp(40px,6.6vw,92px);margin:26px auto 0;max-width:1180px}
+.khero h1 span{display:block}
+.khero h1 .pu{color:var(--pu)}
+.khero .lede{font-size:clamp(17px,1.6vw,22px);line-height:1.45;color:#000;max-width:640px;margin:28px auto 0}
+.khero .lede sup a{color:var(--pu2)}
+.khero .ctas{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.khero .btn{font:600 17px var(--body);border-radius:999px;padding:13px 24px;border:0;box-shadow:none;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.khero .btn.blk{background:#000;color:#fff}
+.khero .btn.blk:after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg)}
+.khero .btn.pri{background:var(--pu);color:#fff}
+.khero .btn:hover{box-shadow:none;opacity:.9}
+.kfine{margin-top:14px;font:500 13px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#595959}
+/* App mock */
+.capp-wrap{background:#fff;border-top:1px solid var(--line)!important;padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+.app-intro{text-align:center;margin:0 auto 28px;max-width:860px}
+.app-intro h2{font-size:clamp(28px,3.6vw,48px)}
+.app-intro p{margin:14px auto 0;max-width:680px;color:#333}
+.app{border:2px solid #000;border-radius:16px;box-shadow:10px 10px 0 var(--gr)}
+.app-rail{background:#000}
+.rail-logo{width:32px;height:32px;border-radius:2px;background:var(--pu)}
+.rail-logo:before{inset:6px 9px;border-radius:0;background:#fff;clip-path:polygon(60% 0,20% 55%,48% 55%,40% 100%,80% 42%,52% 42%)}
+.rail-logo:after{display:none}
+.dtab{color:#BDBDBD}
+.dtab:hover{background:#222;color:#fff}
+.dtab[aria-selected="true"]{background:var(--gr);color:#000}
+.prim{background:var(--pu);border-color:var(--pu);border-radius:999px;padding:7px 14px}
+button.prim:hover{background:#5A00CC}
+.ghost{border-radius:999px}
+.vhead h3{font-weight:800}
+.cbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}
+.jur{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.jur .lbl{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#4D4D4D;margin-right:4px}
+.jb{font:600 13.5px var(--body);border:1.5px solid #000;background:#fff;color:#000;border-radius:999px;padding:6px 12px;cursor:pointer}
+.jb.on{background:#000;color:#fff}
+.jb:focus-visible,.gpc:focus-visible,.kbb:focus-visible,.dc:focus-visible{outline:2px solid var(--pu);outline-offset:2px}
+.gpc{display:inline-flex;align-items:center;gap:10px;font:600 13.5px var(--body);border:0;background:none;cursor:pointer;color:#000}
+.gpc i{width:40px;height:22px;border-radius:999px;background:#D6D6D6;position:relative;transition:background .2s}
+.gpc i:after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.gpc.on i{background:var(--pu)}.gpc.on i:after{transform:translateX(18px)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+.shop{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;min-height:330px;background:#FAFAF7}
+.shop-top{display:flex;gap:16px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;color:#333;background:#fff}
+.shop-top b{letter-spacing:.2em;margin-right:auto;font-size:13px}
+.shop-hero{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}
+.shop-hero span{grid-column:1/-1;font:900 26px/1 var(--display);font-stretch:125%;text-transform:uppercase}
+.shop-hero i{display:block;height:90px;border-radius:8px;background:linear-gradient(160deg,#E8E2D6,#CFC6B4)}
+.shop-hero i:nth-child(3){background:linear-gradient(160deg,#D9DDE4,#B9C0CC)}
+.shop-hero i:nth-child(4){background:linear-gradient(160deg,#E4D9E8,#C8B9CF)}
+.kbanner{position:absolute;left:12px;right:12px;bottom:12px;background:#fff;border:2px solid #000;border-radius:12px;padding:12px 14px;box-shadow:0 12px 28px -12px rgba(0,0,0,.35);transition:opacity .2s}
+.kbanner.done{opacity:.55}
+.kb-t{font-weight:800;font-size:15px}
+.kb-p{font-size:13px;color:#333;margin-top:4px}
+.kb-a{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.kbb{font:600 13px var(--body);border-radius:999px;padding:7px 12px;border:1.5px solid #000;background:#fff;color:#000;cursor:pointer}
+.kbb.pri{background:var(--pu);border-color:var(--pu);color:#fff}
+.perm{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.perm h4{font-size:15px;font-weight:800}
+.plist{list-style:none;display:grid;gap:6px}
+.plist li{display:flex;justify-content:space-between;align-items:center;font-size:14px;border-bottom:1px solid #EFEFEF;padding:6px 0}
+.pm{font-style:normal;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;background:#E4FFD8;color:#1E6B00}
+.pm.no{background:#FFE6E6;color:#B42318}
+.plog{margin-top:10px;font:500 12.5px/1.45 var(--mono);color:#333;background:#F8F3FF;border-radius:8px;padding:8px 10px}
+.osys{list-style:none;display:grid;gap:6px;counter-reset:o}
+.osys li{display:grid;grid-template-columns:minmax(0,1.1fr) 90px minmax(0,1.2fr);gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 12px;transition:border-color .2s,background .2s}
+.sn b{display:block;font-size:14px}.sn small{font-size:12px;color:#595959}
+.ss{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:#8C8C8C}
+.osys em{font-style:normal;font-size:13px;color:#8C8C8C}
+.osys li.doing{border-color:var(--pu);background:#F8F3FF}.osys li.doing .ss{color:var(--pu2)}
+.osys li.done .ss{color:#1E6B00}.osys li.done em{color:#000}
+.osys li.done{border-color:#B6F29C;background:#F4FFEF}
+.audit{margin-top:12px;display:grid;gap:4px;background:#000;color:#fff;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.audit b{color:var(--gr);font:700 11.5px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.vt tr.hot td{background:#F8F3FF}
+#rqSteps{margin-top:12px}
+.oxs li.doing{border-color:var(--pu);background:#F8F3FF}
+.oxs li.doing:before{border-color:var(--pu);color:var(--pu2)}
+.oxs li.done:before{background-color:#000;border-color:#000}
+.oxr > div{border-color:#D9C2FF;background:#F8F3FF}
+.oxr small{color:var(--pu2)}
+.dcs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.dc{font:600 13px var(--body);border:1.5px solid #000;background:#fff;color:#000;border-radius:999px;padding:6px 12px;cursor:pointer}
+.dc.on{background:var(--pu);border-color:var(--pu);color:#fff}
+.dmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dsys{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;transition:all .2s;opacity:.55}
+.dsys b{display:block;font-size:15px}.dsys small{font-size:12px;color:#595959}
+.dsys span{display:block;margin-top:8px;font:600 11.5px var(--mono);color:#595959}
+.dsys.hit{opacity:1;border-color:#000;box-shadow:4px 4px 0 var(--gr)}
+.agents{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.ag{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px}
+.ag b{display:block;font-size:13.5px}.ag small{font-size:12px;color:#595959}
+.ag.doing{border-color:var(--pu);background:#F8F3FF}
+.ag.done{border-color:#000;background:#F4FFEF}
+.aia{display:grid;gap:6px}
+.aia div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;border-bottom:1px solid #EFEFEF;padding:7px 0;font-size:14px}
+.aia dt{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:#4D4D4D}
+.aia dd{color:#8C8C8C}.aia dd.set{color:#000;font-weight:600}
+@media (max-width:1000px){.cgrid{grid-template-columns:1fr}.agents{grid-template-columns:1fr 1fr}.dmap{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.osys li{grid-template-columns:minmax(0,1fr) 70px}.osys em{grid-column:1/-1}.aia div{grid-template-columns:1fr;gap:2px}.dmap{grid-template-columns:1fr}.shop{min-height:380px}}
+/* Cards, panels */
+.ckpi{border:2px solid #000;border-top:2px solid #000;border-radius:16px;box-shadow:6px 6px 0 var(--gr)}
+.ckpi small{color:var(--pu2)}
+.ckpi b{font-weight:900;font-stretch:125%}
+.chips span{background:var(--gr);color:#000;border-radius:999px}
+.r{border-radius:16px}
+.r small,.evt b{color:var(--pu2)}
+.evt{background:#F1E8FF}
+#know .three > div{background:#fff;border:1.5px solid #000;border-radius:16px}
+.panel.ink{background:#000!important}
+.cstep[aria-selected="true"],.cstep[aria-selected="true"]:hover{background:var(--gr)!important}
+.pane.hc{box-shadow:8px 8px 0 var(--pu)!important}
+.pane.hc .pane-lbl b{background:var(--gr)!important;color:#000!important}
+.pane.hc .tally{color:var(--pu2)!important}
+.pnode.goal{background:var(--pu)!important;border-color:var(--pu)!important}
+.pnode.goal i,.pnode.goal s{background:var(--gr)!important;color:#000!important;border-color:var(--gr)!important}
+.panel.sky{background:#F1E8FF!important;border:0}
+.panel.sky .play-nav button{border-radius:999px;border:1.5px solid #000}
+.panel.sky .play-nav button[aria-selected="true"]{background:#000;color:#fff}
+.panel.sky .insight{border-color:var(--pu)}
+.mail{border:2px solid #000!important;border-radius:16px;box-shadow:8px 8px 0 #000!important}
+.tok{background:#E4FFD8!important;color:#1E5A00!important}
+.panel.honey{background:#F4FFEF!important;border:0}
+.phase{border:1.5px solid #000!important;border-radius:16px}
+.out div{background:#000!important}
+.cbtn{border-radius:12px}
+.cbtn[aria-selected="true"]{background:#F8F3FF!important;border-color:var(--pu)!important;box-shadow:inset 3px 0 0 var(--pu)!important}
+.bc{border:2px solid #000!important;border-radius:16px;box-shadow:8px 8px 0 var(--gr)!important}
+.threat.mid{background:#F1E8FF!important;color:var(--pu2)!important}
+.stalls div{border-top:3px solid var(--pu)!important;border-radius:12px}
+.fc-f{background:#000;color:#fff;border:0}
+.fc:nth-child(odd) .fc-f{background:var(--pu)}
+.fc-l{color:var(--gr);font-weight:900;font-stretch:125%}
+.fc-n{color:#fff}.fc-w{color:#E6E6E6}
+.fc-flag{color:#fff;border-top-color:rgba(255,255,255,.3)}
+.fc-flag small,.fc-hint{color:var(--gr)}
+.fc-b{border:2px solid #000;border-radius:12px}
+.fc-bh b{color:var(--pu2)}
+.mxf-all{border-radius:999px;border-color:#000}
+.mx-rule{background:#000!important}
+.mx-rule b{color:var(--gr)!important}
+.letter{border-left:6px solid var(--pu)!important;background:#F8F3FF!important}
+.sq{border-radius:12px}
+.sq.on{background:var(--pu)!important;border-color:var(--pu)!important}
+.sq.on small{color:#fff!important}
+.icp{border:1.5px solid #000;border-radius:12px;background:#F4FFEF}
+.icp b{color:#1E5A00}
+.reg .lead{background:#F1E8FF!important}
+.reg .lead b{color:var(--pu2)!important}
+.ckpis{padding-top:48px}
+.khero h1 span{color:#000!important}
+.khero h1 span.pu{color:var(--pu)!important}
+.banner b{color:#000!important}
+h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation-settings:"wdth" 125}
+.khero h1{font-size:clamp(30px,5vw,72px);font-stretch:112%;font-variation-settings:"wdth" 112;max-width:none}
+.sh h2,.contact h2,.app-intro h2{font-stretch:112%;font-variation-settings:"wdth" 112}
+.khero h1{line-height:1.02}
+@media (max-width:440px){.khero h1{font-size:27px}}
+/* Without JavaScript, show every panel so nothing is hidden */
+.nojs [role="tabpanel"][hidden]{display:block!important}
+.nojs .step-p[hidden]{display:grid!important}
+.nojs .play[hidden]{display:grid!important}
+.nojs [role="tablist"],.nojs .step-nav,.nojs .mxf-all,.nojs button.run,.nojs .fc-hint{display:none!important}
+.nojs .step-p,.nojs .play,.nojs .bc,.nojs .dview{margin-bottom:18px}
+.nojs .fc{cursor:default}
+.nojs .fc-in{display:block!important;transform:none!important}
+.nojs .fc-f,.nojs .fc-b{transform:none!important;backface-visibility:visible!important;-webkit-backface-visibility:visible!important}
+.nojs .fc-b{display:grid!important;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="prog" id="progress" aria-hidden="true"></div>
+<div class="banner"><b>Prepared for Ketch:</b> An Enterprise Account Executive plan by Eric Iannello. <a href="#plan">See the 90 day plan</a></div>
+
+<header class="cnav-wrap">
+  <nav class="cnav" aria-label="Contents">
+    <a class="clogo" href="#top"><span class="cmark" aria-hidden="true"></span><span>Iannello</span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
+      <li><a href="#territory">Segments</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plan">90 days</a></li>
+    </ul>
+    <a class="ccta ghostc" href="#plan">90 Day Plan</a>
+    <a class="ccta" href="#contact">Book a Call</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <main>
+    <!-- Overview -->
+    <section id="top" class="hero khero">
+      <p class="ctag">The enterprise plan for the AI privacy company</p>
+      <h1><span>Win the enterprise</span> <span class="pu">with AI ready data</span></h1>
+      <p class="lede">Ketch keeps customer data clean, permissioned and ready for AI. This is how I would find, open and close the enterprises that need it, run on Challenger and MEDDPICC.<sup><a href="#s1">1</a></sup></p>
+      <div class="ctas"><a class="btn blk" href="#plan">See the 90 day plan</a><a class="btn pri" href="#contact">Contact me</a></div>
+      <p class="kfine">Try the platform below</p>
+    </section>
+
+    <section class="capp-wrap" aria-label="Ketch product mock">
+      <div class="app-intro">
+        <h2>One choice, enforced everywhere</h2>
+        <p>Pick a jurisdiction, turn on Global Privacy Control, and click the banner. Then follow that choice through Opt-Out Sync, privacy requests, the data map and the Agent Network.</p>
+      </div>
+      <div class="app" role="group" aria-label="Ketch product mock. Select a view from the sidebar.">
+        <div class="app-rail">
+          <span class="rail-logo" aria-hidden="true"></span>
+          <div class="app-tabs" role="tablist" aria-label="Ketch views" aria-orientation="vertical">
+            <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true" title="Consent"><i class="ti t0"></i><span>Consent</span></button>
+            <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1" title="Opt-Out Sync"><i class="ti t1"></i><span>Opt-Out Sync</span></button>
+            <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1" title="Privacy Requests"><i class="ti t2"></i><span>Privacy Requests</span></button>
+            <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1" title="Data Map"><i class="ti t3"></i><span>Data Map</span></button>
+            <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1" title="Agent Network"><i class="ti t4"></i><span>Agent Network</span></button>
+          </div>
+        </div>
+        <div class="app-main">
+          <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><div class="vhead"><h3>Consent</h3><span class="vact"><span class="ghost">northwind.example</span><span class="prim">Publish</span></span></div>
+<div class="cbar"><div class="jur" role="group" aria-label="Jurisdiction"><span class="lbl">Visitor in</span><button type="button" class="jb on" data-j="ca" aria-pressed="true">California</button><button type="button" class="jb" data-j="eu" aria-pressed="false">EU</button><button type="button" class="jb" data-j="co" aria-pressed="false">Colorado</button></div>
+<button type="button" class="gpc" id="gpc" role="switch" aria-checked="false"><i></i>Global Privacy Control</button></div>
+<div class="cgrid"><div class="shop" aria-label="Sample storefront"><div class="shop-top"><b>NORTHWIND</b><span>Shop</span><span>New</span><span>Sale</span></div><div class="shop-hero"><span>Fall layers</span><i></i><i></i><i></i></div>
+<div class="kbanner" id="kb"><p class="kb-t" id="kbT">Your privacy choices</p><p class="kb-p" id="kbP">We use cookies and share data with partners for advertising. You can opt out of the sale or sharing of your personal information.</p><div class="kb-a" id="kbA"></div></div></div>
+<div class="perm"><h4>Permits for this visitor</h4><p class="vcap" id="permNote">California law: opt out. Purposes run until the visitor says no.</p><ul class="plist" id="plist"><li data-p="analytics"><span>Analytics</span><em class="pm">Allowed</em></li><li data-p="ads"><span>Targeted advertising</span><em class="pm">Allowed</em></li><li data-p="pers"><span>Personalization</span><em class="pm">Allowed</em></li><li data-p="email"><span>Email marketing</span><em class="pm">Allowed</em></li><li data-p="ai"><span>AI model training</span><em class="pm">Allowed</em></li></ul><p class="plog" id="plog">No choice recorded yet.</p></div></div></div>
+          <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><div class="vhead"><h3>Opt-Out Sync</h3><span class="vact"><button type="button" class="prim run" id="osRun">Sync opt out</button></span></div><p class="vcap" id="osCap">A California shopper clicks Do Not Sell or Share once. Follow the choice to every system.</p><ol class="osys" id="osys"><li><span class="sn"><b>Meta Pixel</b><small>Browser tag</small></span><span class="ss">Waiting</span><em>Blocked on page</em></li><li><span class="sn"><b>Google Ads</b><small>Browser tag</small></span><span class="ss">Waiting</span><em>Blocked on page</em></li><li><span class="sn"><b>Salesforce</b><small>CRM</small></span><span class="ss">Waiting</span><em>Do Not Sell flag set</em></li><li><span class="sn"><b>Braze</b><small>Email and messaging</small></span><span class="ss">Waiting</span><em>Removed from ad audiences</em></li><li><span class="sn"><b>Segment</b><small>CDP</small></span><span class="ss">Waiting</span><em>Consent trait updated</em></li><li><span class="sn"><b>Snowflake</b><small>Data warehouse</small></span><span class="ss">Waiting</span><em>Permit row written</em></li><li><span class="sn"><b>LiveRamp</b><small>Partner</small></span><span class="ss">Waiting</span><em>Suppression sent</em></li></ol><div class="audit" id="audit" hidden><b>Audit log</b><span id="auditT">7 systems updated for identity jane.d@example.com in 4.2 seconds. Proof stored for the regulator.</span></div></div>
+          <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><div class="vhead"><h3>Privacy Requests</h3><span class="vact"><button type="button" class="prim run" id="rqRun">Run DSR-2041</button></span></div><p class="vcap">Every request verified, routed to each system and confirmed, with the deadline tracked.</p><table class="vt"><thead><tr><th>Request</th><th>Type</th><th>Jurisdiction</th><th>Deadline</th><th>Status</th></tr></thead><tbody><tr class="hot"><td><code>DSR-2041</code></td><td>Delete</td><td>California</td><td>12 days left</td><td><em class="st o" id="rq0">Open</em></td></tr><tr><td><code>DSR-2040</code></td><td>Access</td><td>Virginia</td><td>30 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2039</code></td><td>Delete</td><td>EU</td><td>21 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2038</code></td><td>Correct</td><td>Colorado</td><td>Closed</td><td><em class="st g">Done</em></td></tr><tr><td><code>DSR-2037</code></td><td>Opt out</td><td>Texas</td><td>Closed</td><td><em class="st g">Done</em></td></tr></tbody></table><ol class="oxs" id="rqSteps"><li>Verify identity</li><li>Find data in 12 systems</li><li>Delete in each system</li><li>Notify vendors</li><li>Confirm to the consumer</li></ol><div class="oxr" id="rqOut" hidden><div><small>Found</small><p>Records in Salesforce, Braze, Segment, Snowflake and 8 more.</p></div><div><small>Deleted</small><p>12 of 12 systems confirmed, vendors notified.</p></div><div><small>Closed</small><p>Confirmation sent 12 days before the California deadline.</p></div></div></div>
+          <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><div class="vhead"><h3>Data Map</h3><span class="vact"><span class="ghost">Auto discovered</span></span></div><p class="vcap">Pick a data category to see every system that holds it.</p><div class="dcs" role="group" aria-label="Data category"><button type="button" class="dc on" data-c="contact" aria-pressed="true">Contact info</button><button type="button" class="dc" data-c="purchase" aria-pressed="false">Purchase history</button><button type="button" class="dc" data-c="location" aria-pressed="false">Precise location</button><button type="button" class="dc" data-c="health" aria-pressed="false">Health interests</button><button type="button" class="dc" data-c="device" aria-pressed="false">Device IDs</button></div><div class="dmap"><div class="dsys hit" data-cs="contact purchase"><b>Salesforce</b><small>CRM</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact device"><b>Braze</b><small>Messaging</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact purchase device location"><b>Segment</b><small>CDP</small><span>4 categories</span></div><div class="dsys hit" data-cs="contact purchase location health"><b>Snowflake</b><small>Warehouse</small><span>4 categories</span></div><div class="dsys" data-cs="device location"><b>Mobile app</b><small>First party</small><span>2 categories</span></div><div class="dsys" data-cs="purchase health"><b>Recommendations model</b><small>AI</small><span>2 categories</span></div></div><p class="vfoot" id="dmNote">Contact info lives in 4 systems.</p></div>
+          <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><div class="vhead"><h3>Agent Network</h3><span class="vact"><button type="button" class="prim run" id="agRun">Draft AI impact assessment</button></span></div><p class="vcap">Assessment for the <b>Recommendations model</b>. Agents read the data map, vendor DPAs and consent records, then draft it for legal to review.</p><div class="agents"><div class="ag" id="ag0"><b>Data mapping agent</b><small>Reads the data map</small></div><div class="ag" id="ag1"><b>Contract agent</b><small>Reads vendor DPAs</small></div><div class="ag" id="ag2"><b>Risk agent</b><small>Checks consent coverage</small></div><div class="ag" id="ag3"><b>Assessment agent</b><small>Writes the draft</small></div></div><dl class="aia" id="aia"><div><dt>Data used</dt><dd data-v="Purchase history and health interests from Snowflake">Waiting</dd></div><div><dt>Consent coverage</dt><dd data-v="81% of profiles allow personalization, 0 health records without consent">Waiting</dd></div><div><dt>Vendor terms</dt><dd data-v="2 vendors, DPAs allow model training for 1">Waiting</dd></div><div><dt>Recommendation</dt><dd data-v="Exclude health interests and the second vendor, then approve">Waiting</dd></div></dl></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ckpis" role="list">
+      <div class="ckpi" role="listitem"><small>Ketch</small><b>3,500+</b><p>brands run Ketch at production scale<sup><a href="#s2">2</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>OneTrust</small><b>30%</b><p>of Ketch customers switched from OneTrust<sup><a href="#s3">3</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>6sense</small><b>500+</b><p>hours a year saved by automating privacy requests<sup><a href="#s4">4</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>Spreedly</small><b>3 weeks</b><p>from OneTrust to live on Ketch<sup><a href="#s4">4</a></sup></p></div>
+    </div>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <h2>What I know about Ketch</h2>
+        <p>The product, the buyer and the timing.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>Ketch captures consent and privacy choices, ties them to a person's identity, and pushes each decision into the systems that collect or use data.<sup><a href="#s5">5</a></sup></p>
+          <p>Consent management, privacy requests, data mapping, assessments and marketing preferences run on that same permission layer, now with the Agent Network on top.<sup><a href="#s6">6</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>The Chief Privacy Officer or General Counsel signs, with the CMO at the table, because consent decides which data marketing and AI can use.</p>
+          <p>Privacy ops, marketing ops and data engineering run it, and security and procurement review it.</p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>California fined Tractor Supply $1.35M and Healthline $1.55M in 2025, both over opt outs that never reached the systems using the data.<sup><a href="#s7">7</a></sup></p>
+          <p>Every brand also wants its data ready for AI, and that starts with knowing what each person allowed.<sup><a href="#s6">6</a></sup></p>
+        </div>
+      </div>
+      <h3 class="ind-h">What Ketch is shipping, and how I would use it</h3>
+      <div class="rsch">
+        <div class="r"><div class="chips"><span>May 2026</span></div><b>Agent Network</b><p>Agents that map data, ingest vendor contracts and DPAs, and fill in DPIAs and AI impact assessments.<sup><a href="#s8">8</a></sup></p><small>Opens with the CPO</small></div>
+        <div class="r"><div class="chips"><span>January 2026</span></div><b>Opt-Out Sync</b><p>One Do Not Sell or Share choice, enforced across devices, browsers, CRM, CDP, ad and partner systems.<sup><a href="#s5">5</a></sup></p><small>Opens with legal and marketing ops</small></div>
+        <div class="r"><div class="chips"><span>Migration</span></div><b>Ketch Switch</b><p>Moves live OneTrust consent, preferences and settings into Ketch, so EU visitors never consent twice.<sup><a href="#s3">3</a></sup></p><small>Opens at a OneTrust renewal</small></div>
+        <div class="r"><div class="chips"><span>Summer 2026</span></div><b>22 G2 badges</b><p>Across consent, DSAR and privacy management, with top marks for enterprise usability.<sup><a href="#s9">9</a></sup></p><small>Opens with the evaluation team</small></div>
+      </div>
+      <p class="evt"><b>Timely</b><span>Each new California settlement gives every follow up a fresh, specific reason to test an opt out end to end.<sup><a href="#s7">7</a></sup></span></p>
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <h2>The conversation I would have with a Chief Privacy Officer</h2>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CPO and their CMO, with the evidence behind each step.</p>
+      </div>
+      <figure class="compare">
+        <div class="cmp-grid">
+          <div class="pane">
+            <div class="pane-lbl"><span>Privacy today</span><b>banner deep</b></div>
+            <ul class="files">
+              <li><i></i>A banner that only governs the browser</li>
+              <li><i></i>Opt outs that never reach the CRM</li>
+              <li><i></i>Requests worked by hand, system by system</li>
+              <li><i></i>Assessments written from scratch</li>
+              <li><i></i>AI projects waiting on legal</li>
+            </ul>
+            <div class="tally"><span><b>?</b>systems honoring the choice</span><span><b>weeks</b>per assessment</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="pane hc">
+            <div class="pane-lbl"><span>With Ketch</span><b>permissioned</b></div>
+            <div class="pathv">
+              <div class="pnode"><i>1</i>One choice captured, tied to identity<s>consent</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>2</i>Enforced in every downstream system<s>Opt-Out Sync</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>3</i>Requests fulfilled automatically<s>requests</s></div>
+              <div class="plink"></div>
+              <div class="pnode goal"><i>4</i>Data ready for marketing and AI<s>agents</s></div>
+            </div>
+            <div class="tally"><span><b>1</b>permission, every system</span><span><b>minutes</b>per assessment draft</span></div>
+          </div>
+        </div>
+      </figure>
+      <div class="steps" role="tablist" aria-label="Challenger steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Ketch</small></button>
+      </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>The brands I would target run dozens of marketing tags, a CDP, a CRM and an email platform, all holding consumer data. Their consent banner governs the browser, and the rest of the stack keeps running.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Banner deep</b>The choice stops at the browser</div><div><b>Manual requests</b>Each deletion worked system by system</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Privacy gets treated as a legal checkbox. Regulators now test whether a choice actually reaches every system that uses the data, and marketing and AI teams need to know what each person allowed.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>A banner that satisfies counsel</div><div><b>To</b>One permission enforced in every system</div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what a broken opt out costs. We will swap these numbers for their own exposure in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>$1.35M</b>Tractor Supply, including opt out signals it did not honor<sup><a href="#s7">7</a></sup></div><div><b>$1.55M</b>Healthline, for tracking that continued after opt outs<sup><a href="#s7">7</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CPO signs off on the privacy program every year. Then a regulator turns on Global Privacy Control, visits the site, and the ad pixel still fires.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Accountability</b>The CPO and General Counsel own the finding</div><div><b>Brand trust</b>The settlement becomes the headline</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading brands capture each choice once, tie it to the person, enforce it in every downstream system with an audit log, and use the same permissions to decide what data marketing and AI can touch.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One permission</b>Captured once, tied to identity</div><div><b>Enforced everywhere</b>Tags, CRM, CDP and partners</div><div><b>AI ready</b>Data the business can use with confidence</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Ketch, the AI privacy company, trusted by more than 3,500 brands.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>3 weeks</b>From OneTrust to live at Spreedly<sup><a href="#s4">4</a></sup></div><div><b>500+ hours</b>Saved each year at 6sense<sup><a href="#s4">4</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>First meetings open with a live test of their own site: what happens to the ad tags and the CRM after an opt out. The demo waits until they see the gap.</p></div>
+        <div><h4>Tailor</h4><p>Defensible compliance for the CPO, usable audiences for the CMO, fewer tickets for privacy ops, and AI the board can approve.</p></div>
+        <div><h4>Take control</h4><p>Agree the jurisdictions, systems and success criteria before the evaluation, time it to the incumbent's renewal, and leave every meeting with a dated next step.</p></div>
+      </div>
+    </section>
+
+    <!-- Segments -->
+    <section id="territory">
+      <div class="sh">
+        <h2>Who I would sell to</h2>
+        <p>Enterprises with consumer data in many systems, an active marketing stack and an AI roadmap. Select a segment to see who buys, why, and the play I would lead with.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles2" role="group" aria-label="Segments">
+            <span class="col-h">Retail</span><span class="col-h">Media</span><span class="col-h">Finance</span><span class="col-h">Health</span>
+            <button class="sq" data-r="rt">RTL<small>Retail</small></button>
+            <button class="sq" data-r="md">PUB<small>Publishers</small></button>
+            <button class="sq" data-r="fs">BNK<small>Banks</small></button>
+            <button class="sq" data-r="hl">CPH<small>Consumer health</small></button>
+            <button class="sq" data-r="rt">CPG<small>Brands</small></button>
+            <button class="sq" data-r="md">ENT<small>Entertainment</small></button>
+            <button class="sq" data-r="fs">PAY<small>Payments</small></button>
+            <button class="sq" data-r="hl">WEL<small>Wellness</small></button>
+            <button class="sq" data-r="rt">DTC<small>Direct to consumer</small></button>
+            <button class="sq" data-r="md">STR<small>Streaming</small></button>
+            <button class="sq" data-r="fs">INS<small>Insurance</small></button>
+            <button class="sq" data-r="hl">PHR<small>Pharmacy</small></button>
+          </div>
+          <div class="icp">
+            <b>Fit signals</b>
+            <ul>
+              <li>Dozens of marketing and ad tags on the site</li>
+              <li>A CDP, CRM and email platform holding consumer data</li>
+              <li>OneTrust or a homegrown banner up for renewal</li>
+              <li>Consumers in many US states and the EU</li>
+              <li>Personalization or AI built on customer data</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Segment</th><th>Who buys, why, and what I lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="rt"><td>Retail and consumer brands<span class="st">Retail, CPG, direct to consumer</span></td><td data-h="Who buys and why">Heavy ad and email spend on consumer data, and the industry behind several recent California settlements.<div class="acc">Buyer: the General Counsel with the CMO. Champion: privacy or marketing ops.</div><div class="lead"><b>Lead with</b>Opt outs everywhere, then the OneTrust switch</div></td></tr>
+              <tr data-r="md"><td>Media and entertainment<span class="st">Publishers, studios, streaming</span></td><td data-h="Who buys and why">Ad revenue depends on consent rates, across many sites, apps and regions.<div class="acc">Buyer: the CPO with the head of ad revenue. Champion: ad ops or privacy ops.</div><div class="lead"><b>Lead with</b>Consent that protects ad revenue, then privacy requests at scale</div></td></tr>
+              <tr data-r="fs"><td>Financial services<span class="st">Banks, payments, insurance</span></td><td data-h="Who buys and why">State privacy laws on top of existing regulation, and personalized marketing that needs clean consent.<div class="acc">Buyer: the CPO or Chief Compliance Officer. Champion: privacy counsel.</div><div class="lead"><b>Lead with</b>Privacy requests at scale, then AI ready data</div></td></tr>
+              <tr data-r="hl"><td>Health and wellness<span class="st">Consumer health, wellness, pharmacy</span></td><td data-h="Who buys and why">Health data laws and tracking pixel scrutiny, with brand trust on the line.<div class="acc">Buyer: the General Counsel. Champion: privacy counsel or digital marketing.</div><div class="lead"><b>Lead with</b>Opt outs everywhere, then AI ready data</div></td></tr>
+            </tbody>
+          </table>
+          <p class="note">Segments describe who I would sell to, wherever coverage lands. I would set named accounts, current customers and partner coverage with the team before any outreach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays" class="panel sky grain">
+      <div class="sh">
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play starts from data I pull on the account, leads with one specific question and runs as a three email sequence.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Opt outs everywhere</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">The OneTrust switch</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Privacy requests at scale</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">AI ready data</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">Regulators now test opt outs end to end. A banner that stops the browser pixel while the CRM and email platform keep selling the data is the pattern behind the 2025 settlements.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Consumer brands with heavy ad spend and many tags on their sites.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{tag_count}}</span>, third party tags that still fire on their site with Global Privacy Control turned on</li><li><span class="tok">{{cmp}}</span>, the consent banner vendor detected on their site</li><li><span class="tok">{{crm}}</span> and <span class="tok">{{esp}}</span> from tech stack data</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>General Counsel or CPO first, then the CMO and marketing ops.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>When someone opts out, which systems hear about it?</li><li>How do you honor Global Privacy Control today?</li><li>Who tested the opt out flow last, and when?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>General Counsel</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> GPC test</li><li data-v="B">Opt out idea</li><li data-v="C">Do Not Sell opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, I ran <span class="tok">{{company}}</span>'s site with Global Privacy Control on, and <span class="tok">{{tag_count}}</span> ad tags still fired after the opt out signal.</p><p>When a customer opts out, how does that choice reach <span class="tok">{{crm}}</span> and <span class="tok">{{esp}}</span>?</p><p>Tractor Supply paid $1.35M last year, partly for not honoring that signal. Ketch Opt-Out Sync captures the choice once and enforces it across CRM, CDP, ad and partner systems, with an audit log.</p><p>Open to a quick conversation on whether your team could close that gap?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize a stranger testing your site sounds like seller cherry picking.</p><p>If we walked through the test together and showed which systems ignore the choice, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like opt outs are already enforced everywhere?</p><p>Basically one Do Not Sell choice would reach every tag, the CRM, the CDP and your partners, with proof for the regulator.</p><p>Happy to share the GPC test results. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Opt-Out Sync<sup><a href="#s5">5</a></sup>, 2025 settlements<sup><a href="#s7">7</a></sup></span><span><b>Value</b> an opt out that holds up</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">Plenty of OneTrust customers stay because moving consent history looks risky. Ketch Switch moves live consent, preferences and settings, so EU visitors never consent twice.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises running OneTrust across several brands, sites or regions.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{cmp}}</span>, OneTrust detected from the banner script on their sites</li><li><span class="tok">{{domains}}</span>, the number of brand sites running it</li><li><span class="tok">{{regions}}</span>, the opt in regions their sites serve</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>CPO or privacy ops lead first, then procurement and the CMO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How much of the team's week goes into keeping OneTrust configured?</li><li>When does the contract renew, and what notice does it need?</li><li>What would you change if moving were easy?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Privacy Operations</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> consent stack</li><li data-v="B">OneTrust idea</li><li data-v="C">Renewal opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{domains}}</span> of <span class="tok">{{company}}</span>'s sites run OneTrust's banner.</p><p>How much of the team's week goes into keeping it configured across every brand and region?</p><p><span class="tok">{{customer_name}}</span> moved from OneTrust to live on Ketch in three weeks, and 30% of Ketch customers made the same switch.</p><p>Would you be opposed to chatting through what a switch could look like before your renewal?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize three weeks sounds like seller cherry picking.</p><p>If we mapped your current OneTrust setup into Ketch with Ketch Switch, consent history included, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like OneTrust is working fine for now?</p><p>Basically your consent records move over intact, and EU visitors never see a second banner.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Spreedly<sup><a href="#s4">4</a></sup>, Ketch Switch<sup><a href="#s3">3</a></sup></span><span><b>Value</b> consent history kept intact</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">Large brands publish how many privacy requests they receive. Every one of those deletions and access requests touches a dozen systems.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Brands handling consumer data for millions of people, including those that publish CCPA request metrics.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{request_count}}</span>, requests reported in the CCPA metrics in their privacy policy</li><li><span class="tok">{{intake}}</span>, how requests come in today, from the privacy policy</li><li><span class="tok">{{systems}}</span>, the data systems in their stack</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>Privacy ops lead first, then the CPO and data engineering.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many people touch a deletion request before it closes?</li><li>How do you confirm the data is gone from every system?</li><li>What happens to the queue when volume doubles?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Privacy Operations</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> privacy requests</li><li data-v="B">Request automation idea</li><li data-v="C">DSR opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, <span class="tok">{{company}}</span>'s privacy policy reports <span class="tok">{{request_count}}</span> consumer requests last year, with intake through <span class="tok">{{intake}}</span>.</p><p>How many people touch each one before it closes?</p><p><span class="tok">{{customer_name}}</span> saves more than 500 hours a year with Ketch automating those requests across its systems.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 500 hours sounds like seller cherry picking.</p><p>If we mapped one deletion request across your systems and timed it, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the request queue is under control?</p><p>Basically every request would be verified, routed to each system and confirmed, without a ticket per system.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> 6sense<sup><a href="#s4">4</a></sup>, request metrics rule<sup><a href="#s10">10</a></sup></span><span><b>Value</b> hours back for privacy ops</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">Every AI project starts with a question legal has to answer: did these people agree to this use of their data?</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises launching personalization, recommendations or AI features on customer data.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{ai_launch}}</span>, an AI or personalization feature from press releases and product pages</li><li><span class="tok">{{exec}}</span>, the leader quoted on it</li><li><span class="tok">{{regions}}</span>, where their customers live</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>CPO and General Counsel first, then the Chief Data Officer and the CMO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Which customer data feeds your AI projects today?</li><li>How do you show each use is covered by consent?</li><li>How long does an AI impact assessment take your team?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Chief Privacy Officer</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{ai_launch}}</span> data</li><li data-v="B">AI assessment idea</li><li data-v="C">AI governance opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{exec}}</span> talk about <span class="tok">{{company}}</span>'s <span class="tok">{{ai_launch}}</span>.</p><p>Can the team show which customer data feeds it, and that each person's consent covers that use?</p><p>The Ketch Agent Network maps data assets, reads vendor contracts and DPAs, and fills in DPIAs and AI impact assessments for your team to review.</p><p>Would you be opposed to chatting through how that could speed up your next AI launch, in Q4?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize agents writing assessments sounds like seller cherry picking.</p><p>If we drafted the AI impact assessment for <span class="tok">{{ai_launch}}</span> with the Agent Network, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like AI governance is already covered?</p><p>Basically each AI use would trace back to data people agreed to share, with the assessment ready for legal.</p><p>Happy to share how the Agent Network drafts an assessment. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Agent Network<sup><a href="#s8">8</a></sup></span><span><b>Value</b> AI launches legal can approve</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Ketch wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      </div>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>OneTrust</b><small>The incumbent suite</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>TrustArc</b><small>Assessments and certification</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Transcend</b><small>Engineering led privacy</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Osano and Securiti</b><small>Simple consent or data security</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Homegrown</b><small>Built in house</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>OneTrust</h3><span class="threat mid">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Broad GRC suite, deep regulatory content and an installed base in most large enterprises.</p></div><div><h4>Where Ketch wins</h4><p>Faster time to value, live migration with Ketch Switch, and enforcement of each choice across the data stack.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How long did your last OneTrust change take, from request to live?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>TrustArc</h3><span class="threat">Legacy</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Long history in privacy assessments, certifications and regulatory guidance.</p></div><div><h4>Where Ketch wins</h4><p>Consent and permissions enforced in live systems, with assessments drafted by the Agent Network.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Which of your assessments are still written from a blank page?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>Transcend</h3><span class="threat mid">Direct</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Strong privacy request automation and appeal to engineering teams.</p></div><div><h4>Where Ketch wins</h4><p>Privacy, marketing and legal working from the same permissions, with Opt-Out Sync across the stack.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Who besides engineering needs to change a privacy setting each month?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>Osano and Securiti</h3><span class="threat">Adjacent</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Osano is simple to start, and Securiti brings data discovery and security depth.</p></div><div><h4>Where Ketch wins</h4><p>Enterprise scale consent tied to identity, enforced downstream, with privacy requests on the same platform.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When an opt out happens, which tool makes the CRM honor it?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>Homegrown</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control, no new vendor and no new contract.</p></div><div><h4>Where Ketch wins</h4><p>Coverage for new state laws and signals like GPC without engineering sprints, with an audit trail for regulators.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When the next state law takes effect, who updates the banner and the downstream logic?</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <h2>Where these deals stall</h2>
+        <p>Six stalls I plan for from the first meeting, and the MEDDPICC checklist every evaluation and deal runs against.</p>
+      </div>
+      <div class="stalls">
+        <div><h4>"We're locked into OneTrust"</h4><p>I map the renewal date and show Ketch Switch moving their live consent history with no second banner.</p></div>
+        <div><h4>Legal owns it, marketing pays</h4><p>One business case: fine exposure for counsel, usable audiences and consent rates for marketing.</p></div>
+        <div><h4>Engineering has no bandwidth</h4><p>Integrations and a scoped first phase, with go lives like Francesca's in two weeks as the benchmark.<sup><a href="#s4">4</a></sup></p></div>
+        <div><h4>"Our banner is fine"</h4><p>I run their site with Global Privacy Control on and show which tags and systems ignore the choice.</p></div>
+        <div><h4>They want a full GRC suite</h4><p>I scope to consent, requests and data mapping first, and show where the Agent Network covers assessments.</p></div>
+        <div><h4>Security and procurement review</h4><p>I start the security package in discovery and agree the paper process with procurement early.</p></div>
+      </div>
+      <div class="mxf-head"><div><h3>MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Select a letter to flip it to the proof I need before the deal counts in my forecast.</p></div>
+      <button type="button" class="mxf-all" id="mxAll" aria-pressed="false">Flip all</button></div>
+      <div class="mxf">
+        <button type="button" class="fc" id="fc0" aria-pressed="false" aria-label="Metrics. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">M</span><span class="fc-n">Metrics</span><span class="fc-w">The number the deal is sold on</span><span class="fc-flag"><small>Red flag</small>Risk nobody has priced.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>M</b>Metrics</span><span class="fc-s"><small>What I validate</small>Fine exposure by jurisdiction, request volume and hours per request, consent rates, tags and systems that ignore opt outs, and time to approve an AI use.</span><span class="fc-s"><small>What I ask</small><span class="q">How many hours does one deletion request take today?</span><span class="q">What does a one point change in consent rate mean for marketing?</span></span><span class="fc-s"><small>Proof I collect</small>A baseline from their own request logs, GPC test and consent data, confirmed by the CPO and marketing.</span><span class="fc-s fc-m"><small>My move</small>I bring the 2025 settlements and the 6sense hours, and ask them to correct the numbers for their business.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc1" aria-pressed="false" aria-label="Economic buyer. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">E</span><span class="fc-n">Economic buyer</span><span class="fc-w">The person who can say yes alone</span><span class="fc-flag"><small>Red flag</small>"Legal will just sign off."</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>E</b>Economic buyer</span><span class="fc-s"><small>What I validate</small>The General Counsel or CPO, with the CMO when consent touches marketing budget.</span><span class="fc-s"><small>What I ask</small><span class="q">Who signs the privacy program certification each year?</span><span class="q">Whose budget pays for the consent platform today?</span></span><span class="fc-s"><small>Proof I collect</small>A meeting with the economic buyer before the evaluation, and success criteria in their words.</span><span class="fc-s fc-m"><small>My move</small>I ask the champion for 20 minutes with the General Counsel to agree the decision date.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc2" aria-pressed="false" aria-label="Decision criteria. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">D</span><span class="fc-n">Decision criteria</span><span class="fc-w">How they will judge us</span><span class="fc-flag"><small>Red flag</small>Criteria copied from the incumbent's feature list.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>D</b>Decision criteria</span><span class="fc-s"><small>What I validate</small>Jurisdiction coverage, GPC and opt out enforcement downstream, request automation, integrations, migration from the incumbent, usability and AI governance.</span><span class="fc-s"><small>What I ask</small><span class="q">What has to be true for Ketch to be the clear choice?</span><span class="q">What would rule us out?</span></span><span class="fc-s"><small>Proof I collect</small>Written evaluation criteria agreed before the first integration connects.</span><span class="fc-s fc-m"><small>My move</small>I reshape the criteria around enforcement downstream and time to value.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc3" aria-pressed="false" aria-label="Decision process. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">D</span><span class="fc-n">Decision process</span><span class="fc-w">Every step to a signature</span><span class="fc-flag"><small>Red flag</small>No one can describe what happens after the evaluation.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>D</b>Decision process</span><span class="fc-s"><small>What I validate</small>Evaluation, security review, legal, procurement and the incumbent's renewal notice, with dates.</span><span class="fc-s"><small>What I ask</small><span class="q">Walk me through how you chose your current consent platform.</span><span class="q">Who could stop this after a strong evaluation?</span></span><span class="fc-s"><small>Proof I collect</small>A mutual action plan dated back from the renewal notice date, edited by both sides.</span><span class="fc-s fc-m"><small>My move</small>I map the post evaluation steps with the champion on day one.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc4" aria-pressed="false" aria-label="Paper process. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">P</span><span class="fc-n">Paper process</span><span class="fc-w">How the contract actually gets signed</span><span class="fc-flag"><small>Red flag</small>Procurement hears about us at quarter end.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>P</b>Paper process</span><span class="fc-s"><small>What I validate</small>Security questionnaire, DPA, legal redlines, procurement thresholds and the incumbent's notice period.</span><span class="fc-s"><small>What I ask</small><span class="q">What did security need from your last privacy vendor?</span><span class="q">How much notice does the current contract need?</span></span><span class="fc-s"><small>Proof I collect</small>Security package sent in week one, the notice date in the plan, and a signature date agreed.</span><span class="fc-s fc-m"><small>My move</small>I bring procurement in as soon as the business case is agreed.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc5" aria-pressed="false" aria-label="Identify pain. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">I</span><span class="fc-n">Identify pain</span><span class="fc-w">Why they act this year</span><span class="fc-flag"><small>Red flag</small>Interest with no deadline.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>I</b>Identify pain</span><span class="fc-s"><small>What I validate</small>A broken opt out, a regulator inquiry, a request backlog, a OneTrust renewal or an AI launch waiting on legal.</span><span class="fc-s"><small>What I ask</small><span class="q">What happens if a regulator tests your opt out next quarter?</span><span class="q">Which AI project is waiting on a privacy review?</span></span><span class="fc-s"><small>Proof I collect</small>Pain tied to a dollar figure, a date and an owner.</span><span class="fc-s fc-m"><small>My move</small>I tie it to the renewal date, a new state law or their next AI launch.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc6" aria-pressed="false" aria-label="Champion. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">C</span><span class="fc-n">Champion</span><span class="fc-w">Who sells when I am not in the room</span><span class="fc-flag"><small>Red flag</small>A fan of the product with no pull on the decision.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>C</b>Champion</span><span class="fc-s"><small>What I validate</small>A privacy ops lead or privacy counsel with influence, who gains personally from the win. I test it by asking them to act.</span><span class="fc-s"><small>What I ask</small><span class="q">How would you present this to your General Counsel?</span><span class="q">Could you get marketing ops into the next meeting?</span></span><span class="fc-s"><small>Proof I collect</small>They ran the GPC test with us and got me a meeting I could not get alone.</span><span class="fc-s fc-m"><small>My move</small>I keep them close and multithread to the CMO and data engineering.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc7" aria-pressed="false" aria-label="Competition. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">C</span><span class="fc-n">Competition</span><span class="fc-w">Every option they could pick</span><span class="fc-flag"><small>Red flag</small>We learn about the incumbent's discount at the proposal.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>C</b>Competition</span><span class="fc-s"><small>What I validate</small>OneTrust, TrustArc, Transcend, Osano, Securiti, a homegrown banner and doing nothing, plus who inside favors each.</span><span class="fc-s"><small>What I ask</small><span class="q">If you don't choose us, what do you do instead?</span><span class="q">Who inside would push for that option?</span></span><span class="fc-s"><small>Proof I collect</small>Each alternative named with its internal sponsor, and our strengths built into the criteria.</span><span class="fc-s fc-m"><small>My move</small>I ask the battlecard questions in discovery and plan for the renewal discount early.</span></span>
+          </span>
+        </button>
+      </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the economic buyer has confirmed the metrics, the evaluation has met written criteria, the paper process and renewal notice are dated in the mutual plan, and the champion has been tested.</span></div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for<sup><a href="#s1">1</a></sup></th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Sourcing a large share of my own book</td><td data-h="Where I have done it">$19.6M self sourced pipeline across Fortune 500 accounts at Netradyne in under 12 months, most of it from cold outbound.</td></tr>
+            <tr><td>Mapping solutions to needs and quantifying business value</td><td data-h="Where I have done it">Certified in Command of the Message at Jamf, and I build every business case in the buyer's own numbers.</td></tr>
+            <tr><td>Working with marketing, legal, product and finance</td><td data-h="Where I have done it">Multithreaded Fortune 500 accounts across operations, finance, security and IT, and closed Seismic, which sells to marketing teams, at Falkon.</td></tr>
+            <tr><td>Closing enterprise deals</td><td data-h="Where I have done it">Closed Uber for $1.2M at Jamf, the largest deal in the company's history at the time, and Falkon (Linewize) first multiyear deal with built in expansion triggers.</td></tr>
+            <tr><td>Beating quota</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and $750K in my first quarter at a Series A startup.</td></tr>
+            <tr><td>Advancing partner generated opportunities</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to Ketch's partner sourced deals.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Ketch</h3>
+        <p>Privacy platforms grew up as legal tools: a banner, a request inbox and a library of assessments. Ketch treats each person's choice as a permission the whole data stack has to respect, from the ad tag to the CRM to the model, and that is exactly what the 2025 settlements punished brands for missing. It also makes the business case bigger than compliance, because permissioned data is the data marketing and AI can use with confidence.</p>
+        <p>With 30% of customers arriving from OneTrust and the Agent Network now taking on the assessment work, Ketch has the product and the timing to win the enterprise.</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan" class="panel honey grain">
+      <div class="sh">
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to Ketch <span class="ns">| Building the foundation</span></h3>
+          <ul>
+            <li>Learn the platform hands on with a Solutions Engineer: deploy a banner, honor a GPC signal, run an Opt-Out Sync, close a privacy request and draft an assessment with the Agent Network</li>
+            <li>Work with my manager, Solutions Engineering and top reps to learn what's winning and where enterprise deals stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Learn the CCPA and state law enforcement record well enough to teach it in a first meeting</li>
+            <li>Build battlecards for OneTrust, TrustArc, Transcend, Osano, Securiti and homegrown tools</li>
+            <li>Audit named accounts for incumbent banners, GPC handling, published request metrics and AI launches</li>
+            <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
+            <li>Launch the first self sourced wave, starting with retail and consumer brands</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and a GPC test run on every Tier 1 site</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook <span class="ns">| Testing the territory</span></h3>
+          <ul>
+            <li>Review results with my manager and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays in waves, starting with opt outs everywhere</li>
+            <li>Multithread every target account across the CPO, General Counsel, CMO, marketing ops, data engineering and security</li>
+            <li>Hold insight meetings in place of first call demos, and price fine exposure, request hours and consent rates in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities, each evaluation scoped to named jurisdictions and systems</li>
+            <li>Work partner and inbound opportunities alongside my own, with marketing on privacy counsel and CMO events</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and the first evaluations scoped</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment <span class="ns">| Owning the territory</span></h3>
+          <ul>
+            <li>Qualified deals moving through evaluation and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process, renewal timing and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion paths mapped with Customer Experience, from consent to requests, data mapping and the Agent Network</li>
+            <li>Regular deal reviews with my manager, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first evaluations running, pipeline building toward 3x coverage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>I'd like to walk your team through this plan and hear where it's wrong.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Ketch%20Enterprise%20AE">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://jobs.lever.co/Ketch/5351e65c-0e20-464f-86a5-65a9e641d7ed" target="_blank" rel="noopener">Ketch, Enterprise Account Executive job post</a></li>
+        <li id="s2"><a href="https://www.ketch.com/customers" target="_blank" rel="noopener">Ketch, Customers</a></li>
+        <li id="s3"><a href="https://www.businesswire.com/news/home/20250211838381/en/Ketch-Introduces-Industry-First-Automated-Migration-from-OneTrust" target="_blank" rel="noopener">Business Wire, Ketch introduces industry first automated migration from OneTrust</a></li>
+        <li id="s4"><a href="https://www.casestudies.com/company/ketch" target="_blank" rel="noopener">Ketch customer stories, including 6sense, Spreedly and Francesca's</a></li>
+        <li id="s5"><a href="https://www.businesswire.com/news/home/20260114510005/en" target="_blank" rel="noopener">Business Wire, Ketch launches Opt-Out Sync, January 2026</a></li>
+        <li id="s6"><a href="https://ketch.com/platform/agent-network" target="_blank" rel="noopener">Ketch, The Ketch Agent Network</a></li>
+        <li id="s7"><a href="https://www.taftlaw.com/news-events/law-bulletins/recent-privacy-enforcement-summer-fall-2025/" target="_blank" rel="noopener">Taft, Recent privacy enforcement, Summer and Fall 2025</a></li>
+        <li id="s8"><a href="https://cioinfluence.com/security/ketch-announces-the-ketch-agent-network-defining-agentic-ai-for-enterprise-privacy-programs/" target="_blank" rel="noopener">CIO Influence, Ketch announces the Ketch Agent Network</a></li>
+        <li id="s9"><a href="https://www.ketch.com/blog/posts/g2-summer-2026-ketch-22-badges" target="_blank" rel="noopener">Ketch, 22 G2 Summer 2026 badges across 5 categories</a></li>
+        <li id="s10"><a href="https://www.law.cornell.edu/regulations/california/11-CCR-7102" target="_blank" rel="noopener">California Code of Regulations, 11 CCR 7102, request metrics for large businesses</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the Ketch Enterprise Account Executive role. Not affiliated with or endorsed by Ketch. Figures come from public and third party sources as of October 2026. The product console, example accounts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+  var prog=document.getElementById('progress');
+  function bar(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?window.scrollY/h*100:0)+'%'}
+  window.addEventListener('scroll',function(){spy();bar()},{passive:true});spy();bar();
+
+  function group(btns,onPick){
+    btns.forEach(function(b,i){
+      b.addEventListener('click',function(){onPick(i)});
+      b.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight'||k==='ArrowDown')n=i+1;else if(k==='ArrowLeft'||k==='ArrowUp')n=i-1;
+        if(n===null)return;e.preventDefault();n=(n+btns.length)%btns.length;btns[n].focus();onPick(n);
+      });
+    });
+  }
+  function select(btns,i){
+    btns.forEach(function(x,j){var on=j===i;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+
+  // Platform squares
+  var mods=[].slice.call(document.querySelectorAll('.mod')),say=document.getElementById('hxSay');
+  mods.forEach(function(m,i){m.setAttribute('aria-pressed',m.classList.contains('on'));m.addEventListener('click',function(){
+    mods.forEach(function(x,j){x.classList.toggle('on',j===i);x.setAttribute('aria-pressed',j===i)});
+    say.innerHTML='';var b=document.createElement('b');b.textContent=m.dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(m.dataset.d));
+  })});
+
+  // AI Decisioning
+  var custs=[].slice.call(document.querySelectorAll('.cust')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL'),dC=document.getElementById('dC'),dT=document.getElementById('dT'),dO=document.getElementById('dO');
+  custs.forEach(function(c){c.addEventListener('click',function(){
+    custs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var d=JSON.parse(c.dataset.d);fH.textContent=d.h;fP.textContent=d.p;dC.textContent=d.c;dT.textContent=d.t;dO.textContent=d.o;
+    fL.innerHTML='';d.w.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
+  })});
+
+  // Territory
+  var sq=[].slice.call(document.querySelectorAll('.sq[data-r]')),rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
+  sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('rt');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  group(tabs,function(i){select(tabs,i)});
+
+  // Challenger stepper
+  var sts=[].slice.call(document.querySelectorAll('.cstep')),cur=0,cnt=document.getElementById('stCount');
+  function step(i){cur=i;select(sts,i);cnt.textContent='Step '+(i+1)+' of '+sts.length;document.getElementById('stNext').textContent=i===sts.length-1?'Start over':'Next step'}
+  group(sts,step);
+  document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
+  document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  // Ketch app tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+  var $=function(id){return document.getElementById(id)};
+  var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function seq(items,each,done){var i=0;(function next(){if(i<items.length){each(items[i],i);i++;setTimeout(next,fast?0:380)}else done()})()}
+
+  // Consent experience
+  var K={jur:'ca',gpc:false,choice:null};
+  var jbs=[].slice.call(document.querySelectorAll('.jb')),gpc=$('gpc');
+  var BAN={
+    ca:{t:'Your privacy choices',p:'We use cookies and share data with partners for advertising. You can opt out of the sale or sharing of your personal information.',a:[['optout','Do Not Sell or Share My Personal Information',1],['close','Close',0]],note:'California law: opt out. Purposes run until the visitor says no.'},
+    eu:{t:'We value your privacy',p:'We and our partners use cookies for analytics, personalization and advertising, only with your consent.',a:[['accept','Accept all',1],['reject','Reject all',0]],note:'EU law: opt in. Nothing runs until the visitor says yes.'},
+    co:{t:'Your privacy choices',p:'You can opt out of targeted advertising and the sale of your personal data.',a:[['optout','Opt out of targeted advertising',1],['close','Close',0]],note:'Colorado law: opt out, and universal opt out signals must be honored.'}
+  };
+  function permits(){
+    var p={analytics:1,ads:1,pers:1,email:1,ai:1};
+    if(K.jur==='eu'){var y=K.choice==='accept';for(var k in p)p[k]=y?1:0;}
+    else if(K.gpc||K.choice==='optout'){p.ads=0;p.ai=0;}
+    return p;
+  }
+  function render(){
+    var b=BAN[K.jur],sig=K.gpc&&K.jur!=='eu';
+    $('kbT').textContent=sig?'Opt out signal honored':b.t;
+    $('kbP').textContent=sig?'Your browser sent Global Privacy Control, so we will not sell or share your personal information or use it for targeted ads.':b.p;
+    var a=$('kbA');a.innerHTML='';
+    (sig?[['close','Got it',1]]:b.a).forEach(function(x){var bt=document.createElement('button');bt.type='button';bt.className='kbb'+(x[2]?' pri':'');bt.textContent=x[1];bt.dataset.c=x[0];bt.addEventListener('click',function(){choose(x[0],x[1])});a.appendChild(bt)});
+    $('kb').classList.toggle('done',K.choice!==null&&K.choice!=='open');
+    $('permNote').textContent=b.note+(K.gpc?(K.jur==='eu'?' GPC adds nothing here, consent is already required.':' GPC is on.'):'');
+    var p=permits();
+    [].slice.call(document.querySelectorAll('#plist li')).forEach(function(li){var on=p[li.dataset.p];var em=li.querySelector('em');em.textContent=on?'Allowed':'Denied';em.className='pm'+(on?'':' no')});
+  }
+  function stamp(){var d=new Date();return d.toTimeString().slice(0,8)}
+  function choose(c,label){
+    K.choice=c==='close'&&K.choice?K.choice:c;
+    var where={ca:'California',eu:'EU',co:'Colorado'}[K.jur];
+    $('plog').textContent=c==='close'?'Banner closed at '+stamp()+'. '+(K.gpc&&K.jur!=='eu'?'GPC opt out stays on record.':'No change to permits.'):'"'+label+'" recorded for a '+where+' visitor at '+stamp()+'. Sent to Opt-Out Sync.';
+    render();
+  }
+  jbs.forEach(function(b){b.addEventListener('click',function(){jbs.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});K.jur=b.dataset.j;K.choice=null;$('plog').textContent='No choice recorded yet.';render()})});
+  gpc.addEventListener('click',function(){K.gpc=!K.gpc;gpc.setAttribute('aria-checked',K.gpc);gpc.classList.toggle('on',K.gpc);if(K.gpc&&K.jur!=='eu')$('plog').textContent='Global Privacy Control signal received at '+stamp()+'. Opt out applied without a click.';render()});
+  render();
+
+  // Opt-Out Sync
+  var os=$('osRun'),osl=[].slice.call(document.querySelectorAll('#osys li'));
+  os.addEventListener('click',function(){
+    os.disabled=true;$('audit').hidden=true;osl.forEach(function(li){li.className='';li.querySelector('.ss').textContent='Waiting'});
+    seq(osl,function(li,i){if(i>0){osl[i-1].className='done';osl[i-1].querySelector('.ss').textContent='Done'}li.className='doing';li.querySelector('.ss').textContent='Syncing'},function(){var l=osl[osl.length-1];l.className='done';l.querySelector('.ss').textContent='Done';$('audit').hidden=false;os.disabled=false;os.textContent='Sync again'});
+  });
+
+  // Privacy requests
+  var rq=$('rqRun'),rqs=[].slice.call(document.querySelectorAll('#rqSteps li'));
+  rq.addEventListener('click',function(){
+    rq.disabled=true;$('rqOut').hidden=true;rqs.forEach(function(li){li.className=''});var s=$('rq0');s.textContent='Running';s.className='st o';
+    seq(rqs,function(li,i){if(i>0)rqs[i-1].className='done';li.className='doing'},function(){rqs[rqs.length-1].className='done';$('rqOut').hidden=false;s.textContent='Done';s.className='st g';rq.disabled=false;rq.textContent='Run again'});
+  });
+
+  // Data map
+  var dcs=[].slice.call(document.querySelectorAll('.dc')),dsys=[].slice.call(document.querySelectorAll('.dsys'));
+  dcs.forEach(function(c){c.addEventListener('click',function(){
+    dcs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var n=0;dsys.forEach(function(s){var h=s.dataset.cs.split(' ').indexOf(c.dataset.c)>-1;s.classList.toggle('hit',h);if(h)n++});
+    $('dmNote').textContent=c.textContent+' lives in '+n+(n===1?' system.':' systems.');
+  })});
+
+  // Agent Network
+  var ag=$('agRun'),ags=[0,1,2,3].map(function(i){return $('ag'+i)}),dds=[].slice.call(document.querySelectorAll('#aia dd'));
+  ag.addEventListener('click',function(){
+    ag.disabled=true;ags.forEach(function(a){a.className='ag'});dds.forEach(function(d){d.textContent='Waiting';d.className=''});
+    seq(ags,function(a,i){if(i>0){ags[i-1].className='ag done';dds[i-1].textContent=dds[i-1].dataset.v;dds[i-1].className='set'}a.className='ag doing'},function(){ags[3].className='ag done';dds[3].textContent=dds[3].dataset.v;dds[3].className='set';ag.disabled=false;ag.textContent='Draft again'});
+  });
+
+  // MEDDPICC flip cards
+  var fcs=[].slice.call(document.querySelectorAll('.fc')),mxAll=$('mxAll');
+  fcs.forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');
+    var all=fcs.every(function(x){return x.getAttribute('aria-pressed')==='true'});mxAll.setAttribute('aria-pressed',all?'true':'false');mxAll.textContent=all?'Flip back':'Flip all';});});
+  mxAll.addEventListener('click',function(){var on=mxAll.getAttribute('aria-pressed')!=='true';mxAll.setAttribute('aria-pressed',on?'true':'false');mxAll.textContent=on?'Flip back':'Flip all';fcs.forEach(function(c){c.setAttribute('aria-pressed',on?'true':'false')});});
+
+  // Battlecards
+  var cbs=[].slice.call(document.querySelectorAll('.cbtn'));
+  group(cbs,function(i){select(cbs,i)});
+})();
+</script>
+</body>
+</html>

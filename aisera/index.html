@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.remove("nojs")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aisera Enterprise Plan</title>
+<meta name="description" content="An Enterprise Account Executive plan for Aisera, an Automation Anywhere company, built on Challenger and MEDDPICC. Prepared by Eric Iannello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500..800&family=Nunito+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23121212'/%3E%3Cpath d='M9 22c4-1 9-7 14-14' stroke='%2381BC3C' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --fog:#F4F6FA;
+  --rule:#DDE2EA;
+  --ink:#0E1B2E;
+  --ink-2:#16263D;
+  --graphite:#566174;
+  --honey:#FFB400;
+  --honey-soft:#FFE7A3;
+  --sky:#7CC1F2;
+  --sky-soft:#E3F2FD;
+  --coral:#E8857F;
+  --lilac:#C3A8E6;
+  --link:#1D4F9F;
+  --good:#1F7A4D;
+  --warn:#8A5A00;
+  --bad:#B42318;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:17px;
+  --step-1:19.5px;
+  --step-2:24px;
+  --step-3:34px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{text-wrap:pretty}
+code{font-family:var(--mono);font-size:.86em}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+sup{line-height:0}
+sup a{font-family:var(--mono);font-size:10.5px;text-decoration:none;margin-left:1px}
+mark{background:var(--honey);color:var(--ink);padding:0 .08em}
+
+/* Shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);gap:72px;max-width:1280px;margin:0 auto;padding-inline:40px}
+@media (max-width:1040px){.shell{grid-template-columns:1fr;gap:0;padding-inline:20px}}
+.side{position:sticky;top:0;height:100vh;padding-block:36px;display:flex;flex-direction:column;gap:28px;overflow:auto}
+@media (max-width:1040px){.side{display:none}}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark svg{width:28px;height:28px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15}
+.mark small{display:block;font-family:var(--mono);font-size:11px;color:var(--graphite);font-weight:400}
+.toc{list-style:none;display:grid;gap:2px;border-left:1px solid var(--rule)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--graphite);text-decoration:none;font-size:15px}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);border-left-color:var(--honey);font-weight:600}
+.side-foot{margin-top:auto;font-size:13.5px;color:var(--graphite);display:grid;gap:4px}
+.side-foot a{color:var(--ink)}
+.topbar{display:none}
+@media (max-width:1040px){
+  .topbar{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  .topbar a:last-child{font-family:var(--mono);font-size:13px;color:var(--ink)}
+}
+
+/* Main */
+main{padding-block:56px 40px;min-width:0}
+section{padding-block:72px;border-top:1px solid var(--rule)}
+.panel + section{border-top:0}
+section:first-of-type{border-top:0}
+.sh{display:grid;gap:14px;margin-bottom:36px;max-width:760px}
+.sh h2{font-size:var(--step-3)}
+.sh p{color:var(--graphite);font-size:var(--step-1);line-height:1.5}
+h3{font-size:var(--step-2)}
+
+/* Hero */
+.grain{position:relative;isolation:isolate}
+.grain:after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero{background:var(--ink);color:#fff;border-radius:20px;padding:56px 56px 120px!important;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:center;overflow:hidden}
+.hero:after{mix-blend-mode:screen;opacity:.2}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding:40px 22px 100px!important}}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.doc-meta span{font-family:var(--mono);font-size:12.5px;color:#93A0B5}
+.doc-meta span b{color:#fff;font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px}
+.status:before{content:"";width:8px;height:8px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+h1{font-size:clamp(36px,4.1vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.02;color:#fff}
+h1 mark{padding:0 .1em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede{font-size:21px;line-height:1.5;color:#C6CFDC;max-width:640px;margin-top:26px}
+.lede b{color:#fff;font-weight:600}
+.hero sup a{color:var(--honey)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1.5px solid #fff;max-width:900px}
+.facts div{padding:14px 16px 0 0}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#8391A8}
+.facts dd{font-size:15.5px;margin-top:4px;color:#fff}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr;row-gap:14px}}
+.art{width:100%;max-width:340px;justify-self:center}
+.art svg{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.art{max-width:230px;order:-1;justify-self:start}}
+
+/* Fig 1: trace */
+figure{margin-top:48px;max-width:980px}
+figcaption{font-size:14px;color:var(--graphite);margin-top:14px;display:flex;gap:10px}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--ink);white-space:nowrap}
+.float{margin-top:-86px;position:relative;z-index:2;padding-inline:40px}
+@media (max-width:900px){.float{padding-inline:10px}}
+.float figure{margin-top:0}
+.trace{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.trace-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.trace-bar b{color:var(--ink);font-weight:500}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+@media (max-width:820px){.trace-grid{grid-template-columns:1fr}}
+.wf{padding:16px 18px 18px;border-right:1.5px solid var(--ink)}
+@media (max-width:820px){.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin:0 0 8px 150px}
+.span{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;height:30px}
+.span > span{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:calc(var(--d,0) * 12px)}
+.span .lane{position:relative;height:100%;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 25%)}
+.span .lane i{position:absolute;top:7px;bottom:7px;left:var(--s);width:var(--w);background:var(--sky);border:1.5px solid var(--ink);border-radius:3px}
+.span.hot .lane i{background:var(--honey)}
+.span.sel{background:var(--honey-soft);margin-inline:-18px;padding-inline:18px}
+.span.sel .lane i{background:var(--coral)}
+.span .lane em{position:absolute;top:50%;transform:translateY(-50%);left:calc(var(--s) + var(--w) + 6px);font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--graphite)}
+.span.far .lane em{left:auto;right:calc(100% - var(--s) + 6px)}
+@media (max-width:560px){.span{grid-template-columns:128px minmax(0,1fr)}.scale{margin-left:128px}.span > span{font-size:10.5px;padding-left:calc(var(--d,0) * 8px)}.span.far .lane em{display:none}.fields dd s{font-size:9px;padding:0 3px}}
+.fields{padding:16px 18px 18px}
+.fields h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.fields dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;font-family:var(--mono);font-size:12.5px}
+.fields dt,.fields dd{padding:5px 0;border-bottom:1px dashed var(--rule)}
+.fields dt{color:var(--graphite);padding-right:14px}
+.fields dd{color:var(--ink);display:flex;justify-content:space-between;gap:8px;min-width:0}
+.fields dd s{text-decoration:none;font-size:10px;background:var(--lilac);border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center}
+
+/* Numbers band */
+.band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-radius:18px;background:var(--honey);border:1.5px solid var(--ink);overflow:hidden}
+.band div{padding:28px 24px;border-left:1.5px solid var(--ink)}
+.band div:first-child{border-left:0}
+.band b{display:block;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.band span{display:block;font-size:15px;margin-top:10px;color:#3D2A00}
+.band sup a{color:var(--ink)}
+@media (max-width:860px){.band{grid-template-columns:1fr 1fr}.band div:nth-child(3){border-left:0}.band div:nth-child(n+3){border-top:1.5px solid var(--ink)}}
+
+/* Know */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:980px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
+.three > div{border-top:1.5px solid var(--ink);padding-top:16px}
+.three h3{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.three p{font-size:16px;color:#26303F}
+.three p + p{margin-top:10px}
+
+/* Panels */
+.panel{border-top:0!important;border-radius:18px;padding:72px 56px!important;margin-block:28px}
+@media (max-width:720px){.panel{padding:48px 18px!important;border-radius:14px;margin-inline:-8px}}
+.panel.ink{background:var(--ink);color:#EEF2F8}
+.panel.ink:after{mix-blend-mode:screen;opacity:.18}
+.panel.sky{background:var(--sky)}
+.panel.honey{background:#FFD65C}
+.panel.honey:after{opacity:.28}
+
+/* Fig 2: dashboard vs Honeycomb */
+.compare{margin:8px 0 56px;max-width:1060px}
+.cmp-grid{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.25fr);align-items:stretch}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;gap:18px}}
+.pane{background:var(--ink-2);border:1.5px solid #34465F;border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.pane.hc{background:#fff;color:var(--ink);border-color:#fff;box-shadow:8px 8px 0 var(--honey)}
+.pane-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#93A0B5;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.pane.hc .pane-lbl{color:var(--graphite)}
+.pane-lbl b{font-weight:500;color:#7EE2A8}
+.pane.hc .pane-lbl b{color:var(--ink);background:var(--honey);padding:0 6px;border-radius:3px}
+.dash svg{width:100%;height:auto;display:block}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.kpis div{border:1px solid #34465F;border-radius:8px;padding:10px 12px}
+.kpis small{display:block;font-family:var(--mono);font-size:10.5px;color:#93A0B5;text-transform:uppercase;letter-spacing:.05em}
+.kpis b{font-family:var(--display);font-size:22px;font-weight:700;color:#fff}
+.kpis b i{font-style:normal;font-size:12px;font-family:var(--mono);font-weight:400;color:#7EE2A8;margin-left:6px}
+.svc{list-style:none;margin-top:12px;font-family:var(--mono);font-size:12px;color:#C6CFDC}
+.svc li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #2F4260}
+.svc span{color:#7EE2A8;display:inline-flex;align-items:center;gap:6px}
+.svc span:before{content:"";width:7px;height:7px;border-radius:50%;background:#7EE2A8}
+.heat{width:100%;height:auto;display:block}
+.heat-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--graphite);margin-top:6px}
+.bu{margin-top:16px;border-top:1.5px solid var(--ink);padding-top:12px}
+.bu h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.bu h4 span{display:flex;gap:12px;text-transform:none;letter-spacing:0}
+.bu h4 span i{display:inline-block;width:9px;height:9px;border:1px solid var(--ink);margin-right:4px;vertical-align:-1px}
+.bu-row{display:grid;grid-template-columns:24ch minmax(50px,1fr);gap:12px;align-items:center;padding:5px 0}
+.bu-row code{font-size:12px;white-space:nowrap}
+.bars{display:grid;gap:3px}
+@media (max-width:560px){.bu{grid-template-columns:1fr!important}.bu-row code{padding-top:6px}.heat-ax span:nth-child(2){display:none}}
+.bars i{display:block;height:8px;width:var(--v);border:1px solid var(--ink);border-radius:2px}
+.bars .sel{background:var(--honey)}
+.bars .base{background:var(--sky)}
+.arrow-mid{display:grid;place-items:center}
+.arrow-mid span{width:44px;height:44px;border-radius:50%;background:var(--honey);display:grid;place-items:center;border:1.5px solid #fff}
+.arrow-mid span:after{content:"";width:12px;height:12px;border-top:2.5px solid var(--ink);border-right:2.5px solid var(--ink);transform:translateX(-3px) rotate(45deg)}
+@media (max-width:900px){.arrow-mid span:after{transform:translateY(-3px) rotate(135deg)}}
+.tally{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:12.5px;color:#FCA5A5}
+.pane.hc .tally{color:var(--good)}
+.tally b{font-size:22px;font-family:var(--display);font-weight:700;margin-right:4px}
+.compare figcaption{color:#93A0B5}
+.compare figcaption b{color:#fff}
+
+/* Talk track */
+.track{list-style:none;max-width:900px}
+.track li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:24px;border-top:1px solid #2A3A52}
+.track li:last-child{border-bottom:1px solid #2A3A52}
+.track .who{font-family:var(--mono);font-size:13px;color:#8391A8;line-height:1.5}
+.track .who b{display:block;font-family:var(--display);font-size:19px;color:var(--honey);font-weight:600;letter-spacing:-.01em;margin-top:2px}
+.track blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.42;letter-spacing:-.01em;color:#EEF2F8}
+.track .ev{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14.5px;color:#B5C0D0}
+.track .ev b{font-family:var(--mono);font-weight:500;color:var(--honey);background:#1F3350;padding:1px 6px;border-radius:3px;margin-right:6px}
+.panel.ink sup a{color:var(--sky)}
+@media (max-width:720px){.track li{grid-template-columns:1fr;gap:8px}}
+.ttt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;max-width:900px}
+@media (max-width:860px){.ttt{grid-template-columns:1fr;gap:20px}}
+.ttt h4{font-size:17px;font-weight:700;margin-bottom:6px;color:var(--honey)}
+.ttt p{font-size:15.5px;color:#B5C0D0}
+.panel.ink .sh p{color:#B5C0D0}
+
+/* Territory */
+.terr{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;max-width:1060px}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.tiles{display:grid;gap:0;width:max-content}
+.hr{display:flex;gap:5px;margin-bottom:-17px}
+.hr.off{padding-left:40.5px}
+.hr:last-child{margin-bottom:0}
+.tile{--f:#fff;position:relative;width:76px;height:88px;border:0;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.tile:before{content:"";position:absolute;inset:2px;background:var(--f);clip-path:inherit;transition:background .15s}
+.tile b,.tile small{position:relative;font-weight:inherit}
+.tile small{font-size:9.5px;color:var(--graphite);font-weight:400}
+.tile[data-r="bay"]{--f:var(--sky-soft)}
+.tile[data-r="pnw"]{--f:#EDEFF4}
+.tile[data-r="socal"]{--f:#FFF3D1}
+.tile[data-r="mtn"]{--f:#F1EAFA}
+.tile.on{--f:var(--honey)}
+.tile.on small{color:var(--ink)}
+.tile.home b{font-weight:800}
+.map-note{font-size:13.5px;color:var(--graphite);margin-top:12px;line-height:1.5}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);font-weight:500;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.reg td:first-child{font-family:var(--display);font-size:17px;font-weight:600;padding-left:10px;width:160px}
+.reg .st{display:block;font-family:var(--mono);font-size:11.5px;color:var(--graphite);font-weight:400;margin-top:2px}
+.reg .acc{color:var(--graphite);font-size:14.5px;margin-top:6px}
+.note{font-size:14px;color:var(--graphite);margin-top:14px}
+@media (max-width:720px){
+  .stack thead{display:none}
+  .stack tr{display:block;border-bottom:1px solid var(--rule);padding-block:14px}
+  .stack td{display:block;border:0;padding:4px 0}
+  .stack td[data-h]:before{content:attr(data-h);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+  .reg td:first-child{padding-left:0;width:auto}
+}
+
+/* Plays */
+.play-nav{display:flex;flex-wrap:wrap;border-bottom:1.5px solid rgba(14,27,46,.3);margin-bottom:32px;max-width:1060px}
+.play-nav button{font-family:var(--body);font-size:16px;font-weight:600;color:#1C3654;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:10px 0 12px;margin-right:28px;cursor:pointer}
+.play-nav button:hover{color:var(--ink)}
+.play-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.play{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;max-width:1060px}
+.play[hidden]{display:none}
+@media (max-width:900px){.play{grid-template-columns:1fr;gap:32px}}
+.insight{font-family:var(--display);font-size:25px;font-weight:600;line-height:1.3;letter-spacing:-.015em;padding-left:18px;border-left:4px solid var(--ink)}
+.dl{display:grid;gap:18px;margin-top:28px}
+.dl dt{margin-bottom:4px;color:#1C3654}
+.dl dd{font-size:16px;color:#0B1726}
+.dl ul{padding-left:18px;display:grid;gap:4px}
+.panel.sky .sh p{color:#11263F}
+.panel.sky sup a{color:var(--ink)}
+.mail{border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);background:var(--paper);overflow:hidden;align-self:start}
+.mail-h{padding:14px 20px;background:var(--fog);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.mail-h dt{font-family:var(--mono);font-size:12px;color:var(--graphite);padding-top:2px}
+.mail-h ol{list-style:none;display:grid;gap:2px}
+.mail-h ol li:before{content:attr(data-v);font-family:var(--mono);font-size:11.5px;color:var(--graphite);margin-right:8px}
+.touch{padding:18px 20px;border-bottom:1px solid var(--rule);font-size:16px;display:grid;gap:8px}
+.touch:last-of-type{border-bottom:0}
+.touch h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--graphite);display:flex;justify-content:space-between}
+.tok{font-family:var(--mono);font-size:.84em;color:#6B4500;background:var(--honey-soft);padding:0 3px;border-radius:3px}
+.mail-f{padding:12px 20px;background:var(--fog);border-top:1px solid var(--rule);font-size:13.5px;color:var(--graphite);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mail-f b{color:var(--ink);font-weight:600}
+.mail-f sup a{color:var(--link)}
+
+/* Competition */
+.comp td:first-child{font-family:var(--display);font-size:17px;font-weight:600;width:170px}
+.comp .q{font-style:italic;color:var(--ink)}
+.comp .tag{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;margin-top:4px}
+.t-bad{color:var(--bad)}.t-warn{color:var(--warn)}
+.comp td:nth-child(2),.comp td:nth-child(3){color:#26303F;font-size:15px}
+
+/* Deal */
+.path{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1060px;margin-bottom:56px}
+.path li{padding:0 18px 0 0;position:relative}
+.path li:before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:14px}
+.path li:after{content:"";position:absolute;top:-6px;left:0;width:12px;height:14px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.path .when{font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.path h4{font-size:17px;font-weight:700;margin:4px 0 6px;letter-spacing:-.01em}
+.path p{font-size:15px;color:#26303F}
+.path .m{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11.5px;background:var(--honey-soft);padding:2px 6px;border-radius:3px}
+@media (max-width:900px){.path{grid-template-columns:1fr;gap:22px}.path li{padding-left:24px}.path li:before{position:absolute;left:5px;top:12px;bottom:-22px;width:2px;height:auto;margin:0}.path li:last-child:before{display:none}.path li:after{top:2px}}
+.medd td:first-child{font-family:var(--mono);font-size:22px;font-weight:500;width:44px}
+.medd td:nth-child(2){font-weight:600;width:150px}
+.medd td:nth-child(n+3){font-size:15px;color:#26303F}
+.medd td:last-child{color:var(--bad)}
+@media (max-width:720px){.medd td:first-child{font-size:18px}}
+
+/* About */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1060px;border-top:1.5px solid var(--ink);margin-bottom:48px}
+.figs div{padding:18px 20px 0 0}
+.figs div + div{padding-left:20px;border-left:1px solid var(--rule)}
+.figs b{display:block;font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.figs span{display:block;font-size:14.5px;color:var(--graphite);margin-top:8px}
+@media (max-width:860px){.figs{grid-template-columns:1fr 1fr;row-gap:24px}.figs div:nth-child(3){padding-left:0;border-left:0}}
+.fit td:first-child{font-weight:600;width:300px}
+.fit td:last-child{color:#26303F}
+.letter{max-width:680px;margin-top:48px;padding:28px 32px;background:var(--fog);border-left:4px solid var(--honey);border-radius:4px}
+.letter h3{font-size:21px;margin-bottom:10px}
+.letter p{font-size:16.5px;color:#1F2937}
+.letter .sig{margin-top:16px;font-family:var(--mono);font-size:13px;color:var(--graphite)}
+
+/* 90 days */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1060px}
+@media (max-width:900px){.phases{grid-template-columns:1fr;gap:40px}}
+.phase{display:flex;flex-direction:column}
+.phase .when{font-family:var(--mono);font-size:12px;color:#5A4300;border-top:1.5px solid var(--ink);padding-top:12px}
+.phase h3{font-size:20px;margin:6px 0 14px;letter-spacing:-.01em}
+.phase ul{list-style:none;display:grid;gap:10px;font-size:15.5px;color:#1C1606}
+.phase li{padding-left:16px;position:relative}
+.phase li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:8px;background:var(--ink);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.out{margin-top:auto;padding-top:20px}
+.out div{background:#fff;border:1.5px solid var(--ink);padding:14px 16px;border-radius:4px;font-size:15px}
+.phase:last-child .out div{background:var(--ink);color:#fff}
+.out b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--graphite);margin-bottom:4px}
+.phase:last-child .out b{color:var(--honey)}
+.panel.honey .sh p{color:#4A3A10}
+
+/* Contact */
+.contact h2{font-size:var(--step-3);margin-bottom:14px}
+.contact p{color:var(--graphite);font-size:var(--step-1);max-width:600px}
+.card-sig{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;font-size:17px}
+.card-sig dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);padding-top:4px}
+.card-sig dd a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:40px 64px;font-size:14px;color:var(--graphite)}
+footer h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:12px}
+.sources{padding-left:22px;display:grid;gap:4px;max-width:760px}
+.sources li{scroll-margin-top:24px}
+.sources li:target{background:var(--honey-soft)}
+.disc{margin-top:22px;max-width:760px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* ===== Alignment pass ===== */
+:root{--gut:56px}
+@media (max-width:720px){:root{--gut:10px}}
+main > section:not(.panel):not(.hero),main > footer{padding-inline:var(--gut)}
+.float{padding-inline:var(--gut)}
+@media (max-width:720px){
+  .hero{margin-inline:-8px;padding-inline:18px!important}
+  .panel{padding-inline:18px!important}
+}
+.side{padding-top:56px}
+@media (min-width:721px) and (max-width:900px){.hero{padding-inline:56px!important}}
+.hero .facts{grid-column:1/-1;max-width:none;margin-top:8px}
+.terr{grid-template-columns:280px minmax(0,1fr)}
+@media (max-width:860px){.terr{grid-template-columns:1fr}}
+.path{grid-template-rows:repeat(5,auto);row-gap:0}
+.path li{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+.path .m{justify-self:start;align-self:start;margin-top:12px}
+.path p{align-self:start}
+@media (max-width:900px){.path{grid-template-rows:none;row-gap:22px}.path li{display:block;grid-row:auto}}
+.phases{grid-template-rows:repeat(4,auto);row-gap:0}
+.phase{display:grid;grid-template-rows:subgrid;grid-row:span 4}
+.phase .out{margin-top:0;padding-top:24px}
+.phase .out div{height:100%}
+@media (max-width:900px){.phases{grid-template-rows:none;row-gap:40px}.phase{display:flex;grid-row:auto}}
+.panel.sky .play-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.panel.sky .play-nav button{text-align:center;font-size:15px;padding:10px 8px;white-space:nowrap}
+@media (max-width:900px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel.sky .play-nav button{font-size:14px;padding:9px 8px;white-space:normal;line-height:1.25}}
+
+.reg .lead{margin-top:10px;padding:8px 12px;background:var(--fog);border-left:3px solid var(--honey);font-size:15px;border-radius:0 6px 6px 0}
+.reg tr.on .lead{background:#fff}
+.reg .lead b{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.reg td:first-child{width:190px}
+@media (min-width:821px){.trace-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.fields dt{padding-right:10px}
+.fields dd{flex-wrap:wrap;align-items:center}
+.fields dd s{font-size:9.5px;padding:0 4px}
+.bu{display:grid;grid-template-columns:max-content minmax(40px,1fr);column-gap:14px;row-gap:10px;align-items:center}
+.bu h4{grid-column:1/-1;margin-bottom:0}
+.bu-row{display:contents}
+@media (min-width:1041px) and (max-width:1180px){.trace-grid{grid-template-columns:1fr}.wf{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.phase ul{align-content:start}
+.cstep{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
+.band div{container-type:inline-size;display:flex;flex-direction:column;padding:24px 24px 26px}
+.band small{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A3F00;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.band b{font-size:clamp(30px,25cqi,60px);font-weight:800;letter-spacing:-.04em;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.band span{margin-top:12px;font-size:15px;line-height:1.45;color:#3D2A00;max-width:24ch}
+.band + section{border-top:0}
+/* ===== Interactive layer ===== */
+.banner{background:var(--honey);color:var(--ink);text-align:center;font-size:14px;padding:8px 16px;border-bottom:1.5px solid var(--ink)}
+.banner b{font-weight:700}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--honey);z-index:50;box-shadow:0 0 0 1px rgba(14,27,46,.15)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1.5px solid #fff;color:#fff;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:var(--honey);color:var(--ink);border-color:var(--honey);box-shadow:4px 4px 0 #fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--honey)}
+.btn.pri:hover{box-shadow:6px 6px 0 #fff}
+.hx{cursor:pointer;transition:transform .2s;outline:none}
+.hx:hover,.hx.on{transform:translate(-5px,-5px)}
+.hx.on use{stroke:var(--honey);stroke-width:4}
+.hx[data-i="0"].on use{stroke:#fff}
+.hx:focus-visible use{stroke:var(--sky);stroke-width:4}
+.hx-say{margin-top:14px;min-height:66px;font-size:14.5px;line-height:1.45;color:#C6CFDC;border-left:3px solid var(--honey);padding-left:12px}
+.hx-say b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--honey);font-weight:500;margin-bottom:2px}
+.hx-hint{font-family:var(--mono);font-size:11px;color:#8391A8;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hx,.btn{transition:none}}
+button.span{width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.span:hover{background:var(--fog);margin-inline:-18px;padding-inline:18px;width:calc(100% + 36px)}
+button.span.sel,button.span.sel:hover{width:calc(100% + 36px)}
+.trace-bar .hint{color:var(--link)}
+.fields dl{transition:opacity .15s}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1.5px solid #34465F;border-radius:14px 14px 0 0;overflow:hidden;max-width:1060px}
+.cstep{background:var(--ink-2);border:0;border-left:1px solid #2A3A52;color:#B5C0D0;text-align:left;padding:16px 14px 18px;cursor:pointer;font:inherit;position:relative;transition:background .15s}
+.cstep:first-child{border-left:0}
+.cstep i{display:block;font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--honey)}
+.cstep b{display:block;font-family:var(--display);font-size:16.5px;color:#fff;font-weight:600;margin:4px 0 2px;line-height:1.2}
+.cstep small{display:block;font-size:13px;line-height:1.35}
+.cstep:hover{background:#1D3150}
+.cstep[aria-selected="true"]{background:var(--honey);color:#3D2A00}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i{color:var(--ink)}
+.cstep:focus-visible{outline:2px solid var(--sky);outline-offset:-4px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.cstep:nth-child(4){border-left:0}.cstep:nth-child(n+4){border-top:1px solid #2A3A52}.cstep small{display:none}}
+.step-p{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;background:#fff;color:var(--ink);border:1.5px solid #fff;border-top:0;border-radius:0 0 14px 14px;padding:30px 30px 32px;max-width:1060px;box-shadow:8px 8px 0 var(--honey)}
+.step-p[hidden]{display:none}
+@media (max-width:860px){.step-p{grid-template-columns:1fr;gap:22px;padding:24px 20px}}
+.step-p h3{font-size:24px;margin-bottom:12px}
+.step-p blockquote{font-family:var(--display);font-size:20px;font-weight:500;line-height:1.45;padding-left:16px;border-left:4px solid var(--honey)}
+.step-p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+.facts2{display:grid;gap:10px}
+.facts2 div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;font-size:15px;color:#26303F}
+.facts2 b{display:block;font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink)}
+.facts2 sup a{color:var(--link)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;max-width:1060px;margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#8391A8}
+.step-nav button{font:inherit;color:#fff;background:none;border:1.5px solid #34465F;border-radius:8px;padding:7px 14px;cursor:pointer}
+.step-nav button:hover{border-color:var(--honey);color:var(--honey)}
+.panel.sky .play-nav{border:0;gap:10px}
+.panel.sky .play-nav button{margin:0;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:rgba(255,255,255,.55);color:var(--ink);transition:background .15s}
+.panel.sky .play-nav button:hover{background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:var(--honey);border-color:var(--ink)}
+.bcs{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:24px;max-width:1060px;align-items:start}
+@media (max-width:860px){.bcs{grid-template-columns:1fr}}
+.bc-list{display:grid;gap:8px}
+@media (max-width:860px){.bc-list{grid-template-columns:1fr 1fr}.cbtn:last-child:nth-child(odd){grid-column:1/-1}}
+.cbtn{text-align:left;font:inherit;background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cbtn b{display:block;font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
+.cbtn small{display:block;font-size:13px;color:var(--graphite);margin-top:2px}
+.cbtn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.cbtn[aria-selected="true"]{background:var(--ink);box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] b{color:#fff}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.bc{background:var(--ink);color:#EEF2F8;border-radius:16px;padding:28px 28px 30px;box-shadow:8px 8px 0 var(--honey)}
+.bc[hidden]{display:none}
+.bc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.bc h3{font-size:26px;color:#fff}
+.bc .lead{color:#B5C0D0;margin-top:6px;font-size:16px}
+.threat{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:#3A1A1A;color:#FCA5A5;white-space:nowrap}
+.threat.mid{background:#3A2E10;color:var(--honey)}
+.bc-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+@media (max-width:640px){.bc-cols{grid-template-columns:1fr}}
+.bc-cols div,.bc-q{border:1.5px solid #34465F;border-radius:12px;padding:16px 18px;background:var(--ink-2)}
+.bc-cols h4,.bc-q h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.bc-cols div:last-child h4{color:var(--honey)}
+.bc-cols p{font-size:15.5px;color:#DDE3EC}
+.bc-q{margin-top:14px;background:#1D3150;border-color:var(--honey)}
+.bc-q p{font-family:var(--display);font-size:19px;font-weight:500;color:#fff}
+.bc sup a{color:var(--sky)}
+
+/* ===== Pentera theme ===== */
+:root{
+  --ink:#132735;
+  --ink-2:#1B3446;
+  --graphite:#566573;
+  --honey:#FC6313;
+  --honey-soft:#FFE3D1;
+  --sky:#9DB3C4;
+  --sky-soft:#E7EEF3;
+  --coral:#FC6313;
+  --lilac:#DCE3E9;
+  --fog:#F3F5F7;
+  --rule:#DDE3E8;
+  --link:#C2410C;
+  --display:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --poster:'Anton','Oswald','Arial Narrow',Impact,sans-serif;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(40px,4.6vw,64px);line-height:1.02;text-transform:uppercase}
+.sh h2,.contact h2{font-size:40px;line-height:1.05}
+h3,h4,.cstep b,.cbtn b,.step-p h3,.three h3,.phase h3,.path h4{font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+mark,h1 mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--honey)}
+.status:before{background:var(--honey);clip-path:none;width:8px;height:8px}
+.toc a.active{border-left-color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:400;font-size:19px;letter-spacing:.02em}
+.hero sup a,.panel.ink sup a{color:var(--honey)}
+.lede b{color:#fff}
+/* Band on ink */
+.band{background:var(--ink);border-color:var(--ink)}
+.band div{border-color:#2B4457!important}
+.band small{color:var(--honey);border-color:#2B4457}
+.band b{color:#fff;font-size:clamp(34px,26cqi,64px);letter-spacing:.01em}
+.band span{color:#C9D3DC}
+.band sup a{color:var(--honey)}
+/* Plays panel orange */
+.panel.sky{background:var(--honey)}
+.panel.sky .sh p,.panel.sky .dl dd{color:#1A0E05}
+.panel.sky .dl dt{color:#3A1A05}
+.panel.sky .insight{border-color:var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.6)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--ink);color:#fff}
+.tok{color:#8A2E00;background:var(--honey-soft)}
+/* Plan panel */
+.panel.honey{background:#FFD9C0}
+.panel.honey:after{opacity:.22}
+.phase .when{color:#6A2A00}
+.panel.honey .sh p{color:#4A2308}
+.phase:last-child .out b{color:var(--honey)}
+/* Square tiles in place of hexes */
+.tiles2{display:grid;grid-template-columns:repeat(3,76px);gap:6px}
+.tiles2 .col-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--graphite);padding-bottom:4px;border-bottom:1.5px solid var(--ink);margin-bottom:2px}
+.sq{height:64px;border:1.5px solid var(--ink);border-radius:4px;background:var(--fog);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px;transition:background .15s,transform .15s}
+.sq small{font-size:9.5px;color:var(--graphite)}
+.sq:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.sq.on{background:var(--honey)}
+.sq.on small{color:var(--ink)}
+.sq.home{font-weight:800}
+.sq.home:after{content:"";width:6px;height:6px;background:var(--ink);margin-top:2px}
+/* Hero module grid */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative}
+.mod{aspect-ratio:1;border:2px solid #fff;background:var(--ink-2);color:#fff;font-family:var(--mono);font-size:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;text-align:left;line-height:1.2;transition:transform .15s,background .15s,box-shadow .15s;position:relative}
+.mod:before{content:"";position:absolute;top:10px;left:10px;width:8px;height:8px;background:currentColor;opacity:.6}
+.mod:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--honey)}
+.mod.on{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--honey);transform:translate(-3px,-3px)}
+.mod.core{background:var(--honey);color:var(--ink);font-family:var(--poster);font-size:19px;letter-spacing:.03em;text-transform:uppercase;border-color:var(--honey)}
+.mod.core.on{background:#fff;border-color:#fff}
+.mod:focus-visible{outline:2px solid var(--honey);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mod,.sq{transition:none}}
+/* Fig 1 funnel */
+.fun{background:var(--paper);border:1.5px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--honey);overflow:hidden}
+.fun-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 18px;background:var(--fog);border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--graphite)}
+.fun-bar b{color:var(--ink);font-weight:500}
+.fun-bar .hint{color:var(--link)}
+.fun-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+@media (max-width:1180px){.fun-grid{grid-template-columns:1fr}}
+.tiers{padding:18px;display:grid;gap:8px;border-right:1.5px solid var(--ink)}
+@media (max-width:1180px){.tiers{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;width:var(--w);min-width:210px;max-width:100%;border:1.5px solid var(--ink);border-radius:6px;background:var(--fog);padding:10px 14px;font:inherit;text-align:left;cursor:pointer;transition:background .15s}
+.tier span{font-size:14px;line-height:1.3;color:var(--ink)}
+.tier b{font-family:var(--poster);font-weight:400;font-size:26px;color:var(--ink);letter-spacing:.01em}
+.tier:hover{background:#fff}
+.tier.on{background:var(--ink)}
+.tier.on span,.tier.on b{color:#fff}
+.tier.last.on b{color:var(--honey)}
+.fun-d{padding:18px 20px 20px}
+.fun-d h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fun-d p{font-size:15.5px;color:#26303F}
+.fun-d ul{list-style:none;margin-top:12px;display:grid;gap:0;font-family:var(--mono);font-size:12.5px}
+.fun-d li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--rule)}
+.fun-d li s{text-decoration:none;font-size:10px;border:1px solid var(--ink);border-radius:3px;padding:0 5px;white-space:nowrap;align-self:center;background:var(--honey-soft)}
+/* Fig 2 scanner vs path */
+.scan li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #2F4A5E;font-size:13.5px;color:#C9D3DC}
+.scan{list-style:none}
+.scan b{font-family:var(--mono);font-size:12px;font-weight:500;color:#FCA5A5;background:#3A1A1A;border-radius:4px;padding:2px 0;text-align:center}
+.pathv{display:grid;gap:0;margin-top:4px}
+.pnode{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;background:#fff;font-size:14.5px}
+.pnode i{font-style:normal;font-family:var(--mono);font-size:12px;width:26px;height:26px;display:grid;place-items:center;background:var(--ink);color:#fff}
+.pnode.goal{background:var(--ink);color:#fff}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{text-decoration:none;font-family:var(--mono);font-size:10.5px;background:var(--honey);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:1px 6px;white-space:nowrap}
+.plink{height:18px;width:2px;background:var(--ink);margin-left:26px}
+.pane.hc .tally{color:#1F7A4D}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey)}
+.mods{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mod{font-size:11.5px;padding:8px;overflow-wrap:anywhere;min-width:0}
+@media (max-width:900px){.art{max-width:320px}}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.art{max-width:340px}
+.mod{overflow-wrap:normal;font-size:11px}
+.mod.core{font-size:20px}
+h1{font-size:clamp(40px,4.3vw,60px);line-height:1.08}
+h1 mark{padding:0 .12em;border-radius:4px}
+.tiles2{grid-template-columns:repeat(3,84px)}
+.tiles2 .col-h{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}
+@media (min-width:1041px) and (max-width:1240px){.panel.sky .play-nav{grid-template-columns:1fr 1fr}.cstep{padding:14px 10px 16px}.cstep b{font-size:15px}}
+@media (max-width:900px){.art{max-width:260px}}
+.path{grid-template-rows:repeat(6,auto)}
+.path li{grid-row:span 6}
+.path .exit{font-size:13.5px;color:#26303F;margin-top:12px;padding:10px 12px;background:var(--fog);border-left:3px solid var(--honey);border-radius:0 6px 6px 0;align-self:stretch}
+.path .exit b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+@media (max-width:900px){.path{grid-template-rows:none}}
+.stalls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:1180px){.stalls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stalls{grid-template-columns:1fr}}
+.stalls div{border:1.5px solid var(--ink);border-radius:10px;padding:16px 18px;background:#fff;box-shadow:4px 4px 0 var(--honey)}
+.stalls h4{font-size:16px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.stalls p{font-size:14.5px;color:#26303F}
+@media (min-width:1041px) and (max-width:1240px){.path{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;row-gap:36px}.path li{row-gap:0}}
+.mods{container-type:inline-size}
+.mod{font-size:clamp(9px,3.6cqi,12px);padding:clamp(6px,2.6cqi,10px)}
+.mod.core{font-size:clamp(13px,6.2cqi,20px)}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+
+/* ===== LogicGate theme ===== */
+:root{
+  --ink:#08004B;
+  --ink-2:#15107A;
+  --graphite:#55536E;
+  --honey:#7CFA72;
+  --honey-soft:#E4FDE1;
+  --blue:#0000CC;
+  --blue-soft:#E8E8FF;
+  --sky:#B8B8FF;
+  --sky-soft:#EEEEFF;
+  --fog:#F4F4FA;
+  --rule:#DEDDEA;
+  --link:#0000CC;
+  --display:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --poster:'Inter Tight','Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+h1,.sh h2,.contact h2,.band b,.figs b,.bc h3{font-family:var(--poster);font-weight:800;letter-spacing:-.03em}
+h1{text-transform:none;font-size:clamp(40px,4.4vw,62px);line-height:1.04}
+.sh h2,.contact h2{font-size:38px;line-height:1.08}
+h1 mark,mark{background:var(--honey);color:var(--ink)}
+.banner{background:var(--blue);color:#fff;border-color:var(--ink)}
+.banner b{color:var(--honey)}
+.mark b{font-family:var(--poster);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.status:before{background:var(--honey)}
+.toc a.active{border-left-color:var(--blue)}
+.hero sup a,.panel.ink sup a,.band sup a{color:var(--honey)}
+.btn.pri{background:var(--honey);border-color:var(--honey);color:var(--ink)}
+.band b{font-size:clamp(32px,22cqi,58px)}
+.band small{color:var(--honey)}
+.track .who b,.ttt h4{color:var(--honey)}
+.cstep i{color:var(--honey)}
+.cstep[aria-selected="true"]{background:var(--honey);color:#1D2A00}
+.step-p{box-shadow:8px 8px 0 var(--blue)}
+.step-p blockquote{border-color:var(--blue)}
+.pane.hc{box-shadow:8px 8px 0 var(--honey)}
+.arrow-mid span{background:var(--honey)}
+/* Plays panel in LogicGate blue */
+.panel.sky{background:var(--blue);color:#fff}
+.panel.sky .sh h2{color:#fff}
+.panel.sky .sh p{color:#DADAFF}
+.panel.sky .insight{color:#fff;border-color:var(--honey)}
+.panel.sky .dl dt,.panel.sky .label{color:var(--honey)}
+.panel.sky .dl dd{color:#F0F0FF}
+.panel.sky sup a{color:var(--honey)}
+.panel.sky .mail sup a{color:var(--link)}
+.panel.sky .mail{box-shadow:8px 8px 0 var(--ink)}
+.panel.sky .play-nav button{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.panel.sky .play-nav button:hover{background:rgba(255,255,255,.24)}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--honey);color:var(--ink);border-color:var(--honey)}
+.panel.sky:after{mix-blend-mode:screen;opacity:.12}
+.tok{color:#1F1FA8;background:var(--blue-soft)}
+/* Plan panel */
+.panel.honey{background:#E4E4FF}
+.panel.honey .sh p{color:#2A2870}
+.phase .when{color:#2A2870}
+.phase:last-child .out b{color:var(--honey)}
+/* Accents that were orange */
+.fun{box-shadow:8px 8px 0 var(--honey)}
+.fun-bar .hint{color:var(--blue)}
+.reg .lead{border-left-color:var(--blue)}
+.reg tr.on td{background:linear-gradient(var(--honey-soft),var(--honey-soft)) no-repeat;background-size:100% calc(100% - 1px)}
+.path li:after{background:var(--blue)}
+.path .exit{border-left-color:var(--blue)}
+.path .m{background:var(--blue-soft)}
+.stalls div{box-shadow:4px 4px 0 var(--blue)}
+.bc{box-shadow:8px 8px 0 var(--honey)}
+.bc-q{border-color:var(--honey)}
+.bc-cols div:last-child h4{color:var(--honey)}
+.cbtn[aria-selected="true"]{box-shadow:4px 4px 0 var(--honey)}
+.cbtn[aria-selected="true"] small{color:var(--honey)}
+.threat.mid{color:var(--honey);background:#1F2A5A}
+.letter{border-left-color:var(--blue)}
+.sources li:target{background:var(--honey-soft)}
+.mod.core{background:var(--honey);border-color:var(--honey);color:var(--ink);font-family:var(--poster);font-weight:800;text-transform:none;letter-spacing:-.02em}
+.mod:hover{box-shadow:4px 4px 0 var(--honey)}
+.mod.on{box-shadow:5px 5px 0 var(--honey)}
+.sq.on{background:var(--honey)}
+.tiles2{grid-template-columns:repeat(4,70px)}
+.tiles2 .col-h{font-size:9px}
+.sq{height:58px;font-size:13px}
+/* Fig 1: risk heat map */
+.hm-wrap{padding:18px;border-right:1.5px solid var(--ink);display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 22px;gap:6px}
+@media (max-width:1180px){.hm-wrap{border-right:0;border-bottom:1.5px solid var(--ink)}}
+.hm-y{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm-x{grid-column:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.hm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+.cell{aspect-ratio:1.35;border:1.5px solid var(--ink);border-radius:5px;font-family:var(--mono);font-size:15px;font-weight:500;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.cell.l1{background:#F1F1FA}
+.cell.l2{background:#C9C9FF}
+.cell.l3{background:#6E6EF5;color:#fff}
+.cell.l4{background:#0000CC;color:#fff}
+.cell.empty{color:transparent}
+.cell:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.cell.on{outline:3px solid var(--honey);outline-offset:1px;box-shadow:4px 4px 0 var(--ink)}
+.fun-d li s{background:var(--blue-soft)}
+@media (prefers-reduced-motion:reduce){.cell{transition:none}}
+/* Fig 2: files vs connected record */
+.files li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed #2E2A7A;font-family:var(--mono);font-size:12.5px;color:#D6D6F5;overflow-wrap:anywhere}
+.files{list-style:none}
+.files i{width:16px;height:20px;border:1.5px solid #8C8AD8;border-radius:2px;display:block;position:relative}
+.files i:after{content:"";position:absolute;left:3px;right:3px;top:6px;height:1.5px;background:#8C8AD8;box-shadow:0 4px 0 #8C8AD8}
+.pnode i{background:var(--blue)}
+.pnode.goal{background:var(--ink)}
+.pnode.goal i{background:var(--honey);color:var(--ink)}
+.pnode s{background:var(--honey-soft)}
+.pnode.goal s{background:var(--honey)}
+.pane.hc .tally{color:#0000CC}
+.pane-lbl b{color:#FCA5A5}
+.pane.hc .pane-lbl b{background:var(--honey);color:var(--ink)}
+h1,.sh h2,.contact h2,.bc h3{letter-spacing:-.018em}
+.band b,.figs b{letter-spacing:-.02em}
+.band b{font-size:clamp(24px,20cqi,58px)}
+.panel.sky .mail{color:var(--ink)}
+.ind-h{margin:48px 0 18px;max-width:1060px}
+.inds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1060px}
+@media (max-width:860px){.inds{grid-template-columns:1fr}}
+.ind{border:1.5px solid var(--ink);border-radius:12px;padding:22px 24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.ind.reg{box-shadow:6px 6px 0 var(--blue)}
+.ind.pre{box-shadow:6px 6px 0 var(--honey)}
+.ind-tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ink);color:#fff}
+.ind.pre .ind-tag{background:var(--honey);color:var(--ink)}
+.ind h4{font-size:20px;font-weight:800}
+.ind p{font-size:15.5px;color:#26303F}
+.ind .lead{margin-top:auto;padding:10px 12px;background:var(--fog);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;font-size:14.5px}
+.ind.pre .lead{border-left-color:var(--honey)}
+.ind .lead b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:2px}
+.ind .acc{font-size:14px;color:var(--graphite)}
+@media (min-width:861px){.inds{grid-template-rows:repeat(6,auto);row-gap:0}.ind{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:10px}.ind .lead{margin-top:6px;align-self:end}}
+.panel.ink .step-p sup a,.panel.ink .pane.hc sup a{color:var(--link)}
+/* MEDDPICC checklist, detailed */
+.mx-sub{max-width:760px;color:var(--graphite);font-size:16px;margin-bottom:20px}
+.mx{max-width:1060px;border-top:2px solid var(--ink)}
+.mx-row{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr));gap:16px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.mx-el{grid-row:span 2}
+.mx-el b{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--ink);color:var(--honey);font-family:var(--mono);font-size:18px;font-weight:500}
+.mx-el h4{font-size:17px;font-weight:700;margin:10px 0 4px;line-height:1.2}
+.mx-el span{display:block;font-size:13.5px;color:var(--graphite);line-height:1.35}
+.mx-c small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:6px}
+.mx-c p,.mx-c li{font-size:14.5px;line-height:1.45;color:#26303F}
+.mx-c ul{list-style:none;display:grid;gap:6px}
+.mx-c li{padding-left:12px;border-left:2px solid var(--honey)}
+.mx-f{background:var(--honey-soft);border-radius:8px;padding:10px 12px;align-self:start}
+.mx-f em{display:inline;font-style:normal;font-weight:700;color:var(--bad);margin-bottom:4px}
+.mx-rule{max-width:1060px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--ink);color:#fff;border-radius:10px;padding:14px 18px;box-shadow:6px 6px 0 var(--honey)}
+.mx-rule b{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--honey);white-space:nowrap}
+.mx-rule span{font-size:15px;color:#F2EEE8}
+@media (max-width:1180px){.mx-row{grid-template-columns:150px repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.mx-row{grid-template-columns:1fr;gap:12px}.mx-el{grid-row:auto;display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:center}.mx-el h4{margin:0}.mx-el span{grid-column:2}.mx-rule{grid-template-columns:1fr;gap:4px}}
+
+/* ===== aisera.com UI layer: ink, sage and lime green, purple ===== */
+:root{--ink:#121212;--ink-2:#1C1C1C;--graphite:#555555;--honey:#B6E07A;--honey-soft:#EEF7E1;--blue:#4E7F1E;--blue-soft:#EEF7E1;--sky:#B6E07A;--sky-soft:#EEF8FE;--fog:#F5F8FC;--rule:#E2E8F0;--link:#4E7F1E;--navy:#121212;--cyan:#81BC3C;--line:#E2E8F0;--mut:#555555;--txt:#121212;--soft:0 18px 40px -24px rgba(11,17,45,.35);--display:'Nunito Sans','DM Sans','Helvetica Neue',Arial,sans-serif;--body:'Nunito Sans','DM Sans','Helvetica Neue',Arial,sans-serif;--poster:'Nunito Sans','DM Sans','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{background:#fff;color:var(--ink);font-family:var(--body)}
+.shell{display:block;max-width:none;padding:0}
+.side,.topbar{display:none!important}
+main{padding:0}
+main > section:not(.ohero):not(.capp-wrap),main > footer,main > .ckpis{max-width:1240px;margin-inline:auto}
+main > section.panel{margin-inline:max(20px,calc((100% - 1200px)/2))}
+@media (max-width:720px){main > section.panel{margin-inline:0;padding-inline:10px!important;border-radius:0}}
+h1,.sh h2,.contact h2,.bc h3,.figs b{font-family:var(--display);font-weight:500;letter-spacing:-.025em}
+.sh h2,.contact h2{font-size:44px;line-height:1.08;color:var(--ink)}
+h3,h4,.cstep b,.cbtn b,.three h3,.phase h3,.stalls h4,.letter h3{font-weight:700;letter-spacing:-.01em}
+.sh p,.three p,.note,.acc,.reg td,.stalls p,.mx-sub,.fit td,.figs span,.letter p,.contact p,.disc,.sources li,.r p{color:var(--mut)}
+.fit td:first-child,.reg td:first-child{color:var(--ink)}
+.label{font-family:var(--mono)}
+sup a{color:var(--blue)}
+.insight{font-weight:500;letter-spacing:-.015em}
+/* Announcement bar and nav */
+.banner{background:#B6E07A;color:var(--navy);border:0;font-size:14.5px;font-weight:700;padding:9px 16px;text-align:center}
+.banner a{color:var(--navy);text-decoration:none;margin-left:6px;white-space:nowrap}
+.banner a:after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:2px}
+.banner a:hover{text-decoration:underline}
+.cnav-wrap{position:sticky;top:0;z-index:30;background:var(--navy)}
+.cnav{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 28px}
+.clogo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;flex:none}
+.cmark{width:30px;height:30px;border-radius:50%;background:#fff;position:relative;display:block}
+.cmark:before{content:"";position:absolute;inset:6px;border-radius:50%;background:conic-gradient(from 30deg,var(--navy) 0 16%,#fff 0 33%,var(--navy) 0 50%,#fff 0 66%,var(--navy) 0 83%,#fff 0)}
+.cmark:after{content:"";position:absolute;inset:11px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--navy)}
+.clogo span:last-child{font-size:19px;font-weight:600;letter-spacing:.12em}
+.cnav .toc{display:flex;gap:2px;list-style:none;margin:0 auto;padding:0;overflow-x:auto;scrollbar-width:none;border:0}
+.cnav .toc::-webkit-scrollbar{display:none}
+.cnav .toc a{display:block;padding:7px 10px;border:0;border-radius:6px;color:#fff;font-size:15px;font-weight:500;white-space:nowrap;text-decoration:none;margin:0}
+.cnav .toc a:hover{color:#B6E07A}
+.cnav .toc a.active{color:var(--navy);background:#B6E07A;border:0}
+.ccta{flex:none;display:inline-flex;align-items:center;background:#fff;color:var(--navy);font-size:13.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px 18px;border-radius:4px;text-decoration:none;border:2px solid #fff}
+.ccta:hover{background:#B6E07A;border-color:#B6E07A}
+.ccta.ghostc{background:transparent;color:#fff}
+.ccta.ghostc:hover{background:rgba(255,255,255,.12);color:#fff}
+@media (max-width:1240px){.ccta.ghostc{display:none}}
+@media (max-width:1100px){.clogo span:last-child{display:none}}
+@media (max-width:820px){.ccta{display:none}.cnav{padding:10px 12px;gap:10px}}
+/* Hero: the sky gradient with an orbit */
+.ohero{display:block!important;border-radius:0!important;margin:0;color:#fff!important;padding:72px max(24px,calc((100% - 1180px)/2)) 34px!important;background:linear-gradient(105deg,#1389BB 0%,#1E9CCB 30%,#3FA5DE 55%,#6DBCF2 78%,#8ED1FC 100%)!important;overflow:hidden;position:relative}
+.ohero:after{display:none}
+.oh-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px;align-items:center}
+.ohero h1{font-size:clamp(40px,4.6vw,64px);line-height:1.08;font-weight:500;letter-spacing:-.03em;color:var(--navy);max-width:720px}
+.ohero h1 span{display:block;color:#fff}
+.ohero .lede{color:#fff;font-size:19px;line-height:1.5;max-width:600px;margin-top:22px}
+.ohero .lede sup a{color:#fff}
+.ohero .ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.ohero .btn{font-family:var(--body);font-size:14.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:13px 22px;border:0;background:#fff;color:var(--navy);box-shadow:none;text-decoration:none}
+.ohero .btn.pri{background:var(--navy);color:#fff}
+.ohero .btn:hover{box-shadow:none;background:#EEF7E1}
+.ohero .btn.pri:hover{background:#262626}
+.orbit{position:relative;width:min(420px,100%);aspect-ratio:1;justify-self:center}
+.ring{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+.ring.r1{inset:18%;animation:spin 60s linear infinite}
+.ring.r2{inset:2%;animation:spin 90s linear infinite reverse;border-color:rgba(255,255,255,.35)}
+.oc{position:absolute;width:44px;height:44px;margin:-22px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font:700 11px/1 var(--body);box-shadow:0 8px 20px -8px rgba(11,17,45,.45),0 0 0 6px rgba(255,255,255,.28)}
+.r1 .c1{left:50%;top:0}.r1 .c2{left:93%;top:75%}.r1 .c3{left:7%;top:75%;background:#A815F8;color:#fff}
+.r2 .c4{left:50%;top:0}.r2 .c5{left:100%;top:50%}.r2 .c6{left:50%;top:100%}.r2 .c7{left:0;top:50%}
+.ring.r1 .oc{animation:spin 60s linear infinite reverse}.ring.r2 .oc{animation:spin 90s linear infinite}
+.core{position:absolute;inset:33%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C9EDFF,#A815F8 55%,#2B3FB8);box-shadow:0 0 60px 10px rgba(255,255,255,.35),inset 0 0 30px rgba(255,255,255,.4);display:grid;place-items:center}
+.core i{width:44%;aspect-ratio:1;border-radius:50%;background:#fff;position:relative}
+.core i:before{content:"";position:absolute;inset:18%;border-radius:50%;background:conic-gradient(from 30deg,#2B3FB8 0 16%,#fff 0 33%,#2B3FB8 0 50%,#fff 0 66%,#2B3FB8 0 83%,#fff 0)}
+.core i:after{content:"";position:absolute;inset:36%;border-radius:50%;background:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ring,.ring .oc{animation:none!important}}
+.trusted{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+.trusted > span{font-size:20px;color:#fff}
+.trusted ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 34px}
+.trusted li{font-size:22px;font-weight:700;letter-spacing:-.01em;color:#fff;opacity:.95}
+@media (max-width:900px){.oh-grid{grid-template-columns:1fr}.orbit{width:min(300px,80%)}.ohero{padding-top:48px!important}}
+/* App mock */
+.capp-wrap{background:var(--fog);padding:64px max(20px,calc((100% - 1180px)/2)) 56px!important;margin:0;border:0!important}
+.app-intro{max-width:760px;margin-bottom:24px}
+.app-intro h2{font-size:clamp(30px,3.4vw,42px);font-weight:500;letter-spacing:-.025em;line-height:1.1}
+.app-intro p{color:var(--mut);margin-top:10px;font-size:18px}
+.app{display:grid;grid-template-columns:64px minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink);box-shadow:0 30px 70px -40px rgba(11,17,45,.45)}
+.app-rail{background:var(--navy);padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.rail-logo{width:32px;height:32px;border-radius:50%;background:#fff;position:relative}
+.rail-logo:before{content:"";position:absolute;inset:7px;border-radius:50%;background:conic-gradient(from 30deg,var(--navy) 0 16%,#fff 0 33%,var(--navy) 0 50%,#fff 0 66%,var(--navy) 0 83%,#fff 0)}
+.rail-logo:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#fff}
+.app-tabs{display:grid;gap:6px}
+.dtab{width:42px;height:42px;border-radius:8px;border:0;background:none;color:#A3A3A3;cursor:pointer;display:grid;place-items:center;position:relative}
+.dtab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.dtab:hover{background:#262626;color:#fff}
+.dtab[aria-selected="true"]{background:#B6E07A;color:var(--navy)}
+.dtab:focus-visible{outline:2px solid #B6E07A;outline-offset:2px}
+.ti{width:17px;height:17px;display:block;border:1.8px solid currentColor;border-radius:50%;position:relative}
+.ti.t0:after{content:"";position:absolute;inset:4px;border-radius:50%;background:currentColor}
+.ti.t1{border-radius:5px}
+.ti.t1:after{content:"";position:absolute;left:3px;right:3px;top:5px;height:2px;background:currentColor;box-shadow:0 4px 0 currentColor}
+.ti.t2{transform:rotate(45deg);border-radius:3px;width:14px;height:14px}
+.ti.t3{border-radius:3px 3px 8px 8px}
+.ti.t4{border-radius:2px;border-width:0 0 2px 0;width:18px}
+.ti.t4:before{content:"";position:absolute;left:2px;bottom:2px;width:4px;height:6px;background:currentColor;box-shadow:5px -4px 0 currentColor,10px -8px 0 currentColor}
+.app-main{min-width:0}
+.dview{padding:18px 22px 22px;min-width:0}
+.vhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vhead h3{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.vact{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ghost,.prim{font:600 12.5px var(--body);border-radius:6px;padding:6px 11px}
+.ghost{color:var(--ink);border:1px solid var(--line);background:#fff}
+.prim{color:#fff;background:var(--navy);border:1px solid var(--navy)}
+button.prim{cursor:pointer}
+button.prim:hover{background:#262626}
+button.prim:disabled{opacity:.6;cursor:default}
+.vcap{font-size:14px;color:var(--mut);margin:4px 0 14px}
+.vcap code{font-size:12.5px}
+.alert{font-size:11px;font-weight:700;color:#fff;background:#B42318;border-radius:4px;padding:2px 7px;margin-right:6px}
+.st{font-style:normal;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.st.x{background:#FDE8E8;color:#B42318}.st.o{background:#FFEFDF;color:#9A4A00}.st.y{background:#FEF5D6;color:#7A5A00}.st.g{background:#E3F6EC;color:#1F7A4D}.st.n{background:#EEF1F6;color:#555555}
+.igrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px;align-items:stretch}
+.ilist{display:grid;gap:6px;align-content:start}
+.irow2{display:grid;grid-template-columns:28px minmax(0,1fr) auto auto;gap:10px;align-items:center;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 10px;font:inherit;color:var(--ink);cursor:pointer}
+.irow2:hover{border-color:#B9C6DA}
+.irow2.on{border-color:var(--blue);background:#F7FBF0;box-shadow:inset 3px 0 0 var(--blue)}
+.irow2:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.iav{width:28px;height:28px;border-radius:50%;background:#EEF7E1;position:relative}
+.iav:after{content:"";position:absolute;inset:8px;border-radius:50%;border:2px solid var(--blue)}
+.iav.ai{background:#E8ECFE}.iav.ai:after{border-color:#A815F8;border-radius:3px}
+.iav.human{background:#F1F3F8}.iav.human:after{border-color:#555555;inset:7px 8px 9px}
+.iav.mcp{background:#FFEFDF}.iav.mcp:after{border-color:#9A4A00;transform:rotate(45deg);border-radius:2px}
+.iav.service{background:#E3F6EC}.iav.service:after{border-color:#1F7A4D}
+.inm{font-size:13.5px;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inm small{display:block;font-size:11.5px;font-weight:500;color:var(--mut)}
+.iapps{font-size:12px;color:var(--mut);white-space:nowrap}
+.iview{border:1px solid var(--line);border-radius:10px;background:radial-gradient(circle at 50% 48%,#EEF8FE,#fff 70%);display:grid;place-items:center;padding:6px}
+.graph{width:100%;height:auto;max-height:280px}
+.graph .ge{stroke:#D5DDEA;stroke-width:1.5;stroke-dasharray:3 4}
+.graph .ge.on{stroke:#81BC3C;stroke-width:2.4;stroke-dasharray:none}
+.graph .gn circle{fill:#fff;stroke:#D5DDEA;stroke-width:1.5}
+.graph .gn.on circle{fill:var(--navy);stroke:#81BC3C;stroke-width:3}
+.graph .gi{font:700 10px var(--body);text-anchor:middle;fill:#8C8C8C}
+.graph .gn.on .gi{fill:#fff}
+.graph .gl{font:600 9.5px var(--body);text-anchor:middle;fill:#8C8C8C}
+.graph .gn.on .gl{fill:var(--ink)}
+.graph .gc circle{fill:#81BC3C;stroke:#fff;stroke-width:4}
+.graph .gc text{font:700 9px var(--body);text-anchor:middle;fill:#fff}
+.graph .gc .gcr{font-size:8.5px;font-weight:600}
+.idet{margin-top:14px;display:grid;grid-template-columns:minmax(0,1.3fr) 220px minmax(0,1fr);gap:16px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--fog);align-items:start}
+.idet small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.idet h4{font-size:16px;font-weight:700;margin-top:2px;font-family:var(--mono)}
+.idet p{font-size:13.5px;color:#2B2B2B;margin-top:4px}
+.idn{display:grid;gap:8px}
+.idn b{display:block;font-size:14.5px;font-weight:700;color:var(--ink)}
+.idet ul{list-style:none;display:grid;gap:6px}
+.idet li{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#2B2B2B;border-bottom:1px solid var(--line);padding-bottom:5px}
+.idet li s{text-decoration:none;font-size:10.5px;font-weight:700;color:var(--blue);background:#EEF7E1;border-radius:4px;padding:1px 6px;align-self:start;white-space:nowrap}
+.vt{width:100%;border-collapse:collapse;font-size:13.5px}
+.vt th{text-align:left;font-size:11.5px;font-weight:700;color:var(--mut);padding:8px 10px;border-bottom:1px solid var(--line);background:var(--fog)}
+.vt td{padding:10px;border-bottom:1px solid #EEF1F6;color:#2B2B2B}
+.vt td b{color:var(--ink)}
+.vt code{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.vt .numc{font-variant-numeric:tabular-nums}
+.vt tr.gone td{color:#A3A3A3}
+.vt tr.gone code{text-decoration:line-through;color:#A3A3A3}
+.rvk{font:700 11.5px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#B42318;background:#fff;border:1.5px solid #F2B8B5;border-radius:5px;padding:5px 10px;cursor:pointer}
+.rvk:hover{background:#FDE8E8}
+.rvk:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+tr.gone .rvk{color:var(--ink);border-color:var(--line)}
+.keep{font-size:12px;color:var(--mut)}
+.vfoot{font-size:13px;color:var(--mut);margin-top:10px}
+.pos{display:grid;gap:8px}
+.prow{display:grid;grid-template-columns:130px minmax(0,1fr) 36px 80px;gap:14px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.prow b{font-size:14px}
+.prow i{height:8px;border-radius:4px;background:linear-gradient(90deg,#81BC3C var(--w),#EEF1F6 var(--w))}
+.prow i.lo{background:linear-gradient(90deg,#E08A3C var(--w),#EEF1F6 var(--w))}
+.prow span{font-weight:700;font-size:14px;text-align:right}
+.prow em{font-style:normal;font-size:12px;color:var(--mut);text-align:right}
+.oxs{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;counter-reset:s;margin-bottom:12px}
+.oxs li{counter-increment:s;font-size:12.5px;color:var(--mut);border:1px solid var(--line);border-radius:8px;padding:9px;display:flex;gap:7px;align-items:center;background:#fff}
+.oxs li:before{content:counter(s);flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid #C8D2E3;display:grid;place-items:center;font-size:10.5px;font-weight:700}
+.oxs li.doing{color:var(--ink);border-color:#81BC3C;background:#F7FBF0}
+.oxs li.doing:before{border-color:#81BC3C;color:#81BC3C}
+.oxs li.done{color:var(--ink)}
+.oxs li.done:before{content:"";background:var(--navy) no-repeat center/11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' stroke='%2398DDFF' stroke-width='2' fill='none'/%3E%3C/svg%3E");border-color:var(--navy)}
+.oxr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.oxr > div{border:1px solid #CFE6AE;background:#F7FBF0;border-radius:8px;padding:12px 14px}
+.oxr small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.oxr p{font-size:13.5px;color:var(--ink);margin-top:4px}
+.oxr code{font-family:var(--mono);font-size:12px}
+@media (max-width:1000px){.oxr{grid-template-columns:1fr}.oxs{grid-template-columns:1fr 1fr}.idet{grid-template-columns:1fr}.igrid{grid-template-columns:1fr}}
+@media (max-width:820px){.app{grid-template-columns:1fr}.app-rail{flex-direction:row;padding:8px 10px}.app-tabs{display:flex}.capp-wrap{padding:44px 10px 40px!important}}
+@media (max-width:620px){.vt thead{display:none}.vt tr{display:grid;grid-template-columns:1fr auto;padding:8px 0;border-bottom:1px solid #EEF1F6}.vt td{border:0;padding:3px 6px}.vt td:nth-child(n+3){grid-column:1/-1}.vint td:nth-child(4),.vint td:nth-child(5){grid-column:auto}.dview{padding:14px 12px}.oxs{grid-template-columns:1fr}.prow{grid-template-columns:96px minmax(0,1fr) 30px;gap:10px}.prow em{grid-column:1/-1;text-align:left;margin-top:-4px}.irow2{grid-template-columns:28px minmax(0,1fr) auto}.iapps{display:none}}
+/* KPI and research cards */
+.ckpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:44px var(--gut) 0}
+.ckpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;border-top:4px solid #81BC3C}
+.ckpi small{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.ckpi b{display:block;font-size:clamp(34px,3.4vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-top:6px}
+.ckpi p{font-size:14.5px;color:var(--mut);margin-top:6px}
+@media (max-width:1000px){.ckpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ckpis{grid-template-columns:1fr}}
+#know .three{max-width:1060px;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+#know .three > div{background:var(--fog);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+@media (max-width:820px){#know .three{grid-template-columns:1fr}}
+.ind-h{margin:48px 0 18px;max-width:1060px;font-size:22px}
+.rsch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+.r{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.r:hover{border-color:#B9C6DA;box-shadow:var(--soft)}
+.r .chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.chips span{font-size:11px;font-weight:700;background:#EEF7E1;border-radius:999px;padding:3px 10px;color:#3F6A14}
+.r b{font-size:21px;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.01em}
+.r p{font-size:14.5px;margin:6px 0 14px}
+.r small{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+@media (max-width:1100px){.rsch{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rsch{grid-template-columns:1fr}}
+.evt{max-width:1060px;margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15px;color:var(--ink);background:#EEF7E1;border-radius:10px;padding:12px 16px}
+.evt b{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F6A14}
+@media (max-width:560px){.evt{grid-template-columns:1fr;gap:4px}}
+/* Navy panel: talk track */
+.panel.ink{background:var(--navy)!important;color:#fff;border:0!important}
+.panel.ink:after{opacity:.08}
+.panel.ink .sh h2{color:#fff}
+.panel.ink .sh p{color:#CFCFCF}
+.panel.ink sup a{color:#B6E07A}
+.pane{background:#1C1C1C!important;border:1px solid #363636!important;border-radius:12px}
+.pane-lbl{color:#A3A3A3!important}
+.pane-lbl b{color:#B6E07A!important}
+.files li{color:#E6E6E6;border-bottom-color:#363636}
+.files i,.files i:after{border-color:#777777}.files i:after{background:#777777}
+.pane .tally{color:#B6E07A}
+.pane .tally span{color:#CFCFCF}
+.pane.hc{background:#fff!important;color:var(--ink)!important;border:0!important;box-shadow:0 0 0 1px rgba(152,221,255,.5),0 30px 60px -30px rgba(31,167,214,.7)!important}
+.pane.hc .pane-lbl{color:var(--mut)!important}
+.pane.hc .pane-lbl b{background:#EEF7E1!important;color:#3F6A14!important}
+.pane.hc .tally{color:var(--blue)!important}
+.pane.hc .tally span{color:var(--mut)}
+.pnode{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;text-align:left}
+.pnode i{background:var(--navy)!important;color:#fff!important}
+.pnode s{background:#EEF7E1!important;color:#3F6A14!important;border-color:#CFE6AE!important}
+.pnode.goal{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+.pnode.goal i{background:#B6E07A!important;color:var(--navy)!important}
+.pnode.goal s{background:#B6E07A!important;color:var(--navy)!important;border-color:#B6E07A!important}
+.plink{border-color:#CFE6AE!important}
+.arrow-mid span{background:#81BC3C!important}
+.steps{border-color:#363636!important}
+.cstep{background:#1C1C1C!important;color:#CFCFCF;border-left-color:#363636!important}
+.cstep b{color:#fff}.cstep i{color:#B6E07A!important}
+.cstep small{color:#BDBDBD}
+.cstep:hover{background:#262626!important}
+.cstep[aria-selected="true"],.cstep[aria-selected="true"]:hover{background:#B6E07A!important;color:var(--navy)}
+.cstep[aria-selected="true"] b,.cstep[aria-selected="true"] i,.cstep[aria-selected="true"] small{color:var(--navy)!important}
+.step-p{background:#fff!important;color:var(--ink)!important;box-shadow:none!important;border:0!important}
+.step-p h3,.step-p .facts2 b{color:var(--ink)!important}
+.step-p blockquote{border-color:#81BC3C!important;color:var(--ink)}
+.step-p .k{color:var(--mut)!important}
+.facts2 div{border:1px solid var(--line)!important;background:var(--fog);color:#2B2B2B!important}
+.step-p sup a,.facts2 sup a{color:var(--blue)!important}
+.step-nav button{color:#fff;border-color:#555555;background:transparent}
+.step-nav button:hover{background:#262626}
+.step-nav span{color:#CFCFCF}
+.ttt h4{color:#B6E07A!important}
+.ttt p{color:#CFCFCF}
+/* Territory */
+.ctiles{grid-template-columns:repeat(3,92px)!important;grid-template-rows:auto repeat(5,58px);grid-auto-flow:column;gap:8px!important}
+.tiles2 .col-h{color:var(--mut);border-color:var(--line)!important;font-size:11px;white-space:nowrap}
+.sq{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;height:58px;font-size:16px;font-weight:700;border-radius:8px}
+.sq small{color:var(--mut)!important;font-weight:500}
+.sq:hover{border-color:#81BC3C!important}
+.sq.on{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+.sq.on small{color:#B6E07A!important}
+.sq-x{display:block}
+.reg th,.fit th{color:var(--mut)!important;border-color:var(--line)!important}
+.reg td,.fit td{border-color:var(--line)!important}
+.reg tr.on td{background:#F7FBF0!important}
+.reg .lead{background:#EEF7E1!important;color:var(--ink)}
+.reg .lead b{color:#3F6A14!important}
+.reg .st{color:var(--mut)!important}
+@media (max-width:560px){.ctiles{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+/* Plays panel: light sky */
+.panel.sky{background:linear-gradient(160deg,#EEF7E1 0%,#F5FAFF 60%,#fff 100%)!important;color:var(--ink);border:1px solid #DDF0C3}
+.panel.sky:after{opacity:0}
+.panel.sky .sh h2{color:var(--ink)}
+.panel.sky .sh p{color:var(--mut)}
+.panel.sky .insight{color:var(--ink);border-color:#81BC3C}
+.panel.sky .dl dt,.panel.sky .label{color:#3F6A14}
+.panel.sky .dl dd{color:#2B2B2B}
+.panel.sky sup a{color:var(--blue)}
+.panel.sky .play-nav button{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:4px;font-weight:700;font-size:14px;letter-spacing:.02em}
+.panel.sky .play-nav button:hover{border-color:#81BC3C;background:#fff}
+.panel.sky .play-nav button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.mail,.panel.sky .mail{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px;box-shadow:0 30px 60px -36px rgba(11,17,45,.4)!important}
+.mail-h,.mail-f{background:var(--fog)!important;border-color:var(--line)!important}
+.mail-h dt,.mail-h ol li:before,.touch h4{color:var(--mut)!important}
+.touch{border-color:#EEF1F6!important}
+.tok{background:#EEF7E1!important;color:#3F6A14!important}
+.mail sup a{color:var(--blue)!important}
+.pull li{margin-bottom:4px}
+/* Battlecards and stalls */
+.cbtn{background:#fff!important;border:1px solid var(--line)!important;box-shadow:none!important;transform:none!important;border-radius:8px}
+.cbtn b{color:var(--ink)!important}.cbtn small{color:var(--mut)!important}
+.cbtn:hover{border-color:#81BC3C!important}
+.cbtn[aria-selected="true"]{background:#F7FBF0!important;border-color:var(--blue)!important;box-shadow:inset 3px 0 0 var(--blue)!important}
+.bc{background:#fff!important;border:1px solid var(--line)!important;box-shadow:var(--soft)!important;border-radius:12px}
+.bc h3{color:var(--ink)}
+.bc-cols div,.bc-q{background:var(--fog)!important;border:1px solid var(--line)!important}
+.bc-cols h4{color:var(--mut)!important}
+.bc-cols div:last-child h4{color:#3F6A14!important}
+.bc-q{background:#EEF7E1!important;border-color:#CFE6AE!important}
+.bc p{color:#2B2B2B}
+.threat{color:var(--mut);background:#EEF1F6}
+.threat.mid{color:#3F6A14!important;background:#EEF7E1!important}
+.stalls div{background:#fff!important;border:1px solid var(--line)!important;border-top:3px solid #81BC3C!important;box-shadow:none!important;border-radius:10px}
+.stalls h4{color:var(--ink)}
+/* MEDDPICC flip cards */
+.mxf-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:56px 0 18px}
+.mxf-head h3{margin:0 0 8px;font-size:24px}.mxf-head .mx-sub{margin:0;max-width:640px}
+.mxf-all{font:700 12.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#fff;border:1.5px solid var(--navy);border-radius:4px;padding:11px 16px;cursor:pointer;white-space:nowrap}
+.mxf-all:hover{background:#EEF7E1}.mxf-all[aria-pressed="true"]{background:var(--navy);color:#fff}
+.mxf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fc{all:unset;box-sizing:border-box;display:block;perspective:1600px;cursor:pointer;border-radius:12px;text-align:left}
+.fc:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.fc-in{display:grid;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;height:100%}
+.fc[aria-pressed="true"] .fc-in{transform:rotateY(180deg)}
+.fc-f,.fc-b{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;box-sizing:border-box;min-height:100%}
+.fc-f{display:grid;grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto auto 1fr auto;column-gap:18px;row-gap:6px;padding:22px 24px;background:linear-gradient(105deg,#1389BB,#3FA5DE 60%,#8ED1FC);color:#fff}
+.fc:hover .fc-f{box-shadow:0 20px 40px -24px rgba(11,17,45,.6)}
+.fc-l{grid-row:1/5;font:600 88px/.9 var(--display);letter-spacing:-.04em;color:var(--navy);align-self:start}
+.fc-n{font-size:20px;font-weight:700;color:#fff;margin-top:2px}
+.fc-w{font-size:14.5px;color:#fff}
+.fc-flag{grid-column:2;margin-top:10px;font-size:14.5px;font-weight:600;color:var(--navy);border-top:1px solid rgba(255,255,255,.5);padding-top:12px}
+.fc-flag small{display:block;font:700 10.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:4px}
+.fc-hint{grid-column:2;margin-top:4px;font:700 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.fc-hint:after{content:"";display:inline-block;width:10px;height:10px;margin-left:6px;border:2px solid currentColor;border-left:0;border-bottom:0;border-radius:0 6px 0 0;vertical-align:-1px}
+.fc-b{background:#fff;border:1px solid var(--line);transform:rotateY(180deg);color:#2B2B2B;font-size:13.5px;line-height:1.45;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px;row-gap:12px;align-content:start;padding:20px 24px;box-shadow:var(--soft)}
+.fc-bh{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;font-weight:700;color:var(--ink);font-size:16px}
+.fc-bh b{font-size:26px;color:#81BC3C}
+.fc-s small{display:block;font:700 10.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#3F6A14;margin-bottom:4px}
+.fc-s .q{display:block;padding-left:10px;border-left:2px solid #81BC3C;margin-top:4px;color:var(--ink)}
+.fc-m{color:var(--ink);font-weight:600}
+@media (max-width:860px){.mxf{grid-template-columns:1fr}}
+@media (max-width:600px){
+ .mxf-head{flex-direction:column;align-items:flex-start}
+ .fc-in{display:block;transform:none!important;transition:none}
+ .fc-f,.fc-b{transform:none;backface-visibility:visible;-webkit-backface-visibility:visible}
+ .fc-b{display:none;grid-template-columns:1fr}
+ .fc[aria-pressed="true"] .fc-f{display:none}
+ .fc[aria-pressed="true"] .fc-b{display:grid}
+ .fc-f{grid-template-columns:60px minmax(0,1fr);padding:18px}
+ .fc-l{font-size:58px}
+}
+@media (prefers-reduced-motion:reduce){.fc-in{transition:none}}
+.mx-rule{background:var(--navy)!important;box-shadow:none!important;border:0;border-radius:10px}
+.mx-rule b{color:#B6E07A!important}
+.mx-rule span{color:#E6E6E6}
+/* About, plan, contact */
+.figs{border-color:var(--line)!important}
+.figs div{border-color:var(--line)!important}
+.figs b{color:var(--ink)}
+.letter{background:var(--fog)!important;border-left:4px solid #81BC3C!important;border-radius:0 12px 12px 0}
+.letter .sig{color:var(--mut)}
+.panel.honey{background:var(--fog)!important;border:1px solid var(--line)}
+.panel.honey:after{opacity:0}
+.panel.honey .sh h2{color:var(--ink)}
+.panel.honey .sh p{color:var(--mut)}
+.phase{background:#fff!important;border:1px solid var(--line)!important;border-radius:12px}
+.phase .when{color:#3F6A14!important;font-weight:700}
+.phase li{color:#2B2B2B}
+.out div{background:var(--navy)!important;color:#E6E6E6!important;border:0!important;border-radius:8px}
+.out b{color:#B6E07A!important}
+.ns{white-space:nowrap}
+.card-sig dt{color:var(--mut)}.card-sig dd a{color:var(--ink)}
+footer h4{color:var(--ink)}
+.sources a{color:var(--mut)}
+/* fixes */
+.mxf,.mxf-head,.mx-rule{max-width:1060px}
+.fc-f{background:radial-gradient(110% 120% at 0% 0%,rgba(31,167,214,.55),transparent 60%),var(--navy)}
+.fc-l{color:#B6E07A}
+.fc-w{color:#CFCFCF}
+.fc-flag{color:#fff;border-top-color:#363636}
+.fc-flag small,.fc-hint{color:#B6E07A}
+.irow2 .st{align-self:center;display:inline-block;line-height:1.5}
+.ohero{padding-inline:max(24px,calc((100% - 1128px)/2))!important}
+.capp-wrap{padding-inline:max(20px,calc((100% - 1128px)/2))!important}
+@media (max-width:1400px){.ccta.ghostc{display:none}}
+.ohero{padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+.capp-wrap{padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+@media (max-width:720px){.capp-wrap .app{margin-inline:0}}
+.bc sup a{color:var(--blue)!important}
+.bc-q h4{color:#3F6A14!important}
+.fc-bh b{color:var(--blue)}
+/* Segments */
+.tiles2{grid-template-columns:repeat(4,minmax(0,78px))}
+.icp{margin-top:20px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--fog);max-width:360px}
+.icp b{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F6A14}
+.icp ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:14px;color:#2B2B2B}
+@media (max-width:560px){.tiles2{grid-template-columns:repeat(4,minmax(0,1fr))}.icp{max-width:none}}
+.tiles2 .col-h{font-size:10.5px;letter-spacing:.04em}
+/* ===== Aisera specific layer ===== */
+:root{--g:#81BC3C;--gd:#4E7F1E;--gl:#DDF0C3;--lime:#B6E07A;--pu:#A815F8;--pud:#7A0FC0;--cream:#FFFDF5;--serif:'Newsreader',Georgia,'Times New Roman',serif}
+h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.figs b,.bc h3,.letter h3{font-family:var(--serif);font-weight:700;letter-spacing:-.02em}
+.sh h2,.contact h2{font-size:clamp(32px,3.6vw,46px)}
+.eyebrow{font:800 12px/1 var(--body)!important;letter-spacing:.12em;text-transform:uppercase;color:var(--gd)!important;margin-bottom:12px}
+.panel.ink .eyebrow{color:var(--lime)!important}
+.banner{background:linear-gradient(90deg,#F29318,#F57A16 55%,#E8541A);color:#121212;font-weight:600;font-size:14.5px}
+.banner a{color:#121212;font-weight:800}
+.aa-a{display:inline-block;width:16px;height:16px;margin-right:8px;vertical-align:-3px;border:3px solid #121212;border-bottom:0;border-radius:10px 10px 0 0;transform:skewX(-12deg)}
+.cnav-wrap{background:#fff;border-bottom:1px solid #E6E6E6}
+.clogo{color:#121212}
+.cmark{width:30px;height:30px;background:none;border-radius:0;position:relative}
+.cmark:before{content:"";position:absolute;left:3px;top:13px;width:24px;height:6px;border-radius:6px;background:var(--g);transform:rotate(-38deg);inset:auto}
+.cmark:after{display:none}
+.clogo span:last-child{font:700 25px var(--serif);letter-spacing:-.02em;text-transform:none}
+.cnav .toc a{color:#333;font-weight:600}
+.cnav .toc a:hover{color:var(--pud)}
+.cnav .toc a.active{background:none;color:var(--pud);box-shadow:inset 0 -2px 0 var(--pu);border-radius:0}
+.ccta{background:#121212;border-color:#121212;color:#fff;border-radius:999px;text-transform:none;letter-spacing:0;font-size:15px;padding:10px 18px}
+.ccta:hover{background:var(--gd);border-color:var(--gd);color:#fff}
+/* Hero with Aisera green curves */
+.ahero{display:block!important;border-radius:0!important;margin:0;padding:64px max(var(--gut),calc((100% - 1128px)/2)) 40px!important;color:#121212!important;background:radial-gradient(120% 90% at 105% -10%,#C9E2A2 0,#C9E2A2 22%,transparent 22.4%),radial-gradient(90% 70% at 110% 0%,#98C75D 0,#98C75D 18%,transparent 18.4%),linear-gradient(180deg,var(--cream),#fff)!important}
+.ahero:after{display:none}
+main > section.ahero,main > section.capp-wrap{max-width:none!important;margin-inline:0!important}
+.ah-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+.ctag{font:800 12.5px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gd)}
+.ctag span{display:block;color:#555;letter-spacing:.06em;font-weight:700}
+.ahero h1{font-size:clamp(42px,5.2vw,74px);line-height:1.02;margin-top:18px;color:#121212}
+.ahero h1 em{font-style:italic;color:var(--gd)}
+.ahero .lede{font-size:19px;line-height:1.55;color:#2B2B2B;max-width:620px;margin-top:22px}
+.ahero .lede sup a{color:var(--pud)}
+.ahero .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.ahero .btn{font:700 15.5px var(--body);border-radius:999px;padding:12px 22px;border:1.5px solid #121212;background:#fff;color:#121212;box-shadow:none;text-decoration:none;text-transform:none}
+.ahero .btn.pri{background:#121212;color:#fff}
+.ahero .btn:hover{box-shadow:none;background:var(--gl)}
+.ahero .btn.pri:hover{background:var(--gd);border-color:var(--gd)}
+.ah-art{position:relative;min-height:300px;border-radius:24px;background:linear-gradient(140deg,#EEF7E1,#C9E2A2 60%,#98C75D);overflow:hidden}
+.ah-art:before{content:"";position:absolute;right:-60px;bottom:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,253,245,.5)}
+.bub{position:absolute;max-width:78%;background:#fff;border-radius:16px;padding:10px 14px;font-size:15px;box-shadow:0 12px 30px -16px rgba(0,0,0,.35)}
+.bub b{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#555}
+.b1{left:22px;top:28px;border-bottom-left-radius:4px}
+.b2{right:22px;top:118px;border-bottom-right-radius:4px;border:1.5px solid var(--g)}
+.b2 b{color:var(--gd)}
+.chip{position:absolute;font:800 12.5px var(--body);border-radius:999px;padding:7px 12px;background:#121212;color:var(--lime)}
+.chip.c1{left:22px;bottom:64px}.chip.c2{left:22px;bottom:22px;background:#fff;color:#121212}
+.trust{margin-top:48px}
+.trust p{font:800 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#555}
+.trust p sup a{color:var(--pud)}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:14px}
+.trust li{font:700 24px var(--serif);color:#2B2B2B}
+@media (max-width:900px){.ah-grid{grid-template-columns:1fr}.ah-art{min-height:240px}}
+/* App */
+.capp-wrap{background:#F7FBF0;border-top:1px solid #E6E6E6!important;padding-inline:max(var(--gut),calc((100% - 1128px)/2))!important}
+.app-intro{max-width:820px;margin-bottom:24px}
+.app-intro h2{font-size:clamp(30px,3.6vw,46px)}
+.app-intro p{color:#333;margin-top:10px}
+.app{border:1px solid #DADADA;border-radius:18px;box-shadow:0 30px 60px -40px rgba(0,0,0,.45)}
+.app-rail{background:#121212}
+.rail-logo{width:30px;height:30px;background:none;border-radius:0;position:relative}
+.rail-logo:before{content:"";position:absolute;left:3px;top:12px;width:24px;height:6px;inset:auto;border-radius:6px;background:var(--g);transform:rotate(-38deg)}
+.rail-logo:after{display:none}
+.dtab{color:#BDBDBD}.dtab:hover{background:#262626;color:#fff}
+.dtab[aria-selected="true"]{background:var(--lime);color:#121212}
+.prim{background:#121212;border-color:#121212;border-radius:999px;padding:7px 14px}
+button.prim:hover{background:var(--gd)}
+.ghost{border-radius:999px}
+.rqs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.rq{font:700 13px var(--body);border:1.5px solid #CFCFCF;background:#fff;color:#121212;border-radius:999px;padding:7px 12px;cursor:pointer}
+.rq:hover{border-color:var(--g)}
+.rq.on{border-color:var(--pu);background:#F6EDFF;color:var(--pud)}
+.rq:disabled{opacity:.6;cursor:default}
+.rq:focus-visible,.dm:focus-visible,.af:focus-visible{outline:2px solid var(--pu);outline-offset:2px}
+.agrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px}
+.chat{border:1px solid #E0E0E0;border-radius:12px;overflow:hidden;background:#FAFAFA;min-height:300px}
+.chat-top{display:flex;align-items:center;gap:8px;background:#5B5FC7;color:#fff;padding:9px 12px;font-size:13.5px}
+.chat-top i{width:18px;height:18px;border-radius:5px;background:#fff;position:relative}
+.chat-top i:after{content:"";position:absolute;left:2px;top:7px;width:14px;height:4px;border-radius:4px;background:var(--g);transform:rotate(-38deg)}
+.chat-top span{margin-left:auto;font-size:12px;opacity:.85}
+.msgs{padding:12px;display:grid;gap:10px;align-content:start}
+.sys{font-size:13px;color:#777;text-align:center;padding:30px 0}
+.msg{max-width:85%;border-radius:14px;padding:9px 12px;font-size:14px;line-height:1.45}
+.msg b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#555;margin-bottom:2px}
+.msg.me{justify-self:end;background:#E8E9FA;border-bottom-right-radius:4px}
+.msg.ai{justify-self:start;background:#fff;border:1.5px solid var(--g);border-bottom-left-radius:4px}
+.msg.ai b{color:var(--gd)}
+.msg.typing{color:#777;font-style:italic;border-style:dashed}
+.trace{border:1px solid #E0E0E0;border-radius:12px;padding:12px 14px;background:#fff}
+.trace h4{font-size:14px;font-weight:800}
+.trace ol{list-style:none;display:grid;gap:6px;margin-top:8px}
+.trace li{border:1px solid #E6E6E6;border-radius:10px;padding:7px 10px;transition:all .2s;opacity:.55}
+.trace li small{display:block;font:800 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#555}
+.trace li span{font-size:13.5px}
+.trace li.doing{opacity:1;border-color:var(--pu);background:#F6EDFF}
+.trace li.done{opacity:1;border-color:#CFE6AE;background:#F7FBF0}
+.trace li.tu{opacity:1}
+.tout{margin-top:10px;border-radius:10px;padding:9px 12px;font-weight:800;font-size:13.5px}
+.tout.resolved{background:#121212;color:var(--lime)}
+.tout.escalated{background:#FFF1E0;color:#8A4B00}
+.tally2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.tally2 div{border:1px solid #E0E0E0;border-radius:12px;padding:10px 12px;background:#fff}
+.tally2 small{display:block;font:800 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#555}
+.tally2 b{font:700 26px var(--serif)}
+.dms,.afs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.dm,.af{font:700 13px var(--body);border:1.5px solid #121212;background:#fff;color:#121212;border-radius:999px;padding:6px 12px;cursor:pointer}
+.dm.on,.af.on{background:#121212;color:#fff}
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.comp > div{border:1px solid #E0E0E0;border-radius:12px;padding:12px 14px;background:#fff}
+.comp h4{font-size:14px;font-weight:800;margin-bottom:8px}
+.comp ul{list-style:none;display:grid;gap:6px}
+.comp label{display:flex;gap:8px;align-items:center;font-size:14px}
+.comp input{accent-color:var(--gd);width:16px;height:16px}
+.comp .cn{font-size:13.5px;border:1px solid #E6E6E6;border-radius:8px;padding:6px 10px;background:#F7FBF0}
+.asg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.asg > div{border:1px solid #E0E0E0;border-radius:12px;padding:12px 14px;background:#fff}
+.asg h4{font-size:14px;font-weight:800;margin:4px 0 6px}
+.asg p,.asg li{font-size:14px;color:#2B2B2B}
+.asg ul{margin-left:18px}
+.arep textarea{width:100%;margin:10px 0;border:1px solid #CFCFCF;border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;resize:vertical}
+.arep textarea:focus-visible{outline:2px solid var(--pu);outline-offset:1px}
+.amet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.amet div{border:1px solid #E0E0E0;border-radius:12px;padding:10px 12px;background:#fff}
+.amet small{display:block;font:800 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#555}
+.amet b{font:700 26px var(--serif)}
+.abars{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:14px;border-bottom:1px solid #DADADA;padding:0 4px}
+.abars i{flex:1;height:var(--h);background:linear-gradient(180deg,var(--g),var(--gd));border-radius:8px 8px 0 0;position:relative;transition:height .3s}
+.abars span{position:absolute;top:-20px;left:0;right:0;text-align:center;font:700 12px var(--body);color:#2B2B2B}
+@media (max-width:1000px){.agrid,.comp,.asg{grid-template-columns:1fr}.amet{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.tally2{grid-template-columns:1fr 1fr 1fr}.tally2 b{font-size:20px}}
+/* Shared components */
+.ckpi{border:0;border-top:4px solid var(--g);background:#fff;box-shadow:0 18px 36px -28px rgba(0,0,0,.4);border-radius:14px}
+.ckpi small{color:var(--gd)}
+.ckpi b{color:#121212}
+.chips span{background:var(--gl);color:#2E4F0E}
+.r small,.evt b{color:var(--gd)}
+.evt{background:#EEF7E1}
+#know .three > div{background:#fff;border:1px solid #E0E0E0;border-radius:16px}
+.panel.ink{background:#121212!important}
+.cstep[aria-selected="true"],.cstep[aria-selected="true"]:hover{background:var(--lime)!important}
+.pane.hc{box-shadow:0 0 0 1px rgba(182,224,122,.5),0 30px 60px -30px rgba(129,188,60,.7)!important}
+.pane.hc .pane-lbl b{background:var(--gl)!important;color:#2E4F0E!important}
+.pnode.goal{background:#121212!important}
+.pnode.goal i,.pnode.goal s{background:var(--lime)!important;color:#121212!important;border-color:var(--lime)!important}
+.panel.sky{background:#EEF7E1!important;border:0}
+.panel.sky .play-nav button{border-radius:999px}
+.panel.sky .play-nav button[aria-selected="true"]{background:#121212;color:#fff}
+.panel.sky .insight{border-color:var(--g)}
+.tok{background:#F6EDFF!important;color:var(--pud)!important}
+.panel.honey{background:var(--cream)!important;border:1px solid #EFE9D6}
+.out div{background:#121212!important}
+.out b{color:var(--lime)!important}
+.cbtn[aria-selected="true"]{background:#F7FBF0!important;border-color:var(--gd)!important;box-shadow:inset 3px 0 0 var(--gd)!important}
+.bc{border-radius:16px}
+.stalls div{border-top:3px solid var(--g)!important;border-radius:12px}
+.fc-f{background:#121212;color:#fff;border:0}
+.fc:nth-child(odd) .fc-f{background:#2E4F0E}
+.fc-l{color:var(--lime);font-family:var(--serif);font-weight:800}
+.fc-n{color:#fff}.fc-w{color:#E6E6E6}
+.fc-flag{color:#fff;border-top-color:rgba(255,255,255,.3)}
+.fc-flag small,.fc-hint{color:var(--lime)}
+.fc-b{border:1.5px solid #121212;border-radius:12px}
+.fc-bh b{color:var(--gd);font-family:var(--serif)}
+.mxf-all{border-radius:999px;border-color:#121212}
+.mx-rule{background:#121212!important}
+.mx-rule b{color:var(--lime)!important}
+.letter{border-left:6px solid var(--g)!important;background:#F7FBF0!important}
+.sq{border-radius:12px}
+.sq.on{background:#121212!important;border-color:#121212!important}
+.sq.on small{color:var(--lime)!important}
+.icp{margin-top:20px;border:1px solid #CFE6AE;border-radius:12px;padding:14px 16px;background:#F7FBF0;max-width:360px}
+.icp b{font:800 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#2E4F0E}
+.icp ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:14px;color:#2B2B2B}
+.reg .lead{background:#EEF7E1!important}
+.reg .lead b{color:#2E4F0E!important}
+.tiles2{grid-template-columns:repeat(4,minmax(0,78px))}
+.tiles2 .col-h{font-size:10.5px;letter-spacing:.04em}
+.ckpis{padding-top:48px}
+.ns{white-space:nowrap}
+.bcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;max-width:1060px}
+.bin{display:grid;gap:16px;border:1.5px solid #121212;border-radius:16px;padding:22px;background:#fff}
+.bin label{display:grid;gap:8px;font-size:14.5px;font-weight:700}
+.bin label span{display:flex;justify-content:space-between;gap:10px}
+.bin b{font-family:var(--mono);color:var(--gd)}
+.bin input[type=range]{width:100%;accent-color:var(--gd)}
+.bout{display:grid;gap:12px;align-content:start}
+.bout > div{border:1px solid #E0E0E0;border-radius:16px;padding:16px 18px;background:#fff}
+.bout small{display:block;font:800 11.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#555}
+.bout b{display:block;font:700 36px/1.1 var(--serif);margin-top:4px}
+.bout span{font-size:13.5px;color:#333}
+.bout em{font-style:normal;font-weight:800}
+.bout .hl{background:#121212;color:#fff;border-color:#121212}
+.bout .hl small,.bout .hl span{color:#E6E6E6}
+.bout .hl b{color:var(--lime)}
+.bnote{font-size:12.5px;color:#555}
+@media (max-width:860px){.bcase{grid-template-columns:1fr}}
+@media (max-width:560px){.tiles2{grid-template-columns:repeat(4,minmax(0,1fr))}.icp{max-width:none}}
+.trace{box-shadow:none!important;border-radius:12px!important}
+.trace{border:1px solid #E0E0E0!important;overflow:visible}
+@media (max-width:900px){.ah-art{display:flex;flex-direction:column;gap:10px;padding:18px;min-height:0}.bub,.chip{position:relative;left:auto;right:auto;top:auto;bottom:auto}.b2{align-self:flex-end}.chip{align-self:flex-start}.chat{min-height:200px}}
+@media (max-width:900px){.ah-art .bub,.ah-art .chip{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important}}
+/* Without JavaScript, show every panel so nothing is hidden */
+.nojs [role="tabpanel"][hidden]{display:block!important}
+.nojs .step-p[hidden]{display:grid!important}
+.nojs .play[hidden]{display:grid!important}
+.nojs [role="tablist"],.nojs .step-nav,.nojs .mxf-all,.nojs button.run,.nojs .fc-hint{display:none!important}
+.nojs .step-p,.nojs .play,.nojs .bc,.nojs .dview{margin-bottom:18px}
+.nojs .fc{cursor:default}
+.nojs .fc-in{display:block!important;transform:none!important}
+.nojs .fc-f,.nojs .fc-b{transform:none!important;backface-visibility:visible!important;-webkit-backface-visibility:visible!important}
+.nojs .fc-b{display:grid!important;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="prog" id="progress" aria-hidden="true"></div>
+<div class="banner"><span class="aa-a" aria-hidden="true"></span>Aisera is now an Automation Anywhere company. An Enterprise Account Executive plan by Eric Iannello. <a href="#plan">See the 90 day plan</a></div>
+
+<header class="cnav-wrap">
+  <nav class="cnav" aria-label="Contents">
+    <a class="clogo" href="#top"><span class="cmark" aria-hidden="true"></span><span>Iannello</span></a>
+    <ul class="toc" id="toc">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#know">Research</a></li>
+      <li><a href="#pov">Talk track</a></li>
+      <li><a href="#territory">Solutions</a></li>
+      <li><a href="#plays">Plays</a></li>
+      <li><a href="#case">ROI</a></li>
+      <li><a href="#competition">Competition</a></li>
+      <li><a href="#deal">Deal</a></li>
+      <li><a href="#about">Company</a></li>
+      <li><a href="#plan">90 days</a></li>
+    </ul>
+    <a class="ccta" href="#contact">Book a call</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <main>
+    <!-- Overview -->
+    <section id="top" class="hero ahero">
+      <div class="ah-grid">
+        <div>
+          <p class="ctag">Enterprise Account Executive <span>Aisera, an Automation Anywhere company</span></p>
+          <h1>Turn service desk seats into <em>work done</em></h1>
+          <p class="lede">Aisera's AI agents resolve IT, HR and customer requests end to end, and Automation Anywhere's Process Reasoning Engine does the work behind them. This is how I would bring that to enterprises with 5,000 to 10,000+ employees, run on Challenger and MEDDPICC.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></p>
+          <div class="ctas"><a class="btn pri" href="#plan">See the 90 day plan</a><a class="btn" href="#platform">Try the assistant</a></div>
+        </div>
+        <div class="ah-art" aria-hidden="true">
+          <div class="bub b1"><b>Employee</b>I'm locked out of Okta</div>
+          <div class="bub b2"><b>Aisera</b>Verified. Your MFA is reset and you're back in.</div>
+          <div class="chip c1">Resolved in 38 s</div>
+          <div class="chip c2">0 tickets for the desk</div>
+        </div>
+      </div>
+      <div class="trust"><p>Customers include<sup><a href="#s3">3</a></sup></p><ul><li>Dartmouth</li><li>Carta</li><li>Chegg</li><li>Grant Thornton</li><li>8x8</li><li>OmniTRAX</li></ul></div>
+    </section>
+
+    <section class="capp-wrap" id="platform" aria-label="Aisera product mock">
+      <div class="app-intro">
+        <p class="eyebrow">The platform, live</p>
+        <h2>One assistant, every request, finished</h2>
+        <p>Pick an employee or customer request. Watch the Universal Agent route it to the right domain agent, the Process Reasoning Engine run the automation, and the request close with no ticket for the desk.<sup><a href="#s4">4</a></sup></p>
+      </div>
+      <div class="app" role="group" aria-label="Aisera product mock. Select a view from the sidebar.">
+        <div class="app-rail">
+          <span class="rail-logo" aria-hidden="true"></span>
+          <div class="app-tabs" role="tablist" aria-label="Aisera views" aria-orientation="vertical">
+            <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true" title="Aisera Assistant"><i class="ti t0"></i><span>Aisera Assistant</span></button>
+            <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1" title="Agent Composer"><i class="ti t1"></i><span>Agent Composer</span></button>
+            <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1" title="Agent Assist"><i class="ti t2"></i><span>Agent Assist</span></button>
+            <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1" title="Analytics"><i class="ti t3"></i><span>Analytics</span></button>
+          </div>
+        </div>
+        <div class="app-main">
+          <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><div class="vhead"><h3>Aisera Assistant</h3><span class="vact"><span class="ghost">in Microsoft Teams</span></span></div><p class="vcap">Pick a request. The Universal Agent routes it, the domain agent plans it, and automation does the work.</p>
+<div class="rqs" role="group" aria-label="Pick a request"><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;okta&quot;, &quot;q&quot;: &quot;I&#x27;m locked out of Okta&quot;, &quot;dom&quot;: &quot;IT&quot;, &quot;intent&quot;: &quot;Account unlock&quot;, &quot;conf&quot;: &quot;0.97&quot;, &quot;steps&quot;: [&quot;Verify identity with an Okta Verify push&quot;, &quot;Reset MFA through the Okta API&quot;, &quot;Log the fix in ServiceNow and close it&quot;], &quot;a&quot;: &quot;Verified. Your MFA is reset, so you can sign in again now.&quot;, &quot;t&quot;: &quot;38 s&quot;, &quot;o&quot;: &quot;resolved&quot;}" aria-pressed="false">I'm locked out of Okta</button><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;sfdc&quot;, &quot;q&quot;: &quot;I need access to Salesforce&quot;, &quot;dom&quot;: &quot;IT&quot;, &quot;intent&quot;: &quot;Access request&quot;, &quot;conf&quot;: &quot;0.95&quot;, &quot;steps&quot;: [&quot;Check the access policy for Sales Ops&quot;, &quot;Get manager approval in Teams&quot;, &quot;Automation Anywhere bot provisions the license&quot;], &quot;a&quot;: &quot;Your manager approved it. Salesforce access is live, and a welcome email is on its way.&quot;, &quot;t&quot;: &quot;2 min&quot;, &quot;o&quot;: &quot;resolved&quot;}" aria-pressed="false">I need access to Salesforce</button><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;pto&quot;, &quot;q&quot;: &quot;How much PTO do I have left?&quot;, &quot;dom&quot;: &quot;HR&quot;, &quot;intent&quot;: &quot;Leave balance&quot;, &quot;conf&quot;: &quot;0.98&quot;, &quot;steps&quot;: [&quot;Read the balance from Workday&quot;, &quot;Apply the carryover policy for your location&quot;], &quot;a&quot;: &quot;You have 11.5 days left this year, and up to 5 carry over into next year.&quot;, &quot;t&quot;: &quot;6 s&quot;, &quot;o&quot;: &quot;resolved&quot;}" aria-pressed="false">How much PTO do I have left?</button><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;dd&quot;, &quot;q&quot;: &quot;Change my direct deposit&quot;, &quot;dom&quot;: &quot;Finance&quot;, &quot;intent&quot;: &quot;Payroll update&quot;, &quot;conf&quot;: &quot;0.93&quot;, &quot;steps&quot;: [&quot;Step up identity verification&quot;, &quot;Update bank details in Workday&quot;, &quot;Confirm the change before the next pay run&quot;], &quot;a&quot;: &quot;Done. Your new account takes effect with the pay run on the 15th.&quot;, &quot;t&quot;: &quot;54 s&quot;, &quot;o&quot;: &quot;resolved&quot;}" aria-pressed="false">Change my direct deposit</button><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;refund&quot;, &quot;q&quot;: &quot;Customer wants a refund on order 4471&quot;, &quot;dom&quot;: &quot;Customer service&quot;, &quot;intent&quot;: &quot;Refund request&quot;, &quot;conf&quot;: &quot;0.96&quot;, &quot;steps&quot;: [&quot;Check order 4471 and the return window&quot;, &quot;Automation Anywhere bot issues the refund in the order system&quot;, &quot;Send the customer a confirmation&quot;], &quot;a&quot;: &quot;Refund of $86.40 issued to the original card, and the customer has a confirmation.&quot;, &quot;t&quot;: &quot;41 s&quot;, &quot;o&quot;: &quot;resolved&quot;}" aria-pressed="false">Customer wants a refund on order 4471</button><button type="button" class="rq" data-d="{&quot;k&quot;: &quot;screen&quot;, &quot;q&quot;: &quot;My laptop screen is cracked&quot;, &quot;dom&quot;: &quot;IT&quot;, &quot;intent&quot;: &quot;Hardware damage&quot;, &quot;conf&quot;: &quot;0.91&quot;, &quot;steps&quot;: [&quot;Confirm the device and warranty in the asset system&quot;, &quot;Open a ServiceNow ticket for a swap with full context&quot;], &quot;a&quot;: &quot;This one needs a person. I opened a hardware ticket with your device details, and the desk will ship a replacement.&quot;, &quot;t&quot;: &quot;1 min&quot;, &quot;o&quot;: &quot;escalated&quot;}" aria-pressed="false">My laptop screen is cracked</button></div>
+<div class="agrid"><div class="chat" aria-live="polite"><div class="chat-top"><i></i><b>Aisera Assistant</b><span>Teams</span></div><div class="msgs" id="msgs"><p class="sys">Pick a request above to start.</p></div></div>
+<div class="trace"><h4>Agent trace</h4><ol id="trace"><li class="tu"><small>Universal Agent</small><span>Waiting for a request</span></li></ol><div class="tout" id="tout" hidden></div></div></div>
+<div class="tally2"><div><small>Requests</small><b id="cReq">0</b></div><div><small>Auto resolved</small><b id="cRes">0</b></div><div><small>Escalated with context</small><b id="cEsc">0</b></div></div></div>
+          <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><div class="vhead"><h3>Agent Composer</h3><span class="vact"><button type="button" class="prim" id="pubBtn">Publish to Teams</button></span></div><p class="vcap">Build a domain agent: pick the domain, the skills it handles and the systems it can act in.</p><div class="dms" role="group" aria-label="Domain" data-d="{&quot;it&quot;: {&quot;n&quot;: &quot;IT&quot;, &quot;s&quot;: [&quot;Password and MFA resets&quot;, &quot;Access requests&quot;, &quot;Software installs&quot;, &quot;How to questions&quot;], &quot;c&quot;: [&quot;ServiceNow&quot;, &quot;Okta&quot;, &quot;Microsoft Entra&quot;, &quot;Jamf&quot;, &quot;Automation Anywhere&quot;]}, &quot;hr&quot;: {&quot;n&quot;: &quot;HR&quot;, &quot;s&quot;: [&quot;Leave balances&quot;, &quot;Benefits questions&quot;, &quot;Onboarding tasks&quot;, &quot;Policy lookups&quot;], &quot;c&quot;: [&quot;Workday&quot;, &quot;ServiceNow HRSD&quot;, &quot;DocuSign&quot;, &quot;Automation Anywhere&quot;]}, &quot;fin&quot;: {&quot;n&quot;: &quot;Finance&quot;, &quot;s&quot;: [&quot;Expense status&quot;, &quot;Payroll changes&quot;, &quot;Purchase requests&quot;, &quot;Invoice questions&quot;], &quot;c&quot;: [&quot;SAP Concur&quot;, &quot;Workday&quot;, &quot;Coupa&quot;, &quot;Automation Anywhere&quot;]}, &quot;cx&quot;: {&quot;n&quot;: &quot;Customer service&quot;, &quot;s&quot;: [&quot;Order status&quot;, &quot;Refunds and returns&quot;, &quot;Plan changes&quot;, &quot;Account resets&quot;], &quot;c&quot;: [&quot;Salesforce Service Cloud&quot;, &quot;Zendesk&quot;, &quot;Shopify&quot;, &quot;Automation Anywhere&quot;]}}"><button type="button" class="dm on" data-k="it" aria-pressed="true">IT</button><button type="button" class="dm" data-k="hr" aria-pressed="false">HR</button><button type="button" class="dm" data-k="fin" aria-pressed="false">Finance</button><button type="button" class="dm" data-k="cx" aria-pressed="false">Customer service</button></div><div class="comp"><div><h4>Skills</h4><ul id="skills"></ul></div><div><h4>Connectors</h4><ul id="conns"></ul></div></div><p class="vfoot" id="pubNote">Draft. Not yet live for employees.</p></div>
+          <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><div class="vhead"><h3>Agent Assist</h3><span class="vact"><span class="ghost">INC0048213</span></span></div><p class="vcap">When a request needs a person, the human agent starts with the context, a summary and a suggested reply.</p><div class="asg"><div class="asum"><h4>Summary</h4><p>Employee reports a cracked screen on a 14 inch laptop, asset LT&#8209;20931, in warranty until March. No data loss reported. Replacement eligible.</p><h4>Similar resolved tickets</h4><ul><li>INC0047110, screen swap, 2 days</li><li>INC0046988, device replacement, 1 day</li></ul></div><div class="arep"><h4>Suggested reply</h4><p id="sugg">Hi Maya, a replacement laptop ships today and arrives within two business days. Your files sync automatically when you sign in. I'll send a return label for the old device.</p><textarea id="reply" aria-label="Reply to the employee" rows="4" placeholder="Your reply"></textarea><button type="button" class="prim" id="useSugg">Insert suggested reply</button></div></div></div>
+          <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><div class="vhead"><h3>Analytics</h3><span class="vact"><span class="ghost">Last 6 weeks</span></span></div><p class="vcap">Auto resolution, time to resolve, satisfaction and hours given back, by domain.</p><div class="afs" role="group" aria-label="Domain" data-d="{&quot;all&quot;: [72, &quot;3.1 h&quot;, &quot;4.6&quot;, &quot;2,840&quot;, [61, 64, 66, 69, 71, 72]], &quot;it&quot;: [78, &quot;2.4 h&quot;, &quot;4.7&quot;, &quot;1,910&quot;, [66, 70, 72, 75, 77, 78]], &quot;hr&quot;: [70, &quot;3.6 h&quot;, &quot;4.6&quot;, &quot;610&quot;, [58, 61, 64, 66, 69, 70]], &quot;cx&quot;: [64, &quot;4.2 h&quot;, &quot;4.4&quot;, &quot;320&quot;, [52, 55, 58, 60, 62, 64]]}"><button type="button" class="af on" data-k="all" aria-pressed="true">All</button><button type="button" class="af" data-k="it" aria-pressed="false">IT</button><button type="button" class="af" data-k="hr" aria-pressed="false">HR</button><button type="button" class="af" data-k="cx" aria-pressed="false">Customer service</button></div><div class="amet"><div><small>Auto resolution</small><b id="aAr">72%</b></div><div><small>Time to resolve</small><b id="aTt">3.1 h</b></div><div><small>CSAT</small><b id="aCs">4.6</b></div><div><small>Hours given back</small><b id="aHr">2,840</b></div></div><div class="abars" id="aBars" aria-hidden="true"><i style="--h:61%"><span>61%</span></i><i style="--h:64%"><span>64%</span></i><i style="--h:66%"><span>66%</span></i><i style="--h:69%"><span>69%</span></i><i style="--h:71%"><span>71%</span></i><i style="--h:72%"><span>72%</span></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ckpis" role="list">
+      <div class="ckpi" role="listitem"><small>Dartmouth</small><b>86%</b><p>of service desk requests auto resolved, saving $1M+ a year<sup><a href="#s5">5</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>Carta</small><b>95%</b><p>CSAT with 74% auto resolution<sup><a href="#s3">3</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>Seats</small><b>40%</b><p>fewer ITSM seats needed, at most, with AI agents doing the work<sup><a href="#s2">2</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>Gartner</small><b>#1</b><p>in End User Self Service, Critical Capabilities for Autonomous ITSM<sup><a href="#s6">6</a></sup></p></div>
+    </div>
+
+    <!-- Know -->
+    <section id="know">
+      <div class="sh">
+        <p class="eyebrow">Research</p>
+        <h2>What I know about Aisera</h2>
+        <p>The product, the buyer and the timing.</p>
+      </div>
+      <div class="three">
+        <div>
+          <h3>The product</h3>
+          <p>Aisera builds AI agents for IT, HR, finance and customer service, delivered through Aisera Assistant in Teams, Slack and the web, with Agent Assist for human agents and Agent Composer for building new agents.<sup><a href="#s7">7</a></sup></p>
+          <p>Inside Automation Anywhere, those agents sit on top of agentic process automation, the Process Reasoning Engine and the Mozart Orchestrator.<sup><a href="#s4">4</a></sup></p>
+        </div>
+        <div>
+          <h3>The buyer</h3>
+          <p>The CIO signs, with the VP of IT service management, the head of employee experience and the CHRO as champions. Customer service leaders buy the same agents for support.</p>
+          <p>The role targets companies with 5,000 to 10,000 seats, and C level negotiation on high value deals.<sup><a href="#s1">1</a></sup></p>
+        </div>
+        <div>
+          <h3>The moment</h3>
+          <p>Automation Anywhere bought Aisera in November 2025 to build the Autonomous Enterprise, and now prices for work done, beyond underutilized seats.<sup><a href="#s2">2</a>,<a href="#s4">4</a></sup></p>
+          <p>Gartner named Aisera a Visionary for the second year running, and Automation Anywhere grew $1M+ ARR customers 23% in its last fiscal year.<sup><a href="#s6">6</a>,<a href="#s8">8</a></sup></p>
+        </div>
+      </div>
+      <h3 class="ind-h">What is shipping, and how I would use it</h3>
+      <div class="rsch">
+        <div class="r"><div class="chips"><span>Nov 2025</span></div><b>The acquisition</b><p>Aisera's agents plus Automation Anywhere's automation, with 100+ AI engineers joining.<sup><a href="#s2">2</a></sup></p><small>Opens with the CIO</small></div>
+        <div class="r"><div class="chips"><span>Engine</span></div><b>Process Reasoning Engine</b><p>Lets agents plan, act and learn, and orchestrates agents from other vendors.<sup><a href="#s9">9</a></sup></p><small>Opens with automation CoEs</small></div>
+        <div class="r"><div class="chips"><span>Jan 2026</span></div><b>OpenAI partnership</b><p>OpenAI models reason, and the Process Reasoning Engine decides the next enterprise action and runs it.<sup><a href="#s10">10</a></sup></p><small>Opens with AI platform teams</small></div>
+        <div class="r"><div class="chips"><span>Free</span></div><b>Agentic analysis</b><p>A no cost, personalized assessment of agentic AI in the customer's own environment.<sup><a href="#s11">11</a></sup></p><small>Opens every first meeting</small></div>
+      </div>
+      <p class="evt"><b>Timely</b><span>Every ServiceNow renewal is now a seat conversation, and the acquisition gives every Automation Anywhere customer a reason to take the meeting.<sup><a href="#s2">2</a></sup></span></p>
+    </section>
+
+    <!-- POV -->
+    <section id="pov" class="panel ink grain">
+      <div class="sh">
+        <p class="eyebrow">Talk track</p>
+        <h2>The conversation I would have with a CIO</h2>
+        <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CIO and their VP of IT service management, with the evidence behind each step.</p>
+      </div>
+      <figure class="compare">
+        <div class="cmp-grid">
+          <div class="pane">
+            <div class="pane-lbl"><span>Service desk today</span><b>seat bound</b></div>
+            <ul class="files">
+              <li><i></i>Password resets worked by people</li>
+              <li><i></i>Access requests waiting in a queue</li>
+              <li><i></i>A chatbot that files a ticket</li>
+              <li><i></i>Bots no employee can reach</li>
+              <li><i></i>More volume means more seats</li>
+            </ul>
+            <div class="tally"><span><b>hours</b>to resolve</span><span><b>+seats</b>every renewal</span></div>
+          </div>
+          <div class="arrow-mid"><span></span></div>
+          <div class="pane hc">
+            <div class="pane-lbl"><span>With Aisera</span><b>work done</b></div>
+            <div class="pathv">
+              <div class="pnode"><i>1</i>One assistant in Teams and Slack<s>Assistant</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>2</i>Routed to the right domain agent<s>Universal Agent</s></div>
+              <div class="plink"></div>
+              <div class="pnode"><i>3</i>Automation runs the fix<s>PRE</s></div>
+              <div class="plink"></div>
+              <div class="pnode goal"><i>4</i>Resolved, with no ticket for the desk<s>resolved</s></div>
+            </div>
+            <div class="tally"><span><b>seconds</b>to resolve</span><span><b>40%</b>fewer seats, at most</span></div>
+          </div>
+        </div>
+      </figure>
+      <div class="steps" role="tablist" aria-label="Challenger steps">
+        <button class="cstep" role="tab" id="st0" aria-controls="sp0" aria-selected="true"><i>Step 1</i><b>Warmer</b><small>Show we know their world</small></button>
+        <button class="cstep" role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><i>Step 2</i><b>Reframe</b><small>Challenge the assumption</small></button>
+        <button class="cstep" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><i>Step 3</i><b>Rational drowning</b><small>Make the cost concrete</small></button>
+        <button class="cstep" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><i>Step 4</i><b>Emotional impact</b><small>Make it personal</small></button>
+        <button class="cstep" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1"><i>Step 5</i><b>A new way</b><small>Describe the better model</small></button>
+        <button class="cstep" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1"><i>Step 6</i><b>Our solution</b><small>Show why Aisera</small></button>
+      </div>
+      <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>The enterprises I would target run ServiceNow or Jira Service Management for 5,000 to 10,000+ employees, and a big share of the queue is password resets, access requests and how to questions.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Repeat requests</b>The same tickets, every Monday</div><div><b>Seat creep</b>More volume, more fulfiller seats</div></div></div></div>
+      <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Service desks grow by adding seats and chatbots that file tickets. AI agents that resolve the request end to end turn seats into work done, which is how Automation Anywhere now prices.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>More seats and a chatbot that files tickets</div><div><b>To</b>Agents that finish the work<sup><a href="#s2">2</a></sup></div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what the queue costs. We will swap these numbers for their own in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>Up to 40%</b>Fewer ITSM seats with AI agents doing the work<sup><a href="#s2">2</a></sup></div><div><b>86% and $1M+</b>Auto resolution and annual savings at Dartmouth<sup><a href="#s5">5</a></sup></div></div></div></div>
+      <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CIO promised the board AI productivity. The service desk queue still grows every Monday, and senior engineers spend the morning resetting MFA.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Credibility</b>The AI story with nothing to show</div><div><b>Morale</b>Good people stuck on repeat tickets</div></div></div></div>
+      <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading enterprises give employees one assistant in Teams or Slack, route each request to an IT, HR, finance or customer service agent, let automation run the fix, and keep people for the exceptions.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One front door</b>Teams, Slack and the web</div><div><b>Agents that act</b>Automation runs the fix</div><div><b>People on exceptions</b>The hard tickets only</div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Aisera, a Gartner Visionary two years running, now inside Automation Anywhere.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>#1</b>End User Self Service, Gartner Critical Capabilities<sup><a href="#s6">6</a></sup></div><div><b>74% and 95%</b>Auto resolution and CSAT at Carta<sup><a href="#s3">3</a></sup></div></div></div></div>
+      <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
+      <div class="ttt">
+        <div><h4>Teach</h4><p>First meetings open with their own ticket mix: how much of last quarter's volume was resets, access and how to questions. The demo waits until they see it.</p></div>
+        <div><h4>Tailor</h4><p>Seats and productivity for the CIO, queue time for the VP of ITSM, employee experience for HR, and CSAT for customer service.</p></div>
+        <div><h4>Take control</h4><p>Agree the request types, systems and success criteria before the pilot, time it to the ITSM renewal, and leave every meeting with a dated next step.</p></div>
+      </div>
+    </section>
+
+    <!-- Segments -->
+    <section id="territory">
+      <div class="sh">
+        <p class="eyebrow">Solutions</p>
+        <h2>Who I would sell to</h2>
+        <p>Enterprises with 5,000 to 10,000+ employees, a mature ITSM tool and a mandate to show AI productivity. Select a segment to see who buys, why, and the play I would lead with.</p>
+      </div>
+      <div class="terr">
+        <div>
+          <div class="tiles2" role="group" aria-label="Segments">
+            <span class="col-h">Finance</span><span class="col-h">Services</span><span class="col-h">Education</span><span class="col-h">Tech</span>
+            <button class="sq" data-r="fs">BNK<small>Banks</small></button>
+            <button class="sq" data-r="ps">ACC<small>Accounting</small></button>
+            <button class="sq" data-r="ed">UNI<small>Universities</small></button>
+            <button class="sq" data-r="tc">SAS<small>Software</small></button>
+            <button class="sq" data-r="fs">INS<small>Insurance</small></button>
+            <button class="sq" data-r="ps">LAW<small>Law firms</small></button>
+            <button class="sq" data-r="ed">HLT<small>Academic health</small></button>
+            <button class="sq" data-r="tc">TEL<small>Telecom</small></button>
+            <button class="sq" data-r="fs">FIN<small>Fintech</small></button>
+            <button class="sq" data-r="ps">CON<small>Consulting</small></button>
+            <button class="sq" data-r="ed">EDT<small>Edtech</small></button>
+            <button class="sq" data-r="tc">HW<small>Hardware</small></button>
+          </div>
+          <div class="icp">
+            <b>Fit signals</b>
+            <ul>
+              <li>5,000 to 10,000+ employees</li>
+              <li>ServiceNow or Jira Service Management as the ITSM tool</li>
+              <li>Teams or Slack as the front door for employees</li>
+              <li>An Automation Anywhere install or an automation CoE</li>
+              <li>A CIO mandate to show AI productivity</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <table class="reg stack">
+            <thead><tr><th>Segment</th><th>Who buys, why, and what I lead with</th></tr></thead>
+            <tbody>
+              <tr data-r="fs"><td>Financial services<span class="st">Banks, insurers, fintech</span></td><td data-h="Who buys and why">Large service desks, strict access controls, and pressure to cut cost per ticket. Carta reached 74% auto resolution and 95% CSAT.<div class="acc">Buyer: the CIO. Champion: the VP of IT service management.</div><div class="lead"><b>Lead with</b>The seat math, then the Automation Anywhere front door</div></td></tr>
+              <tr data-r="ps"><td>Professional services<span class="st">Accounting, law, consulting</span></td><td data-h="Who buys and why">Billable people losing time to IT and HR requests. Grant Thornton auto resolves 75% of employee IT requests.<div class="acc">Buyer: the CIO or COO. Champion: IT operations.</div><div class="lead"><b>Lead with</b>Employee service across IT and HR</div></td></tr>
+              <tr data-r="ed"><td>Higher education<span class="st">Universities, academic health, edtech</span></td><td data-h="Who buys and why">Thousands of students and staff with lean IT teams and seasonal spikes. Dartmouth auto resolves 86% and saves $1M+ a year.<div class="acc">Buyer: the CIO. Champion: the service desk director.</div><div class="lead"><b>Lead with</b>The seat math, timed to the start of term</div></td></tr>
+              <tr data-r="tc"><td>Technology and telecom<span class="st">Software, telecom, hardware</span></td><td data-h="Who buys and why">High support volume on both sides, employees and customers. 8x8 reached 65% auto resolution with a 70% CSAT boost, and Chegg reports 83% auto resolution with a 37% productivity boost.<sup><a href="#s12">12</a></sup><div class="acc">Buyer: the CIO and the head of support. Champion: support operations.</div><div class="lead"><b>Lead with</b>Customer service agents, then employee service</div></td></tr>
+            </tbody>
+          </table>
+          <p class="note">Segments describe who I would sell to, wherever coverage lands. I would set named accounts, current Automation Anywhere customers and partner coverage with the team before any outreach.<sup><a href="#s3">3</a>,<a href="#s5">5</a></sup></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plays -->
+    <section id="plays" class="panel sky grain">
+      <div class="sh">
+        <p class="eyebrow">Plays</p>
+        <h2>Four plays for the first quarter</h2>
+        <p>Each play starts from data I pull on the account, leads with one specific question and runs as a three email sequence.</p>
+      </div>
+      <div class="play-nav" role="tablist" aria-label="Plays">
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="true">The seat math</button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Automation Anywhere front door</button>
+        <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Employee service</button>
+        <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Customer service agents</button>
+      </div>
+
+      <div class="play" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div>
+          <p class="insight">ITSM bills grow with fulfiller seats. Every request an agent resolves end to end is a seat the next renewal may not need.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises with 5,000 to 10,000+ employees on ServiceNow or Jira Service Management.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{itsm}}</span>, the ITSM tool, from tech stack data and their IT job pages</li><li><span class="tok">{{headcount}}</span>, employees from their 10&#8209;K or company profile</li><li><span class="tok">{{portal}}</span>, how employees ask for help today, from the public IT help pages</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>CIO first, then the VP of IT service management and procurement.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>What share of last quarter's tickets were resets, access or how to questions?</li><li>How many fulfiller seats renew next year?</li><li>What does a ticket cost you, fully loaded?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>CIO</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{itsm}}</span> seats</li><li data-v="B">Seat math idea</li><li data-v="C">Service desk opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, <span class="tok">{{company}}</span> runs <span class="tok">{{itsm}}</span> for roughly <span class="tok">{{headcount}}</span> employees.</p><p>How many of those fulfiller seats exist to reset passwords and grant access?</p><p><span class="tok">{{customer_name}}</span> auto resolves 86% of service desk requests with Aisera and saves over $1M a year in service desk costs.</p><p>Would you be opposed to chatting through the seat math before your next <span class="tok">{{itsm}}</span> renewal?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 86% sounds like seller cherry picking.</p><p>If we ran last quarter's tickets through Aisera's free agentic analysis, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the service desk is keeping up with volume?</p><p>Basically resets, access requests and how to questions would close themselves, and your team keeps the hard tickets.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Dartmouth<sup><a href="#s5">5</a></sup>, agentic analysis<sup><a href="#s11">11</a></sup></span><span><b>Value</b> fewer seats at renewal</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div>
+          <p class="insight">Automation Anywhere customers already own bots that fix things. Employees often never reach them, because the request still starts as a ticket.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Current Automation Anywhere customers with an automation CoE.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{bots}}</span>, automations in production, from the Automation Anywhere account team</li><li><span class="tok">{{process}}</span>, the processes those bots run</li><li><span class="tok">{{chat}}</span>, Teams or Slack, from tech stack data</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>Head of the automation CoE first, then the CIO and the VP of ITSM.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>Which of your bots start from an employee request?</li><li>How do employees find those automations today?</li><li>Which requests would you automate if intake were solved?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Intelligent Automation</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> bots</li><li data-v="B">Front door idea</li><li data-v="C">Agentic opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, <span class="tok">{{company}}</span> already runs Automation Anywhere bots for <span class="tok">{{process}}</span>.</p><p>Do any of them start from an employee typing a request into <span class="tok">{{chat}}</span>?</p><p>With Aisera now part of Automation Anywhere, those bots can sit behind one agent that understands the request and runs the automation. <span class="tok">{{customer_name}}</span> reached 74% auto resolution with 95% CSAT.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 95% CSAT sounds like seller cherry picking.</p><p>If we mapped your top 20 request types to the bots you already own, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like intake for your automations is already solved?</p><p>Basically every automation you have built gets a front door employees actually use.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Carta<sup><a href="#s3">3</a></sup>, acquisition<sup><a href="#s2">2</a></sup></span><span><b>Value</b> more value from bots already owned</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div>
+          <p class="insight">IT, HR and finance each run their own queue. Employees just want one place to ask, and an answer that finishes the job.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Enterprises with large, distributed workforces and separate IT and HR service teams.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{hris}}</span>, the HR system, from tech stack data</li><li><span class="tok">{{employees}}</span> and <span class="tok">{{locations}}</span> from the company profile</li><li><span class="tok">{{chat}}</span>, Teams or Slack</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>CHRO or head of employee experience first, then the CIO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>How many HR tickets are policy questions?</li><li>How many queues does a new hire touch in week one?</li><li>Who owns the employee experience number?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>Head of Employee Experience</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> employee service</li><li data-v="B">One front door idea</li><li data-v="C">Employee experience opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, with <span class="tok">{{employees}}</span> employees across <span class="tok">{{locations}}</span>, how many HR and IT requests are questions an agent in <span class="tok">{{chat}}</span> could answer and close?</p><p><span class="tok">{{customer_name}}</span> auto resolves 75% of employee IT requests with Aisera, and the same agents cover HR and finance.</p><p>Would you be opposed to chatting through one front door for IT and HR, in Q4?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 75% sounds like seller cherry picking.</p><p>If we sorted last quarter's HR and IT requests by what an agent could close, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like employee service is in good shape?</p><p>Basically employees would ask once, in <span class="tok">{{chat}}</span>, and get it done, whether it is IT, HR or finance.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> Grant Thornton<sup><a href="#s3">3</a></sup></span><span><b>Value</b> one front door for employees</span></div>
+        </article>
+      </div>
+
+      <div class="play" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div>
+          <p class="insight">A help center answers questions. Customers still open tickets because the answer is not the outcome they wanted.</p>
+          <dl class="dl">
+            <div><dt class="label">Who</dt><dd>Software, telecom and consumer brands with high support volume.</dd></div>
+            <div><dt class="label">Data I pull</dt><dd><ul class="pull"><li><span class="tok">{{ccaas}}</span>, the support platform, from tech stack data</li><li><span class="tok">{{articles}}</span>, help center articles on their public site</li><li><span class="tok">{{top_issue}}</span>, the most visited help topic</li></ul></dd></div>
+            <div><dt class="label">Personas</dt><dd>VP of customer support first, then the CIO and the CFO.</dd></div>
+            <div><dt class="label">Discovery</dt><dd><ul><li>What share of tickets end in a refund, change or reset?</li><li>What does a support ticket cost you?</li><li>Where does CSAT drop today?</li></ul></dd></div>
+          </dl>
+        </div>
+        <article class="mail" aria-label="Email sequence">
+          <dl class="mail-h"><dt>To</dt><dd>VP of Customer Support</dd><dt>Subject</dt><dd><ol><li data-v="A"><span class="tok">{{company}}</span> support</li><li data-v="B">Resolution idea</li><li data-v="C">Customer service opp</li></ol></dd></dl>
+          <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, <span class="tok">{{company}}</span>'s help center covers <span class="tok">{{top_issue}}</span>, and customers still open tickets in <span class="tok">{{ccaas}}</span> to get it done.</p><p>Think an agent that completes the request, refund, change or reset, could help?</p><p><span class="tok">{{customer_name}}</span> reached 65% auto resolution and a 70% customer satisfaction boost with Aisera.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
+          <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize a 70% CSAT boost sounds like seller cherry picking.</p><p>If we ran your top 20 ticket types through the free agentic analysis, think it's worth a look?</p></div>
+          <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like support volume is under control?</p><p>Basically customers would get the outcome in the chat, and your agents keep the conversations that need a person.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
+          <div class="mail-f"><span><b>Proof</b> 8x8<sup><a href="#s3">3</a></sup></span><span><b>Value</b> outcomes, beyond answers</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Business case -->
+    <section id="case">
+      <div class="sh">
+        <p class="eyebrow">ROI</p>
+        <h2>The seat math, in two minutes</h2>
+        <p>The calculator I would fill in with a CIO in discovery. Move the sliders to their numbers. Every input is theirs, so every output is theirs too.</p>
+      </div>
+      <div class="bcase">
+        <div class="bin">
+          <label><span>Employees <b id="bcEmpV"></b></span><input type="range" id="bcEmp" min="1000" max="50000" step="500" value="8000"></label>
+          <label><span>Tickets per employee per year <b id="bcTpeV"></b></span><input type="range" id="bcTpe" min="1" max="20" step="1" value="8"></label>
+          <label><span>Share Aisera auto resolves <b id="bcArV"></b></span><input type="range" id="bcAr" min="20" max="90" step="1" value="65"></label>
+          <label><span>Fully loaded cost per ticket <b id="bcCptV"></b></span><input type="range" id="bcCpt" min="5" max="80" step="1" value="22"></label>
+          <label><span>ITSM fulfiller seats <b id="bcSeatV"></b></span><input type="range" id="bcSeat" min="50" max="2000" step="10" value="300"></label>
+          <label><span>Annual cost per seat <b id="bcScV"></b></span><input type="range" id="bcSc" min="500" max="3000" step="50" value="1200"></label>
+          <label><span>Seats retired <b id="bcSrV"></b></span><input type="range" id="bcSr" min="0" max="40" step="1" value="20"></label>
+        </div>
+        <div class="bout">
+          <div><small>Tickets resolved without the desk</small><b id="bcRes"></b><span>of <em id="bcTot"></em> tickets a year</span></div>
+          <div class="hl"><small>Ticket cost avoided each year</small><b id="bcSave"></b><span>at their cost per ticket</span></div>
+          <div><small>Seat spend retired each year</small><b id="bcSeatS"></b><span><em id="bcSeatN"></em> seats, inside Automation Anywhere's up to 40% projection<sup><a href="#s2">2</a></sup></span></div>
+          <p class="bnote">Dartmouth auto resolves 86% of requests and saves $1M+ a year.<sup><a href="#s5">5</a></sup> Seat retirement depends on the ITSM contract and renewal timing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competition -->
+    <section id="competition">
+      <div class="sh">
+        <p class="eyebrow">Competition</p>
+        <h2>How deals are won against each alternative</h2>
+        <p>Where each option is strong, where Aisera wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
+      </div>
+      <div class="bcs">
+        <div class="bc-list" role="tablist" aria-label="Competitors">
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>ServiceNow and Moveworks</b><small>The ITSM incumbent</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Microsoft Copilot</b><small>Copilot Studio agents</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Salesforce Agentforce</b><small>Customer service agents</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>UiPath</b><small>Automation competitor</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Homegrown LLM builds</b><small>Built in house</small></button>
+        </div>
+        <div>
+          <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
+            <div class="bc-top"><h3>ServiceNow and Moveworks</h3><span class="threat mid">Most common</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>The system of record for IT service in many large enterprises, with Now Assist and Moveworks for employee AI.</p></div><div><h4>Where Aisera wins</h4><p>Agents that resolve across IT, HR, finance and customer service, with Automation Anywhere running the fix, priced for work done.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Of last quarter's tickets, how many closed with no human touch?</p></div>
+          </article>
+          <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
+            <div class="bc-top"><h3>Microsoft Copilot</h3><span class="threat mid">Bundled</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Already licensed, and inside Teams where employees work.</p></div><div><h4>Where Aisera wins</h4><p>Prebuilt domain agents with enterprise integrations and automation behind them, live without a build project.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Who builds and maintains each Copilot agent, and what does it connect to?</p></div>
+          </article>
+          <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
+            <div class="bc-top"><h3>Salesforce Agentforce</h3><span class="threat">Direct in CX</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Deep inside Service Cloud, with customer data close at hand.</p></div><div><h4>Where Aisera wins</h4><p>Employee and customer service on one platform, across any ITSM or CRM.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Do you want one agent platform for employees and customers, or two?</p></div>
+          </article>
+          <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
+            <div class="bc-top"><h3>UiPath</h3><span class="threat">Platform play</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A large automation installed base and its own agentic roadmap.</p></div><div><h4>Where Aisera wins</h4><p>Aisera's conversational agents in front of the automation, with the Process Reasoning Engine deciding the next action.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How do employees trigger your automations today?</p></div>
+          </article>
+          <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
+            <div class="bc-top"><h3>Homegrown LLM builds</h3><span class="threat">Always present</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control and no new vendor.</p></div><div><h4>Where Aisera wins</h4><p>Integrations, guardrails, analytics and upkeep already built, and agents already resolving requests.</p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>What will it cost to keep your build current as models change every quarter?</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deal -->
+    <section id="deal">
+      <div class="sh">
+        <p class="eyebrow">Deal</p>
+        <h2>Where these deals stall</h2>
+        <p>Six stalls I plan for from the first meeting, and the MEDDPICC checklist every pilot and deal runs against.</p>
+      </div>
+      <div class="stalls">
+        <div><h4>"ServiceNow already has AI"</h4><p>I compare what resolves end to end against what files a ticket, on their own top request types.</p></div>
+        <div><h4>The pilot never ends</h4><p>Ten request types, two systems, written success criteria and a readout date agreed up front.</p></div>
+        <div><h4>Security and data review</h4><p>I start the security package in discovery and scope integrations and permissions early.</p></div>
+        <div><h4>Two owners, IT and HR</h4><p>One business case with a line for each, and a champion in both.</p></div>
+        <div><h4>Seat savings need the renewal</h4><p>I map the ITSM renewal date and stage the seat retirement into the plan.</p></div>
+        <div><h4>"We'll build it on our own LLM"</h4><p>I price the integrations, guardrails and upkeep, against agents already resolving requests.</p></div>
+      </div>
+      <div class="mxf-head"><div><h3>MEDDPICC checklist</h3>
+      <p class="mx-sub">Updated after every call and reviewed with my manager each week. Select a letter to flip it to the proof I need before the deal counts in my forecast.</p></div>
+      <button type="button" class="mxf-all" id="mxAll" aria-pressed="false">Flip all</button></div>
+      <div class="mxf">
+        <button type="button" class="fc" id="fc0" aria-pressed="false" aria-label="Metrics. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">M</span><span class="fc-n">Metrics</span><span class="fc-w">The number the deal is sold on</span><span class="fc-flag"><small>Red flag</small>A productivity promise nobody has priced.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>M</b>Metrics</span><span class="fc-s"><small>What I validate</small>Ticket volume by type, cost per ticket, fulfiller seats, time to resolve, CSAT and employee productivity.</span><span class="fc-s"><small>What I ask</small><span class="q">What does a ticket cost you, fully loaded?</span><span class="q">How many fulfiller seats renew next year?</span></span><span class="fc-s"><small>Proof I collect</small>A baseline from their own ticket data and the agentic analysis, confirmed by the CIO and finance.</span><span class="fc-s fc-m"><small>My move</small>I bring the Dartmouth numbers and the seat math, and ask them to correct them for their org.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc1" aria-pressed="false" aria-label="Economic buyer. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">E</span><span class="fc-n">Economic buyer</span><span class="fc-w">The person who can say yes alone</span><span class="fc-flag"><small>Red flag</small>"IT will just sign off."</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>E</b>Economic buyer</span><span class="fc-s"><small>What I validate</small>The CIO, with the CHRO or head of support when those agents are in scope.</span><span class="fc-s"><small>What I ask</small><span class="q">Who owns the AI productivity number for the board?</span><span class="q">Whose budget pays for ITSM seats today?</span></span><span class="fc-s"><small>Proof I collect</small>A meeting with the CIO before the pilot, and success criteria in their own words.</span><span class="fc-s fc-m"><small>My move</small>I ask the champion for 20 minutes with the CIO to agree the readout date.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc2" aria-pressed="false" aria-label="Decision criteria. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">D</span><span class="fc-n">Decision criteria</span><span class="fc-w">How they will judge us</span><span class="fc-flag"><small>Red flag</small>Criteria copied from the ITSM vendor's AI feature list.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>D</b>Decision criteria</span><span class="fc-s"><small>What I validate</small>Auto resolution on their request types, integrations, security, analytics, time to value and total cost against seats.</span><span class="fc-s"><small>What I ask</small><span class="q">What has to be true at the end of the pilot?</span><span class="q">What would rule us out?</span></span><span class="fc-s"><small>Proof I collect</small>Written pilot criteria agreed before the first integration connects.</span><span class="fc-s fc-m"><small>My move</small>I reshape the criteria around requests resolved end to end.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc3" aria-pressed="false" aria-label="Decision process. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">D</span><span class="fc-n">Decision process</span><span class="fc-w">Every step to a signature</span><span class="fc-flag"><small>Red flag</small>No one can describe what happens after the pilot.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>D</b>Decision process</span><span class="fc-s"><small>What I validate</small>Pilot, security review, business case, legal and procurement, timed to the ITSM renewal.</span><span class="fc-s"><small>What I ask</small><span class="q">Walk me through your last enterprise AI purchase.</span><span class="q">Who could stop this after a strong pilot?</span></span><span class="fc-s"><small>Proof I collect</small>A mutual action plan dated back from the renewal, edited by both sides.</span><span class="fc-s fc-m"><small>My move</small>I map the post pilot steps on day one.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc4" aria-pressed="false" aria-label="Paper process. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">P</span><span class="fc-n">Paper process</span><span class="fc-w">How the contract actually gets signed</span><span class="fc-flag"><small>Red flag</small>Procurement hears about us at quarter end.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>P</b>Paper process</span><span class="fc-s"><small>What I validate</small>Security review, DPA, AI usage terms, legal redlines, procurement thresholds and any Automation Anywhere agreements already in place.</span><span class="fc-s"><small>What I ask</small><span class="q">What did security need for your last AI vendor?</span><span class="q">Can this ride on your existing Automation Anywhere paper?</span></span><span class="fc-s"><small>Proof I collect</small>Security package sent in week one, paper path chosen, and a signature date agreed.</span><span class="fc-s fc-m"><small>My move</small>I bring procurement in as soon as the business case is agreed.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc5" aria-pressed="false" aria-label="Identify pain. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">I</span><span class="fc-n">Identify pain</span><span class="fc-w">Why they act this year</span><span class="fc-flag"><small>Red flag</small>Interest in AI with no deadline.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>I</b>Identify pain</span><span class="fc-s"><small>What I validate</small>A growing queue, an ITSM renewal, an AI mandate from the board, or poor CSAT.</span><span class="fc-s"><small>What I ask</small><span class="q">What happens if the queue grows another 20% next year?</span><span class="q">What did the board ask the CIO to show from AI?</span></span><span class="fc-s"><small>Proof I collect</small>Pain tied to a dollar figure, a date and an owner.</span><span class="fc-s fc-m"><small>My move</small>I tie it to the renewal date or the board review.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc6" aria-pressed="false" aria-label="Champion. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">C</span><span class="fc-n">Champion</span><span class="fc-w">Who sells when I am not in the room</span><span class="fc-flag"><small>Red flag</small>A fan of the product with no pull on the decision.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>C</b>Champion</span><span class="fc-s"><small>What I validate</small>A VP of ITSM, service desk director or automation CoE lead who wins personally if this lands. I test it by asking them to act.</span><span class="fc-s"><small>What I ask</small><span class="q">How would you present the pilot results to your CIO?</span><span class="q">Could you get HR into the next meeting?</span></span><span class="fc-s"><small>Proof I collect</small>They ran the agentic analysis with us and got me a meeting I could not get alone.</span><span class="fc-s fc-m"><small>My move</small>I keep them close and multithread to the CIO and HR.</span></span>
+          </span>
+        </button>
+        <button type="button" class="fc" id="fc7" aria-pressed="false" aria-label="Competition. Show the answer">
+          <span class="fc-in">
+            <span class="fc-f"><span class="fc-l">C</span><span class="fc-n">Competition</span><span class="fc-w">Every option they could pick</span><span class="fc-flag"><small>Red flag</small>We learn about the bundle discount at the proposal.</span><span class="fc-hint">Flip</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>C</b>Competition</span><span class="fc-s"><small>What I validate</small>ServiceNow and Moveworks, Microsoft Copilot, Salesforce Agentforce, UiPath, homegrown builds and doing nothing.</span><span class="fc-s"><small>What I ask</small><span class="q">If you don't choose us, what do you do instead?</span><span class="q">Who inside would push for that option?</span></span><span class="fc-s"><small>Proof I collect</small>Each alternative named with its internal sponsor, and our strengths built into the criteria.</span><span class="fc-s fc-m"><small>My move</small>I ask the battlecard questions in discovery and plan for the bundle early.</span></span>
+          </span>
+        </button>
+      </div>
+      <div class="mx-rule"><b>Commit rule</b><span>A deal enters commit only when the CIO has confirmed the metrics, the pilot has met written criteria, the paper process and renewal timing are dated in the mutual plan, and the champion has been tested.</span></div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sh">
+        <p class="eyebrow">Company</p>
+        <h2>Why I'm a fit for this role</h2>
+        <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
+      </div>
+      <div class="figs">
+        <div><b>$19.6M</b><span>Self sourced pipeline in under 12 months at Netradyne, and Enterprise Seller of the Year</span></div>
+        <div><b>$1.2M</b><span>Largest deal in Jamf's history at the time (Uber)</span></div>
+        <div><b>175%</b><span>Peak quota attainment at Falkon, with 300% in one quarter at Jamf</span></div>
+        <div><b>F500</b><span>Uber, Albertsons, AAA, Sirva and Snowflake opened</span></div>
+      </div>
+      <div style="max-width:1060px">
+        <table class="fit stack">
+          <thead><tr><th>What the role asks for<sup><a href="#s1">1</a></sup></th><th>Where I have done it</th></tr></thead>
+          <tbody>
+            <tr><td>Prospecting cold leads and qualifying inbound and outbound</td><td data-h="Where I have done it">$19.6M self sourced pipeline across Fortune 500 accounts at Netradyne in under 12 months, most of it from cold outbound.</td></tr>
+            <tr><td>Companies with 5,000 to 10,000 seats</td><td data-h="Where I have done it">Opened Uber, Albertsons, AAA, Sirva and Snowflake, and sell to Fortune 500 companies at Netradyne today.</td></tr>
+            <tr><td>Selling to IT buyers</td><td data-h="Where I have done it">Sold device management and security software to technical IT buyers at Jamf, the same IT organizations that run the service desk.</td></tr>
+            <tr><td>Closing against a $1M quota</td><td data-h="Where I have done it">175% peak attainment at Falkon, 300% in one quarter at Jamf, and $750K in my first quarter at a Series A startup.</td></tr>
+            <tr><td>Negotiating high value deals with the C level</td><td data-h="Where I have done it">Closed Uber for $1.2M at Jamf, the largest deal in the company's history at the time, and Falkon (Linewize) first multiyear deal with built in expansion triggers.</td></tr>
+            <tr><td>Demonstrating value to customers</td><td data-h="Where I have done it">Certified in Command of the Message at Jamf. The seat math calculator on this page is the one I would fill in with a CIO.</td></tr>
+            <tr><td>Partner and channel selling</td><td data-h="Where I have done it">Leveraged CDW, SHI and other partners, experience that carries over to Automation Anywhere's partner and marketplace deals.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="letter">
+        <h3>Why Aisera and Automation Anywhere</h3>
+        <p>A chatbot answers a question and files a ticket. Aisera resolves the request, and with Automation Anywhere behind it, the agent can run the automation that actually fixes the problem. That turns the conversation with a CIO from another chatbot into fewer seats, faster resolution and a measurable productivity number for the board.</p>
+        <p>I sold to the IT teams that run these desks at Jamf, and I sell AI to the Fortune 500 today. Pairing Aisera's agents with Automation Anywhere's installed base is the kind of enterprise motion I want to build.</p>
+      </div>
+    </section>
+
+    <!-- 90 days -->
+    <section id="plan" class="panel honey grain">
+      <div class="sh">
+        <p class="eyebrow">90 days</p>
+        <h2>The first 90 days</h2>
+        <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
+      </div>
+      <div class="phases">
+        <div class="phase">
+          <span class="when">Days 1 to 30</span>
+          <h3>Intro to Aisera <span class="ns">| Building the foundation</span></h3>
+          <ul>
+            <li>Learn the platform hands on with a Solutions Consultant: run Aisera Assistant in Teams, build an agent in Agent Composer, connect it to an Automation Anywhere bot and read the analytics</li>
+            <li>Work with my manager, Solutions Consulting and top reps to learn what's winning and where enterprise pilots stall, and pair it with what worked for me at Jamf and Netradyne</li>
+            <li>Learn the agentic analysis offer well enough to run it with a prospect</li>
+            <li>Build battlecards for ServiceNow and Moveworks, Microsoft Copilot, Salesforce Agentforce, UiPath and homegrown builds</li>
+            <li>Audit named accounts for ITSM tool, Automation Anywhere install, employee count and AI mandates</li>
+            <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
+            <li>Launch the first self sourced wave, starting with Automation Anywhere customers</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>30 named accounts planned, first meetings booked, battlecards and an agent I built myself</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 31 to 60</span>
+          <h3>Creating the playbook <span class="ns">| Testing the territory</span></h3>
+          <ul>
+            <li>Review results with my manager and peer reps each week, blending their guidance with patterns from my own deals</li>
+            <li>Run the four plays in waves, starting with the seat math</li>
+            <li>Multithread every target account across the CIO, IT service management, HR, customer service, security and procurement</li>
+            <li>Hold insight meetings in place of first call demos, and price ticket cost, seats and productivity in discovery</li>
+            <li>Turn meetings into MEDDPICC qualified opportunities, each pilot scoped to named request types and systems</li>
+            <li>Work with Automation Anywhere account teams on joint plans for shared customers</li>
+          </ul>
+          <div class="out"><div><b>Visible output</b>Tested messaging, qualified pipeline, stakeholder maps and the first pilots scoped</div></div>
+        </div>
+        <div class="phase">
+          <span class="when">Days 61 to 90</span>
+          <h3>Playbook deployment <span class="ns">| Owning the territory</span></h3>
+          <ul>
+            <li>Qualified deals moving through pilot and business case with an executive sponsor</li>
+            <li>Every active deal multithreaded, with MEDDPICC gaps closed or flagged</li>
+            <li>A forecast built on stage criteria, close plans, paper process, renewal timing and dated next steps</li>
+            <li>No vanity meetings, no single threaded deals and no loose next steps</li>
+            <li>Expansion paths mapped from IT to HR, finance and customer service</li>
+            <li>Regular deal reviews with my manager, and what works shared back with the team</li>
+          </ul>
+          <div class="out"><div><b>90 day scoreboard</b>30 account plans, 15 to 20 executive meetings sourced or influenced, 4 to 6 qualified opportunities, first pilots running, pipeline building toward 3x coverage of a $1M quota</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Next step</h2>
+      <p>I'd like to walk your team through this plan and hear where it's wrong.</p>
+      <dl class="card-sig">
+        <dt>Email</dt><dd><a href="mailto:eiannello72@gmail.com?subject=Aisera%20Enterprise%20AE">eiannello72@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+12089684889">(208) 968-4889</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/eric-iannello" target="_blank" rel="noopener">linkedin.com/in/eric-iannello</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h4>Sources</h4>
+      <ol class="sources">
+        <li id="s1"><a href="https://builtin.com/job/enterprise-account-executive-remote/2326078" target="_blank" rel="noopener">Aisera, Enterprise Account Executive job post</a></li>
+        <li id="s2"><a href="https://automationanywhere.com/company/press-room/automation-anywhere-acquires-aisera-supercharge-autonomous-enterprise" target="_blank" rel="noopener">Automation Anywhere, Automation Anywhere acquires Aisera, November 2025</a></li>
+        <li id="s3"><a href="https://www.casestudies.com/company/aisera" target="_blank" rel="noopener">Aisera customer stories, including Carta, Grant Thornton and 8x8</a></li>
+        <li id="s4"><a href="https://www.destinationcrm.com/Articles/CRM-News/CRM-Across-the-Wire/Automation-Anywhere-Acquires-Aisera-172249.aspx" target="_blank" rel="noopener">Destination CRM, Automation Anywhere acquires Aisera</a></li>
+        <li id="s5"><a href="https://aisera.com/customers/dartmouth" target="_blank" rel="noopener">Aisera, Dartmouth customer story</a></li>
+        <li id="s6"><a href="https://aisera.com/press-release/aisera-named-a-visionary-in-2025-gartner-magic-quadrant-for-ai-applications-in-it-service-management/" target="_blank" rel="noopener">Aisera, Named a Visionary in the 2025 Gartner Magic Quadrant for AI Applications in ITSM</a></li>
+        <li id="s7"><a href="https://aisera.com/category/it" target="_blank" rel="noopener">Aisera, Platform and products</a></li>
+        <li id="s8"><a href="https://www.theatdb.com/news/automation-anywhere-reports-61-of-q4-software-bookings-from-ai-as-enterprises-deploy-agentic-ai-to-run-core-business-functions" target="_blank" rel="noopener">Automation Anywhere fiscal 2026 fourth quarter results</a></li>
+        <li id="s9"><a href="https://www.automationanywhere.com/company/press-room/automation-anywhere-takes-step-towards-artificial-general-intelligence-work" target="_blank" rel="noopener">Automation Anywhere, Process Reasoning Engine announcement</a></li>
+        <li id="s10"><a href="https://laragione.eu/immediapress/automation-anywhere-advances-ai-native-agentic-solutions-for-the-enterprise-with-openai/" target="_blank" rel="noopener">Automation Anywhere advances AI native agentic solutions with OpenAI, January 2026</a></li>
+        <li id="s11"><a href="https://aisera.com/free-agentic-analysis/" target="_blank" rel="noopener">Aisera, Free agentic analysis</a></li>
+        <li id="s12"><a href="https://aisera.com/customers/chegg" target="_blank" rel="noopener">Aisera, Chegg customer story</a></li>
+      </ol>
+      <p class="disc">Independent research prepared by Eric Iannello for the Aisera Enterprise Account Executive role. Not affiliated with or endorsed by Aisera or Automation Anywhere. Figures come from public and third party sources as of October 2026, and vendor reported figures are labeled in their sources. The product console, example accounts and emails are illustrative.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<160)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+  var prog=document.getElementById('progress');
+  function bar(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?window.scrollY/h*100:0)+'%'}
+  window.addEventListener('scroll',function(){spy();bar()},{passive:true});spy();bar();
+
+  function group(btns,onPick){
+    btns.forEach(function(b,i){
+      b.addEventListener('click',function(){onPick(i)});
+      b.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight'||k==='ArrowDown')n=i+1;else if(k==='ArrowLeft'||k==='ArrowUp')n=i-1;
+        if(n===null)return;e.preventDefault();n=(n+btns.length)%btns.length;btns[n].focus();onPick(n);
+      });
+    });
+  }
+  function select(btns,i){
+    btns.forEach(function(x,j){var on=j===i;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  }
+
+  // Platform squares
+  var mods=[].slice.call(document.querySelectorAll('.mod')),say=document.getElementById('hxSay');
+  mods.forEach(function(m,i){m.setAttribute('aria-pressed',m.classList.contains('on'));m.addEventListener('click',function(){
+    mods.forEach(function(x,j){x.classList.toggle('on',j===i);x.setAttribute('aria-pressed',j===i)});
+    say.innerHTML='';var b=document.createElement('b');b.textContent=m.dataset.t;say.appendChild(b);say.appendChild(document.createTextNode(m.dataset.d));
+  })});
+
+  // AI Decisioning
+  var custs=[].slice.call(document.querySelectorAll('.cust')),fH=document.getElementById('fH'),fP=document.getElementById('fP'),fL=document.getElementById('fL'),dC=document.getElementById('dC'),dT=document.getElementById('dT'),dO=document.getElementById('dO');
+  custs.forEach(function(c){c.addEventListener('click',function(){
+    custs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
+    var d=JSON.parse(c.dataset.d);fH.textContent=d.h;fP.textContent=d.p;dC.textContent=d.c;dT.textContent=d.t;dO.textContent=d.o;
+    fL.innerHTML='';d.w.forEach(function(x){var li=document.createElement('li');li.textContent=x[0];var s=document.createElement('s');s.textContent=x[1];li.appendChild(s);fL.appendChild(li)});
+  })});
+
+  // Territory
+  var sq=[].slice.call(document.querySelectorAll('.sq[data-r]')),rows=[].slice.call(document.querySelectorAll('.reg tbody tr'));
+  function pick(r){sq.forEach(function(t){t.classList.toggle('on',t.dataset.r===r)});rows.forEach(function(tr){tr.classList.toggle('on',tr.dataset.r===r)})}
+  sq.forEach(function(t){t.addEventListener('click',function(){pick(t.dataset.r)})});
+  rows.forEach(function(tr){tr.addEventListener('mouseenter',function(){pick(tr.dataset.r)})});
+  pick('fs');
+
+  // Plays
+  var tabs=[].slice.call(document.querySelectorAll('.play-nav [role=tab]'));
+  group(tabs,function(i){select(tabs,i)});
+
+  // Challenger stepper
+  var sts=[].slice.call(document.querySelectorAll('.cstep')),cur=0,cnt=document.getElementById('stCount');
+  function step(i){cur=i;select(sts,i);cnt.textContent='Step '+(i+1)+' of '+sts.length;document.getElementById('stNext').textContent=i===sts.length-1?'Start over':'Next step'}
+  group(sts,step);
+  document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
+  document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
+
+  var $=function(id){return document.getElementById(id)};
+  var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function seq(items,each,done){var i=0;(function next(){if(i<items.length){each(items[i],i);i++;setTimeout(next,fast?0:420)}else done()})()}
+  function pickOne(list,el){list.forEach(function(x){x.classList.toggle('on',x===el);x.setAttribute('aria-pressed',x===el)})}
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+
+  // App tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i)});
+
+  // Aisera Assistant
+  var rqs=[].slice.call(document.querySelectorAll('.rq')),busy=false,C={req:0,res:0,esc:0};
+  function run(b){
+    if(busy)return;busy=true;pickOne(rqs,b);var d=JSON.parse(b.dataset.d),m=$('msgs'),tr=$('trace'),out=$('tout');
+    m.innerHTML='';tr.innerHTML='';out.hidden=true;rqs.forEach(function(x){x.disabled=true});
+    var u=el('div','msg me');u.appendChild(el('b',null,'Employee'));u.appendChild(document.createTextNode(d.q));m.appendChild(u);
+    var typing=el('div','msg ai typing','Aisera is working');m.appendChild(typing);
+    var items=[['Universal Agent','Intent: '+d.intent+', confidence '+d.conf],[d.dom+' agent','Routed to the '+d.dom+' agent']].concat(d.steps.map(function(s,i){return [i===d.steps.length-1?'Action':'Plan, step '+(i+1),s]}));
+    var lis=items.map(function(it){var li=el('li','');li.appendChild(el('small',null,it[0]));li.appendChild(el('span',null,it[1]));tr.appendChild(li);return li});
+    seq(lis,function(li,i){if(i>0)lis[i-1].className='done';li.className='doing'},function(){
+      lis[lis.length-1].className='done';typing.remove();
+      var a=el('div','msg ai');a.appendChild(el('b',null,'Aisera'));a.appendChild(document.createTextNode(d.a));m.appendChild(a);
+      out.className='tout '+d.o;out.textContent=(d.o==='resolved'?'Resolved in '+d.t+', no ticket for the desk':'Escalated in '+d.t+', with full context for the agent');out.hidden=false;
+      C.req++;if(d.o==='resolved')C.res++;else C.esc++;$('cReq').textContent=C.req;$('cRes').textContent=C.res;$('cEsc').textContent=C.esc;
+      rqs.forEach(function(x){x.disabled=false});busy=false;
+    });
+  }
+  rqs.forEach(function(b){b.addEventListener('click',function(){run(b)})});
+
+  // Agent Composer
+  var dmw=document.querySelector('.dms'),D=JSON.parse(dmw.dataset.d),dms=[].slice.call(dmw.querySelectorAll('.dm'));
+  function comp(k){
+    var d=D[k],sk=$('skills'),cn=$('conns');sk.innerHTML='';cn.innerHTML='';
+    d.s.forEach(function(s){var li=el('li');var l=el('label');var c=document.createElement('input');c.type='checkbox';c.checked=true;l.appendChild(c);l.appendChild(document.createTextNode(' '+s));li.appendChild(l);sk.appendChild(li)});
+    d.c.forEach(function(s){cn.appendChild(el('li','cn',s))});
+    $('pubBtn').textContent='Publish to Teams';$('pubBtn').disabled=false;$('pubNote').textContent='Draft '+d.n+' agent. Not yet live for employees.';
+  }
+  dms.forEach(function(b){b.addEventListener('click',function(){pickOne(dms,b);comp(b.dataset.k)})});
+  comp('it');
+  $('pubBtn').addEventListener('click',function(){var k=document.querySelector('.dm.on').dataset.k,n=document.querySelectorAll('#skills input:checked').length;$('pubNote').textContent='The '+D[k].n+' agent is live in Teams with '+n+' skills and '+D[k].c.length+' connectors.';this.textContent='Live';this.disabled=true});
+
+  // Agent Assist
+  $('useSugg').addEventListener('click',function(){$('reply').value=$('sugg').textContent;$('reply').focus()});
+
+  // Analytics
+  var afw=document.querySelector('.afs'),A=JSON.parse(afw.dataset.d),afs=[].slice.call(afw.querySelectorAll('.af'));
+  afs.forEach(function(b){b.addEventListener('click',function(){
+    pickOne(afs,b);var a=A[b.dataset.k];$('aAr').textContent=a[0]+'%';$('aTt').textContent=a[1];$('aCs').textContent=a[2];$('aHr').textContent=a[3];
+    var bs=$('aBars');bs.innerHTML='';a[4].forEach(function(v){var i=el('i');i.style.setProperty('--h',v+'%');i.appendChild(el('span',null,v+'%'));bs.appendChild(i)});
+  })});
+
+  // Seat math
+  var bc=['bcEmp','bcTpe','bcAr','bcCpt','bcSeat','bcSc','bcSr'].map($);
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
+  function num(n){return Math.round(n).toLocaleString('en-US')}
+  function calc(){
+    var v=bc.map(function(i){return +i.value});
+    $('bcEmpV').textContent=num(v[0]);$('bcTpeV').textContent=v[1];$('bcArV').textContent=v[2]+'%';$('bcCptV').textContent='$'+v[3];$('bcSeatV').textContent=num(v[4]);$('bcScV').textContent=money(v[5]);$('bcSrV').textContent=v[6]+'%';
+    var tot=v[0]*v[1],res=tot*v[2]/100,seats=Math.round(v[4]*v[6]/100);
+    $('bcTot').textContent=num(tot);$('bcRes').textContent=num(res);$('bcSave').textContent=money(res*v[3]);$('bcSeatN').textContent=num(seats);$('bcSeatS').textContent=money(seats*v[5]);
+  }
+  bc.forEach(function(i){i.addEventListener('input',calc)});calc();
+
+  // MEDDPICC flip cards
+  var fcs=[].slice.call(document.querySelectorAll('.fc')),mxAll=$('mxAll');
+  fcs.forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');
+    var all=fcs.every(function(x){return x.getAttribute('aria-pressed')==='true'});mxAll.setAttribute('aria-pressed',all?'true':'false');mxAll.textContent=all?'Flip back':'Flip all';});});
+  mxAll.addEventListener('click',function(){var on=mxAll.getAttribute('aria-pressed')!=='true';mxAll.setAttribute('aria-pressed',on?'true':'false');mxAll.textContent=on?'Flip back':'Flip all';fcs.forEach(function(c){c.setAttribute('aria-pressed',on?'true':'false')});});
+
+  // Battlecards
+  var cbs=[].slice.call(document.querySelectorAll('.cbtn'));
+  group(cbs,function(i){select(cbs,i)});
+})();
+</script>
+</body>
+</html>

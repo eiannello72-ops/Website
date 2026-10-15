@@ -19,6 +19,7 @@ for the Enterprise AE role.
 | Cortex (US Enterprise) | [`cortex/`](cortex/index.html) |
 | Obsidian Security | [`obsidian/`](obsidian/index.html) |
 | Ketch | [`ketch/`](ketch/index.html) |
+| Aisera (Automation Anywhere) | [`aisera/`](aisera/index.html) |
 
 ## Deploying
 

@@ -1346,6 +1346,73 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
 .sh h2,.contact h2,.app-intro h2{font-stretch:112%;font-variation-settings:"wdth" 112}
 .khero h1{line-height:1.02}
 @media (max-width:440px){.khero h1{font-size:27px}}
+/* ===== Ketch platform specific components ===== */
+.eyebrow{font:500 15px/1 var(--body)!important;letter-spacing:.06em;text-transform:uppercase;color:#000!important;margin-bottom:12px}
+.panel.ink .eyebrow{color:var(--gr)!important}
+.npill{display:inline-block;font:700 9.5px/1 var(--body);letter-spacing:.04em;color:var(--pu);border:1.5px solid var(--pu);border-radius:999px;padding:2px 5px;margin-left:4px;vertical-align:2px}
+.cnav .toc a.active .npill{color:var(--pu)}
+.trust{margin:56px auto 0;max-width:1100px}
+.trust p{font:500 14px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#4D4D4D}
+.trust p sup a{color:var(--pu2)}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;margin-top:18px}
+.trust li{font:900 21px/1 var(--display);font-stretch:112%;font-variation-settings:"wdth" 112;color:#1A1A1A;letter-spacing:-.01em}
+.g2{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.g2 span{font:600 13px var(--body);border-radius:999px;padding:8px 14px;border:1.5px solid #000}
+.g2s b{font:900 16px var(--display);margin-right:6px}
+.g2b{background:#fff}
+.g2b.dark{background:#000;color:#fff}
+.g2b.dark sup a{color:var(--gr)}
+.kflow{display:flex;align-items:center;gap:0;padding:12px 18px;border-bottom:1px solid var(--line);background:#FAFAFA;overflow-x:auto}
+.kf{flex:1;min-width:120px;border:1.5px solid #D6D6D6;border-radius:999px;padding:6px 12px;background:#fff;transition:all .25s;text-align:center}
+.kf b{display:block;font-size:12.5px;font-weight:800;white-space:nowrap}
+.kf small{display:block;font-size:11px;color:#595959;white-space:nowrap}
+.kflow > i{flex:none;width:22px;height:2px;background:#C1C1C1;position:relative}
+.kflow > i:after{content:"";position:absolute;right:-1px;top:-3px;width:6px;height:6px;border-right:2px solid #C1C1C1;border-top:2px solid #C1C1C1;transform:rotate(45deg)}
+.kf.on{border-color:#000;background:#F1E8FF}
+.kf.hit{border-color:var(--pu);background:var(--pu);color:#fff;transform:translateY(-2px)}
+.kf.hit small{color:#E6D6FF}
+.ti.t5{border-radius:50%;box-shadow:6px 0 0 -4px currentColor,-6px 0 0 -4px currentColor}
+.xtype{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:-4px 0 12px}
+.xtype .lbl{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:#4D4D4D;margin-right:4px}
+.xb{font:600 13px var(--body);border:1.5px solid #D6D6D6;background:#fff;color:#000;border-radius:8px;padding:5px 10px;cursor:pointer}
+.xb.on{border-color:var(--pu);color:var(--pu2);background:#F8F3FF}
+.xb:focus-visible{outline:2px solid var(--pu);outline-offset:2px}
+.kbanner.x-modal{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%);width:min(340px,calc(100% - 24px))}
+.kbanner.x-pc{top:44px;left:auto;right:0;bottom:0;width:min(320px,100%);border-radius:12px 0 0 12px;border-right:0;overflow:auto}
+.shop:has(.x-modal):after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);z-index:0}
+.kbanner{z-index:1}
+.kb-tg{display:grid;gap:6px;margin-top:8px}
+.kb-tg:empty{display:none}
+.kt{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.kt input{width:16px;height:16px;accent-color:var(--pu)}
+.vault{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:14px}
+.vid{border:2px solid #000;border-radius:12px;padding:12px 14px;background:#F8F3FF}
+.vid b{display:block;font-size:15px}.vid small{font-size:12px;color:#4D4D4D}
+.vid ul{list-style:none;display:grid;gap:6px;margin-top:10px}
+.vid li{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;border-bottom:1px solid #E6D6FF;padding-bottom:5px}
+.vid code{font:500 11.5px var(--mono);color:#333}
+.vsrc{font-size:12.5px;color:#4D4D4D}
+.bcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;max-width:1060px}
+.bin{display:grid;gap:18px;border:2px solid #000;border-radius:16px;padding:22px}
+.bin label{display:grid;gap:8px;font-size:14.5px;font-weight:600}
+.bin label span{display:flex;justify-content:space-between;gap:10px}
+.bin b{font-family:var(--mono);color:var(--pu2)}
+.bin input[type=range]{width:100%;accent-color:var(--pu)}
+.bout{display:grid;gap:12px;align-content:start}
+.bout > div{border:1.5px solid var(--line);border-radius:16px;padding:16px 18px}
+.bout small{display:block;font:600 12px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#4D4D4D}
+.bout b{display:block;font:900 34px/1.1 var(--display);font-stretch:112%;font-variation-settings:"wdth" 112;margin-top:4px}
+.bout span{font-size:13.5px;color:#333}
+.bout em{font-style:normal;font-weight:700}
+.bout .hl{background:#000;color:#fff;border-color:#000;box-shadow:6px 6px 0 var(--gr)}
+.bout .hl small,.bout .hl span{color:#E6E6E6}
+.bout .hl b{color:var(--gr)}
+.bnote{font-size:12.5px;color:#4D4D4D}
+@media (max-width:860px){.bcase,.vault{grid-template-columns:1fr}}
+@media (max-width:620px){.kflow{padding:10px}.kf{min-width:104px}}
+@media (max-width:1600px){.ccta.ghostc{display:none}}
+.cnav{gap:14px}
+.cnav .toc a{padding:6px 9px;font-size:15px}
 /* Without JavaScript, show every panel so nothing is hidden */
 .nojs [role="tabpanel"][hidden]{display:block!important}
 .nojs .step-p[hidden]{display:grid!important}
@@ -1366,14 +1433,15 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
   <nav class="cnav" aria-label="Contents">
     <a class="clogo" href="#top"><span class="cmark" aria-hidden="true"></span><span>Iannello</span></a>
     <ul class="toc" id="toc">
-      <li><a href="#top">Overview</a></li>
+      <li><a href="#platform">Platform</a></li>
       <li><a href="#know">Research</a></li>
       <li><a href="#pov">Talk track</a></li>
-      <li><a href="#territory">Segments</a></li>
+      <li><a href="#territory">Solutions</a></li>
       <li><a href="#plays">Plays</a></li>
+      <li><a href="#case">Business Case <span class="npill">NEW</span></a></li>
       <li><a href="#competition">Competition</a></li>
       <li><a href="#deal">Deal</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#about">Company</a></li>
       <li><a href="#plan">90 days</a></li>
     </ul>
     <a class="ccta ghostc" href="#plan">90 Day Plan</a>
@@ -1389,58 +1457,68 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
       <h1><span>Win the enterprise</span> <span class="pu">with AI ready data</span></h1>
       <p class="lede">Ketch keeps customer data clean, permissioned and ready for AI. This is how I would find, open and close the enterprises that need it, run on Challenger and MEDDPICC.<sup><a href="#s1">1</a></sup></p>
       <div class="ctas"><a class="btn blk" href="#plan">See the 90 day plan</a><a class="btn pri" href="#contact">Contact me</a></div>
-      <p class="kfine">Try the platform below</p>
+      <p class="kfine">Read the plan in less than 5 min</p>
+      <div class="trust"><p>Ketch is trusted by 3,500+ brands, including<sup><a href="#s2">2</a></sup></p><ul><li>TIME</li><li>IMAX</li><li>The RealReal</li><li>Dollar Shave Club</li><li>6sense</li><li>Spreedly</li><li>Francesca's</li><li>Embrace Pet Insurance</li><li>Good Smile Company</li></ul></div>
+      <div class="g2"><span class="g2s"><b>4.6</b>out of 5 on G2</span><span class="g2b">Enterprise Usability</span><span class="g2b">Enterprise Results</span><span class="g2b">Enterprise Relationship</span><span class="g2b dark">22 badges, Summer 2026<sup><a href="#s3">3</a></sup></span></div>
     </section>
 
-    <section class="capp-wrap" aria-label="Ketch product mock">
+    <section class="capp-wrap" id="platform" aria-label="Ketch product mock">
       <div class="app-intro">
+        <p class="eyebrow">The Ketch platform, live</p>
         <h2>One choice, enforced everywhere</h2>
-        <p>Pick a jurisdiction, turn on Global Privacy Control, and click the banner. Then follow that choice through Opt-Out Sync, privacy requests, the data map and the Agent Network.</p>
+        <p>Serve a Privacy Experience from the Smart Tag, make a choice, then watch it land in the Permission Vault and travel through the Transponder to every tag, API, data system and partner.<sup><a href="#s4">4</a></sup></p>
       </div>
       <div class="app" role="group" aria-label="Ketch product mock. Select a view from the sidebar.">
         <div class="app-rail">
           <span class="rail-logo" aria-hidden="true"></span>
           <div class="app-tabs" role="tablist" aria-label="Ketch views" aria-orientation="vertical">
-            <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true" title="Consent"><i class="ti t0"></i><span>Consent</span></button>
-            <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1" title="Opt-Out Sync"><i class="ti t1"></i><span>Opt-Out Sync</span></button>
-            <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1" title="Privacy Requests"><i class="ti t2"></i><span>Privacy Requests</span></button>
-            <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1" title="Data Map"><i class="ti t3"></i><span>Data Map</span></button>
-            <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1" title="Agent Network"><i class="ti t4"></i><span>Agent Network</span></button>
+            <button class="dtab" role="tab" id="dt0" aria-controls="dp0" aria-selected="true" title="Privacy Experiences"><i class="ti t0"></i><span>Privacy Experiences</span></button>
+            <button class="dtab" role="tab" id="dt1" aria-controls="dp1" aria-selected="false" tabindex="-1" title="Permission Vault"><i class="ti t1"></i><span>Permission Vault</span></button>
+            <button class="dtab" role="tab" id="dt2" aria-controls="dp2" aria-selected="false" tabindex="-1" title="Transponder"><i class="ti t2"></i><span>Transponder</span></button>
+            <button class="dtab" role="tab" id="dt3" aria-controls="dp3" aria-selected="false" tabindex="-1" title="Privacy Requests"><i class="ti t3"></i><span>Privacy Requests</span></button>
+            <button class="dtab" role="tab" id="dt4" aria-controls="dp4" aria-selected="false" tabindex="-1" title="Data Mapping"><i class="ti t4"></i><span>Data Mapping</span></button>
+            <button class="dtab" role="tab" id="dt5" aria-controls="dp5" aria-selected="false" tabindex="-1" title="Agent Network"><i class="ti t4 t5"></i><span>Agent Network</span></button>
           </div>
         </div>
         <div class="app-main">
-          <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><div class="vhead"><h3>Consent</h3><span class="vact"><span class="ghost">northwind.example</span><span class="prim">Publish</span></span></div>
-<div class="cbar"><div class="jur" role="group" aria-label="Jurisdiction"><span class="lbl">Visitor in</span><button type="button" class="jb on" data-j="ca" aria-pressed="true">California</button><button type="button" class="jb" data-j="eu" aria-pressed="false">EU</button><button type="button" class="jb" data-j="co" aria-pressed="false">Colorado</button></div>
+          <div class="kflow" aria-label="How a permission moves through Ketch"><span class="kf" data-f="0"><b>Smart Tag</b><small>serves the experience</small></span><i></i><span class="kf" data-f="1"><b>Permission Vault</b><small>stores the permit</small></span><i></i><span class="kf" data-f="2"><b>Transponder</b><small>carries it out</small></span><i></i><span class="kf" data-f="3"><b>Your stack</b><small>tags, APIs, data, partners</small></span></div>
+          <div class="dview" id="dp0" role="tabpanel" aria-labelledby="dt0"><div class="vhead"><h3>Privacy Experiences</h3><span class="vact"><span class="ghost" id="tplName">CCPA/CPRA template</span><span class="prim">Publish</span></span></div>
+<div class="cbar"><div class="jur" role="group" aria-label="Jurisdiction"><span class="lbl">Visitor in</span><button type="button" class="jb on" data-j="ca" aria-pressed="true">California</button><button type="button" class="jb" data-j="eu" aria-pressed="false">EU</button><button type="button" class="jb" data-j="co" aria-pressed="false">Colorado</button><button type="button" class="jb" data-j="qc" aria-pressed="false">Quebec</button></div>
 <button type="button" class="gpc" id="gpc" role="switch" aria-checked="false"><i></i>Global Privacy Control</button></div>
+<div class="xtype" role="group" aria-label="Experience type"><span class="lbl">Experience</span><button type="button" class="xb on" data-x="banner" aria-pressed="true">Banner</button><button type="button" class="xb" data-x="modal" aria-pressed="false">Modal</button><button type="button" class="xb" data-x="pc" aria-pressed="false">Preference Center</button></div>
 <div class="cgrid"><div class="shop" aria-label="Sample storefront"><div class="shop-top"><b>NORTHWIND</b><span>Shop</span><span>New</span><span>Sale</span></div><div class="shop-hero"><span>Fall layers</span><i></i><i></i><i></i></div>
-<div class="kbanner" id="kb"><p class="kb-t" id="kbT">Your privacy choices</p><p class="kb-p" id="kbP">We use cookies and share data with partners for advertising. You can opt out of the sale or sharing of your personal information.</p><div class="kb-a" id="kbA"></div></div></div>
-<div class="perm"><h4>Permits for this visitor</h4><p class="vcap" id="permNote">California law: opt out. Purposes run until the visitor says no.</p><ul class="plist" id="plist"><li data-p="analytics"><span>Analytics</span><em class="pm">Allowed</em></li><li data-p="ads"><span>Targeted advertising</span><em class="pm">Allowed</em></li><li data-p="pers"><span>Personalization</span><em class="pm">Allowed</em></li><li data-p="email"><span>Email marketing</span><em class="pm">Allowed</em></li><li data-p="ai"><span>AI model training</span><em class="pm">Allowed</em></li></ul><p class="plog" id="plog">No choice recorded yet.</p></div></div></div>
-          <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><div class="vhead"><h3>Opt-Out Sync</h3><span class="vact"><button type="button" class="prim run" id="osRun">Sync opt out</button></span></div><p class="vcap" id="osCap">A California shopper clicks Do Not Sell or Share once. Follow the choice to every system.</p><ol class="osys" id="osys"><li><span class="sn"><b>Meta Pixel</b><small>Browser tag</small></span><span class="ss">Waiting</span><em>Blocked on page</em></li><li><span class="sn"><b>Google Ads</b><small>Browser tag</small></span><span class="ss">Waiting</span><em>Blocked on page</em></li><li><span class="sn"><b>Salesforce</b><small>CRM</small></span><span class="ss">Waiting</span><em>Do Not Sell flag set</em></li><li><span class="sn"><b>Braze</b><small>Email and messaging</small></span><span class="ss">Waiting</span><em>Removed from ad audiences</em></li><li><span class="sn"><b>Segment</b><small>CDP</small></span><span class="ss">Waiting</span><em>Consent trait updated</em></li><li><span class="sn"><b>Snowflake</b><small>Data warehouse</small></span><span class="ss">Waiting</span><em>Permit row written</em></li><li><span class="sn"><b>LiveRamp</b><small>Partner</small></span><span class="ss">Waiting</span><em>Suppression sent</em></li></ol><div class="audit" id="audit" hidden><b>Audit log</b><span id="auditT">7 systems updated for identity jane.d@example.com in 4.2 seconds. Proof stored for the regulator.</span></div></div>
-          <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><div class="vhead"><h3>Privacy Requests</h3><span class="vact"><button type="button" class="prim run" id="rqRun">Run DSR-2041</button></span></div><p class="vcap">Every request verified, routed to each system and confirmed, with the deadline tracked.</p><table class="vt"><thead><tr><th>Request</th><th>Type</th><th>Jurisdiction</th><th>Deadline</th><th>Status</th></tr></thead><tbody><tr class="hot"><td><code>DSR-2041</code></td><td>Delete</td><td>California</td><td>12 days left</td><td><em class="st o" id="rq0">Open</em></td></tr><tr><td><code>DSR-2040</code></td><td>Access</td><td>Virginia</td><td>30 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2039</code></td><td>Delete</td><td>EU</td><td>21 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2038</code></td><td>Correct</td><td>Colorado</td><td>Closed</td><td><em class="st g">Done</em></td></tr><tr><td><code>DSR-2037</code></td><td>Opt out</td><td>Texas</td><td>Closed</td><td><em class="st g">Done</em></td></tr></tbody></table><ol class="oxs" id="rqSteps"><li>Verify identity</li><li>Find data in 12 systems</li><li>Delete in each system</li><li>Notify vendors</li><li>Confirm to the consumer</li></ol><div class="oxr" id="rqOut" hidden><div><small>Found</small><p>Records in Salesforce, Braze, Segment, Snowflake and 8 more.</p></div><div><small>Deleted</small><p>12 of 12 systems confirmed, vendors notified.</p></div><div><small>Closed</small><p>Confirmation sent 12 days before the California deadline.</p></div></div></div>
-          <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><div class="vhead"><h3>Data Map</h3><span class="vact"><span class="ghost">Auto discovered</span></span></div><p class="vcap">Pick a data category to see every system that holds it.</p><div class="dcs" role="group" aria-label="Data category"><button type="button" class="dc on" data-c="contact" aria-pressed="true">Contact info</button><button type="button" class="dc" data-c="purchase" aria-pressed="false">Purchase history</button><button type="button" class="dc" data-c="location" aria-pressed="false">Precise location</button><button type="button" class="dc" data-c="health" aria-pressed="false">Health interests</button><button type="button" class="dc" data-c="device" aria-pressed="false">Device IDs</button></div><div class="dmap"><div class="dsys hit" data-cs="contact purchase"><b>Salesforce</b><small>CRM</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact device"><b>Braze</b><small>Messaging</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact purchase device location"><b>Segment</b><small>CDP</small><span>4 categories</span></div><div class="dsys hit" data-cs="contact purchase location health"><b>Snowflake</b><small>Warehouse</small><span>4 categories</span></div><div class="dsys" data-cs="device location"><b>Mobile app</b><small>First party</small><span>2 categories</span></div><div class="dsys" data-cs="purchase health"><b>Recommendations model</b><small>AI</small><span>2 categories</span></div></div><p class="vfoot" id="dmNote">Contact info lives in 4 systems.</p></div>
-          <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><div class="vhead"><h3>Agent Network</h3><span class="vact"><button type="button" class="prim run" id="agRun">Draft AI impact assessment</button></span></div><p class="vcap">Assessment for the <b>Recommendations model</b>. Agents read the data map, vendor DPAs and consent records, then draft it for legal to review.</p><div class="agents"><div class="ag" id="ag0"><b>Data mapping agent</b><small>Reads the data map</small></div><div class="ag" id="ag1"><b>Contract agent</b><small>Reads vendor DPAs</small></div><div class="ag" id="ag2"><b>Risk agent</b><small>Checks consent coverage</small></div><div class="ag" id="ag3"><b>Assessment agent</b><small>Writes the draft</small></div></div><dl class="aia" id="aia"><div><dt>Data used</dt><dd data-v="Purchase history and health interests from Snowflake">Waiting</dd></div><div><dt>Consent coverage</dt><dd data-v="81% of profiles allow personalization, 0 health records without consent">Waiting</dd></div><div><dt>Vendor terms</dt><dd data-v="2 vendors, DPAs allow model training for 1">Waiting</dd></div><div><dt>Recommendation</dt><dd data-v="Exclude health interests and the second vendor, then approve">Waiting</dd></div></dl></div>
+<div class="kbanner" id="kb"><p class="kb-t" id="kbT">Your privacy choices</p><p class="kb-p" id="kbP"></p><div class="kb-tg" id="kbTg"></div><div class="kb-a" id="kbA"></div></div></div>
+<div class="perm"><h4>Permits for this visitor</h4><p class="vcap" id="permNote"></p><ul class="plist" id="plist"><li data-p="analytics"><span>Analytics</span><em class="pm">Allowed</em></li><li data-p="ads"><span>Targeted advertising</span><em class="pm">Allowed</em></li><li data-p="pers"><span>Personalization</span><em class="pm">Allowed</em></li><li data-p="email"><span>Email marketing</span><em class="pm">Allowed</em></li><li data-p="ai"><span>AI model training</span><em class="pm">Allowed</em></li></ul><p class="plog" id="plog">No choice recorded yet.</p></div></div></div>
+          <div class="dview" id="dp1" role="tabpanel" aria-labelledby="dt1" hidden><div class="vhead"><h3>Permission Vault</h3><span class="vact"><span class="ghost">Identity Sync on</span></span></div><p class="vcap">The server side source of truth for one person: every identifier, every permit and every right, updated live from the experience you just used.</p>
+<div class="vault"><div class="vid"><b>jane.d@example.com</b><small>5 identities linked by Identity Sync</small><ul><li><span>Email (hashed)</span><code>a1f3...9c2e</code></li><li><span>Smart Tag ID</span><code>ktch_7Hq2</code></li><li><span>Mobile ad ID</span><code>4D2A...B71F</code></li><li><span>Salesforce contact</span><code>003Ux00000Jd</code></li><li><span>Shopify customer</span><code>8841203</code></li></ul></div>
+<div class="vperm"><table class="vt"><thead><tr><th>Purpose</th><th>Permit</th><th>Source</th></tr></thead><tbody id="vbody"><tr data-p="analytics"><td>Analytics</td><td><em class="pm">Allowed</em></td><td class="vsrc">Default, no choice yet</td></tr><tr data-p="ads"><td>Targeted advertising</td><td><em class="pm">Allowed</em></td><td class="vsrc">Default, no choice yet</td></tr><tr data-p="pers"><td>Personalization</td><td><em class="pm">Allowed</em></td><td class="vsrc">Default, no choice yet</td></tr><tr data-p="email"><td>Email marketing</td><td><em class="pm">Allowed</em></td><td class="vsrc">Default, no choice yet</td></tr><tr data-p="ai"><td>AI model training</td><td><em class="pm">Allowed</em></td><td class="vsrc">Default, no choice yet</td></tr></tbody></table><p class="vfoot" id="vRights">Rights: no requests on file.</p></div></div></div>
+          <div class="dview" id="dp2" role="tabpanel" aria-labelledby="dt2" hidden><div class="vhead"><h3>Transponder</h3><span class="vact"><button type="button" class="prim run" id="osRun">Send opt out</button></span></div><p class="vcap" id="osCap">Opt-Out Sync carries one Do Not Sell or Share choice from the Permission Vault into tags, APIs, data systems and partners.</p><ol class="osys" id="osys"><li><span class="sn"><b>Meta Pixel</b><small>Tags</small></span><span class="ss">Waiting</span><em>Blocked on page</em></li><li><span class="sn"><b>Google Ads</b><small>Tags</small></span><span class="ss">Waiting</span><em>Consent Mode updated</em></li><li><span class="sn"><b>Salesforce</b><small>APIs</small></span><span class="ss">Waiting</span><em>Do Not Sell flag set</em></li><li><span class="sn"><b>Braze</b><small>APIs</small></span><span class="ss">Waiting</span><em>Removed from ad audiences</em></li><li><span class="sn"><b>Segment</b><small>Data systems</small></span><span class="ss">Waiting</span><em>Consent trait updated</em></li><li><span class="sn"><b>Snowflake</b><small>Data systems</small></span><span class="ss">Waiting</span><em>Permit row written</em></li><li><span class="sn"><b>LiveRamp</b><small>Partners</small></span><span class="ss">Waiting</span><em>Suppression sent</em></li></ol><div class="audit" id="audit" hidden><b>Audit log</b><span>7 destinations updated for jane.d@example.com across 5 linked identities. Proof stored for the regulator.</span></div></div>
+          <div class="dview" id="dp3" role="tabpanel" aria-labelledby="dt3" hidden><div class="vhead"><h3>Privacy Requests</h3><span class="vact"><button type="button" class="prim run" id="rqRun">Run DSR-2041</button></span></div><p class="vcap">Every request verified, routed to each connected system and confirmed, with the deadline tracked.</p><table class="vt"><thead><tr><th>Request</th><th>Type</th><th>Jurisdiction</th><th>Deadline</th><th>Status</th></tr></thead><tbody><tr class="hot"><td><code>DSR-2041</code></td><td>Delete</td><td>California</td><td>12 days left</td><td><em class="st o" id="rq0">Open</em></td></tr><tr><td><code>DSR-2040</code></td><td>Access</td><td>Virginia</td><td>30 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2039</code></td><td>Delete</td><td>EU</td><td>21 days left</td><td><em class="st o">Open</em></td></tr><tr><td><code>DSR-2038</code></td><td>Correct</td><td>Colorado</td><td>Closed</td><td><em class="st g">Done</em></td></tr><tr><td><code>DSR-2037</code></td><td>Opt out</td><td>Texas</td><td>Closed</td><td><em class="st g">Done</em></td></tr></tbody></table><ol class="oxs" id="rqSteps"><li>Verify identity</li><li>Find data in 12 systems</li><li>Delete in each system</li><li>Notify vendors</li><li>Confirm to the consumer</li></ol><div class="oxr" id="rqOut" hidden><div><small>Found</small><p>Records in Salesforce, Braze, Segment, Snowflake and 8 more.</p></div><div><small>Deleted</small><p>12 of 12 systems confirmed, vendors notified.</p></div><div><small>Closed</small><p>Confirmation sent 12 days before the California deadline.</p></div></div></div>
+          <div class="dview" id="dp4" role="tabpanel" aria-labelledby="dt4" hidden><div class="vhead"><h3>Data Mapping</h3><span class="vact"><span class="ghost">AI scanning on</span></span></div><p class="vcap">Scanned systems and the data they hold. Pick a category to see where it lives.</p><div class="dcs" role="group" aria-label="Data category"><button type="button" class="dc on" data-c="contact" aria-pressed="true">Contact info</button><button type="button" class="dc" data-c="purchase" aria-pressed="false">Purchase history</button><button type="button" class="dc" data-c="location" aria-pressed="false">Precise location</button><button type="button" class="dc" data-c="health" aria-pressed="false">Health interests</button><button type="button" class="dc" data-c="device" aria-pressed="false">Device IDs</button></div><div class="dmap"><div class="dsys hit" data-cs="contact purchase"><b>Salesforce</b><small>CRM</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact device"><b>Braze</b><small>Messaging</small><span>2 categories</span></div><div class="dsys hit" data-cs="contact purchase device location"><b>Segment</b><small>CDP</small><span>4 categories</span></div><div class="dsys hit" data-cs="contact purchase location health"><b>Snowflake</b><small>Warehouse</small><span>4 categories</span></div><div class="dsys" data-cs="device location"><b>Mobile app</b><small>First party</small><span>2 categories</span></div><div class="dsys" data-cs="purchase health"><b>Recommendations model</b><small>AI</small><span>2 categories</span></div></div><p class="vfoot" id="dmNote">Contact info lives in 4 systems.</p></div>
+          <div class="dview" id="dp5" role="tabpanel" aria-labelledby="dt5" hidden><div class="vhead"><h3>Agent Network</h3><span class="vact"><button type="button" class="prim run" id="agRun">Draft AI impact assessment</button></span></div><p class="vcap">Assessment for the <b>Recommendations model</b>. Agents read the data map, vendor DPAs and the Permission Vault, then draft it for legal to review.</p><div class="agents"><div class="ag" id="ag0"><b>Data mapping agent</b><small>Reads the data map</small></div><div class="ag" id="ag1"><b>Contract agent</b><small>Reads vendor DPAs</small></div><div class="ag" id="ag2"><b>Risk agent</b><small>Checks consent coverage</small></div><div class="ag" id="ag3"><b>Assessment agent</b><small>Writes the draft</small></div></div><dl class="aia" id="aia"><div><dt>Data used</dt><dd data-v="Purchase history and health interests from Snowflake">Waiting</dd></div><div><dt>Consent coverage</dt><dd data-v="81% of profiles permit personalization, 0 health records without consent">Waiting</dd></div><div><dt>Vendor terms</dt><dd data-v="2 vendors, DPAs allow model training for 1">Waiting</dd></div><div><dt>Recommendation</dt><dd data-v="Exclude health interests and the second vendor, then approve">Waiting</dd></div></dl></div>
         </div>
       </div>
     </section>
 
     <div class="ckpis" role="list">
       <div class="ckpi" role="listitem"><small>Ketch</small><b>3,500+</b><p>brands run Ketch at production scale<sup><a href="#s2">2</a></sup></p></div>
-      <div class="ckpi" role="listitem"><small>OneTrust</small><b>30%</b><p>of Ketch customers switched from OneTrust<sup><a href="#s3">3</a></sup></p></div>
-      <div class="ckpi" role="listitem"><small>6sense</small><b>500+</b><p>hours a year saved by automating privacy requests<sup><a href="#s4">4</a></sup></p></div>
-      <div class="ckpi" role="listitem"><small>Spreedly</small><b>3 weeks</b><p>from OneTrust to live on Ketch<sup><a href="#s4">4</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>OneTrust</small><b>30%</b><p>of Ketch customers switched from OneTrust<sup><a href="#s5">5</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>6sense</small><b>500+</b><p>hours a year saved by automating privacy requests<sup><a href="#s6">6</a></sup></p></div>
+      <div class="ckpi" role="listitem"><small>Spreedly</small><b>3 weeks</b><p>from OneTrust to live on Ketch<sup><a href="#s6">6</a></sup></p></div>
     </div>
 
     <!-- Know -->
     <section id="know">
       <div class="sh">
+        <p class="eyebrow">Resources</p>
         <h2>What I know about Ketch</h2>
         <p>The product, the buyer and the timing.</p>
       </div>
       <div class="three">
         <div>
           <h3>The product</h3>
-          <p>Ketch captures consent and privacy choices, ties them to a person's identity, and pushes each decision into the systems that collect or use data.<sup><a href="#s5">5</a></sup></p>
-          <p>Consent management, privacy requests, data mapping, assessments and marketing preferences run on that same permission layer, now with the Agent Network on top.<sup><a href="#s6">6</a></sup></p>
+          <p>Ketch captures consent and privacy choices, ties them to a person's identity, and pushes each decision into the systems that collect or use data.<sup><a href="#s7">7</a></sup></p>
+          <p>The Smart Tag serves Privacy Experiences with 400+ no code options, the Permission Vault holds every permit, and the Transponder carries it across 1,000+ integrations, now with the Agent Network on top.<sup><a href="#s8">8</a>,<a href="#s4">4</a></sup></p>
         </div>
         <div>
           <h3>The buyer</h3>
@@ -1449,23 +1527,24 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
         </div>
         <div>
           <h3>The moment</h3>
-          <p>California fined Tractor Supply $1.35M and Healthline $1.55M in 2025, both over opt outs that never reached the systems using the data.<sup><a href="#s7">7</a></sup></p>
-          <p>Every brand also wants its data ready for AI, and that starts with knowing what each person allowed.<sup><a href="#s6">6</a></sup></p>
+          <p>California fined Tractor Supply $1.35M and Healthline $1.55M in 2025, both over opt outs that never reached the systems using the data.<sup><a href="#s9">9</a></sup></p>
+          <p>Every brand also wants its data ready for AI, and that starts with knowing what each person allowed.<sup><a href="#s10">10</a></sup></p>
         </div>
       </div>
       <h3 class="ind-h">What Ketch is shipping, and how I would use it</h3>
       <div class="rsch">
-        <div class="r"><div class="chips"><span>May 2026</span></div><b>Agent Network</b><p>Agents that map data, ingest vendor contracts and DPAs, and fill in DPIAs and AI impact assessments.<sup><a href="#s8">8</a></sup></p><small>Opens with the CPO</small></div>
-        <div class="r"><div class="chips"><span>January 2026</span></div><b>Opt-Out Sync</b><p>One Do Not Sell or Share choice, enforced across devices, browsers, CRM, CDP, ad and partner systems.<sup><a href="#s5">5</a></sup></p><small>Opens with legal and marketing ops</small></div>
-        <div class="r"><div class="chips"><span>Migration</span></div><b>Ketch Switch</b><p>Moves live OneTrust consent, preferences and settings into Ketch, so EU visitors never consent twice.<sup><a href="#s3">3</a></sup></p><small>Opens at a OneTrust renewal</small></div>
-        <div class="r"><div class="chips"><span>Summer 2026</span></div><b>22 G2 badges</b><p>Across consent, DSAR and privacy management, with top marks for enterprise usability.<sup><a href="#s9">9</a></sup></p><small>Opens with the evaluation team</small></div>
+        <div class="r"><div class="chips"><span>May 2026</span></div><b>Agent Network</b><p>Agents that map data, ingest vendor contracts and DPAs, and fill in DPIAs and AI impact assessments.<sup><a href="#s11">11</a></sup></p><small>Opens with the CPO</small></div>
+        <div class="r"><div class="chips"><span>January 2026</span></div><b>Opt-Out Sync</b><p>One Do Not Sell or Share choice, enforced across devices, browsers, CRM, CDP, ad and partner systems.<sup><a href="#s7">7</a></sup></p><small>Opens with legal and marketing ops</small></div>
+        <div class="r"><div class="chips"><span>Migration</span></div><b>Ketch Switch</b><p>Moves live OneTrust consent, preferences and settings into Ketch, so EU visitors never consent twice.<sup><a href="#s5">5</a></sup></p><small>Opens at a OneTrust renewal</small></div>
+        <div class="r"><div class="chips"><span>Summer 2026</span></div><b>22 G2 badges</b><p>Across consent, DSAR and privacy management, with top marks for enterprise usability.<sup><a href="#s3">3</a></sup></p><small>Opens with the evaluation team</small></div>
       </div>
-      <p class="evt"><b>Timely</b><span>Each new California settlement gives every follow up a fresh, specific reason to test an opt out end to end.<sup><a href="#s7">7</a></sup></span></p>
+      <p class="evt"><b>Timely</b><span>Each new California settlement gives every follow up a fresh, specific reason to test an opt out end to end.<sup><a href="#s9">9</a></sup></span></p>
     </section>
 
     <!-- POV -->
     <section id="pov" class="panel ink grain">
       <div class="sh">
+        <p class="eyebrow">Talk track</p>
         <h2>The conversation I would have with a Chief Privacy Officer</h2>
         <p>Challenger meetings follow a set order. Step through the talk track I would bring to a CPO and their CMO, with the evidence behind each step.</p>
       </div>
@@ -1508,10 +1587,10 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
       </div>
       <div class="step-p" id="sp0" role="tabpanel" aria-labelledby="st0"><div><h3>Warmer</h3><blockquote>The brands I would target run dozens of marketing tags, a CDP, a CRM and an email platform, all holding consumer data. Their consent banner governs the browser, and the rest of the stack keeps running.</blockquote></div><div><div class="k">What we establish</div><div class="facts2"><div><b>Banner deep</b>The choice stops at the browser</div><div><b>Manual requests</b>Each deletion worked system by system</div></div></div></div>
       <div class="step-p" id="sp1" role="tabpanel" aria-labelledby="st1" hidden><div><h3>Reframe</h3><blockquote>Privacy gets treated as a legal checkbox. Regulators now test whether a choice actually reaches every system that uses the data, and marketing and AI teams need to know what each person allowed.</blockquote></div><div><div class="k">The assumption we challenge</div><div class="facts2"><div><b>From</b>A banner that satisfies counsel</div><div><b>To</b>One permission enforced in every system</div></div></div></div>
-      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what a broken opt out costs. We will swap these numbers for their own exposure in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>$1.35M</b>Tractor Supply, including opt out signals it did not honor<sup><a href="#s7">7</a></sup></div><div><b>$1.55M</b>Healthline, for tracking that continued after opt outs<sup><a href="#s7">7</a></sup></div></div></div></div>
+      <div class="step-p" id="sp2" role="tabpanel" aria-labelledby="st2" hidden><div><h3>Rational drowning</h3><blockquote>Here is what a broken opt out costs. We will swap these numbers for their own exposure in discovery.</blockquote></div><div><div class="k">The data</div><div class="facts2"><div><b>$1.35M</b>Tractor Supply, including opt out signals it did not honor<sup><a href="#s9">9</a></sup></div><div><b>$1.55M</b>Healthline, for tracking that continued after opt outs<sup><a href="#s9">9</a></sup></div></div></div></div>
       <div class="step-p" id="sp3" role="tabpanel" aria-labelledby="st3" hidden><div><h3>Emotional impact</h3><blockquote>The CPO signs off on the privacy program every year. Then a regulator turns on Global Privacy Control, visits the site, and the ad pixel still fires.</blockquote></div><div><div class="k">Why it matters personally</div><div class="facts2"><div><b>Accountability</b>The CPO and General Counsel own the finding</div><div><b>Brand trust</b>The settlement becomes the headline</div></div></div></div>
       <div class="step-p" id="sp4" role="tabpanel" aria-labelledby="st4" hidden><div><h3>A new way</h3><blockquote>Leading brands capture each choice once, tie it to the person, enforce it in every downstream system with an audit log, and use the same permissions to decide what data marketing and AI can touch.</blockquote></div><div><div class="k">What better looks like</div><div class="facts2"><div><b>One permission</b>Captured once, tied to identity</div><div><b>Enforced everywhere</b>Tags, CRM, CDP and partners</div><div><b>AI ready</b>Data the business can use with confidence</div></div></div></div>
-      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Ketch, the AI privacy company, trusted by more than 3,500 brands.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>3 weeks</b>From OneTrust to live at Spreedly<sup><a href="#s4">4</a></sup></div><div><b>500+ hours</b>Saved each year at 6sense<sup><a href="#s4">4</a></sup></div></div></div></div>
+      <div class="step-p" id="sp5" role="tabpanel" aria-labelledby="st5" hidden><div><h3>Our solution</h3><blockquote>Ketch, the AI privacy company, trusted by more than 3,500 brands.</blockquote></div><div><div class="k">The proof</div><div class="facts2"><div><b>3 weeks</b>From OneTrust to live at Spreedly<sup><a href="#s6">6</a></sup></div><div><b>500+ hours</b>Saved each year at 6sense<sup><a href="#s6">6</a></sup></div></div></div></div>
       <div class="step-nav"><button type="button" id="stPrev">Back</button><span id="stCount">Step 1 of 6</span><button type="button" id="stNext">Next step</button></div>
       <div class="ttt">
         <div><h4>Teach</h4><p>First meetings open with a live test of their own site: what happens to the ad tags and the CRM after an opt out. The demo waits until they see the gap.</p></div>
@@ -1523,6 +1602,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     <!-- Segments -->
     <section id="territory">
       <div class="sh">
+        <p class="eyebrow">Solutions</p>
         <h2>Who I would sell to</h2>
         <p>Enterprises with consumer data in many systems, an active marketing stack and an AI roadmap. Select a segment to see who buys, why, and the play I would lead with.</p>
       </div>
@@ -1572,6 +1652,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     <!-- Plays -->
     <section id="plays" class="panel sky grain">
       <div class="sh">
+        <p class="eyebrow">Plays</p>
         <h2>Four plays for the first quarter</h2>
         <p>Each play starts from data I pull on the account, leads with one specific question and runs as a three email sequence.</p>
       </div>
@@ -1597,7 +1678,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, I ran <span class="tok">{{company}}</span>'s site with Global Privacy Control on, and <span class="tok">{{tag_count}}</span> ad tags still fired after the opt out signal.</p><p>When a customer opts out, how does that choice reach <span class="tok">{{crm}}</span> and <span class="tok">{{esp}}</span>?</p><p>Tractor Supply paid $1.35M last year, partly for not honoring that signal. Ketch Opt-Out Sync captures the choice once and enforces it across CRM, CDP, ad and partner systems, with an audit log.</p><p>Open to a quick conversation on whether your team could close that gap?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize a stranger testing your site sounds like seller cherry picking.</p><p>If we walked through the test together and showed which systems ignore the choice, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like opt outs are already enforced everywhere?</p><p>Basically one Do Not Sell choice would reach every tag, the CRM, the CDP and your partners, with proof for the regulator.</p><p>Happy to share the GPC test results. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Opt-Out Sync<sup><a href="#s5">5</a></sup>, 2025 settlements<sup><a href="#s7">7</a></sup></span><span><b>Value</b> an opt out that holds up</span></div>
+          <div class="mail-f"><span><b>Proof</b> Opt-Out Sync<sup><a href="#s7">7</a></sup>, 2025 settlements<sup><a href="#s9">9</a></sup></span><span><b>Value</b> an opt out that holds up</span></div>
         </article>
       </div>
 
@@ -1616,7 +1697,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, noticed <span class="tok">{{domains}}</span> of <span class="tok">{{company}}</span>'s sites run OneTrust's banner.</p><p>How much of the team's week goes into keeping it configured across every brand and region?</p><p><span class="tok">{{customer_name}}</span> moved from OneTrust to live on Ketch in three weeks, and 30% of Ketch customers made the same switch.</p><p>Would you be opposed to chatting through what a switch could look like before your renewal?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize three weeks sounds like seller cherry picking.</p><p>If we mapped your current OneTrust setup into Ketch with Ketch Switch, consent history included, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like OneTrust is working fine for now?</p><p>Basically your consent records move over intact, and EU visitors never see a second banner.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Spreedly<sup><a href="#s4">4</a></sup>, Ketch Switch<sup><a href="#s3">3</a></sup></span><span><b>Value</b> consent history kept intact</span></div>
+          <div class="mail-f"><span><b>Proof</b> Spreedly<sup><a href="#s6">6</a></sup>, Ketch Switch<sup><a href="#s5">5</a></sup></span><span><b>Value</b> consent history kept intact</span></div>
         </article>
       </div>
 
@@ -1635,7 +1716,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, <span class="tok">{{company}}</span>'s privacy policy reports <span class="tok">{{request_count}}</span> consumer requests last year, with intake through <span class="tok">{{intake}}</span>.</p><p>How many people touch each one before it closes?</p><p><span class="tok">{{customer_name}}</span> saves more than 500 hours a year with Ketch automating those requests across its systems.</p><p>Open to a quick conversation on whether your team could do the same?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize 500 hours sounds like seller cherry picking.</p><p>If we mapped one deletion request across your systems and timed it, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like the request queue is under control?</p><p>Basically every request would be verified, routed to each system and confirmed, without a ticket per system.</p><p>Helped <span class="tok">{{customer_name}}</span> as I mentioned. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> 6sense<sup><a href="#s4">4</a></sup>, request metrics rule<sup><a href="#s10">10</a></sup></span><span><b>Value</b> hours back for privacy ops</span></div>
+          <div class="mail-f"><span><b>Proof</b> 6sense<sup><a href="#s6">6</a></sup>, request metrics rule<sup><a href="#s12">12</a></sup></span><span><b>Value</b> hours back for privacy ops</span></div>
         </article>
       </div>
 
@@ -1654,14 +1735,38 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
           <div class="touch"><h4><span>Email 1</span><span>Day 1</span></h4><p><span class="tok">{{first_name}}</span>, saw <span class="tok">{{exec}}</span> talk about <span class="tok">{{company}}</span>'s <span class="tok">{{ai_launch}}</span>.</p><p>Can the team show which customer data feeds it, and that each person's consent covers that use?</p><p>The Ketch Agent Network maps data assets, reads vendor contracts and DPAs, and fills in DPIAs and AI impact assessments for your team to review.</p><p>Would you be opposed to chatting through how that could speed up your next AI launch, in Q4?</p></div>
           <div class="touch"><h4><span>Email 2, bump</span><span>Day 3</span></h4><p><span class="tok">{{first_name}}</span>, what did you think here?</p><p>Realize agents writing assessments sounds like seller cherry picking.</p><p>If we drafted the AI impact assessment for <span class="tok">{{ai_launch}}</span> with the Agent Network, think it's worth a look?</p></div>
           <div class="touch"><h4><span>Email 3, breakup</span><span>Day 7</span></h4><p><span class="tok">{{first_name}}</span>, last note from me. Seems like AI governance is already covered?</p><p>Basically each AI use would trace back to data people agreed to share, with the assessment ready for legal.</p><p>Happy to share how the Agent Network drafts an assessment. No worries if not.</p></div>
-          <div class="mail-f"><span><b>Proof</b> Agent Network<sup><a href="#s8">8</a></sup></span><span><b>Value</b> AI launches legal can approve</span></div>
+          <div class="mail-f"><span><b>Proof</b> Agent Network<sup><a href="#s11">11</a></sup></span><span><b>Value</b> AI launches legal can approve</span></div>
         </article>
+      </div>
+    </section>
+
+    <!-- Business case -->
+    <section id="case">
+      <div class="sh">
+        <p class="eyebrow">Business case</p>
+        <h2>Price the gap in two minutes</h2>
+        <p>The calculator I would fill in with a CPO in discovery. Move the sliders to their numbers. Every input is theirs, so every output is theirs too.</p>
+      </div>
+      <div class="bcase">
+        <div class="bin">
+          <label><span>Privacy requests per year <b id="bcReqV"></b></span><input type="range" id="bcReq" min="500" max="100000" step="500" value="12000"></label>
+          <label><span>Minutes of work per request today <b id="bcMinV"></b></span><input type="range" id="bcMin" min="5" max="180" step="5" value="45"></label>
+          <label><span>Share Ketch automates <b id="bcAutoV"></b></span><input type="range" id="bcAuto" min="10" max="100" step="5" value="80"></label>
+          <label><span>Consumers affected by one broken opt out <b id="bcConsV"></b></span><input type="range" id="bcCons" min="100" max="50000" step="100" value="2000"></label>
+        </div>
+        <div class="bout">
+          <div><small>Hours spent on requests today</small><b id="bcHrs"></b></div>
+          <div class="hl"><small>Hours back each year</small><b id="bcBack"></b><span><em id="bcFte"></em> people at 1,800 working hours a year</span></div>
+          <div><small>Statutory ceiling, one broken opt out</small><b id="bcExp"></b><span>at up to $2,500 per violation, or <em id="bcExp2"></em> at $7,500 if intentional<sup><a href="#s13">13</a></sup></span></div>
+          <p class="bnote">6sense saves 500+ hours a year on requests with Ketch.<sup><a href="#s6">6</a></sup> Statutory amounts are before inflation adjustments, and actual penalties depend on the regulator and the facts.</p>
+        </div>
       </div>
     </section>
 
     <!-- Competition -->
     <section id="competition">
       <div class="sh">
+        <p class="eyebrow">Competition</p>
         <h2>How deals are won against each alternative</h2>
         <p>Where each option is strong, where Ketch wins, and the question I would ask in discovery. Select an alternative to open its battlecard.</p>
       </div>
@@ -1676,7 +1781,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
         <div>
           <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
             <div class="bc-top"><h3>OneTrust</h3><span class="threat mid">Most common</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Broad GRC suite, deep regulatory content and an installed base in most large enterprises.</p></div><div><h4>Where Ketch wins</h4><p>Faster time to value, live migration with Ketch Switch, and enforcement of each choice across the data stack.<sup><a href="#s3">3</a></sup></p></div></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Broad GRC suite, deep regulatory content and an installed base in most large enterprises.</p></div><div><h4>Where Ketch wins</h4><p>Faster time to value, live migration with Ketch Switch, and enforcement of each choice across the data stack.<sup><a href="#s5">5</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>How long did your last OneTrust change take, from request to live?</p></div>
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
@@ -1706,13 +1811,14 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     <!-- Deal -->
     <section id="deal">
       <div class="sh">
+        <p class="eyebrow">Deal</p>
         <h2>Where these deals stall</h2>
         <p>Six stalls I plan for from the first meeting, and the MEDDPICC checklist every evaluation and deal runs against.</p>
       </div>
       <div class="stalls">
         <div><h4>"We're locked into OneTrust"</h4><p>I map the renewal date and show Ketch Switch moving their live consent history with no second banner.</p></div>
         <div><h4>Legal owns it, marketing pays</h4><p>One business case: fine exposure for counsel, usable audiences and consent rates for marketing.</p></div>
-        <div><h4>Engineering has no bandwidth</h4><p>Integrations and a scoped first phase, with go lives like Francesca's in two weeks as the benchmark.<sup><a href="#s4">4</a></sup></p></div>
+        <div><h4>Engineering has no bandwidth</h4><p>Integrations and a scoped first phase, with go lives like Francesca's in two weeks as the benchmark.<sup><a href="#s6">6</a></sup></p></div>
         <div><h4>"Our banner is fine"</h4><p>I run their site with Global Privacy Control on and show which tags and systems ignore the choice.</p></div>
         <div><h4>They want a full GRC suite</h4><p>I scope to consent, requests and data mapping first, and show where the Agent Network covers assessments.</p></div>
         <div><h4>Security and procurement review</h4><p>I start the security package in discovery and agree the paper process with procurement early.</p></div>
@@ -1776,6 +1882,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     <!-- About -->
     <section id="about">
       <div class="sh">
+        <p class="eyebrow">Company</p>
         <h2>Why I'm a fit for this role</h2>
         <p>I sold device management and security software to technical IT buyers at Jamf, closed Snowflake and Seismic at a Series A startup, and sell AI to Fortune 500 companies at Netradyne today at roughly $300K ACV. Throughout my career, most of my pipeline has been self sourced through cold outbound across a range of ICPs.</p>
       </div>
@@ -1808,6 +1915,7 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     <!-- 90 days -->
     <section id="plan" class="panel honey grain">
       <div class="sh">
+        <p class="eyebrow">90 days</p>
         <h2>The first 90 days</h2>
         <p>Built on your team's playbook, my own enterprise experience, Challenger and MEDDPICC.</p>
       </div>
@@ -1871,14 +1979,17 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
       <ol class="sources">
         <li id="s1"><a href="https://jobs.lever.co/Ketch/5351e65c-0e20-464f-86a5-65a9e641d7ed" target="_blank" rel="noopener">Ketch, Enterprise Account Executive job post</a></li>
         <li id="s2"><a href="https://www.ketch.com/customers" target="_blank" rel="noopener">Ketch, Customers</a></li>
-        <li id="s3"><a href="https://www.businesswire.com/news/home/20250211838381/en/Ketch-Introduces-Industry-First-Automated-Migration-from-OneTrust" target="_blank" rel="noopener">Business Wire, Ketch introduces industry first automated migration from OneTrust</a></li>
-        <li id="s4"><a href="https://www.casestudies.com/company/ketch" target="_blank" rel="noopener">Ketch customer stories, including 6sense, Spreedly and Francesca's</a></li>
-        <li id="s5"><a href="https://www.businesswire.com/news/home/20260114510005/en" target="_blank" rel="noopener">Business Wire, Ketch launches Opt-Out Sync, January 2026</a></li>
-        <li id="s6"><a href="https://ketch.com/platform/agent-network" target="_blank" rel="noopener">Ketch, The Ketch Agent Network</a></li>
-        <li id="s7"><a href="https://www.taftlaw.com/news-events/law-bulletins/recent-privacy-enforcement-summer-fall-2025/" target="_blank" rel="noopener">Taft, Recent privacy enforcement, Summer and Fall 2025</a></li>
-        <li id="s8"><a href="https://cioinfluence.com/security/ketch-announces-the-ketch-agent-network-defining-agentic-ai-for-enterprise-privacy-programs/" target="_blank" rel="noopener">CIO Influence, Ketch announces the Ketch Agent Network</a></li>
-        <li id="s9"><a href="https://www.ketch.com/blog/posts/g2-summer-2026-ketch-22-badges" target="_blank" rel="noopener">Ketch, 22 G2 Summer 2026 badges across 5 categories</a></li>
-        <li id="s10"><a href="https://www.law.cornell.edu/regulations/california/11-CCR-7102" target="_blank" rel="noopener">California Code of Regulations, 11 CCR 7102, request metrics for large businesses</a></li>
+        <li id="s3"><a href="https://www.ketch.com/blog/posts/g2-summer-2026-ketch-22-badges" target="_blank" rel="noopener">Ketch, 22 G2 Summer 2026 badges across 5 categories</a></li>
+        <li id="s4"><a href="https://www.ketch.com/platform" target="_blank" rel="noopener">Ketch, Platform: Permission Vault, Transponder and integrations</a></li>
+        <li id="s5"><a href="https://www.businesswire.com/news/home/20250211838381/en/Ketch-Introduces-Industry-First-Automated-Migration-from-OneTrust" target="_blank" rel="noopener">Business Wire, Ketch introduces industry first automated migration from OneTrust</a></li>
+        <li id="s6"><a href="https://www.casestudies.com/company/ketch" target="_blank" rel="noopener">Ketch customer stories, including 6sense, Spreedly and Francesca's</a></li>
+        <li id="s7"><a href="https://www.businesswire.com/news/home/20260114510005/en" target="_blank" rel="noopener">Business Wire, Ketch launches Opt-Out Sync, January 2026</a></li>
+        <li id="s8"><a href="https://www.businesswire.com/news/home/20240625722265/en/Ketch-Releases-Privacy-Experiences" target="_blank" rel="noopener">Business Wire, Ketch releases Privacy Experiences</a></li>
+        <li id="s9"><a href="https://www.taftlaw.com/news-events/law-bulletins/recent-privacy-enforcement-summer-fall-2025/" target="_blank" rel="noopener">Taft, Recent privacy enforcement, Summer and Fall 2025</a></li>
+        <li id="s10"><a href="https://ketch.com/platform/agent-network" target="_blank" rel="noopener">Ketch, The Ketch Agent Network</a></li>
+        <li id="s11"><a href="https://cioinfluence.com/security/ketch-announces-the-ketch-agent-network-defining-agentic-ai-for-enterprise-privacy-programs/" target="_blank" rel="noopener">CIO Influence, Ketch announces the Ketch Agent Network</a></li>
+        <li id="s12"><a href="https://www.law.cornell.edu/regulations/california/11-CCR-7102" target="_blank" rel="noopener">California Code of Regulations, 11 CCR 7102, request metrics for large businesses</a></li>
+        <li id="s13"><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1798.155" target="_blank" rel="noopener">California Civil Code 1798.155, administrative fines</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the Ketch Enterprise Account Executive role. Not affiliated with or endorsed by Ketch. Figures come from public and third party sources as of October 2026. The product console, example accounts and emails are illustrative.</p>
     </footer>
@@ -1941,64 +2052,97 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
   document.getElementById('stNext').addEventListener('click',function(){step((cur+1)%sts.length)});
   document.getElementById('stPrev').addEventListener('click',function(){step((cur-1+sts.length)%sts.length)});
 
-  // Ketch app tabs
-  var dts=[].slice.call(document.querySelectorAll('.dtab'));
-  group(dts,function(i){select(dts,i)});
   var $=function(id){return document.getElementById(id)};
   var fast=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function seq(items,each,done){var i=0;(function next(){if(i<items.length){each(items[i],i);i++;setTimeout(next,fast?0:380)}else done()})()}
+  function stamp(){return new Date().toTimeString().slice(0,8)}
 
-  // Consent experience
-  var K={jur:'ca',gpc:false,choice:null};
-  var jbs=[].slice.call(document.querySelectorAll('.jb')),gpc=$('gpc');
-  var BAN={
-    ca:{t:'Your privacy choices',p:'We use cookies and share data with partners for advertising. You can opt out of the sale or sharing of your personal information.',a:[['optout','Do Not Sell or Share My Personal Information',1],['close','Close',0]],note:'California law: opt out. Purposes run until the visitor says no.'},
-    eu:{t:'We value your privacy',p:'We and our partners use cookies for analytics, personalization and advertising, only with your consent.',a:[['accept','Accept all',1],['reject','Reject all',0]],note:'EU law: opt in. Nothing runs until the visitor says yes.'},
-    co:{t:'Your privacy choices',p:'You can opt out of targeted advertising and the sale of your personal data.',a:[['optout','Opt out of targeted advertising',1],['close','Close',0]],note:'Colorado law: opt out, and universal opt out signals must be honored.'}
+  // Flow bar: Smart Tag, Permission Vault, Transponder, stack
+  var kfs=[].slice.call(document.querySelectorAll('.kf'));
+  var TABF=[[0],[1],[2,3],[1],[3],[1]];
+  function lightFlow(list){kfs.forEach(function(f,i){f.classList.toggle('on',list.indexOf(i)>-1)})}
+  function pulse(from,to){var n=[];for(var i=from;i<=to;i++)n.push(kfs[i]);kfs.forEach(function(f){f.classList.remove('hit')});seq(n,function(f){f.classList.add('hit')},function(){setTimeout(function(){kfs.forEach(function(f){f.classList.remove('hit')})},fast?0:900)})}
+
+  // App tabs
+  var dts=[].slice.call(document.querySelectorAll('.dtab'));
+  group(dts,function(i){select(dts,i);lightFlow(TABF[i])});
+  lightFlow(TABF[0]);
+  function openTab(i){select(dts,i);lightFlow(TABF[i])}
+
+  // Privacy Experiences
+  var P=['analytics','ads','pers','email','ai'],PN={analytics:'Analytics',ads:'Targeted advertising',pers:'Personalization',email:'Email marketing',ai:'AI model training'};
+  var K={jur:'ca',gpc:false,choice:null,x:'banner',custom:null,src:{}};
+  var J={
+    ca:{tpl:'CCPA/CPRA template',where:'California',optin:false,t:'Your privacy choices',p:'We use cookies and share data with partners for advertising. You can opt out of the sale or sharing of your personal information.',out:'Do Not Sell or Share My Personal Information',note:'California law: opt out. Purposes run until the visitor says no.'},
+    eu:{tpl:'GDPR template',where:'EU',optin:true,t:'We value your privacy',p:'We and our partners use cookies for analytics, personalization and advertising, only with your consent.',note:'EU law: opt in. Nothing runs until the visitor says yes.'},
+    co:{tpl:'CPA template',where:'Colorado',optin:false,t:'Your privacy choices',p:'You can opt out of targeted advertising and the sale of your personal data.',out:'Opt out of targeted advertising',note:'Colorado law: opt out, and universal opt out signals must be honored.'},
+    qc:{tpl:'Law 25 template',where:'Quebec',optin:true,t:'Vos choix de confidentialité',p:'We ask before using cookies for analytics, personalization or advertising.',note:'Quebec Law 25: express consent before tracking.'}
   };
   function permits(){
-    var p={analytics:1,ads:1,pers:1,email:1,ai:1};
-    if(K.jur==='eu'){var y=K.choice==='accept';for(var k in p)p[k]=y?1:0;}
-    else if(K.gpc||K.choice==='optout'){p.ads=0;p.ai=0;}
+    var j=J[K.jur],p={};
+    P.forEach(function(k){p[k]=j.optin?0:1});
+    if(j.optin&&K.choice==='accept')P.forEach(function(k){p[k]=1});
+    if(!j.optin&&(K.gpc||K.choice==='optout')){p.ads=0;p.ai=0}
+    if(K.custom)P.forEach(function(k){if(k in K.custom)p[k]=K.custom[k]});
+    if(!j.optin&&K.gpc){p.ads=0;p.ai=0}
     return p;
   }
+  function btn(label,cls,fn){var b=document.createElement('button');b.type='button';b.className='kbb'+(cls?' '+cls:'');b.textContent=label;b.addEventListener('click',fn);return b}
   function render(){
-    var b=BAN[K.jur],sig=K.gpc&&K.jur!=='eu';
-    $('kbT').textContent=sig?'Opt out signal honored':b.t;
-    $('kbP').textContent=sig?'Your browser sent Global Privacy Control, so we will not sell or share your personal information or use it for targeted ads.':b.p;
-    var a=$('kbA');a.innerHTML='';
-    (sig?[['close','Got it',1]]:b.a).forEach(function(x){var bt=document.createElement('button');bt.type='button';bt.className='kbb'+(x[2]?' pri':'');bt.textContent=x[1];bt.dataset.c=x[0];bt.addEventListener('click',function(){choose(x[0],x[1])});a.appendChild(bt)});
-    $('kb').classList.toggle('done',K.choice!==null&&K.choice!=='open');
-    $('permNote').textContent=b.note+(K.gpc?(K.jur==='eu'?' GPC adds nothing here, consent is already required.':' GPC is on.'):'');
-    var p=permits();
-    [].slice.call(document.querySelectorAll('#plist li')).forEach(function(li){var on=p[li.dataset.p];var em=li.querySelector('em');em.textContent=on?'Allowed':'Denied';em.className='pm'+(on?'':' no')});
+    var j=J[K.jur],sig=K.gpc&&!j.optin,a=$('kbA'),tg=$('kbTg'),p=permits();
+    $('tplName').textContent=j.tpl;
+    $('kb').className='kbanner x-'+K.x+(K.choice?' done':'');
+    a.innerHTML='';tg.innerHTML='';
+    if(K.x==='banner'){
+      $('kbT').textContent=sig?'Opt out signal honored':j.t;
+      $('kbP').textContent=sig?'Your browser sent Global Privacy Control, so we will not sell or share your personal information or use it for targeted ads.':j.p;
+      if(sig)a.appendChild(btn('Got it','pri',function(){choose('close','Got it')}));
+      else if(j.optin){a.appendChild(btn('Accept all','pri',function(){choose('accept','Accept all')}));a.appendChild(btn('Reject all','',function(){choose('reject','Reject all')}))}
+      else{a.appendChild(btn(j.out,'pri',function(){choose('optout',j.out)}));a.appendChild(btn('Close','',function(){choose('close','Close')}))}
+    }else{
+      $('kbT').textContent=K.x==='modal'?'Manage your choices':'Privacy Preference Center';
+      $('kbP').textContent=K.x==='modal'?'Choose which purposes we may use your data for.':'Your permits, your communication preferences and your privacy rights in one place.';
+      P.forEach(function(k){var l=document.createElement('label');l.className='kt';var c=document.createElement('input');c.type='checkbox';c.checked=!!p[k];c.dataset.p=k;if(sig&&(k==='ads'||k==='ai')){c.disabled=true}l.appendChild(c);l.appendChild(document.createTextNode(' '+PN[k]));tg.appendChild(l)});
+      a.appendChild(btn('Save choices','pri',function(){var c={};[].slice.call(tg.querySelectorAll('input')).forEach(function(i){c[i.dataset.p]=i.checked?1:0});K.custom=c;choose('save','Save choices')}));
+      if(K.x==='pc')a.appendChild(btn('Make a privacy request','',function(){openTab(3);$('dt3').focus()}));
+    }
+    $('permNote').textContent=j.note+(K.gpc?(j.optin?' GPC adds nothing here, consent is already required.':' GPC is on.'):'');
+    [].slice.call(document.querySelectorAll('#plist li')).forEach(function(li){var on=p[li.dataset.p],em=li.querySelector('em');em.textContent=on?'Allowed':'Denied';em.className='pm'+(on?'':' no')});
+    [].slice.call(document.querySelectorAll('#vbody tr')).forEach(function(tr){var k=tr.dataset.p,on=p[k],em=tr.querySelector('em');em.textContent=on?'Allowed':'Denied';em.className='pm'+(on?'':' no');tr.querySelector('.vsrc').textContent=K.src[k]||(j.optin?'Default, opt in required':'Default, no choice yet')});
   }
-  function stamp(){var d=new Date();return d.toTimeString().slice(0,8)}
   function choose(c,label){
-    K.choice=c==='close'&&K.choice?K.choice:c;
-    var where={ca:'California',eu:'EU',co:'Colorado'}[K.jur];
-    $('plog').textContent=c==='close'?'Banner closed at '+stamp()+'. '+(K.gpc&&K.jur!=='eu'?'GPC opt out stays on record.':'No change to permits.'):'"'+label+'" recorded for a '+where+' visitor at '+stamp()+'. Sent to Opt-Out Sync.';
-    render();
+    var j=J[K.jur],before=permits();
+    if(c!=='close'||!K.choice)K.choice=c==='close'?K.choice:c;
+    if(c==='reject')K.custom=null;
+    var after=permits(),src=(K.x==='banner'?'Banner':K.x==='modal'?'Modal':'Preference Center')+', '+j.where+', '+stamp();
+    P.forEach(function(k){if(before[k]!==after[k]||c!=='close')K.src[k]=src});
+    $('plog').textContent=c==='close'?'Banner closed at '+stamp()+'. '+(K.gpc&&!j.optin?'GPC opt out stays on record.':'No change to permits.'):'"'+label+'" stored in the Permission Vault for a '+j.where+' visitor at '+stamp()+'.';
+    render();if(c!=='close')pulse(0,1);
   }
-  jbs.forEach(function(b){b.addEventListener('click',function(){jbs.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});K.jur=b.dataset.j;K.choice=null;$('plog').textContent='No choice recorded yet.';render()})});
-  gpc.addEventListener('click',function(){K.gpc=!K.gpc;gpc.setAttribute('aria-checked',K.gpc);gpc.classList.toggle('on',K.gpc);if(K.gpc&&K.jur!=='eu')$('plog').textContent='Global Privacy Control signal received at '+stamp()+'. Opt out applied without a click.';render()});
+  [].slice.call(document.querySelectorAll('.jb')).forEach(function(b,_,all){b.addEventListener('click',function(){all.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});K.jur=b.dataset.j;K.choice=null;K.custom=null;K.src={};$('plog').textContent='No choice recorded yet.';render()})});
+  [].slice.call(document.querySelectorAll('.xb')).forEach(function(b,_,all){b.addEventListener('click',function(){all.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});K.x=b.dataset.x;render()})});
+  var gpc=$('gpc');
+  gpc.addEventListener('click',function(){K.gpc=!K.gpc;gpc.setAttribute('aria-checked',K.gpc);gpc.classList.toggle('on',K.gpc);
+    if(K.gpc&&!J[K.jur].optin){K.src.ads=K.src.ai='GPC signal, '+J[K.jur].where+', '+stamp();$('plog').textContent='Global Privacy Control signal received at '+stamp()+'. Opt out stored without a click.';pulse(0,1)}
+    else if(!K.gpc){delete K.src.ads;delete K.src.ai}
+    render()});
   render();
 
-  // Opt-Out Sync
+  // Transponder
   var os=$('osRun'),osl=[].slice.call(document.querySelectorAll('#osys li'));
   os.addEventListener('click',function(){
-    os.disabled=true;$('audit').hidden=true;osl.forEach(function(li){li.className='';li.querySelector('.ss').textContent='Waiting'});
-    seq(osl,function(li,i){if(i>0){osl[i-1].className='done';osl[i-1].querySelector('.ss').textContent='Done'}li.className='doing';li.querySelector('.ss').textContent='Syncing'},function(){var l=osl[osl.length-1];l.className='done';l.querySelector('.ss').textContent='Done';$('audit').hidden=false;os.disabled=false;os.textContent='Sync again'});
+    os.disabled=true;$('audit').hidden=true;osl.forEach(function(li){li.className='';li.querySelector('.ss').textContent='Waiting'});pulse(1,3);
+    seq(osl,function(li,i){if(i>0){osl[i-1].className='done';osl[i-1].querySelector('.ss').textContent='Done'}li.className='doing';li.querySelector('.ss').textContent='Sending'},function(){var l=osl[osl.length-1];l.className='done';l.querySelector('.ss').textContent='Done';$('audit').hidden=false;os.disabled=false;os.textContent='Send again'});
   });
 
   // Privacy requests
   var rq=$('rqRun'),rqs=[].slice.call(document.querySelectorAll('#rqSteps li'));
   rq.addEventListener('click',function(){
-    rq.disabled=true;$('rqOut').hidden=true;rqs.forEach(function(li){li.className=''});var s=$('rq0');s.textContent='Running';s.className='st o';
-    seq(rqs,function(li,i){if(i>0)rqs[i-1].className='done';li.className='doing'},function(){rqs[rqs.length-1].className='done';$('rqOut').hidden=false;s.textContent='Done';s.className='st g';rq.disabled=false;rq.textContent='Run again'});
+    rq.disabled=true;$('rqOut').hidden=true;rqs.forEach(function(li){li.className=''});var s=$('rq0');s.textContent='Running';s.className='st o';pulse(1,3);
+    seq(rqs,function(li,i){if(i>0)rqs[i-1].className='done';li.className='doing'},function(){rqs[rqs.length-1].className='done';$('rqOut').hidden=false;s.textContent='Done';s.className='st g';rq.disabled=false;rq.textContent='Run again';$('vRights').textContent='Rights: DSR-2041 deletion completed across 12 systems at '+stamp()+'.'});
   });
 
-  // Data map
+  // Data mapping
   var dcs=[].slice.call(document.querySelectorAll('.dc')),dsys=[].slice.call(document.querySelectorAll('.dsys'));
   dcs.forEach(function(c){c.addEventListener('click',function(){
     dcs.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)});
@@ -2012,6 +2156,18 @@ h1,.sh h2,.contact h2,.app-intro h2,.ckpi b,.fc-l,.shop-hero span{font-variation
     ag.disabled=true;ags.forEach(function(a){a.className='ag'});dds.forEach(function(d){d.textContent='Waiting';d.className=''});
     seq(ags,function(a,i){if(i>0){ags[i-1].className='ag done';dds[i-1].textContent=dds[i-1].dataset.v;dds[i-1].className='set'}a.className='ag doing'},function(){ags[3].className='ag done';dds[3].textContent=dds[3].dataset.v;dds[3].className='set';ag.disabled=false;ag.textContent='Draft again'});
   });
+
+  // Business case
+  var bc=['bcReq','bcMin','bcAuto','bcCons'].map($);
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US')}
+  function calc(){
+    var req=+bc[0].value,min=+bc[1].value,auto=+bc[2].value,cons=+bc[3].value;
+    $('bcReqV').textContent=req.toLocaleString('en-US');$('bcMinV').textContent=min;$('bcAutoV').textContent=auto+'%';$('bcConsV').textContent=cons.toLocaleString('en-US');
+    var hrs=req*min/60,back=hrs*auto/100;
+    $('bcHrs').textContent=Math.round(hrs).toLocaleString('en-US');$('bcBack').textContent=Math.round(back).toLocaleString('en-US');$('bcFte').textContent=(back/1800).toFixed(1);
+    $('bcExp').textContent=money(cons*2500);$('bcExp2').textContent=money(cons*7500);
+  }
+  bc.forEach(function(i){i.addEventListener('input',calc)});calc();
 
   // MEDDPICC flip cards
   var fcs=[].slice.call(document.querySelectorAll('.fc')),mxAll=$('mxAll');

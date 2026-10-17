@@ -1200,6 +1200,10 @@ figcaption b{color:#fff!important}
 .msg{white-space:pre-wrap;word-break:break-word;background:#0B0A10;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px;font-family:var(--mono);font-size:12.5px;line-height:1.55;color:#D6D3E0}
 .fitout.ok{border-left-color:#3FBF7F}
 .fitout.no{border-left-color:#E8857F}
+.plan{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+.plan th{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4A2FB0;text-align:left;padding:4px 6px 6px 0}
+.plan td{padding:8px 8px 8px 0;border-top:1px solid #E6E2F0;vertical-align:top;color:#26242F}
+.plan td.who{font-weight:700;color:#3B2796;white-space:nowrap}
 /* ICP fit check */
 .chk{display:grid;gap:8px;margin:12px 0}
 .chk label{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;font-size:15px;color:#D6D3E0;cursor:pointer;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#0B0A10}
@@ -1616,7 +1620,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         <div><h4>I own the front and the back</h4><p>Discovery, the business case draft, the close plan and every follow up. The SE gets the middle.</p></div>
         <div><h4>Async first, live when it counts</h4><p>Questions go in a shared log. Live time is for demos, architecture and the executive readout.</p></div>
         <div><h4>Everything gets reused</h4><p>Recorded demos, a POC kit, a security pack and an answer bank, so deal ten costs less than deal one.</p></div>
-        <div><h4>Learn each other's game</h4><p>We sit in on each other's calls and debrief for ten minutes on what landed. Product gaps go to the team with the SE's name on the insight.</p></div>
+        <div><h4>Learn each other's game</h4><p>We sit in on each other's calls and huddle right after, so fresh thoughts become a plan. Product gaps go to the team with the SE's name on the insight.</p></div>
       </div>
 
       <div class="xsub"><h3>Four moments where I use them</h3></div>
@@ -1723,7 +1727,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         </div>
         <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
           <h3>Every deal</h3>
-          <p>A quick sync before each session, a ten minute debrief after, and every new technical answer added to the shared bank so nobody answers it twice.</p>
+          <p>A quick sync before each session, a quick huddle after with an owner on every next step, and every new technical answer added to the shared bank so nobody answers it twice.</p>
         </div>
         <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
           <h3>Every quarter</h3>
@@ -1750,7 +1754,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
           <ul><li>Lead the demo from the catalog import onward</li><li>Take the SRE lead's integration questions</li></ul>
           <h4>What I will handle</h4>
           <ul><li>Opening, agenda and the business case</li><li>Follow up, notes and the next step</li></ul>
-          <div class="time"><span>15 min sync</span><span>45 min live</span><span>10 min debrief</span></div>
+          <div class="time"><span>15 min sync</span><span>45 min live</span><span>10 min huddle</span></div>
         </article>
         <div>
           <h3 style="font-size:22px;font-weight:500;margin-bottom:12px">What we cover in the sync</h3>
@@ -1767,6 +1771,36 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
             <div><b>Where do deals lose time?</b><span>Which questions or reviews slow the technical win, so I can answer them before the SE sees them.</span></div>
             <div><b>What is the best format for a request?</b><span>Slack, a form or the CRM, and how much notice you need so I fit your week.</span></div>
             <div><b>What would you stop doing?</b><span>The work I can take off the SE's plate: set up, decks, security forms, follow ups.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="xsub"><h3>The huddle after the call</h3><p>Ten minutes right after, while it is fresh, to share what we each saw and agree who owns what.</p></div>
+      <div class="split">
+        <article class="brief" aria-label="Sample huddle notes">
+          <h4>Key points</h4>
+          <ul><li>The VP wants a board ready story on AI and reliability before peak season</li><li>The SRE lead will not back a tool that cannot show on call coverage per service</li><li>Head of Platform asked how fast a Backstage catalog can be imported</li></ul>
+          <h4>Strategy</h4>
+          <p>Lead the next call with the head to head proof. Bring the SRE lead in early, since they decide whether it sticks.</p>
+          <h4>Plan and key criteria</h4>
+          <table class="plan">
+            <thead><tr><th>Step</th><th>Key criterion</th><th>Owner</th></tr></thead>
+            <tbody>
+              <tr><td>Send the recap and proof criteria</td><td>VP agrees the criteria in writing</td><td class="who">Me</td></tr>
+              <tr><td>Scope the catalog import and integrations</td><td>Their top services live in a test workspace</td><td class="who">SE</td></tr>
+              <tr><td>Answer the on call question for the SRE lead</td><td>Ownership and on call shown per service</td><td class="who">SE</td></tr>
+              <tr><td>Book the security review</td><td>Security pack sent, questions logged</td><td class="who">Me</td></tr>
+              <tr><td>Hold time for the executive readout</td><td>Date on the VP's calendar</td><td class="who">Me</td></tr>
+            </tbody>
+          </table>
+          <div class="time"><span>10 min huddle</span><span>Owners and dates set</span></div>
+        </article>
+        <div>
+          <h3 style="font-size:22px;font-weight:500;margin-bottom:12px">What we cover in the huddle</h3>
+          <div class="ask">
+            <div><b>Fresh thoughts</b><span>What landed, what did not, and what each of us noticed in the room.</span></div>
+            <div><b>Strategy</b><span>How the call changes our approach to the account and to the competition.</span></div>
+            <div><b>Key points</b><span>The two or three things to remember, such as a stated priority or an objection.</span></div>
+            <div><b>The plan</b><span>Each next step has a key criterion and a named owner, so nothing floats.</span></div>
           </div>
         </div>
       </div>

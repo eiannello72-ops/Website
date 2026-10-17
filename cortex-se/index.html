@@ -1193,6 +1193,13 @@ figcaption b{color:#fff!important}
 .chain .n.t1 em{color:var(--lav)}
 .chips2{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;max-width:1060px}
 .chips2 span{font-size:13px;font-weight:600;color:#D9D0FF;background:#211A3D;border:1px solid #3A2F6E;border-radius:999px;padding:5px 12px}
+.rq{display:grid;gap:10px;margin-bottom:6px}
+.rq label{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;align-items:center;font-size:14.5px;color:#D6D3E0}
+.rq input,.rq select{background:#0B0A10;border:1px solid #2E2B3A;border-radius:8px;color:#fff;font:inherit;font-size:14.5px;padding:8px 10px;width:100%}
+.rq input:focus-visible,.rq select:focus-visible{outline:2px solid var(--lav);outline-offset:2px}
+.msg{white-space:pre-wrap;word-break:break-word;background:#0B0A10;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px;font-family:var(--mono);font-size:12.5px;line-height:1.55;color:#D6D3E0}
+.fitout.ok{border-left-color:#3FBF7F}
+.fitout.no{border-left-color:#E8857F}
 /* ICP fit check */
 .chk{display:grid;gap:8px;margin:12px 0}
 .chk label{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;font-size:15px;color:#D6D3E0;cursor:pointer;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#0B0A10}
@@ -1771,7 +1778,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
           </article>
           <article class="bc" id="sp3" role="tabpanel" aria-labelledby="sb3" hidden>
             <div class="bc-top"><h3>POC and deployment</h3><span class="pill se">SE leads, I sponsor</span></div>
-            <p style="margin-top:10px;font-size:15px">No proof of concept starts without written criteria. Build the charter below; it totals the SE hours, so the trade is visible before I ask.</p>
+            <p style="margin-top:10px;font-size:15px">No proof of concept starts without written criteria. Build the charter below; it totals the SE hours, so the trade is visible before I ask. The security and data review comes from the fleet deal, where every group had its own sub criteria on storage, access and privacy.</p>
             <div class="pocg">
               <div>
                 <fieldset><legend>Scope</legend>
@@ -1790,6 +1797,12 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
                   <label><input type="checkbox" data-h="0.5" data-t="OpEx Review Agent run on the customer's own data"><span>OpEx Review Agent run on their data</span><em>0.5h</em></label>
                   <label><input type="checkbox" data-h="1" data-t="Executive readout against the criteria, with the sponsor" checked><span>Executive readout with the sponsor</span><em>1h</em></label>
                 </fieldset>
+                <fieldset><legend>Security and data review</legend>
+                  <label><input type="checkbox" data-h="0.5" data-t="Security answered: where data is stored and how it is stored"><span>Where data lives and how it is stored</span><em>0.5h</em></label>
+                  <label><input type="checkbox" data-h="0.5" data-t="Security answered: who can access it, with roles, SSO and read only scopes"><span>Who can access it: roles, SSO, scopes</span><em>0.5h</em></label>
+                  <label><input type="checkbox" data-h="0.5" data-t="Security answered: privacy and regulatory alignment, including GDPR style rules"><span>Privacy and regulatory alignment</span><em>0.5h</em></label>
+                  <label><input type="checkbox" data-h="0.5" data-t="Security answered: hosting region and subprocessors"><span>Hosting region and subprocessors</span><em>0.5h</em></label>
+                </fieldset>
                 <fieldset><legend>Time box</legend>
                   <label><input type="radio" name="tb" value="2" checked><span>Two weeks</span><em></em></label>
                   <label><input type="radio" name="tb" value="3"><span>Three weeks</span><em>+1h check in</em></label>
@@ -1805,6 +1818,45 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
               </div>
             </div>
           </article>
+        </div>
+      </div>
+
+      <div class="xsub"><h3>The rhythm that keeps a lean team efficient</h3><p>Four SEs cannot take ad hoc asks from every seller. A small, steady cadence keeps requests focused and lets the SE plan their week.</p></div>
+      <div class="three xw">
+        <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
+          <h3>Weekly, 20 minutes</h3>
+          <p>A triage with the SE lead: which Tier 1 deals need SE time next week, in priority order, and which can wait. I bring the deals, the dates and what is already done.</p>
+        </div>
+        <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
+          <h3>Every deal</h3>
+          <p>A pre brief before each session, a ten minute debrief after, and every new technical answer added to the shared bank so nobody answers it twice.</p>
+        </div>
+        <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
+          <h3>Every quarter</h3>
+          <p>Review SE hours against wins, retire demos that went stale, and send product gaps from the field back to the team with the SE's name on the insight.</p>
+        </div>
+      </div>
+
+      <div class="xsub"><h3>How I ask: the request builder</h3><p>Every request to an SE follows one format, and it does not go out until the prep is done. Fill it in and watch what it says.</p></div>
+      <div class="xgrid">
+        <div class="xpanel">
+          <div class="rq">
+            <label><span>Account</span><input type="text" id="q_acct" value="Acme Bank" maxlength="60"></label>
+            <label><span>Moment</span><select id="q_mom"><option value="2|Technical demo">Technical demo</option><option value="0.5|Business value assessment review">BVA review</option><option value="1|Technical question or security review">Technical question or security review</option><option value="6|Proof of concept">Proof of concept</option><option value="1|Deployment plan review">Deployment plan review</option></select></label>
+            <label><span>Needed by</span><input type="text" id="q_by" value="next Thursday" maxlength="40"></label>
+          </div>
+          <div class="chk" id="q_prep">
+            <label><input type="checkbox" checked><span>Discovery is done<small>The pain, the metric and the buyer are known</small></span></label>
+            <label><input type="checkbox" checked><span>Success criteria drafted<small>Written, per buyer group</small></span></label>
+            <label><input type="checkbox"><span>Pre brief attached<small>One page, sent a day ahead</small></span></label>
+            <label><input type="checkbox"><span>Security pack already sent<small>So the SE joins only for what the pack cannot answer</small></span></label>
+          </div>
+        </div>
+        <div class="xpanel">
+          <h3>What goes to the SE</h3>
+          <div class="fitout" aria-live="polite"><b id="q_state">Not ready to send</b><span id="q_why"></span></div>
+          <pre class="msg" id="q_msg"></pre>
+          <button type="button" class="prim run" id="q_copy" style="margin-top:10px">Copy request</button>
         </div>
       </div>
 
@@ -1981,7 +2033,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
     if(wk==='3')hrs+=1;
     pcs.forEach(function(c){
       if(!c.checked)return;hrs+=parseFloat(c.dataset.h);
-      var inPass=c.closest('fieldset').querySelector('legend').textContent==='Success criteria';
+      var inPass=['Success criteria','Security and data review'].indexOf(c.closest('fieldset').querySelector('legend').textContent)>-1;
       li(inPass?pass:scope,c.dataset.t);
     });
     if(!scope.children.length)li(scope,'Nothing selected yet');
@@ -1990,6 +2042,29 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
     $('pcHrs').textContent=(Math.round(hrs*10)/10).toString();
   }
   pcs.concat(tbs).forEach(function(e){e.addEventListener('change',poc)});poc();
+  // SE request builder
+  var qa=document.getElementById('q_acct');
+  if(qa){
+    var qb=[].slice.call(document.querySelectorAll('#q_prep input')),qn=['discovery','success criteria','the pre brief','the security pack'];
+    var qf=function(){
+      var m=document.getElementById('q_mom').value.split('|'),miss=[],done=[];
+      qb.forEach(function(b,i){(b.checked?done:miss).push(qn[i])});
+      var ready=qb.filter(function(b){return b.checked}).length>=3;
+      var st=document.getElementById('q_state'),why=document.getElementById('q_why');
+      st.textContent=ready?'Ready to send':'Not ready to send';
+      st.parentNode.className='fitout '+(ready?'ok':'no');
+      why.textContent=ready?'The prep is done, so the SE only spends time on what only they can do.':'I finish the prep first. An SE should not be the one who finds the gaps.';
+      var t='Request: '+m[1]+' for '+(qa.value||'the account')+'\nNeeded by: '+(document.getElementById('q_by').value||'to confirm')+'\nSE time: about '+m[0]+' hours\n\nAlready done: '+(done.length?done.join(', '):'nothing yet')+'.\n'+(miss.length?'I will finish before you start: '+miss.join(', ')+'.\n':'')+'\nIf this does not fit your week, tell me and I will use the recorded demo and move the date.';
+      document.getElementById('q_msg').textContent=t;
+    };
+    [].slice.call(document.querySelectorAll('#q_acct,#q_by,#q_mom,#q_prep input')).forEach(function(e){e.addEventListener('input',qf);e.addEventListener('change',qf)});
+    qf();
+    document.getElementById('q_copy').addEventListener('click',function(){
+      var b=this,t=document.getElementById('q_msg').textContent;
+      try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Select the text to copy'})}catch(e){b.textContent='Select the text to copy'}
+    });
+  }
+
 })();
 </script>
 </body>

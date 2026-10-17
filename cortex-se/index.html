@@ -1612,7 +1612,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
 
       <div class="stalls">
         <div><h4>I qualify before I ask</h4><p>An SE joins a deal once it is qualified: a real pain, a metric and a path to the economic buyer.</p></div>
-        <div><h4>A one page pre brief, 24 hours ahead</h4><p>Account, buyers, goal of the session, their stack and exactly what I need. No cold starts.</p></div>
+        <div><h4>A quick sync before every call</h4><p>We review my one pager, I answer their questions, and we agree the goals, who to focus on and the rapport to lean on. No cold starts.</p></div>
         <div><h4>I own the front and the back</h4><p>Discovery, the business case draft, the close plan and every follow up. The SE gets the middle.</p></div>
         <div><h4>Async first, live when it counts</h4><p>Questions go in a shared log. Live time is for demos, architecture and the executive readout.</p></div>
         <div><h4>Everything gets reused</h4><p>Recorded demos, a POC kit, a security pack and an answer bank, so deal ten costs less than deal one.</p></div>
@@ -1632,7 +1632,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
             <div class="bc-top"><h3>Technical demos</h3><span class="pill se">SE leads</span></div>
             <div class="bc-x">
               <div><h4>What I do</h4><p>Run the insight meeting and a recorded overview myself, so the SE never gives the same intro twice. I confirm the audience, the one outcome the demo must show and the data we will use.</p></div>
-              <div><h4>What I ask of the SE</h4><ul><li>One tailored session, built around the pre brief and not the full product tour</li><li>A live moment on the buyer's own services, using a catalog import</li><li>Persona paths: Scorecards and Initiatives for platform teams, Engineering Intelligence and the OpEx Review Agent for leaders</li></ul></div>
+              <div><h4>What I ask of the SE</h4><ul><li>One tailored session, built around what we agreed in the sync, not the full product tour</li><li>A live moment on the buyer's own services, using a catalog import</li><li>Persona paths: Scorecards and Initiatives for platform teams, Engineering Intelligence and the OpEx Review Agent for leaders</li></ul></div>
               <div><h4>What it saves</h4><p>The SE builds a demo once per persona. After that, it is a thirty minute adjustment for each account.</p></div>
             </div>
           </article>
@@ -1667,7 +1667,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
             <div class="ladder">
               <div><b>Level 1</b><p>I answer from docs, the battlecards and the answer bank. Target: about two thirds of questions.</p></div>
               <div><b>Level 2</b><p>I post it in the shared question log with the account, the asker's role and why it matters. The SE answers async within a business day, and the answer joins the bank.</p></div>
-              <div><b>Level 3</b><p>A short live call, only for architecture, security design or an executive's hardest question. I book it and write the pre brief.</p></div>
+              <div><b>Level 3</b><p>A short live call, only for architecture, security design or an executive's hardest question. I book it and we run the sync first.</p></div>
             </div>
           </article>
           <article class="bc" id="sp3" role="tabpanel" aria-labelledby="sb3" hidden>
@@ -1723,7 +1723,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         </div>
         <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
           <h3>Every deal</h3>
-          <p>A pre brief before each session, a ten minute debrief after, and every new technical answer added to the shared bank so nobody answers it twice.</p>
+          <p>A quick sync before each session, a ten minute debrief after, and every new technical answer added to the shared bank so nobody answers it twice.</p>
         </div>
         <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px 20px">
           <h3>Every quarter</h3>
@@ -1731,26 +1731,36 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         </div>
       </div>
 
-      <div class="xsub"><h3>What my pre brief looks like</h3><p>One page, sent a day ahead, so an SE can prepare in ten minutes.</p></div>
+      <div class="xsub"><h3>The quick sync before a call</h3><p>I send a one pager ahead, then we spend fifteen minutes on it together so the SE walks in with everything they need.</p></div>
       <div class="split">
-        <article class="brief" aria-label="Sample pre brief">
+        <article class="brief" aria-label="Sample one pager">
           <h4>Account and session</h4>
-          <p><span class="tok ph">{{account}}</span> technical demo, <span class="tok ph">{{date}}</span>, 45 minutes. a qualified deal.</p>
+          <p><span class="tok ph">{{account}}</span> technical demo, <span class="tok ph">{{date}}</span>, 45 minutes. Qualified deal.</p>
           <h4>Why now</h4>
           <p>Coding agents are rolling out across the org, and peak season is <span class="tok ph">{{weeks}}</span> weeks away.</p>
-          <h4>Who is in the room</h4>
-          <ul><li>VP of Engineering, the sponsor</li><li>Head of Platform, runs the evaluation</li><li>SRE lead, skeptical of another tool</li></ul>
-          <h4>The one thing this session must show</h4>
-          <p>A readiness Scorecard live on their own tier 1 services.</p>
+          <h4>Goals for the call</h4>
+          <ul><li>Show a readiness Scorecard live on their own tier 1 services</li><li>Leave with the criteria for a head to head proof agreed</li></ul>
+          <h4>Attendees to focus on</h4>
+          <ul><li><b>VP of Engineering</b>, the sponsor: keep it to outcomes and the board story</li><li><b>Head of Platform</b>, runs the evaluation: go deep on catalog import and integrations</li><li><b>SRE lead</b>, skeptical of another tool: show on call and ownership working</li></ul>
+          <h4>Points of rapport</h4>
+          <ul><li>The VP has spoken publicly about AI in the SDLC</li><li>Head of Platform inherited a Backstage catalog nobody trusts</li><li>Both teams are heading into peak season</li></ul>
           <h4>Their stack</h4>
-          <p><span class="tok ph">{{source_control}}</span>, <span class="tok ph">{{incident_tool}}</span>, a Backstage catalog nobody trusts.</p>
+          <p><span class="tok ph">{{source_control}}</span>, <span class="tok ph">{{incident_tool}}</span>, Backstage.</p>
           <h4>What I need from you</h4>
           <ul><li>Lead the demo from the catalog import onward</li><li>Take the SRE lead's integration questions</li></ul>
           <h4>What I will handle</h4>
           <ul><li>Opening, agenda and the business case</li><li>Follow up, notes and the next step</li></ul>
-          <div class="time"><span>30 min prep</span><span>45 min live</span><span>10 min debrief</span></div>
+          <div class="time"><span>15 min sync</span><span>45 min live</span><span>10 min debrief</span></div>
         </article>
         <div>
+          <h3 style="font-size:22px;font-weight:500;margin-bottom:12px">What we cover in the sync</h3>
+          <div class="ask" style="margin-bottom:26px">
+            <div><b>Review the one pager</b><span>The SE reads it with me and corrects anything I have wrong.</span></div>
+            <div><b>Their questions, and what insight they need</b><span>Anything the SE wants to know about the account that I can find out before the call.</span></div>
+            <div><b>Goals for the call</b><span>The one thing the session must show, and what a good next step looks like.</span></div>
+            <div><b>Attendees to focus on</b><span>Who is deciding, who is evaluating, who is skeptical, and what each needs to hear.</span></div>
+            <div><b>Points of rapport to lean on</b><span>What I learned in discovery that helps the SE connect in the first five minutes.</span></div>
+          </div>
           <h3 style="font-size:22px;font-weight:500;margin-bottom:12px">What I would ask an SE partner</h3>
           <div class="ask">
             <div><b>What makes a demo land?</b><span>Which moments do buyers lean in for, and which do they skip?</span></div>

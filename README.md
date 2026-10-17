@@ -17,6 +17,7 @@ for the Enterprise AE role.
 | Jellyfish (West Coast) | [`jellyfish/`](jellyfish/index.html) |
 | Tines (PacNW) | [`tines/`](tines/index.html) |
 | Cortex (US Enterprise) | [`cortex/`](cortex/index.html) |
+| Cortex (SE partnership edition) | [`cortex-se/`](cortex-se/index.html) |
 | Obsidian Security | [`obsidian/`](obsidian/index.html) |
 | Ketch | [`ketch/`](ketch/index.html) |
 | Aisera (Automation Anywhere) | [`aisera/`](aisera/index.html) |

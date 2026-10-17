@@ -1174,6 +1174,23 @@ figcaption b{color:#fff!important}
 .pill.se{background:#1D3A2B;color:#9DE2BC}
 .pill.me{background:#2B2433;color:#E3D9FF}
 .tok.ph{font-family:var(--mono);font-size:.82em;background:#211A3D;color:#D9D0FF;border-radius:4px;padding:1px 6px;white-space:nowrap}
+.split2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;max-width:1060px}
+@media (max-width:860px){.split2{grid-template-columns:1fr}}
+.split2 p{color:var(--mut);font-size:15px}
+.tl{list-style:none;display:grid;gap:8px;margin-top:8px}
+.tl li{padding-left:12px;border-left:2px solid var(--pur);font-size:15px;color:#D6D3E0}
+.org{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1060px}
+@media (max-width:980px){.org{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.org{grid-template-columns:1fr}}
+.chain{display:grid;gap:0;align-content:start}
+.chain small{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lav);margin-bottom:8px}
+.chain .n{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.5px;color:#fff;position:relative;margin-bottom:16px}
+.chain .n:not(:last-child):after{content:"";position:absolute;left:50%;bottom:-16px;height:16px;border-left:1.5px solid #3A2F6E}
+.chain .n:last-child{margin-bottom:0}
+.chain .n.top{color:#C9C6D4}
+.chain .n em{display:block;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8E8B99;margin-top:2px}
+.chain .n.t1{border-color:var(--pur);background:#1A1530}
+.chain .n.t1 em{color:var(--lav)}
 /* ICP fit check */
 .chk{display:grid;gap:8px;margin:12px 0}
 .chk label{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;font-size:15px;color:#D6D3E0;cursor:pointer;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#0B0A10}
@@ -1515,7 +1532,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
     <section id="case" class="panel ink grain">
       <div class="sh">
         <h2>A Canadian fleet, four buyer groups, and a Sales Engineer who ran the routes</h2>
-        <p>A greenfield enterprise deal at Netradyne, won with my Sales Engineer Andy. Safety, Operations, Engineering and an AI team each needed their own value story and their own technical proof. The customer is not a public reference, so I keep the name private.</p>
+        <p>A greenfield enterprise deal at Netradyne, won with my Sales Engineer Andy. Netradyne's Driver&bull;i platform uses AI to read driver behavior in real time and turns it into safer, more efficient fleets.<sup><a href="#s16">16</a></sup> The customer is not a public reference, so I keep the name private.</p>
       </div>
       <div class="score">
         <div><b>$730K</b><span>driver cameras plus truck and vehicle management</span></div>
@@ -1524,59 +1541,87 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         <div><b>4 + 1</b><span>buyer groups, and one SE carrying the technical proof</span></div>
       </div>
 
-      <h3 class="ind-h" style="margin-top:0">The play, step by step</h3>
+      <h3 class="ind-h" style="margin-top:0">How the deal started</h3>
+      <div class="split2">
+        <div class="xpanel">
+          <h3>Through the parent account</h3>
+          <p>I approached the parent company first, as the main source of opportunity. The timing was not right for them, but the conversations taught me what mattered to the business.</p>
+          <p style="margin-top:10px">I took that relevance to the subsidiaries in the parent's portfolio and used it as the reason for cold outreach. One of those conversations, with a fleet's safety team, became the deal. Nobody there had bought this before, so it started as education.</p>
+        </div>
+        <div class="xpanel">
+          <h3>Then Andy and I tailored everything</h3>
+          <ul class="tl">
+            <li>Due diligence on the fleet and its lanes</li>
+            <li>Discovery by group, in each group's language</li>
+            <li>A value proposition per buyer</li>
+            <li>The business value assessment, with justification the executives could audit</li>
+            <li>POC design and alignment, with success criteria set per group</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="ind-h">Who was in the room</h3>
+      <p class="note" style="margin:-8px 0 16px;max-width:760px">Directors were my Tier 1 entry point in every group. The path to a decision ran up to a VP reporting to the COO on the safety and operations side, and to the CISO and CTO on the technology side. Titles are as I mapped them.</p>
+      <div class="org" aria-label="Buyer groups and reporting lines">
+        <div class="chain"><small>Safety</small><div class="n top">COO</div><div class="n">VP of Safety</div><div class="n t1">Director of Safety <em>Tier 1</em></div></div>
+        <div class="chain"><small>Operations</small><div class="n top">COO</div><div class="n">VP of Operations</div><div class="n t1">Director of Operations <em>Tier 1</em></div></div>
+        <div class="chain"><small>Engineering and IT</small><div class="n top">CTO</div><div class="n">VP or Director of Engineering</div><div class="n t1">IT and integration leads <em>Evaluators</em></div></div>
+        <div class="chain"><small>Security and AI</small><div class="n top">CISO</div><div class="n">Security and AI leads</div><div class="n t1">Data and privacy reviewers <em>Evaluators</em></div></div>
+      </div>
+
+      <h3 class="ind-h">The play, step by step</h3>
       <ol class="huddle">
-        <li><b>Get in through the parent</b><p>Cold outbound began at the parent company. What I learned there gave me a relevant way into the fleet's safety team.</p><em>Me</em></li>
+        <li><b>Get in through the parent</b><p>Cold outbound began at the parent. What I learned there became the opening for the subsidiary's safety team.</p><em>Me</em></li>
         <li><b>Educate a greenfield buyer</b><p>Nobody had bought this before, so Andy and I taught it: demos, individual calls and onsite visits together.</p><em>Together</em></li>
-        <li><b>Set the criteria</b><p>We built the business value assessment and core success criteria with the executive team, one set for each group.</p><em>Andy and me</em></li>
+        <li><b>Set the criteria</b><p>We built the business value assessment and core success criteria with the executive team, one set per group.</p><em>Andy and me</em></li>
         <li><b>Run the proof</b><p>Andy helped install and drive the proof of concept. I kept traction and sponsors engaged through the trial.</p><em>Andy leads</em></li>
         <li><b>Present and close</b><p>We presented results to the whole team, delivered partner documents onsite and ended with a dinner for the executives.</p><em>Together</em></li>
       </ol>
 
       <h3 class="ind-h">What each group needed</h3>
-      <p class="note" style="margin:-8px 0 16px;max-width:760px">The shared goal was fewer accidents per million miles, which took many moving parts. Each group had its own success criteria in the proof of concept.</p>
+      <p class="note" style="margin:-8px 0 16px;max-width:760px">The shared goal was fewer accidents per million miles, which took many moving parts. Each group had its own success criteria in the proof of concept. Product points are Netradyne's published claims.</p>
       <div class="bcs">
         <div class="bc-list" role="tablist" aria-label="Fleet buyer groups" id="txTabs">
           <button class="cbtn" role="tab" id="tb0" aria-controls="tp0" aria-selected="true"><b>Safety</b><small>Fewer accidents per million miles</small></button>
           <button class="cbtn" role="tab" id="tb1" aria-controls="tp1" aria-selected="false" tabindex="-1"><b>Operations</b><small>Driver efficiency</small></button>
           <button class="cbtn" role="tab" id="tb2" aria-controls="tp2" aria-selected="false" tabindex="-1"><b>Engineering and IT</b><small>The tech, head to head</small></button>
-          <button class="cbtn" role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1"><b>AI team</b><small>Scrutiny of our agents</small></button>
+          <button class="cbtn" role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1"><b>Security and AI</b><small>Privacy, data and our agents</small></button>
         </div>
         <div>
           <article class="bc" id="tp0" role="tabpanel" aria-labelledby="tb0">
             <div class="bc-top"><h3>Safety</h3><span class="pill me">Executive sponsor</span></div>
             <div class="bc-x">
-              <div><h4>What they had to see</h4><p>A measurable drop in accidents per million miles, driven by real time AI on driver behavior.</p></div>
-              <div><h4>What I led with</h4><p>The cost of accidents to the business, a baseline, and how driver behavior turns into fewer of them.</p></div>
+              <div><h4>Who</h4><p>Director of Safety, then the VP of Safety reporting to the COO.</p></div>
+              <div><h4>What they had to see</h4><p>A measurable drop in accidents per million miles, with proof from their own drivers and trucks.</p></div>
+              <div><h4>The value proposition</h4><p>AI analyzes drive time for risky behavior such as distraction, following distance, speeding and drowsiness, and alerts the driver in the cab. Coaching and driver scoring follow, and collision detection supports a faster response and claims defense.<sup><a href="#s16">16</a>,<a href="#s18">18</a></sup></p></div>
               <div><h4>What Andy ran</h4><p>Demos and individual calls, then helping install the proof and drive it alongside me, with safety's own criteria as the test.</p></div>
-              <div><h4>How we proved it</h4><p>Results from the trial against the criteria safety set, presented to the whole team.</p></div>
             </div>
           </article>
           <article class="bc" id="tp1" role="tabpanel" aria-labelledby="tb1" hidden>
             <div class="bc-top"><h3>Operations</h3><span class="pill me">Executive sponsor</span></div>
             <div class="bc-x">
+              <div><h4>Who</h4><p>Director of Operations, then the VP of Operations reporting to the COO.</p></div>
               <div><h4>What they had to see</h4><p>Driver efficiency and operational excellence, in terms that reach the bottom line.</p></div>
-              <div><h4>What I led with</h4><p>The business value assessment: what better driver behavior is worth across the fleet.</p></div>
-              <div><h4>What Andy ran</h4><p>Onsite visits and the install, so operations could watch the product work in their own trucks.</p></div>
-              <div><h4>How we proved it</h4><p>Success criteria agreed with the executive team before the trial, and read out after.</p></div>
+              <div><h4>The value proposition</h4><p>The same behavior data connects safety to fuel use, idling and coaching, so better drivers lower operating cost as well as risk. Fewer incidents also means fewer claims and less downtime.<sup><a href="#s19">19</a></sup></p></div>
+              <div><h4>What Andy ran</h4><p>Onsite visits and the install, so operations could watch the product work in their own trucks, and the BVA inputs behind the justification.</p></div>
             </div>
           </article>
           <article class="bc" id="tp2" role="tabpanel" aria-labelledby="tb2" hidden>
             <div class="bc-top"><h3>Engineering and IT</h3><span class="pill se">Technical proof</span></div>
             <div class="bc-x">
+              <div><h4>Who</h4><p>The CTO's organization: engineering and IT leads running the evaluation.</p></div>
               <div><h4>What they had to see</h4><p>How our technology compared with the competitors', plus integrations, API builds and custom deployments.</p></div>
-              <div><h4>What I led with</h4><p>A clear list of their requirements gathered up front, so the proof answered their questions and not ours.</p></div>
-              <div><h4>What Andy ran</h4><p>The deeper layers of the technology: integrations, API work and the architecture, in direct conversation with their engineers.</p></div>
-              <div><h4>How we proved it</h4><p>The proof of concept results themselves. IT became an executive sponsor once it saw how we compared.</p></div>
+              <div><h4>The value proposition</h4><p>AI that runs on the device at the edge, with integrations into the systems they already run, and a deployment tailored to their fleet.<sup><a href="#s20">20</a></sup></p></div>
+              <div><h4>What Andy ran</h4><p>The deeper layers of the technology: integrations, API work and architecture, in direct conversation with their engineers. IT became an executive sponsor once it saw the POC results.</p></div>
             </div>
           </article>
           <article class="bc" id="tp3" role="tabpanel" aria-labelledby="tb3" hidden>
-            <div class="bc-top"><h3>AI team</h3><span class="pill se">Technical proof</span></div>
+            <div class="bc-top"><h3>Security and AI</h3><span class="pill se">Technical proof</span></div>
             <div class="bc-x">
-              <div><h4>What they had to see</h4><p>Scrutiny of our custom built agents, and answers on data consumption, storage, privacy and governance. As a Canadian company, laws and driver recording privacy mattered a great deal.</p></div>
-              <div><h4>What I led with</h4><p>Candor about scope and a clear path for their review, with no surprises about what was custom.</p></div>
-              <div><h4>What Andy ran</h4><p>The deep session on how our AI was developed, how data is handled and how the user interface works, including custom analytics and deployments.</p></div>
-              <div><h4>How we proved it</h4><p>The AI team's questions answered in depth, which cleared the way for the technical sign off.</p></div>
+              <div><h4>Who</h4><p>The CISO and the AI team who analyzed our custom built agents.</p></div>
+              <div><h4>What they had to see</h4><p>Answers on data consumption, storage, laws and governance. As a Canadian company, driver recording privacy mattered a great deal.</p></div>
+              <div><h4>The value proposition</h4><p>Configurable privacy modes, face and license plate blurring, set retention periods and role based access. Canadian specifics were reviewed directly rather than assumed.<sup><a href="#s17">17</a></sup></p></div>
+              <div><h4>What Andy ran</h4><p>The deep session on how our AI was developed, how data is handled and how the interface works, including custom analytics and deployments.</p></div>
             </div>
           </article>
         </div>
@@ -1606,7 +1651,7 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
             <tr><td>Safety</td><td data-h="Cortex counterpart">Security and compliance</td><td data-h="What the SE would run">Vulnerability and standards Scorecards, with audit evidence on a dated Initiative</td></tr>
             <tr><td>Operations</td><td data-h="Cortex counterpart">VP of Engineering and SRE</td><td data-h="What the SE would run">Engineering Intelligence and the OpEx Review Agent on their own data</td></tr>
             <tr><td>Engineering and IT</td><td data-h="Cortex counterpart">Platform and DevEx</td><td data-h="What the SE would run">A head to head proof: catalog import, integrations and golden paths on their services</td></tr>
-            <tr><td>AI team</td><td data-h="Cortex counterpart">AI platform and the CTO</td><td data-h="What the SE would run">Data, privacy and governance answers, and how agents are governed with Scorecards<sup><a href="#s10">10</a></sup></td></tr>
+            <tr><td>Security and AI</td><td data-h="Cortex counterpart">CISO, AI platform and the CTO</td><td data-h="What the SE would run">Data, privacy and governance answers, and how agents are governed with Scorecards<sup><a href="#s10">10</a></sup></td></tr>
           </tbody>
         </table>
       </div>
@@ -1805,6 +1850,11 @@ input[type=range]{accent-color:#7A5CF0;width:100%}
         <li id="s13"><a href="https://cortex.io/solutions/backstage-plugin" target="_blank" rel="noopener">Cortex, Keep your catalogs, lose the maintenance</a></li>
         <li id="s14"><a href="https://www.cortex.io/case-studies/fcsamerica" target="_blank" rel="noopener">Cortex, How Farm Credit Services of America built a data driven engineering culture</a></li>
         <li id="s15"><a href="https://www.cortex.io/products/opex-review-agent" target="_blank" rel="noopener">Cortex, OpEx Review Agent</a></li>
+              <li id="s16"><a href="https://www.netradyne.com/landing-pages/fleet-dashcam" target="_blank" rel="noopener">Netradyne, Fleet dash cam (vendor claims)</a></li>
+        <li id="s17"><a href="https://netradyne.com/legal/privacy" target="_blank" rel="noopener">Netradyne, Privacy</a></li>
+        <li id="s18"><a href="https://www.netradyne.com/customer-stories/wiley-sanders-truck-lines" target="_blank" rel="noopener">Netradyne, Wiley Sanders Truck Lines customer story</a></li>
+        <li id="s19"><a href="https://www.netradyne.com/resources/roi-calculator" target="_blank" rel="noopener">Netradyne, ROI calculator</a></li>
+        <li id="s20"><a href="https://www.sdcexec.com/transportation/fleet-management/news/22951518/netradyne-netradyne-introduces-edge-ai-platform-for-smarter-fleet-management" target="_blank" rel="noopener">SDCExec, Netradyne introduces Edge AI platform</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello. Not affiliated with or endorsed by Cortex. Figures come from public and third party sources as of October 2026. The TransX details, ROI model and SE hours are illustrative or planning assumptions, to be confirmed.</p>
     </footer>

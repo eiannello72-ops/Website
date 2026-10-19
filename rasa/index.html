@@ -1533,6 +1533,12 @@ sup a{color:var(--rp)}
 h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
 .ahero h1{line-height:1.03}
 .letter p+p{margin-top:12px}
+.land{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1060px;margin-bottom:24px}
+.land > div{border:1px solid #E0DCEA;border-radius:14px;padding:16px 18px;background:#fff}
+.land small{display:block;font:800 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--rp);margin-bottom:8px}
+.land b{display:block;font-size:13.5px;font-weight:700;color:#0E0A1F;margin-top:6px}
+.land p{font-size:14px;color:#4F4A61;margin-top:2px}
+@media (max-width:860px){.land{grid-template-columns:1fr}}
 /* Without JavaScript, show every panel so nothing is hidden */
 .nojs [role="tabpanel"][hidden]{display:block!important}
 .nojs .step-p[hidden]{display:grid!important}
@@ -1901,42 +1907,59 @@ h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
         <h2>How deals are won against each alternative</h2>
         <p>Where each is strong, where Rasa wins, and the discovery question.<sup><a href="#s10">10</a></sup></p>
       </div>
+      <div class="land">
+        <div><small>Forrester Wave, Q2 2026</small><b>Leaders</b><p>Kore.ai, NiCE Cognigy, Omilia<sup><a href="#s18">18</a>,<a href="#s19">19</a>,<a href="#s20">20</a></sup></p><b>Strong Performers</b><p>Rasa, Sierra, PolyAI, Uniphore, Intercom, LivePerson<sup><a href="#s21">21</a></sup></p></div>
+        <div><small>Gartner Magic Quadrant, 2025</small><b>Leaders</b><p>Google, Kore.ai, Cognigy, boost.ai<sup><a href="#s22">22</a></sup></p><b>Consolidation</b><p>NiCE acquiring Cognigy, valued at $955M<sup><a href="#s15">15</a></sup></p></div>
+        <div><small>Capital raised since 2025</small><b>Valuations</b><p>Sierra $15.8B, Decagon $4.5B, Parloa $3B<sup><a href="#s23">23</a>,<a href="#s24">24</a>,<a href="#s25">25</a></sup></p><b>Rounds</b><p>PolyAI $86M Series D, Kore.ai growth round<sup><a href="#s26">26</a>,<a href="#s27">27</a></sup></p></div>
+      </div>
       <div class="bcs">
         <div class="bc-list" role="tablist" aria-label="Competitors">
-          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>NiCE Cognigy</b><small>Contact center suite</small></button>
-          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Kore.ai</b><small>Broad automation platform</small></button>
-          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Google Dialogflow CX</b><small>Cloud managed builder</small></button>
-          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Microsoft Copilot Studio</b><small>Bundled with Microsoft</small></button>
-          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Sierra and Decagon</b><small>Managed AI agents</small></button>
-          <button class="cbtn" role="tab" id="cb5" aria-controls="bc5" aria-selected="false" tabindex="-1"><b>Homegrown LLM builds</b><small>Built in house</small></button>
+          <button class="cbtn" role="tab" id="cb0" aria-controls="bc0" aria-selected="true"><b>NiCE Cognigy</b><small>Inside CXone</small></button>
+          <button class="cbtn" role="tab" id="cb1" aria-controls="bc1" aria-selected="false" tabindex="-1"><b>Kore.ai</b><small>Broad agent platform</small></button>
+          <button class="cbtn" role="tab" id="cb2" aria-controls="bc2" aria-selected="false" tabindex="-1"><b>Omilia</b><small>Voice first, regulated</small></button>
+          <button class="cbtn" role="tab" id="cb3" aria-controls="bc3" aria-selected="false" tabindex="-1"><b>Google Conversational Agents</b><small>Dialogflow CX, now hybrid</small></button>
+          <button class="cbtn" role="tab" id="cb4" aria-controls="bc4" aria-selected="false" tabindex="-1"><b>Sierra and Decagon</b><small>Managed agents</small></button>
+          <button class="cbtn" role="tab" id="cb5" aria-controls="bc5" aria-selected="false" tabindex="-1"><b>Parloa and PolyAI</b><small>Voice specialists</small></button>
+          <button class="cbtn" role="tab" id="cb6" aria-controls="bc6" aria-selected="false" tabindex="-1"><b>Copilot Studio and Amazon Connect</b><small>Bundled with the cloud</small></button>
+          <button class="cbtn" role="tab" id="cb7" aria-controls="bc7" aria-selected="false" tabindex="-1"><b>Homegrown LLM builds</b><small>Built in house</small></button>
         </div>
         <div>
           <article class="bc" id="bc0" role="tabpanel" aria-labelledby="cb0">
             <div class="bc-top"><h3>NiCE Cognigy</h3><span class="threat mid">Forrester Leader</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A Forrester Leader with a packaged low code platform, now inside NiCE after a deal valued around $955M.<sup><a href="#s18">18</a>,<a href="#s15">15</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Customer owned, in their cloud, on any contact center stack.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>If you change contact center vendors in three years, what happens to your agents?</p></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Forrester Leader, ranked highest in strategy, and a 2025 Gartner Leader. Now inside NiCE after a $955M deal, building agents from CXone voice, chat and workflow data.<sup><a href="#s19">19</a>,<a href="#s22">22</a>,<a href="#s15">15</a>,<a href="#s28">28</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Customer owned agents on any contact center stack, so a CXone renewal stops being an agent platform decision.<sup><a href="#s10">10</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>If you leave CXone in three years, what happens to your agents?</p></div>
           </article>
           <article class="bc" id="bc1" role="tabpanel" aria-labelledby="cb1" hidden>
             <div class="bc-top"><h3>Kore.ai</h3><span class="threat mid">Forrester Leader</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A Forrester Leader covering customer service, IT and HR automation in one platform.<sup><a href="#s18">18</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Testable, versioned flows for complex customer journeys, and a 5 out of 5 in lifecycle management.<sup><a href="#s14">14</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How does your team test a change before it reaches customers?</p></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Forrester Leader with the top current offering score, a 2025 Gartner Leader with the highest ability to execute, and new growth capital in January 2026. Covers customer service, employee service and process automation.<sup><a href="#s18">18</a>,<a href="#s22">22</a>,<a href="#s27">27</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Depth on hard customer journeys: testable, versioned flows, and 5 out of 5 in lifecycle management and in pricing flexibility and transparency.<sup><a href="#s14">14</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>How do you test a change before it reaches customers, and what does year two cost?</p></div>
           </article>
           <article class="bc" id="bc2" role="tabpanel" aria-labelledby="cb2" hidden>
-            <div class="bc-top"><h3>Google Dialogflow CX</h3><span class="threat">Google Cloud shops</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>A managed visual builder that is quick to start on Google Cloud, with Gemini built in.<sup><a href="#s19">19</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Self hosted or private cloud, model choice, and logic in the platform, beyond webhooks.</p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>Where does customer data need to run, and which model will risk approve?</p></div>
+            <div class="bc-top"><h3>Omilia</h3><span class="threat mid">Forrester Leader</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Forrester Leader for regulated, security first, voice first teams, with proprietary speech models and US bank references including Capital One and Discover, vendor reported.<sup><a href="#s20">20</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Chat and voice on one set of flows, a developer workflow engineers already know, and their choice of LLM.<sup><a href="#s11">11</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Does your chat assistant share business logic with the IVR today?</p></div>
           </article>
           <article class="bc" id="bc3" role="tabpanel" aria-labelledby="cb3" hidden>
-            <div class="bc-top"><h3>Microsoft Copilot Studio</h3><span class="threat">Already licensed</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Already in the Microsoft agreement and close to Teams and Dynamics.</p></div><div><h4>Where Rasa wins</h4><p>Deterministic flows at customer scale, outside Microsoft's cloud, with predictable pricing.<sup><a href="#s20">20</a></sup></p></div></div>
-            <div class="bc-q"><h4>The question I ask</h4><p>How will Copilot Credits scale with a few million customer conversations a year?</p></div>
+            <div class="bc-top"><h3>Google Conversational Agents</h3><span class="threat mid">Gartner Leader</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>2025 Gartner Leader. Flows plus Gemini playbooks, with prebuilt agents and connectors in the console.<sup><a href="#s22">22</a>,<a href="#s29">29</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Runs outside Google Cloud, on any model, with logic in the platform, beyond webhooks.<sup><a href="#s30">30</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>Which model will model risk approve, and where does it have to run?</p></div>
           </article>
           <article class="bc" id="bc4" role="tabpanel" aria-labelledby="cb4" hidden>
-            <div class="bc-top"><h3>Sierra and Decagon</h3><span class="threat">Fast to start</span></div>
-            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Vendor led agents with a fast rollout and a light lift for the customer's engineers.</p></div><div><h4>Where Rasa wins</h4><p>Customer owned, in their environment, with explicit flows for regulated workflows.<sup><a href="#s21">21</a></sup></p></div></div>
+            <div class="bc-top"><h3>Sierra and Decagon</h3><span class="threat">Best funded</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Sierra raised at a reported $15.8B valuation in May 2026, and Decagon at $4.5B in January 2026. Fast rollouts, with the vendor doing the build.<sup><a href="#s23">23</a>,<a href="#s24">24</a></sup></p></div><div><h4>Where Rasa wins</h4><p>The customer owns the agent and its logic, runs it in their environment and governs regulated workflows with explicit flows.<sup><a href="#s31">31</a></sup></p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>Who owns the agent's logic in year three, your team or the vendor?</p></div>
           </article>
           <article class="bc" id="bc5" role="tabpanel" aria-labelledby="cb5" hidden>
+            <div class="bc-top"><h3>Parloa and PolyAI</h3><span class="threat">Voice deals</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Parloa raised $350M at $3B in January 2026, model agnostic, with Allianz, Booking.com and SAP. PolyAI closed an $86M Series D with Marriott, Caesars and PG&amp;E, and is a Forrester Strong Performer.<sup><a href="#s25">25</a>,<a href="#s26">26</a>,<a href="#s21">21</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Chat and voice on the same flows, built and owned by the customer's engineers.<sup><a href="#s11">11</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>When a policy changes, how many places does your team update it?</p></div>
+          </article>
+          <article class="bc" id="bc6" role="tabpanel" aria-labelledby="cb6" hidden>
+            <div class="bc-top"><h3>Copilot Studio and Amazon Connect</h3><span class="threat">Already licensed</span></div>
+            <div class="bc-cols"><div><h4>Where they are strong</h4><p>Copilot Studio rides the Microsoft agreement, billed in Copilot Credits at $0.01 each pay as you go, with voice billed per minute. Amazon Connect pairs Lex for structured intents with AI agents that call flows as tools.<sup><a href="#s32">32</a>,<a href="#s33">33</a></sup></p></div><div><h4>Where Rasa wins</h4><p>Deterministic flows at customer scale on any cloud, with predictable pricing and no lock to one suite.<sup><a href="#s34">34</a></sup></p></div></div>
+            <div class="bc-q"><h4>The question I ask</h4><p>What does usage pricing look like at a few million conversations a year?</p></div>
+          </article>
+          <article class="bc" id="bc7" role="tabpanel" aria-labelledby="cb7" hidden>
             <div class="bc-top"><h3>Homegrown LLM builds</h3><span class="threat">Always present</span></div>
             <div class="bc-cols"><div><h4>Where they are strong</h4><p>Full control, no new vendor, and an engineering team that wants to build.</p></div><div><h4>Where Rasa wins</h4><p>Understanding, repair, testing, voice and analytics already built. The team writes the business logic.</p></div></div>
             <div class="bc-q"><h4>The question I ask</h4><p>What will it cost to keep repair, testing and voice current as models change?</p></div>
@@ -1957,7 +1980,7 @@ h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
         <div><h4>The bake off never ends</h4><p>Three journeys, written pass criteria and a readout date, scoped with our Solutions Engineer up front.</p></div>
         <div><h4>Security and model risk</h4><p>I lead with deployment in their cloud and model choice, and send the security package in discovery.</p></div>
         <div><h4>"Our contact center suite has a bot"</h4><p>I compare both on their hardest journey, with a correction and a digression in the test.</p></div>
-        <div><h4>No engineering capacity</h4><p>An SI partner or Rasa services in the plan from the start.<sup><a href="#s21">21</a></sup></p></div>
+        <div><h4>No engineering capacity</h4><p>An SI partner or Rasa services in the plan from the start.<sup><a href="#s31">31</a></sup></p></div>
         <div><h4>A technical win with no business owner</h4><p>The CX leader signs the success criteria before the build.</p></div>
       </div>
       <div class="mxf-head"><div><h3>MEDDPICC checklist</h3>
@@ -2009,7 +2032,7 @@ h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
         <button type="button" class="fc" id="fc7" aria-pressed="false" aria-label="Competition. Show the answer">
           <span class="fc-in">
             <span class="fc-f"><span class="fc-l">C</span><span class="fc-n">Competition</span><span class="fc-w">Every option they could pick</span><span class="fc-flag"><small>Red flag</small>We learn about the suite bundle at the proposal.</span><span class="fc-hint">Flip</span></span>
-            <span class="fc-b"><span class="fc-bh"><b>C</b>Competition</span><span class="fc-s"><small>What I validate</small>NiCE Cognigy, Kore.ai, Dialogflow CX, Copilot Studio, Sierra and Decagon, homegrown builds and doing nothing.</span><span class="fc-s"><small>What I ask</small><span class="q">If you don't choose us, what do you do instead?</span><span class="q">Who inside would push for that option?</span></span><span class="fc-s"><small>Proof I collect</small>Each alternative named with its internal sponsor, and our strengths built into the criteria.</span><span class="fc-s fc-m"><small>My move</small>I ask the battlecard questions in discovery and plan for the bundle early.</span></span>
+            <span class="fc-b"><span class="fc-bh"><b>C</b>Competition</span><span class="fc-s"><small>What I validate</small>NiCE Cognigy, Kore.ai, Omilia, Google, Sierra and Decagon, Parloa and PolyAI, Copilot Studio, homegrown builds and doing nothing.</span><span class="fc-s"><small>What I ask</small><span class="q">If you don't choose us, what do you do instead?</span><span class="q">Who inside would push for that option?</span></span><span class="fc-s"><small>Proof I collect</small>Each alternative named with its internal sponsor, and our strengths built into the criteria.</span><span class="fc-s fc-m"><small>My move</small>I ask the battlecard questions in discovery and plan for the bundle early.</span></span>
           </span>
         </button>
       </div>
@@ -2064,7 +2087,7 @@ h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
           <ul>
             <li>Learn the platform hands on: prototype in Hello Rasa, write a flow in Rasa Pro, run end to end tests, build the same flow in Rasa Studio and put it on a voice channel</li>
             <li>Learn from Will, my Solutions Engineer and my BDR what's winning and where evaluations stall</li>
-            <li>Build battlecards for NiCE Cognigy, Kore.ai, Dialogflow CX, Copilot Studio, Sierra and Decagon, and homegrown builds</li>
+            <li>Pressure test these battlecards with Will and our SE against live deals: NiCE Cognigy, Kore.ai, Omilia, Google, Sierra and Decagon, Parloa and PolyAI, Copilot Studio and Amazon Connect, and homegrown builds</li>
             <li>Audit named accounts for current bot, contact center platform, cloud, regulated data and Rasa Open Source footprint</li>
             <li>Write a plan for each Tier 1 account, one account and one hypothesis, with the buying committee, proof and openers</li>
             <li>Launch the first self sourced wave with my BDR and marketing, starting with Rasa Open Source users</li>
@@ -2131,10 +2154,23 @@ h1,.sh h2,.contact h2,.app-intro h2{letter-spacing:-.028em}
         <li id="s15"><a href="https://en.globes.co.il/en/article-nice-acquires-ai-co-cognigy-1001517302" target="_blank" rel="noopener">Globes, NiCE acquires Cognigy for $955M, 2025</a></li>
         <li id="s16"><a href="https://mytechdecisions.com/it-infrastructure/ai-contact-center-agent-spending/" target="_blank" rel="noopener">My TechDecisions, Gartner: conversational AI to cut contact center agent labor costs by $80 billion in 2026</a></li>
         <li id="s17"><a href="https://www.casestudies.com/company/rasa/case-study/swisscom-cuts-operational-costs-by-50-with-rasa" target="_blank" rel="noopener">Swisscom cuts operational costs by 50% with Rasa (vendor reported)</a></li>
-        <li id="s18"><a href="https://cxfoundation.com/blog/forrester-wave-conversational-ai-2026" target="_blank" rel="noopener">CX Foundation, Forrester Wave for conversational AI, 2026</a></li>
-        <li id="s19"><a href="https://rasa.com/blog/rasa-vs-dialogflow" target="_blank" rel="noopener">Rasa, Rasa vs Dialogflow</a></li>
-        <li id="s20"><a href="https://rasa.com/blog/copilot-studio-alternatives" target="_blank" rel="noopener">Rasa, Copilot Studio alternatives</a></li>
-        <li id="s21"><a href="https://rasa.com/blog/sierra-ai-alternatives" target="_blank" rel="noopener">Rasa, Sierra AI alternatives</a></li>
+        <li id="s18"><a href="https://www.kore.ai/ai-research-reports/kore-ai-named-a-leader-in-the-forrester-wave-conversational-ai-platforms-for-customer-service-q2-2026" target="_blank" rel="noopener">Kore.ai, Named a Leader in the Forrester Wave, Q2 2026</a></li>
+        <li id="s19"><a href="https://www.nice.com/lps/forrester-wave-conversational-ai-2026" target="_blank" rel="noopener">NiCE, Cognigy named a Leader in the Forrester Wave, 2026</a></li>
+        <li id="s20"><a href="https://omilia.com/resources/analyst-reports/the-forrester-wave-conversational-ai-platforms-for-customer-service-2026/" target="_blank" rel="noopener">Omilia, Named a Leader in the Forrester Wave, 2026</a></li>
+        <li id="s21"><a href="https://cxfoundation.com/blog/forrester-wave-conversational-ai-2026" target="_blank" rel="noopener">CX Foundation, Forrester Wave for conversational AI, 2026</a></li>
+        <li id="s22"><a href="https://www.cxtoday.com/contact-centre/gartner-magic-quadrant-for-conversational-ai-platforms-2025-the-rundown/" target="_blank" rel="noopener">CX Today, Gartner Magic Quadrant for Conversational AI Platforms 2025</a></li>
+        <li id="s23"><a href="https://www.trendingtopics.eu/sierra-raises-950-million-bret-taylors-ai-agent-startup-now-valued-at-over-15-billion/" target="_blank" rel="noopener">Trending Topics, Sierra raises $950M at a $15.8B valuation, 2026</a></li>
+        <li id="s24"><a href="https://www.bloomberg.com/news/articles/2026-01-28/ai-customer-support-startup-decagon-valued-at-4-5-billion" target="_blank" rel="noopener">Bloomberg, Decagon valued at $4.5 billion, January 2026</a></li>
+        <li id="s25"><a href="https://tech.eu/2026/01/15/parloa-raises-350m-tripling-valuation-to-3bn/" target="_blank" rel="noopener">Tech.eu, Parloa raises $350M at a $3B valuation, January 2026</a></li>
+        <li id="s26"><a href="https://cmswire.com/customer-experience/polyai-raises-86m-series-d-for-enterprise-voice-ai" target="_blank" rel="noopener">CMSWire, PolyAI raises $86M Series D, December 2025</a></li>
+        <li id="s27"><a href="https://itbrief.co.uk/story/kore-ai-secures-new-funding-to-scale-agentic-ai-tools" target="_blank" rel="noopener">IT Brief, Kore.ai secures new funding, January 2026</a></li>
+        <li id="s28"><a href="https://cxm.world/customer-experience/nice-puts-agentic-ai-into-action-across-cxone-and-cognigy/" target="_blank" rel="noopener">CXM, NiCE puts agentic AI into action across CXone and Cognigy, 2026</a></li>
+        <li id="s29"><a href="https://www.cxtoday.com/contact-center/google-refreshes-its-customer-engagement-suite-includes-a-console-to-build-ai-agents-for-self-service/" target="_blank" rel="noopener">CX Today, Google refreshes its Customer Engagement Suite</a></li>
+        <li id="s30"><a href="https://rasa.com/blog/rasa-vs-dialogflow" target="_blank" rel="noopener">Rasa, Rasa vs Dialogflow</a></li>
+        <li id="s31"><a href="https://rasa.com/blog/sierra-ai-alternatives" target="_blank" rel="noopener">Rasa, Sierra AI alternatives</a></li>
+        <li id="s32"><a href="https://www.licensingschool.co.uk/wp-content/uploads/2026/09/Copilot-Credits-Guide-September-2026-v4.pdf" target="_blank" rel="noopener">Licensing School, Copilot Credits guide, September 2026</a></li>
+        <li id="s33"><a href="https://aws.amazon.com/blogs/contact-center/leading-the-conversation-with-conversational-ai-in-amazon-connect/" target="_blank" rel="noopener">AWS, Conversational AI in Amazon Connect</a></li>
+        <li id="s34"><a href="https://rasa.com/blog/copilot-studio-alternatives" target="_blank" rel="noopener">Rasa, Copilot Studio alternatives</a></li>
       </ol>
       <p class="disc">Independent research prepared by Eric Iannello for the Rasa Enterprise Account Executive role. Not affiliated with or endorsed by Rasa. Figures come from public and third party sources as of October 2026, and vendor reported figures are labeled in their sources. Competitor comparisons draw partly on Rasa's own comparison pages. The product mock, Acme Bank, example data, accounts and emails are illustrative; command and pattern names follow Rasa's public documentation.</p>
     </footer>

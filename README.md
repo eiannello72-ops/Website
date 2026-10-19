@@ -21,6 +21,7 @@ for the Enterprise AE role.
 | Obsidian Security | [`obsidian/`](obsidian/index.html) |
 | Ketch | [`ketch/`](ketch/index.html) |
 | Aisera (Automation Anywhere) | [`aisera/`](aisera/index.html) |
+| Rasa | [`rasa/`](rasa/index.html) |
 
 ## Deploying
 

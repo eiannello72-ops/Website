@@ -22,6 +22,7 @@ for the Enterprise AE role.
 | Ketch | [`ketch/`](ketch/index.html) |
 | Aisera (Automation Anywhere) | [`aisera/`](aisera/index.html) |
 | Rasa | [`rasa/`](rasa/index.html) |
+| Dash0 | [`dash0/`](dash0/index.html) |
 
 ## Deploying
 

@@ -24,6 +24,7 @@ for the Enterprise AE role.
 | Rasa | [`rasa/`](rasa/index.html) |
 | Dash0 | [`dash0/`](dash0/index.html) |
 | Broccoli | [`broccoli/`](broccoli/index.html) |
+| Amplitude | [`amplitude/`](amplitude/index.html) |
 
 ## Deploying
 

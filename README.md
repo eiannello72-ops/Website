@@ -23,6 +23,7 @@ for the Enterprise AE role.
 | Aisera (Automation Anywhere) | [`aisera/`](aisera/index.html) |
 | Rasa | [`rasa/`](rasa/index.html) |
 | Dash0 | [`dash0/`](dash0/index.html) |
+| Broccoli | [`broccoli/`](broccoli/index.html) |
 
 ## Deploying
 
